@@ -230,11 +230,7 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "こうした",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "情報を整理します",
+      "text": "こうした情報を整理します",
       "duration_multiplier": 1.4
     },
     {
@@ -306,11 +302,11 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "リスク管理と脆弱",
+      "text": "リスク管理と脆弱性",
       "duration_multiplier": 1
     },
     {
-      "text": "性管理の両方で",
+      "text": "管理の両方で",
       "duration_multiplier": 1.1
     },
     {
@@ -1098,11 +1094,11 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "重大な脆弱",
+      "text": "重大な脆弱性が",
       "duration_multiplier": 1
     },
     {
-      "text": "性が見つかったとき",
+      "text": "見つかったとき",
       "duration_multiplier": 1.4
     },
     {
