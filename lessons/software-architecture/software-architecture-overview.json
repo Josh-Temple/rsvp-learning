@@ -9,51 +9,167 @@
   "sources": [],
   "chunks": [
     {
-      "text": "ソフトウェア設計では、責務を分けることが重要です",
+      "text": "ソフトウェア設計では、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "責務を分けることが",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "重要です",
       "duration_multiplier": 1.4
     },
     {
-      "text": "モジュールは、関連する処理をまとまりとして扱います",
+      "text": "モジュールは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "関連する処理を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "まとまりとして",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "扱います",
       "duration_multiplier": 1.15
     },
     {
-      "text": "インターフェースは、部品同士の接点を定めます",
+      "text": "インターフェースは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "部品同士の接点を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "定めます",
       "duration_multiplier": 1.15
     },
     {
-      "text": "依存関係が増えるほど、変更の影響範囲は広がります",
+      "text": "依存関係が増えるほど、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "変更の影響範囲は",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "広がります",
       "duration_multiplier": 1.15
     },
     {
-      "text": "状態は、システムが現在どの段階にあるかを表します",
+      "text": "状態は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "システムが現在",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "どの段階にあるかを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "表します",
       "duration_multiplier": 1.15
     },
     {
-      "text": "同期処理は結果を待ち、非同期処理は待たずに進められます",
+      "text": "同期処理は結果を待ち、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "非同期処理は",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "待たずに進められます",
       "duration_multiplier": 1.15
     },
     {
-      "text": "キューは、処理要求を順番に受け渡すために使われます",
+      "text": "キューは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "処理要求を順番に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "受け渡すために",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "使われます",
       "duration_multiplier": 1.15
     },
     {
-      "text": "イベント駆動では、出来事をきっかけに処理します",
+      "text": "イベント駆動では、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "出来事をきっかけに",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "処理します",
       "duration_multiplier": 1.15
     },
     {
-      "text": "Single Source of Truthは、正しい情報の基準を一つに定めます",
+      "text": "Single Source of Truthは、",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "正しい情報の基準を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "一つに定めます",
       "duration_multiplier": 1.15
     },
     {
-      "text": "冪等性は、同じ処理を繰り返しても結果が壊れない性質です",
+      "text": "冪等性は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "同じ処理を繰り返しても",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "結果が壊れない性質です",
       "duration_multiplier": 1.15
     },
     {
-      "text": "Retryには、重複や副作用への対策が必要です",
+      "text": "Retryには、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "重複や副作用への",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "対策が必要です",
       "duration_multiplier": 1.15
     },
     {
-      "text": "まずは、責務、状態、失敗時の挙動を説明できることを目標にします",
+      "text": "まずは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "責務、状態、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "失敗時の挙動を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "説明できることを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "目標にします",
       "duration_multiplier": 1.4
     }
   ]
