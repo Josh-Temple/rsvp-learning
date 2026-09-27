@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#f2efe8" />
+  <meta name="description" content="日常的に耳から取り入れるニュース・調査・レポートのListen一覧" />
+  <title>Listen</title>
+  <script>
+    (() => {
+      const saved = localStorage.getItem("rsvp:theme");
+      const dark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      document.documentElement.dataset.theme = saved || (dark ? "dark" : "light");
+    })();
+  </script>
+  <link rel="stylesheet" href="./listen.css" />
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <a class="icon-link" href="../index.html" aria-label="RSVPへ戻る" title="RSVP">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      </a>
+      <span class="listen-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M4 13v-1a8 8 0 0 1 16 0v1" />
+          <path d="M4 13h3v7H5a1 1 0 0 1-1-1v-6Zm16 0h-3v7h2a1 1 0 0 0 1-1v-6Z" />
+        </svg>
+      </span>
+      <button id="theme-toggle" class="icon-button" type="button" aria-label="テーマ切替">☾</button>
+    </header>
+
+    <section id="listen-list" class="listen-list" aria-live="polite"></section>
+  </main>
+
+  <script src="./listen.js" type="module"></script>
+</body>
+</html>
