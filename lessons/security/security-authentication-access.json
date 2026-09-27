@@ -1,0 +1,1045 @@
+{
+  "schema_version": 1,
+  "id": "security-authentication-access",
+  "title": "認証とアクセス制御",
+  "topic": "情報セキュリティ",
+  "summary": "識別・認証・認可、パスワード、MFA、生体認証、SSO、パスキー、アクセス制御の基本を学びます。",
+  "created_at": "2026-09-27",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "NIST SP 800-63B-4, Digital Identity Guidelines: Authentication and Authenticator Management",
+      "url": "https://csrc.nist.gov/pubs/sp/800/63/b/4/final"
+    },
+    {
+      "title": "NIST SP 800-63B-4, Password requirements",
+      "url": "https://pages.nist.gov/800-63-4/sp800-63b.html"
+    },
+    {
+      "title": "CISA, Turn On MFA",
+      "url": "https://www.cisa.gov/secure-our-world/turn-mfa"
+    },
+    {
+      "title": "CISA, Implementing Phishing-Resistant MFA",
+      "url": "https://www.cisa.gov/sites/default/files/2023-01/fact-sheet-implementing-phishing-resistant-mfa-508c.pdf"
+    },
+    {
+      "title": "NIST SP 800-63C-4, Federation and Assertions",
+      "url": "https://pages.nist.gov/800-63-4/sp800-63c.html"
+    },
+    {
+      "title": "NIST SP 800-63B-4, Syncable Authenticators",
+      "url": "https://pages.nist.gov/800-63-4/sp800-63b/syncable/"
+    },
+    {
+      "title": "NIST SP 800-63B-4, Authentication and Phishing Resistance",
+      "url": "https://pages.nist.gov/800-63-4/sp800-63b/authenticators/"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "認証とアクセス制御",
+      "duration_multiplier": 1.5
+    },
+    {
+      "text": "識別認証認可",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "システムを安全に使うには",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "誰が利用しているかを確認",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "し許された操作だけを実行",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "できるようにする必要が",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "あります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "利用者が自分のIDを示す",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "ことは識別と呼ばれます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "その利用者が本当に本人で",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "あることを確認する処理が",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "認証です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "認証された利用者にどの",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "操作を許可するかを決める",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "ことが認可です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "認証に成功したことと",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "すべての情報へアクセスし",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "てよいことは同じでは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ありません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "パスワード",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "パスワードは利用者が知",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "っている情報を使う認証",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "方法です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "同じパスワードを複数の",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "サービスで使い回すと一つ",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "のサービスから認証情報が",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "漏れたときに別のサービス",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "まで不正利用される危険が",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "高まります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "推測しやすい短い",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "パスワードも危険です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "サービスごとに異なる十分",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "な長さのパスワードを使い",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "パスワードマネージャーを",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "利用して管理する方法が",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "あります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "NISTSP800-",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "63B-4では単一要素",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "として使うパスワード",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "について最低15文字を",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "求めています",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "多要素認証の一部として",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "使う場合は最低8文字",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "としています",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "これは米国政府向け",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "デジタルID指針における",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "検証側の要件であり",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "あらゆるサービスに",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "そのまま適用される共通",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "ルールではありません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "同じ指針では根拠のない",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "定期変更を要求せず認証",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "情報が侵害された証拠が",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "ある場合に変更を求めます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "長さだけでなく既知の弱い",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "パスワードや漏えい済み",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "パスワードを避けることも",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "重要です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "多要素認証",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "認証に使う要素は大きく",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "知識所持生体などに分けら",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "れます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "パスワードは知識要素です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "セキュリティキーや端末",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "などは所持要素として利用",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "できます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "指紋や顔などは生体要素",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "として利用できます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "異なる種類の要素を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "組み合わせて認証する方法",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "が多要素認証です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "多要素認証を使えば",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "パスワードが盗まれただけ",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "では認証を突破できない",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "可能性が高くなります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "ただし多要素認証ならどの",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "方式でも同じ強さという",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "わけではありません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "一部の方式では偽サイトへ",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "入力した認証情報や確認",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "コードを攻撃者に中継さ",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "れる可能性があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "CISAはFIDOや",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "WebAuthnを利用",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "する方式を広く利用可能な",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "フィッシング耐性のある",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "認証として推奨しています",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "高い保護が必要な",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "アカウントでは方式の違い",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "まで考えることが重要です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "アクセス制御",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "認証後はその利用者が必要",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "な情報や機能だけへ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "アクセスできるようにします",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "これがアクセス制御です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "必要以上の権限を与えると",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "アカウントが侵害された",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "場合の被害が大きくなります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "業務に必要な最小限の権限",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "だけを付与する考え方を",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "最小権限の原則と呼びます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "管理者権限は特に強い権限です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "通常業務で常に管理者権限",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "を使うより必要な場面だけ",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "高い権限を使う設計が安全です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "権限は継続的に見直す",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "アクセス権は一度設定して",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "終わりではありません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "異動退職担当変更など",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "によって必要な権限は変化",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "使われなくなった",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "アカウントや不要になった",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "権限を残すと攻撃者に悪用",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "される入口になる可能性が",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "あります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "アカウントと権限を定期的",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "に確認し不要なものを削除",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "する運用が必要です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "生体認証は確率的に判定する",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "指紋や顔などの生体情報",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "では入力した特徴と登録",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "済みの特徴が十分に近いか",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "を判定します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "そのため正しい本人を一致",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "しないと判定する場合が",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "あります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "これをFalseNon-",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "Match偽非一致と呼びます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "反対に別人を本人と一致",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "したと判定する場合があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "これをFalse",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "Match偽一致と呼びます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "しきい値を厳しくすると偽",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "一致を減らせる一方本人を",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "拒否する可能性が高まる",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "ことがあります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "生体認証は「完全に一致",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "するか」を見る単純な",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "仕組みではありません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "また生体特徴はパスワード",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "のように簡単に変更できません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "NISTのデジタルID",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "指針でも生体情報の利用に",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "は制約がありほかの認証",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "要素と組み合わせて扱います",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "SSOと認証連携",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "SingleSign-",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "OnSSOでは一度の認証",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "を基に複数のサービスへ",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "アクセスできるようにします",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "サービスごとに別の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "パスワードを持つ負担を減",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "らせます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "現在のSSOでは",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "Identity",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ProviderIdPが",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "利用者を認証し利用先の",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "サービスへ認証結果を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "伝える連携方式がよく使",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "われます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "利用先はRelying",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "PartyRPなどと呼ば",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "れます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "NISTはこのような",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "仕組みを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "Federation認証",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "連携として整理しています",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "認証を集中させることで",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "管理を統一しやすくなります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "一方IdPが侵害されると",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "複数サービスへ影響する",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "可能性があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "SSOは「パスワードを",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "一回入力すれば安全」",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "という機能ではなく信頼",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "関係認証強度セッション",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "連携情報の検証まで含めて",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "設計します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "状況に応じて認証を強化する",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "通常と異なる端末",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "通常と異なる場所",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "不自然な時刻",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "短時間の大量アクセス",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "こうした情報を追加の判断",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "材料として使う認証があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "リスクが高いと判断した",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "場合だけ追加認証を求める",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "方法もあります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "ただし行動や位置情報から",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "の推定は誤る可能性があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "リスク判定だけを本人確認",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "そのものと考えず認証要素",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "やアクセス制御と",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "組み合わせます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "パスキー",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "パスキーは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "WebAuthnなどの",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "公開鍵暗号を利用する認証",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "資格情報を利用者が使い",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "やすい形で提供する仕組みです",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "サービスごとに異なる鍵を",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "利用するため通常の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "パスワードのように同じ",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "秘密文字列を複数サイトへ",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "入力しません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "正しく構成された",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "WebAuthn認証では",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "認証情報が特定のサイトや",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "RelyingParty",
+      "duration_multiplier": 1.3
+    },
+    {
+      "text": "へ暗号学的に結び付けられます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "そのため偽サイトへ認証",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "情報を入力させて正規",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "サイトへ転用する典型的な",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "フィッシングに強い性質が",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "あります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "同期型パスキー",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "認証鍵をクラウドなど",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "を通じて複数端末へ同期",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "できる仕組みがあります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "NISTSP800-",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "63B-4では",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "Syncable",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "Authenticators",
+      "duration_multiplier": 1.3
+    },
+    {
+      "text": "として要件を整理しています",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "同期によって端末変更時の",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "利用性や復旧性を高められます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "一方同期基盤自体の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "アクセス制御やMFA鍵の",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "保護が重要になります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "「同期できるから弱い」「",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "端末固定だから常に強い」",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "と単純に判断せず利用目的",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "と保証水準を踏まえて選びます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "チャレンジとリプレイ耐性",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "暗号学的認証では認証の",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "たびに異なるチャレンジや",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "ノンスを使う方法があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "過去の認証メッセージを盗",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "んでもそのまま再利用でき",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "ないようにします",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "この性質をリプレイ耐性と",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "呼びます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "WebAuthnなどの",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "暗号学的認証ではこのよう",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "なチャレンジレスポンスの",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "仕組みが使われます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "パスワードは毎回同じ値を",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "送るためそれ自体は",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "リプレイ耐性を持つ認証",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "情報とは扱われません",
+      "duration_multiplier": 1.4
+    }
+  ]
+}
