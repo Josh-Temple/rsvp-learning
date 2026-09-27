@@ -9,59 +9,167 @@
   "sources": [],
   "chunks": [
     {
-      "text": "Webシステムでは、クライアントとサーバーが通信します",
+      "text": "Webシステムでは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "クライアントとサーバーが",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "通信します",
       "duration_multiplier": 1.35
     },
     {
-      "text": "ブラウザは、代表的なクライアントです",
-      "duration_multiplier": 1.1
+      "text": "ブラウザは、",
+      "duration_multiplier": 1
     },
     {
-      "text": "サーバーは、要求を受けて処理し、応答を返します",
-      "duration_multiplier": 1.1
+      "text": "代表的なクライアントです",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "HTTPは、Webで広く使われる通信の仕組みです",
-      "duration_multiplier": 1.1
+      "text": "サーバーは、",
+      "duration_multiplier": 1
     },
     {
-      "text": "クライアントは、HTTP Requestを送ります",
-      "duration_multiplier": 1.1
+      "text": "要求を受けて処理し、",
+      "duration_multiplier": 1
     },
     {
-      "text": "サーバーは、HTTP Responseを返します",
-      "duration_multiplier": 1.1
+      "text": "応答を返します",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "URLは、アクセスする資源の場所を示します",
-      "duration_multiplier": 1.1
+      "text": "HTTPは、",
+      "duration_multiplier": 1
     },
     {
-      "text": "GETは、情報取得に使われることが多いです",
-      "duration_multiplier": 1.1
+      "text": "Webで広く使われる",
+      "duration_multiplier": 1
     },
     {
-      "text": "POSTは、新しい処理や登録に使われることが多いです",
-      "duration_multiplier": 1.1
+      "text": "通信の仕組みです",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "PUTやPATCHは、更新に使われることがあります",
-      "duration_multiplier": 1.1
+      "text": "クライアントは、",
+      "duration_multiplier": 1
     },
     {
-      "text": "DELETEは、削除を表すために使われます",
-      "duration_multiplier": 1.1
+      "text": "HTTP Requestを",
+      "duration_multiplier": 1
     },
     {
-      "text": "Status Codeは、処理結果の種類を示します",
-      "duration_multiplier": 1.1
+      "text": "送ります",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "Headerは、通信に関する追加情報を持ちます",
-      "duration_multiplier": 1.1
+      "text": "サーバーは、",
+      "duration_multiplier": 1
     },
     {
-      "text": "Bodyは、送受信するデータ本体を持つことがあります",
+      "text": "HTTP Responseを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "返します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "URLは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "アクセスする資源の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "場所を示します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "GETは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "情報取得に使われる",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ことが多いです",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "POSTは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "新しい処理や登録に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "使われることが多いです",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "PUTやPATCHは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "更新に使われる",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ことがあります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "DELETEは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "削除を表すために",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "使われます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Status Codeは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "処理結果の種類を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "示します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Headerは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "通信に関する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "追加情報を持ちます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Bodyは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "送受信するデータ本体を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "持つことがあります",
       "duration_multiplier": 1.35
     }
   ]
