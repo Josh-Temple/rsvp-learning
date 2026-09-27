@@ -1,0 +1,97 @@
+name: Scheduled Vercel production deploy
+
+on:
+  schedule:
+    - cron: "0 0,12 * * *"
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/vercel-scheduled-deploy.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: vercel-production
+  cancel-in-progress: false
+
+jobs:
+  config-check:
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    env:
+      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+    steps:
+      - name: Check Vercel token
+        run: |
+          if [ -n "$VERCEL_TOKEN" ]; then
+            echo "VERCEL_TOKEN_CONFIGURED"
+          else
+            echo "VERCEL_TOKEN_MISSING"
+          fi
+
+  deploy:
+    if: github.event_name != 'push'
+    runs-on: ubuntu-latest
+    env:
+      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+      VERCEL_ORG_ID: team_imvRFeaSa1LmNpMJkFiMwNmB
+      VERCEL_PROJECT_ID: prj_7yYGl5D3Q7UwQgQuXaGmOYLkTzbu
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check whether main changed
+        id: changed
+        shell: bash
+        run: |
+          git fetch --tags --force
+          if git rev-parse -q --verify refs/tags/vercel-production >/dev/null; then
+            LAST_DEPLOYED="$(git rev-list -n 1 refs/tags/vercel-production)"
+            if [ "$LAST_DEPLOYED" = "$GITHUB_SHA" ]; then
+              echo "changed=false" >> "$GITHUB_OUTPUT"
+              echo "No changes since the last production deploy."
+              exit 0
+            fi
+          fi
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Check deployment credentials
+        if: steps.changed.outputs.changed == 'true'
+        id: credentials
+        shell: bash
+        run: |
+          if [ -z "$VERCEL_TOKEN" ]; then
+            echo "configured=false" >> "$GITHUB_OUTPUT"
+            echo "VERCEL_TOKEN is not configured; skipping deployment."
+          else
+            echo "configured=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Install dependencies
+        if: steps.changed.outputs.changed == 'true' && steps.credentials.outputs.configured == 'true'
+        run: npm ci
+
+      - name: Test and validate
+        if: steps.changed.outputs.changed == 'true' && steps.credentials.outputs.configured == 'true'
+        run: npm run check
+
+      - name: Pull Vercel production settings
+        if: steps.changed.outputs.changed == 'true' && steps.credentials.outputs.configured == 'true'
+        run: npx --yes vercel@latest pull --yes --environment=production --token="$VERCEL_TOKEN"
+
+      - name: Build production artifact
+        if: steps.changed.outputs.changed == 'true' && steps.credentials.outputs.configured == 'true'
+        run: npx --yes vercel@latest build --prod --token="$VERCEL_TOKEN"
+
+      - name: Deploy production artifact
+        if: steps.changed.outputs.changed == 'true' && steps.credentials.outputs.configured == 'true'
+        run: npx --yes vercel@latest deploy --prebuilt --prod --token="$VERCEL_TOKEN"
+
+      - name: Mark deployed commit
+        if: steps.changed.outputs.changed == 'true' && steps.credentials.outputs.configured == 'true' && success()
+        shell: bash
+        run: |
+          git tag -f vercel-production "$GITHUB_SHA"
+          git push origin refs/tags/vercel-production --force
