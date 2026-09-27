@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="処理能力を制約する箇所や、待ち・手戻り・重複などの改善候補を見つける方法を学びます。" />
+  <meta name="theme-color" content="#f2efe8" />
+  <title>ボトルネックとムダの発見 — Learn</title>
+  <link rel="stylesheet" href="./learn.css" />
+  <script src="./learn.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="top">
+      <a href="../index.html">RSVPに戻る</a>
+      <span class="mode">LEARN · 業務改革</span>
+    </header>
+    <main>
+      <section class="reader" id="speech-reader" aria-label="読み上げプレイヤー">
+        <div class="reader-row">
+          <button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+          <button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+          <button id="speech-stop" type="button" aria-label="停止" disabled>■</button>
+          <select id="speech-voice" aria-label="読み上げ音声"></select>
+          <label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+        </div>
+        <div id="speech-status" class="reader-status" role="status">読み上げ準備中</div>
+      </section>
+      <article id="learn-article">
+        <h1>ボトルネックとムダの発見</h1>
+        <p class="lead">この章では、処理能力を制約する箇所や、待ち・手戻り・重複などの改善候補を見つける方法を学びます。</p>
+        <h2>基本の考え方</h2>
+        <p>まず、改善では、どこが全体を制約しているかを探します。ボトルネックは、全体の処理能力を制限する箇所です。一部の工程だけ速くしても、全体が速くなるとは限りません。待ち時間が長い工程を確認します。</p>
+        <h2>関係する用語と要素</h2>
+        <p>次に、承認待ちや情報待ちも、待ち時間です。手戻りは、同じ作業をやり直すことです。入力ミスや確認不足が、手戻りを生むことがあります。</p>
+        <h2>違いと判断の視点</h2>
+        <p>ここで、同じ情報の重複入力も改善候補です。不要な転記や集計も確認します。問い合わせが多い箇所には、分かりにくさがあるかもしれません。件数と処理時間を測ると、優先順位をつけやすくなります。</p>
+        <h2>利用時に意識する点</h2>
+        <p>最後に、例外の頻度も確認します。目立つ不満だけで、改善箇所を決めないようにします。全体への影響が大きい箇所から改善します。</p>
+        
+      </article>
+      
+    </main>
+  </div>
+</body>
+</html>

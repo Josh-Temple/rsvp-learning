@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="すでに起きた課題と、将来起こり得るリスクを分けて管理する基本を学びます。" />
+  <meta name="theme-color" content="#f2efe8" />
+  <title>課題管理とリスク管理 — Learn</title>
+  <link rel="stylesheet" href="./learn.css" />
+  <script src="./learn.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="top">
+      <a href="../index.html">RSVPに戻る</a>
+      <span class="mode">LEARN · プロジェクト管理</span>
+    </header>
+    <main>
+      <section class="reader" id="speech-reader" aria-label="読み上げプレイヤー">
+        <div class="reader-row">
+          <button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+          <button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+          <button id="speech-stop" type="button" aria-label="停止" disabled>■</button>
+          <select id="speech-voice" aria-label="読み上げ音声"></select>
+          <label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+        </div>
+        <div id="speech-status" class="reader-status" role="status">読み上げ準備中</div>
+      </section>
+      <article id="learn-article">
+        <h1>課題管理とリスク管理</h1>
+        <p class="lead">この章では、すでに起きた課題と、将来起こり得るリスクを分けて管理する基本を学びます。</p>
+        <h2>基本の考え方</h2>
+        <p>まず、課題とリスクは、分けて考えます。課題は、すでに発生して対応が必要な問題です。リスクは、将来起こる可能性がある不確実な事象です。課題には、担当者と対応期限を置きます。</p>
+        <h2>関係する用語と要素</h2>
+        <p>次に、解決条件も、できるだけ明確にします。リスクは、発生可能性と影響を考えます。重大なリスクから、優先して対策します。</p>
+        <h2>違いと判断の視点</h2>
+        <p>ここで、回避、低減、移転、受容などの対応があります。リスクが実際に起きたら、課題として扱うことがあります。兆候を事前に定めると、早く気づけます。一覧を作るだけでは、管理したことになりません。</p>
+        <h2>利用時に意識する点</h2>
+        <p>最後に、定期的に状態を更新します。重要なものは、適切な意思決定者へ上げます。良い管理は、問題を早く表面化させます。</p>
+        
+      </article>
+      
+    </main>
+  </div>
+</body>
+</html>

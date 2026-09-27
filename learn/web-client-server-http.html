@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="ブラウザなどのクライアントとサーバーがHTTPで通信する基本構造を学びます。" />
+  <meta name="theme-color" content="#f2efe8" />
+  <title>クライアント・サーバーとHTTP — Learn</title>
+  <link rel="stylesheet" href="./learn.css" />
+  <script src="./learn.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="top">
+      <a href="../index.html">RSVPに戻る</a>
+      <span class="mode">LEARN · Web・API</span>
+    </header>
+    <main>
+      <section class="reader" id="speech-reader" aria-label="読み上げプレイヤー">
+        <div class="reader-row">
+          <button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+          <button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+          <button id="speech-stop" type="button" aria-label="停止" disabled>■</button>
+          <select id="speech-voice" aria-label="読み上げ音声"></select>
+          <label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+        </div>
+        <div id="speech-status" class="reader-status" role="status">読み上げ準備中</div>
+      </section>
+      <article id="learn-article">
+        <h1>クライアント・サーバーとHTTP</h1>
+        <p class="lead">この章では、ブラウザなどのクライアントとサーバーがエイチティーティーピーで通信する基本構造を学びます。</p>
+        <h2>基本の考え方</h2>
+        <p>まず、Webシステムでは、クライアントとサーバーが通信します。ブラウザは、代表的なクライアントです。サーバーは、要求を受けて処理し、応答を返します。エイチティーティーピーは、Webで広く使われる通信の仕組みです。</p>
+        <h2>関係する用語と要素</h2>
+        <p>次に、クライアントは、エイチティーティーピー Requestを送ります。サーバーは、エイチティーティーピー Responseを返します。ユーアールエルは、アクセスする資源の場所を示します。</p>
+        <h2>違いと判断の視点</h2>
+        <p>ここで、GETは、情報取得に使われることが多いです。POSTは、新しい処理や登録に使われることが多いです。PUTやPATCHは、更新に使われることがあります。DELETEは、削除を表すために使われます。</p>
+        <h2>利用時に意識する点</h2>
+        <p>最後に、Status Codeは、処理結果の種類を示します。Headerは、通信に関する追加情報を持ちます。Bodyは、送受信するデータ本体を持つことがあります。</p>
+        <h3>この教材の扱う範囲</h3>
+        <p class="endnote">この章は基礎理解用です。 具体的な製品仕様、組織固有の工程名、法令上の要件は、この章だけで確定しません。 必要に応じて公式資料・一次資料で確認します。</p>
+      </article>
+      <section class="sources" aria-labelledby="sources-title">
+        <h2 id="sources-title">出典</h2>
+        <p><a href="https://www.rfc-editor.org/rfc/rfc9110.html">RFC 9110: HTTP Semantics</a></p>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

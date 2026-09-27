@@ -6,7 +6,16 @@
   "summary": "仮想ネットワーク、公開・非公開の境界、通信制御の基本を学びます。",
   "created_at": "2026-09-27",
   "base_duration_ms": 680,
-  "sources": [],
+  "sources": [
+    {
+      "title": "NIST SP 800-41 Rev. 1: Guidelines on Firewalls and Firewall Policy",
+      "url": "https://csrc.nist.gov/pubs/sp/800/41/r1/final"
+    },
+    {
+      "title": "NIST SP 800-125B: Secure Virtual Network Configuration for VMs",
+      "url": "https://csrc.nist.gov/pubs/sp/800/125/b/final"
+    }
+  ],
   "chunks": [
     {
       "text": "クラウドでも、",

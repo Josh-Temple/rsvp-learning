@@ -1,6 +1,6 @@
 # SELECTと絞り込み
 
-Status: DRAFT v0.1
+Status: COMPLETE v0.1
 Created: 2026-09-27
 
 ## 学習目標
@@ -29,3 +29,10 @@ SQLでデータを取得し、条件で絞り込み、並べ替える基本操�
 この章は基礎理解用です。
 具体的な製品仕様、組織固有の工程名、法令上の要件は、この章だけで確定しません。
 必要に応じて公式資料・一次資料で確認します。
+
+## 出典
+
+- [PostgreSQL 18: Querying a Table](https://www.postgresql.org/docs/18/queries.html)
+- [PostgreSQL 18: Comparison Functions and Operators](https://www.postgresql.org/docs/18/functions-comparison.html)
+- [PostgreSQL 18: Sorting Rows (ORDER BY)](https://www.postgresql.org/docs/18/queries-order.html)
+- [PostgreSQL 18: LIMIT and OFFSET](https://www.postgresql.org/docs/18/queries-limit.html)

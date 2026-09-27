@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="プロジェクトの目的を定め、スコープを明確にし、作業をWBSへ分解する基本を学びます。" />
+  <meta name="theme-color" content="#f2efe8" />
+  <title>目的・スコープ・WBS — Learn</title>
+  <link rel="stylesheet" href="./learn.css" />
+  <script src="./learn.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="top">
+      <a href="../index.html">RSVPに戻る</a>
+      <span class="mode">LEARN · プロジェクト管理</span>
+    </header>
+    <main>
+      <section class="reader" id="speech-reader" aria-label="読み上げプレイヤー">
+        <div class="reader-row">
+          <button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+          <button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+          <button id="speech-stop" type="button" aria-label="停止" disabled>■</button>
+          <select id="speech-voice" aria-label="読み上げ音声"></select>
+          <label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+        </div>
+        <div id="speech-status" class="reader-status" role="status">読み上げ準備中</div>
+      </section>
+      <article id="learn-article">
+        <h1>目的・スコープ・WBS</h1>
+        <p class="lead">この章では、プロジェクトの目的を定め、スコープを明確にし、作業をダブリュービーエスへ分解する基本を学びます。</p>
+        <h2>基本の考え方</h2>
+        <p>まず、プロジェクト管理は、目的を明確にするところから始まります。何を達成すれば成功かを定義します。成果物も、できるだけ具体的にします。スコープは、プロジェクトで扱う範囲です。</p>
+        <h2>関係する用語と要素</h2>
+        <p>次に、含むものと、含まないものを明確にします。曖昧なスコープは、追加作業を生みやすくなります。ダブリュービーエスは、Work Breakdown Structureの略です。</p>
+        <h2>違いと判断の視点</h2>
+        <p>ここで、成果を実現するための作業を、管理可能な単位へ分解します。大きすぎる作業は、進捗を判断しにくくなります。細かすぎる作業は、管理負担を増やします。担当者と期限を割り当てられる程度まで分けます。</p>
+        <h2>利用時に意識する点</h2>
+        <p>最後に、依存関係も確認します。ダブリュービーエスは、単なるToDoリストではありません。目的、成果物、作業のつながりを保つことが重要です。</p>
+        
+      </article>
+      
+    </main>
+  </div>
+</body>
+</html>

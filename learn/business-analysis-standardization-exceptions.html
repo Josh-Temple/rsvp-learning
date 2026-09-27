@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="業務のばらつきを減らす標準化と、避けられない例外を安全に扱う考え方を学びます。" />
+  <meta name="theme-color" content="#f2efe8" />
+  <title>標準化と例外処理 — Learn</title>
+  <link rel="stylesheet" href="./learn.css" />
+  <script src="./learn.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="top">
+      <a href="../index.html">RSVPに戻る</a>
+      <span class="mode">LEARN · 業務改革</span>
+    </header>
+    <main>
+      <section class="reader" id="speech-reader" aria-label="読み上げプレイヤー">
+        <div class="reader-row">
+          <button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+          <button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+          <button id="speech-stop" type="button" aria-label="停止" disabled>■</button>
+          <select id="speech-voice" aria-label="読み上げ音声"></select>
+          <label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+        </div>
+        <div id="speech-status" class="reader-status" role="status">読み上げ準備中</div>
+      </section>
+      <article id="learn-article">
+        <h1>標準化と例外処理</h1>
+        <p class="lead">この章では、業務のばらつきを減らす標準化と、避けられない例外を安全に扱う考え方を学びます。</p>
+        <h2>基本の考え方</h2>
+        <p>まず、標準化は、業務のばらつきを減らします。同じ条件なら、同じ手順で処理できる状態を目指します。標準化すると、教育しやすくなります。品質の安定にもつながります。</p>
+        <h2>関係する用語と要素</h2>
+        <p>次に、自動化もしやすくなります。ただし、現実の業務には例外があります。例外を無視して標準化すると、現場で回避策が生まれます。</p>
+        <h2>違いと判断の視点</h2>
+        <p>ここで、まず、例外の種類と頻度を確認します。本当に必要な例外かも検討します。例外には、判断者と処理方法を決めます。記録を残せるようにします。</p>
+        <h2>利用時に意識する点</h2>
+        <p>最後に、頻発する例外は、標準手順側の問題かもしれません。標準と例外の境界を明確にします。良い標準化は、現場の判断をゼロにすることではありません。</p>
+        
+      </article>
+      
+    </main>
+  </div>
+</body>
+</html>

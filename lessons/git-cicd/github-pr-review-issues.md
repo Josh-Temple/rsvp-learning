@@ -1,6 +1,6 @@
 # Pull Request・Review・Issue
 
-Status: DRAFT v0.1
+Status: COMPLETE v0.1
 Created: 2026-09-27
 
 ## 学習目標
@@ -28,3 +28,7 @@ GitHubで変更を提案し、レビューし、課題を追跡する基本を�
 
 この章は基礎理解用です。
 実務で判断するときは、対象システムの仕様、組織ルール、データの前提を別途確認します。
+
+## 出典
+
+- [GitHub Docs: About pull request reviews](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/about-pull-request-reviews)

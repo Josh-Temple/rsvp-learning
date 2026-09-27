@@ -1,6 +1,6 @@
 # クラウドネットワークの基本
 
-Status: DRAFT v0.1
+Status: COMPLETE v0.1
 Created: 2026-09-27
 
 ## 学習目標
@@ -29,3 +29,8 @@ Created: 2026-09-27
 この章は基礎理解用です。
 特定クラウド事業者、特定LLM、特定フレームワークの最新仕様を説明する教材ではありません。
 製品固有の仕様や現在の制約は、利用時点の公式資料で確認します。
+
+## 出典
+
+- [NIST SP 800-41 Rev. 1: Guidelines on Firewalls and Firewall Policy](https://csrc.nist.gov/pubs/sp/800/41/r1/final)
+- [NIST SP 800-125B: Secure Virtual Network Configuration for VMs](https://csrc.nist.gov/pubs/sp/800/125/b/final)

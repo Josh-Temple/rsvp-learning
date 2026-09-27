@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="変更しやすい設計のために、部品間の依存と内部のまとまりを考える基本を学びます。" />
+  <meta name="theme-color" content="#f2efe8" />
+  <title>依存関係・結合度・凝集度 — Learn</title>
+  <link rel="stylesheet" href="./learn.css" />
+  <script src="./learn.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="top">
+      <a href="../index.html">RSVPに戻る</a>
+      <span class="mode">LEARN · ソフトウェア設計</span>
+    </header>
+    <main>
+      <section class="reader" id="speech-reader" aria-label="読み上げプレイヤー">
+        <div class="reader-row">
+          <button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+          <button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+          <button id="speech-stop" type="button" aria-label="停止" disabled>■</button>
+          <select id="speech-voice" aria-label="読み上げ音声"></select>
+          <label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+        </div>
+        <div id="speech-status" class="reader-status" role="status">読み上げ準備中</div>
+      </section>
+      <article id="learn-article">
+        <h1>依存関係・結合度・凝集度</h1>
+        <p class="lead">この章では、変更しやすい設計のために、部品間の依存と内部のまとまりを考える基本を学びます。</p>
+        <h2>基本の考え方</h2>
+        <p>まず、ソフトウェアの変更しやすさは、依存関係に影響されます。一つの変更が多くの部品へ波及すると、修正が難しくなります。結合度は、部品同士の依存の強さを考える概念です。一般に、不要な強い結合は減らします。</p>
+        <h2>関係する用語と要素</h2>
+        <p>次に、凝集度は、一つの部品内の責務のまとまりを考える概念です。関連の強い処理をまとめると、責務が分かりやすくなります。すべての依存をなくすことはできません。</p>
+        <h2>違いと判断の視点</h2>
+        <p>ここで、重要なのは、依存の方向と理由を管理することです。下位の詳細へ上位の業務ロジックが強く依存すると変更しにくくなる場合があります。インターフェースを使って依存を分離する方法があります。共通ライブラリも、依存を増やす可能性があります。</p>
+        <h2>利用時に意識する点</h2>
+        <p>最後に、変更頻度が異なるものを分けることも有効です。依存関係は、図で可視化すると理解しやすくなります。良い設計は、変更の影響範囲を予測しやすくします。</p>
+        
+      </article>
+      
+    </main>
+  </div>
+</body>
+</html>

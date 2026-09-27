@@ -1,9 +1,11 @@
-const CACHE_NAME = "rsvp-learning-pwa-v4";
+const CACHE_NAME = "rsvp-learning-pwa-v5";
 const CORE_ASSETS = [
   "/",
   "/index.html",
   "/styles.css",
   "/app.js",
+  "/learn/learn.css",
+  "/learn/learn.js",
   "/manifest.webmanifest",
   "/icon.svg",
   "/lessons/index.json",

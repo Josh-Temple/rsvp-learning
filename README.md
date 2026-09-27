@@ -26,12 +26,12 @@ UIは個人利用を前提に、Playerは本文・進捗・操作だけに絞り
 
 RSVPと同じ教材群から、耳で連続して学ぶLearn版を試験導入しています。
 
-現在のパイロット:
-- `learn/api-authentication-authorization.html`
-- RSVP の「認証と認可」チャプターから `LEARN` で遷移
-- Web Speech APIによるページ内読み上げ
-- 再生 / 一時停止 / 停止 / 速度変更 / 日本語音声選択
-- 読み上げ中の段落ハイライト
+完成条件を満たすLessonには `lessons/index.json` の `learn_path` からLearn HTMLを開けます。教材statusの正本と完成条件は `docs/LESSON_FORMAT.md` にあります。
+
+- Learn本文は教材Markdownから音声向けの連続文章へ再構成します。
+- 教材ごとの静的HTMLは `learn/` に置き、共通の読み上げJavaScript/CSSは `learn/learn.js` と `learn/learn.css` を使います。
+- Web Speech APIによる再生 / 一時停止 / 停止 / 速度変更 / 日本語音声選択 / 段落ハイライトに対応します。
+- RSVP画面のLearnリンクはカタログの `learn_path` を使います。
 
 Android実機ではページ内読み上げは動作しましたが、Chromeを前面で開いていないと停止します。Chrome標準の「このページを読み上げ」は同端末のWikipediaでは利用できる一方、このLearnページでは表示されなかったため、必須経路にはしていません。
 
@@ -100,7 +100,11 @@ Lessonごとに次を保持します。
   ↓
 内容レビュー
   ↓
-RSVPチャンク化
+RSVPチャンク化・JSON同期とvalidation
+  ↓
+完成条件を確認して `COMPLETE v0.1` に更新
+  ↓
+Learn HTML生成
   ↓
 教材JSON
   ↓
@@ -111,7 +115,7 @@ Webプレイヤー
 
 教材原稿の生成には `prompts/lesson-draft.md`、レビュー済み原稿のJSON化には `prompts/lesson-generation.md` を使います。
 
-教材JSONの仕様は `schema/lesson.schema.json`、分割ルールは `docs/LESSON_FORMAT.md` を正本とします。
+教材JSONの仕様は `schema/lesson.schema.json`、Lesson一覧とstatusの仕様は `schema/lesson-catalog.schema.json`、分割と完成条件は `docs/LESSON_FORMAT.md` を正本とします。
 
 ## ローカル実行
 

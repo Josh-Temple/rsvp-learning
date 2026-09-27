@@ -6,7 +6,16 @@
   "summary": "仮説検定の考え方、p値の読み方、効果量の重要性を学びます。",
   "created_at": "2026-09-27",
   "base_duration_ms": 680,
-  "sources": [],
+  "sources": [
+    {
+      "title": "ASA Statement on P-Values",
+      "url": "https://www.amstat.org/asa/files/pdfs/p-valuestatement.pdf"
+    },
+    {
+      "title": "American Statistical Association: Statement on p-Values",
+      "url": "https://www.amstat.org/asa/files/pdfs/P-ValueStatement.pdf"
+    }
+  ],
   "chunks": [
     {
       "text": "仮説検定は、",
@@ -41,32 +50,44 @@
       "duration_multiplier": 1
     },
     {
-      "text": "帰無仮説のもとで",
+      "text": "帰無仮説と",
       "duration_multiplier": 1
     },
     {
-      "text": "観測結果以上の",
+      "text": "検定の前提が",
       "duration_multiplier": 1
     },
     {
-      "text": "極端さが得られる",
+      "text": "正しいとしたとき、",
       "duration_multiplier": 1
     },
     {
-      "text": "確率を表します",
-      "duration_multiplier": 1.15
+      "text": "観測結果以上に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "極端な結果が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "得られる確率です",
+      "duration_multiplier": 1
     },
     {
       "text": "p値は、",
       "duration_multiplier": 1
     },
     {
-      "text": "仮説が正しい確率では",
+      "text": "帰無仮説が正しい",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "確率を示すものでは",
       "duration_multiplier": 1
     },
     {
       "text": "ありません",
-      "duration_multiplier": 1.15
+      "duration_multiplier": 1.25
     },
     {
       "text": "p値が小さくても、",

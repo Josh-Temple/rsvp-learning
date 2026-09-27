@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Accuracy、Precision、Recallなどの指標と、集計値だけに頼らないエラー分析の基本を学びます。" />
+  <meta name="theme-color" content="#f2efe8" />
+  <title>評価指標とエラー分析 — Learn</title>
+  <link rel="stylesheet" href="./learn.css" />
+  <script src="./learn.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="top">
+      <a href="../index.html">RSVPに戻る</a>
+      <span class="mode">LEARN · AI運用</span>
+    </header>
+    <main>
+      <section class="reader" id="speech-reader" aria-label="読み上げプレイヤー">
+        <div class="reader-row">
+          <button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+          <button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+          <button id="speech-stop" type="button" aria-label="停止" disabled>■</button>
+          <select id="speech-voice" aria-label="読み上げ音声"></select>
+          <label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+        </div>
+        <div id="speech-status" class="reader-status" role="status">読み上げ準備中</div>
+      </section>
+      <article id="learn-article">
+        <h1>評価指標とエラー分析</h1>
+        <p class="lead">この章では、Accuracy、Precision、Recallなどの指標と、集計値だけに頼らないエラー分析の基本を学びます。</p>
+        <h2>基本の考え方</h2>
+        <p>まず、評価指標は、目的に合うものを選びます。Accuracyは、全体のうち正しく判定した割合です。Precisionは、陽性と判定した中で正しかった割合です。Recallは、本当の陽性をどれだけ拾えたかを表します。</p>
+        <h2>関係する用語と要素</h2>
+        <p>次に、どの誤りを重く見るかで、重視する指標は変わります。生成AIでは、単純な正解率を使えない課題もあります。その場合は、複数の評価観点を使います。</p>
+        <h2>違いと判断の視点</h2>
+        <p>ここで、平均値だけでは、特定条件での弱点を見落とします。利用者属性や入力種類ごとに分けて見ることがあります。エラー分析では、失敗例を具体的に読みます。失敗を種類ごとに分類します。</p>
+        <h2>利用時に意識する点</h2>
+        <p>最後に、頻度と影響を分けて考えます。指標の改善が、業務価値の改善につながるか確認します。数字と実例を組み合わせて評価することが重要です。</p>
+        
+      </article>
+      
+    </main>
+  </div>
+</body>
+</html>

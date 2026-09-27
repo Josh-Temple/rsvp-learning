@@ -1,6 +1,6 @@
 # 移行と運用設計
 
-Status: DRAFT v0.1
+Status: COMPLETE v0.1
 Created: 2026-09-27
 
 ## 学習目標
@@ -29,3 +29,7 @@ Created: 2026-09-27
 この章は基礎理解用です。
 具体的な製品仕様、組織固有の工程名、法令上の要件は、この章だけで確定しません。
 必要に応じて公式資料・一次資料で確認します。
+
+## 出典
+
+- [NIST SP 800-34 Rev. 1 Update 1: Contingency Planning Guide](https://csrc.nist.gov/pubs/sp/800/34/r1/upd1/final)

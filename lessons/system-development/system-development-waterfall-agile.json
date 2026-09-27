@@ -6,135 +6,80 @@
   "summary": "代表的な開発アプローチであるWaterfallとAgileの違いと使い分けの考え方を学びます。",
   "created_at": "2026-09-27",
   "base_duration_ms": 680,
-  "sources": [],
+  "sources": [
+    {
+      "title": "アジャイルソフトウェア開発宣言（日本語）",
+      "url": "https://agilemanifesto.org/iso/ja/manifesto.html"
+    }
+  ],
   "chunks": [
     {
       "text": "WaterfallとAgileは、",
-      "duration_multiplier": 1.35
-    },
-    {
-      "text": "開発の進め方を",
       "duration_multiplier": 1
     },
     {
-      "text": "考える代表的な",
+      "text": "開発の進め方を考える",
       "duration_multiplier": 1
     },
     {
-      "text": "枠組みです",
-      "duration_multiplier": 1.35
+      "text": "代表的な枠組みです",
+      "duration_multiplier": 1.25
     },
     {
       "text": "Waterfallでは、",
       "duration_multiplier": 1
     },
     {
-      "text": "工程を順に進める",
+      "text": "工程を順に",
       "duration_multiplier": 1
     },
     {
-      "text": "形が基本です",
-      "duration_multiplier": 1.15
+      "text": "進める形が基本です",
+      "duration_multiplier": 1.25
     },
     {
-      "text": "初期に要件や計画を",
+      "text": "初期に要件や計画を明確にすることを重視します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "案件の規模だけで、",
       "duration_multiplier": 1
     },
     {
-      "text": "明確にすることを",
+      "text": "どちらを選ぶかは",
       "duration_multiplier": 1
     },
     {
-      "text": "重視します",
-      "duration_multiplier": 1.15
+      "text": "決まりません",
+      "duration_multiplier": 1.25
     },
     {
-      "text": "大規模な調整や",
+      "text": "一方、途中変更のコストが高くなることがあります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "Agileでは、小さな単位で",
       "duration_multiplier": 1
     },
     {
-      "text": "承認が必要な案件と",
+      "text": "作り、確認し、改善を繰り返します",
+      "duration_multiplier": 1.25
+    },
+    {
+      "text": "早い段階で利用者から",
       "duration_multiplier": 1
     },
     {
-      "text": "相性が良い",
-      "duration_multiplier": 1
+      "text": "フィードバックを得やすくなります",
+      "duration_multiplier": 1.25
     },
     {
-      "text": "場合があります",
-      "duration_multiplier": 1.15
+      "text": "不確実性が高い領域に向く場合があります",
+      "duration_multiplier": 1.1
     },
     {
-      "text": "一方、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "途中変更のコストが",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "高くなることがあります",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "Agileでは、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "小さな単位で作り、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "確認し、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "改善を繰り返します",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "早い段階で",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "利用者から",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "フィードバックを",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "得やすくなります",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "不確実性が高い",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "領域に向く",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "場合があります",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "ただし、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "Agileでも",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "計画や品質管理は",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "必要です",
-      "duration_multiplier": 1.15
+      "text": "ただし、Agileでも計画や品質管理は必要です",
+      "duration_multiplier": 1.1
     },
     {
       "text": "Waterfallでも、",
@@ -146,19 +91,11 @@
     },
     {
       "text": "改善はできます",
-      "duration_multiplier": 1.15
+      "duration_multiplier": 1.25
     },
     {
-      "text": "実務では、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "両者を組み合わせる",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "こともあります",
-      "duration_multiplier": 1.15
+      "text": "実務では、両者を組み合わせることもあります",
+      "duration_multiplier": 1.1
     },
     {
       "text": "重要なのは、",
@@ -169,35 +106,23 @@
       "duration_multiplier": 1
     },
     {
-      "text": "制約と不確実性に合う",
+      "text": "要求の不確実性や",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "変更頻度に合う",
       "duration_multiplier": 1
     },
     {
       "text": "進め方です",
-      "duration_multiplier": 1.15
+      "duration_multiplier": 1.25
     },
     {
-      "text": "契約、組織、規制、",
-      "duration_multiplier": 1
+      "text": "契約、組織、規制、技術条件も選択に影響します",
+      "duration_multiplier": 1.1
     },
     {
-      "text": "技術条件も",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "選択に影響します",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "手法を目的化せず、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "価値を届ける",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "方法として考えます",
+      "text": "手法を目的化せず、価値を届ける方法として考えます",
       "duration_multiplier": 1.35
     }
   ]

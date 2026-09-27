@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="分散システムで避けにくい失敗に備え、再試行しても壊れにくい設計を学びます。" />
+  <meta name="theme-color" content="#f2efe8" />
+  <title>冪等性・Retry・失敗時の挙動 — Learn</title>
+  <link rel="stylesheet" href="./learn.css" />
+  <script src="./learn.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="top">
+      <a href="../index.html">RSVPに戻る</a>
+      <span class="mode">LEARN · ソフトウェア設計</span>
+    </header>
+    <main>
+      <section class="reader" id="speech-reader" aria-label="読み上げプレイヤー">
+        <div class="reader-row">
+          <button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+          <button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+          <button id="speech-stop" type="button" aria-label="停止" disabled>■</button>
+          <select id="speech-voice" aria-label="読み上げ音声"></select>
+          <label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+        </div>
+        <div id="speech-status" class="reader-status" role="status">読み上げ準備中</div>
+      </section>
+      <article id="learn-article">
+        <h1>冪等性・Retry・失敗時の挙動</h1>
+        <p class="lead">この章では、分散システムで避けにくい失敗に備え、再試行しても壊れにくい設計を学びます。</p>
+        <h2>基本の考え方</h2>
+        <p>まず、外部通信を含む処理は、途中で失敗することがあります。失敗したか成功したか分からない場合もあります。そのとき、同じ処理を再試行することがあります。Retryは、一時的な失敗から回復する方法の一つです。</p>
+        <h2>関係する用語と要素</h2>
+        <p>次に、ただし、無制限のRetryは負荷を増やします。一定時間を空けて再試行する方法があります。冪等性とは、同じ要求を何度繰り返しても、意図した効果が一回の実行と同じになる性質です。</p>
+        <h2>違いと判断の視点</h2>
+        <p>ここで、二重登録や二重送信を防ぐために重要です。処理IDを使って重複を検出する方法があります。失敗時に、部分的な更新が残らないように考えます。すべてを元に戻せない処理もあります。</p>
+        <h2>利用時に意識する点</h2>
+        <p>最後に、その場合は、補償処理を設計することがあります。失敗を隠すのではなく、状態として表現することも重要です。復旧手順まで含めて、正常な設計と考えます。</p>
+        
+      </article>
+      <section class="sources" aria-labelledby="sources-title">
+        <h2 id="sources-title">出典</h2>
+        <p><a href="https://www.rfc-editor.org/rfc/rfc9110.html">RFC 9110: HTTP Semantics</a></p>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

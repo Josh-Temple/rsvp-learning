@@ -6,7 +6,20 @@
   "summary": "変数間の関連を表す相関と回帰、因果関係との違いを学びます。",
   "created_at": "2026-09-27",
   "base_duration_ms": 680,
-  "sources": [],
+  "sources": [
+    {
+      "title": "NIST/SEMATECH e-Handbook: Linear Correlation Plot",
+      "url": "https://www.itl.nist.gov/div898/handbook/eda/section3/eda33g.htm"
+    },
+    {
+      "title": "NIST/SEMATECH e-Handbook: Linear Least Squares Regression",
+      "url": "https://www.itl.nist.gov/div898/handbook/pmd/section1/pmd141.htm"
+    },
+    {
+      "title": "NIST/SEMATECH e-Handbook: Experiments and Experimental Design",
+      "url": "https://www.itl.nist.gov/div898/handbook/ppc/section1/ppc136.htm"
+    }
+  ],
   "chunks": [
     {
       "text": "相関は、",

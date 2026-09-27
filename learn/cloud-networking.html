@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="仮想ネットワーク、公開・非公開の境界、通信制御の基本を学びます。" />
+  <meta name="theme-color" content="#f2efe8" />
+  <title>クラウドネットワークの基本 — Learn</title>
+  <link rel="stylesheet" href="./learn.css" />
+  <script src="./learn.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="top">
+      <a href="../index.html">RSVPに戻る</a>
+      <span class="mode">LEARN · クラウド</span>
+    </header>
+    <main>
+      <section class="reader" id="speech-reader" aria-label="読み上げプレイヤー">
+        <div class="reader-row">
+          <button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+          <button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+          <button id="speech-stop" type="button" aria-label="停止" disabled>■</button>
+          <select id="speech-voice" aria-label="読み上げ音声"></select>
+          <label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+        </div>
+        <div id="speech-status" class="reader-status" role="status">読み上げ準備中</div>
+      </section>
+      <article id="learn-article">
+        <h1>クラウドネットワークの基本</h1>
+        <p class="lead">この章では、仮想ネットワーク、公開・非公開の境界、通信制御の基本を学びます。</p>
+        <h2>基本の考え方</h2>
+        <p>まず、クラウドでも、ネットワークの基本は変わりません。システム同士は、ネットワークを通じて通信します。仮想ネットワークは、クラウド上に論理的な通信範囲を作ります。サブネットで、ネットワークを複数の範囲へ分けられます。</p>
+        <h2>関係する用語と要素</h2>
+        <p>次に、外部公開が必要な部分と、内部だけで使う部分を分けます。データベースを直接インターネットへ公開しない設計が一般的です。FirewallやSecurity Groupなどで通信を制御します。</p>
+        <h2>違いと判断の視点</h2>
+        <p>ここで、必要な宛先とポートだけを許可します。ディーエヌエスは、名前と接続先を対応づけます。Load Balancerは、複数の処理先へ通信を分散します。通信経路を複雑にすると、障害調査も難しくなります。</p>
+        <h2>利用時に意識する点</h2>
+        <p>最後に、ネットワーク設計では、到達性と安全性を両方考えます。通信ログは、問題調査に役立ちます。まずは、利用者からアプリ、データベースまでの経路を説明できるようにします。</p>
+        
+      </article>
+      <section class="sources" aria-labelledby="sources-title">
+        <h2 id="sources-title">出典</h2>
+        <p><a href="https://csrc.nist.gov/pubs/sp/800/41/r1/final">NIST SP 800-41 Rev. 1: Guidelines on Firewalls and Firewall Policy</a></p>
+        <p><a href="https://csrc.nist.gov/pubs/sp/800/125/b/final">NIST SP 800-125B: Secure Virtual Network Configuration for VMs</a></p>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

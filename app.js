@@ -191,7 +191,10 @@ function render() {
   const current = Math.min(state.index + 1, total);
 
   els.currentLesson.textContent = state.lesson.title;
-  els.learnLink.hidden = state.lessonId !== "api-authentication-authorization";
+  const lessonMeta = state.lessonMap.get(state.lessonId);
+  els.learnLink.hidden = !lessonMeta?.learn_path;
+  if (lessonMeta?.learn_path) els.learnLink.href = lessonMeta.learn_path;
+  els.learnLink.setAttribute("aria-label", `${state.lesson.title}をLearn版で開く`);
   els.chunkText.textContent = chunk?.text ?? "完了";
   els.progressText.textContent = total ? `${current}·${total}` : "0·0";
   els.progressBar.style.width = total ? `${(current / total) * 100}%` : "0%";

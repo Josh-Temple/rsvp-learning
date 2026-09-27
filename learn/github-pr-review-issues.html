@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="GitHubで変更を提案し、レビューし、課題を追跡する基本を学びます。" />
+  <meta name="theme-color" content="#f2efe8" />
+  <title>Pull Request・Review・Issue — Learn</title>
+  <link rel="stylesheet" href="./learn.css" />
+  <script src="./learn.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="top">
+      <a href="../index.html">RSVPに戻る</a>
+      <span class="mode">LEARN · 開発運用</span>
+    </header>
+    <main>
+      <section class="reader" id="speech-reader" aria-label="読み上げプレイヤー">
+        <div class="reader-row">
+          <button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+          <button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+          <button id="speech-stop" type="button" aria-label="停止" disabled>■</button>
+          <select id="speech-voice" aria-label="読み上げ音声"></select>
+          <label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+        </div>
+        <div id="speech-status" class="reader-status" role="status">読み上げ準備中</div>
+      </section>
+      <article id="learn-article">
+        <h1>Pull Request・Review・Issue</h1>
+        <p class="lead">この章では、ギットハブで変更を提案し、レビューし、課題を追跡する基本を学びます。</p>
+        <h2>基本の考え方</h2>
+        <p>まず、Pull Requestは、変更を統合するための提案です。変更内容を、差分として確認できます。目的や背景を説明する文章も重要です。Reviewでは、コードや設計の問題を確認します。</p>
+        <h2>関係する用語と要素</h2>
+        <p>次に、動作だけでなく、保守性や安全性も見ます。コメントは、具体的な変更箇所へ付けられます。承認条件を、チームで決めることがあります。</p>
+        <h2>違いと判断の視点</h2>
+        <p>ここで、Issueは、課題や要望を記録するために使えます。一つのIssueからPull Requestへつなげる運用もあります。何を完了条件とするか明確にします。大きな変更は、小さなPull Requestへ分けると確認しやすくなります。</p>
+        <h2>利用時に意識する点</h2>
+        <p>最後に、自動テストの結果も、Review材料になります。Review履歴は、意思決定の記録にもなります。ギットハブは、コードだけでなく変更管理の場として使えます。</p>
+        
+      </article>
+      <section class="sources" aria-labelledby="sources-title">
+        <h2 id="sources-title">出典</h2>
+        <p><a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/about-pull-request-reviews">GitHub Docs: About pull request reviews</a></p>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

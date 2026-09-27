@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="代表的なクラウド実行環境の違いと選択の考え方を学びます。" />
+  <meta name="theme-color" content="#f2efe8" />
+  <title>仮想マシン・コンテナ・Serverless — Learn</title>
+  <link rel="stylesheet" href="./learn.css" />
+  <script src="./learn.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="top">
+      <a href="../index.html">RSVPに戻る</a>
+      <span class="mode">LEARN · クラウド</span>
+    </header>
+    <main>
+      <section class="reader" id="speech-reader" aria-label="読み上げプレイヤー">
+        <div class="reader-row">
+          <button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+          <button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+          <button id="speech-stop" type="button" aria-label="停止" disabled>■</button>
+          <select id="speech-voice" aria-label="読み上げ音声"></select>
+          <label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+        </div>
+        <div id="speech-status" class="reader-status" role="status">読み上げ準備中</div>
+      </section>
+      <article id="learn-article">
+        <h1>仮想マシン・コンテナ・Serverless</h1>
+        <p class="lead">この章では、代表的なクラウド実行環境の違いと選択の考え方を学びます。</p>
+        <h2>基本の考え方</h2>
+        <p>まず、クラウドでは、アプリの実行方法を選べます。仮想マシンは、OSを含む実行環境を比較的自由に管理できます。自由度が高い代わりに、OS管理の負担もあります。コンテナは、アプリと依存関係をまとめて実行します。</p>
+        <h2>関係する用語と要素</h2>
+        <p>次に、環境差を減らしやすいことが利点です。一方で、コンテナ運用には別の管理知識が必要です。Serverlessは、サーバー管理を減らして処理を実行する考え方です。</p>
+        <h2>違いと判断の視点</h2>
+        <p>ここで、イベントに応じて処理を起動する用途と相性があります。利用量に応じて拡張しやすい場合があります。ただし、実行時間や構成に制約がある場合があります。どの方式にも、長所と短所があります。</p>
+        <h2>利用時に意識する点</h2>
+        <p>最後に、既存システムとの相性も考えます。運用できる人材と監視方法も選択条件です。実行方式は、技術だけでなく運用負担を含めて選びます。</p>
+        
+      </article>
+      
+    </main>
+  </div>
+</body>
+</html>

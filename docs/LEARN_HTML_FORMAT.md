@@ -1,7 +1,7 @@
 # Learn HTML 生成仕様
 
 Status: CURRENT
-Updated: 2026-09-27
+Updated: 2026-09-28
 
 ## 目的
 
@@ -11,7 +11,7 @@ RSVP教材と同じリポジトリから、Android Chromeで連続して耳か�
 
 ## 現行方式
 
-Learnページは、原則として単一HTMLファイルで完結させます。
+Learnページは教材ごとの静的HTMLファイルとして保存します。読み上げJavaScriptとCSSは、重複を避けるため `learn/learn.js` と `learn/learn.css` に共通化します。JavaScript実行前から本文がHTMLに存在する条件は維持します。
 
 読み上げはChrome標準の「このページを読み上げ」を必須経路にせず、ページ内の Web Speech API を使います。
 
@@ -26,11 +26,7 @@ Android実機では、ページ内読み上げはChromeが前面にある状態�
 
 ## 入力
 
-Learn HTMLを作るときは、次のいずれかを入力とします。
-
-1. レビュー済みの教材原稿
-2. 既存のRSVP教材の元原稿
-3. 根拠資料から新たに作る教材原稿
+このリポジトリでは `COMPLETE v0.1` の教材だけをLearn化します。正本は `docs/LESSON_FORMAT.md` です。完成済みMarkdown原稿を主入力とし、本文の範囲を保ったまま音声向けに再構成します。
 
 RSVP JSONの短いチャンク列を、そのまま連結して読み上げ本文にしません。Learn本文は耳だけで理解できる連続文章として再構成します。
 
@@ -105,7 +101,7 @@ RSVP JSONの短いチャンク列を、そのまま連結して読み上げ本�
 現在の実装では、Learn本文内の次の要素をDOM順に読み上げます。
 
 ```js
-article.querySelectorAll("h1, h2, p")
+article.querySelectorAll("h1, h2, h3, p")
 ```
 
 したがって、読み上げさせたくない補助表示は `article` の外へ置くか、将来セレクタを変更します。
@@ -136,7 +132,7 @@ article.querySelectorAll("h1, h2, p")
 
 速度変更は、現在読み上げ中のutteranceではなく、原則として次の発話から反映されます。
 
-音声選択を変更した場合、現行実装では現在位置から読み直します。
+音声選択を変更した場合、現在位置から読み直します。再生中は新しい音声で現在位置から読み直します。一時停止中は、新しい音声を選んでも一時停止を維持し、再生ボタンを押した時点で現在位置から新しい音声で読み直します。
 
 ## 状態と操作
 
@@ -185,13 +181,14 @@ Learnは文章が主役です。
 
 ## ファイル配置
 
-現時点では、Learn HTMLは `learn/` 以下に置きます。
-
-例:
+Learn HTMLは `COMPLETE v0.1` の教材だけに生成し、カタログの `learn_path` と対応させます。静的な教材HTMLは `learn/` 以下、共通コードは同じディレクトリに置きます。
 
 ```text
 learn/
+  learn.css
+  learn.js
   api-authentication-authorization.html
+  <lesson-id>.html
 ```
 
 教材数が増えた場合は、RSVP教材の分野構造に合わせたサブディレクトリ化を検討します。

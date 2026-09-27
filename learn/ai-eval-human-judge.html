@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="生成AIの出力を人間や別のLLMで評価するときの利点と限界を学びます。" />
+  <meta name="theme-color" content="#f2efe8" />
+  <title>人間評価とLLM-as-a-judge — Learn</title>
+  <link rel="stylesheet" href="./learn.css" />
+  <script src="./learn.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="top">
+      <a href="../index.html">RSVPに戻る</a>
+      <span class="mode">LEARN · AI運用</span>
+    </header>
+    <main>
+      <section class="reader" id="speech-reader" aria-label="読み上げプレイヤー">
+        <div class="reader-row">
+          <button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+          <button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+          <button id="speech-stop" type="button" aria-label="停止" disabled>■</button>
+          <select id="speech-voice" aria-label="読み上げ音声"></select>
+          <label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+        </div>
+        <div id="speech-status" class="reader-status" role="status">読み上げ準備中</div>
+      </section>
+      <article id="learn-article">
+        <h1>人間評価とLLM-as-a-judge</h1>
+        <p class="lead">この章では、生成AIの出力を人間や別のエルエルエムで評価するときの利点と限界を学びます。</p>
+        <h2>基本の考え方</h2>
+        <p>まず、生成結果には、正解が一つでない場合があります。その場合、人間評価が重要になります。評価者には、明確な評価基準を渡します。正確性、関連性、完全性など観点を分けます。</p>
+        <h2>関係する用語と要素</h2>
+        <p>次に、複数の観点を一つの点数へ無理にまとめない方法もあります。評価者によって判断が異なることがあります。必要なら、複数人の評価を比較します。</p>
+        <h2>違いと判断の視点</h2>
+        <p>ここで、エルエルエム-as-a-judgeは、エルエルエムを評価者として使う方法です。大量評価を効率化できる場合があります。一方で、評価モデルにも偏りや誤りがあります。表現の長さや文体に影響されることもあります。</p>
+        <h2>利用時に意識する点</h2>
+        <p>最後に、重要な評価では、人間評価との一致を確認します。同じモデルだけで生成と評価を完結させない設計も検討します。自動評価は、人間評価を置き換えるのではなく補助として使います。</p>
+        
+      </article>
+      <section class="sources" aria-labelledby="sources-title">
+        <h2 id="sources-title">出典</h2>
+        <p><a href="https://arxiv.org/abs/2306.05685">Zheng et al., Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena</a></p>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

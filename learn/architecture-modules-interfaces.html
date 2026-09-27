@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="システムを責務ごとに分け、部品同士の接点を明確にする基本を学びます。" />
+  <meta name="theme-color" content="#f2efe8" />
+  <title>モジュールとインターフェース — Learn</title>
+  <link rel="stylesheet" href="./learn.css" />
+  <script src="./learn.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="top">
+      <a href="../index.html">RSVPに戻る</a>
+      <span class="mode">LEARN · ソフトウェア設計</span>
+    </header>
+    <main>
+      <section class="reader" id="speech-reader" aria-label="読み上げプレイヤー">
+        <div class="reader-row">
+          <button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+          <button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+          <button id="speech-stop" type="button" aria-label="停止" disabled>■</button>
+          <select id="speech-voice" aria-label="読み上げ音声"></select>
+          <label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+        </div>
+        <div id="speech-status" class="reader-status" role="status">読み上げ準備中</div>
+      </section>
+      <article id="learn-article">
+        <h1>モジュールとインターフェース</h1>
+        <p class="lead">この章では、システムを責務ごとに分け、部品同士の接点を明確にする基本を学びます。</p>
+        <h2>基本の考え方</h2>
+        <p>まず、大きなシステムは、役割ごとの部品へ分けて考えます。モジュールは、関連する責務をまとめた単位です。一つのモジュールに多くの責務を詰め込みすぎないようにします。責務が明確だと、変更範囲を限定しやすくなります。</p>
+        <h2>関係する用語と要素</h2>
+        <p>次に、インターフェースは、部品同士の接点です。何を受け取り、何を返すかを定めます。内部実装を知らなくても利用できる形が望まれます。</p>
+        <h2>違いと判断の視点</h2>
+        <p>ここで、インターフェースを安定させると、内部変更の影響を減らせます。データ形式やエラー条件も、接点の一部です。責務の境界が曖昧だと、同じ処理が複数箇所へ広がります。共通処理を分ける場合も、責務を確認します。</p>
+        <h2>利用時に意識する点</h2>
+        <p>最後に、細かく分けすぎると、連携が複雑になります。分割には、適切な粒度が必要です。設計では、責務と接点を説明できることが重要です。</p>
+        
+      </article>
+      
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="REST APIの基本的な考え方と、データ交換形式JSONの読み方を学びます。" />
+  <meta name="theme-color" content="#f2efe8" />
+  <title>REST APIとJSON — Learn</title>
+  <link rel="stylesheet" href="./learn.css" />
+  <script src="./learn.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="top">
+      <a href="../index.html">RSVPに戻る</a>
+      <span class="mode">LEARN · Web・API</span>
+    </header>
+    <main>
+      <section class="reader" id="speech-reader" aria-label="読み上げプレイヤー">
+        <div class="reader-row">
+          <button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+          <button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+          <button id="speech-stop" type="button" aria-label="停止" disabled>■</button>
+          <select id="speech-voice" aria-label="読み上げ音声"></select>
+          <label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+        </div>
+        <div id="speech-status" class="reader-status" role="status">読み上げ準備中</div>
+      </section>
+      <article id="learn-article">
+        <h1>REST APIとJSON</h1>
+        <p class="lead">この章では、REST エーピーアイの基本的な考え方と、データ交換形式ジェイソンの読み方を学びます。</p>
+        <h2>基本の考え方</h2>
+        <p>まず、エーピーアイは、ソフトウェア同士の接点です。RESTは、Web エーピーアイで広く使われる設計上の考え方です。資源を、ユーアールエルで表すことがあります。エイチティーティーピーメソッドで、操作の種類を表します。</p>
+        <h2>関係する用語と要素</h2>
+        <p>次に、例えば、顧客一覧をGETで取得できます。新しい顧客をPOSTで登録する設計もあります。ユーアールエルとエイチティーティーピーメソッドを使うだけで、RESTの原則をすべて満たすとは限りません。</p>
+        <h2>違いと判断の視点</h2>
+        <p>ここで、名前より、一貫したエーピーアイ設計が重要です。ジェイソンは、データ交換でよく使われる形式です。オブジェクトは、キーと値の組で表します。配列は、複数の値を順番に持ちます。</p>
+        <h2>利用時に意識する点</h2>
+        <p>最後に、文字列、数値、真偽値、nullなどを扱えます。エーピーアイ仕様では、入力と出力の形を明確にします。エラー時の応答も、エーピーアイ仕様の一部です。</p>
+        <h3>この教材の扱う範囲</h3>
+        <p class="endnote">この章は基礎理解用です。 具体的な製品仕様、組織固有の工程名、法令上の要件は、この章だけで確定しません。 必要に応じて公式資料・一次資料で確認します。</p>
+      </article>
+      <section class="sources" aria-labelledby="sources-title">
+        <h2 id="sources-title">出典</h2>
+        <p><a href="https://ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm">Roy T. Fielding: REST Architectural Style</a></p>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

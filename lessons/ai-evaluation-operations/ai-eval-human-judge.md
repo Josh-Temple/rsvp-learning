@@ -1,6 +1,6 @@
 # 人間評価とLLM-as-a-judge
 
-Status: DRAFT v0.1
+Status: COMPLETE v0.1
 Created: 2026-09-27
 
 ## 学習目標
@@ -28,3 +28,7 @@ Created: 2026-09-27
 
 この章は基礎理解用です。
 実務で判断するときは、対象システムの仕様、組織ルール、データの前提を別途確認します。
+
+## 出典
+
+- [Zheng et al., Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena](https://arxiv.org/abs/2306.05685)

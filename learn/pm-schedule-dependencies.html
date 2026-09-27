@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="作業順序、依存関係、マイルストーン、遅延影響の基本を学びます。" />
+  <meta name="theme-color" content="#f2efe8" />
+  <title>スケジュールと依存関係 — Learn</title>
+  <link rel="stylesheet" href="./learn.css" />
+  <script src="./learn.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="top">
+      <a href="../index.html">RSVPに戻る</a>
+      <span class="mode">LEARN · プロジェクト管理</span>
+    </header>
+    <main>
+      <section class="reader" id="speech-reader" aria-label="読み上げプレイヤー">
+        <div class="reader-row">
+          <button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+          <button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+          <button id="speech-stop" type="button" aria-label="停止" disabled>■</button>
+          <select id="speech-voice" aria-label="読み上げ音声"></select>
+          <label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+        </div>
+        <div id="speech-status" class="reader-status" role="status">読み上げ準備中</div>
+      </section>
+      <article id="learn-article">
+        <h1>スケジュールと依存関係</h1>
+        <p class="lead">この章では、作業順序、依存関係、マイルストーン、遅延影響の基本を学びます。</p>
+        <h2>基本の考え方</h2>
+        <p>まず、スケジュールは、作業の順序と期限を管理します。すべての作業を同時に始められるわけではありません。前の作業が終わらないと始められない作業があります。これが、依存関係です。</p>
+        <h2>関係する用語と要素</h2>
+        <p>次に、依存関係を見落とすと、計画が成立しません。マイルストーンは、重要な節目を示します。承認、完成、リリースなどを節目として置けます。</p>
+        <h2>違いと判断の視点</h2>
+        <p>ここで、見積りには、不確実性があります。過度に楽観的な日程は、後で無理を生みます。遅延した作業が、後続へどう影響するかを確認します。重要な依存関係は、定期的に見直します。</p>
+        <h2>利用時に意識する点</h2>
+        <p>最後に、進捗率だけでなく、完了条件を明確にします。予定と実績の差を見て、必要なら計画を更新します。スケジュール管理は、遅れを隠す作業ではなく早く見つける作業です。</p>
+        
+      </article>
+      
+    </main>
+  </div>
+</body>
+</html>

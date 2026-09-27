@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="APIの失敗を扱うためのStatus Code、Retry、冪等性の基本を学びます。" />
+  <meta name="theme-color" content="#f2efe8" />
+  <title>エラー処理と冪等性 — Learn</title>
+  <link rel="stylesheet" href="./learn.css" />
+  <script src="./learn.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="top">
+      <a href="../index.html">RSVPに戻る</a>
+      <span class="mode">LEARN · Web・API</span>
+    </header>
+    <main>
+      <section class="reader" id="speech-reader" aria-label="読み上げプレイヤー">
+        <div class="reader-row">
+          <button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+          <button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+          <button id="speech-stop" type="button" aria-label="停止" disabled>■</button>
+          <select id="speech-voice" aria-label="読み上げ音声"></select>
+          <label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+        </div>
+        <div id="speech-status" class="reader-status" role="status">読み上げ準備中</div>
+      </section>
+      <article id="learn-article">
+        <h1>エラー処理と冪等性</h1>
+        <p class="lead">この章では、エーピーアイの失敗を扱うためのStatus Code、Retry、冪等性の基本を学びます。</p>
+        <h2>基本の考え方</h2>
+        <p>まず、エーピーアイ通信は、常に成功するとは限りません。入力が不正な場合があります。権限が不足している場合があります。対象データが存在しない場合があります。</p>
+        <h2>関係する用語と要素</h2>
+        <p>次に、サーバー内部で失敗する場合もあります。エイチティーティーピー Status Codeは、失敗の種類を伝えるために使われます。4xxは、要求側に原因がある場合に使われることが多いです。</p>
+        <h2>違いと判断の視点</h2>
+        <p>ここで、5xxは、サーバー側の失敗を表すことが多いです。失敗時に、何でもRetryすれば良いわけではありません。同じ要求を再送すると、二重登録が起こることがあります。冪等性は、同じ要求を何度行っても、意図した効果が一度のときと同じになる性質です。</p>
+        <h2>利用時に意識する点</h2>
+        <p>最後に、GETは、通常は副作用を持たないように設計します。重要な登録処理では、Idempotency Keyを使う設計もあります。エラー処理は、正常処理と同じくらい重要です。</p>
+        <h3>この教材の扱う範囲</h3>
+        <p class="endnote">この章は基礎理解用です。 具体的な製品仕様、組織固有の工程名、法令上の要件は、この章だけで確定しません。 必要に応じて公式資料・一次資料で確認します。</p>
+      </article>
+      <section class="sources" aria-labelledby="sources-title">
+        <h2 id="sources-title">出典</h2>
+        <p><a href="https://www.rfc-editor.org/rfc/rfc9110.html">RFC 9110: HTTP Semantics</a></p>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

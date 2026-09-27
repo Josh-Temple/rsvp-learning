@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="処理を待つ同期方式と、Queueやイベントを使う非同期方式の違いを学びます。" />
+  <meta name="theme-color" content="#f2efe8" />
+  <title>同期・非同期・イベント・Queue — Learn</title>
+  <link rel="stylesheet" href="./learn.css" />
+  <script src="./learn.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="top">
+      <a href="../index.html">RSVPに戻る</a>
+      <span class="mode">LEARN · ソフトウェア設計</span>
+    </header>
+    <main>
+      <section class="reader" id="speech-reader" aria-label="読み上げプレイヤー">
+        <div class="reader-row">
+          <button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+          <button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+          <button id="speech-stop" type="button" aria-label="停止" disabled>■</button>
+          <select id="speech-voice" aria-label="読み上げ音声"></select>
+          <label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+        </div>
+        <div id="speech-status" class="reader-status" role="status">読み上げ準備中</div>
+      </section>
+      <article id="learn-article">
+        <h1>同期・非同期・イベント・Queue</h1>
+        <p class="lead">この章では、処理を待つ同期方式と、Queueやイベントを使う非同期方式の違いを学びます。</p>
+        <h2>基本の考え方</h2>
+        <p>まず、同期処理では、相手の処理結果を待ちます。処理の流れを理解しやすいことが利点です。ただし、相手が遅いと全体も待つことになります。非同期処理では、依頼後に別の処理へ進めます。</p>
+        <h2>関係する用語と要素</h2>
+        <p>次に、時間のかかる処理を切り離せます。Queueは、処理要求を一時的に保存して受け渡します。送信側と受信側を、時間的に分離できます。</p>
+        <h2>違いと判断の視点</h2>
+        <p>ここで、イベントは、何かが起きたことを表します。イベントを受けて別の処理を動かす設計があります。非同期では、処理完了のタイミングが分かりにくくなります。重複処理や順序入れ替わりも考える必要があります。</p>
+        <h2>利用時に意識する点</h2>
+        <p>最後に、失敗したメッセージの扱いも設計します。監視と追跡可能性が重要になります。非同期化は、性能だけでなく依存を緩めるためにも使われます。</p>
+        
+      </article>
+      
+    </main>
+  </div>
+</body>
+</html>

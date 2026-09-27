@@ -6,15 +6,32 @@
   "summary": "クラウドでの認証・認可・最小権限・権限分離の基本を学びます。",
   "created_at": "2026-09-27",
   "base_duration_ms": 680,
-  "sources": [],
+  "sources": [
+    {
+      "title": "NIST SP 800-53 Rev. 5 Update 1",
+      "url": "https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final"
+    },
+    {
+      "title": "NIST SP 800-63B-4: Authentication and Authenticator Management",
+      "url": "https://csrc.nist.gov/pubs/sp/800/63/b/4/final"
+    },
+    {
+      "title": "NIST Glossary: Least Privilege",
+      "url": "https://csrc.nist.gov/glossary/term/least_privilege"
+    }
+  ],
   "chunks": [
     {
       "text": "IAMは、",
       "duration_multiplier": 1
     },
     {
-      "text": "Identity and Access Management",
-      "duration_multiplier": 2.4
+      "text": "Identity and ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "Access Management",
+      "duration_multiplier": 1.25
     },
     {
       "text": "の略です",

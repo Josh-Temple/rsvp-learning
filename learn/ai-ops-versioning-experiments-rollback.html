@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="プロンプトやモデルなどの変更を比較し、問題時に戻せる運用の基本を学びます。" />
+  <meta name="theme-color" content="#f2efe8" />
+  <title>バージョン管理・比較実験・Rollback — Learn</title>
+  <link rel="stylesheet" href="./learn.css" />
+  <script src="./learn.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="top">
+      <a href="../index.html">RSVPに戻る</a>
+      <span class="mode">LEARN · AI運用</span>
+    </header>
+    <main>
+      <section class="reader" id="speech-reader" aria-label="読み上げプレイヤー">
+        <div class="reader-row">
+          <button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+          <button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+          <button id="speech-stop" type="button" aria-label="停止" disabled>■</button>
+          <select id="speech-voice" aria-label="読み上げ音声"></select>
+          <label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+        </div>
+        <div id="speech-status" class="reader-status" role="status">読み上げ準備中</div>
+      </section>
+      <article id="learn-article">
+        <h1>バージョン管理・比較実験・Rollback</h1>
+        <p class="lead">この章では、プロンプトやモデルなどの変更を比較し、問題時に戻せる運用の基本を学びます。</p>
+        <h2>基本の考え方</h2>
+        <p>まず、AIシステムでは、モデル以外にも多くの要素が変わります。プロンプト、検索設定、ツール、評価基準も変更対象です。どの変更で結果が変わったか追えるようにします。設定やコードに、バージョンを持たせます。</p>
+        <h2>関係する用語と要素</h2>
+        <p>次に、変更前と変更後を、同じ評価条件で比較します。一度に多くを変えると、原因を特定しにくくなります。可能なら、変更点を小さく分けます。</p>
+        <h2>違いと判断の視点</h2>
+        <p>ここで、A/Bテストなどで、本番影響を比較する方法もあります。ただし、高リスク業務では実験方法に制約があります。問題が起きたときに、以前の状態へ戻せるようにします。これが、Rollbackです。</p>
+        <h2>利用時に意識する点</h2>
+        <p>最後に、Rollback対象には、コードだけでなく設定も含まれます。変更履歴と評価結果を対応づけます。改善速度と復旧可能性を両立させることが重要です。</p>
+        
+      </article>
+      <section class="sources" aria-labelledby="sources-title">
+        <h2 id="sources-title">出典</h2>
+        <p><a href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence">NIST AI 600-1: Generative Artificial Intelligence Profile</a></p>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

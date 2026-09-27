@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="LLMの基本的な入出力と、コンテキストを設計する考え方を学びます。" />
+  <meta name="theme-color" content="#f2efe8" />
+  <title>LLMとコンテキスト — Learn</title>
+  <link rel="stylesheet" href="./learn.css" />
+  <script src="./learn.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="top">
+      <a href="../index.html">RSVPに戻る</a>
+      <span class="mode">LEARN · 生成AI</span>
+    </header>
+    <main>
+      <section class="reader" id="speech-reader" aria-label="読み上げプレイヤー">
+        <div class="reader-row">
+          <button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+          <button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+          <button id="speech-stop" type="button" aria-label="停止" disabled>■</button>
+          <select id="speech-voice" aria-label="読み上げ音声"></select>
+          <label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+        </div>
+        <div id="speech-status" class="reader-status" role="status">読み上げ準備中</div>
+      </section>
+      <article id="learn-article">
+        <h1>LLMとコンテキスト</h1>
+        <p class="lead">この章では、エルエルエムの基本的な入出力と、コンテキストを設計する考え方を学びます。</p>
+        <h2>基本の考え方</h2>
+        <p>まず、エルエルエムは、与えられた入力から出力を生成します。モデルが利用できる情報は、入力された文脈に強く依存します。この文脈を、コンテキストとして扱います。指示だけでなく、資料や会話履歴もコンテキストになります。</p>
+        <h2>関係する用語と要素</h2>
+        <p>次に、必要な情報が入っていなければ、正確に答えられない場合があります。一方で、不要な情報を大量に入れると判断を難しくすることがあります。コンテキストには、量の上限があります。</p>
+        <h2>違いと判断の視点</h2>
+        <p>ここで、重要な情報を選んで渡す設計が必要です。指示と参照資料を区別すると、役割が分かりやすくなります。出力形式も、事前に明確にできます。曖昧な依頼は、曖昧な出力につながりやすくなります。</p>
+        <h2>利用時に意識する点</h2>
+        <p>最後に、ただし、指示を細かくすれば必ず正しくなるわけではありません。モデルの能力と情報の質の両方が影響します。エルエルエム利用では、何をコンテキストへ入れるかが設計の中心です。</p>
+        
+      </article>
+      
+    </main>
+  </div>
+</body>
+</html>

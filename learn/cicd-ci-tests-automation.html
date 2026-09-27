@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="変更ごとにテストや検査を自動実行するCIの役割を学びます。" />
+  <meta name="theme-color" content="#f2efe8" />
+  <title>CIと自動テスト — Learn</title>
+  <link rel="stylesheet" href="./learn.css" />
+  <script src="./learn.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="top">
+      <a href="../index.html">RSVPに戻る</a>
+      <span class="mode">LEARN · 開発運用</span>
+    </header>
+    <main>
+      <section class="reader" id="speech-reader" aria-label="読み上げプレイヤー">
+        <div class="reader-row">
+          <button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+          <button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+          <button id="speech-stop" type="button" aria-label="停止" disabled>■</button>
+          <select id="speech-voice" aria-label="読み上げ音声"></select>
+          <label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+        </div>
+        <div id="speech-status" class="reader-status" role="status">読み上げ準備中</div>
+      </section>
+      <article id="learn-article">
+        <h1>CIと自動テスト</h1>
+        <p class="lead">この章では、変更ごとにテストや検査を自動実行するシーアイの役割を学びます。</p>
+        <h2>基本の考え方</h2>
+        <p>まず、シーアイは、Continuous Integrationの略です。変更を頻繁に統合し、問題を早く見つける考え方です。コードをpushしたときに、自動処理を実行できます。自動テストは、代表的なシーアイ処理です。</p>
+        <h2>関係する用語と要素</h2>
+        <p>次に、Lintや型検査を実行することもあります。Buildが成功するか確認できます。Pull Requestごとにシーアイを動かす運用があります。</p>
+        <h2>違いと判断の視点</h2>
+        <p>ここで、失敗した変更を、mainへ入れないための条件にできます。自動化すると、同じ検査を毎回同じ条件で行えます。一方で、自動テスト自体にも不具合はあり得ます。不安定なテストは、判断を難しくします。</p>
+        <h2>利用時に意識する点</h2>
+        <p>最後に、実行時間が長すぎると、開発速度へ影響します。重要な検査から自動化します。シーアイは、問題を早い段階で発見する仕組みです。</p>
+        
+      </article>
+      <section class="sources" aria-labelledby="sources-title">
+        <h2 id="sources-title">出典</h2>
+        <p><a href="https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final">NIST SP 800-53 Rev. 5 Update 1</a></p>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

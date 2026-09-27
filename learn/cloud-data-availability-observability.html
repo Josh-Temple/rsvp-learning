@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="クラウドでのデータ保存、バックアップ、冗長化、監視の基本を学びます。" />
+  <meta name="theme-color" content="#f2efe8" />
+  <title>データ・可用性・監視 — Learn</title>
+  <link rel="stylesheet" href="./learn.css" />
+  <script src="./learn.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="top">
+      <a href="../index.html">RSVPに戻る</a>
+      <span class="mode">LEARN · クラウド</span>
+    </header>
+    <main>
+      <section class="reader" id="speech-reader" aria-label="読み上げプレイヤー">
+        <div class="reader-row">
+          <button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+          <button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+          <button id="speech-stop" type="button" aria-label="停止" disabled>■</button>
+          <select id="speech-voice" aria-label="読み上げ音声"></select>
+          <label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+        </div>
+        <div id="speech-status" class="reader-status" role="status">読み上げ準備中</div>
+      </section>
+      <article id="learn-article">
+        <h1>データ・可用性・監視</h1>
+        <p class="lead">この章では、クラウドでのデータ保存、バックアップ、冗長化、監視の基本を学びます。</p>
+        <h2>基本の考え方</h2>
+        <p>まず、クラウドでは、データの置き場所も用途に応じて選びます。ファイル向けのObject Storageがあります。構造化データには、データベースを使うことが多いです。保存場所が違えば、性能や費用も変わります。</p>
+        <h2>関係する用語と要素</h2>
+        <p>次に、重要データには、バックアップが必要です。バックアップは、作るだけでなく復元できるか確認します。可用性は、必要なときにサービスを使える度合いです。</p>
+        <h2>違いと判断の視点</h2>
+        <p>ここで、単一障害点を減らすために、冗長化を考えます。複数の障害領域へ分散する設計もあります。ただし、冗長化すると構成と費用は増えます。監視では、シーピーユーなどの資源だけを見るわけではありません。</p>
+        <h2>利用時に意識する点</h2>
+        <p>最後に、エラー率、応答時間、業務処理数も重要です。ログとメトリクスを組み合わせて状態を把握します。可用性は、技術設計と運用設計の両方で作ります。</p>
+        
+      </article>
+      <section class="sources" aria-labelledby="sources-title">
+        <h2 id="sources-title">出典</h2>
+        <p><a href="https://csrc.nist.gov/pubs/sp/800/34/r1/upd1/final">NIST SP 800-34 Rev. 1 Update 1: Contingency Planning Guide</a></p>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

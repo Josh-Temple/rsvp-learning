@@ -1,6 +1,6 @@
 # 認証と認可
 
-Status: DRAFT v0.1
+Status: COMPLETE v0.1
 Created: 2026-09-27
 
 ## 学習目標
@@ -15,8 +15,8 @@ Created: 2026-09-27
 4. ログインは、認証の代表例です
 5. パスワードだけでなく、多要素認証も使われます
 6. セッションは、ログイン状態を維持する方法の一つです
-7. Tokenを使って、API呼び出しを認証する方法もあります
-8. OAuthは、別サービスへ限定的な権限を委任するために使われます
+7. アクセストークンは、保護された情報へアクセスする権限を示すために使われます
+8. OAuthは、別サービスへ限定的なアクセス権を委任する認可の枠組みです
 9. API Keyは、呼び出し元識別に使われることがあります
 10. 秘密情報は、ソースコードへ直接書かないようにします
 11. 認可では、RoleやPermissionを使うことがあります
@@ -29,3 +29,10 @@ Created: 2026-09-27
 この章は基礎理解用です。
 具体的な製品仕様、組織固有の工程名、法令上の要件は、この章だけで確定しません。
 必要に応じて公式資料・一次資料で確認します。
+
+## 出典
+
+- [RFC 6749: The OAuth 2.0 Authorization Framework](https://www.rfc-editor.org/rfc/rfc6749.html)
+- [RFC 9700: Best Current Practice for OAuth 2.0 Security](https://www.rfc-editor.org/rfc/rfc9700.html)
+- [NIST SP 800-63B-4: Authentication and Authenticator Management](https://csrc.nist.gov/pubs/sp/800/63/b/4/final)
+- [NIST SP 800-53 Rev. 5 Update 1](https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final)

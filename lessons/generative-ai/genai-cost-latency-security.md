@@ -1,6 +1,6 @@
 # コスト・速度・セキュリティ
 
-Status: DRAFT v0.1
+Status: COMPLETE v0.1
 Created: 2026-09-27
 
 ## 学習目標
@@ -29,3 +29,8 @@ Created: 2026-09-27
 この章は基礎理解用です。
 特定クラウド事業者、特定LLM、特定フレームワークの最新仕様を説明する教材ではありません。
 製品固有の仕様や現在の制約は、利用時点の公式資料で確認します。
+
+## 出典
+
+- [NIST AI 600-1: Generative Artificial Intelligence Profile](https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence)
+- [OWASP GenAI LLM Top 10 2026](https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/)
