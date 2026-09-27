@@ -416,3 +416,22 @@ IPA SGは引き続き漏れ検出に使うが、用語の完全列挙を目標�
 Chapter 1をJSON化し、RSVP変換のパイロットとする。
 
 Schema、意味の保持、チャンク粒度、表示時間を確認した後、残り15 Lessonへ展開する。
+
+
+## 2026-09-27 — Chapter 1 RSVP JSONパイロット
+
+`01-security-fundamentals.md` から `security-fundamentals.json` を作成した。
+
+Schema検証に必要な必須項目、数値範囲、chunk構造をreadback後に確認した。
+
+結果はPASSだった。
+
+165 chunkで、文字数中央値は7、90%点は10だった。
+
+14文字を超えたのは `Cybersecurity Framework` のみである。
+
+専門用語の固有名称を不自然に分割しないという既存ルールに従い、このchunkは維持した。
+
+Courseと `lessons/index.json` への登録はまだ行っていない。
+
+残り15 Lessonを作成する前の変換基準として利用する。
