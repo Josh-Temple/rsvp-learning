@@ -1,0 +1,685 @@
+{
+  "schema_version": 1,
+  "id": "security-fundamentals",
+  "title": "情報セキュリティの基本",
+  "topic": "情報セキュリティ",
+  "summary": "情報セキュリティの目的、CIA、情報資産、脅威・脆弱性・リスク、継続的なリスク管理の基本を学びます。",
+  "created_at": "2026-09-27",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "IPA「情報セキュリティって何？なぜ、重要なの？」",
+      "url": "https://www.ipa.go.jp/security/contest/"
+    },
+    {
+      "title": "NIST Cybersecurity Framework 2.0",
+      "url": "https://www.nist.gov/cyberframework"
+    },
+    {
+      "title": "NIST CSRC Glossary, Risk",
+      "url": "https://csrc.nist.gov/glossary/term/risk"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "情報セキュリティとは",
+      "duration_multiplier": 1.5
+    },
+    {
+      "text": "情報や情報システムを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "脅威から守り",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "必要な状態を維持する",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "考え方と活動です",
+      "duration_multiplier": 1.5
+    },
+    {
+      "text": "代表的な三要素は",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "機密性",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "完全性",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "可用性です",
+      "duration_multiplier": 1.5
+    },
+    {
+      "text": "機密性は",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "許可された人や",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "システムだけが",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "情報へアクセスできる",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "状態です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "完全性は",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "情報や処理が",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "意図しない変更や",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "破壊を受けず",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "正確性が保たれる",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "状態です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "可用性は",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "許可された利用者が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "必要なときに",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "情報やシステムを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "利用できる状態です",
+      "duration_multiplier": 1.5
+    },
+    {
+      "text": "この三つを",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "英語の頭文字から",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "CIAと呼びます",
+      "duration_multiplier": 1.5
+    },
+    {
+      "text": "CIAは",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "情報セキュリティの",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "代表的な三要素です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "実務では",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "真正性や",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "責任追跡性など",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "ほかの性質も扱います",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "一つの要素だけを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "最大化すればよい",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "わけではありません",
+      "duration_multiplier": 1.5
+    },
+    {
+      "text": "例えば",
+      "duration_multiplier": 0.8
+    },
+    {
+      "text": "誰もアクセスできなければ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "機密性は",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "高く見えます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "しかし",
+      "duration_multiplier": 0.8
+    },
+    {
+      "text": "必要な人まで",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "使えなければ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "可用性が損なわれます",
+      "duration_multiplier": 1.5
+    },
+    {
+      "text": "利用目的に応じて",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "複数の要素を",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "バランスよく守ります",
+      "duration_multiplier": 1.5
+    },
+    {
+      "text": "次に情報資産です",
+      "duration_multiplier": 1.5
+    },
+    {
+      "text": "守る対象は",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "ファイルやデータベース",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "だけではありません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "業務データ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "個人情報",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "認証情報",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "端末やサーバー",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ネットワーク機器",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "クラウドサービスも",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "情報資産になり得ます",
+      "duration_multiplier": 1.5
+    },
+    {
+      "text": "業務手順や",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "設定情報",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "組織が持つ知識も",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "重要な資産です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "何を守るかを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "把握できなければ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "適切な対策は",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "選べません",
+      "duration_multiplier": 1.5
+    },
+    {
+      "text": "次は脅威と脆弱性です",
+      "duration_multiplier": 1.5
+    },
+    {
+      "text": "脅威は",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "情報資産へ",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "悪影響を与える",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "原因になり得るものです",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "不正アクセスだけが",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "脅威ではありません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "操作ミス",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "機器故障",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "災害",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "委託先での事故も",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "脅威になり得ます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "脆弱性は",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "脅威に利用される",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "可能性のある弱点です",
+      "duration_multiplier": 1.5
+    },
+    {
+      "text": "ソフトウェアの欠陥",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "だけではありません",
+      "duration_multiplier": 1.3
+    },
+    {
+      "text": "弱い設定",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "不適切な権限",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "教育不足",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "運用上の不備も",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "弱点になり得ます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "同じ脅威でも",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "環境や対策によって",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "実際のリスクは",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "異なります",
+      "duration_multiplier": 1.5
+    },
+    {
+      "text": "ではリスクを考えます",
+      "duration_multiplier": 1.5
+    },
+    {
+      "text": "すべての危険を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "完全になくすことは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "通常できません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "そのため",
+      "duration_multiplier": 0.8
+    },
+    {
+      "text": "何が起こり得るか",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "どの程度",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "起こり得るか",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "起きた場合に",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "どの程度の影響があるか",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "考えます",
+      "duration_multiplier": 1.3
+    },
+    {
+      "text": "リスクは一般に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "発生する可能性と",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "その場合の影響を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "両方踏まえて評価します",
+      "duration_multiplier": 1.5
+    },
+    {
+      "text": "重要な情報を扱う",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "システムでは",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "同じ脆弱性でも",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "影響が大きくなる",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ことがあります",
+      "duration_multiplier": 1.3
+    },
+    {
+      "text": "反対に",
+      "duration_multiplier": 0.8
+    },
+    {
+      "text": "影響が小さい対象へ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "過剰な対策をすると",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "費用や運用負担が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "大きくなります",
+      "duration_multiplier": 1.3
+    },
+    {
+      "text": "リスクに応じて",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "対策を選ぶことが",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "重要です",
+      "duration_multiplier": 1.5
+    },
+    {
+      "text": "最後は継続的な管理です",
+      "duration_multiplier": 1.5
+    },
+    {
+      "text": "情報セキュリティは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "一度対策すれば",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "終わりではありません",
+      "duration_multiplier": 1.5
+    },
+    {
+      "text": "システムは変化します",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "新しい脆弱性が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "見つかることがあります",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "攻撃手法も変化します",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "業務や委託先も",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "変化します",
+      "duration_multiplier": 1.3
+    },
+    {
+      "text": "だから",
+      "duration_multiplier": 0.8
+    },
+    {
+      "text": "状況を把握し",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "対策し",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "異常を検知し",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "問題へ対応し",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "復旧するという",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "継続的な管理が必要です",
+      "duration_multiplier": 1.5
+    },
+    {
+      "text": "NISTの",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "Cybersecurity Framework",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "2.0では",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "リスク管理の成果を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "六つの機能で",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "整理しています",
+      "duration_multiplier": 1.3
+    },
+    {
+      "text": "六つは",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "Govern",
+      "duration_multiplier": 1.3
+    },
+    {
+      "text": "Identify",
+      "duration_multiplier": 1.3
+    },
+    {
+      "text": "Protect",
+      "duration_multiplier": 1.3
+    },
+    {
+      "text": "Detect",
+      "duration_multiplier": 1.3
+    },
+    {
+      "text": "Respond",
+      "duration_multiplier": 1.3
+    },
+    {
+      "text": "Recoverです",
+      "duration_multiplier": 1.5
+    },
+    {
+      "text": "この六つは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "最初から最後まで",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "一度だけ実行する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "手順ではありません",
+      "duration_multiplier": 1.5
+    },
+    {
+      "text": "複数の機能を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "同時並行かつ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "継続的に扱います",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "個別製品の",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "導入手順でもありません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "組織が",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "セキュリティリスク管理の",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "全体像を整理する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "枠組みです",
+      "duration_multiplier": 1.6
+    }
+  ]
+}
