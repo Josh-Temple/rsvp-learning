@@ -1,0 +1,10 @@
+{
+  "lessons": [
+    {
+      "id": "rsvp-basics",
+      "title": "RSVP学習の使い方",
+      "topic": "使い方",
+      "path": "./lessons/examples/rsvp-basics.json"
+    }
+  ]
+}

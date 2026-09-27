@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RSVP Learning Lesson",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "id",
+    "title",
+    "topic",
+    "summary",
+    "created_at",
+    "base_duration_ms",
+    "sources",
+    "chunks"
+  ],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "id": { "type": "string", "minLength": 1 },
+    "title": { "type": "string", "minLength": 1 },
+    "topic": { "type": "string", "minLength": 1 },
+    "summary": { "type": "string" },
+    "created_at": { "type": "string", "format": "date" },
+    "base_duration_ms": {
+      "type": "integer",
+      "minimum": 200,
+      "maximum": 3000
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["title"],
+        "properties": {
+          "title": { "type": "string", "minLength": 1 },
+          "url": { "type": "string", "format": "uri" }
+        }
+      }
+    },
+    "chunks": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["text", "duration_multiplier"],
+        "properties": {
+          "text": { "type": "string", "minLength": 1 },
+          "duration_multiplier": {
+            "type": "number",
+            "minimum": 0.5,
+            "maximum": 3.0
+          }
+        }
+      }
+    }
+  }
+}
