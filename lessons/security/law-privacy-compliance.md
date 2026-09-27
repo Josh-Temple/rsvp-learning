@@ -255,3 +255,6 @@ PIAはPrivacy Impact Assessmentの略です。
   https://laws.e-gov.go.jp/law/411AC0000000128
 - e-Gov法令検索, サイバーセキュリティ基本法
   https://laws.e-gov.go.jp/law/426AC1000000104
+
+- e-Gov法令検索, 電子署名及び認証業務に関する法律
+  https://laws.e-gov.go.jp/law/412AC0000000102
