@@ -30,7 +30,11 @@
       "duration_multiplier": 1.5
     },
     {
-      "text": "リスクマネジメントの目的",
+      "text": "リスクマネジメントの",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "目的",
       "duration_multiplier": 1.4
     },
     {
@@ -38,15 +42,15 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "すべての危険を完全に",
+      "text": "すべての",
       "duration_multiplier": 1
     },
     {
-      "text": "なくすことは通常でき",
-      "duration_multiplier": 1
+      "text": "危険を完全になくすことは",
+      "duration_multiplier": 1.1
     },
     {
-      "text": "ません",
+      "text": "通常できません",
       "duration_multiplier": 1.4
     },
     {
@@ -62,11 +66,11 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "使いやすさへの影響が",
+      "text": "使いやすさへの",
       "duration_multiplier": 1
     },
     {
-      "text": "あります",
+      "text": "影響があります",
       "duration_multiplier": 1.4
     },
     {
@@ -94,27 +98,31 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "製品を多く導入する",
+      "text": "製品を多く",
       "duration_multiplier": 1
     },
     {
-      "text": "ことではありません",
+      "text": "導入することではありません",
       "duration_multiplier": 1.4
     },
     {
-      "text": "組織の目的と情報資産を",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "踏まえて",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "どのリスクへどう対応",
+      "text": "組織の目的と",
       "duration_multiplier": 1
     },
     {
-      "text": "するかを判断する活動です",
+      "text": "情報資産を踏まえて",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "どのリスクへどう",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "対応するかを判断する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "活動です",
       "duration_multiplier": 1.4
     },
     {
@@ -126,7 +134,11 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "何を守るかを把握します",
+      "text": "何を守るかを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "把握します",
       "duration_multiplier": 1.4
     },
     {
@@ -158,47 +170,71 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "クラウドサービスなどが",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "あります",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "業務手順や組織の知識も",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "重要な資産になり得ます",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "誰が所有・管理して",
+      "text": "クラウド",
       "duration_multiplier": 1
     },
     {
-      "text": "いるのか",
+      "text": "サービスなどがあります",
       "duration_multiplier": 1.4
     },
     {
-      "text": "どこに保存されているのか",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "誰がアクセスできるのか",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "失われた場合や漏えい",
+      "text": "業務手順や",
       "duration_multiplier": 1
     },
     {
-      "text": "した場合に何が起きるのか",
+      "text": "組織の知識も",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "重要な資産になり",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "得ます",
       "duration_multiplier": 1.4
     },
     {
-      "text": "こうした情報を整理します",
+      "text": "誰が所有・",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "管理しているのか",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "どこに",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "保存されているのか",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "誰が",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "アクセスできるのか",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "失われた",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "場合や漏えいした",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "場合に何が起きるのか",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "こうした",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "情報を整理します",
       "duration_multiplier": 1.4
     },
     {
@@ -210,15 +246,19 @@
       "duration_multiplier": 1
     },
     {
-      "text": "管理する方法があります",
+      "text": "管理する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "方法があります",
       "duration_multiplier": 1.4
     },
     {
-      "text": "単に機器の一覧を作るだけ",
-      "duration_multiplier": 1.1
+      "text": "単に機器の",
+      "duration_multiplier": 1
     },
     {
-      "text": "ではありません",
+      "text": "一覧を作るだけではありません",
       "duration_multiplier": 1.4
     },
     {
@@ -250,11 +290,7 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "資産を把握できていな",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "ければ",
+      "text": "資産を把握できていなければ",
       "duration_multiplier": 1.1
     },
     {
@@ -262,19 +298,27 @@
       "duration_multiplier": 1
     },
     {
-      "text": "影響範囲を判断できません",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "リスク管理と脆弱性",
+      "text": "影響範囲を",
       "duration_multiplier": 1
     },
     {
-      "text": "管理の両方で",
+      "text": "判断できません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "リスク管理と脆弱",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "性管理の両方で",
       "duration_multiplier": 1.1
     },
     {
-      "text": "資産把握は基礎になります",
+      "text": "資産把握は",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "基礎になります",
       "duration_multiplier": 1.4
     },
     {
@@ -282,11 +326,15 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "すべての情報を同じ強",
+      "text": "すべての情報を同じ",
       "duration_multiplier": 1
     },
     {
-      "text": "さで扱う必要はありません",
+      "text": "強さで扱う",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "必要はありません",
       "duration_multiplier": 1.4
     },
     {
@@ -310,7 +358,11 @@
       "duration_multiplier": 1
     },
     {
-      "text": "特別な管理が必要な情報",
+      "text": "特別な管理が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "必要な情報",
       "duration_multiplier": 1.4
     },
     {
@@ -318,11 +370,11 @@
       "duration_multiplier": 1
     },
     {
-      "text": "取扱条件によって分類",
+      "text": "取扱条件によって",
       "duration_multiplier": 1
     },
     {
-      "text": "します",
+      "text": "分類します",
       "duration_multiplier": 1.4
     },
     {
@@ -342,11 +394,11 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "廃棄方法などのルールに",
-      "duration_multiplier": 1.1
+      "text": "廃棄方法などの",
+      "duration_multiplier": 1
     },
     {
-      "text": "つながります",
+      "text": "ルールにつながります",
       "duration_multiplier": 1.4
     },
     {
@@ -378,11 +430,15 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "害を引き起こす原因に",
+      "text": "害を引き起こす",
       "duration_multiplier": 1
     },
     {
-      "text": "なり得るものです",
+      "text": "原因になり",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "得るものです",
       "duration_multiplier": 1.4
     },
     {
@@ -402,15 +458,15 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "その事象が起きた場合に",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "組織や利用者へ生じる",
+      "text": "その事象が起きた",
       "duration_multiplier": 1
     },
     {
-      "text": "結果です",
+      "text": "場合に組織や利用者へ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "生じる結果です",
       "duration_multiplier": 1.4
     },
     {
@@ -418,11 +474,15 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "扱う情報やシステム",
+      "text": "扱う情報や",
       "duration_multiplier": 1
     },
     {
-      "text": "によって影響は異なります",
+      "text": "システムによって",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "影響は異なります",
       "duration_multiplier": 1.4
     },
     {
@@ -434,15 +494,15 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "発生可能性と影響を",
+      "text": "発生可能性と",
       "duration_multiplier": 1
     },
     {
-      "text": "組み合わせて考える",
+      "text": "影響を組み合わせて",
       "duration_multiplier": 1
     },
     {
-      "text": "方法があります",
+      "text": "考える方法があります",
       "duration_multiplier": 1.4
     },
     {
@@ -450,11 +510,11 @@
       "duration_multiplier": 1
     },
     {
-      "text": "影響が小さいリスクが",
+      "text": "影響が小さい",
       "duration_multiplier": 1
     },
     {
-      "text": "あります",
+      "text": "リスクがあります",
       "duration_multiplier": 1.4
     },
     {
@@ -462,27 +522,27 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "発生すると業務継続が",
+      "text": "発生すると業務",
       "duration_multiplier": 1
     },
     {
-      "text": "できなくなるリスクも",
+      "text": "継続ができなくなる",
       "duration_multiplier": 1
     },
     {
-      "text": "あります",
+      "text": "リスクもあります",
       "duration_multiplier": 1.4
     },
     {
-      "text": "単純な数式だけで正確",
+      "text": "単純な数式だけで",
       "duration_multiplier": 1
     },
     {
-      "text": "なリスクが決まるわけ",
+      "text": "正確なリスクが",
       "duration_multiplier": 1
     },
     {
-      "text": "ではありません",
+      "text": "決まるわけではありません",
       "duration_multiplier": 1.4
     },
     {
@@ -494,11 +554,11 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "比較できる形にする",
+      "text": "比較できる",
       "duration_multiplier": 1
     },
     {
-      "text": "ことです",
+      "text": "形にすることです",
       "duration_multiplier": 1.4
     },
     {
@@ -506,15 +566,19 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "何を高いリスクと判断",
+      "text": "何を高いリスクと",
       "duration_multiplier": 1
     },
     {
-      "text": "するかは",
+      "text": "判断するかは",
       "duration_multiplier": 1.1
     },
     {
-      "text": "組織によって異なります",
+      "text": "組織によって",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "異なります",
       "duration_multiplier": 1.4
     },
     {
@@ -534,7 +598,11 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "組織が受け入れられる損失",
+      "text": "組織が受け入れられる",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "損失",
       "duration_multiplier": 1.4
     },
     {
@@ -542,15 +610,23 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "リスクを評価するための",
-      "duration_multiplier": 1.1
+      "text": "リスクを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "評価するための",
+      "duration_multiplier": 1
     },
     {
       "text": "基準を決めます",
       "duration_multiplier": 1.4
     },
     {
-      "text": "定性的評価と定量的評価",
+      "text": "定性的評価と",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "定量的評価",
       "duration_multiplier": 1.4
     },
     {
@@ -558,11 +634,15 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "高・中・低などの段階で",
-      "duration_multiplier": 1.1
+      "text": "高・中・低などの",
+      "duration_multiplier": 1
     },
     {
-      "text": "評価する方法を定性的",
+      "text": "段階で評価する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "方法を定性的",
       "duration_multiplier": 1
     },
     {
@@ -578,11 +658,11 @@
       "duration_multiplier": 1
     },
     {
-      "text": "方法を定量的評価と呼",
+      "text": "方法を定量的評価と",
       "duration_multiplier": 1
     },
     {
-      "text": "びます",
+      "text": "呼びます",
       "duration_multiplier": 1.4
     },
     {
@@ -598,11 +678,11 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "数値があるから客観的とは",
-      "duration_multiplier": 1.1
+      "text": "数値があるから",
+      "duration_multiplier": 1
     },
     {
-      "text": "限りません",
+      "text": "客観的とは限りません",
       "duration_multiplier": 1.4
     },
     {
@@ -614,11 +694,11 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "計算結果にも不確実性が",
-      "duration_multiplier": 1.1
+      "text": "計算結果にも",
+      "duration_multiplier": 1
     },
     {
-      "text": "あります",
+      "text": "不確実性があります",
       "duration_multiplier": 1.4
     },
     {
@@ -626,19 +706,19 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "発生可能性と影響を",
+      "text": "発生可能性と",
       "duration_multiplier": 1
     },
     {
-      "text": "縦横に並べ",
+      "text": "影響を縦横に並べ",
       "duration_multiplier": 1.1
     },
     {
-      "text": "リスクを分類する方法が",
-      "duration_multiplier": 1.1
+      "text": "リスクを分類する",
+      "duration_multiplier": 1
     },
     {
-      "text": "あります",
+      "text": "方法があります",
       "duration_multiplier": 1.4
     },
     {
@@ -646,39 +726,47 @@
       "duration_multiplier": 1
     },
     {
-      "text": "マトリックスと呼ばれます",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "簡潔で比較しやすい一方",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "段階の区切り方",
+      "text": "マトリックスと",
       "duration_multiplier": 1
     },
     {
-      "text": "によって結果が変わる",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "ことがあります",
+      "text": "呼ばれます",
       "duration_multiplier": 1.4
     },
     {
-      "text": "マトリックスの色だけで",
+      "text": "簡潔で比較しやすい",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "一方",
       "duration_multiplier": 1.1
     },
     {
-      "text": "判断せず",
+      "text": "段階の区切り",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "方によって",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "結果が変わることがあります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "マトリックスの",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "色だけで判断せず",
       "duration_multiplier": 1.1
     },
     {
-      "text": "前提や根拠も残すことが",
-      "duration_multiplier": 1.1
+      "text": "前提や根拠も",
+      "duration_multiplier": 1
     },
     {
-      "text": "重要です",
+      "text": "残すことが重要です",
       "duration_multiplier": 1.4
     },
     {
@@ -694,7 +782,11 @@
       "duration_multiplier": 1
     },
     {
-      "text": "責任を持つ者が必要です",
+      "text": "責任を持つ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "者が必要です",
       "duration_multiplier": 1.4
     },
     {
@@ -730,7 +822,11 @@
       "duration_multiplier": 1
     },
     {
-      "text": "判断する必要があります",
+      "text": "判断する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "必要があります",
       "duration_multiplier": 1.4
     },
     {
@@ -738,11 +834,15 @@
       "duration_multiplier": 1
     },
     {
-      "text": "セキュリティ部門だけの",
-      "duration_multiplier": 1.1
+      "text": "セキュリティ",
+      "duration_multiplier": 1
     },
     {
-      "text": "問題」にしないことが",
+      "text": "部門だけの問題",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "」にしないことが",
       "duration_multiplier": 1
     },
     {
@@ -766,11 +866,11 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "リスクを避ける方法が",
+      "text": "リスクを",
       "duration_multiplier": 1
     },
     {
-      "text": "あります",
+      "text": "避ける方法があります",
       "duration_multiplier": 1.4
     },
     {
@@ -778,15 +878,23 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "発生可能性や影響を",
+      "text": "発生可能性や",
       "duration_multiplier": 1
     },
     {
-      "text": "下げる方法があります",
+      "text": "影響を下げる",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "方法があります",
       "duration_multiplier": 1.4
     },
     {
-      "text": "保険や契約などを利用し",
+      "text": "保険や契約などを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "利用し",
       "duration_multiplier": 1.1
     },
     {
@@ -794,15 +902,23 @@
       "duration_multiplier": 1
     },
     {
-      "text": "共有する方法があります",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "一定のリスクを理解",
+      "text": "共有する",
       "duration_multiplier": 1
     },
     {
-      "text": "した上で受け入れる",
+      "text": "方法があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "一定のリスクを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "理解した",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "上で受け入れる",
       "duration_multiplier": 1
     },
     {
@@ -814,11 +930,15 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "リスクと組織の状況",
+      "text": "リスクと",
       "duration_multiplier": 1
     },
     {
-      "text": "によって異なります",
+      "text": "組織の状況によって",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "異なります",
       "duration_multiplier": 1.4
     },
     {
@@ -830,11 +950,15 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "リスクが完全にゼロに",
+      "text": "リスクが完全にゼ",
       "duration_multiplier": 1
     },
     {
-      "text": "なるとは限りません",
+      "text": "ロになるとは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "限りません",
       "duration_multiplier": 1.4
     },
     {
@@ -846,11 +970,15 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "残留リスクが許容",
+      "text": "残留リスクが",
       "duration_multiplier": 1
     },
     {
-      "text": "できるかを確認します",
+      "text": "許容できるかを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "確認します",
       "duration_multiplier": 1.4
     },
     {
@@ -858,11 +986,15 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "追加対策や業務の",
+      "text": "追加対策や",
       "duration_multiplier": 1
     },
     {
-      "text": "見直しが必要です",
+      "text": "業務の見直しが",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "必要です",
       "duration_multiplier": 1.4
     },
     {
@@ -890,11 +1022,11 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "必要な資源や優先順位も",
-      "duration_multiplier": 1.1
+      "text": "必要な資源や",
+      "duration_multiplier": 1
     },
     {
-      "text": "整理します",
+      "text": "優先順位も整理します",
       "duration_multiplier": 1.4
     },
     {
@@ -914,11 +1046,15 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "期待した効果が出て",
+      "text": "期待した",
       "duration_multiplier": 1
     },
     {
-      "text": "いるかも確認します",
+      "text": "効果が出ているかも",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "確認します",
       "duration_multiplier": 1.4
     },
     {
@@ -946,43 +1082,43 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "リスク評価も一度で終",
+      "text": "リスク評価も一度で",
       "duration_multiplier": 1
     },
     {
-      "text": "わりではありません",
+      "text": "終わりではありません",
       "duration_multiplier": 1.4
     },
     {
-      "text": "新しいサービスを導入",
+      "text": "新しいサービスを",
       "duration_multiplier": 1
     },
     {
-      "text": "したとき",
+      "text": "導入したとき",
       "duration_multiplier": 1.4
     },
     {
-      "text": "重大な脆弱性が見つか",
+      "text": "重大な脆弱",
       "duration_multiplier": 1
     },
     {
-      "text": "ったとき",
+      "text": "性が見つかったとき",
       "duration_multiplier": 1.4
     },
     {
-      "text": "インシデントが発生",
+      "text": "インシデントが",
       "duration_multiplier": 1
     },
     {
-      "text": "したとき",
+      "text": "発生したとき",
       "duration_multiplier": 1.4
     },
     {
-      "text": "委託先やシステム構成が",
-      "duration_multiplier": 1.1
+      "text": "委託先やシステム",
+      "duration_multiplier": 1
     },
     {
-      "text": "変わったとき",
+      "text": "構成が変わったとき",
       "duration_multiplier": 1.4
     },
     {
@@ -994,11 +1130,11 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "リスク評価は意思決定の",
-      "duration_multiplier": 1.1
+      "text": "リスク評価は意思",
+      "duration_multiplier": 1
     },
     {
-      "text": "ために行う",
+      "text": "決定のために行う",
       "duration_multiplier": 1.4
     },
     {
@@ -1006,11 +1142,11 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "きれいな表を作ること",
+      "text": "きれいな",
       "duration_multiplier": 1
     },
     {
-      "text": "ではありません",
+      "text": "表を作ることではありません",
       "duration_multiplier": 1.4
     },
     {
@@ -1022,19 +1158,19 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "どのリスクを先に",
+      "text": "どのリスクを",
       "duration_multiplier": 1
     },
     {
-      "text": "下げるか",
+      "text": "先に下げるか",
       "duration_multiplier": 1.4
     },
     {
-      "text": "どの残留リスクを誰が",
+      "text": "どの残留リスクを",
       "duration_multiplier": 1
     },
     {
-      "text": "受け入れるか",
+      "text": "誰が受け入れるか",
       "duration_multiplier": 1.4
     },
     {
