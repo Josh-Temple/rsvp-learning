@@ -1,6 +1,12 @@
 {
   "lessons": [
     {
+      "id": "requirements-basics",
+      "title": "要件定義の基礎",
+      "topic": "システム開発",
+      "path": "./lessons/requirements/requirements-basics.json"
+    },
+    {
       "id": "rsvp-basics",
       "title": "RSVP学習の使い方",
       "topic": "使い方",

@@ -14,14 +14,16 @@ ChatGPT等で調査した内容を、RSVP（Rapid Serial Visual Presentation）�
 - キーボード操作
 - JSON Schemaによる教材仕様の固定
 
-## 設計
+## 教材生成フロー
 
-日本語の形態素解析はアプリ内で行いません。教材を作る段階で、意味のまとまりごとに `chunks` を確定します。
+日本語の形態素解析はアプリ内で行いません。教材を作る段階で、内容レビューとRSVP分割を分離します。
 
 ```
-調査
+調査・学習テーマ
   ↓
-学習向けに再構成
+人間が読める教材原稿
+  ↓
+内容レビュー
   ↓
 RSVPチャンク化
   ↓
@@ -30,7 +32,14 @@ RSVPチャンク化
 Webプレイヤー
 ```
 
-教材JSONの仕様は `schema/lesson.schema.json`、作成ルールは `docs/LESSON_FORMAT.md` を参照してください。
+教材原稿の生成には `prompts/lesson-draft.md`、レビュー済み原稿のJSON化には `prompts/lesson-generation.md` を使います。
+
+教材JSONの仕様は `schema/lesson.schema.json`、分割ルールは `docs/LESSON_FORMAT.md` を正本とします。
+
+## 教材
+
+- `要件定義の基礎` — 最初の実用教材。業務要件、システム要件、機能・非機能要件、検証可能性、行政実務との共通点を扱います。
+- `RSVP学習の使い方` — プレイヤー操作確認用の短いサンプル教材。
 
 ## ローカル実行
 
@@ -46,10 +55,12 @@ python -m http.server 8000
 
 ## 教材の追加
 
-1. `prompts/lesson-generation.md` を使って教材JSONを作成
-2. `lessons/<topic>/` に保存
-3. `lessons/index.json` に登録
-4. 実際に再生し、チャンク長と `duration_multiplier` を調整
+1. `prompts/lesson-draft.md` で教材原稿を作成
+2. 原稿の内容をレビュー
+3. `prompts/lesson-generation.md` で RSVP JSON に変換
+4. `lessons/<topic>/` に原稿とJSONを保存
+5. `lessons/index.json` にJSONを登録
+6. 実際に再生し、チャンク長と `duration_multiplier` を調整
 
 ## 公開について
 
