@@ -79,7 +79,9 @@ CIAは情報セキュリティを考える代表的な三要素です。
 
 そのため、状況を把握し、対策し、異常を検知し、問題へ対応し、復旧するという継続的な管理が必要です。
 
-NIST Cybersecurity Framework 2.0では、サイバーセキュリティリスク管理の成果を、Govern、Identify、Protect、Detect、Respond、Recoverという六つの機能で整理しています。
+NIST Cybersecurity Framework 2.0では、サイバーセキュリティリスク管理の成果を六つの機能で整理しています。
+
+六つは、Govern、Identify、Protect、Detect、Respond、Recoverです。
 
 この六つは、最初から最後まで順番に一度だけ実行する手順ではありません。
 
