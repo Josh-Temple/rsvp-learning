@@ -46,11 +46,15 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "サイバー攻撃は単一の技術",
+      "text": "サイバー攻撃は",
       "duration_multiplier": 1.1
     },
     {
-      "text": "だけで完結するとは限りません",
+      "text": "単一の技術だけで完結",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "するとは限りません",
       "duration_multiplier": 1.4
     },
     {
@@ -58,35 +62,51 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "盗みその情報でログインし",
+      "text": "盗み",
       "duration_multiplier": 1.1
     },
     {
-      "text": "権限を広げデータを盗む",
+      "text": "その情報でログインし",
       "duration_multiplier": 1.1
     },
     {
-      "text": "というように複数の手法が",
+      "text": "権限を広げ",
       "duration_multiplier": 1.1
     },
     {
-      "text": "組み合わされることがあります",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "そのため個別の攻撃名だけ",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "でなく攻撃者がどこから",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "侵入し何を狙うのかを",
+      "text": "データを盗むという",
       "duration_multiplier": 1
     },
     {
-      "text": "考えることが重要です",
+      "text": "ように",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "複数の手法が組み合わ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "されることがあります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "そのため",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "個別の攻撃名だけでなく",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "攻撃者がどこから侵入し",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "何を狙うのかを考える",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ことが重要です",
       "duration_multiplier": 1.4
     },
     {
@@ -94,39 +114,43 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "フィッシングは正規の組織",
+      "text": "フィッシングは",
       "duration_multiplier": 1.1
     },
     {
-      "text": "や人物を装ったメッセージ",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "などを使い利用者を偽",
+      "text": "正規の組織や人物を装",
       "duration_multiplier": 1
     },
     {
-      "text": "サイトへ誘導したり認証",
+      "text": "ったメッセージなどを使い",
       "duration_multiplier": 1.1
     },
     {
-      "text": "情報などを入力させたり",
+      "text": "利用者を偽サイトへ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "誘導したり",
       "duration_multiplier": 1.1
     },
     {
-      "text": "する手口です",
+      "text": "認証情報などを入力さ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "せたりする手口です",
       "duration_multiplier": 1.4
     },
     {
-      "text": "メールだけでなくSMSや",
+      "text": "メールだけでなく",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "SMSやSNSなどが",
       "duration_multiplier": 1.2
     },
     {
-      "text": "SNSなどが使われること",
-      "duration_multiplier": 1.2
-    },
-    {
-      "text": "もあります",
+      "text": "使われることもあります",
       "duration_multiplier": 1.4
     },
     {
@@ -134,23 +158,27 @@
       "duration_multiplier": 1
     },
     {
-      "text": "見分けることは難しい場合",
-      "duration_multiplier": 1.1
+      "text": "見分けることは難しい",
+      "duration_multiplier": 1
     },
     {
-      "text": "があります",
+      "text": "場合があります",
       "duration_multiplier": 1.4
     },
     {
-      "text": "不自然な要求緊急性を強く",
+      "text": "不自然な要求",
       "duration_multiplier": 1.1
     },
     {
-      "text": "訴える内容リンク先などを",
+      "text": "緊急性を強く訴える内容",
       "duration_multiplier": 1.1
     },
     {
-      "text": "確認し疑わしい場合は",
+      "text": "リンク先などを確認し",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "疑わしい場合は",
       "duration_multiplier": 1
     },
     {
@@ -166,35 +194,43 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "多要素認証も被害を減らす",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "手段になります",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "ただし方式によっては",
+      "text": "多要素認証も被害を",
       "duration_multiplier": 1
     },
     {
-      "text": "フィッシングで突破される",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "可能性があります",
+      "text": "減らす手段になります",
       "duration_multiplier": 1.4
     },
     {
-      "text": "より高い保護が必要な場合",
+      "text": "ただし",
       "duration_multiplier": 1.1
     },
     {
-      "text": "はフィッシング耐性のある",
+      "text": "方式によっては",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "フィッシングで突破さ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "れる可能性があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "より高い保護が必要な",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "場合は",
       "duration_multiplier": 1.1
     },
     {
-      "text": "認証方式を検討します",
+      "text": "フィッシング耐性の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ある認証方式を検討します",
       "duration_multiplier": 1.4
     },
     {
@@ -206,47 +242,59 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "マルウェアは利用者や",
+      "text": "マルウェアは",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "利用者やシステムへ害を",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "与える目的で作られた",
       "duration_multiplier": 1
     },
     {
-      "text": "システムへ害を与える目的",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "で作られたソフトウェアの",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "総称です",
+      "text": "ソフトウェアの総称です",
       "duration_multiplier": 1.4
     },
     {
-      "text": "情報を盗むもの遠隔操作を",
+      "text": "情報を盗むもの",
       "duration_multiplier": 1.1
     },
     {
-      "text": "可能にするもの他の端末へ",
+      "text": "遠隔操作を可能にするもの",
       "duration_multiplier": 1.1
     },
     {
-      "text": "広がるものなどがあります",
+      "text": "他の端末へ広がるものなどが",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "あります",
       "duration_multiplier": 1.4
     },
     {
-      "text": "ランサムウェアはデータや",
+      "text": "ランサムウェアは",
       "duration_multiplier": 1.1
     },
     {
-      "text": "システムの利用を妨げ復旧",
+      "text": "データやシステムの",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "利用を妨げ",
       "duration_multiplier": 1.1
     },
     {
-      "text": "などと引き換えに金銭を",
-      "duration_multiplier": 1.1
+      "text": "復旧などと引き換えに",
+      "duration_multiplier": 1
     },
     {
-      "text": "要求する攻撃で使われます",
+      "text": "金銭を要求する攻撃で",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "使われます",
       "duration_multiplier": 1.4
     },
     {
@@ -258,31 +306,39 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "情報を窃取して公開をちら",
+      "text": "情報を窃取して公開を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ちらつかせるなど",
       "duration_multiplier": 1.1
     },
     {
-      "text": "つかせるなど複数の方法で",
-      "duration_multiplier": 1.1
+      "text": "複数の方法で圧力を",
+      "duration_multiplier": 1
     },
     {
-      "text": "圧力をかける事例があります",
+      "text": "かける事例があります",
       "duration_multiplier": 1.4
     },
     {
-      "text": "バックアップは重要ですが",
+      "text": "バックアップは重要",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ですが",
       "duration_multiplier": 1.1
     },
     {
-      "text": "バックアップだけで侵入や",
-      "duration_multiplier": 1.1
+      "text": "バックアップだけで",
+      "duration_multiplier": 1
     },
     {
-      "text": "情報窃取を防げるわけでは",
-      "duration_multiplier": 1.1
+      "text": "侵入や情報窃取を",
+      "duration_multiplier": 1
     },
     {
-      "text": "ありません",
+      "text": "防げるわけではありません",
       "duration_multiplier": 1.4
     },
     {
@@ -290,55 +346,67 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "ソフトウェアには攻撃に",
+      "text": "ソフトウェアには",
       "duration_multiplier": 1.1
     },
     {
-      "text": "利用できる欠陥が見つかる",
+      "text": "攻撃に利用できる欠陥が",
       "duration_multiplier": 1.1
     },
     {
-      "text": "ことがあります",
+      "text": "見つかることがあります",
       "duration_multiplier": 1.4
     },
     {
-      "text": "公開された脆弱性について",
+      "text": "公開された脆弱性",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "について修正版が提供",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "された場合",
       "duration_multiplier": 1.1
     },
     {
-      "text": "修正版が提供された場合",
-      "duration_multiplier": 1.1
+      "text": "適切に更新しないと",
+      "duration_multiplier": 1
     },
     {
-      "text": "適切に更新しないと攻撃さ",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "れる危険が残ります",
+      "text": "攻撃される危険が残ります",
       "duration_multiplier": 1.4
     },
     {
-      "text": "しかし更新だけが対策では",
+      "text": "しかし",
       "duration_multiplier": 1.1
+    },
+    {
+      "text": "更新だけが対策では",
+      "duration_multiplier": 1
     },
     {
       "text": "ありません",
       "duration_multiplier": 1.4
     },
     {
-      "text": "外部へ公開する必要のない",
+      "text": "外部へ公開する必要の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ない機能を閉じること",
       "duration_multiplier": 1.1
     },
     {
-      "text": "機能を閉じること適切な",
+      "text": "適切な設定を行うこと",
       "duration_multiplier": 1.1
     },
     {
-      "text": "設定を行うこと利用状況を",
-      "duration_multiplier": 1.1
+      "text": "利用状況を把握する",
+      "duration_multiplier": 1
     },
     {
-      "text": "把握することも重要です",
+      "text": "ことも重要です",
       "duration_multiplier": 1.4
     },
     {
@@ -346,159 +414,31 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "Webアプリケーション",
+      "text": "Web",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "アプリケーションなどでは",
       "duration_multiplier": 1.1
     },
     {
-      "text": "などでは利用者から受け取",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "った入力を不適切に処理",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "するとその入力の一部が",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "命令として解釈されること",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "があります",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "これをインジェクションと",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "呼びます",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "SQLインジェクション",
-      "duration_multiplier": 1.2
-    },
-    {
-      "text": "では入力値がデータベース",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "への命令として不正に解釈",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "されることで情報の閲覧や",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "変更などにつながる可能性",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "があります",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "SQLインジェクション",
-      "duration_multiplier": 1.2
-    },
-    {
-      "text": "では禁止文字の一覧だけに",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "頼る対策は避けます",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "SQL命令とデータを分離",
-      "duration_multiplier": 1.2
-    },
-    {
-      "text": "する安全な実装を使います",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "代表例がパラメータ化され",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "たクエリです",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "ほかの種類の",
+      "text": "利用者から受け取った",
       "duration_multiplier": 1
     },
     {
-      "text": "インジェクションではその",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "技術に応じた対策が必要です",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "サービス妨害攻撃",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "DoS攻撃はシステムへ",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "大量の処理を発生させる",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "などして正常な利用を",
+      "text": "入力を不適切に処理",
       "duration_multiplier": 1
     },
     {
-      "text": "妨げる攻撃です",
-      "duration_multiplier": 1.4
+      "text": "すると",
+      "duration_multiplier": 1.1
     },
     {
-      "text": "多数の分散した機器や",
+      "text": "その入力の一部が命令",
       "duration_multiplier": 1
     },
     {
-      "text": "ネットワーク上の送信元",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "から行われるものは",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "DDoS攻撃と呼ばれます",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "DDoSへの対策は単一の",
-      "duration_multiplier": 1.2
-    },
-    {
-      "text": "設定だけでは十分でない",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "ことがあります",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "サービスの構成通信量提供",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "事業者の防御機能などを",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "組み合わせて考える必要が",
+      "text": "として解釈されることが",
       "duration_multiplier": 1.1
     },
     {
@@ -506,55 +446,247 @@
       "duration_multiplier": 1.4
     },
     {
+      "text": "これを",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "インジェクションと呼",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "びます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "SQL",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "インジェクションでは",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "入力値がデータベースへの",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "命令として不正に解釈",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "されることで",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "情報の閲覧や変更などに",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "つながる可能性があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "SQL",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "インジェクションでは",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "禁止文字の一覧だけに",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "頼る対策は避けます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "SQL命令とデータを",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "分離する安全な実装を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "使います",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "代表例が",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "パラメータ化されたク",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "エリです",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "ほかの種類の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "インジェクションでは",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "その技術に応じた対策が",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "必要です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "サービス妨害攻撃",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "DoS攻撃は",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "システムへ大量の処理を",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "発生させるなどして",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "正常な利用を妨げる",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "攻撃です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "多数の分散した機器や",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ネットワーク上の送信",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "元から行われるものは",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "DDoS攻撃と呼ばれます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "DDoSへの対策は",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "単一の設定だけでは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "十分でないことがあります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "サービスの構成",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "通信量",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "提供事業者の防御機能などを",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "組み合わせて考える",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "必要があります",
+      "duration_multiplier": 1.4
+    },
+    {
       "text": "人と技術の両方を見る",
       "duration_multiplier": 1.4
     },
     {
-      "text": "多くの攻撃では人の判断",
+      "text": "多くの攻撃では",
       "duration_multiplier": 1.1
     },
     {
-      "text": "認証ソフトウェア",
+      "text": "人の判断",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "認証",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "ソフトウェア",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "ネットワーク",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "運用など複数の部分が",
       "duration_multiplier": 1
     },
     {
-      "text": "ネットワーク運用など複数",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "の部分が関係します",
+      "text": "関係します",
       "duration_multiplier": 1.4
     },
     {
-      "text": "利用者教育だけに責任を置",
+      "text": "利用者教育だけに責任を",
       "duration_multiplier": 1.1
     },
     {
-      "text": "いても十分ではありません",
+      "text": "置いても十分では",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ありません",
       "duration_multiplier": 1.4
     },
     {
-      "text": "反対に技術対策だけで人を",
+      "text": "反対に",
       "duration_multiplier": 1.1
     },
     {
-      "text": "だます攻撃を完全に防げる",
-      "duration_multiplier": 1.1
+      "text": "技術対策だけで人をだ",
+      "duration_multiplier": 1
     },
     {
-      "text": "とも限りません",
+      "text": "ます攻撃を完全に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "防げるとも限りません",
       "duration_multiplier": 1.4
     },
     {
-      "text": "複数の防御を重ねどこか",
+      "text": "複数の防御を重ね",
       "duration_multiplier": 1.1
     },
     {
-      "text": "一つが突破されても被害を",
+      "text": "どこか一つが突破され",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ても被害を抑える設計が",
       "duration_multiplier": 1.1
     },
     {
-      "text": "抑える設計が重要です",
+      "text": "重要です",
       "duration_multiplier": 1.4
     },
     {
@@ -562,27 +694,31 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "Business",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "Email",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "Compromise",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "BECは取引先や経営者",
-      "duration_multiplier": 1.2
-    },
-    {
-      "text": "などになりすまし送金や",
+      "text": "Business Email",
       "duration_multiplier": 1.1
     },
     {
-      "text": "情報提供を行わせる詐欺です",
+      "text": "Compromise",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "BECは",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "取引先や経営者などに",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "なりすまし",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "送金や情報提供を行",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "わせる詐欺です",
       "duration_multiplier": 1.4
     },
     {
@@ -594,27 +730,35 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "実在するメールアカウント",
+      "text": "実在するメール",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "アカウントが侵害され",
       "duration_multiplier": 1.1
     },
     {
-      "text": "が侵害され過去のやり取り",
-      "duration_multiplier": 1.1
+      "text": "過去のやり取りを利用",
+      "duration_multiplier": 1
     },
     {
-      "text": "を利用して攻撃される場合",
-      "duration_multiplier": 1.1
+      "text": "して攻撃される場合も",
+      "duration_multiplier": 1
     },
     {
-      "text": "もあります",
+      "text": "あります",
       "duration_multiplier": 1.4
     },
     {
-      "text": "そのためメールの文面だけ",
+      "text": "そのため",
       "duration_multiplier": 1.1
     },
     {
-      "text": "で判断しません",
+      "text": "メールの文面だけで",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "判断しません",
       "duration_multiplier": 1.4
     },
     {
@@ -622,27 +766,31 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "重要な依頼は既知の連絡先",
+      "text": "重要な依頼は",
       "duration_multiplier": 1.1
     },
     {
-      "text": "へ別経路で確認します",
+      "text": "既知の連絡先へ別経路で",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "確認します",
       "duration_multiplier": 1.4
     },
     {
-      "text": "IPAもBECを巧妙な騙",
+      "text": "IPAもBECを",
       "duration_multiplier": 1.2
     },
     {
-      "text": "しの手口を用いた組織向け",
-      "duration_multiplier": 1.1
+      "text": "巧妙な騙しの手口を用",
+      "duration_multiplier": 1
     },
     {
-      "text": "の詐欺として注意喚起し",
-      "duration_multiplier": 1.1
+      "text": "いた組織向けの詐欺",
+      "duration_multiplier": 1
     },
     {
-      "text": "ています",
+      "text": "として注意喚起しています",
       "duration_multiplier": 1.4
     },
     {
@@ -650,15 +798,23 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "標的型攻撃では特定の組織",
+      "text": "標的型攻撃では",
       "duration_multiplier": 1.1
     },
     {
-      "text": "や人物を狙って情報を集め",
+      "text": "特定の組織や人物を狙",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "って情報を集め",
       "duration_multiplier": 1.1
     },
     {
-      "text": "対象に合わせた攻撃を行います",
+      "text": "対象に合わせた攻撃を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "行います",
       "duration_multiplier": 1.4
     },
     {
@@ -678,35 +834,39 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "複数の侵入経路が使われる",
-      "duration_multiplier": 1.1
+      "text": "複数の侵入経路が使",
+      "duration_multiplier": 1
     },
     {
-      "text": "可能性があります",
+      "text": "われる可能性があります",
       "duration_multiplier": 1.4
     },
     {
-      "text": "「標的型メール」は侵入",
+      "text": "「標的型メール」は",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "侵入方法の一つであり",
       "duration_multiplier": 1.1
     },
     {
-      "text": "方法の一つであり標的型",
-      "duration_multiplier": 1.1
+      "text": "標的型攻撃全体と同じ",
+      "duration_multiplier": 1
     },
     {
-      "text": "攻撃全体と同じ意味では",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "ありません",
+      "text": "意味ではありません",
       "duration_multiplier": 1.4
     },
     {
-      "text": "侵入後に長期間潜伏し内部",
+      "text": "侵入後に長期間潜伏し",
       "duration_multiplier": 1.1
     },
     {
-      "text": "情報を探索する場合もあります",
+      "text": "内部情報を探索する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "場合もあります",
       "duration_multiplier": 1.4
     },
     {
@@ -714,87 +874,115 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "マルウェアは動作や広がり",
+      "text": "マルウェアは動作や",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "広がり方によって複数の",
       "duration_multiplier": 1.1
     },
     {
-      "text": "方によって複数の名称で呼",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "ばれます",
+      "text": "名称で呼ばれます",
       "duration_multiplier": 1.4
     },
     {
-      "text": "ワームは自ら他のシステム",
+      "text": "ワームは",
       "duration_multiplier": 1.1
     },
     {
-      "text": "へ広がる能力を持つマル",
-      "duration_multiplier": 1.1
+      "text": "自ら他のシステムへ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "広がる能力を持つマル",
+      "duration_multiplier": 1
     },
     {
       "text": "ウェアです",
       "duration_multiplier": 1.4
     },
     {
-      "text": "ボットは感染した端末を",
+      "text": "ボットは",
       "duration_multiplier": 1.1
     },
     {
-      "text": "外部から制御しDDoS",
+      "text": "感染した端末を外部から",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "制御し",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "DDoSなどに利用",
       "duration_multiplier": 1.2
     },
     {
-      "text": "などに利用する場合があります",
+      "text": "する場合があります",
       "duration_multiplier": 1.4
     },
     {
-      "text": "RATはRemote",
+      "text": "RATは",
       "duration_multiplier": 1.2
     },
     {
-      "text": "AccessTrojan",
-      "duration_multiplier": 1.3
-    },
-    {
-      "text": "などの意味で使われ攻撃者",
+      "text": "Remote Access Trojanなどの",
       "duration_multiplier": 1.1
     },
     {
-      "text": "による遠隔操作を可能にします",
+      "text": "意味で使われ",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "攻撃者による遠隔操作を",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "可能にします",
       "duration_multiplier": 1.4
     },
     {
-      "text": "キーロガーはキーボード",
+      "text": "キーロガーは",
       "duration_multiplier": 1.1
     },
     {
-      "text": "入力などを記録して情報を",
-      "duration_multiplier": 1.1
+      "text": "キーボード入力などを",
+      "duration_multiplier": 1
     },
     {
-      "text": "盗みます",
+      "text": "記録して情報を盗みます",
       "duration_multiplier": 1.4
     },
     {
-      "text": "一つのマルウェアが複数の",
+      "text": "一つのマルウェアが",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "複数の機能を持つことも",
       "duration_multiplier": 1.1
     },
     {
-      "text": "機能を持つこともあります",
+      "text": "あります",
       "duration_multiplier": 1.4
     },
     {
-      "text": "名称を暗記するより感染",
+      "text": "名称を暗記するより",
       "duration_multiplier": 1.1
     },
     {
-      "text": "方法権限通信目的を見る",
+      "text": "感染方法",
       "duration_multiplier": 1.1
     },
     {
-      "text": "ことが重要です",
+      "text": "権限",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "通信",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "目的を見ることが重要です",
       "duration_multiplier": 1.4
     },
     {
@@ -802,35 +990,43 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "攻撃者はパスワードを推測",
+      "text": "攻撃者は",
       "duration_multiplier": 1.1
     },
     {
-      "text": "するだけでなく漏えい済み",
+      "text": "パスワードを推測するだけで",
       "duration_multiplier": 1.1
     },
     {
-      "text": "の認証情報も利用します",
+      "text": "なく",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "漏えい済みの認証情報も",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "利用します",
       "duration_multiplier": 1.4
     },
     {
-      "text": "別サービスから漏えいした",
-      "duration_multiplier": 1.1
+      "text": "別サービスから漏えい",
+      "duration_multiplier": 1
     },
     {
-      "text": "IDとパスワードを大量に",
+      "text": "したIDとパスワードを",
       "duration_multiplier": 1.2
     },
     {
-      "text": "試す攻撃は",
-      "duration_multiplier": 1
+      "text": "大量に試す攻撃は",
+      "duration_multiplier": 1.1
     },
     {
-      "text": "Credential",
-      "duration_multiplier": 1
+      "text": "Credential Stuffingと",
+      "duration_multiplier": 1.1
     },
     {
-      "text": "Stuffingと呼ばれます",
+      "text": "呼ばれます",
       "duration_multiplier": 1.4
     },
     {
@@ -846,11 +1042,11 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "Password",
-      "duration_multiplier": 1
+      "text": "Password Sprayingと",
+      "duration_multiplier": 1.1
     },
     {
-      "text": "Sprayingと呼ばれます",
+      "text": "呼ばれます",
       "duration_multiplier": 1.4
     },
     {
@@ -866,11 +1062,19 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "異常なログインを検知すること",
+      "text": "異常なログインを検知",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "すること",
       "duration_multiplier": 1.4
     },
     {
-      "text": "こうした対策を組み合わせます",
+      "text": "こうした対策を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "組み合わせます",
       "duration_multiplier": 1.4
     },
     {
@@ -882,55 +1086,67 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "内容を盗み見たり変更した",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "りする攻撃があります",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "Man-in-the-",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "MiddleやOn-",
+      "text": "内容を盗み見たり変更",
       "duration_multiplier": 1
     },
     {
-      "text": "PathAttackなど",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "と呼ばれます",
+      "text": "したりする攻撃があります",
       "duration_multiplier": 1.4
     },
     {
-      "text": "TLSなどは通信の暗号化",
+      "text": "Man-in-the",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "-MiddleやOn",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "-",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "Path Attackなどと",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "呼ばれます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "TLSなどは",
       "duration_multiplier": 1.2
     },
     {
-      "text": "と相手の認証を組み合わせ",
+      "text": "通信の暗号化と相手の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "認証を組み合わせ",
       "duration_multiplier": 1.1
     },
     {
-      "text": "この種の攻撃を防ぐ重要な",
-      "duration_multiplier": 1.1
+      "text": "この種の攻撃を防ぐ",
+      "duration_multiplier": 1
     },
     {
-      "text": "役割を持ちます",
+      "text": "重要な役割を持ちます",
       "duration_multiplier": 1.4
     },
     {
-      "text": "警告を無視して証明書検証",
+      "text": "警告を無視して証明書",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "検証を回避すると",
       "duration_multiplier": 1.1
     },
     {
-      "text": "を回避すると防御が弱く",
+      "text": "防御が弱くなる可能性が",
       "duration_multiplier": 1.1
     },
     {
-      "text": "なる可能性があります",
+      "text": "あります",
       "duration_multiplier": 1.4
     },
     {
@@ -938,71 +1154,99 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "DNSはDomain",
+      "text": "DNSは",
       "duration_multiplier": 1.2
     },
     {
-      "text": "NameSystemの略です",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "ドメイン名とIPアドレス",
-      "duration_multiplier": 1.2
-    },
-    {
-      "text": "などを対応付ける仕組みです",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "利用者は通常IPアドレス",
-      "duration_multiplier": 1.2
-    },
-    {
-      "text": "ではなくドメイン名を使",
+      "text": "Domain Name Systemの",
       "duration_multiplier": 1.1
     },
     {
-      "text": "ってサービスへ接続します",
+      "text": "略です",
       "duration_multiplier": 1.4
     },
     {
-      "text": "そのため名前解決を偽の",
-      "duration_multiplier": 1.1
+      "text": "ドメイン名とIP",
+      "duration_multiplier": 1.2
     },
     {
-      "text": "情報へ誘導できれば意図",
-      "duration_multiplier": 1.1
+      "text": "アドレスなどを",
+      "duration_multiplier": 1
     },
     {
-      "text": "しないサーバーへ接続させ",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "られる可能性があります",
+      "text": "対応付ける仕組みです",
       "duration_multiplier": 1.4
     },
     {
-      "text": "DNSキャッシュポイズニ",
-      "duration_multiplier": 1.2
-    },
-    {
-      "text": "ングなどDNSの情報を",
-      "duration_multiplier": 1.2
-    },
-    {
-      "text": "不正に操作する攻撃があります",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "DNSSECなどDNS",
-      "duration_multiplier": 1.2
-    },
-    {
-      "text": "情報の真正性を確認する",
+      "text": "利用者は通常",
       "duration_multiplier": 1.1
     },
     {
-      "text": "ための仕組みもあります",
+      "text": "IPアドレスではなく",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "ドメイン名を使って",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "サービスへ接続します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "そのため",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "名前解決を偽の情報へ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "誘導できれば",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "意図しないサーバーへ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "接続させられる可能性が",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "あります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "DNSキャッシュポ",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "イズニングなど",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "DNSの情報を不正に",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "操作する攻撃があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "DNSSECなど",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "DNS情報の真正性を",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "確認するための仕組みも",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "あります",
       "duration_multiplier": 1.4
     },
     {
@@ -1010,11 +1254,15 @@
       "duration_multiplier": 1.2
     },
     {
-      "text": "Web通信自体を暗号化",
-      "duration_multiplier": 1.1
+      "text": "Web通信自体を暗号",
+      "duration_multiplier": 1
     },
     {
-      "text": "する仕組みではありません",
+      "text": "化する仕組みでは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ありません",
       "duration_multiplier": 1.4
     },
     {
@@ -1022,19 +1270,23 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "脆弱性が公になっていない",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "段階や修正が十分に",
+      "text": "脆弱性が公になってい",
       "duration_multiplier": 1
     },
     {
-      "text": "行き渡る前に攻撃へ利用さ",
+      "text": "ない段階や",
       "duration_multiplier": 1.1
     },
     {
-      "text": "れることがあります",
+      "text": "修正が十分に行き渡る",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "前に攻撃へ利用される",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ことがあります",
       "duration_multiplier": 1.4
     },
     {
@@ -1046,15 +1298,15 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "すべての攻撃をパッチだけ",
+      "text": "すべての攻撃をパッチだけで",
       "duration_multiplier": 1.1
     },
     {
-      "text": "で防げるわけではない理由",
-      "duration_multiplier": 1.1
+      "text": "防げるわけではない",
+      "duration_multiplier": 1
     },
     {
-      "text": "の一つです",
+      "text": "理由の一つです",
       "duration_multiplier": 1.4
     },
     {
@@ -1074,15 +1326,15 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "多層防御によって未知の",
+      "text": "多層防御によって",
       "duration_multiplier": 1.1
     },
     {
-      "text": "弱点が悪用された場合の",
-      "duration_multiplier": 1.1
+      "text": "未知の弱点が悪用され",
+      "duration_multiplier": 1
     },
     {
-      "text": "影響も抑えます",
+      "text": "た場合の影響も抑えます",
       "duration_multiplier": 1.4
     }
   ]
