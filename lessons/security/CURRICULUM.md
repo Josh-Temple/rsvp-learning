@@ -9,6 +9,12 @@ Status: Draft
 
 IPA SG Ver.4.1を知識の漏れ検出に使い、NIST、IPA、CISA、OWASPなどの一次資料・公式資料で内容を確認します。
 
+初期に作った `01-` 〜 `07-` のファイル名は作成順を残したものです。
+
+現在の正式な学習順序は、この文書の章番号を正本とします。
+
+ファイル名の数字を最終的な章番号とは扱いません。
+
 ## 学習順序
 
 ### 1. 情報セキュリティの基本
@@ -55,9 +61,9 @@ IPA SG Ver.4.1を知識の漏れ検出に使い、NIST、IPA、CISA、OWASPな�
 
 ### 4. 暗号、ハッシュ、PKI
 
-現在: `04-cryptography-and-data-protection.md`
+基礎: `04-cryptography-and-data-protection.md`
 
-PKIの補足原稿: `pki-certificates.md`
+PKI詳細: `pki-certificates.md`
 
 - 共通鍵暗号
 - 公開鍵暗号
@@ -91,7 +97,9 @@ PKIの補足原稿: `pki-certificates.md`
 
 ### 6. ネットワーク、メール、Webの防御
 
-現在: `05-network-web-and-system-defense.md`, `network-mail-defense.md`
+全体像: `05-network-web-and-system-defense.md`
+
+詳細: `network-mail-defense.md`
 
 - ファイアウォール
 - ネットワーク分割
@@ -120,6 +128,8 @@ PKIの補足原稿: `pki-certificates.md`
 - ログ
 - 秘密情報の管理
 - セキュリティテスト
+- メモリ安全性
+- 生成AIアプリケーションのセキュリティ
 
 ### 8. 端末、クラウド、モバイル、IoT、物理対策
 
@@ -192,7 +202,9 @@ PKIの補足原稿: `pki-certificates.md`
 
 ### 12. 監視、インシデント対応、フォレンジックス
 
-現在: `06-security-operations-and-governance.md`, `incident-monitoring-forensics.md`
+組織運用の全体像: `06-security-operations-and-governance.md`
+
+詳細: `incident-monitoring-forensics.md`
 
 - ログ
 - SIEM
@@ -259,9 +271,13 @@ PKIの補足原稿: `pki-certificates.md`
 
 現在: `07-threat-landscape-2026.md`
 
-この章だけは年次で更新します。
+この章は、脅威の年次動向を扱うため毎年の更新を前提とします。
 
 IPA「情報セキュリティ10大脅威」などを用い、基礎原則と一時的な動向を混同しないようにします。
+
+なお、他の基礎章にも法令、標準、RFC、組織名称など版管理が必要な情報はあります。
+
+それらは確認日と出典を残し、年次動向とは別に必要時点で更新します。
 
 ## 周辺知識
 
