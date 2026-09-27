@@ -9,59 +9,159 @@
   "sources": [],
   "chunks": [
     {
-      "text": "AI評価では、最初に評価目的を決めます",
+      "text": "AI評価では、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "最初に評価目的を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "決めます",
       "duration_multiplier": 1.35
     },
     {
-      "text": "正しさを見るのか、速さを見るのかで方法は変わります",
-      "duration_multiplier": 1.1
+      "text": "正しさを見るのか、",
+      "duration_multiplier": 1
     },
     {
-      "text": "業務上の重要な失敗を先に定義します",
-      "duration_multiplier": 1.1
+      "text": "速さを見るのかで",
+      "duration_multiplier": 1
     },
     {
-      "text": "評価データは、実際の利用場面を代表する必要があります",
-      "duration_multiplier": 1.1
+      "text": "方法は変わります",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "簡単な例だけでは、実運用の品質を判断できません",
-      "duration_multiplier": 1.1
+      "text": "業務上の重要な失敗を",
+      "duration_multiplier": 1
     },
     {
-      "text": "頻出ケースだけでなく、重要な例外も含めます",
-      "duration_multiplier": 1.1
+      "text": "先に定義します",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "期待する出力を定められる場合は、正解データを用意します",
-      "duration_multiplier": 1.1
+      "text": "評価データは、",
+      "duration_multiplier": 1
     },
     {
-      "text": "正解が一つでない課題では、評価基準を言語化します",
-      "duration_multiplier": 1.1
+      "text": "実際の利用場面を",
+      "duration_multiplier": 1
     },
     {
-      "text": "評価データは、本番改善のたびに使い回せるようにします",
-      "duration_multiplier": 1.1
+      "text": "代表する必要があります",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "学習や調整に使ったデータと、最終評価用データを分けることがあります",
-      "duration_multiplier": 1.1
+      "text": "簡単な例だけでは、",
+      "duration_multiplier": 1
     },
     {
-      "text": "同じ評価データを見ながら調整し続けると、評価へ過適合することがあります",
-      "duration_multiplier": 1.1
+      "text": "実運用の品質を",
+      "duration_multiplier": 1
     },
     {
-      "text": "データの出所と作成条件を記録します",
-      "duration_multiplier": 1.1
+      "text": "判断できません",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "評価対象のバージョンも記録します",
-      "duration_multiplier": 1.1
+      "text": "頻出ケースだけでなく、",
+      "duration_multiplier": 1
     },
     {
-      "text": "評価は、再現できる条件で行うことが重要です",
+      "text": "重要な例外も含めます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "期待する出力を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "定められる場合は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "正解データを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "用意します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "正解が一つでない課題では、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "評価基準を言語化します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "評価データは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "本番改善のたびに",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "使い回せるようにします",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "学習や調整に使ったデータと、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "最終評価用データを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "分けることがあります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "同じ評価データを見ながら",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "調整し続けると、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "評価へ過適合する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ことがあります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "データの出所と",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "作成条件を記録します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "評価対象の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "バージョンも記録します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "評価は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "再現できる条件で",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "行うことが重要です",
       "duration_multiplier": 1.35
     }
   ]
