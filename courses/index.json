@@ -107,28 +107,48 @@
       "id": "ai-evaluation-operations",
       "title": "AIの評価・運用",
       "chapters": [
-        "ai-evaluation-operations-overview"
+        "ai-evaluation-operations-overview",
+        "ai-eval-goals-datasets",
+        "ai-eval-metrics-error-analysis",
+        "ai-eval-human-judge",
+        "ai-ops-monitoring-drift-incidents",
+        "ai-ops-versioning-experiments-rollback"
       ]
     },
     {
       "id": "software-architecture",
       "title": "ソフトウェア設計・アーキテクチャ",
       "chapters": [
-        "software-architecture-overview"
+        "software-architecture-overview",
+        "architecture-modules-interfaces",
+        "architecture-coupling-cohesion-dependencies",
+        "architecture-state-source-of-truth",
+        "architecture-sync-async-events-queues",
+        "architecture-idempotency-retry-failures"
       ]
     },
     {
       "id": "git-cicd",
       "title": "Git・GitHub・CI/CD",
       "chapters": [
-        "git-cicd-overview"
+        "git-cicd-overview",
+        "git-commits-history",
+        "git-branches-merges",
+        "github-pr-review-issues",
+        "cicd-ci-tests-automation",
+        "cicd-deployment-environments-rollback"
       ]
     },
     {
       "id": "statistics-data-analysis",
       "title": "データ分析・統計",
       "chapters": [
-        "statistics-data-analysis-overview"
+        "statistics-data-analysis-overview",
+        "statistics-descriptive-distributions",
+        "statistics-population-sample-bias",
+        "statistics-estimation-confidence-intervals",
+        "statistics-hypothesis-testing-effect-size",
+        "statistics-correlation-regression-causality"
       ]
     },
     {

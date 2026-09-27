@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "id": "ai-ops-monitoring-drift-incidents",
+  "title": "監視・変化・インシデント",
+  "topic": "AI運用",
+  "summary": "本番環境でAIの品質変化や異常を監視し、問題発生時に対応する基本を学びます。",
+  "created_at": "2026-09-27",
+  "base_duration_ms": 680,
+  "sources": [],
+  "chunks": [
+    {
+      "text": "本番導入後も、AIの品質確認は続きます",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "入力データは、時間とともに変化します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "利用者の使い方も変わります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "外部データ源やモデル自体が変わる場合もあります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "その結果、以前の評価結果がそのまま通用しないことがあります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "品質指標を継続的に確認します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "エラー率や拒否率などの運用指標も見ます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "コストや応答時間も監視対象です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "異常が起きたときに、原因を追えるログを残します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "入力や出力を記録する場合は、個人情報や機密情報に注意します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "重大な問題では、機能停止や縮退運転も選択肢です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "インシデントの影響範囲を確認します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "復旧後には、原因と再発防止策を記録します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "監視は、異常を見つけるだけでなく安全に止めるためにも必要です",
+      "duration_multiplier": 1.35
+    }
+  ]
+}

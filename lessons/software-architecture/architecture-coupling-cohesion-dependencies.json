@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "id": "architecture-coupling-cohesion-dependencies",
+  "title": "依存関係・結合度・凝集度",
+  "topic": "ソフトウェア設計",
+  "summary": "変更しやすい設計のために、部品間の依存と内部のまとまりを考える基本を学びます。",
+  "created_at": "2026-09-27",
+  "base_duration_ms": 680,
+  "sources": [],
+  "chunks": [
+    {
+      "text": "ソフトウェアの変更しやすさは、依存関係に影響されます",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "一つの変更が多くの部品へ波及すると、修正が難しくなります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "結合度は、部品同士の依存の強さを考える概念です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "一般に、不要な強い結合は減らします",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "凝集度は、一つの部品内の責務のまとまりを考える概念です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "関連の強い処理をまとめると、責務が分かりやすくなります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "すべての依存をなくすことはできません",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "重要なのは、依存の方向と理由を管理することです",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "下位の詳細へ上位の業務ロジックが強く依存すると変更しにくくなる場合があります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "インターフェースを使って依存を分離する方法があります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "共通ライブラリも、依存を増やす可能性があります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "変更頻度が異なるものを分けることも有効です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "依存関係は、図で可視化すると理解しやすくなります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "良い設計は、変更の影響範囲を予測しやすくします",
+      "duration_multiplier": 1.35
+    }
+  ]
+}

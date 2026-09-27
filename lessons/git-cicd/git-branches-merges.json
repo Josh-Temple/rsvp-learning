@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "id": "git-branches-merges",
+  "title": "BranchとMerge",
+  "topic": "開発運用",
+  "summary": "作業を分離するBranchと、変更を統合するMergeの基本を学びます。",
+  "created_at": "2026-09-27",
+  "base_duration_ms": 680,
+  "sources": [],
+  "chunks": [
+    {
+      "text": "Branchは、変更の流れを分けるために使います",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "mainとは別に作業用Branchを作ることができます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "他の変更から独立して作業しやすくなります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "作業が終わったら、変更を統合します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "これがMergeです",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "同じ箇所を別々に変更すると、Conflictが起きることがあります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "Conflictでは、どの変更を残すか判断します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "Branchを長期間分離すると、差分が大きくなりやすくなります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "小さく統合する方が、競合を減らせる場合があります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "Merge commitを残す方法があります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "Squashで複数Commitを一つにまとめる方法もあります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "Rebaseで履歴を並べ直す方法もあります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "運用方法は、チームのルールに合わせます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "重要なのは、変更経路を追えることです",
+      "duration_multiplier": 1.35
+    }
+  ]
+}

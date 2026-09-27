@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "id": "architecture-sync-async-events-queues",
+  "title": "同期・非同期・イベント・Queue",
+  "topic": "ソフトウェア設計",
+  "summary": "処理を待つ同期方式と、Queueやイベントを使う非同期方式の違いを学びます。",
+  "created_at": "2026-09-27",
+  "base_duration_ms": 680,
+  "sources": [],
+  "chunks": [
+    {
+      "text": "同期処理では、相手の処理結果を待ちます",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "処理の流れを理解しやすいことが利点です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "ただし、相手が遅いと全体も待つことになります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "非同期処理では、依頼後に別の処理へ進めます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "時間のかかる処理を切り離せます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "Queueは、処理要求を一時的に保存して受け渡します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "送信側と受信側を、時間的に分離できます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "イベントは、何かが起きたことを表します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "イベントを受けて別の処理を動かす設計があります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "非同期では、処理完了のタイミングが分かりにくくなります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "重複処理や順序入れ替わりも考える必要があります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "失敗したメッセージの扱いも設計します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "監視と追跡可能性が重要になります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "非同期化は、性能だけでなく依存を緩めるためにも使われます",
+      "duration_multiplier": 1.35
+    }
+  ]
+}
