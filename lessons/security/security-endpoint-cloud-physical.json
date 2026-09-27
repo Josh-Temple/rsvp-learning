@@ -66,7 +66,11 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "オフィスやサーバールーム",
+      "text": "オフィスやサーバー",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ルーム",
       "duration_multiplier": 1.4
     },
     {
@@ -86,23 +90,35 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "情報へアクセスする端末を",
+      "text": "情報へアクセスする",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "端末を",
       "duration_multiplier": 1.1
     },
     {
-      "text": "エンドポイントと呼ぶこと",
-      "duration_multiplier": 1.1
+      "text": "エンドポイントと呼ぶ",
+      "duration_multiplier": 1
     },
     {
-      "text": "があります",
+      "text": "ことがあります",
       "duration_multiplier": 1.4
     },
     {
-      "text": "PCやスマートフォンだけ",
+      "text": "PCやスマートフォンだけで",
       "duration_multiplier": 1.2
     },
     {
-      "text": "でなくサーバーIoT機器",
+      "text": "なく",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "サーバー",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "IoT機器",
       "duration_multiplier": 1.1
     },
     {
@@ -110,27 +126,31 @@
       "duration_multiplier": 1
     },
     {
-      "text": "によってエンドポイントに",
-      "duration_multiplier": 1.1
+      "text": "によってエンド",
+      "duration_multiplier": 1
     },
     {
-      "text": "含まれます",
+      "text": "ポイントに含まれます",
       "duration_multiplier": 1.4
     },
     {
-      "text": "端末が侵害されると正規",
+      "text": "端末が侵害されると",
       "duration_multiplier": 1.1
     },
     {
-      "text": "利用者の権限を使って内部",
+      "text": "正規利用者の権限を使",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "って内部システムへ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "アクセスされる可能性が",
       "duration_multiplier": 1.1
     },
     {
-      "text": "システムへアクセスされる",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "可能性があります",
+      "text": "あります",
       "duration_multiplier": 1.4
     },
     {
@@ -138,8 +158,12 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "OSやアプリケーションを",
+      "text": "OSや",
       "duration_multiplier": 1.2
+    },
+    {
+      "text": "アプリケーションを",
+      "duration_multiplier": 1
     },
     {
       "text": "更新します",
@@ -154,11 +178,11 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "管理者権限を必要最小限",
-      "duration_multiplier": 1.1
+      "text": "管理者権限を必要",
+      "duration_multiplier": 1
     },
     {
-      "text": "にします",
+      "text": "最小限にします",
       "duration_multiplier": 1.4
     },
     {
@@ -166,27 +190,31 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "ストレージ暗号化を検討します",
+      "text": "ストレージ暗号化を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "検討します",
       "duration_multiplier": 1.4
     },
     {
-      "text": "紛失や盗難時の対応手順を",
-      "duration_multiplier": 1.1
+      "text": "紛失や盗難時の対応",
+      "duration_multiplier": 1
     },
     {
-      "text": "決めます",
+      "text": "手順を決めます",
       "duration_multiplier": 1.4
     },
     {
-      "text": "高度な製品より先に基本的",
+      "text": "高度な製品より先に",
       "duration_multiplier": 1.1
     },
     {
-      "text": "な管理を継続できることが",
-      "duration_multiplier": 1.1
+      "text": "基本的な管理を継続",
+      "duration_multiplier": 1
     },
     {
-      "text": "重要です",
+      "text": "できることが重要です",
       "duration_multiplier": 1.4
     },
     {
@@ -194,63 +222,71 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "EDRはEndpoint",
+      "text": "EDRは",
       "duration_multiplier": 1.2
     },
     {
-      "text": "Detectionand",
-      "duration_multiplier": 1.3
+      "text": "Endpoint Detection and",
+      "duration_multiplier": 1.1
     },
     {
-      "text": "Responseの略です",
+      "text": "Responseの",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "略です",
       "duration_multiplier": 1.4
     },
     {
-      "text": "端末上の挙動やイベントを",
+      "text": "端末上の挙動や",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "イベントを収集・分析し",
       "duration_multiplier": 1.1
     },
     {
-      "text": "収集・分析し侵害の兆候を",
+      "text": "侵害の兆候を検知し",
       "duration_multiplier": 1.1
     },
     {
-      "text": "検知し調査や対応を支援します",
+      "text": "調査や対応を支援します",
       "duration_multiplier": 1.4
     },
     {
-      "text": "従来型のマルウェア対策",
+      "text": "従来型のマルウェア",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "対策だけでは見つけ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "にくい不審な振る舞いを",
       "duration_multiplier": 1.1
     },
     {
-      "text": "だけでは見つけにくい不審",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "な振る舞いを検知できる",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "場合があります",
+      "text": "検知できる場合があります",
       "duration_multiplier": 1.4
     },
     {
-      "text": "EDRを導入してもすべて",
+      "text": "EDRを導入しても",
       "duration_multiplier": 1.2
     },
     {
-      "text": "の攻撃を自動で防げるわけ",
-      "duration_multiplier": 1.1
+      "text": "すべての攻撃を自動で",
+      "duration_multiplier": 1
     },
     {
-      "text": "ではありません",
+      "text": "防げるわけではありません",
       "duration_multiplier": 1.4
     },
     {
-      "text": "検知結果を確認し対応する",
+      "text": "検知結果を確認し",
       "duration_multiplier": 1.1
     },
     {
-      "text": "運用が必要です",
+      "text": "対応する運用が必要です",
       "duration_multiplier": 1.4
     },
     {
@@ -258,35 +294,39 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "DLPはDataLoss",
+      "text": "DLPは",
       "duration_multiplier": 1.2
     },
     {
-      "text": "Prevention",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "またはDataLoss",
+      "text": "Data Loss Prevention",
       "duration_multiplier": 1.1
     },
     {
-      "text": "Protectionの略",
+      "text": "または",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "Data Loss Protectionの",
       "duration_multiplier": 1.1
     },
     {
-      "text": "で使われます",
+      "text": "略で使われます",
       "duration_multiplier": 1.4
     },
     {
-      "text": "重要情報が不適切な経路で",
-      "duration_multiplier": 1.1
+      "text": "重要情報が不適切な",
+      "duration_multiplier": 1
     },
     {
-      "text": "外部へ送られることを検知",
-      "duration_multiplier": 1.1
+      "text": "経路で外部へ送られる",
+      "duration_multiplier": 1
     },
     {
-      "text": "・制御するための仕組みです",
+      "text": "ことを検知・制御する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ための仕組みです",
       "duration_multiplier": 1.4
     },
     {
@@ -306,11 +346,11 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "こうした経路を監視する",
-      "duration_multiplier": 1.1
+      "text": "こうした経路を監視",
+      "duration_multiplier": 1
     },
     {
-      "text": "場合があります",
+      "text": "する場合があります",
       "duration_multiplier": 1.4
     },
     {
@@ -318,11 +358,11 @@
       "duration_multiplier": 1.2
     },
     {
-      "text": "情報漏えいを完全に防ぐ",
-      "duration_multiplier": 1.1
+      "text": "情報漏えいを完全に",
+      "duration_multiplier": 1
     },
     {
-      "text": "ことはできません",
+      "text": "防ぐことはできません",
       "duration_multiplier": 1.4
     },
     {
@@ -342,19 +382,27 @@
       "duration_multiplier": 1
     },
     {
-      "text": "タブレットは組織の重要",
+      "text": "タブレットは",
       "duration_multiplier": 1.1
     },
     {
-      "text": "情報へアクセスできる端末です",
+      "text": "組織の重要情報へ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "アクセスできる端末です",
       "duration_multiplier": 1.4
     },
     {
-      "text": "持ち運ぶため紛失や盗難の",
+      "text": "持ち運ぶため",
       "duration_multiplier": 1.1
     },
     {
-      "text": "リスクがあります",
+      "text": "紛失や盗難のリスクが",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "あります",
       "duration_multiplier": 1.4
     },
     {
@@ -374,11 +422,11 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "こうした点も考える必要が",
-      "duration_multiplier": 1.1
+      "text": "こうした点も考える",
+      "duration_multiplier": 1
     },
     {
-      "text": "あります",
+      "text": "必要があります",
       "duration_multiplier": 1.4
     },
     {
@@ -386,23 +434,31 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "MDMはMobile",
+      "text": "MDMは",
       "duration_multiplier": 1.2
     },
     {
-      "text": "Device",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "Managementの略です",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "組織が端末の設定や状態を",
+      "text": "Mobile Device",
       "duration_multiplier": 1.1
     },
     {
-      "text": "集中管理するために利用します",
+      "text": "Managementの",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "略です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "組織が端末の設定や",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "状態を集中管理する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ために利用します",
       "duration_multiplier": 1.4
     },
     {
@@ -426,23 +482,39 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "こうした項目を管理できます",
+      "text": "こうした項目を管理",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "できます",
       "duration_multiplier": 1.4
     },
     {
-      "text": "ただし端末管理の範囲は",
+      "text": "ただし",
       "duration_multiplier": 1.1
     },
     {
-      "text": "組織所有端末と個人所有",
-      "duration_multiplier": 1.1
+      "text": "端末管理の範囲は組織",
+      "duration_multiplier": 1
     },
     {
-      "text": "端末で異なることがあります",
+      "text": "所有端末と個人所有",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "端末で異なることが",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "あります",
       "duration_multiplier": 1.4
     },
     {
-      "text": "プライバシーにも配慮します",
+      "text": "プライバシーにも配慮",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "します",
       "duration_multiplier": 1.4
     },
     {
@@ -450,59 +522,79 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "クラウドではコンピュー",
+      "text": "クラウドでは",
       "duration_multiplier": 1.1
     },
     {
-      "text": "ティング資源を必要に応じ",
-      "duration_multiplier": 1.1
+      "text": "コンピューティング",
+      "duration_multiplier": 1
     },
     {
-      "text": "てネットワーク経由で利用",
-      "duration_multiplier": 1.1
+      "text": "資源を必要に応じて",
+      "duration_multiplier": 1
     },
     {
-      "text": "します",
+      "text": "ネットワーク経由で",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "利用します",
       "duration_multiplier": 1.4
     },
     {
-      "text": "代表的なサービスモデルに",
+      "text": "代表的なサービス",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "モデルにIaaS",
       "duration_multiplier": 1.1
     },
     {
-      "text": "IaaSPaaSSaaS",
-      "duration_multiplier": 1.3
+      "text": "PaaS",
+      "duration_multiplier": 1.1
     },
     {
-      "text": "があります",
+      "text": "SaaSがあります",
       "duration_multiplier": 1.4
     },
     {
-      "text": "サービスモデルによって",
+      "text": "サービスモデル",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "によって",
       "duration_multiplier": 1.1
     },
     {
-      "text": "利用者とクラウド事業者が",
-      "duration_multiplier": 1.1
+      "text": "利用者とクラウド事業",
+      "duration_multiplier": 1
     },
     {
-      "text": "管理する範囲が異なります",
+      "text": "者が管理する範囲が異",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "なります",
       "duration_multiplier": 1.4
     },
     {
-      "text": "「クラウド事業者が安全",
+      "text": "「クラウド事業者が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "安全にしてくれるから",
       "duration_multiplier": 1.1
     },
     {
-      "text": "にしてくれるから自組織は",
-      "duration_multiplier": 1.1
+      "text": "自組織は何もしなくて",
+      "duration_multiplier": 1
     },
     {
-      "text": "何もしなくてよい」という",
-      "duration_multiplier": 1.1
+      "text": "よい」という考え方は",
+      "duration_multiplier": 1
     },
     {
-      "text": "考え方は危険です",
+      "text": "危険です",
       "duration_multiplier": 1.4
     },
     {
@@ -510,16 +602,24 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "クラウド事業者は基盤側の",
+      "text": "クラウド事業者は",
       "duration_multiplier": 1.1
     },
     {
-      "text": "多くの対策を担当します",
+      "text": "基盤側の多くの対策を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "担当します",
       "duration_multiplier": 1.4
     },
     {
-      "text": "一方利用者側にも責任が",
+      "text": "一方",
       "duration_multiplier": 1.1
+    },
+    {
+      "text": "利用者側にも責任が",
+      "duration_multiplier": 1
     },
     {
       "text": "残ります",
@@ -554,15 +654,19 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "サービスモデルや契約で異",
+      "text": "サービスモデルや契約で",
       "duration_multiplier": 1.1
     },
     {
-      "text": "なります",
+      "text": "異なります",
       "duration_multiplier": 1.4
     },
     {
-      "text": "利用前に責任範囲を確認します",
+      "text": "利用前に責任範囲を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "確認します",
       "duration_multiplier": 1.4
     },
     {
@@ -570,15 +674,19 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "クラウド事故では製品の",
+      "text": "クラウド事故では",
       "duration_multiplier": 1.1
     },
     {
-      "text": "脆弱性だけでなく設定不備",
-      "duration_multiplier": 1.1
+      "text": "製品の脆弱性だけで",
+      "duration_multiplier": 1
     },
     {
-      "text": "も問題になります",
+      "text": "なく設定不備も問題に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "なります",
       "duration_multiplier": 1.4
     },
     {
@@ -614,28 +722,36 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "こうした設定上の問題を防",
+      "text": "こうした設定上の問題を",
       "duration_multiplier": 1.1
     },
     {
-      "text": "ぎます",
+      "text": "防ぎます",
       "duration_multiplier": 1.4
     },
     {
-      "text": "クラウドでも組織の責任は残る",
+      "text": "クラウドでも組織の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "責任は残る",
       "duration_multiplier": 1.4
     },
     {
-      "text": "クラウドへ移したデータや",
+      "text": "クラウドへ移した",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "データや処理でも",
       "duration_multiplier": 1.1
     },
     {
-      "text": "処理でも組織の説明責任",
-      "duration_multiplier": 1.1
+      "text": "組織の説明責任まで",
+      "duration_multiplier": 1
     },
     {
-      "text": "まで外部へ移るわけでは",
-      "duration_multiplier": 1.1
+      "text": "外部へ移るわけでは",
+      "duration_multiplier": 1
     },
     {
       "text": "ありません",
@@ -646,19 +762,27 @@
       "duration_multiplier": 1.2
     },
     {
-      "text": "ガイダンスもクラウド利用",
+      "text": "ガイダンスも",
       "duration_multiplier": 1.1
     },
     {
-      "text": "時のセキュリティと",
+      "text": "クラウド利用時の",
       "duration_multiplier": 1
     },
     {
-      "text": "プライバシーに対する組織",
-      "duration_multiplier": 1.1
+      "text": "セキュリティと",
+      "duration_multiplier": 1
     },
     {
-      "text": "の責任を強調しています",
+      "text": "プライバシーに対する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "組織の責任を強調し",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ています",
       "duration_multiplier": 1.4
     },
     {
@@ -678,11 +802,11 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "サービス終了時のデータ",
-      "duration_multiplier": 1.1
+      "text": "サービス終了時の",
+      "duration_multiplier": 1
     },
     {
-      "text": "移行や削除",
+      "text": "データ移行や削除",
       "duration_multiplier": 1.4
     },
     {
@@ -694,23 +818,31 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "IoTはInternet",
+      "text": "IoTは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "Internet of Thingsの",
       "duration_multiplier": 1.1
     },
     {
-      "text": "ofThingsの略です",
+      "text": "略です",
       "duration_multiplier": 1.4
     },
     {
-      "text": "ネットワークへ接続された",
+      "text": "ネットワークへ接続さ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "れた機器が",
       "duration_multiplier": 1.1
     },
     {
-      "text": "機器が情報を収集したり",
-      "duration_multiplier": 1.1
+      "text": "情報を収集したり物理",
+      "duration_multiplier": 1
     },
     {
-      "text": "物理世界へ作用したりします",
+      "text": "世界へ作用したりします",
       "duration_multiplier": 1.4
     },
     {
@@ -738,35 +870,55 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "PCと同じセキュリティ",
+      "text": "PCと同じ",
       "duration_multiplier": 1.2
     },
     {
-      "text": "機能を持たない機器もあります",
+      "text": "セキュリティ機能を持",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "たない機器もあります",
       "duration_multiplier": 1.4
     },
     {
-      "text": "IoTのライフサイクル",
+      "text": "IoTの",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ライフサイクル",
       "duration_multiplier": 1.4
     },
     {
-      "text": "IoTでは購入時だけで",
+      "text": "IoTでは",
       "duration_multiplier": 1.1
     },
     {
-      "text": "なく運用期間全体を見る",
-      "duration_multiplier": 1.1
+      "text": "購入時だけでなく運用",
+      "duration_multiplier": 1
     },
     {
-      "text": "必要があります",
+      "text": "期間全体を見る必要が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "あります",
       "duration_multiplier": 1.4
     },
     {
-      "text": "機器を一意に識別できるか",
+      "text": "機器を一意に識別",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "できるか",
       "duration_multiplier": 1.4
     },
     {
-      "text": "設定を安全に変更できるか",
+      "text": "設定を安全に変更",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "できるか",
       "duration_multiplier": 1.4
     },
     {
@@ -774,23 +926,27 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "ソフトウェアを安全に更新",
-      "duration_multiplier": 1.1
+      "text": "ソフトウェアを安全に",
+      "duration_multiplier": 1
     },
     {
-      "text": "できるか",
+      "text": "更新できるか",
       "duration_multiplier": 1.4
     },
     {
-      "text": "脆弱性情報が提供されるか",
+      "text": "脆弱性情報が提供さ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "れるか",
       "duration_multiplier": 1.4
     },
     {
-      "text": "製品のサポート終了時に",
-      "duration_multiplier": 1.1
+      "text": "製品のサポート終了",
+      "duration_multiplier": 1
     },
     {
-      "text": "どうするか",
+      "text": "時にどうするか",
       "duration_multiplier": 1.4
     },
     {
@@ -799,14 +955,14 @@
     },
     {
       "text": "技術的能力だけでなく",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "メーカーによる継続的な",
       "duration_multiplier": 1.1
     },
     {
-      "text": "支援も重視しています",
+      "text": "メーカーによる継続的",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "な支援も重視しています",
       "duration_multiplier": 1.4
     },
     {
@@ -818,11 +974,11 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "物理的なアクセスを無視",
-      "duration_multiplier": 1.1
+      "text": "物理的なアクセスを",
+      "duration_multiplier": 1
     },
     {
-      "text": "できません",
+      "text": "無視できません",
       "duration_multiplier": 1.4
     },
     {
@@ -830,11 +986,11 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "サーバールームへ無断で入",
+      "text": "サーバールームへ無断で",
       "duration_multiplier": 1.1
     },
     {
-      "text": "られる",
+      "text": "入られる",
       "duration_multiplier": 1.4
     },
     {
@@ -842,15 +998,19 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "廃棄機器から情報を読み出",
-      "duration_multiplier": 1.1
+      "text": "廃棄機器から情報を",
+      "duration_multiplier": 1
     },
     {
-      "text": "される",
+      "text": "読み出される",
       "duration_multiplier": 1.4
     },
     {
-      "text": "電源障害でシステムが停止する",
+      "text": "電源障害でシステムが",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "停止する",
       "duration_multiplier": 1.4
     },
     {
@@ -890,23 +1050,31 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "必要な強さは施設や情報の",
-      "duration_multiplier": 1.1
+      "text": "必要な強さは施設や",
+      "duration_multiplier": 1
     },
     {
-      "text": "重要度によって異なります",
+      "text": "情報の重要度によって",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "異なります",
       "duration_multiplier": 1.4
     },
     {
-      "text": "入室できることとシステム",
+      "text": "入室できることと",
       "duration_multiplier": 1.1
     },
     {
-      "text": "へログインできることは",
-      "duration_multiplier": 1.1
+      "text": "システムへログイン",
+      "duration_multiplier": 1
     },
     {
-      "text": "別に管理します",
+      "text": "できることは別に管理",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "します",
       "duration_multiplier": 1.4
     },
     {
@@ -918,11 +1086,11 @@
       "duration_multiplier": 1.2
     },
     {
-      "text": "ディスクなどは情報を大量",
+      "text": "ディスクなどは",
       "duration_multiplier": 1.1
     },
     {
-      "text": "に持ち出せます",
+      "text": "情報を大量に持ち出せます",
       "duration_multiplier": 1.4
     },
     {
@@ -938,11 +1106,11 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "不要になった媒体を安全に",
-      "duration_multiplier": 1.1
+      "text": "不要になった媒体を",
+      "duration_multiplier": 1
     },
     {
-      "text": "消去・破壊する",
+      "text": "安全に消去・破壊する",
       "duration_multiplier": 1.4
     },
     {
@@ -958,35 +1126,39 @@
       "duration_multiplier": 1.2
     },
     {
-      "text": "Uninterruptible",
+      "text": "Uninterruptible Power",
       "duration_multiplier": 1.3
     },
     {
-      "text": "PowerSupplyの",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "略です",
+      "text": "Supplyの略です",
       "duration_multiplier": 1.4
     },
     {
-      "text": "停電や瞬断時に一定時間",
+      "text": "停電や瞬断時に一定",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "時間電力を供給し",
       "duration_multiplier": 1.1
     },
     {
-      "text": "電力を供給し安全な停止や",
+      "text": "安全な停止や継続運転を",
       "duration_multiplier": 1.1
     },
     {
-      "text": "継続運転を支援します",
+      "text": "支援します",
       "duration_multiplier": 1.4
     },
     {
-      "text": "UPSだけで長時間の停電",
+      "text": "UPSだけで長時間の",
       "duration_multiplier": 1.2
     },
     {
-      "text": "に対応できるとは限りません",
+      "text": "停電に対応できるとは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "限りません",
       "duration_multiplier": 1.4
     },
     {
@@ -994,11 +1166,11 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "必要な可用性に応じて対策",
-      "duration_multiplier": 1.1
+      "text": "必要な可用性に応じて",
+      "duration_multiplier": 1
     },
     {
-      "text": "します",
+      "text": "対策します",
       "duration_multiplier": 1.4
     },
     {
@@ -1010,43 +1182,51 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "机の上や画面に重要情報を",
+      "text": "机の上や画面に重要",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "情報を放置すると",
       "duration_multiplier": 1.1
     },
     {
-      "text": "放置すると権限のない人に",
-      "duration_multiplier": 1.1
+      "text": "権限のない人に見",
+      "duration_multiplier": 1
     },
     {
-      "text": "見られる可能性があります",
+      "text": "られる可能性があります",
       "duration_multiplier": 1.4
     },
     {
-      "text": "離席時には画面をロックします",
+      "text": "離席時には画面を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ロックします",
       "duration_multiplier": 1.4
     },
     {
-      "text": "重要文書や記憶媒体は必要",
+      "text": "重要文書や記憶媒体は",
       "duration_multiplier": 1.1
     },
     {
-      "text": "に応じて施錠できる場所へ",
-      "duration_multiplier": 1.1
+      "text": "必要に応じて施錠",
+      "duration_multiplier": 1
     },
     {
-      "text": "保管します",
+      "text": "できる場所へ保管します",
       "duration_multiplier": 1.4
     },
     {
-      "text": "単純な対策ですが物理的な",
+      "text": "単純な対策ですが",
       "duration_multiplier": 1.1
     },
     {
-      "text": "情報漏えいを減らす基本に",
-      "duration_multiplier": 1.1
+      "text": "物理的な情報漏えいを",
+      "duration_multiplier": 1
     },
     {
-      "text": "なります",
+      "text": "減らす基本になります",
       "duration_multiplier": 1.4
     },
     {
@@ -1054,15 +1234,15 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "端末や記憶媒体を廃棄する",
+      "text": "端末や記憶媒体を廃棄",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "するときも情報漏えいの",
       "duration_multiplier": 1.1
     },
     {
-      "text": "ときも情報漏えいの可能性",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "があります",
+      "text": "可能性があります",
       "duration_multiplier": 1.4
     },
     {
@@ -1070,27 +1250,35 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "削除しただけでは復元",
+      "text": "削除しただけでは",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "復元できる場合があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "媒体の種類と機密度に",
       "duration_multiplier": 1
     },
     {
-      "text": "できる場合があります",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "媒体の種類と機密度に応じ",
+      "text": "応じて",
       "duration_multiplier": 1.1
     },
     {
-      "text": "て安全な消去や物理破壊",
+      "text": "安全な消去や物理破壊などを",
       "duration_multiplier": 1.1
     },
     {
-      "text": "などを選びます",
+      "text": "選びます",
       "duration_multiplier": 1.4
     },
     {
-      "text": "外部業者へ委託する場合は",
+      "text": "外部業者へ委託する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "場合は",
       "duration_multiplier": 1.1
     },
     {
@@ -1098,7 +1286,11 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "人と設備を含めて考える",
+      "text": "人と設備を含めて",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "考える",
       "duration_multiplier": 1.4
     },
     {
@@ -1106,11 +1298,11 @@
       "duration_multiplier": 1
     },
     {
-      "text": "ソフトウェアだけの問題",
-      "duration_multiplier": 1.1
+      "text": "ソフトウェアだけの",
+      "duration_multiplier": 1
     },
     {
-      "text": "ではありません",
+      "text": "問題ではありません",
       "duration_multiplier": 1.4
     },
     {
@@ -1142,23 +1334,27 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "これらが一つの業務を支え",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "ています",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "どこか一つだけを強化する",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "のではなく業務全体の",
+      "text": "これらが一つの業務を",
       "duration_multiplier": 1
     },
     {
-      "text": "リスクとして考えます",
+      "text": "支えています",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "どこか一つだけを強化",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "するのではなく",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "業務全体のリスク",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "として考えます",
       "duration_multiplier": 1.4
     }
   ]
