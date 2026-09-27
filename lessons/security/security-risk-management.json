@@ -1,0 +1,1181 @@
+{
+  "schema_version": 1,
+  "id": "security-risk-management",
+  "title": "情報資産とリスクマネジメント",
+  "topic": "情報セキュリティ",
+  "summary": "情報資産の把握・分類、リスク分析・評価・対応、残留リスク、継続的な見直しを学びます。",
+  "created_at": "2026-09-27",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "NIST Cybersecurity Framework 2.0",
+      "url": "https://www.nist.gov/cyberframework"
+    },
+    {
+      "title": "NIST SP 800-30 Rev. 1, Guide for Conducting Risk Assessments",
+      "url": "https://csrc.nist.gov/pubs/sp/800/30/r1/final"
+    },
+    {
+      "title": "NIST SP 800-37 Rev. 2, Risk Management Framework",
+      "url": "https://csrc.nist.gov/pubs/sp/800/37/r2/final"
+    },
+    {
+      "title": "ISMS-AC, ISMSとは",
+      "url": "https://isms.jp/isms/"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "情報資産とリスクマネジメント",
+      "duration_multiplier": 1.5
+    },
+    {
+      "text": "リスクマネジメントの",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "目的",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "情報セキュリティでは",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "すべての",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "危険を完全になくすことは",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "通常できません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "対策には費用",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "時間",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "人員",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "使いやすさへの",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "影響があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "そのため",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "重要なリスクを把握し",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "優先順位を付け",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "許容できる水準まで",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "管理します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "リスクマネジメントは",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "製品を多く",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "導入することではありません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "組織の目的と",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "情報資産を踏まえて",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "どのリスクへどう",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "対応するかを判断する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "活動です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "情報資産を把握する",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "リスクを考える前に",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "何を守るかを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "把握します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "情報資産には",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "データ",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "文書",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "システム",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "端末",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "認証情報",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "設定情報",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "クラウド",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "サービスなどがあります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "業務手順や",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "組織の知識も",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "重要な資産になり",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "得ます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "誰が所有・",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "管理しているのか",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "どこに",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "保存されているのか",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "誰が",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "アクセスできるのか",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "失われた",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "場合や漏えいした",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "場合に何が起きるのか",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "こうした情報を整理します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "情報資産台帳",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "情報資産を一覧化して",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "管理する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "方法があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "単に機器の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "一覧を作るだけではありません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "資産の種類",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "所有者",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "保管場所",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "重要度",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "利用目的",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "関連システムなどを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "記録します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "資産を把握できていなければ",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "脆弱性が公表されても",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "影響範囲を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "判断できません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "リスク管理と脆弱性",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "管理の両方で",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "資産把握は",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "基礎になります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "情報を分類する",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "すべての情報を同じ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "強さで扱う",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "必要はありません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "公開してよい情報",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "組織内だけで扱う情報",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "限られた担当者だけが",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "扱う情報",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "法律や契約によって",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "特別な管理が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "必要な情報",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "このように重要度や",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "取扱条件によって",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "分類します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "分類は",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "アクセス権",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "保存方法",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "送信方法",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "廃棄方法などの",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ルールにつながります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "脅威",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "脆弱性",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "影響",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "リスクを考えるときは",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "何が起こり得るかを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "分解します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "脅威は",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "害を引き起こす",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "原因になり",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "得るものです",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "脆弱性は",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "脅威に利用される",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "可能性のある弱点です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "影響は",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "その事象が起きた",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "場合に組織や利用者へ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "生じる結果です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "同じ脆弱性でも",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "扱う情報や",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "システムによって",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "影響は異なります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "発生可能性と影響",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "リスク評価では",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "発生可能性と",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "影響を組み合わせて",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "考える方法があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "発生可能性が高くても",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "影響が小さい",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "リスクがあります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "発生可能性は低くても",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "発生すると業務",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "継続ができなくなる",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "リスクもあります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "単純な数式だけで",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "正確なリスクが",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "決まるわけではありません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "重要なのは",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "判断の根拠を明確にし",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "比較できる",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "形にすることです",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "リスク基準",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "何を高いリスクと",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "判断するかは",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "組織によって",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "異なります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "扱う情報",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "提供するサービス",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "法律や契約上の義務",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "利用者への影響",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "組織が受け入れられる",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "損失",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "これらを踏まえ",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "リスクを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "評価するための",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "基準を決めます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "定性的評価と",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "定量的評価",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "リスクを",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "高・中・低などの",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "段階で評価する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "方法を定性的",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "評価と呼びます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "損失額や発生頻度など",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "数値を使って評価する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "方法を定量的評価と",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "呼びます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "実務では",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "両方を組み合わせる",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "場合もあります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "数値があるから",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "客観的とは限りません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "入力値が推測に大きく",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "依存していれば",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "計算結果にも",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "不確実性があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "リスクマトリックス",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "発生可能性と",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "影響を縦横に並べ",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "リスクを分類する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "方法があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "これはリスク",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "マトリックスと",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "呼ばれます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "簡潔で比較しやすい",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "一方",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "段階の区切り",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "方によって",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "結果が変わることがあります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "マトリックスの",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "色だけで判断せず",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "前提や根拠も",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "残すことが重要です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "リスク所有者",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "リスクには",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "対応について判断する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "責任を持つ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "者が必要です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "一般に",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "その役割をリスク",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "所有者と呼びます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "セキュリティ担当者が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "リスクを分析しても",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "事業上どこまで",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "受け入れるかは",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "適切な権限を持つ者が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "判断する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "必要があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "リスクを「",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "セキュリティ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "部門だけの問題",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "」にしないことが",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "重要です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "リスクへの対応",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "リスクへの対応には",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "複数の方法があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "原因となる活動をやめ",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "リスクを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "避ける方法があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "対策を行い",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "発生可能性や",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "影響を下げる",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "方法があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "保険や契約などを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "利用し",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "リスクの一部を他者と",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "共有する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "方法があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "一定のリスクを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "理解した",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "上で受け入れる",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "方法もあります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "どの方法が適切かは",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "リスクと",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "組織の状況によって",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "異なります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "残留リスク",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "対策を行っても",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "リスクが完全にゼ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ロになるとは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "限りません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "対策後に残るリスクを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "残留リスクと呼びます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "残留リスクが",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "許容できるかを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "確認します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "許容できなければ",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "追加対策や",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "業務の見直しが",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "必要です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "リスク対応計画",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "対策を選んだら",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "誰が",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "何を",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "いつまでに行うかを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "決めます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "必要な資源や",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "優先順位も整理します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "対策を決めただけで",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "実施されなければ",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "リスクは低減しません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "実施後には",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "期待した",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "効果が出ているかも",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "確認します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "リスクは変化する",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "システム",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "業務",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "脅威",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "法制度は変化します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "そのため",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "リスク評価も一度で",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "終わりではありません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "新しいサービスを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "導入したとき",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "重大な脆弱性が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "見つかったとき",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "インシデントが",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "発生したとき",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "委託先やシステム",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "構成が変わったとき",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "こうした変化に応じて",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "見直します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "リスク評価は意思",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "決定のために行う",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "リスク評価の目的は",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "きれいな",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "表を作ることではありません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "限られた資源をどこへ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "配分するか",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "どのリスクを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "先に下げるか",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "どの残留リスクを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "誰が受け入れるか",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "こうした意思決定を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "支えることが目的です",
+      "duration_multiplier": 1.4
+    }
+  ]
+}

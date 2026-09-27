@@ -52,7 +52,22 @@
       "id": "information-security",
       "title": "情報セキュリティ",
       "chapters": [
-        "information-security-overview"
+        "security-fundamentals",
+        "security-threats-attacks",
+        "security-authentication-access",
+        "security-cryptography-pki",
+        "security-network-basics",
+        "security-network-defense",
+        "security-application-database-ai",
+        "security-endpoint-cloud-physical",
+        "security-vulnerability-management",
+        "security-risk-management",
+        "security-isms-governance",
+        "security-incident-forensics",
+        "security-business-continuity",
+        "security-law-privacy",
+        "security-audit-control",
+        "security-threat-landscape-2026"
       ]
     },
     {

@@ -1,0 +1,789 @@
+{
+  "schema_version": 1,
+  "id": "security-threat-landscape-2026",
+  "title": "2026年の脅威動向",
+  "topic": "情報セキュリティ",
+  "summary": "IPAの2026年版脅威動向を使い、ランサム、サプライチェーン、AI、脆弱性、内部不正などの現在地を学びます。",
+  "created_at": "2026-09-27",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "IPA「情報セキュリティ10大脅威 2026」",
+      "url": "https://www.ipa.go.jp/security/10threats/10threats2026.html"
+    },
+    {
+      "title": "IPA「情報セキュリティ10大脅威」",
+      "url": "https://www.ipa.go.jp/security/10threats/"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "2026年の脅威動向",
+      "duration_multiplier": 1.5
+    },
+    {
+      "text": "この章の読み方",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "この章は",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "情報セキュリティの",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "普遍的な原則ではなく",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "2026年時点の",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "脅威動向を扱います",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "主な参照先は",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "IPA「情報セキュリティ10大脅威2026」",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "を参照します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "この資料は",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "2025年に発生した",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "社会的影響の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "大きい事故や",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "攻撃などを基に",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "約250名の研究者や",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "実務担当者などによる",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "選考を経て",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "作成されています",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "組織向けには",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "順位があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "ただしIPAは",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "この順位が危険度や各",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "組織で対策すべき",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "優先順位を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "表すものではないと",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "説明しています",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "自分の組織が持つ情報",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "資産",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "利用するシステム",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "業務",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "取引先などに応じて",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "リスクを評価する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "必要があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "組織向けで挙げられた",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "主な脅威",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "IPAの2026年版では",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "組織向け1位は",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "ランサム攻撃による被害",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "2位は",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "サプライチェーンや",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "委託先を狙った攻撃",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "3位は",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "AIの利用をめぐる",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "サイバーリスクです",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "ランサム攻撃では",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "システムやデータが",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "利用できなくなるだけでなく",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "情報窃取や漏えいが",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "組み合わされる",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "場合があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "サプライチェーンへの",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "攻撃では",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "自組織が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "直接攻撃されなくても",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "利用している製品や",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "サービス",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "取引先などを通じて",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "影響を受ける",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "可能性があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "AIの利用をめぐる",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "サイバーリスク",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "2026年版では",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "「AIの利用をめぐるサイバーリスク」が",
+      "duration_multiplier": 1.3
+    },
+    {
+      "text": "組織向け脅威として",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "初めて選ばれています",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "AIには",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "複数の観点があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "攻撃者がAIを",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "利用することで",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "サイバー",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "攻撃が容易になったり",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "手口が巧妙になったりする",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "可能性があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "一方で",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "組織が生成AIなどを",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "利用するときにも",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "リスクがあります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "業務上の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "情報を許可されていない",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "AIサービスへ",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "入力すれば",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "情報漏えいにつながる",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "可能性があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "生成された",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "情報を十分に検証せず",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "利用すれば",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "誤った情報による",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "問題が起こる",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "可能性もあります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "AIを利用した",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "システム自体の脆弱",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "性を狙う攻撃も考える",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "必要があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "「AIだから",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "全く新しい問題」と",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "考えるのではなく",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "AI固有の特性と",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "従来からのリスク",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "管理を両方見ることが",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "重要です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "脆弱性を悪用した攻撃",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "システムの脆弱性を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "悪用した攻撃も",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "引き続き",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "主要な脅威として",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "挙げられています",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "インターネットへ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "公開されている",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "システムでは",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "脆弱性が公表された後",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "短期間で",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "攻撃が行われる",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "場合があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "どの製品や",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "バージョンを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "利用しているか",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "把握していなければ",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "影響を判断できません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "資産管理",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "脆弱性情報の収集",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "更新",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "設定変更などを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "継続的に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "行う必要があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "内部不正と認証情報",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "脅威は外部の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "攻撃者だけから",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "生じるとは限りません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "内部不正による",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "情報漏えい等は",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "2026年版の組織",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "向け7位です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "必要以上の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "権限を与えないこと",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "重要な操作を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "記録すること",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "異動や退職に合わせて",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "権限を見直すこと",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "これらは外部攻撃と",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "内部不正の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "両方で重要です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "また",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "個人向け脅威には",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "不正ログインや",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "フィッシングも",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "含まれています",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "個人向けの10項目は",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "順位付けされておらず",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "五十音順で",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "掲載されています",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "認証情報を守ることは",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "個人と組織の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "双方で基本",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "的な対策です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "DDoSと事業継続",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "DDoS攻撃は",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "2026年版の組織",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "向け9位です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "サービスを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "外部へ提供する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "組織では",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "機密性だけでなく",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "可用性も重要です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "攻撃を完全に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "防ぐことだけでなく",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "攻撃を受けた",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "場合にどの",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "機能を維持するか",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "どのように",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "復旧するかという",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "事業継続の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "観点が必要です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "年次資料をどう使うか",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "年次の脅威資料は",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "現在何が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "起きているかを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "知るために有用です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "しかし",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "順位の高い項目だけを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "対策する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "方法は適切ではありません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "自組織に存在する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "資産とリスクを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "把握したうえで",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "年次動向を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "追加情報として",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "利用します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "この章は",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "新しい年度",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "版が公開されたときに",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "見直します",
+      "duration_multiplier": 1.4
+    }
+  ]
+}
