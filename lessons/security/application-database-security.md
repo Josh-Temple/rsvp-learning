@@ -229,7 +229,7 @@ OWASP Top 10:2025ではSoftware Supply Chain FailuresがA03です。
 
 ## 17. 安全な設計を優先する
 
-脆弱な設計をWAFや監視だけで補うと、運用負担が大きくなります。
+脆弱な設計を、Web Application Firewall、WAFや監視だけで補うと、運用負担が大きくなります。
 
 入力を信頼しない。
 
