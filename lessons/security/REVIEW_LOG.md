@@ -435,3 +435,93 @@ Schema検証に必要な必須項目、数値範囲、chunk構造をreadback後�
 Courseと `lessons/index.json` への登録はまだ行っていない。
 
 残り15 Lessonを作成する前の変換基準として利用する。
+
+## 2026-09-27 — 16 Lesson JSON化完了・最終QA
+
+対象: Draft v0.7 → Draft v0.8
+
+### 実装状態
+
+Chapter 1のパイロットを基準として、残り15 LessonもRSVP用JSONへ変換した。
+
+情報セキュリティCourseは、16の概念章を16 Lessonとして `courses/index.json` へ登録した。
+
+`lessons/index.json` にも16 Lessonを登録し、Courseから一意に参照できることを確認した。
+
+### 最終readback
+
+16個の `lessons/security/security-*.json` をfresh readし、次を確認した。
+
+- JSON parse: 全16 Lesson PASS
+- `schema_version=1`: PASS
+- Lesson IDとファイルの対応: PASS
+- Schema必須フィールド: PASS
+- `base_duration_ms`: PASS
+- `sources`: PASS
+- chunkの `text` と `duration_multiplier`: PASS
+- 空chunk: 0
+- URL・MarkdownのRSVP本文への混入: 0
+- 24文字超chunk: 0
+
+chunk文字数の90%点は各Lessonで10〜11文字だった。
+
+全Lesson中の最長chunkは23文字で、固有名称を不自然に分割しない方針の範囲内だった。
+
+### 文節分割の個別修正
+
+機械的な再分割は行わず、実際に意味を壊していた3箇所だけを修正した。
+
+1. `Man-in-the-Middle / On-Path Attack`
+   - ハイフンが単独chunkになっていたため、固有名称単位へ統合した。
+2. `Cross-Site Request Forgery`
+   - ハイフンが単独chunkになっていたため、英語複合語のまとまりを維持した。
+3. 「技術的に深刻な脆弱性で / も」
+   - 助詞「も」が単独chunkになっていたため、直前語へ統合した。
+
+「の略です」が単独chunkになる箇所は複数残っている。意味は成立しており、機械的に変更せず、8倍前後の実表示で読みやすさを確認する対象とした。
+
+### 抜き取り確認
+
+情報密度の高いChapter 2・7・11・16を複数位置で目視した。
+
+重大な文節崩れは確認されなかった。
+
+Chapter 16では、IPA「情報セキュリティ10大脅威2026」の組織向け上位3項目が、名称を壊さずRSVP表示単位へ分割されていることを確認した。
+
+### 最新mainとの統合
+
+作業中にmain側で他分野の教材群と `information-security-overview` が追加されていたため、最新mainをfresh readして統合した。
+
+main側の `information-security-overview` は `SEED / 概要のみ` で、本編を別途拡張する前提だった。
+
+本編完成後は16 Lessonを情報セキュリティCourseの正規構成とし、旧overviewは初期SEEDとしてファイルのみ残す。LessonカタログとCourseからは外した。
+
+作業branchは最新mainを土台に載せ直し、mainに対するbehindを0にした。
+
+### アプリ統合確認
+
+`app.js` とカタログ構造を確認した。
+
+- Course全通し再生
+- Chapter順のランダム再生
+- 前後Chapter移動
+- Lesson単位の習熟度保存
+
+は16 Lesson構成と整合している。
+
+これは静的なコード・データ確認であり、実ブラウザでの操作確認とは区別する。
+
+### 残る確認
+
+実ブラウザで次を確認する。
+
+- 8倍前後のRSVP表示
+- `ALL` で16 Lessonを順番に移動できること
+- `RND` でChapter順だけがランダム化されること
+- 前後Chapter移動
+- 習熟度の表示・保存
+- 略語周辺の短いchunkの体感上の読みやすさ
+
+Vercelの現在のチェック失敗はbuild rate limitによるもので、教材コードのテスト失敗とは扱わない。
+
+実表示確認と利用可能なCI確認が終わるまでPR #6はDraftのまま維持する。
