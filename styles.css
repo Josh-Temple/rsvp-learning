@@ -158,6 +158,33 @@ button {
   cursor: pointer;
 }
 
+.mode-link {
+  height: 42px;
+  padding: 0 8px;
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.62rem;
+  font-weight: 760;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+}
+
+.mode-link:hover {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
+.mode-link[hidden] {
+  display: none;
+}
+
+.mode-link:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+}
+
 .player {
   min-height: 0;
   display: grid;
