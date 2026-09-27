@@ -9,59 +9,171 @@
   "sources": [],
   "chunks": [
     {
-      "text": "業務改革では、改善したかを測る必要があります",
+      "text": "業務改革では、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "改善したかを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "測る必要があります",
       "duration_multiplier": 1.35
     },
     {
-      "text": "KPIは、目的へ近づいているかを見る指標です",
-      "duration_multiplier": 1.1
+      "text": "KPIは、",
+      "duration_multiplier": 1
     },
     {
-      "text": "指標は、改善目的と直接つながるものを選びます",
-      "duration_multiplier": 1.1
+      "text": "目的へ近づいているかを",
+      "duration_multiplier": 1
     },
     {
-      "text": "処理時間、エラー率、問い合わせ件数などが候補になります",
-      "duration_multiplier": 1.1
+      "text": "見る指標です",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "測りやすい数字だけを選ばないことが重要です",
-      "duration_multiplier": 1.1
+      "text": "指標は、",
+      "duration_multiplier": 1
     },
     {
-      "text": "自動化は、反復性が高くルールが明確な作業に向きます",
-      "duration_multiplier": 1.1
+      "text": "改善目的と",
+      "duration_multiplier": 1
     },
     {
-      "text": "不安定な業務を、そのまま自動化すると問題も自動化します",
-      "duration_multiplier": 1.1
+      "text": "直接つながるものを",
+      "duration_multiplier": 1
     },
     {
-      "text": "先に業務を整理してから自動化します",
-      "duration_multiplier": 1.1
+      "text": "選びます",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "例外が多い処理は、人の判断を残すことも考えます",
-      "duration_multiplier": 1.1
+      "text": "処理時間、エラー率、",
+      "duration_multiplier": 1
     },
     {
-      "text": "新しい仕組みは、導入しただけでは定着しません",
-      "duration_multiplier": 1.1
+      "text": "問い合わせ件数などが",
+      "duration_multiplier": 1
     },
     {
-      "text": "利用者への説明と教育が必要です",
-      "duration_multiplier": 1.1
+      "text": "候補になります",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "問い合わせ経路や改善窓口も準備します",
-      "duration_multiplier": 1.1
+      "text": "測りやすい数字だけを",
+      "duration_multiplier": 1
     },
     {
-      "text": "KPIで変化を確認し、必要なら業務を調整します",
-      "duration_multiplier": 1.1
+      "text": "選ばないことが",
+      "duration_multiplier": 1
     },
     {
-      "text": "改善は、導入ではなく定着までを含みます",
+      "text": "重要です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "自動化は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "反復性が高く",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ルールが明確な作業に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "向きます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "不安定な業務を、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "そのまま自動化すると",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "問題も自動化します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "先に業務を整理して",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "から自動化します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "例外が多い処理は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "人の判断を残す",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ことも考えます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "新しい仕組みは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "導入しただけでは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "定着しません",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用者への",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "説明と教育が必要です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "問い合わせ経路や",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "改善窓口も",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "準備します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "KPIで変化を確認し、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "必要なら",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "業務を調整します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "改善は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "導入ではなく",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "定着までを含みます",
       "duration_multiplier": 1.35
     }
   ]
