@@ -1,17 +1,23 @@
+const THEME_KEY = "rsvp:theme";
+const SPEED_KEY = "rsvp:speed";
+const LESSON_KEY = "rsvp:last-lesson";
+
+const savedSpeed = Number(localStorage.getItem(SPEED_KEY));
+
 const state = {
   catalog: [],
   lesson: null,
   index: 0,
   playing: false,
   timer: null,
-  speed: 1,
+  speed: Number.isFinite(savedSpeed) && savedSpeed >= 0.6 && savedSpeed <= 2 ? savedSpeed : 1,
 };
 
 const els = {
   lessonSelect: document.querySelector("#lesson-select"),
-  lessonTopic: document.querySelector("#lesson-topic"),
-  lessonTitle: document.querySelector("#lesson-title"),
-  lessonSummary: document.querySelector("#lesson-summary"),
+  themeToggle: document.querySelector("#theme-toggle"),
+  themeColor: document.querySelector("#theme-color"),
+  chunkStage: document.querySelector("#chunk-stage"),
   chunkText: document.querySelector("#chunk-text"),
   progressText: document.querySelector("#progress-text"),
   progressBar: document.querySelector("#progress-bar"),
@@ -22,15 +28,36 @@ const els = {
   restart: document.querySelector("#restart"),
   speed: document.querySelector("#speed"),
   speedLabel: document.querySelector("#speed-label"),
-  timingLabel: document.querySelector("#timing-label"),
+  sourceSection: document.querySelector("#source-section"),
   sourceList: document.querySelector("#source-list"),
 };
+
+function currentTheme() {
+  return document.documentElement.dataset.theme === "dark" ? "dark" : "light";
+}
+
+function applyTheme(theme, persist = true) {
+  const next = theme === "dark" ? "dark" : "light";
+  document.documentElement.dataset.theme = next;
+  els.themeToggle.textContent = next === "dark" ? "☀" : "☾";
+  els.themeToggle.setAttribute(
+    "aria-label",
+    next === "dark" ? "ライトモードに切り替え" : "ダークモードに切り替え",
+  );
+  els.themeColor.setAttribute("content", next === "dark" ? "#11151a" : "#f2efe8");
+  if (persist) localStorage.setItem(THEME_KEY, next);
+}
+
+function updatePlayButton() {
+  els.playPause.textContent = state.playing ? "Ⅱ" : "▶";
+  els.playPause.setAttribute("aria-label", state.playing ? "一時停止" : "再生");
+}
 
 function stopPlayback() {
   state.playing = false;
   clearTimeout(state.timer);
   state.timer = null;
-  els.playPause.textContent = "再生";
+  updatePlayButton();
 }
 
 function currentChunk() {
@@ -44,22 +71,12 @@ function chunkDelayMs() {
   return Math.max(120, Math.round((base * multiplier) / state.speed));
 }
 
-function render() {
-  if (!state.lesson) return;
-
-  const total = state.lesson.chunks.length;
-  const chunk = currentChunk();
-  els.lessonTopic.textContent = state.lesson.topic ?? "";
-  els.lessonTitle.textContent = state.lesson.title;
-  els.lessonSummary.textContent = state.lesson.summary ?? "";
-  els.chunkText.textContent = chunk?.text ?? "完了";
-  els.progressText.textContent = total ? `${Math.min(state.index + 1, total)} / ${total}` : "0 / 0";
-  els.progressBar.style.width = total ? `${((state.index + 1) / total) * 100}%` : "0%";
-  els.speedLabel.textContent = `${state.speed.toFixed(1)}×`;
-  els.timingLabel.textContent = `基本表示時間: ${Math.round((state.lesson.base_duration_ms ?? 650) / state.speed)} ms`;
-
+function renderSources() {
+  const sources = state.lesson?.sources ?? [];
   els.sourceList.replaceChildren();
-  for (const source of state.lesson.sources ?? []) {
+  els.sourceSection.hidden = sources.length === 0;
+
+  for (const source of sources) {
     const li = document.createElement("li");
     if (source.url) {
       const a = document.createElement("a");
@@ -69,17 +86,31 @@ function render() {
       a.textContent = source.title ?? source.url;
       li.append(a);
     } else {
-      li.textContent = source.title ?? "出典情報";
+      li.textContent = source.title ?? "出典";
     }
     els.sourceList.append(li);
   }
 }
 
+function render() {
+  if (!state.lesson) return;
+
+  const total = state.lesson.chunks.length;
+  const chunk = currentChunk();
+  const current = Math.min(state.index + 1, total);
+
+  els.chunkText.textContent = chunk?.text ?? "完了";
+  els.progressText.textContent = total ? `${current}·${total}` : "0·0";
+  els.progressBar.style.width = total ? `${(current / total) * 100}%` : "0%";
+  els.speedLabel.textContent = `${state.speed.toFixed(1)}×`;
+  els.speed.value = String(state.speed);
+  renderSources();
+}
+
 function scheduleNext() {
   if (!state.playing || !state.lesson) return;
 
-  const total = state.lesson.chunks.length;
-  if (state.index >= total - 1) {
+  if (state.index >= state.lesson.chunks.length - 1) {
     stopPlayback();
     return;
   }
@@ -101,10 +132,11 @@ function togglePlayback() {
 
   if (state.index >= state.lesson.chunks.length - 1) {
     state.index = 0;
+    render();
   }
 
   state.playing = true;
-  els.playPause.textContent = "一時停止";
+  updatePlayButton();
   scheduleNext();
 }
 
@@ -130,17 +162,18 @@ function validateLesson(lesson) {
 
 async function loadLesson(path) {
   stopPlayback();
-  const response = await fetch(path, { cache: "no-store" });
+  const response = await fetch(path);
   if (!response.ok) throw new Error(`教材の取得に失敗しました: ${response.status}`);
   const lesson = await response.json();
   validateLesson(lesson);
   state.lesson = lesson;
   state.index = 0;
+  localStorage.setItem(LESSON_KEY, path);
   render();
 }
 
 async function loadCatalog() {
-  const response = await fetch("./lessons/index.json", { cache: "no-store" });
+  const response = await fetch("./lessons/index.json");
   if (!response.ok) throw new Error(`教材一覧の取得に失敗しました: ${response.status}`);
   const catalog = await response.json();
   state.catalog = catalog.lessons ?? [];
@@ -154,11 +187,20 @@ async function loadCatalog() {
   }
 
   if (state.catalog.length > 0) {
-    await loadLesson(state.catalog[0].path);
+    const savedLesson = localStorage.getItem(LESSON_KEY);
+    const selected = state.catalog.some((item) => item.path === savedLesson)
+      ? savedLesson
+      : state.catalog[0].path;
+    els.lessonSelect.value = selected;
+    await loadLesson(selected);
   }
 }
 
 els.lessonSelect.addEventListener("change", (event) => loadLesson(event.target.value));
+els.themeToggle.addEventListener("click", () => {
+  applyTheme(currentTheme() === "dark" ? "light" : "dark");
+});
+els.chunkStage.addEventListener("click", togglePlayback);
 els.playPause.addEventListener("click", togglePlayback);
 els.backFive.addEventListener("click", () => move(-5));
 els.backOne.addEventListener("click", () => move(-1));
@@ -170,6 +212,7 @@ els.restart.addEventListener("click", () => {
 });
 els.speed.addEventListener("input", (event) => {
   state.speed = Number(event.target.value);
+  localStorage.setItem(SPEED_KEY, String(state.speed));
   if (state.playing) {
     clearTimeout(state.timer);
     state.timer = null;
@@ -190,9 +233,25 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
+const colorScheme = window.matchMedia("(prefers-color-scheme: dark)");
+colorScheme.addEventListener?.("change", (event) => {
+  if (!localStorage.getItem(THEME_KEY)) {
+    applyTheme(event.matches ? "dark" : "light", false);
+  }
+});
+
+applyTheme(currentTheme(), false);
+updatePlayButton();
+
 loadCatalog().catch((error) => {
   console.error(error);
-  els.chunkText.textContent = "教材を読み込めませんでした";
-  els.lessonTitle.textContent = "読み込みエラー";
-  els.lessonSummary.textContent = error.message;
+  els.chunkText.textContent = "読み込みエラー";
 });
+
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./sw.js").catch((error) => {
+      console.error("Service worker registration failed:", error);
+    });
+  });
+}
