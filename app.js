@@ -23,6 +23,7 @@ const state = {
   progress: loadProgress(),
   playCounted: false,
   completionCounted: false,
+  loadRequestId: 0,
 };
 
 const els = {
@@ -242,18 +243,39 @@ function markCompleted() {
   renderLibrary();
 }
 
-async function loadChapterAt(sequenceIndex, { autoplay = false } = {}) {
-  const lessonId = state.sequence[sequenceIndex];
+async function loadChapterAt(
+  sequenceIndex,
+  {
+    autoplay = false,
+    courseId = state.courseId,
+    mode = state.mode,
+    sequence = state.sequence,
+  } = {},
+) {
+  const targetSequence = [...sequence];
+  const lessonId = targetSequence[sequenceIndex];
   const meta = state.lessonMap.get(lessonId);
   if (!meta) throw new Error(`教材が見つかりません: ${lessonId}`);
 
+  const requestId = ++state.loadRequestId;
   stopPlayback();
 
-  const response = await fetch(meta.path);
-  if (!response.ok) throw new Error(`教材の取得に失敗しました: ${response.status}`);
-  const lesson = await response.json();
-  validateLesson(lesson);
+  let lesson;
+  try {
+    const response = await fetch(meta.path);
+    if (!response.ok) throw new Error(`教材の取得に失敗しました: ${response.status}`);
+    lesson = await response.json();
+    validateLesson(lesson);
+  } catch (error) {
+    if (requestId !== state.loadRequestId) return false;
+    throw error;
+  }
 
+  if (requestId !== state.loadRequestId) return false;
+
+  state.courseId = courseId;
+  state.mode = mode;
+  state.sequence = targetSequence;
   state.lesson = lesson;
   state.lessonId = lessonId;
   state.sequenceIndex = sequenceIndex;
@@ -262,31 +284,37 @@ async function loadChapterAt(sequenceIndex, { autoplay = false } = {}) {
   state.completionCounted = false;
 
   localStorage.setItem(LESSON_KEY, lessonId);
-  if (state.courseId) localStorage.setItem(COURSE_KEY, state.courseId);
+  if (courseId) localStorage.setItem(COURSE_KEY, courseId);
 
   render();
 
-  if (autoplay) {
+  if (autoplay && els.libraryOverlay.hidden) {
     startPlayback();
   }
+
+  return true;
 }
 
 async function startCourse(courseId, mode = "chapter", lessonId = null) {
   const course = state.courses.find((item) => item.id === courseId);
   if (!course) throw new Error(`コースが見つかりません: ${courseId}`);
 
-  state.courseId = course.id;
-  state.mode = mode;
-  state.sequence = mode === "random" ? shuffle(course.chapters) : [...course.chapters];
+  const sequence = mode === "random" ? shuffle(course.chapters) : [...course.chapters];
 
   let index = 0;
   if (lessonId && mode === "chapter") {
-    const found = state.sequence.indexOf(lessonId);
+    const found = sequence.indexOf(lessonId);
     if (found >= 0) index = found;
   }
 
-  await loadChapterAt(index);
-  closeLibrary();
+  const loaded = await loadChapterAt(index, {
+    courseId: course.id,
+    mode,
+    sequence,
+  });
+
+  if (loaded) closeLibrary();
+  return loaded;
 }
 
 async function finishCurrentChapter() {
@@ -455,6 +483,8 @@ function renderLibrary() {
 }
 
 function openLibrary() {
+  state.loadRequestId += 1;
+  stopPlayback();
   renderLibrary();
   els.libraryOverlay.hidden = false;
   document.body.classList.add("is-library-open");
