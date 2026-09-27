@@ -37,6 +37,12 @@ Android実機ではページ内読み上げは動作しましたが、Chromeを�
 
 検証結果と設計判断は `docs/LEARN_READALOUD_PILOT_20260927.md` に記録しています。
 
+新しいLearn HTMLを生成するときは、次を正本として使います。
+
+- 実装仕様: `docs/LEARN_HTML_FORMAT.md`
+- 生成プロンプト: `prompts/learn-generation.md`
+- 動作例: `learn/api-authentication-authorization.html`
+
 ## 教材構造
 
 `lessons/index.json` がLessonのメタデータ、`courses/index.json` がCourseとChapter順を管理します。
