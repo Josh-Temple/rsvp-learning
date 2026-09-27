@@ -25,15 +25,15 @@
 <body>
   <main class="app-shell">
     <header class="topbar">
-      <div class="brand" aria-label="RSVP">
+      <button id="library-open" class="brand" type="button" aria-label="ライブラリを開く">
         <span class="brand-mark" aria-hidden="true">
           <i></i><i></i><i></i>
         </span>
         <span class="brand-label">RSVP</span>
-      </div>
+      </button>
 
       <div class="top-actions">
-        <select id="lesson-select" aria-label="教材を選択"></select>
+        <button id="current-lesson" class="current-lesson" type="button" aria-label="教材を選択">…</button>
         <button id="theme-toggle" class="icon-button" type="button" aria-label="テーマ切替">☾</button>
       </div>
     </header>
@@ -67,9 +67,30 @@
             <ul id="source-list"></ul>
           </details>
         </div>
+
+        <div class="chapter-nav" aria-label="教材移動">
+          <button id="prev-chapter" type="button" aria-label="前のチャプター">‹</button>
+          <span id="chapter-position">01 / 01</span>
+          <div id="mastery-control" class="mastery-control" aria-label="習熟度">
+            <button type="button" data-level="1" aria-label="習熟度 1"></button>
+            <button type="button" data-level="2" aria-label="習熟度 2"></button>
+            <button type="button" data-level="3" aria-label="習熟度 3"></button>
+          </div>
+          <button id="next-chapter" type="button" aria-label="次のチャプター">›</button>
+        </div>
       </div>
     </section>
   </main>
+
+  <section id="library-overlay" class="library-overlay" role="dialog" aria-modal="true" aria-labelledby="library-title" hidden>
+    <div class="library-shell">
+      <header class="library-header">
+        <span id="library-title">LIBRARY</span>
+        <button id="library-close" type="button" aria-label="ライブラリを閉じる">×</button>
+      </header>
+      <div id="library-content" class="library-content"></div>
+    </div>
+  </section>
 
   <script src="./app.js" type="module"></script>
 </body>
