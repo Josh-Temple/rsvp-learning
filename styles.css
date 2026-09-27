@@ -176,6 +176,21 @@ button {
   color: var(--ink);
 }
 
+.icon-mode-link {
+  width: 42px;
+  padding: 0;
+  justify-content: center;
+}
+
+.icon-mode-link svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
 .mode-link[hidden] {
   display: none;
 }
