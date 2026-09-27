@@ -31,6 +31,7 @@ const els = {
   libraryOverlay: document.querySelector("#library-overlay"),
   libraryContent: document.querySelector("#library-content"),
   currentLesson: document.querySelector("#current-lesson"),
+  learnLink: document.querySelector("#learn-link"),
   themeToggle: document.querySelector("#theme-toggle"),
   themeColor: document.querySelector("#theme-color"),
   chunkStage: document.querySelector("#chunk-stage"),
@@ -189,6 +190,7 @@ function render() {
   const current = Math.min(state.index + 1, total);
 
   els.currentLesson.textContent = state.lesson.title;
+  els.learnLink.hidden = state.lessonId !== "api-authentication-authorization";
   els.chunkText.textContent = chunk?.text ?? "完了";
   els.progressText.textContent = total ? `${current}·${total}` : "0·0";
   els.progressBar.style.width = total ? `${(current / total) * 100}%` : "0%";
