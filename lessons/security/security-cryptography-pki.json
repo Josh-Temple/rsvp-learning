@@ -66,55 +66,75 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "暗号化は情報をそのまま",
+      "text": "暗号化は",
       "duration_multiplier": 1.1
     },
     {
-      "text": "では読めない形へ変換し",
+      "text": "情報をそのままでは読",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "めない形へ変換し",
       "duration_multiplier": 1.1
     },
     {
-      "text": "適切な鍵を持つ者だけが元",
+      "text": "適切な鍵を持つ者だけが",
       "duration_multiplier": 1.1
     },
     {
-      "text": "の情報を利用できるように",
-      "duration_multiplier": 1.1
+      "text": "元の情報を利用できる",
+      "duration_multiplier": 1
     },
     {
-      "text": "する技術です",
+      "text": "ようにする技術です",
       "duration_multiplier": 1.4
     },
     {
-      "text": "暗号化は主に機密性を守る",
-      "duration_multiplier": 1.1
+      "text": "暗号化は主に機密性を",
+      "duration_multiplier": 1
     },
     {
-      "text": "ために使われます",
+      "text": "守るために使われます",
       "duration_multiplier": 1.4
     },
     {
-      "text": "ただし暗号化しているだけ",
+      "text": "ただし",
       "duration_multiplier": 1.1
     },
     {
-      "text": "で情報セキュリティ上の",
-      "duration_multiplier": 1.1
+      "text": "暗号化しているだけで",
+      "duration_multiplier": 1
     },
     {
-      "text": "問題がすべて解決するわけ",
-      "duration_multiplier": 1.1
+      "text": "情報セキュリティ上の",
+      "duration_multiplier": 1
     },
     {
-      "text": "ではありません",
+      "text": "問題がすべて解決する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "わけではありません",
       "duration_multiplier": 1.4
     },
     {
-      "text": "鍵の管理認証アクセス制御",
+      "text": "鍵の管理",
       "duration_multiplier": 1.1
     },
     {
-      "text": "バックアップなども必要です",
+      "text": "認証",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "アクセス制御",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "バックアップなども",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "必要です",
       "duration_multiplier": 1.4
     },
     {
@@ -122,55 +142,75 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "共通鍵暗号では暗号化と",
+      "text": "共通鍵暗号では",
       "duration_multiplier": 1.1
     },
     {
-      "text": "復号に同じ秘密の鍵を使います",
+      "text": "暗号化と復号に同じ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "秘密の鍵を使います",
       "duration_multiplier": 1.4
     },
     {
-      "text": "大量のデータを効率よく",
+      "text": "大量のデータを効率",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "よく暗号化しやすい",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ことが特徴です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "AESは代表的な共通",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "鍵暗号方式です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "AESには128",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "ビット",
       "duration_multiplier": 1.1
     },
     {
-      "text": "暗号化しやすいことが特徴です",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "AESは代表的な共通鍵",
+      "text": "192ビット",
       "duration_multiplier": 1.2
     },
     {
-      "text": "暗号方式です",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "AESには128ビット",
+      "text": "256ビットの鍵長が",
       "duration_multiplier": 1.2
     },
     {
-      "text": "192ビット256ビット",
-      "duration_multiplier": 1.2
-    },
-    {
-      "text": "の鍵長があります",
+      "text": "あります",
       "duration_multiplier": 1.4
     },
     {
       "text": "実際の安全性は",
-      "duration_multiplier": 1
+      "duration_multiplier": 1.1
     },
     {
       "text": "アルゴリズム名だけでなく",
       "duration_multiplier": 1.1
     },
     {
-      "text": "利用モード鍵管理実装など",
+      "text": "利用モード",
       "duration_multiplier": 1.1
     },
     {
-      "text": "にも左右されます",
+      "text": "鍵管理",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "実装などにも左右されます",
       "duration_multiplier": 1.4
     },
     {
@@ -178,35 +218,47 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "公開鍵暗号では数学的に",
+      "text": "公開鍵暗号では",
       "duration_multiplier": 1.1
     },
     {
-      "text": "関係する二つの鍵を使います",
+      "text": "数学的に関係する二つの",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "鍵を使います",
       "duration_multiplier": 1.4
     },
     {
-      "text": "一方を公開鍵として配布し",
+      "text": "一方を公開鍵として",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "配布し",
       "duration_multiplier": 1.1
     },
     {
-      "text": "もう一方を秘密鍵として",
-      "duration_multiplier": 1.1
+      "text": "もう一方を秘密鍵",
+      "duration_multiplier": 1
     },
     {
-      "text": "保護します",
+      "text": "として保護します",
       "duration_multiplier": 1.4
     },
     {
-      "text": "公開鍵暗号は暗号化だけで",
+      "text": "公開鍵暗号は",
       "duration_multiplier": 1.1
     },
     {
-      "text": "なく鍵交換やデジタル署名",
+      "text": "暗号化だけでなく",
       "duration_multiplier": 1.1
     },
     {
-      "text": "などにも利用されます",
+      "text": "鍵交換やデジタル署名などにも",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "利用されます",
       "duration_multiplier": 1.4
     },
     {
@@ -226,15 +278,19 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "秘密鍵で復号する技術」と",
+      "text": "秘密鍵で復号する技術",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "」とだけ覚えると",
       "duration_multiplier": 1.1
     },
     {
-      "text": "だけ覚えると署名などの",
-      "duration_multiplier": 1.1
+      "text": "署名などの用途を理解",
+      "duration_multiplier": 1
     },
     {
-      "text": "用途を理解しにくくなります",
+      "text": "しにくくなります",
       "duration_multiplier": 1.4
     },
     {
@@ -246,27 +302,31 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "入力データから一定の長さ",
-      "duration_multiplier": 1.1
+      "text": "入力データから一定の",
+      "duration_multiplier": 1
     },
     {
-      "text": "のハッシュ値を計算する",
-      "duration_multiplier": 1.1
+      "text": "長さのハッシュ値を",
+      "duration_multiplier": 1
     },
     {
-      "text": "仕組みです",
+      "text": "計算する仕組みです",
       "duration_multiplier": 1.4
     },
     {
-      "text": "暗号化とは異なりハッシュ",
+      "text": "暗号化とは異なり",
       "duration_multiplier": 1.1
     },
     {
-      "text": "値から元のデータへ戻す",
-      "duration_multiplier": 1.1
+      "text": "ハッシュ値から元の",
+      "duration_multiplier": 1
     },
     {
-      "text": "ことを目的としていません",
+      "text": "データへ戻すことを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "目的としていません",
       "duration_multiplier": 1.4
     },
     {
@@ -274,11 +334,19 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "確認する用途などに使われます",
+      "text": "確認する用途などに使",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "われます",
       "duration_multiplier": 1.4
     },
     {
-      "text": "ただしハッシュ値だけでは",
+      "text": "ただし",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "ハッシュ値だけでは",
       "duration_multiplier": 1.1
     },
     {
@@ -286,31 +354,39 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "正しい相手かまでは確認",
-      "duration_multiplier": 1.1
+      "text": "正しい相手かまでは",
+      "duration_multiplier": 1
     },
     {
-      "text": "できません",
+      "text": "確認できません",
       "duration_multiplier": 1.4
     },
     {
-      "text": "改ざんへの対策では用途に",
+      "text": "改ざんへの対策では",
       "duration_multiplier": 1.1
     },
     {
-      "text": "応じてデジタル署名など別",
-      "duration_multiplier": 1.1
+      "text": "用途に応じてデジタル",
+      "duration_multiplier": 1
     },
     {
-      "text": "の仕組みと組み合わせます",
+      "text": "署名など別の仕組みと",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "組み合わせます",
       "duration_multiplier": 1.4
     },
     {
-      "text": "パスワードを保存するとき",
-      "duration_multiplier": 1.1
+      "text": "パスワードを保存する",
+      "duration_multiplier": 1
     },
     {
-      "text": "もハッシュを利用しますが",
+      "text": "ときもハッシュを利用",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "しますが",
       "duration_multiplier": 1.1
     },
     {
@@ -318,27 +394,31 @@
       "duration_multiplier": 1
     },
     {
-      "text": "そのまま使うのは適切では",
-      "duration_multiplier": 1.1
+      "text": "そのまま使うのは適切",
+      "duration_multiplier": 1
     },
     {
-      "text": "ありません",
+      "text": "ではありません",
       "duration_multiplier": 1.4
     },
     {
-      "text": "パスワード保存にはソルト",
+      "text": "パスワード保存には",
       "duration_multiplier": 1.1
     },
     {
-      "text": "とパスワード保存向けに",
+      "text": "ソルトと",
       "duration_multiplier": 1.1
     },
     {
-      "text": "設計された方式を使う必要",
-      "duration_multiplier": 1.1
+      "text": "パスワード保存向けに",
+      "duration_multiplier": 1
     },
     {
-      "text": "があります",
+      "text": "設計された方式を使う",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "必要があります",
       "duration_multiplier": 1.4
     },
     {
@@ -346,59 +426,71 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "デジタル署名はデータの",
+      "text": "デジタル署名は",
       "duration_multiplier": 1.1
     },
     {
-      "text": "出所の真正性と署名後に",
+      "text": "データの出所の真正性と",
       "duration_multiplier": 1.1
     },
     {
-      "text": "データが変更されていない",
-      "duration_multiplier": 1.1
+      "text": "署名後にデータが変更",
+      "duration_multiplier": 1
     },
     {
-      "text": "ことを確認するために使",
-      "duration_multiplier": 1.1
+      "text": "されていないことを",
+      "duration_multiplier": 1
     },
     {
-      "text": "われます",
+      "text": "確認するために使われます",
       "duration_multiplier": 1.4
     },
     {
-      "text": "秘密鍵で署名を生成し対応",
+      "text": "秘密鍵で署名を生成し",
       "duration_multiplier": 1.1
     },
     {
-      "text": "する公開鍵で署名を検証します",
+      "text": "対応する公開鍵で署名を",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "検証します",
       "duration_multiplier": 1.4
     },
     {
-      "text": "正しく運用するにはその",
+      "text": "正しく運用するには",
       "duration_multiplier": 1.1
     },
     {
-      "text": "公開鍵が誰に対応するもの",
-      "duration_multiplier": 1.1
+      "text": "その公開鍵が誰に対応",
+      "duration_multiplier": 1
     },
     {
-      "text": "かを信頼できる方法で確認",
-      "duration_multiplier": 1.1
+      "text": "するものかを信頼",
+      "duration_multiplier": 1
     },
     {
-      "text": "する仕組みも必要です",
+      "text": "できる方法で確認する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "仕組みも必要です",
       "duration_multiplier": 1.4
     },
     {
-      "text": "デジタル署名はデータを読",
+      "text": "デジタル署名は",
       "duration_multiplier": 1.1
     },
     {
-      "text": "めなくするための暗号化と",
+      "text": "データを読めなくする",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ための暗号化とは目的が",
       "duration_multiplier": 1.1
     },
     {
-      "text": "は目的が異なります",
+      "text": "異なります",
       "duration_multiplier": 1.4
     },
     {
@@ -414,15 +506,19 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "HTTPSはHTTP通信",
+      "text": "HTTPSは",
       "duration_multiplier": 1.2
     },
     {
-      "text": "をTLSで保護して利用",
+      "text": "HTTP通信をTLSで",
       "duration_multiplier": 1.2
     },
     {
-      "text": "する仕組みです",
+      "text": "保護して利用する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "仕組みです",
       "duration_multiplier": 1.4
     },
     {
@@ -430,23 +526,27 @@
       "duration_multiplier": 1.2
     },
     {
-      "text": "Transport",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "Layer",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "Securityの略です",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "ブラウザとサーバーの間の",
+      "text": "Transport Layer",
       "duration_multiplier": 1.1
     },
     {
-      "text": "通信を暗号学的に保護します",
+      "text": "Securityの",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "略です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "ブラウザとサーバーの",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "間の通信を暗号学的に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "保護します",
       "duration_multiplier": 1.4
     },
     {
@@ -454,7 +554,11 @@
       "duration_multiplier": 1.2
     },
     {
-      "text": "なく通信相手の認証や",
+      "text": "なく",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "通信相手の認証や",
       "duration_multiplier": 1
     },
     {
@@ -466,43 +570,55 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "ただしHTTPSで接続し",
+      "text": "ただし",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "HTTPSで接続して",
       "duration_multiplier": 1.2
     },
     {
-      "text": "ているからそのサイトの",
+      "text": "いるから",
       "duration_multiplier": 1.1
     },
     {
-      "text": "内容そのものが安全である",
+      "text": "そのサイトの内容",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "そのものが安全であるとは",
       "duration_multiplier": 1.1
     },
     {
-      "text": "とは限りません",
+      "text": "限りません",
       "duration_multiplier": 1.4
     },
     {
-      "text": "攻撃者が管理するサイト",
-      "duration_multiplier": 1.1
+      "text": "攻撃者が管理する",
+      "duration_multiplier": 1
     },
     {
-      "text": "でもHTTPSを利用する",
+      "text": "サイトでもHTTPSを",
       "duration_multiplier": 1.2
     },
     {
-      "text": "ことはできます",
+      "text": "利用することはできます",
       "duration_multiplier": 1.4
     },
     {
-      "text": "通信経路の保護と相手が",
+      "text": "通信経路の保護と",
       "duration_multiplier": 1.1
     },
     {
-      "text": "信頼できるかどうかの判断",
-      "duration_multiplier": 1.1
+      "text": "相手が信頼できるか",
+      "duration_multiplier": 1
     },
     {
-      "text": "は別の問題です",
+      "text": "どうかの判断は別の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "問題です",
       "duration_multiplier": 1.4
     },
     {
@@ -510,19 +626,23 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "暗号技術では鍵の管理が",
+      "text": "暗号技術では",
       "duration_multiplier": 1.1
     },
     {
-      "text": "非常に重要です",
+      "text": "鍵の管理が非常に重要です",
       "duration_multiplier": 1.4
     },
     {
-      "text": "強い暗号方式を使っていて",
+      "text": "強い暗号方式を使って",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "いても",
       "duration_multiplier": 1.1
     },
     {
-      "text": "も秘密鍵が漏れれば保護は",
+      "text": "秘密鍵が漏れれば保護は",
       "duration_multiplier": 1.1
     },
     {
@@ -530,7 +650,23 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "鍵の生成保存利用交換失効",
+      "text": "鍵の生成",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "保存",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "利用",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "交換",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "失効",
       "duration_multiplier": 1.1
     },
     {
@@ -546,15 +682,15 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "十分に検討された標準方式",
+      "text": "十分に検討された標準",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "方式と信頼できる実装を",
       "duration_multiplier": 1.1
     },
     {
-      "text": "と信頼できる実装を利用",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "することが基本です",
+      "text": "利用することが基本です",
       "duration_multiplier": 1.4
     },
     {
@@ -562,83 +698,99 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "共通鍵暗号は大量のデータ",
+      "text": "共通鍵暗号は",
       "duration_multiplier": 1.1
     },
     {
-      "text": "を効率よく暗号化するのに",
-      "duration_multiplier": 1.1
+      "text": "大量のデータを効率",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "よく暗号化するのに",
+      "duration_multiplier": 1
     },
     {
       "text": "向いています",
       "duration_multiplier": 1.4
     },
     {
-      "text": "公開鍵暗号は事前に同じ",
+      "text": "公開鍵暗号は",
       "duration_multiplier": 1.1
     },
     {
-      "text": "秘密鍵を共有していない",
+      "text": "事前に同じ秘密鍵を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "共有していない相手とも",
       "duration_multiplier": 1.1
     },
     {
-      "text": "相手とも安全な鍵共有や",
-      "duration_multiplier": 1.1
+      "text": "安全な鍵共有や認証の",
+      "duration_multiplier": 1
     },
     {
-      "text": "認証の仕組みを作りやすい",
-      "duration_multiplier": 1.1
+      "text": "仕組みを作りやすい",
+      "duration_multiplier": 1
     },
     {
       "text": "特徴があります",
       "duration_multiplier": 1.4
     },
     {
-      "text": "実際の通信では両者を",
+      "text": "実際の通信では",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "両者を組み合わせる",
       "duration_multiplier": 1
     },
     {
-      "text": "組み合わせることがよく",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "あります",
+      "text": "ことがよくあります",
       "duration_multiplier": 1.4
     },
     {
-      "text": "公開鍵暗号などを使って",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "セッション用の秘密を安全",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "に確立しその後の大量",
+      "text": "公開鍵暗号などを使",
       "duration_multiplier": 1
     },
     {
-      "text": "データは共通鍵暗号で保護",
+      "text": "ってセッション用の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "秘密を安全に確立し",
       "duration_multiplier": 1.1
     },
     {
-      "text": "します",
+      "text": "その後の大量データは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "共通鍵暗号で保護します",
       "duration_multiplier": 1.4
     },
     {
-      "text": "TLSも複数の暗号技術を",
+      "text": "TLSも複数の暗号",
       "duration_multiplier": 1.2
     },
     {
-      "text": "組み合わせて通信を保護します",
+      "text": "技術を組み合わせて",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "通信を保護します",
       "duration_multiplier": 1.4
     },
     {
-      "text": "「公開鍵暗号か共通鍵暗号",
-      "duration_multiplier": 1.1
+      "text": "「公開鍵暗号か共通鍵",
+      "duration_multiplier": 1
     },
     {
-      "text": "か」の二者択一ではありません",
+      "text": "暗号か」の二者択一",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ではありません",
       "duration_multiplier": 1.4
     },
     {
@@ -646,31 +798,43 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "RSAは代表的な公開鍵",
+      "text": "RSAは代表的な公開",
       "duration_multiplier": 1.2
     },
     {
-      "text": "暗号方式の一つです",
+      "text": "鍵暗号方式の一つです",
       "duration_multiplier": 1.4
     },
     {
-      "text": "用途や方式によって暗号化",
+      "text": "用途や方式によって",
       "duration_multiplier": 1.1
     },
     {
-      "text": "鍵確立デジタル署名などに",
+      "text": "暗号化",
       "duration_multiplier": 1.1
+    },
+    {
+      "text": "鍵確立",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "デジタル署名などに",
+      "duration_multiplier": 1
     },
     {
       "text": "関係します",
       "duration_multiplier": 1.4
     },
     {
-      "text": "ただし「RSAなら同じ",
+      "text": "ただし「RSAなら",
       "duration_multiplier": 1.2
     },
     {
-      "text": "使い方をする」とは限りません",
+      "text": "同じ使い方をする」とは",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "限りません",
       "duration_multiplier": 1.4
     },
     {
@@ -678,23 +842,35 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "パディング方式利用目的",
+      "text": "パディング方式",
       "duration_multiplier": 1.1
     },
     {
-      "text": "実装鍵管理にも左右されます",
+      "text": "利用目的",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "実装",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "鍵管理にも左右されます",
       "duration_multiplier": 1.4
     },
     {
-      "text": "現在のシステムでは楕円",
+      "text": "現在のシステムでは",
       "duration_multiplier": 1.1
     },
     {
-      "text": "曲線暗号など別の公開鍵",
-      "duration_multiplier": 1.1
+      "text": "楕円曲線暗号など別の",
+      "duration_multiplier": 1
     },
     {
-      "text": "技術も広く利用されています",
+      "text": "公開鍵技術も広く利用",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "されています",
       "duration_multiplier": 1.4
     },
     {
@@ -702,23 +878,31 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "Message",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "Authentication",
+      "text": "Message Authentication",
       "duration_multiplier": 1.3
     },
     {
-      "text": "CodeMACは秘密鍵を",
-      "duration_multiplier": 1.2
-    },
-    {
-      "text": "使ってメッセージの真正性",
+      "text": "Code",
       "duration_multiplier": 1.1
     },
     {
-      "text": "と完全性を確認する仕組みです",
+      "text": "MACは",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "秘密鍵を使って",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "メッセージの真正性と",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "完全性を確認する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "仕組みです",
       "duration_multiplier": 1.4
     },
     {
@@ -726,51 +910,67 @@
       "duration_multiplier": 1.2
     },
     {
-      "text": "基本的に同じ秘密鍵を共有",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "する側です",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "HMACは暗号学的",
-      "duration_multiplier": 1.2
-    },
-    {
-      "text": "ハッシュ関数と秘密鍵を",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "組み合わせたMACです",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "単純なハッシュ値との違い",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "は秘密鍵を知る相手だけが",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "正しいMACを生成できる",
-      "duration_multiplier": 1.2
-    },
-    {
-      "text": "点です",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "一方共有鍵を使うため",
+      "text": "基本的に同じ秘密鍵を",
       "duration_multiplier": 1
     },
     {
-      "text": "デジタル署名のような否認",
+      "text": "共有する側です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "HMACは",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "暗号学的ハッシュ関数と",
       "duration_multiplier": 1.1
     },
     {
-      "text": "防止とは性質が異なります",
+      "text": "秘密鍵を組み合わせた",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "MACです",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "単純なハッシュ値との",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "違いは",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "秘密鍵を知る相手だけが",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "正しいMACを生成",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "できる点です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "一方",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "共有鍵を使うため",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "デジタル署名のような",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "否認防止とは性質が異",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "なります",
       "duration_multiplier": 1.4
     },
     {
@@ -778,52 +978,72 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "安全と考えられていた暗号",
+      "text": "安全と考えられていた",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "暗号方式でも",
       "duration_multiplier": 1.1
     },
     {
-      "text": "方式でも研究の進展計算",
+      "text": "研究の進展",
       "duration_multiplier": 1.1
     },
     {
-      "text": "能力の向上実装上の問題",
+      "text": "計算能力の向上",
       "duration_multiplier": 1.1
     },
     {
-      "text": "などによって十分な安全性",
+      "text": "実装上の問題など",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "によって",
       "duration_multiplier": 1.1
     },
     {
-      "text": "を維持できなくなることが",
-      "duration_multiplier": 1.1
+      "text": "十分な安全性を維持",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "できなくなることが",
+      "duration_multiplier": 1
     },
     {
       "text": "あります",
       "duration_multiplier": 1.4
     },
     {
-      "text": "これを暗号方式の危殆化と",
-      "duration_multiplier": 1.1
+      "text": "これを暗号方式の危殆",
+      "duration_multiplier": 1
     },
     {
-      "text": "呼ぶことがあります",
+      "text": "化と呼ぶことがあります",
       "duration_multiplier": 1.4
     },
     {
-      "text": "そのため暗号方式や鍵長を",
+      "text": "そのため",
       "duration_multiplier": 1.1
     },
     {
-      "text": "永遠に固定してはいけません",
+      "text": "暗号方式や鍵長を永遠に",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "固定してはいけません",
       "duration_multiplier": 1.4
     },
     {
-      "text": "安全性の評価や標準の更新",
+      "text": "安全性の評価や標準の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "更新を追い",
       "duration_multiplier": 1.1
     },
     {
-      "text": "を追い必要に応じて移行",
-      "duration_multiplier": 1.1
+      "text": "必要に応じて移行",
+      "duration_multiplier": 1
     },
     {
       "text": "できる設計が重要です",
@@ -834,19 +1054,19 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "将来の暗号方式変更へ対応",
+      "text": "将来の暗号方式変更へ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "対応できる能力は",
       "duration_multiplier": 1.1
     },
     {
-      "text": "できる能力はCrypto",
+      "text": "Crypto Agilityなどと",
       "duration_multiplier": 1.1
     },
     {
-      "text": "Agilityなどと呼ば",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "れます",
+      "text": "呼ばれます",
       "duration_multiplier": 1.4
     },
     {
@@ -854,27 +1074,27 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "固定的に埋め込むと移行が",
+      "text": "固定的に埋め込むと",
       "duration_multiplier": 1.1
     },
     {
-      "text": "難しくなります",
+      "text": "移行が難しくなります",
       "duration_multiplier": 1.4
     },
     {
-      "text": "どこでどの暗号を使って",
-      "duration_multiplier": 1.1
+      "text": "どこでどの暗号を使",
+      "duration_multiplier": 1
     },
     {
-      "text": "いるか把握する",
+      "text": "っているか把握する",
       "duration_multiplier": 1.4
     },
     {
-      "text": "鍵と証明書を更新できる",
-      "duration_multiplier": 1.1
+      "text": "鍵と証明書を更新",
+      "duration_multiplier": 1
     },
     {
-      "text": "ようにする",
+      "text": "できるようにする",
       "duration_multiplier": 1.4
     },
     {
@@ -898,7 +1118,15 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "日本ではデジタル庁総務省",
+      "text": "日本では",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "デジタル庁",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "総務省",
       "duration_multiplier": 1.1
     },
     {
@@ -906,31 +1134,35 @@
       "duration_multiplier": 1
     },
     {
-      "text": "CRYPTRECの活動",
+      "text": "CRYPTRECの",
       "duration_multiplier": 1.2
     },
     {
-      "text": "を通じて暗号技術を評価し",
+      "text": "活動を通じて暗号技術を",
       "duration_multiplier": 1.1
     },
     {
-      "text": "ています",
+      "text": "評価しています",
       "duration_multiplier": 1.4
     },
     {
-      "text": "CRYPTREC暗号",
+      "text": "CRYPTREC",
       "duration_multiplier": 1.2
     },
     {
-      "text": "リストは政府機関の情報",
+      "text": "暗号リストは",
       "duration_multiplier": 1.1
     },
     {
-      "text": "システム調達・利用で参照",
-      "duration_multiplier": 1.1
+      "text": "政府機関の情報",
+      "duration_multiplier": 1
     },
     {
-      "text": "されます",
+      "text": "システム調達・利用で",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "参照されます",
       "duration_multiplier": 1.4
     },
     {
@@ -938,43 +1170,59 @@
       "duration_multiplier": 1.2
     },
     {
-      "text": "更新されたリストは電子",
+      "text": "更新されたリストは",
       "duration_multiplier": 1.1
     },
     {
-      "text": "政府推奨暗号リスト推奨",
+      "text": "電子政府推奨暗号",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "リスト",
       "duration_multiplier": 1.1
     },
     {
-      "text": "候補暗号リスト運用監視",
+      "text": "推奨候補暗号リスト",
       "duration_multiplier": 1.1
     },
     {
-      "text": "暗号リストで構成されています",
+      "text": "運用監視暗号リストで",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "構成されています",
       "duration_multiplier": 1.4
     },
     {
-      "text": "これは「リスト外の暗号は",
-      "duration_multiplier": 1.1
+      "text": "これは「リスト外の",
+      "duration_multiplier": 1
     },
     {
-      "text": "すべて危険」という単純な",
-      "duration_multiplier": 1.1
+      "text": "暗号はすべて危険」",
+      "duration_multiplier": 1
     },
     {
-      "text": "意味ではありません",
+      "text": "という単純な意味では",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ありません",
       "duration_multiplier": 1.4
     },
     {
-      "text": "政府調達で参照するための",
+      "text": "政府調達で参照する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ための位置付けと",
       "duration_multiplier": 1.1
     },
     {
-      "text": "位置付けと各暗号の用途や",
-      "duration_multiplier": 1.1
+      "text": "各暗号の用途や運用",
+      "duration_multiplier": 1
     },
     {
-      "text": "運用条件を分けて理解します",
+      "text": "条件を分けて理解します",
       "duration_multiplier": 1.4
     },
     {
@@ -982,48 +1230,72 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "公開鍵証明書は公開鍵と",
+      "text": "公開鍵証明書は",
       "duration_multiplier": 1.1
     },
     {
-      "text": "主体の情報などを",
+      "text": "公開鍵と主体の情報などを",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "結び付けるデジタル",
       "duration_multiplier": 1
     },
     {
-      "text": "結び付けるデジタル文書です",
+      "text": "文書です",
       "duration_multiplier": 1.4
     },
     {
-      "text": "一般に証明書には公開鍵",
+      "text": "一般に",
       "duration_multiplier": 1.1
     },
     {
-      "text": "主体を識別する情報有効",
+      "text": "証明書には公開鍵",
       "duration_multiplier": 1.1
     },
     {
-      "text": "期間発行者などが含まれます",
+      "text": "主体を識別する情報",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "有効期間",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "発行者などが含まれます",
       "duration_multiplier": 1.4
     },
     {
-      "text": "証明書は認証局のデジタル",
+      "text": "証明書は",
       "duration_multiplier": 1.1
     },
     {
-      "text": "署名によって保護されます",
+      "text": "認証局のデジタル署名",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "によって保護されます",
       "duration_multiplier": 1.4
     },
     {
-      "text": "受信者はその署名を検証",
+      "text": "受信者は",
       "duration_multiplier": 1.1
     },
     {
-      "text": "することで証明書が信頼",
+      "text": "その署名を検証する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ことで",
       "duration_multiplier": 1.1
     },
     {
-      "text": "できる認証局から発行され",
-      "duration_multiplier": 1.1
+      "text": "証明書が信頼できる",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "認証局から発行され",
+      "duration_multiplier": 1
     },
     {
       "text": "たかを確認できます",
@@ -1035,42 +1307,46 @@
     },
     {
       "text": "認証局は",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "Certificate Authority",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "略してCAと呼ばれます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "CAは",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "公開鍵証明書を発行し",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "必要に応じて失効",
       "duration_multiplier": 1
     },
     {
-      "text": "Certificate",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "Authority略して",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "CAと呼ばれます",
+      "text": "させる役割を持ちます",
       "duration_multiplier": 1.4
     },
     {
-      "text": "CAは公開鍵証明書を発行",
+      "text": "CAが証明書へ署名",
       "duration_multiplier": 1.2
     },
     {
-      "text": "し必要に応じて失効させる",
+      "text": "することで",
       "duration_multiplier": 1.1
     },
     {
-      "text": "役割を持ちます",
-      "duration_multiplier": 1.4
+      "text": "公開鍵と主体の情報の",
+      "duration_multiplier": 1
     },
     {
-      "text": "CAが証明書へ署名する",
-      "duration_multiplier": 1.2
-    },
-    {
-      "text": "ことで公開鍵と主体の情報",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "の対応関係を保証する",
+      "text": "対応関係を保証する",
       "duration_multiplier": 1
     },
     {
@@ -1078,11 +1354,15 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "ただしCAが存在するだけ",
+      "text": "ただし",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "CAが存在するだけで",
       "duration_multiplier": 1.2
     },
     {
-      "text": "で安全になるわけでは",
+      "text": "安全になるわけでは",
       "duration_multiplier": 1
     },
     {
@@ -1094,15 +1374,19 @@
       "duration_multiplier": 1.2
     },
     {
-      "text": "本人確認やドメイン確認を",
+      "text": "本人確認やドメイン",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "確認を行うか",
       "duration_multiplier": 1.1
     },
     {
-      "text": "行うか秘密鍵をどう守る",
-      "duration_multiplier": 1.1
+      "text": "秘密鍵をどう守るかも",
+      "duration_multiplier": 1
     },
     {
-      "text": "かも重要です",
+      "text": "重要です",
       "duration_multiplier": 1.4
     },
     {
@@ -1110,15 +1394,19 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "実際のWebPKIでは",
+      "text": "実際のWeb PKIでは",
       "duration_multiplier": 1.2
     },
     {
-      "text": "一つのCAだけで全証明書",
+      "text": "一つのCAだけで全",
       "duration_multiplier": 1.2
     },
     {
-      "text": "を直接発行するとは限りません",
+      "text": "証明書を直接発行",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "するとは限りません",
       "duration_multiplier": 1.4
     },
     {
@@ -1126,43 +1414,47 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "中間CAが発行しその中間",
+      "text": "中間CAが発行し",
       "duration_multiplier": 1.2
     },
     {
-      "text": "CAの証明書を上位のCA",
+      "text": "その中間CAの証明書を",
       "duration_multiplier": 1.2
     },
     {
-      "text": "が発行するという階層構造",
-      "duration_multiplier": 1.1
+      "text": "上位のCAが発行する",
+      "duration_multiplier": 1.2
     },
     {
-      "text": "があります",
+      "text": "という階層構造があります",
       "duration_multiplier": 1.4
     },
     {
-      "text": "このように証明書を順番に",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "つないだものを証明書",
+      "text": "このように証明書を",
       "duration_multiplier": 1
     },
     {
-      "text": "チェーンと呼びます",
+      "text": "順番につないだものを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "証明書チェーンと呼びます",
       "duration_multiplier": 1.4
     },
     {
-      "text": "検証する側は各証明書の",
+      "text": "検証する側は",
       "duration_multiplier": 1.1
     },
     {
-      "text": "署名をたどり最終的に信頼",
+      "text": "各証明書の署名をたどり",
       "duration_multiplier": 1.1
     },
     {
-      "text": "しているルートCAへ到達",
+      "text": "最終的に信頼している",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ルートCAへ到達",
       "duration_multiplier": 1.2
     },
     {
@@ -1174,59 +1466,79 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "ルートCAは階層型PKI",
+      "text": "ルートCAは",
       "duration_multiplier": 1.2
     },
     {
-      "text": "の信頼の起点です",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "ブラウザやOSには信頼",
+      "text": "階層型PKIの信頼の",
       "duration_multiplier": 1.2
     },
     {
-      "text": "するルート証明書の一覧が",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "あらかじめ登録されています",
+      "text": "起点です",
       "duration_multiplier": 1.4
     },
     {
-      "text": "そのため「証明書があるか",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "」だけでなく「信頼する",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "ルートまで正しいチェーン",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "を構築できるか」が重要です",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "ルートCAの秘密鍵が侵害",
+      "text": "ブラウザやOSには",
       "duration_multiplier": 1.2
     },
     {
-      "text": "されると非常に大きな影響",
+      "text": "信頼するルート証明書の",
       "duration_multiplier": 1.1
     },
     {
-      "text": "が生じる可能性があります",
+      "text": "一覧があらかじめ登録",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "されています",
       "duration_multiplier": 1.4
     },
     {
-      "text": "そのためルートCAの鍵は",
+      "text": "そのため「証明書が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "あるか」だけでなく",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "「信頼するルートまで",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "正しいチェーンを構築",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "できるか」が重要です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "ルートCAの秘密鍵が",
       "duration_multiplier": 1.2
     },
     {
-      "text": "厳重に保護されます",
+      "text": "侵害されると",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "非常に大きな影響が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "生じる可能性があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "そのため",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "ルートCAの鍵は厳重に",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "保護されます",
       "duration_multiplier": 1.4
     },
     {
@@ -1234,43 +1546,55 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "中間CAは上位のCAから",
+      "text": "中間CAは",
       "duration_multiplier": 1.2
     },
     {
-      "text": "証明書を発行されたCAです",
+      "text": "上位のCAから証明書を",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "発行されたCAです",
       "duration_multiplier": 1.4
     },
     {
-      "text": "ルートCAが日常的に多数",
+      "text": "ルートCAが日常的に",
       "duration_multiplier": 1.2
     },
     {
-      "text": "の証明書へ直接署名せず",
+      "text": "多数の証明書へ直接",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "署名せず",
       "duration_multiplier": 1.1
     },
     {
-      "text": "中間CAへ役割を分担する",
+      "text": "中間CAへ役割を分担",
       "duration_multiplier": 1.2
     },
     {
-      "text": "ことで運用や被害範囲を",
+      "text": "することで",
       "duration_multiplier": 1.1
     },
     {
-      "text": "管理しやすくできます",
+      "text": "運用や被害範囲を管理",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "しやすくできます",
       "duration_multiplier": 1.4
     },
     {
-      "text": "中間CAの活動範囲は上位",
+      "text": "中間CAの活動範囲は",
       "duration_multiplier": 1.2
     },
     {
-      "text": "のCAによって制約される",
+      "text": "上位のCAによって",
       "duration_multiplier": 1.2
     },
     {
-      "text": "場合があります",
+      "text": "制約される場合があります",
       "duration_multiplier": 1.4
     },
     {
@@ -1278,47 +1602,63 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "証明書には有効期間があります",
+      "text": "証明書には有効期間が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "あります",
       "duration_multiplier": 1.4
     },
     {
-      "text": "期限を過ぎた証明書は有効",
+      "text": "期限を過ぎた証明書は",
       "duration_multiplier": 1.1
     },
     {
-      "text": "な証明書として扱われません",
+      "text": "有効な証明書として扱",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "われません",
       "duration_multiplier": 1.4
     },
     {
-      "text": "有効期限があることで同じ",
+      "text": "有効期限があることで",
       "duration_multiplier": 1.1
     },
     {
-      "text": "鍵や証明書を無期限に使い",
-      "duration_multiplier": 1.1
+      "text": "同じ鍵や証明書を",
+      "duration_multiplier": 1
     },
     {
-      "text": "続けることを避けられます",
+      "text": "無期限に使い続ける",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ことを避けられます",
       "duration_multiplier": 1.4
     },
     {
-      "text": "一方で期限切れによって",
+      "text": "一方で",
       "duration_multiplier": 1.1
     },
     {
-      "text": "サービス障害が起きること",
-      "duration_multiplier": 1.1
+      "text": "期限切れによって",
+      "duration_multiplier": 1
     },
     {
-      "text": "もあります",
+      "text": "サービス障害が起きる",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "こともあります",
       "duration_multiplier": 1.4
     },
     {
-      "text": "証明書の更新も運用管理の",
-      "duration_multiplier": 1.1
+      "text": "証明書の更新も運用",
+      "duration_multiplier": 1
     },
     {
-      "text": "一部です",
+      "text": "管理の一部です",
       "duration_multiplier": 1.4
     },
     {
@@ -1326,31 +1666,39 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "秘密鍵が漏えいした場合",
+      "text": "秘密鍵が漏えいした",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "場合など",
       "duration_multiplier": 1.1
     },
     {
-      "text": "など有効期限を待たずに",
-      "duration_multiplier": 1.1
+      "text": "有効期限を待たずに",
+      "duration_multiplier": 1
     },
     {
-      "text": "証明書を信頼対象から外す",
-      "duration_multiplier": 1.1
+      "text": "証明書を信頼対象から",
+      "duration_multiplier": 1
     },
     {
-      "text": "必要があります",
+      "text": "外す必要があります",
       "duration_multiplier": 1.4
     },
     {
-      "text": "これを証明書の失効と呼びます",
+      "text": "これを証明書の失効と",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "呼びます",
       "duration_multiplier": 1.4
     },
     {
-      "text": "失効した証明書を確認する",
-      "duration_multiplier": 1.1
+      "text": "失効した証明書を確認",
+      "duration_multiplier": 1
     },
     {
-      "text": "方法があります",
+      "text": "する方法があります",
       "duration_multiplier": 1.4
     },
     {
@@ -1358,35 +1706,35 @@
       "duration_multiplier": 1.2
     },
     {
-      "text": "Certificate",
+      "text": "Certificate Revocation",
       "duration_multiplier": 1.1
     },
     {
-      "text": "Revocation",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "Listの略で失効した",
+      "text": "Listの略で",
       "duration_multiplier": 1.1
     },
     {
-      "text": "証明書の一覧を公開します",
+      "text": "失効した証明書の一覧を",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "公開します",
       "duration_multiplier": 1.4
     },
     {
-      "text": "OCSPはOnline",
+      "text": "OCSPは",
       "duration_multiplier": 1.2
     },
     {
-      "text": "Certificate",
+      "text": "Online Certificate",
       "duration_multiplier": 1.1
     },
     {
-      "text": "Status",
-      "duration_multiplier": 1
+      "text": "Status Protocolの",
+      "duration_multiplier": 1.1
     },
     {
-      "text": "Protocolの略で",
+      "text": "略で",
       "duration_multiplier": 1.1
     },
     {
@@ -1394,19 +1742,23 @@
       "duration_multiplier": 1
     },
     {
-      "text": "問い合わせるために使われます",
+      "text": "問い合わせるために使",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "われます",
       "duration_multiplier": 1.4
     },
     {
-      "text": "ただし失効確認の方法や",
+      "text": "ただし",
       "duration_multiplier": 1.1
     },
     {
-      "text": "実装には運用上の制約が",
+      "text": "失効確認の方法や実装には",
       "duration_multiplier": 1.1
     },
     {
-      "text": "あります",
+      "text": "運用上の制約があります",
       "duration_multiplier": 1.4
     },
     {
@@ -1414,11 +1766,15 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "必ず即座に無効化される」",
-      "duration_multiplier": 1.1
+      "text": "必ず即座に無効化さ",
+      "duration_multiplier": 1
     },
     {
-      "text": "と単純化しないことが重要です",
+      "text": "れる」と単純化しない",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ことが重要です",
       "duration_multiplier": 1.4
     },
     {
@@ -1426,15 +1782,23 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "HTTPSではTLSを使",
+      "text": "HTTPSでは",
       "duration_multiplier": 1.2
     },
     {
-      "text": "って通信を保護します",
+      "text": "TLSを使って通信を",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "保護します",
       "duration_multiplier": 1.4
     },
     {
-      "text": "サーバーは証明書を提示し",
+      "text": "サーバーは証明書を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "提示し",
       "duration_multiplier": 1.1
     },
     {
@@ -1442,27 +1806,35 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "有効期間接続先の名前など",
+      "text": "有効期間",
       "duration_multiplier": 1.1
     },
     {
-      "text": "を検証します",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "検証が成功するとその",
+      "text": "接続先の名前などを",
       "duration_multiplier": 1
     },
     {
-      "text": "証明書に含まれる公開鍵を",
+      "text": "検証します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "検証が成功すると",
       "duration_multiplier": 1.1
     },
     {
-      "text": "信頼してTLSの通信を",
+      "text": "その証明書に含まれる",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "公開鍵を信頼して",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "TLSの通信を確立",
       "duration_multiplier": 1.2
     },
     {
-      "text": "確立できます",
+      "text": "できます",
       "duration_multiplier": 1.4
     },
     {
@@ -1470,15 +1842,15 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "主に「この証明書がこの",
-      "duration_multiplier": 1.1
+      "text": "主に「この証明書が",
+      "duration_multiplier": 1
     },
     {
-      "text": "接続先に対して信頼できる",
-      "duration_multiplier": 1.1
+      "text": "この接続先に対して",
+      "duration_multiplier": 1
     },
     {
-      "text": "か」です",
+      "text": "信頼できるか」です",
       "duration_multiplier": 1.4
     },
     {
@@ -1486,8 +1858,12 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "善悪や掲載内容の正確さま",
+      "text": "善悪や",
       "duration_multiplier": 1.1
+    },
+    {
+      "text": "掲載内容の正確さま",
+      "duration_multiplier": 1
     },
     {
       "text": "では保証しません",
@@ -1498,47 +1874,83 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "PKIは公開鍵証明書を",
+      "text": "PKIは",
       "duration_multiplier": 1.2
     },
     {
-      "text": "発行維持失効するための",
+      "text": "公開鍵証明書を発行",
       "duration_multiplier": 1.1
     },
     {
-      "text": "技術組織方針運用を含む",
+      "text": "維持",
       "duration_multiplier": 1.1
+    },
+    {
+      "text": "失効するための技術",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "組織",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "方針",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "運用を含む仕組みです",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "PKIは暗号",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "アルゴリズムそのもの",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ではありません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "鍵",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "証明書",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "CA",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "検証",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "失効などを組み合わせ",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "公開鍵を信頼して利用",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "できる環境を作る",
+      "duration_multiplier": 1
     },
     {
       "text": "仕組みです",
       "duration_multiplier": 1.4
     },
     {
-      "text": "PKIは暗号アルゴリズム",
-      "duration_multiplier": 1.2
+      "text": "信頼は技術だけでは作",
+      "duration_multiplier": 1
     },
     {
-      "text": "そのものではありません",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "鍵証明書CA検証失効など",
-      "duration_multiplier": 1.2
-    },
-    {
-      "text": "を組み合わせ公開鍵を信頼",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "して利用できる環境を作る",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "仕組みです",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "信頼は技術だけでは作れない",
+      "text": "れない",
       "duration_multiplier": 1.4
     },
     {
@@ -1546,47 +1958,67 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "正しくてもその証明書を",
+      "text": "正しくても",
       "duration_multiplier": 1.1
     },
     {
-      "text": "発行したCAを信頼して",
+      "text": "その証明書を発行した",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "CAを信頼してよいとは",
       "duration_multiplier": 1.2
     },
     {
-      "text": "よいとは限りません",
+      "text": "限りません",
       "duration_multiplier": 1.4
     },
     {
-      "text": "そのためPKIでは暗号",
+      "text": "そのためPKIでは",
       "duration_multiplier": 1.2
     },
     {
-      "text": "技術とともにCAの本人",
-      "duration_multiplier": 1.2
-    },
-    {
-      "text": "確認手続監査鍵管理運用",
+      "text": "暗号技術とともに",
       "duration_multiplier": 1.1
     },
     {
-      "text": "規程などが重要になります",
+      "text": "CAの本人確認手続",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "監査",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "鍵管理",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "運用規程などが重要に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "なります",
       "duration_multiplier": 1.4
     },
     {
-      "text": "情報セキュリティでは暗号",
+      "text": "情報セキュリティでは",
       "duration_multiplier": 1.1
     },
     {
-      "text": "の強さだけでなく信頼を",
+      "text": "暗号の強さだけでなく",
       "duration_multiplier": 1.1
     },
     {
-      "text": "どのように確立し維持する",
-      "duration_multiplier": 1.1
+      "text": "信頼をどのように確立",
+      "duration_multiplier": 1
     },
     {
-      "text": "かを見る必要があります",
+      "text": "し維持するかを見る",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "必要があります",
       "duration_multiplier": 1.4
     }
   ]
