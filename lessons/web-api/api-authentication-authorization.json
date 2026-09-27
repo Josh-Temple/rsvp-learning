@@ -9,59 +9,171 @@
   "sources": [],
   "chunks": [
     {
-      "text": "認証は、誰であるかを確認することです",
+      "text": "認証は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "誰であるかを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "確認することです",
       "duration_multiplier": 1.35
     },
     {
-      "text": "認可は、何をしてよいかを決めることです",
-      "duration_multiplier": 1.1
+      "text": "認可は、",
+      "duration_multiplier": 1
     },
     {
-      "text": "この二つは、同じではありません",
-      "duration_multiplier": 1.1
+      "text": "何をしてよいかを",
+      "duration_multiplier": 1
     },
     {
-      "text": "ログインは、認証の代表例です",
-      "duration_multiplier": 1.1
+      "text": "決めることです",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "パスワードだけでなく、多要素認証も使われます",
-      "duration_multiplier": 1.1
+      "text": "この二つは、",
+      "duration_multiplier": 1
     },
     {
-      "text": "セッションは、ログイン状態を維持する方法の一つです",
-      "duration_multiplier": 1.1
+      "text": "同じではありません",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "Tokenを使って、API呼び出しを認証する方法もあります",
-      "duration_multiplier": 1.1
+      "text": "ログインは、",
+      "duration_multiplier": 1
     },
     {
-      "text": "OAuthは、別サービスへ限定的な権限を委任するために使われます",
-      "duration_multiplier": 1.1
+      "text": "認証の代表例です",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "API Keyは、呼び出し元識別に使われることがあります",
-      "duration_multiplier": 1.1
+      "text": "パスワードだけでなく、",
+      "duration_multiplier": 1
     },
     {
-      "text": "秘密情報は、ソースコードへ直接書かないようにします",
-      "duration_multiplier": 1.1
+      "text": "多要素認証も",
+      "duration_multiplier": 1
     },
     {
-      "text": "認可では、RoleやPermissionを使うことがあります",
-      "duration_multiplier": 1.1
+      "text": "使われます",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "最小権限は、必要な権限だけを与える考え方です",
-      "duration_multiplier": 1.1
+      "text": "セッションは、",
+      "duration_multiplier": 1
     },
     {
-      "text": "認証済みでも、すべての操作を許可してよいとは限りません",
-      "duration_multiplier": 1.1
+      "text": "ログイン状態を",
+      "duration_multiplier": 1
     },
     {
-      "text": "重要な操作ほど、認証と認可の両方を確認します",
+      "text": "維持する方法の一つです",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Tokenを使って、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "API呼び出しを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "認証する方法もあります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "OAuthは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "別サービスへ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "限定的な権限を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "委任するために使われます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "API Keyは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "呼び出し元識別に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "使われることがあります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "秘密情報は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ソースコードへ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "直接書かないようにします",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "認可では、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "RoleやPermissionを",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "使うことがあります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "最小権限は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "必要な権限だけを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "与える考え方です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "認証済みでも、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "すべての操作を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "許可してよいとは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "限りません",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "重要な操作ほど、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "認証と認可の両方を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "確認します",
       "duration_multiplier": 1.35
     }
   ]
