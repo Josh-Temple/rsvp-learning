@@ -3,7 +3,7 @@
   "id": "statistics-correlation-regression-causality",
   "title": "相関・回帰・因果関係",
   "topic": "データ分析",
-  "summary": "変数間の関連を表す相関と回帰、因果関係との違いを学びます。",
+  "summary": "暑さ、飲料の売上、熱中症搬送の例で、相関・回帰・因果関係の違いを学びます。",
   "created_at": "2026-09-27",
   "base_duration_ms": 680,
   "sources": [
@@ -22,51 +22,87 @@
   ],
   "chunks": [
     {
-      "text": "相関は、",
+      "text": "暑い日に、",
       "duration_multiplier": 1
     },
     {
-      "text": "二つの変数が",
+      "text": "冷たい飲み物の売上と",
       "duration_multiplier": 1
     },
     {
-      "text": "一緒に変化する程度を",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "表します",
-      "duration_multiplier": 1.35
-    },
-    {
-      "text": "相関があっても、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "因果関係があるとは",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "限りません",
+      "text": "熱中症の搬送が増えたとします。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "第三の要因が、",
+      "text": "二つの値が一緒に動くことを、",
       "duration_multiplier": 1
     },
     {
-      "text": "両方へ影響している",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "場合があります",
+      "text": "相関として捉えられます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "逆方向の因果が",
+      "text": "売上が搬送を増やしたとは",
       "duration_multiplier": 1
     },
     {
-      "text": "ある場合もあります",
+      "text": "この観察だけでは言えません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "気温が、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "両方に影響する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "第三の要因かもしれません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "搬送が多いから",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "飲み物を買うという",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "逆方向も考えられます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ピアソンの相関係数は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "直線的な関係の向きと強さを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "要約します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "係数がゼロに近くても、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "曲線的な関係を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "見落とすことがあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "まず散布図で、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "外れ値や関係の形を確認します。",
       "duration_multiplier": 1.15
     },
     {
@@ -74,39 +110,23 @@
       "duration_multiplier": 1
     },
     {
-      "text": "変数同士の関係を",
+      "text": "説明変数から結果の変化を",
       "duration_multiplier": 1
     },
     {
-      "text": "モデル化する方法です",
+      "text": "表すモデルです。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "説明変数から、",
+      "text": "売上と搬送の関係を、",
       "duration_multiplier": 1
     },
     {
-      "text": "目的変数の変化を",
+      "text": "気温も加えて",
       "duration_multiplier": 1
     },
     {
-      "text": "表します",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "回帰係数は、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "他の条件を一定とした",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "関係として解釈する",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "場合があります",
+      "text": "比べる方法があります。",
       "duration_multiplier": 1.15
     },
     {
@@ -114,83 +134,99 @@
       "duration_multiplier": 1
     },
     {
-      "text": "モデルの前提が崩れると",
+      "text": "気温を入れれば因果関係が",
       "duration_multiplier": 1
     },
     {
-      "text": "解釈も変わります",
+      "text": "証明されるわけではありません。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "観測データだけで",
+      "text": "記録していない条件や、",
       "duration_multiplier": 1
     },
     {
-      "text": "因果を断定するのは",
+      "text": "測定方法の問題が",
       "duration_multiplier": 1
     },
     {
-      "text": "難しい場合があります",
+      "text": "残るからです。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "無作為化比較試験は、",
+      "text": "回帰係数は、",
       "duration_multiplier": 1
     },
     {
-      "text": "因果推論で",
+      "text": "モデルと含めた変数の条件で",
       "duration_multiplier": 1
     },
     {
-      "text": "強い方法の一つです",
+      "text": "意味が変わります。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "実務では、",
+      "text": "予測に役立つ変数でも、",
       "duration_multiplier": 1
     },
     {
-      "text": "無作為化できない",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "こともあります",
+      "text": "結果を変える原因とは限りません。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "その場合は、",
+      "text": "原因を確かめるには、",
       "duration_multiplier": 1
     },
     {
-      "text": "設計と仮定を明示して",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "分析します",
+      "text": "比較する集団の作り方が重要です。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "予測が当たることと、",
+      "text": "無作為に介入を割り当てる実験は、",
       "duration_multiplier": 1
     },
     {
-      "text": "原因を説明できることは",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "別です",
+      "text": "因果を調べる強い方法です。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "分析目的が",
+      "text": "しかし、",
       "duration_multiplier": 1
     },
     {
-      "text": "予測か因果理解かを",
+      "text": "実験できない場合もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "観察データを使うときは、",
       "duration_multiplier": 1
     },
     {
-      "text": "最初に分けます",
+      "text": "選択の偏りや",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "交絡の可能性を検討します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "いつ測った値かと、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "先に起きた出来事も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "結論は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "関連を見たのか、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "原因を検証したのかを分けます。",
       "duration_multiplier": 1.35
     }
   ]
