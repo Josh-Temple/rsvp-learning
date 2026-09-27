@@ -9,51 +9,183 @@
   "sources": [],
   "chunks": [
     {
-      "text": "クラウドは、計算資源をネットワーク経由で利用する形態です",
+      "text": "クラウドは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "計算資源を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ネットワーク経由で",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "利用する形態です",
       "duration_multiplier": 1.4
     },
     {
-      "text": "必要な資源を、必要に応じて増減できます",
+      "text": "必要な資源を、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "必要に応じて",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "増減できます",
       "duration_multiplier": 1.15
     },
     {
-      "text": "IaaSは、仮想マシンなど基盤に近い資源を提供します",
+      "text": "IaaSは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "仮想マシンなど",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "基盤に近い資源を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "提供します",
       "duration_multiplier": 1.15
     },
     {
-      "text": "PaaSは、アプリ実行環境をより管理された形で提供します",
+      "text": "PaaSは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "アプリ実行環境を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "より管理された形で",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "提供します",
       "duration_multiplier": 1.15
     },
     {
-      "text": "SaaSは、完成したソフトウェアをサービスとして利用します",
+      "text": "SaaSは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "完成したソフトウェアを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "サービスとして",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "利用します",
       "duration_multiplier": 1.15
     },
     {
-      "text": "IAMは、誰が何へアクセスできるかを管理します",
+      "text": "IAMは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "誰が何へ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "アクセスできるかを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "管理します",
       "duration_multiplier": 1.15
     },
     {
-      "text": "ネットワーク設計は、通信経路と境界を決めます",
+      "text": "ネットワーク設計は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "通信経路と境界を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "決めます",
       "duration_multiplier": 1.15
     },
     {
-      "text": "ストレージとデータベースは、データの性質に応じて選びます",
+      "text": "ストレージと",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "データベースは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "データの性質に応じて",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "選びます",
       "duration_multiplier": 1.15
     },
     {
-      "text": "Serverlessは、サーバー管理を減らして処理を実行する選択肢です",
+      "text": "Serverlessは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "サーバー管理を減らして",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "処理を実行する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "選択肢です",
       "duration_multiplier": 1.15
     },
     {
-      "text": "可用性では、障害が起きてもサービスを継続できる構成を考えます",
+      "text": "可用性では、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "障害が起きても",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "サービスを継続できる",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "構成を考えます",
       "duration_multiplier": 1.15
     },
     {
-      "text": "監視とログは、異常の検知と原因調査に必要です",
+      "text": "監視とログは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "異常の検知と",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "原因調査に必要です",
       "duration_multiplier": 1.15
     },
     {
-      "text": "最初は、Azureを軸に各サービスの役割を理解します",
+      "text": "最初は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "Azureを軸に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "各サービスの役割を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "理解します",
       "duration_multiplier": 1.4
     }
   ]
