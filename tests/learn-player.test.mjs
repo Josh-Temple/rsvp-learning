@@ -48,6 +48,7 @@ async function setupPlayer() {
     { voiceURI: "ja-alternate", name: "Japanese 2", lang: "ja-JP" },
   ];
   const utterances = [];
+  const synthEvents = new Map();
   const calls = { cancel: 0, pause: 0, resume: 0 };
   const speechSynthesis = {
     getVoices: () => voices,
@@ -55,7 +56,7 @@ async function setupPlayer() {
     cancel() { calls.cancel += 1; },
     pause() { calls.pause += 1; },
     resume() { calls.resume += 1; },
-    addEventListener() {},
+    addEventListener(name, callback) { synthEvents.set(name, callback); },
   };
   const windowEvents = new Map();
   class MockUtterance {
@@ -77,8 +78,18 @@ async function setupPlayer() {
   });
   const js = await fs.readFile(new URL("../learn/learn.js", import.meta.url), "utf8");
   new vm.Script(js, { filename: "learn.js" }).runInContext(context);
-  return { elements: selectors, articleItems, utterances, calls, windowEvents };
+  return { elements: selectors, articleItems, utterances, calls, windowEvents, synthEvents };
 }
+
+test("voice list refresh preserves a selected Japanese voice", async () => {
+  const { elements, synthEvents, utterances } = await setupPlayer();
+  const voice = elements.get("#speech-voice");
+  voice.value = "ja-alternate";
+  synthEvents.get("voiceschanged")();
+  assert.equal(voice.value, "ja-alternate");
+  elements.get("#speech-play").click();
+  assert.equal(utterances[0].voice.voiceURI, "ja-alternate");
+});
 
 test("player reads DOM order and pause voice change resumes the same element with the new voice", async () => {
   const { elements, articleItems, utterances, calls, windowEvents } = await setupPlayer();

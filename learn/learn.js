@@ -27,6 +27,7 @@
       function populateVoices() {
         voices = synth?.getVoices?.() ?? [];
         const available = japaneseVoices();
+        const selectedVoiceUri = voiceSelect.value;
         voiceSelect.replaceChildren();
 
         if (!available.length) {
@@ -41,7 +42,9 @@
           const option = document.createElement("option");
           option.value = voice.voiceURI;
           option.textContent = `${voice.name} · ${voice.lang}`;
-          if (i === 0) option.selected = true;
+          if (voice.voiceURI === selectedVoiceUri || (!available.some((item) => item.voiceURI === selectedVoiceUri) && i === 0)) {
+            option.selected = true;
+          }
           voiceSelect.append(option);
         });
       }
