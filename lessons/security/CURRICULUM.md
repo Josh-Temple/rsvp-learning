@@ -57,6 +57,8 @@ IPA SG Ver.4.1を知識の漏れ検出に使い、NIST、IPA、CISA、OWASPな�
 
 現在: `04-cryptography-and-data-protection.md`
 
+PKIの補足原稿: `pki-certificates.md`
+
 - 共通鍵暗号
 - 公開鍵暗号
 - ハイブリッド暗号
@@ -72,7 +74,7 @@ IPA SG Ver.4.1を知識の漏れ検出に使い、NIST、IPA、CISA、OWASPな�
 
 ### 5. ネットワークとインターネットの基礎
 
-新規作成予定
+現在: `network-internet-basics.md`
 
 - LAN / WAN
 - IPアドレス
@@ -139,7 +141,7 @@ IPA SG Ver.4.1を知識の漏れ検出に使い、NIST、IPA、CISA、OWASPな�
 
 ### 9. 脆弱性管理とセキュリティ評価
 
-新規作成予定
+現在: `vulnerability-management.md`
 
 - 資産把握
 - 脆弱性情報
@@ -153,7 +155,7 @@ IPA SG Ver.4.1を知識の漏れ検出に使い、NIST、IPA、CISA、OWASPな�
 
 ### 10. 情報資産分類とリスクマネジメント
 
-新規作成予定
+現在: `risk-management.md`
 
 - 情報資産台帳
 - 分類と取扱区分
@@ -171,7 +173,7 @@ IPA SG Ver.4.1を知識の漏れ検出に使い、NIST、IPA、CISA、OWASPな�
 
 ### 11. ポリシー、ISMS、ガバナンス
 
-新規作成予定
+現在: `isms-governance.md`
 
 - 情報セキュリティ方針
 - 対策基準
@@ -223,7 +225,7 @@ IPA SG Ver.4.1を知識の漏れ検出に使い、NIST、IPA、CISA、OWASPな�
 
 ### 14. 法律、プライバシー、コンプライアンス
 
-新規作成予定
+現在: `law-privacy-compliance.md`
 
 - セキュリティとプライバシーの違い
 - 個人情報保護法
