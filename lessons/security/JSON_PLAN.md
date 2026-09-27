@@ -1,6 +1,6 @@
 # 情報セキュリティ Course / Lesson 変換計画
 
-Status: Draft  
+Status: Implemented / final JSON QA complete  
 更新日: 2026-09-27
 
 ## 方針
@@ -19,15 +19,15 @@ Lesson内部は `docs/LESSON_FORMAT.md` に従い、4〜14文字程度を中心�
 
 ## Course
 
-予定Course ID:
+Course ID:
 
 `information-security`
 
-予定タイトル:
+タイトル:
 
 `情報セキュリティ`
 
-## 予定Lesson
+## Lesson
 
 | # | Lesson ID | タイトル | 原稿 |
 |---|---|---|---|
@@ -100,7 +100,7 @@ Lesson内部は `docs/LESSON_FORMAT.md` に従い、4〜14文字程度を中心�
 
 ## JSON化前の完了条件
 
-次を満たしてから16 LessonをJSON化します。
+16 LessonのJSON化前に、次の条件を確認しました。
 
 - 16章すべてで初出略語を確認済み
 - 一文が長すぎる主要箇所を修正済み
@@ -109,14 +109,14 @@ Lesson内部は `docs/LESSON_FORMAT.md` に従い、4〜14文字程度を中心�
 - 原稿間で重大な定義矛盾がない
 - ランダム開始しても冒頭だけで主題が分かる
 
-JSON化後はSchema検証を行い、`lessons/index.json` と `courses/index.json` へ登録します。
+16 LessonはJSON化・Schema検証を完了し、`lessons/index.json` と `courses/index.json` へ登録済みです。
 
 
 ## Chapter 1 JSONパイロット
 
 2026-09-27に `security-fundamentals.json` を作成した。
 
-現時点では `lessons/index.json` とCourseへは未登録である。
+パイロット作成時点では `lessons/index.json` とCourseへは未登録だった。
 
 目的は、教材原稿からRSVP JSONへの変換品質を先に確認することにある。
 
@@ -157,4 +157,34 @@ JSON化後はSchema検証を行い、`lessons/index.json` と `courses/index.jso
 
 Chapter 1のJSONは、残り15 Lessonを変換する際の参照例として使用できる。
 
-ただし、Course登録は残りの変換方針が安定してから行う。
+その後、残り15 Lessonも同じ方針で変換し、16 LessonすべてをCourseへ登録した。
+
+## 16 Lesson 最終QA
+
+2026-09-27に16 Lessonをfresh readし、最終QAを実施しました。
+
+確認結果:
+
+- 16ファイルすべてJSON parse: PASS
+- `schema_version=1`、Lesson ID、必須フィールド: PASS
+- `base_duration_ms`、`sources`、chunk構造: PASS
+- `duration_multiplier` 0.5〜3.0: PASS
+- 空chunk: 0
+- RSVP本文へのURL・Markdown混入: 0
+- 24文字超chunk: 0
+- 各Lessonのchunk文字数90%点: 10〜11文字
+- 全Lesson中の最長chunk: 23文字
+
+文節分割の最終目視で3箇所を個別修正しました。
+
+- `Man-in-the-Middle / On-Path Attack`
+- `Cross-Site Request Forgery`
+- 助詞「も」の単独chunk
+
+Chapter 2・7・11・16を抜き取り確認しました。Chapter 16では、IPA「情報セキュリティ10大脅威2026」の組織向け上位3項目が意味を壊さず表示単位へ分割されていることを確認しました。
+
+最新mainの教材カタログとも統合し、情報セキュリティCourseはこの16 Lessonを参照します。初期SEEDの `information-security-overview` はファイルのみ参考用として残し、CourseとLessonカタログからは外します。
+
+静的なアプリ実装では、Course通し再生、Chapter順ランダム再生、前後Chapter移動、Lesson単位の習熟度保存との対応を確認しました。
+
+残る確認は実ブラウザでの表示・操作確認です。特に8倍前後で、略語の正式名称直後の短いchunkを含めて読みやすさを確認します。
