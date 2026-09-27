@@ -43,6 +43,19 @@ Android実機ではページ内読み上げは動作しましたが、Chromeを�
 - 生成プロンプト: `prompts/learn-generation.md`
 - 動作例: `learn/api-authentication-authorization.html`
 
+## Listen モード
+
+ニュース、調査結果、レポート、資料要約など、日常的に耳から取り入れる内容はListenとして分離します。
+
+RSVP画面のヘッドホンアイコンから `listen/` の一覧へ移動します。Listen一覧は `listen/index.json` を日付降順で表示し、各項目から単一HTMLの読み上げページを開きます。
+
+- 実装仕様: `docs/LISTEN_HTML_FORMAT.md`
+- 生成プロンプト: `prompts/listen-generation.md`
+- 一覧: `listen/index.json`
+- 入口: `listen/index.html`
+
+Listen HTMLはWeb Speech APIによる0.7〜4.0倍速の連続読み上げを基本とします。現行方式ではAndroid Chromeのバックグラウンド再生は保証しません。
+
 ## 教材構造
 
 `lessons/index.json` がLessonのメタデータ、`courses/index.json` がCourseとChapter順を管理します。
