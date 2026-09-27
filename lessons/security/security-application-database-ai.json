@@ -1,0 +1,2465 @@
+{
+  "schema_version": 1,
+  "id": "security-application-database-ai",
+  "title": "アプリ・DB・生成AIのセキュリティ",
+  "topic": "情報セキュリティ",
+  "summary": "セキュア開発、Web攻撃、DB保護、メモリ安全性、生成AIアプリケーション特有のリスクを学びます。",
+  "created_at": "2026-09-27",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "NIST SP 800-218, Secure Software Development Framework Version 1.1",
+      "url": "https://csrc.nist.gov/pubs/sp/800/218/final"
+    },
+    {
+      "title": "OWASP Top 10:2025",
+      "url": "https://top10.owasp.org/2025/"
+    },
+    {
+      "title": "CISA, The Case for Memory Safe Roadmaps",
+      "url": "https://www.cisa.gov/resources-tools/resources/case-memory-safe-roadmaps"
+    },
+    {
+      "title": "MITRE CWE-120, Buffer Copy without Checking Size of Input",
+      "url": "https://cwe.mitre.org/data/definitions/120.html"
+    },
+    {
+      "title": "NIST AI 100-2e2025, Adversarial Machine Learning",
+      "url": "https://csrc.nist.gov/pubs/ai/100/2/e2025/final"
+    },
+    {
+      "title": "NIST AI 600-1, Generative Artificial Intelligence Profile",
+      "url": "https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence"
+    },
+    {
+      "title": "OWASP GenAI LLM Top 10 2026",
+      "url": "https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "アプリ・DB・生成AIのセキュリティ",
+      "duration_multiplier": 1.5
+    },
+    {
+      "text": "セキュリティは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "開発後に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "追加するだけではない",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "アプリケーションの",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "安全性は",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "完成後に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "診断するだけでは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "十分ではありません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "要件",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "設計",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "実装",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "テスト",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "リリース",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "運用",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "更新",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "廃止",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "ソフトウェアの",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ライフサイクル全体で",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "セキュリティを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "考えます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "NISTは",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "Secure Software",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "Development Framework",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "を公開しています",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "略称はSSDFです",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "安全な開発",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "プラクティスを",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "既存の開発プロセスへ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "組み込むための",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "枠組みです",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "セキュリティ要件",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "開発の初期段階で",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "何を守る",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "必要があるかを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "明確にします",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "どの情報を扱うか",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "誰が利用できるか",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "どの操作を記録するか",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "どの程度の停止を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "許容できるか",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "どの法令や契約が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "関係するか",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "後から追加すると",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "大きな設計",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "変更が必要になる",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "項目は",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "早い段階で扱います",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "アクセス制御",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "アプリケーションは",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "利用者が許可された",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "データと機能だけへ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "アクセスできるようにします",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "画面上でボタンを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "隠すだけでは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "十分ではありません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "サーバー側でも権限を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "確認します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "別の利用者のIDを",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "URLやAPIへ",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "指定するだけで情報へ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "アクセスできる状態は",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "アクセス制御の不備です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "OWASP Top",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "102025では",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "Broken Access Control",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "がA01です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "認証",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "ログイン機能では",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "パスワード",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "MFA",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "セッションなどを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "安全に扱います",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "パスワードを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "平文で保存してはいけません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "認証失敗回数や異常な",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ログインも",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "監視対象になります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "認証後に発行する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "セッション情報や",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "トークンも",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "盗まれれば利用",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "者になりすまされる",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "可能性があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "SQL",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "インジェクション",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "アプリケーションが",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "利用者の入力をSQL",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "文へ不適切に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "組み込むと",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "入力の一部が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "命令として解釈される",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "可能性があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "これがSQL",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "インジェクションです",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "対策の基本は",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "SQL命令とデータを",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "分離することです",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "パラメータ化されたク",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "エリなど",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "安全なデータアクセス",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "方法を使います",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "禁止文字の一覧だけに",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "依存する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "方法は不十分です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "XSS",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "Cross-",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "Site Scripting",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "XSSでは",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "攻撃者が入力した",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "内容がWebページ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "上でスクリプトとして",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "実行されます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "利用者のブラウザ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "上で不正な",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "処理が行われる",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "可能性があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "出力する文脈に応じた",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "エスケープや",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "安全なテンプレート",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "機構などを利用します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "入力を一律に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "削るだけでは",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "十分な",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "対策にならないことがあります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "CSRF",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "CSRFは",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "Cross-Site Request",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "Forgeryの略です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "ログイン済み利用者の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ブラウザを利用し",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "本人が意図しない",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "操作を実行させる",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "攻撃です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "重要な操作では",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "リクエストが",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "正規の画面から",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "送られたかを確認する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "仕組みが必要です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "CSRFトークンや",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "Cookie属性など",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "複数の対策があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "セッション管理",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "ログイン後の状態を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "管理する情報は",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "認証情報と",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "同様に重要です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "セッションIDが",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "盗まれると",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "攻撃者が利用者として",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "操作できる",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "場合があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "推測しにくい",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "値を使います",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "HTTPSで",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "保護します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "適切な有効",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "期限を設定します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "ログアウトや",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "権限変更時に無効化で",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "きるようにします",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "暗号機能を自作しない",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "独自の暗号",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "方式を作ることは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "避けます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "広く検討された",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "標準方式と",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "保守された",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ライブラリを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "利用します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "しかし",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "強い暗号ライブラリを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "使うだけでも",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "十分ではありません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "鍵の保管",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "乱数",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "利用モード",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "証明書検証",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "エラー処理",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "こうした実装も安全性に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "影響します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "秘密情報",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "APIキー",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "パスワード",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "秘密鍵などをソース",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "コードへ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "直接埋め込むと",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "リポジトリやログから",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "漏れる可能性があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "秘密情報は",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "用途に応じて",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "安全な保管",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "機構を利用します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "アクセスできる",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "主体を限定します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "必要に応じて",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ローテーションできるようにします",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "漏えいした",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "場合に失効できる",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "設計も重要です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "データベースの",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "アクセス制御",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "アプリケーションが",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "使うデータベース",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "アカウントにも",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "最小権限を適用します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "アプリケーションが",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "必要としない",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "管理者権限を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "与えません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "開発者",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "運用担当者",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "アプリケーションなど",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "役割ごとに",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "権限を分けます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "データベースへ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "直接アクセスできる",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "人も管理します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "データの暗号化",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "重要なデータは",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "通信中だけでなく",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "保存時の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "保護も検討します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "ストレージや",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "データベースの",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "暗号化には",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "端末や媒体の盗難など",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "に対する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "効果があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "一方",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "正規の",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "アプリケーションが",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "復号できるなら",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "アプリケーションの",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "権限を奪った攻撃者も",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "データを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "読める可能性があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "暗号化だけで",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "アクセス制御の問題は",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "解決しません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "ログ",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "認証",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "権限変更",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "重要操作",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "エラーなどを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "適切に記録します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "ただし",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "パスワードや",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "秘密鍵などをログへ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "出してはいけません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "個人情報を必要以上に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "記録することも",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "避けます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "ログは問題の検知や",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "調査に役立つ一方",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "それ自体が機密",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "情報になる",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "場合があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "エラー処理",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "エラー時に内部構造",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "SQL文",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "秘密情報などを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "利用者へ表示すると",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "攻撃に利用される",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "可能性があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "利用者には",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "必要な情報だけを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "示します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "一方",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "運用側には原因調査に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "必要な記録を残します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "エラーを隠すことと",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "監視できないことは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "別です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "OWASP Top",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "102025では",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "例外条件の不適切な",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "処理も重要な",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "リスクとして",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "扱われています",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "ソフトウェア",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "サプライチェーン",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "アプリケーションは",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "多数の外部",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ライブラリやビルド",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ツールに依存します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "自分たちが書いた",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "コードだけを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "確認しても",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "十分ではありません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "依存関係",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "パッケージの入手元",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "ビルド環境",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "更新",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "署名や完全性",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "こうしたソフトウェア",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "サプライチェーンも管理します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "OWASP Top",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "102025では",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "Software Supply Chain",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "Failures",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "がA03です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "セキュリティテスト",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "コードレビュー",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "静的解析",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "動的解析",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "依存関係の検査",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "脆弱性診断",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "ペネトレーションテスト",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "目的に応じて",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "異なる方法を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "組み合わせます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "一つのテストを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "通過したことと",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "脆弱性が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "存在しないことは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "同じではありません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "安全な設計を優先する",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "脆弱な設計を",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "Web Application",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "Firewall",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "WAFや監視だけで",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "補うと",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "運用負担が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "大きくなります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "入力を信頼しない",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "権限を最小化する",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "安全な初期設定にする",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "重要な操作を検証する",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "障害時に安全側へ倒す",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "こうした原則を設計へ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "組み込みます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "メモリ安全性",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "一部のプログラミング",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "言語では",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "メモリ領域の境界や",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "寿命を開発者が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "細かく管理します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "扱いを誤ると",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "意図しない",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "場所を読み書きする",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "脆弱性が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "生じる可能性があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "代表例の一つが",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "バッファオーバー",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "フローです",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "入力データが用意した",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "バッファより",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "大きいのに",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "適切な境界確認をせず",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "書き込むことで",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "発生する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "場合があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "結果として",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "異常終了だけでなく",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "条件によっては任意",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "コード",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "実行などにつながる",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "可能性があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "メモリ安全な言語",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "メモリ安全性の問題を",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "個々の開発者の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "注意だけで",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "防ぐことには",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "限界があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "CISAなどは",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "可能な領域でメモリ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "安全なプログラミング",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "言語へ移行することを",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "脆弱性の根本原因を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "減らす方法として",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "推奨しています",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "ただし",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "言語を変えればすべての",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "脆弱性が",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "なくなるわけではありません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "認証",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "アクセス制御",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "業務ロジック",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "インジェクション",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "サプライチェーン",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "これらには別の対策が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "必要です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "安全な部品を使っても",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "設計は必要",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "フレームワークや",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "安全な言語は",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "多くの低レベルな",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "弱点を減らせます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "しかし",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "管理者だけが見られる",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "情報を一般利用者へ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "返す設計なら",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "メモリ安全でも",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "アクセス制御の問題は",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "残ります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "安全な実装技術と",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "安全な設計を分けずに",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "考えることが重要です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "AIを組み込んだ",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "アプリケーション",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "生成AIを利用する",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "システムにも",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "従来の",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "アプリケーション",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "セキュリティが",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "必要です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "認証",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "アクセス制御",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "秘密情報の管理",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "入力と出力の検証",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "ログ",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "依存関係",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "これらが",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "不要になるわけではありません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "その上で",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "AI固有またはAI",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "によって拡大する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "リスクを考えます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "プロンプトインジェク",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ション",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "生成AI",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "アプリケーションでは",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "入力された",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "文章によって",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "モデルが開発者の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "意図しない",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "指示へ誘導される",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "場合があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "これが",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "プロンプトインジェク",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ションです",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "利用者が直接悪意ある",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "指示を与える",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "場合があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "Webページ",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "文書",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "メールなど外部",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "データに埋め込まれた",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "指示を",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "AIが読み込んで",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "影響を受ける",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "場合もあります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "後者は間接",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "プロンプトインジェク",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ションと呼ばれます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "入力文を単純に禁止",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "語で検査するだけでは",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "完全な防御にはなりません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "AIの入力も信頼",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "境界を越える",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "RAGや検索機能を",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "使うAIは",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "外部の文書やデータを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "入力として利用します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "外部データだから",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "事実とは限りません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "外部データだから",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "命令として",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "従ってよいとも",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "限りません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "利用者入力",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "取得した文書",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "ツールの結果などを",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "それぞれ異なる信頼",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "度を持つデータとして",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "扱います",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "AIへ渡す情報",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "源と権限を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "明確にします",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "機密情報の漏えい",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "AIシステムへ",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "必要以上の個人情報や",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "秘密情報を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "入力しないようにします",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "モデルへの入力",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "検索用データ",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "会話履歴",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "ログ",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "出力",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "複数の場所から",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "情報が漏れる",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "可能性があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "また",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "システムプロンプトへ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "秘密鍵やパスワードを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "書いても",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "安全な保管にはなりません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "プロンプトは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "秘密情報保管庫として",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "設計された",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "仕組みではありません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "AIの",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "出力を命令として",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "無条件に使わない",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "AIの出力は",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "誤っている",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "場合があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "攻撃者に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "操作されている",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "場合もあります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "そのため",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "AIの出力をSQL",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "シェルコマンド",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "HTML",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "API引数などとして",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "利用するときは",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "通常の外部",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "入力と同じように",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "検証します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "AIが生成したから",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "安全な",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "データになるわけではありません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "OWASPの生成AI",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "向けガイダンスでも",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "AI出力を信頼して",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "後続処理へ渡すことは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "重要な攻撃面として",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "扱われています",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "AIへ与える権限を",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "最小化する",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "AIエージェントが",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "メール送信",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "ファイル削除",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "データ更新",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "決済などの",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "操作を実行できる",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "場合があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "便利な一方",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "誤出力や",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "プロンプトインジェク",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ションが",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "実際の操作につながる",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "可能性があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "必要のないツールを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "与えない",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "必要以上の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "権限を与えない",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "重要な操作には",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "承認を入れる",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "実行前に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "引数を検証する",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "被害範囲を限定する",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "従来の最小",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "権限の原則をAIにも",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "適用します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "OWASP GenAI LLM Top",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "102026でも",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "AIへ過剰な機能・",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "権限・自律性を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "与えることは重要な",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "リスクとして",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "扱われています",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "データ・モデルの",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ポイズニング",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "AIでは",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "学習データや追加学習",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "データ",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "検索用データなどが",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "意図的に操作される",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "場合があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "これを",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "データポイズニン",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "グなどと呼びます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "攻撃者がデータを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "操作することで",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "特定条件で誤った",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "挙動をさせることがあります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "NISTは",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "敵対的機械学習の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "攻撃分類を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "公開しています",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "生成AIに対する",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "ポイズニング",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "プライバシー侵害",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "誤用なども",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "整理されています",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "データの出所",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "変更履歴",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "アクセス権",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "評価",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "こうしたサプライチェーン",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "管理が重要です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "AIのセキュリティは",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "変化が速い",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "生成AIの攻撃手法と",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "対策は急速に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "変化しています",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "固定された「",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "完全な防御策",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "」があるとは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "考えません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "NISTはAI",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "に対する攻撃分類や",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "リスク管理資料を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "継続的に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "更新しています",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "OWASPの生成AI",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "向け資料も",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "従来のWeb",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "アプリケーション向け",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "Top10とは",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "別に更新されています",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "教材では基本原則を学び",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "実際の設計時には最新",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "資料を確認します",
+      "duration_multiplier": 1.4
+    }
+  ]
+}
