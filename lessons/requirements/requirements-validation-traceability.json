@@ -45,8 +45,12 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "トレーサビリティは、要件のつながりを追える性質です",
-      "duration_multiplier": 1.1
+      "text": "トレーサビリティは、要件の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "つながりを追える性質です",
+      "duration_multiplier": 1.25
     },
     {
       "text": "業務目的から、業務要件へつなげます",

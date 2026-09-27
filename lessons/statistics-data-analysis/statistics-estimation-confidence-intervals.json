@@ -6,7 +6,12 @@
   "summary": "標本から母集団を推定するときの不確実性と信頼区間の基本を学びます。",
   "created_at": "2026-09-27",
   "base_duration_ms": 680,
-  "sources": [],
+  "sources": [
+    {
+      "title": "NIST/SEMATECH e-Handbook: Confidence Intervals",
+      "url": "https://www.itl.nist.gov/div898/handbook/prc/section1/prc14.htm"
+    }
+  ],
   "chunks": [
     {
       "text": "標本から得た値には、",
@@ -53,12 +58,12 @@
       "duration_multiplier": 1
     },
     {
-      "text": "推定の不確実性を",
+      "text": "推定値の不確実性を",
       "duration_multiplier": 1
     },
     {
-      "text": "幅で表します",
-      "duration_multiplier": 1.15
+      "text": "区間で示します",
+      "duration_multiplier": 1.25
     },
     {
       "text": "区間が狭いほど、",
@@ -109,20 +114,24 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "単純に",
+      "text": "同じ手順で",
       "duration_multiplier": 1
     },
     {
-      "text": "真の値が一定確率で",
+      "text": "区間を作り直すと、",
       "duration_multiplier": 1
     },
     {
-      "text": "入る区間と説明すると",
+      "text": "指定した割合の区間が",
       "duration_multiplier": 1
     },
     {
-      "text": "不正確です",
-      "duration_multiplier": 1.15
+      "text": "真の値を含む",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "という意味です",
+      "duration_multiplier": 1.25
     },
     {
       "text": "実務では、",

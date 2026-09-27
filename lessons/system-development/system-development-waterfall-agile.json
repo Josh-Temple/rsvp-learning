@@ -6,35 +6,72 @@
   "summary": "代表的な開発アプローチであるWaterfallとAgileの違いと使い分けの考え方を学びます。",
   "created_at": "2026-09-27",
   "base_duration_ms": 680,
-  "sources": [],
+  "sources": [
+    {
+      "title": "アジャイルソフトウェア開発宣言（日本語）",
+      "url": "https://agilemanifesto.org/iso/ja/manifesto.html"
+    }
+  ],
   "chunks": [
     {
-      "text": "WaterfallとAgileは、開発の進め方を考える代表的な枠組みです",
-      "duration_multiplier": 1.35
+      "text": "WaterfallとAgileは、",
+      "duration_multiplier": 1
     },
     {
-      "text": "Waterfallでは、工程を順に進める形が基本です",
-      "duration_multiplier": 1.1
+      "text": "開発の進め方を考える",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "代表的な枠組みです",
+      "duration_multiplier": 1.25
+    },
+    {
+      "text": "Waterfallでは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "工程を順に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "進める形が基本です",
+      "duration_multiplier": 1.25
     },
     {
       "text": "初期に要件や計画を明確にすることを重視します",
       "duration_multiplier": 1.1
     },
     {
-      "text": "大規模な調整や承認が必要な案件と相性が良い場合があります",
-      "duration_multiplier": 1.1
+      "text": "案件の規模だけで、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "どちらを選ぶかは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "決まりません",
+      "duration_multiplier": 1.25
     },
     {
       "text": "一方、途中変更のコストが高くなることがあります",
       "duration_multiplier": 1.1
     },
     {
-      "text": "Agileでは、小さな単位で作り、確認し、改善を繰り返します",
-      "duration_multiplier": 1.1
+      "text": "Agileでは、小さな単位で",
+      "duration_multiplier": 1
     },
     {
-      "text": "早い段階で利用者からフィードバックを得やすくなります",
-      "duration_multiplier": 1.1
+      "text": "作り、確認し、改善を繰り返します",
+      "duration_multiplier": 1.25
+    },
+    {
+      "text": "早い段階で利用者から",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "フィードバックを得やすくなります",
+      "duration_multiplier": 1.25
     },
     {
       "text": "不確実性が高い領域に向く場合があります",
@@ -45,16 +82,40 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "Waterfallでも、途中の検証や改善はできます",
-      "duration_multiplier": 1.1
+      "text": "Waterfallでも、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "途中の検証や",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "改善はできます",
+      "duration_multiplier": 1.25
     },
     {
       "text": "実務では、両者を組み合わせることもあります",
       "duration_multiplier": 1.1
     },
     {
-      "text": "重要なのは、名称ではなく制約と不確実性に合う進め方です",
-      "duration_multiplier": 1.1
+      "text": "重要なのは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "名称ではなく",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "要求の不確実性や",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "変更頻度に合う",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "進め方です",
+      "duration_multiplier": 1.25
     },
     {
       "text": "契約、組織、規制、技術条件も選択に影響します",

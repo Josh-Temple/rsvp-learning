@@ -17,8 +17,12 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "一部の工程だけ速くしても、全体が速くなるとは限りません",
-      "duration_multiplier": 1.1
+      "text": "一部の工程だけ速くしても、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "全体が速くなるとは限りません",
+      "duration_multiplier": 1.25
     },
     {
       "text": "待ち時間が長い工程を確認します",
@@ -45,12 +49,24 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "問い合わせが多い箇所には、分かりにくさがあるかもしれません",
-      "duration_multiplier": 1.1
+      "text": "問い合わせが多い箇所には、",
+      "duration_multiplier": 1
     },
     {
-      "text": "件数と処理時間を測ると、優先順位をつけやすくなります",
-      "duration_multiplier": 1.1
+      "text": "分かりにくさが",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "あるかもしれません",
+      "duration_multiplier": 1.25
+    },
+    {
+      "text": "件数と処理時間を測ると、優先",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "順位をつけやすくなります",
+      "duration_multiplier": 1.25
     },
     {
       "text": "例外の頻度も確認します",

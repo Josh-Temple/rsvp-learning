@@ -6,7 +6,12 @@
   "summary": "分散システムで避けにくい失敗に備え、再試行しても壊れにくい設計を学びます。",
   "created_at": "2026-09-27",
   "base_duration_ms": 680,
-  "sources": [],
+  "sources": [
+    {
+      "title": "RFC 9110: HTTP Semantics",
+      "url": "https://www.rfc-editor.org/rfc/rfc9110.html"
+    }
+  ],
   "chunks": [
     {
       "text": "外部通信を含む処理は、",
@@ -81,16 +86,24 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "冪等性は、",
+      "text": "冪等性とは、",
       "duration_multiplier": 1
     },
     {
-      "text": "同じ操作を繰り返しても",
+      "text": "同じ要求を何度繰り返しても、",
       "duration_multiplier": 1
     },
     {
-      "text": "結果が壊れない性質です",
-      "duration_multiplier": 1.15
+      "text": "意図した効果が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "一回の実行と",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "同じになる性質です",
+      "duration_multiplier": 1.25
     },
     {
       "text": "二重登録や",

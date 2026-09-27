@@ -21,8 +21,12 @@
       "duration_multiplier": 1.35
     },
     {
-      "text": "Retrieval Augmented Generation",
-      "duration_multiplier": 2.4
+      "text": "Retrieval ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "Augmented Generation",
+      "duration_multiplier": 1.25
     },
     {
       "text": "の略です",

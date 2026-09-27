@@ -6,19 +6,56 @@
   "summary": "変更を安全に環境へ配布し、問題時に戻すためのCDとデプロイ運用を学びます。",
   "created_at": "2026-09-27",
   "base_duration_ms": 680,
-  "sources": [],
+  "sources": [
+    {
+      "title": "Google Cloud: Cloud Deploy terminology",
+      "url": "https://docs.cloud.google.com/deploy/docs/terminology"
+    }
+  ],
   "chunks": [
     {
       "text": "CDは、",
       "duration_multiplier": 1
     },
     {
-      "text": "変更を継続的に",
+      "text": "継続的デリバリーまたは",
       "duration_multiplier": 1
     },
     {
-      "text": "配布する考え方です",
-      "duration_multiplier": 1.35
+      "text": "継続的デプロイを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "指します",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "継続的デリバリーは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "変更をリリースできる",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "状態に保つ考え方です",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "継続的デプロイは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "条件を満たした変更を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "自動で公開する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "考え方です",
+      "duration_multiplier": 1.25
     },
     {
       "text": "開発環境、検証環境、",

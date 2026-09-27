@@ -21,20 +21,36 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "処理時間、エラー率、問い合わせ件数などが候補になります",
-      "duration_multiplier": 1.1
+      "text": "処理時間、エラー率、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "問い合わせ件数などが候補に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "なります",
+      "duration_multiplier": 1.25
     },
     {
       "text": "測りやすい数字だけを選ばないことが重要です",
       "duration_multiplier": 1.1
     },
     {
-      "text": "自動化は、反復性が高くルールが明確な作業に向きます",
-      "duration_multiplier": 1.1
+      "text": "自動化は、反復性が高くルール",
+      "duration_multiplier": 1
     },
     {
-      "text": "不安定な業務を、そのまま自動化すると問題も自動化します",
-      "duration_multiplier": 1.1
+      "text": "が明確な作業に向きます",
+      "duration_multiplier": 1.25
+    },
+    {
+      "text": "不安定な業務を、そのまま",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "自動化すると問題も自動化します",
+      "duration_multiplier": 1.25
     },
     {
       "text": "先に業務を整理してから自動化します",

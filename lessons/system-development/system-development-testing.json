@@ -61,8 +61,16 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "テストは、品質を作る最後の工程ではなく、品質を確認する工程です",
-      "duration_multiplier": 1.35
+      "text": "テストは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "品質を作る最後の工程ではなく、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "品質を確認する工程です",
+      "duration_multiplier": 1.25
     }
   ]
 }

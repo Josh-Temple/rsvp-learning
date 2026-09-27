@@ -53,32 +53,32 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "どの情報を",
+      "text": "どの情報について、",
       "duration_multiplier": 1
     },
     {
-      "text": "正本とするかを",
+      "text": "どこを正本とするかを",
       "duration_multiplier": 1
     },
     {
       "text": "決めます",
-      "duration_multiplier": 1.15
+      "duration_multiplier": 1
     },
     {
       "text": "Single Source of Truthは、",
-      "duration_multiplier": 1.35
-    },
-    {
-      "text": "正しい状態の基準を",
       "duration_multiplier": 1
     },
     {
-      "text": "一つに定める",
+      "text": "特定の情報について、",
       "duration_multiplier": 1
     },
     {
-      "text": "考え方です",
-      "duration_multiplier": 1.15
+      "text": "正しい値を参照する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "基準を定める考え方です",
+      "duration_multiplier": 1.25
     },
     {
       "text": "他の画面や集計表は、",

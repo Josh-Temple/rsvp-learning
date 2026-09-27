@@ -9,8 +9,16 @@
   "sources": [],
   "chunks": [
     {
-      "text": "ステークホルダーは、プロジェクトに関係する人や組織です",
-      "duration_multiplier": 1.35
+      "text": "ステークホルダーは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "プロジェクトに関係する人や",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "組織です",
+      "duration_multiplier": 1.25
     },
     {
       "text": "利用者だけが、ステークホルダーではありません",
@@ -45,8 +53,16 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "何を含むかだけでなく、何を含まないかも明確にします",
-      "duration_multiplier": 1.1
+      "text": "何を含むかだけでなく、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "何を含まないかも",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "明確にします",
+      "duration_multiplier": 1.25
     },
     {
       "text": "スコープが曖昧だと、追加要求が増えやすくなります",

@@ -41,8 +41,16 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "口頭やメールだけの引継ぎも見落とさないようにします",
-      "duration_multiplier": 1.1
+      "text": "口頭やメールだけの",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "引継ぎも",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "見落とさないようにします",
+      "duration_multiplier": 1.25
     },
     {
       "text": "待ち時間は、処理時間と分けて考えます",

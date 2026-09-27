@@ -157,7 +157,7 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "役割とauthorityを",
+      "text": "役割と権限を",
       "duration_multiplier": 1
     },
     {
@@ -166,7 +166,7 @@
     },
     {
       "text": "重要です",
-      "duration_multiplier": 1.35
+      "duration_multiplier": 1.25
     }
   ]
 }

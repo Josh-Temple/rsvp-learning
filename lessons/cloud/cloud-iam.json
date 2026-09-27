@@ -13,8 +13,12 @@
       "duration_multiplier": 1
     },
     {
-      "text": "Identity and Access Management",
-      "duration_multiplier": 2.4
+      "text": "Identity and ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "Access Management",
+      "duration_multiplier": 1.25
     },
     {
       "text": "の略です",

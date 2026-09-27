@@ -6,7 +6,12 @@
   "summary": "利用者やシステムの本人性を確認する認証と、操作権限を決める認可の違いを学びます。",
   "created_at": "2026-09-27",
   "base_duration_ms": 680,
-  "sources": [],
+  "sources": [
+    {
+      "title": "RFC 6749: The OAuth 2.0 Authorization Framework",
+      "url": "https://www.rfc-editor.org/rfc/rfc6749.html"
+    }
+  ],
   "chunks": [
     {
       "text": "認証は、",
@@ -73,16 +78,20 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "Tokenを使って、",
+      "text": "アクセストークンは、",
       "duration_multiplier": 1
     },
     {
-      "text": "API呼び出しを",
+      "text": "保護された情報へ",
       "duration_multiplier": 1
     },
     {
-      "text": "認証する方法もあります",
-      "duration_multiplier": 1.15
+      "text": "アクセスする権限を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "示すために使われます",
+      "duration_multiplier": 1
     },
     {
       "text": "OAuthは、",
@@ -93,12 +102,16 @@
       "duration_multiplier": 1
     },
     {
-      "text": "限定的な権限を",
+      "text": "限定的なアクセス権を",
       "duration_multiplier": 1
     },
     {
-      "text": "委任するために使われます",
-      "duration_multiplier": 1.15
+      "text": "委任する認可の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "枠組みです",
+      "duration_multiplier": 1.25
     },
     {
       "text": "API Keyは、",

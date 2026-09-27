@@ -6,7 +6,12 @@
   "summary": "データの重複や更新時の矛盾を減らすための正規化の考え方を学びます。",
   "created_at": "2026-09-27",
   "base_duration_ms": 680,
-  "sources": [],
+  "sources": [
+    {
+      "title": "Cornell University CS 330: Database Normalization",
+      "url": "https://www.cs.cornell.edu/courses/cs330/2007fa/slides/2007-09-24-CS330-Normalization.pdf"
+    }
+  ],
   "chunks": [
     {
       "text": "正規化は、",
@@ -77,40 +82,60 @@
       "duration_multiplier": 1
     },
     {
-      "text": "繰り返し項目を",
+      "text": "各列に一つの値を",
       "duration_multiplier": 1
     },
     {
-      "text": "避けます",
-      "duration_multiplier": 1.15
+      "text": "持たせ、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "同じ行へ繰り返し項目を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "詰め込みません",
+      "duration_multiplier": 1
     },
     {
       "text": "第二正規形では、",
       "duration_multiplier": 1
     },
     {
-      "text": "主キーの一部だけに",
+      "text": "第一正規形を満たし、",
       "duration_multiplier": 1
     },
     {
-      "text": "依存する属性を",
+      "text": "複数列の主キーの",
       "duration_multiplier": 1
     },
     {
-      "text": "分けます",
-      "duration_multiplier": 1.15
+      "text": "一部だけで決まる",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "属性を分けます",
+      "duration_multiplier": 1
     },
     {
       "text": "第三正規形では、",
       "duration_multiplier": 1
     },
     {
-      "text": "非キー属性同士の",
+      "text": "非キー属性が",
       "duration_multiplier": 1
     },
     {
-      "text": "依存を整理します",
-      "duration_multiplier": 1.15
+      "text": "別の非キー属性に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "依存しないよう",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "整理します",
+      "duration_multiplier": 1.25
     },
     {
       "text": "厳密な定義は、",

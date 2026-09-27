@@ -17,8 +17,12 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "例えば、システムを導入したい、という要望があります",
-      "duration_multiplier": 1.1
+      "text": "例えば、システムを導入したい、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "という要望があります",
+      "duration_multiplier": 1.25
     },
     {
       "text": "その背景に、処理時間の長さがあるかもしれません",

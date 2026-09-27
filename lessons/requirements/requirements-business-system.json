@@ -29,20 +29,48 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "オンライン受付を実装することは、システム側の手段です",
-      "duration_multiplier": 1.1
+      "text": "オンライン受付を",
+      "duration_multiplier": 1
     },
     {
-      "text": "入力内容を自動確認することも、システム要件になり得ます",
-      "duration_multiplier": 1.1
+      "text": "実装することは、",
+      "duration_multiplier": 1
     },
     {
-      "text": "一つの業務要件に、複数のシステム要件が対応することがあります",
-      "duration_multiplier": 1.1
+      "text": "システム側の手段です",
+      "duration_multiplier": 1.25
     },
     {
-      "text": "逆に、システムを作らず業務変更だけで解決できる場合もあります",
-      "duration_multiplier": 1.1
+      "text": "入力内容を自動確認することも、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "システム要件になり得ます",
+      "duration_multiplier": 1.25
+    },
+    {
+      "text": "一つの業務要件に、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "複数のシステム要件が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "対応することがあります",
+      "duration_multiplier": 1.25
+    },
+    {
+      "text": "逆に、システムを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "作らず業務変更だけで",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "解決できる場合もあります",
+      "duration_multiplier": 1.25
     },
     {
       "text": "要望を、そのまま要件にしないことが重要です",
@@ -53,12 +81,28 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "必要性が説明できない機能は、スコープを再検討します",
-      "duration_multiplier": 1.1
+      "text": "必要性が説明できない機能は、",
+      "duration_multiplier": 1
     },
     {
-      "text": "業務要件からシステム要件へ落とす過程を追えるようにします",
-      "duration_multiplier": 1.1
+      "text": "スコープを再検討します",
+      "duration_multiplier": 1.25
+    },
+    {
+      "text": "業務要件から",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "システム要件へ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "落とす過程を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "追えるようにします",
+      "duration_multiplier": 1.25
     },
     {
       "text": "このつながりが、後の設計とテストの基準になります",

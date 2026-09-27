@@ -6,7 +6,12 @@
   "summary": "LLMが外部ツールを使う仕組みと、複数ステップを進めるAgentの設計上の注意点を学びます。",
   "created_at": "2026-09-27",
   "base_duration_ms": 680,
-  "sources": [],
+  "sources": [
+    {
+      "title": "OpenAI API: Function Calling",
+      "url": "https://developers.openai.com/api/docs/guides/function-calling"
+    }
+  ],
   "chunks": [
     {
       "text": "LLMは、",
@@ -53,24 +58,40 @@
       "duration_multiplier": 1
     },
     {
-      "text": "使うツールと",
+      "text": "用意されたツールの中から、",
       "duration_multiplier": 1
     },
     {
-      "text": "引数を選びます",
-      "duration_multiplier": 1.15
+      "text": "呼び出すツール名と",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "引数を応答として",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "返します",
+      "duration_multiplier": 1
     },
     {
       "text": "実際の処理は、",
       "duration_multiplier": 1
     },
     {
-      "text": "外部システムが",
+      "text": "呼び出し側のアプリが",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ツール名と引数を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "確認して",
       "duration_multiplier": 1
     },
     {
       "text": "実行します",
-      "duration_multiplier": 1.15
+      "duration_multiplier": 1.25
     },
     {
       "text": "ツールの結果を、",
