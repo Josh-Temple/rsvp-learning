@@ -9,59 +9,163 @@
   "sources": [],
   "chunks": [
     {
-      "text": "改善では、どこが全体を制約しているかを探します",
+      "text": "改善では、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "どこが全体を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "制約しているかを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "探します",
       "duration_multiplier": 1.35
     },
     {
-      "text": "ボトルネックは、全体の処理能力を制限する箇所です",
-      "duration_multiplier": 1.1
+      "text": "ボトルネックは、",
+      "duration_multiplier": 1
     },
     {
-      "text": "一部の工程だけ速くしても、全体が速くなるとは限りません",
-      "duration_multiplier": 1.1
+      "text": "全体の処理能力を",
+      "duration_multiplier": 1
     },
     {
-      "text": "待ち時間が長い工程を確認します",
-      "duration_multiplier": 1.1
+      "text": "制限する箇所です",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "承認待ちや情報待ちも、待ち時間です",
-      "duration_multiplier": 1.1
+      "text": "一部の工程だけ",
+      "duration_multiplier": 1
     },
     {
-      "text": "手戻りは、同じ作業をやり直すことです",
-      "duration_multiplier": 1.1
+      "text": "速くしても、",
+      "duration_multiplier": 1
     },
     {
-      "text": "入力ミスや確認不足が、手戻りを生むことがあります",
-      "duration_multiplier": 1.1
+      "text": "全体が速くなるとは",
+      "duration_multiplier": 1
     },
     {
-      "text": "同じ情報の重複入力も改善候補です",
-      "duration_multiplier": 1.1
+      "text": "限りません",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "不要な転記や集計も確認します",
-      "duration_multiplier": 1.1
+      "text": "待ち時間が長い",
+      "duration_multiplier": 1
     },
     {
-      "text": "問い合わせが多い箇所には、分かりにくさがあるかもしれません",
-      "duration_multiplier": 1.1
+      "text": "工程を確認します",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "件数と処理時間を測ると、優先順位をつけやすくなります",
-      "duration_multiplier": 1.1
+      "text": "承認待ちや情報待ちも、",
+      "duration_multiplier": 1
     },
     {
-      "text": "例外の頻度も確認します",
-      "duration_multiplier": 1.1
+      "text": "待ち時間です",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "目立つ不満だけで、改善箇所を決めないようにします",
-      "duration_multiplier": 1.1
+      "text": "手戻りは、",
+      "duration_multiplier": 1
     },
     {
-      "text": "全体への影響が大きい箇所から改善します",
+      "text": "同じ作業を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "やり直すことです",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "入力ミスや確認不足が、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "手戻りを生む",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ことがあります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "同じ情報の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "重複入力も改善候補です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "不要な転記や",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "集計も確認します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "問い合わせが多い箇所には、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "分かりにくさが",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "あるかもしれません",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "件数と処理時間を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "測ると、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "優先順位を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "つけやすくなります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "例外の頻度も",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "確認します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "目立つ不満だけで、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "改善箇所を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "決めないようにします",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "全体への影響が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "大きい箇所から",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "改善します",
       "duration_multiplier": 1.35
     }
   ]
