@@ -10,7 +10,7 @@ const state = {
   index: 0,
   playing: false,
   timer: null,
-  speed: Number.isFinite(savedSpeed) && savedSpeed >= 0.6 && savedSpeed <= 2 ? savedSpeed : 1,
+  speed: Number.isFinite(savedSpeed) && savedSpeed >= 0.6 && savedSpeed <= 10 ? savedSpeed : 1,
 };
 
 const els = {
@@ -68,7 +68,7 @@ function chunkDelayMs() {
   const chunk = currentChunk();
   const base = state.lesson?.base_duration_ms ?? 650;
   const multiplier = chunk?.duration_multiplier ?? 1;
-  return Math.max(120, Math.round((base * multiplier) / state.speed));
+  return Math.max(50, Math.round((base * multiplier) / state.speed));
 }
 
 function renderSources() {

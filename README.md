@@ -11,7 +11,7 @@ ChatGPT等で調査した内容を、RSVP（Rapid Serial Visual Presentation）�
 - RSVP再生 / 一時停止
 - 1チャンク・5チャンク戻る
 - 1チャンク進む
-- 再生速度 0.6〜2.0倍
+- 再生速度 0.6〜10.0倍
 - 速度と直近教材を端末に保存
 - JSON Schemaによる教材仕様の固定
 
