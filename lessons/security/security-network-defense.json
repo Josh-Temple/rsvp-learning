@@ -310,11 +310,11 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "ファイア",
-      "duration_multiplier": 1
+      "text": "ファイアウォール",
+      "duration_multiplier": 1.1
     },
     {
-      "text": "ウォールだけですべての",
+      "text": "だけですべての",
       "duration_multiplier": 1.1
     },
     {
@@ -906,11 +906,11 @@
       "duration_multiplier": 1
     },
     {
-      "text": "一部にデジタル",
+      "text": "一部に",
       "duration_multiplier": 1
     },
     {
-      "text": "署名を付けます",
+      "text": "デジタル署名を付けます",
       "duration_multiplier": 1.4
     },
     {
@@ -1206,11 +1206,7 @@
       "duration_multiplier": 1
     },
     {
-      "text": "デジタル",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "署名を付けたり",
+      "text": "デジタル署名を付けたり",
       "duration_multiplier": 1.1
     },
     {
@@ -1530,11 +1526,7 @@
       "duration_multiplier": 1
     },
     {
-      "text": "ネットワーク",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "機器を使いながら",
+      "text": "ネットワーク機器を使いながら",
       "duration_multiplier": 1.1
     },
     {
@@ -1602,11 +1594,11 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "設計とアクセス",
+      "text": "設計と",
       "duration_multiplier": 1
     },
     {
-      "text": "制御を組み合わせて",
+      "text": "アクセス制御を組み合わせて",
       "duration_multiplier": 1
     },
     {
