@@ -25,12 +25,6 @@
       "path": "./lessons/web-api/web-api-overview.json"
     },
     {
-      "id": "information-security-overview",
-      "title": "情報セキュリティ概観",
-      "topic": "情報セキュリティ",
-      "path": "./lessons/information-security/information-security-overview.json"
-    },
-    {
       "id": "security-fundamentals",
       "title": "情報セキュリティの基本",
       "topic": "情報セキュリティ",
