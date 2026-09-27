@@ -39,33 +39,34 @@
       font-size: clamp(28px, 8vw, 48px);
       letter-spacing: -.04em;
     }
-    p, li {
-      line-height: 1.75;
-    }
-    .lede {
-      color: var(--muted);
-    }
+    p, li { line-height: 1.75; }
+    .lede, .note, .status { color: var(--muted); }
     section {
-      margin-top: 36px;
+      margin-top: 34px;
       padding-top: 20px;
       border-top: 1px solid var(--line);
     }
     h2 {
-      margin: 0 0 14px;
+      margin: 0 0 12px;
       font-size: 18px;
     }
-    ol {
-      padding-left: 1.4em;
-    }
+    ol { padding-left: 1.4em; }
     button {
-      min-height: 48px;
-      padding: 0 18px;
+      width: 100%;
+      min-height: 50px;
+      margin-top: 8px;
+      padding: 0 16px;
       border: 1px solid var(--ink);
       background: var(--ink);
       color: var(--bg);
       font: inherit;
       font-weight: 700;
+      text-align: left;
       cursor: pointer;
+    }
+    button.secondary {
+      background: transparent;
+      color: var(--ink);
     }
     button:disabled {
       opacity: .45;
@@ -80,84 +81,92 @@
     .status {
       min-height: 1.6em;
       margin-top: 10px;
-      color: var(--muted);
       font-size: 13px;
     }
-    .note {
-      color: var(--muted);
-      font-size: 13px;
-    }
+    .note { font-size: 13px; }
   </style>
 </head>
 <body>
   <main>
     <h1>RSVP Web Reader</h1>
-    <p class="lede">Android Chromeで、閲覧中のページの下部にRSVPプレイヤーを重ねる実験版です。</p>
+    <p class="lede">Android Chromeのbookmarklet実行可否を、短いコードから順に切り分けます。</p>
 
     <section>
-      <h2>セットアップ</h2>
-      <ol>
-        <li>下の「ブックマークレットをコピー」を押します。</li>
-        <li>Chromeで任意のページを一度ブックマークします。</li>
-        <li>そのブックマークを編集し、名前を <code>RSVP Reader</code> などに変更します。</li>
-        <li>URL欄をすべて削除し、コピーした <code>javascript:</code> から始まる文字列を貼り付けて保存します。</li>
-        <li>読みたいページを開いた状態でアドレスバーへ <code>RSVP Reader</code> と入力し、候補に出たブックマークを選びます。</li>
-      </ol>
-      <button id="copy" type="button" disabled>読み込み中…</button>
-      <div id="status" class="status" role="status"></div>
-      <p class="note">Android Chromeのブックマークレット実行は正式な主要UIではなく、バージョンやサイトの制約で動かない場合があります。まず実機検証用として使ってください。</p>
+      <h2>1. まず実行テスト</h2>
+      <p>最初に約500文字の極小コードで、Android ChromeがJavaScriptブックマークを実行できているか確認します。</p>
+      <button id="copy-probe" type="button" disabled>読み込み中…</button>
+      <p class="note">成功すると、閲覧中ページの最下部に「RSVP TEST OK」が5秒だけ表示されます。</p>
     </section>
 
     <section>
-      <h2>動作</h2>
-      <p>テキストを選択してから起動した場合は選択範囲を優先します。未選択なら <code>article</code>、<code>main</code> などから本文候補を取得します。</p>
-      <p>再度起動すると既存パネルを閉じます。ページ外への通信や外部スクリプト読み込みは行いません。</p>
+      <h2>2. テストが成功したら軽量RSVP</h2>
+      <p>初版は約1万文字あったため、Android向けに約6千文字まで削った版です。</p>
+      <button id="copy-lite" class="secondary" type="button" disabled>読み込み中…</button>
+      <p class="note">選択中の文章があれば選択範囲を優先します。未選択なら article / main / body から本文を取得します。</p>
+    </section>
+
+    <section>
+      <h2>登録と実行</h2>
+      <ol>
+        <li>上のボタンでコードをコピーします。</li>
+        <li>Chromeで適当なページをブックマークします。</li>
+        <li>ブックマークを編集し、名前を <code>RSVP TEST</code> または <code>RSVP Reader</code> にします。</li>
+        <li>URL欄を全部消して、コピーした <code>javascript:</code> から始まる文字列を貼り付けて保存します。</li>
+        <li>Wikipediaなど通常のWebページを開きます。</li>
+        <li><strong>ブックマーク一覧から開かず</strong>、そのページを表示したままアドレスバーへブックマーク名を入力します。</li>
+        <li>★印の付いたブックマーク候補をタップします。</li>
+      </ol>
+      <div id="status" class="status" role="status"></div>
+      <p class="note">テスト版では、本文を外部サーバーへ送信しません。</p>
     </section>
   </main>
 
   <script>
-    const copyButton = document.querySelector("#copy");
     const status = document.querySelector("#status");
-    let bookmarklet = "";
+    const codes = new Map();
 
     function oneLine(source) {
-      return source
-        .replace(/^\s*\/\/.*$/gm, "")
-        .replace(/\s*\n\s*/g, " ")
-        .trim();
+      return source.replace(/\s*\n\s*/g, " ").trim();
     }
 
-    async function load() {
+    async function loadCode(buttonId, path, label) {
+      const button = document.querySelector(buttonId);
       try {
-        const response = await fetch("./bookmarklet.js", { cache: "no-store" });
+        const response = await fetch(path, { cache: "no-store" });
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
-        const source = await response.text();
-        bookmarklet = `javascript:${oneLine(source)}`;
-        copyButton.disabled = false;
-        copyButton.textContent = "ブックマークレットをコピー";
-        status.textContent = `準備完了 · ${bookmarklet.length.toLocaleString()} 文字`;
+        const code = `javascript:${oneLine(await response.text())}`;
+        codes.set(buttonId, code);
+        button.disabled = false;
+        button.textContent = `${label}（${code.length.toLocaleString()}文字）`;
       } catch (error) {
         console.error(error);
-        status.textContent = "ブックマークレットの読み込みに失敗しました。";
+        button.textContent = "読み込み失敗";
       }
     }
 
-    copyButton.addEventListener("click", async () => {
+    async function copy(buttonId) {
+      const code = codes.get(buttonId);
+      if (!code) return;
       try {
-        await navigator.clipboard.writeText(bookmarklet);
-        status.textContent = "コピーしました。ChromeのブックマークURL欄へ貼り付けてください。";
+        await navigator.clipboard.writeText(code);
       } catch {
         const textarea = document.createElement("textarea");
-        textarea.value = bookmarklet;
+        textarea.value = code;
         document.body.append(textarea);
         textarea.select();
         document.execCommand("copy");
         textarea.remove();
-        status.textContent = "コピーしました。ChromeのブックマークURL欄へ貼り付けてください。";
       }
-    });
+      status.textContent = "コピーしました。ブックマークのURL欄へ貼り付けてください。";
+    }
 
-    load();
+    document.querySelector("#copy-probe").addEventListener("click", () => copy("#copy-probe"));
+    document.querySelector("#copy-lite").addEventListener("click", () => copy("#copy-lite"));
+
+    Promise.all([
+      loadCode("#copy-probe", "./probe.js", "動作確認コードをコピー"),
+      loadCode("#copy-lite", "./bookmarklet-lite.js", "軽量RSVPをコピー"),
+    ]);
   </script>
 </body>
 </html>
