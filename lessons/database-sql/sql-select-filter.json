@@ -9,59 +9,159 @@
   "sources": [],
   "chunks": [
     {
-      "text": "SELECTは、データを取得するSQLです",
+      "text": "SELECTは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "データを取得する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "SQLです",
       "duration_multiplier": 1.35
     },
     {
-      "text": "FROMで、対象のテーブルを指定します",
-      "duration_multiplier": 1.1
+      "text": "FROMで、",
+      "duration_multiplier": 1
     },
     {
-      "text": "必要な列だけを選ぶことができます",
-      "duration_multiplier": 1.1
+      "text": "対象のテーブルを",
+      "duration_multiplier": 1
     },
     {
-      "text": "WHEREで、条件に合う行を絞り込みます",
-      "duration_multiplier": 1.1
+      "text": "指定します",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "等しい、より大きい、含む、などの条件を使えます",
-      "duration_multiplier": 1.1
+      "text": "必要な列だけを",
+      "duration_multiplier": 1
     },
     {
-      "text": "複数条件は、ANDやORで組み合わせます",
-      "duration_multiplier": 1.1
+      "text": "選ぶことができます",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "NULLの判定には、IS NULLを使います",
-      "duration_multiplier": 1.1
+      "text": "WHEREで、",
+      "duration_multiplier": 1
     },
     {
-      "text": "ORDER BYで、結果を並べ替えます",
-      "duration_multiplier": 1.1
+      "text": "条件に合う行を",
+      "duration_multiplier": 1
     },
     {
-      "text": "ASCは昇順、DESCは降順です",
-      "duration_multiplier": 1.1
+      "text": "絞り込みます",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "DISTINCTは、重複した結果を除くために使えます",
-      "duration_multiplier": 1.1
+      "text": "等しい、より大きい、",
+      "duration_multiplier": 1
     },
     {
-      "text": "LIMITなどで、取得件数を制限できるDBもあります",
-      "duration_multiplier": 1.1
+      "text": "含む、などの条件を",
+      "duration_multiplier": 1
     },
     {
-      "text": "条件を書いたら、意図した行だけ取れているか確認します",
-      "duration_multiplier": 1.1
+      "text": "使えます",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "大量データでは、不要な全件取得を避けます",
-      "duration_multiplier": 1.1
+      "text": "複数条件は、",
+      "duration_multiplier": 1
     },
     {
-      "text": "SQLは、データ構造を理解して書くことが重要です",
+      "text": "ANDやORで",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "組み合わせます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "NULLの判定には、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "IS NULLを使います",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ORDER BYで、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "結果を並べ替えます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ASCは昇順、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "DESCは降順です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "DISTINCTは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "重複した結果を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "除くために使えます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "LIMITなどで、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "取得件数を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "制限できるDBもあります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "条件を書いたら、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "意図した行だけ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "取れているか",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "確認します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "大量データでは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "不要な全件取得を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "避けます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "SQLは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "データ構造を理解して",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "書くことが重要です",
       "duration_multiplier": 1.35
     }
   ]
