@@ -1,6 +1,8 @@
 # 情報セキュリティ概観
 
-Status: SEED / 概要のみ
+Status: SUPERSEDED SEED / 参考用
+
+本編は `lessons/security/CURRICULUM.md` の16 Lessonへ移行済みです。このファイルは初期SEEDとして残し、Courseからは参照しません。
 
 ## 目的
 
