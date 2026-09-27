@@ -9,59 +9,155 @@
   "sources": [],
   "chunks": [
     {
-      "text": "本番導入後も、AIの品質確認は続きます",
+      "text": "本番導入後も、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "AIの品質確認は",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "続きます",
       "duration_multiplier": 1.35
     },
     {
-      "text": "入力データは、時間とともに変化します",
-      "duration_multiplier": 1.1
+      "text": "入力データは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "時間とともに",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "変化します",
+      "duration_multiplier": 1.15
     },
     {
       "text": "利用者の使い方も変わります",
       "duration_multiplier": 1.1
     },
     {
-      "text": "外部データ源やモデル自体が変わる場合もあります",
-      "duration_multiplier": 1.1
+      "text": "外部データ源や",
+      "duration_multiplier": 1
     },
     {
-      "text": "その結果、以前の評価結果がそのまま通用しないことがあります",
-      "duration_multiplier": 1.1
+      "text": "モデル自体が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "変わる場合もあります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "その結果、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "以前の評価結果が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "そのまま通用しない",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ことがあります",
+      "duration_multiplier": 1.15
     },
     {
       "text": "品質指標を継続的に確認します",
       "duration_multiplier": 1.1
     },
     {
-      "text": "エラー率や拒否率などの運用指標も見ます",
-      "duration_multiplier": 1.1
+      "text": "エラー率や拒否率などの",
+      "duration_multiplier": 1
     },
     {
-      "text": "コストや応答時間も監視対象です",
-      "duration_multiplier": 1.1
+      "text": "運用指標も見ます",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "異常が起きたときに、原因を追えるログを残します",
-      "duration_multiplier": 1.1
+      "text": "コストや応答時間も",
+      "duration_multiplier": 1
     },
     {
-      "text": "入力や出力を記録する場合は、個人情報や機密情報に注意します",
-      "duration_multiplier": 1.1
+      "text": "監視対象です",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "重大な問題では、機能停止や縮退運転も選択肢です",
-      "duration_multiplier": 1.1
+      "text": "異常が起きたときに、",
+      "duration_multiplier": 1
     },
     {
-      "text": "インシデントの影響範囲を確認します",
-      "duration_multiplier": 1.1
+      "text": "原因を追えるログを",
+      "duration_multiplier": 1
     },
     {
-      "text": "復旧後には、原因と再発防止策を記録します",
-      "duration_multiplier": 1.1
+      "text": "残します",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "監視は、異常を見つけるだけでなく安全に止めるためにも必要です",
+      "text": "入力や出力を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "記録する場合は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "個人情報や機密情報に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "注意します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "重大な問題では、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "機能停止や縮退運転も",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "選択肢です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "インシデントの",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "影響範囲を確認します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "復旧後には、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "原因と再発防止策を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "記録します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "監視は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "異常を見つけるだけでなく",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "安全に止めるためにも",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "必要です",
       "duration_multiplier": 1.35
     }
   ]
