@@ -542,23 +542,15 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "CSRFはCross",
+      "text": "CSRFは",
       "duration_multiplier": 1.2
     },
     {
-      "text": "-",
-      "duration_multiplier": 0.9
-    },
-    {
-      "text": "Site Request",
+      "text": "Cross-Site Request",
       "duration_multiplier": 1.1
     },
     {
-      "text": "Forgeryの",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "略です",
+      "text": "Forgeryの略です",
       "duration_multiplier": 1.4
     },
     {
