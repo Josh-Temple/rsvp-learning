@@ -34,19 +34,31 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "セキュリティ対策の目的は",
+      "text": "セキュリティ対策の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "目的は",
       "duration_multiplier": 1.1
     },
     {
-      "text": "すべての攻撃を完全に防ぐ",
-      "duration_multiplier": 1.1
+      "text": "すべての攻撃を完全に",
+      "duration_multiplier": 1
     },
     {
-      "text": "ことだけではありません",
+      "text": "防ぐことだけでは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ありません",
       "duration_multiplier": 1.4
     },
     {
-      "text": "侵害や事故を早く見つける",
+      "text": "侵害や事故を早く",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "見つける",
       "duration_multiplier": 1.4
     },
     {
@@ -74,11 +86,15 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "ログはシステムや利用者が",
+      "text": "ログは",
       "duration_multiplier": 1.1
     },
     {
-      "text": "何をしたかを記録した情報です",
+      "text": "システムや利用者が何を",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "したかを記録した情報です",
       "duration_multiplier": 1.4
     },
     {
@@ -106,23 +122,31 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "アプリケーションイベント",
+      "text": "アプリケーション",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "イベント",
       "duration_multiplier": 1.4
     },
     {
-      "text": "必要なログはシステムの",
+      "text": "必要なログは",
       "duration_multiplier": 1.1
     },
     {
-      "text": "目的やリスクによって異",
-      "duration_multiplier": 1.1
+      "text": "システムの目的や",
+      "duration_multiplier": 1
     },
     {
-      "text": "なります",
+      "text": "リスクによって異なります",
       "duration_multiplier": 1.4
     },
     {
-      "text": "ログを残すだけでは足りない",
+      "text": "ログを残すだけでは足",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "りない",
       "duration_multiplier": 1.4
     },
     {
@@ -130,23 +154,27 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "異常を見つけられなければ",
-      "duration_multiplier": 1.1
+      "text": "異常を見つけられなけ",
+      "duration_multiplier": 1
     },
     {
-      "text": "十分ではありません",
+      "text": "れば十分ではありません",
       "duration_multiplier": 1.4
     },
     {
-      "text": "何を検知したいかを決めます",
+      "text": "何を検知したいかを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "決めます",
       "duration_multiplier": 1.4
     },
     {
-      "text": "必要なログが取得されて",
-      "duration_multiplier": 1.1
+      "text": "必要なログが取得され",
+      "duration_multiplier": 1
     },
     {
-      "text": "いるか確認します",
+      "text": "ているか確認します",
       "duration_multiplier": 1.4
     },
     {
@@ -154,7 +182,11 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "改ざんや削除から保護します",
+      "text": "改ざんや削除から保護",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "します",
       "duration_multiplier": 1.4
     },
     {
@@ -162,11 +194,11 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "異常を確認する担当と手順",
-      "duration_multiplier": 1.1
+      "text": "異常を確認する担当と",
+      "duration_multiplier": 1
     },
     {
-      "text": "を決めます",
+      "text": "手順を決めます",
       "duration_multiplier": 1.4
     },
     {
@@ -178,31 +210,35 @@
       "duration_multiplier": 1.2
     },
     {
-      "text": "Security",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "Information",
+      "text": "Security Information",
       "duration_multiplier": 1.1
     },
     {
-      "text": "andEvent",
-      "duration_multiplier": 1
+      "text": "and Event Managementの",
+      "duration_multiplier": 1.1
     },
     {
-      "text": "Managementの略です",
+      "text": "略です",
       "duration_multiplier": 1.4
     },
     {
-      "text": "複数のシステムからログや",
+      "text": "複数のシステムから",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ログやイベントを集約し",
       "duration_multiplier": 1.1
     },
     {
-      "text": "イベントを集約し検索相関",
+      "text": "検索",
       "duration_multiplier": 1.1
     },
     {
-      "text": "分析アラートなどを支援します",
+      "text": "相関分析",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "アラートなどを支援します",
       "duration_multiplier": 1.4
     },
     {
@@ -210,35 +246,51 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "ない攻撃を複数の情報を",
+      "text": "ない攻撃を",
       "duration_multiplier": 1.1
     },
     {
-      "text": "組み合わせて見つけられる",
-      "duration_multiplier": 1.1
+      "text": "複数の情報を",
+      "duration_multiplier": 1
     },
     {
-      "text": "場合があります",
+      "text": "組み合わせて見つけ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "られる場合があります",
       "duration_multiplier": 1.4
     },
     {
-      "text": "ただしSIEMへログを送",
+      "text": "ただし",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "SIEMへログを送れ",
       "duration_multiplier": 1.2
     },
     {
-      "text": "れば自動的に安全になる",
-      "duration_multiplier": 1.1
+      "text": "ば自動的に安全になる",
+      "duration_multiplier": 1
     },
     {
       "text": "わけではありません",
       "duration_multiplier": 1.4
     },
     {
-      "text": "収集対象検知ルール運用",
+      "text": "収集対象",
       "duration_multiplier": 1.1
     },
     {
-      "text": "体制を継続的に調整します",
+      "text": "検知ルール",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "運用体制を継続的に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "調整します",
       "duration_multiplier": 1.4
     },
     {
@@ -246,12 +298,12 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "SOCはSecurity",
+      "text": "SOCは",
       "duration_multiplier": 1.2
     },
     {
-      "text": "Operations",
-      "duration_multiplier": 1
+      "text": "Security Operations",
+      "duration_multiplier": 1.1
     },
     {
       "text": "Centerの略です",
@@ -262,20 +314,28 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "検知分析などを担う機能や",
+      "text": "検知",
       "duration_multiplier": 1.1
+    },
+    {
+      "text": "分析などを担う機能や",
+      "duration_multiplier": 1
     },
     {
       "text": "組織を指します",
       "duration_multiplier": 1.4
     },
     {
-      "text": "自組織内に設置する場合も",
+      "text": "自組織内に設置する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "場合もあれば",
       "duration_multiplier": 1.1
     },
     {
-      "text": "あれば外部サービスを利用",
-      "duration_multiplier": 1.1
+      "text": "外部サービスを利用",
+      "duration_multiplier": 1
     },
     {
       "text": "する場合もあります",
@@ -302,39 +362,35 @@
       "duration_multiplier": 1.2
     },
     {
-      "text": "Computer",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "Security",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "Incident",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "ResponseTeam",
-      "duration_multiplier": 1.3
-    },
-    {
-      "text": "の略です",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "インシデントへ対応する",
+      "text": "Computer Security",
       "duration_multiplier": 1.1
     },
     {
-      "text": "ための組織的な機能です",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "技術担当だけで構成される",
+      "text": "Incident Response Teamの",
       "duration_multiplier": 1.1
     },
     {
-      "text": "とは限りません",
+      "text": "略です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "インシデントへ対応",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "するための組織的な",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "機能です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "技術担当だけで構成さ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "れるとは限りません",
       "duration_multiplier": 1.4
     },
     {
@@ -362,64 +418,72 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "事故の内容によって多くの",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "関係者と連携します",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "インシデント対応は日常の",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "リスク管理とつながる",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "NISTSP800-61",
-      "duration_multiplier": 1.2
-    },
-    {
-      "text": "Rev.",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "3ではインシデント対応を",
-      "duration_multiplier": 1.2
-    },
-    {
-      "text": "独立した一時的作業として",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "扱いません",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "NISTCSF2.0の",
-      "duration_multiplier": 1.2
-    },
-    {
-      "text": "Govern",
+      "text": "事故の内容によって",
       "duration_multiplier": 1
+    },
+    {
+      "text": "多くの関係者と連携します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "インシデント対応は",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "日常のリスク管理と",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "つながる",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "NIST SP800",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "-61Rev.",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "3では",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "インシデント対応を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "独立した一時的作業",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "として扱いません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "NIST CSF",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "2.0のGovern",
+      "duration_multiplier": 1.2
     },
     {
       "text": "Identify",
-      "duration_multiplier": 1
+      "duration_multiplier": 1.1
     },
     {
       "text": "Protect",
-      "duration_multiplier": 1
+      "duration_multiplier": 1.1
     },
     {
       "text": "Detect",
-      "duration_multiplier": 1
+      "duration_multiplier": 1.1
     },
     {
       "text": "Respond",
-      "duration_multiplier": 1
+      "duration_multiplier": 1.1
     },
     {
       "text": "Recoverの全体に",
@@ -459,7 +523,7 @@
     },
     {
       "text": "アラートが発生したら",
-      "duration_multiplier": 1
+      "duration_multiplier": 1.1
     },
     {
       "text": "本当にインシデントなのか",
@@ -482,7 +546,11 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "重要情報へ到達しているか",
+      "text": "重要情報へ到達して",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "いるか",
       "duration_multiplier": 1.4
     },
     {
@@ -490,15 +558,15 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "限られた対応資源を適切に",
+      "text": "限られた対応資源を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "適切に配分するため",
       "duration_multiplier": 1.1
     },
     {
-      "text": "配分するため優先順位を",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "判断します",
+      "text": "優先順位を判断します",
       "duration_multiplier": 1.4
     },
     {
@@ -506,7 +574,11 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "被害の拡大を抑えるために",
+      "text": "被害の拡大を抑える",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ために",
       "duration_multiplier": 1.1
     },
     {
@@ -514,15 +586,15 @@
       "duration_multiplier": 1
     },
     {
-      "text": "ネットワークから隔離する",
-      "duration_multiplier": 1.1
+      "text": "ネットワークから隔離",
+      "duration_multiplier": 1
     },
     {
-      "text": "などの対応を行う場合が",
-      "duration_multiplier": 1.1
+      "text": "するなどの対応を行う",
+      "duration_multiplier": 1
     },
     {
-      "text": "あります",
+      "text": "場合があります",
       "duration_multiplier": 1.4
     },
     {
@@ -538,12 +610,16 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "ただし急いで電源を切る",
+      "text": "ただし",
       "duration_multiplier": 1.1
     },
     {
-      "text": "ことで調査に必要な情報を",
+      "text": "急いで電源を切ることで",
       "duration_multiplier": 1.1
+    },
+    {
+      "text": "調査に必要な情報を",
+      "duration_multiplier": 1
     },
     {
       "text": "失う場合もあります",
@@ -562,51 +638,75 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "悪意あるプログラムや不正",
+      "text": "悪意あるプログラムや",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "不正アカウントなどを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "除去します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "脆弱性や設定不備を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "修正します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "バックアップから復元",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "する場合もあります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "復旧後には",
       "duration_multiplier": 1.1
     },
     {
-      "text": "アカウントなどを除去します",
+      "text": "同じ侵害が残ってい",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ないか確認します",
       "duration_multiplier": 1.4
     },
     {
-      "text": "脆弱性や設定不備を修正します",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "バックアップから復元する",
+      "text": "早く再開することと",
       "duration_multiplier": 1.1
     },
     {
-      "text": "場合もあります",
+      "text": "安全に再開することの",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "両方を考えます",
       "duration_multiplier": 1.4
     },
     {
-      "text": "復旧後には同じ侵害が残",
+      "text": "報告と",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "コミュニケーション",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "インシデントでは技術",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "対応だけでなく",
       "duration_multiplier": 1.1
     },
     {
-      "text": "っていないか確認します",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "早く再開することと安全に",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "再開することの両方を考えます",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "報告とコミュニケーション",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "インシデントでは技術対応",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "だけでなく報告も重要です",
+      "text": "報告も重要です",
       "duration_multiplier": 1.4
     },
     {
@@ -634,23 +734,27 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "誰へいつ何を伝える必要が",
+      "text": "誰へ",
       "duration_multiplier": 1.1
     },
     {
-      "text": "あるかは事故によって異",
+      "text": "いつ",
       "duration_multiplier": 1.1
     },
     {
-      "text": "なります",
+      "text": "何を伝える必要があるかは",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "事故によって異なります",
       "duration_multiplier": 1.4
     },
     {
-      "text": "法律や契約上の報告義務も",
-      "duration_multiplier": 1.1
+      "text": "法律や契約上の報告",
+      "duration_multiplier": 1
     },
     {
-      "text": "確認します",
+      "text": "義務も確認します",
       "duration_multiplier": 1.4
     },
     {
@@ -658,19 +762,27 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "はデジタル機器やデータ",
+      "text": "デジタルフォレンジッ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "クスは",
       "duration_multiplier": 1.1
     },
     {
-      "text": "からインシデントの事実",
+      "text": "デジタル機器やデータから",
       "duration_multiplier": 1.1
     },
     {
-      "text": "関係を調査するための技術",
-      "duration_multiplier": 1.1
+      "text": "インシデントの事実",
+      "duration_multiplier": 1
     },
     {
-      "text": "や手続です",
+      "text": "関係を調査するための",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "技術や手続です",
       "duration_multiplier": 1.4
     },
     {
@@ -698,11 +810,15 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "目的は「証拠らしいものを",
-      "duration_multiplier": 1.1
+      "text": "目的は「証拠らしい",
+      "duration_multiplier": 1
     },
     {
-      "text": "集める」だけではありません",
+      "text": "ものを集める」だけ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ではありません",
       "duration_multiplier": 1.4
     },
     {
@@ -718,55 +834,91 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "調査のために端末を操作",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "するとその操作自体が",
+      "text": "調査のために端末を",
       "duration_multiplier": 1
     },
     {
-      "text": "データを変えることがあります",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "そのため何をいつ誰がどの",
+      "text": "操作すると",
       "duration_multiplier": 1.1
     },
     {
-      "text": "方法で取得したかを記録します",
+      "text": "その操作自体がデータを",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "変えることがあります",
       "duration_multiplier": 1.4
     },
     {
-      "text": "原本を保護し分析用の",
+      "text": "そのため",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "何を",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "いつ",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "誰が",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "どの方法で取得したかを",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "記録します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "原本を保護し",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "分析用のコピーを使う",
       "duration_multiplier": 1
     },
     {
-      "text": "コピーを使うことがあります",
+      "text": "ことがあります",
       "duration_multiplier": 1.4
     },
     {
-      "text": "取得したデータの完全性を",
-      "duration_multiplier": 1.1
+      "text": "取得したデータの完全",
+      "duration_multiplier": 1
     },
     {
-      "text": "確認するためにハッシュを",
-      "duration_multiplier": 1.1
+      "text": "性を確認するために",
+      "duration_multiplier": 1
     },
     {
-      "text": "利用することもあります",
+      "text": "ハッシュを利用する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "こともあります",
       "duration_multiplier": 1.4
     },
     {
-      "text": "フォレンジックスと法的手続",
+      "text": "フォレンジックスと法",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "的手続",
       "duration_multiplier": 1.4
     },
     {
-      "text": "NISTSP800-86",
+      "text": "NIST SP800",
       "duration_multiplier": 1.2
     },
     {
-      "text": "はITの観点から",
+      "text": "-86は",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "ITの観点から",
       "duration_multiplier": 1.2
     },
     {
@@ -774,35 +926,39 @@
       "duration_multiplier": 1
     },
     {
-      "text": "フォレンジック技術を統合",
-      "duration_multiplier": 1.1
+      "text": "フォレンジック技術を",
+      "duration_multiplier": 1
     },
     {
-      "text": "するガイドです",
+      "text": "統合するガイドです",
       "duration_multiplier": 1.4
     },
     {
-      "text": "法執行機関向けの包括的な",
+      "text": "法執行機関向けの包括",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "的な捜査手順ではなく",
       "duration_multiplier": 1.1
     },
     {
-      "text": "捜査手順ではなく法的助言",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "でもありません",
+      "text": "法的助言でもありません",
       "duration_multiplier": 1.4
     },
     {
-      "text": "実際の証拠保全や法的対応",
+      "text": "実際の証拠保全や法的",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "対応では",
       "duration_multiplier": 1.1
     },
     {
-      "text": "では組織の法務や関係機関",
+      "text": "組織の法務や関係機関と",
       "duration_multiplier": 1.1
     },
     {
-      "text": "と連携します",
+      "text": "連携します",
       "duration_multiplier": 1.4
     },
     {
@@ -810,12 +966,16 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "インシデント対応が終わっ",
+      "text": "インシデント対応が終",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "わったら",
       "duration_multiplier": 1.1
     },
     {
-      "text": "たら何が起きたかを振り返",
-      "duration_multiplier": 1.1
+      "text": "何が起きたかを振り返",
+      "duration_multiplier": 1
     },
     {
       "text": "ります",
@@ -842,11 +1002,11 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "得られた知見をリスク管理",
-      "duration_multiplier": 1.1
+      "text": "得られた知見をリスク",
+      "duration_multiplier": 1
     },
     {
-      "text": "や設計へ戻します",
+      "text": "管理や設計へ戻します",
       "duration_multiplier": 1.4
     },
     {
@@ -874,7 +1034,11 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "こうした指標を改善に使えます",
+      "text": "こうした指標を改善に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "使えます",
       "duration_multiplier": 1.4
     },
     {
