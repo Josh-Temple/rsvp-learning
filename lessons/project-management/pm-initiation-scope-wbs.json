@@ -9,59 +9,163 @@
   "sources": [],
   "chunks": [
     {
-      "text": "プロジェクト管理は、目的を明確にするところから始まります",
+      "text": "プロジェクト管理は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "目的を明確にする",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ところから始まります",
       "duration_multiplier": 1.35
     },
     {
-      "text": "何を達成すれば成功かを定義します",
-      "duration_multiplier": 1.1
+      "text": "何を達成すれば",
+      "duration_multiplier": 1
     },
     {
-      "text": "成果物も、できるだけ具体的にします",
-      "duration_multiplier": 1.1
+      "text": "成功かを定義します",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "スコープは、プロジェクトで扱う範囲です",
-      "duration_multiplier": 1.1
+      "text": "成果物も、",
+      "duration_multiplier": 1
     },
     {
-      "text": "含むものと、含まないものを明確にします",
-      "duration_multiplier": 1.1
+      "text": "できるだけ具体的に",
+      "duration_multiplier": 1
     },
     {
-      "text": "曖昧なスコープは、追加作業を生みやすくなります",
-      "duration_multiplier": 1.1
+      "text": "します",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "WBSは、Work Breakdown Structureの略です",
-      "duration_multiplier": 1.1
+      "text": "スコープは、",
+      "duration_multiplier": 1
     },
     {
-      "text": "成果を実現するための作業を、管理可能な単位へ分解します",
-      "duration_multiplier": 1.1
+      "text": "プロジェクトで",
+      "duration_multiplier": 1
     },
     {
-      "text": "大きすぎる作業は、進捗を判断しにくくなります",
-      "duration_multiplier": 1.1
+      "text": "扱う範囲です",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "細かすぎる作業は、管理負担を増やします",
-      "duration_multiplier": 1.1
+      "text": "含むものと、",
+      "duration_multiplier": 1
     },
     {
-      "text": "担当者と期限を割り当てられる程度まで分けます",
-      "duration_multiplier": 1.1
+      "text": "含まないものを",
+      "duration_multiplier": 1
     },
     {
-      "text": "依存関係も確認します",
-      "duration_multiplier": 1.1
+      "text": "明確にします",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "WBSは、単なるToDoリストではありません",
-      "duration_multiplier": 1.1
+      "text": "曖昧なスコープは、",
+      "duration_multiplier": 1
     },
     {
-      "text": "目的、成果物、作業のつながりを保つことが重要です",
+      "text": "追加作業を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "生みやすくなります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "WBSは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "Work Breakdown Structure",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "の略です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "成果を実現するための",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "作業を、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "管理可能な単位へ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "分解します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "大きすぎる作業は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "進捗を判断しにくく",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "なります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "細かすぎる作業は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "管理負担を増やします",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "担当者と期限を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "割り当てられる程度まで",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "分けます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "依存関係も",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "確認します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "WBSは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "単なるToDoリストでは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ありません",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "目的、成果物、作業の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "つながりを保つことが",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "重要です",
       "duration_multiplier": 1.35
     }
   ]
