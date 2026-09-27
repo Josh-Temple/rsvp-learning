@@ -9,59 +9,191 @@
   "sources": [],
   "chunks": [
     {
-      "text": "業務システムでは、自由文だけでは扱いにくい場合があります",
+      "text": "業務システムでは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "自由文だけでは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "扱いにくい",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "場合があります",
       "duration_multiplier": 1.35
     },
     {
-      "text": "Structured Outputは、出力形式をあらかじめ定める方法です",
-      "duration_multiplier": 1.1
+      "text": "Structured Outputは、",
+      "duration_multiplier": 1.35
     },
     {
-      "text": "例えば、項目名と値を持つJSONとして出力できます",
-      "duration_multiplier": 1.1
+      "text": "出力形式を",
+      "duration_multiplier": 1
     },
     {
-      "text": "形式が決まると、後続処理へ渡しやすくなります",
-      "duration_multiplier": 1.1
+      "text": "あらかじめ定める方法です",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "ただし、形式が正しくても内容が正しいとは限りません",
-      "duration_multiplier": 1.1
+      "text": "例えば、",
+      "duration_multiplier": 1
     },
     {
-      "text": "AI判断と、通常のプログラム処理を分けることが重要です",
-      "duration_multiplier": 1.1
+      "text": "項目名と値を持つ",
+      "duration_multiplier": 1
     },
     {
-      "text": "決定ルールが明確な部分は、プログラムで処理できます",
-      "duration_multiplier": 1.1
+      "text": "JSONとして",
+      "duration_multiplier": 1
     },
     {
-      "text": "曖昧な分類や要約は、LLMが適する場合があります",
-      "duration_multiplier": 1.1
+      "text": "出力できます",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "Workflowは、複数の処理を決めた順序でつなぎます",
-      "duration_multiplier": 1.1
+      "text": "形式が決まると、",
+      "duration_multiplier": 1
     },
     {
-      "text": "重要な判断には、人間確認を入れることがあります",
-      "duration_multiplier": 1.1
+      "text": "後続処理へ",
+      "duration_multiplier": 1
     },
     {
-      "text": "これが、Human-in-the-loopです",
-      "duration_multiplier": 1.1
+      "text": "渡しやすくなります",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "高リスクな処理ほど、人間確認の価値が高くなります",
-      "duration_multiplier": 1.1
+      "text": "ただし、",
+      "duration_multiplier": 1
     },
     {
-      "text": "人間確認の結果も、後から追えるようにします",
-      "duration_multiplier": 1.1
+      "text": "形式が正しくても",
+      "duration_multiplier": 1
     },
     {
-      "text": "AIと決定的処理と人間判断の境界を設計します",
+      "text": "内容が正しいとは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "限りません",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "AI判断と、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "通常のプログラム処理を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "分けることが重要です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "決定ルールが",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "明確な部分は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "プログラムで",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "処理できます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "曖昧な分類や要約は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "LLMが適する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "場合があります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Workflowは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "複数の処理を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "決めた順序で",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "つなぎます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "重要な判断には、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "人間確認を入れる",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ことがあります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "これが、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "Human-in-the-loop",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "高リスクな処理ほど、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "人間確認の価値が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "高くなります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "人間確認の結果も、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "後から追えるように",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "AIと決定的処理と",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "人間判断の境界を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "設計します",
       "duration_multiplier": 1.35
     }
   ]
