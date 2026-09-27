@@ -50,15 +50,11 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "IPA「情報",
-      "duration_multiplier": 1.2
+      "text": "IPA「情報セキュリティ10大脅威2026」",
+      "duration_multiplier": 1.4
     },
     {
-      "text": "セキュリティ10",
-      "duration_multiplier": 1.2
-    },
-    {
-      "text": "大脅威2026」です",
+      "text": "を参照します",
       "duration_multiplier": 1.4
     },
     {
@@ -166,51 +162,39 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "IPAの2026",
+      "text": "IPAの2026年版では",
       "duration_multiplier": 1.2
     },
     {
-      "text": "年版では",
+      "text": "組織向け1位は",
       "duration_multiplier": 1.1
     },
     {
-      "text": "組織向け1位が「",
-      "duration_multiplier": 1.2
-    },
-    {
-      "text": "ランサム攻撃による",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "被害」",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "2位が「サプライ",
-      "duration_multiplier": 1.2
-    },
-    {
-      "text": "チェーンや委託先を",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "狙った攻撃」です",
+      "text": "ランサム攻撃による被害",
       "duration_multiplier": 1.4
     },
     {
-      "text": "3位には「AIの",
-      "duration_multiplier": 1.2
-    },
-    {
-      "text": "利用をめぐる",
+      "text": "2位は",
       "duration_multiplier": 1
     },
     {
-      "text": "サイバーリスク」が",
+      "text": "サプライチェーンや",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "委託先を狙った攻撃",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "3位は",
       "duration_multiplier": 1
     },
     {
-      "text": "初めて選ばれました",
+      "text": "AIの利用をめぐる",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "サイバーリスクです",
       "duration_multiplier": 1.4
     },
     {
@@ -286,12 +270,8 @@
       "duration_multiplier": 1.2
     },
     {
-      "text": "「AIの利用をめぐる",
-      "duration_multiplier": 1.2
-    },
-    {
-      "text": "サイバーリスク」が",
-      "duration_multiplier": 1
+      "text": "「AIの利用をめぐるサイバーリスク」が",
+      "duration_multiplier": 1.3
     },
     {
       "text": "組織向け脅威として",
@@ -626,16 +606,12 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "個人向けの10",
-      "duration_multiplier": 1.2
-    },
-    {
-      "text": "項目は順位",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "付けされておらず",
+      "text": "個人向けの10項目は",
       "duration_multiplier": 1.1
+    },
+    {
+      "text": "順位付けされておらず",
+      "duration_multiplier": 1.2
     },
     {
       "text": "五十音順で",
