@@ -9,59 +9,171 @@
   "sources": [],
   "chunks": [
     {
-      "text": "APIは、ソフトウェア同士の接点です",
+      "text": "APIは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ソフトウェア同士の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "接点です",
       "duration_multiplier": 1.35
     },
     {
-      "text": "RESTは、Web APIで広く使われる設計上の考え方です",
-      "duration_multiplier": 1.1
+      "text": "RESTは、",
+      "duration_multiplier": 1
     },
     {
-      "text": "資源を、URLで表すことがあります",
-      "duration_multiplier": 1.1
+      "text": "Web APIで",
+      "duration_multiplier": 1
     },
     {
-      "text": "HTTPメソッドで、操作の種類を表します",
-      "duration_multiplier": 1.1
+      "text": "広く使われる",
+      "duration_multiplier": 1
     },
     {
-      "text": "例えば、顧客一覧をGETで取得できます",
-      "duration_multiplier": 1.1
+      "text": "設計上の考え方です",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "新しい顧客をPOSTで登録する設計もあります",
-      "duration_multiplier": 1.1
+      "text": "資源を、",
+      "duration_multiplier": 1
     },
     {
-      "text": "RESTの実装には、さまざまな流儀があります",
-      "duration_multiplier": 1.1
+      "text": "URLで表すことが",
+      "duration_multiplier": 1
     },
     {
-      "text": "名前より、一貫したAPI設計が重要です",
-      "duration_multiplier": 1.1
+      "text": "あります",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "JSONは、データ交換でよく使われる形式です",
-      "duration_multiplier": 1.1
+      "text": "HTTPメソッドで、",
+      "duration_multiplier": 1
     },
     {
-      "text": "オブジェクトは、キーと値の組で表します",
-      "duration_multiplier": 1.1
+      "text": "操作の種類を",
+      "duration_multiplier": 1
     },
     {
-      "text": "配列は、複数の値を順番に持ちます",
-      "duration_multiplier": 1.1
+      "text": "表します",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "文字列、数値、真偽値、nullなどを扱えます",
-      "duration_multiplier": 1.1
+      "text": "例えば、",
+      "duration_multiplier": 1
     },
     {
-      "text": "API仕様では、入力と出力の形を明確にします",
-      "duration_multiplier": 1.1
+      "text": "顧客一覧をGETで",
+      "duration_multiplier": 1
     },
     {
-      "text": "エラー時の応答も、API仕様の一部です",
+      "text": "取得できます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "新しい顧客を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "POSTで登録する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "設計もあります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "RESTの実装には、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "さまざまな流儀が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "あります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "名前より、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "一貫したAPI設計が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "重要です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "JSONは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "データ交換で",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "よく使われる形式です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "オブジェクトは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "キーと値の組で",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "表します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "配列は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "複数の値を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "順番に持ちます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "文字列、数値、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "真偽値、nullなどを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "扱えます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "API仕様では、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "入力と出力の形を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "明確にします",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "エラー時の応答も、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "API仕様の一部です",
       "duration_multiplier": 1.35
     }
   ]
