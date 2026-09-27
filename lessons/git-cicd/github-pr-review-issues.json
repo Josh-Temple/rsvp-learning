@@ -9,59 +9,175 @@
   "sources": [],
   "chunks": [
     {
-      "text": "Pull Requestは、変更を統合するための提案です",
+      "text": "Pull Requestは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "変更を統合するための",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "提案です",
       "duration_multiplier": 1.35
     },
     {
-      "text": "変更内容を、差分として確認できます",
-      "duration_multiplier": 1.1
+      "text": "変更内容を、",
+      "duration_multiplier": 1
     },
     {
-      "text": "目的や背景を説明する文章も重要です",
-      "duration_multiplier": 1.1
+      "text": "差分として確認できます",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "Reviewでは、コードや設計の問題を確認します",
-      "duration_multiplier": 1.1
+      "text": "目的や背景を",
+      "duration_multiplier": 1
     },
     {
-      "text": "動作だけでなく、保守性や安全性も見ます",
-      "duration_multiplier": 1.1
+      "text": "説明する文章も",
+      "duration_multiplier": 1
     },
     {
-      "text": "コメントは、具体的な変更箇所へ付けられます",
-      "duration_multiplier": 1.1
+      "text": "重要です",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "承認条件を、チームで決めることがあります",
-      "duration_multiplier": 1.1
+      "text": "Reviewでは、",
+      "duration_multiplier": 1
     },
     {
-      "text": "Issueは、課題や要望を記録するために使えます",
-      "duration_multiplier": 1.1
+      "text": "コードや設計の問題を",
+      "duration_multiplier": 1
     },
     {
-      "text": "一つのIssueからPull Requestへつなげる運用もあります",
-      "duration_multiplier": 1.1
+      "text": "確認します",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "何を完了条件とするか明確にします",
-      "duration_multiplier": 1.1
+      "text": "動作だけでなく、",
+      "duration_multiplier": 1
     },
     {
-      "text": "大きな変更は、小さなPull Requestへ分けると確認しやすくなります",
-      "duration_multiplier": 1.1
+      "text": "保守性や安全性も",
+      "duration_multiplier": 1
     },
     {
-      "text": "自動テストの結果も、Review材料になります",
-      "duration_multiplier": 1.1
+      "text": "見ます",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "Review履歴は、意思決定の記録にもなります",
-      "duration_multiplier": 1.1
+      "text": "コメントは、",
+      "duration_multiplier": 1
     },
     {
-      "text": "GitHubは、コードだけでなく変更管理の場として使えます",
+      "text": "具体的な変更箇所へ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "付けられます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "承認条件を、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "チームで決める",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ことがあります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Issueは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "課題や要望を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "記録するために",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "使えます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一つのIssueから",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "Pull Requestへ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "つなげる運用も",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "あります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "何を完了条件と",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "するか明確にします",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "大きな変更は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "小さなPull Requestへ",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "分けると",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "確認しやすくなります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "自動テストの結果も、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "Review材料になります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Review履歴は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "意思決定の記録にも",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "なります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "GitHubは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "コードだけでなく",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "変更管理の場として",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "使えます",
       "duration_multiplier": 1.35
     }
   ]
