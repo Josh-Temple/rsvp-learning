@@ -50,11 +50,11 @@
       "duration_multiplier": 1.5
     },
     {
-      "text": "一つの境界だけでは守",
+      "text": "一つの境界だけでは",
       "duration_multiplier": 1
     },
     {
-      "text": "れない",
+      "text": "守れない",
       "duration_multiplier": 1.4
     },
     {
@@ -66,7 +66,11 @@
       "duration_multiplier": 1
     },
     {
-      "text": "境界を守ることは重要です",
+      "text": "境界を守ることは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "重要です",
       "duration_multiplier": 1.4
     },
     {
@@ -90,15 +94,19 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "社内と社外だけで安全",
+      "text": "社内と社外だけで",
       "duration_multiplier": 1
     },
     {
-      "text": "性を判断することは難",
+      "text": "安全性を",
       "duration_multiplier": 1
     },
     {
-      "text": "しくなっています",
+      "text": "判断することは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "難しくなっています",
       "duration_multiplier": 1.4
     },
     {
@@ -126,7 +134,11 @@
       "duration_multiplier": 1
     },
     {
-      "text": "確認する必要があります",
+      "text": "確認する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "必要があります",
       "duration_multiplier": 1.4
     },
     {
@@ -134,15 +146,23 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "一つの対策が失敗しても",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "別の対策で被害を",
+      "text": "一つの対策が",
       "duration_multiplier": 1
     },
     {
-      "text": "抑える考え方があります",
+      "text": "失敗しても",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "別の対策で",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "被害を抑える",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "考え方があります",
       "duration_multiplier": 1.4
     },
     {
@@ -174,11 +194,11 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "それぞれが異なる役割を",
-      "duration_multiplier": 1.1
+      "text": "それぞれが",
+      "duration_multiplier": 1
     },
     {
-      "text": "持ちます",
+      "text": "異なる役割を持ちます",
       "duration_multiplier": 1.4
     },
     {
@@ -186,11 +206,11 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "製品を多く導入する",
+      "text": "製品を多く",
       "duration_multiplier": 1
     },
     {
-      "text": "ことではありません",
+      "text": "導入することではありません",
       "duration_multiplier": 1.4
     },
     {
@@ -206,11 +226,15 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "何を防げないかを理解",
+      "text": "何を防げないかを",
       "duration_multiplier": 1
     },
     {
-      "text": "して組み合わせることです",
+      "text": "理解して",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "組み合わせることです",
       "duration_multiplier": 1.4
     },
     {
@@ -234,31 +258,35 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "通信状態などに基づいて",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "通信を許可または拒否",
+      "text": "通信状態などに",
       "duration_multiplier": 1
     },
     {
-      "text": "します",
+      "text": "基づいて",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "通信を許可または",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "拒否します",
       "duration_multiplier": 1.4
     },
     {
-      "text": "必要な通信だけを許可",
+      "text": "必要な通信だけを",
       "duration_multiplier": 1
     },
     {
-      "text": "することで",
+      "text": "許可することで",
       "duration_multiplier": 1.1
     },
     {
-      "text": "攻撃可能な範囲を小",
+      "text": "攻撃可能な",
       "duration_multiplier": 1
     },
     {
-      "text": "さくできます",
+      "text": "範囲を小さくできます",
       "duration_multiplier": 1.4
     },
     {
@@ -274,23 +302,23 @@
       "duration_multiplier": 1
     },
     {
-      "text": "入力が含まれる場合も",
+      "text": "入力が含まれる",
       "duration_multiplier": 1
     },
     {
-      "text": "あります",
+      "text": "場合もあります",
       "duration_multiplier": 1.4
     },
     {
-      "text": "ファイアウォールだけで",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "すべての攻撃を防ぐ",
+      "text": "ファイア",
       "duration_multiplier": 1
     },
     {
-      "text": "ことはできません",
+      "text": "ウォールだけですべての",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "攻撃を防ぐことはできません",
       "duration_multiplier": 1.4
     },
     {
@@ -310,19 +338,19 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "通信やシステムの挙動を",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "監視し",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "攻撃や異常の兆候を",
+      "text": "通信やシステムの",
       "duration_multiplier": 1
     },
     {
-      "text": "検知します",
+      "text": "挙動を監視し",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "攻撃や異常の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "兆候を検知します",
       "duration_multiplier": 1.4
     },
     {
@@ -342,15 +370,15 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "条件に応じて通信を",
+      "text": "条件に応じて",
       "duration_multiplier": 1
     },
     {
-      "text": "遮断するなどの防御を",
+      "text": "通信を遮断するなどの",
       "duration_multiplier": 1
     },
     {
-      "text": "行います",
+      "text": "防御を行います",
       "duration_multiplier": 1.4
     },
     {
@@ -382,11 +410,11 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "Firewallの",
+      "text": "Firewall",
       "duration_multiplier": 1
     },
     {
-      "text": "略です",
+      "text": "の略です",
       "duration_multiplier": 1.4
     },
     {
@@ -422,11 +450,15 @@
       "duration_multiplier": 1
     },
     {
-      "text": "XSSなどの攻撃を",
+      "text": "XSSなどの",
       "duration_multiplier": 1.2
     },
     {
-      "text": "緩和できる場合があります",
+      "text": "攻撃を緩和できる",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "場合があります",
       "duration_multiplier": 1.4
     },
     {
@@ -438,15 +470,15 @@
       "duration_multiplier": 1.2
     },
     {
-      "text": "アプリケーション設計や",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "修正の代わりでは",
+      "text": "アプリケーション",
       "duration_multiplier": 1
     },
     {
-      "text": "ありません",
+      "text": "設計や修正の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "代わりではありません",
       "duration_multiplier": 1.4
     },
     {
@@ -458,11 +490,11 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "アプリケーション側の",
+      "text": "アプリケーション",
       "duration_multiplier": 1
     },
     {
-      "text": "修正が必要です",
+      "text": "側の修正が必要です",
       "duration_multiplier": 1.4
     },
     {
@@ -470,27 +502,27 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "重要なシステムと一般",
+      "text": "重要なシステムと",
       "duration_multiplier": 1
     },
     {
-      "text": "利用端末を無制限に",
+      "text": "一般利用端末を",
       "duration_multiplier": 1
     },
     {
-      "text": "接続すると",
+      "text": "無制限に接続すると",
       "duration_multiplier": 1.1
     },
     {
-      "text": "一つの端末が侵害され",
+      "text": "一つの端末が",
       "duration_multiplier": 1
     },
     {
-      "text": "たときに被害が広がりや",
-      "duration_multiplier": 1.1
+      "text": "侵害されたときに",
+      "duration_multiplier": 1
     },
     {
-      "text": "すくなります",
+      "text": "被害が広がりやすくなります",
       "duration_multiplier": 1.4
     },
     {
@@ -502,11 +534,11 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "必要な通信だけを許可",
+      "text": "必要な通信だけを",
       "duration_multiplier": 1
     },
     {
-      "text": "します",
+      "text": "許可します",
       "duration_multiplier": 1.4
     },
     {
@@ -538,11 +570,11 @@
       "duration_multiplier": 1.2
     },
     {
-      "text": "Virtual Private Networkの",
+      "text": "Virtual Private Network",
       "duration_multiplier": 1.1
     },
     {
-      "text": "略です",
+      "text": "の略です",
       "duration_multiplier": 1.4
     },
     {
@@ -550,7 +582,11 @@
       "duration_multiplier": 1
     },
     {
-      "text": "端末とネットワークの間に",
+      "text": "端末とネットワークの",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "間に",
       "duration_multiplier": 1.1
     },
     {
@@ -570,11 +606,11 @@
       "duration_multiplier": 1
     },
     {
-      "text": "システムへ接続する際に",
-      "duration_multiplier": 1.1
+      "text": "システムへ接続する",
+      "duration_multiplier": 1
     },
     {
-      "text": "利用されます",
+      "text": "際に利用されます",
       "duration_multiplier": 1.4
     },
     {
@@ -586,11 +622,11 @@
       "duration_multiplier": 1
     },
     {
-      "text": "自動的に安全になる",
+      "text": "自動的に",
       "duration_multiplier": 1
     },
     {
-      "text": "わけではありません",
+      "text": "安全になるわけではありません",
       "duration_multiplier": 1.4
     },
     {
@@ -602,11 +638,11 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "VPN装置自体の脆弱",
+      "text": "VPN装置自体の",
       "duration_multiplier": 1.2
     },
     {
-      "text": "性対応が必要です",
+      "text": "脆弱性対応が必要です",
       "duration_multiplier": 1.4
     },
     {
@@ -618,23 +654,31 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "ネットワーク上の場所だけを",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "理由に暗黙の信頼を与",
+      "text": "ネットワーク",
       "duration_multiplier": 1
     },
     {
-      "text": "えません",
+      "text": "上の場所だけを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "理由に暗黙の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "信頼を与えません",
       "duration_multiplier": 1.4
     },
     {
-      "text": "社内ネットワーク",
+      "text": "社内",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "ネットワークだから",
       "duration_multiplier": 1
     },
     {
-      "text": "だから安全",
+      "text": "安全",
       "duration_multiplier": 1.4
     },
     {
@@ -642,11 +686,19 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "このように一つの条件だけで",
-      "duration_multiplier": 1.1
+      "text": "このように",
+      "duration_multiplier": 1
     },
     {
-      "text": "判断しないことが重要です",
+      "text": "一つの条件だけで",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "判断しないことが",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "重要です",
       "duration_multiplier": 1.4
     },
     {
@@ -686,19 +738,19 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "表示上の送信者名だけを",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "見て",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "本当の送信元を判断",
+      "text": "表示上の",
       "duration_multiplier": 1
     },
     {
-      "text": "することはできません",
+      "text": "送信者名だけを見て",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "本当の送信",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "元を判断することはできません",
       "duration_multiplier": 1.4
     },
     {
@@ -722,11 +774,11 @@
       "duration_multiplier": 1
     },
     {
-      "text": "減らすための重要な",
+      "text": "減らすための",
       "duration_multiplier": 1
     },
     {
-      "text": "仕組みです",
+      "text": "重要な仕組みです",
       "duration_multiplier": 1.4
     },
     {
@@ -750,11 +802,11 @@
       "duration_multiplier": 1.2
     },
     {
-      "text": "Sender Policy Frameworkの",
+      "text": "Sender Policy Framework",
       "duration_multiplier": 1.1
     },
     {
-      "text": "略です",
+      "text": "の略です",
       "duration_multiplier": 1.4
     },
     {
@@ -794,11 +846,11 @@
       "duration_multiplier": 1
     },
     {
-      "text": "権限を持つかを確認",
+      "text": "権限を持つかを",
       "duration_multiplier": 1
     },
     {
-      "text": "できます",
+      "text": "確認できます",
       "duration_multiplier": 1.4
     },
     {
@@ -814,23 +866,23 @@
       "duration_multiplier": 1
     },
     {
-      "text": "正当性を直接保証する",
+      "text": "正当性を直接",
       "duration_multiplier": 1
     },
     {
-      "text": "ものではありません",
+      "text": "保証するものではありません",
       "duration_multiplier": 1.4
     },
     {
-      "text": "転送などの構成",
+      "text": "転送などの",
       "duration_multiplier": 1
     },
     {
-      "text": "によっても結果が影響を",
-      "duration_multiplier": 1.1
+      "text": "構成によっても",
+      "duration_multiplier": 1
     },
     {
-      "text": "受けます",
+      "text": "結果が影響を受けます",
       "duration_multiplier": 1.4
     },
     {
@@ -850,23 +902,31 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "送信側がメールの一部に",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "デジタル署名を付けます",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "受信側はDNSで公開",
-      "duration_multiplier": 1.2
-    },
-    {
-      "text": "された公開鍵を使って",
+      "text": "送信側がメールの",
       "duration_multiplier": 1
     },
     {
-      "text": "署名を検証します",
+      "text": "一部にデジタル",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "署名を付けます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "受信側はDNSで",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "公開された公開鍵を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "使って署名を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "検証します",
       "duration_multiplier": 1.4
     },
     {
@@ -878,23 +938,27 @@
       "duration_multiplier": 1
     },
     {
-      "text": "メッセージに責任を",
+      "text": "メッセージに",
       "duration_multiplier": 1
     },
     {
-      "text": "持つことと",
+      "text": "責任を持つことと",
       "duration_multiplier": 1.1
     },
     {
-      "text": "署名対象部分が配送",
+      "text": "署名対象部分が",
       "duration_multiplier": 1
     },
     {
-      "text": "途中で変更されてい",
+      "text": "配送途中で",
       "duration_multiplier": 1
     },
     {
-      "text": "ないことを確認できます",
+      "text": "変更されていないことを",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "確認できます",
       "duration_multiplier": 1.4
     },
     {
@@ -910,11 +974,7 @@
       "duration_multiplier": 1
     },
     {
-      "text": "保証するものでは",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "ありません",
+      "text": "保証するものではありません",
       "duration_multiplier": 1.4
     },
     {
@@ -954,19 +1014,23 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "認証に失敗したメールを",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "受信側がどう扱うことを",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "望むかという方針を",
+      "text": "認証に失敗した",
       "duration_multiplier": 1
     },
     {
-      "text": "公開できます",
+      "text": "メールを受信側がどう",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "扱うことを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "望むかという",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "方針を公開できます",
       "duration_multiplier": 1.4
     },
     {
@@ -990,19 +1054,23 @@
       "duration_multiplier": 1.2
     },
     {
-      "text": "RFC9989が公開され",
+      "text": "RFC9989が",
       "duration_multiplier": 1.2
     },
     {
-      "text": "従来のRFC7489と",
+      "text": "公開され",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "従来のRFC7489",
       "duration_multiplier": 1.2
     },
     {
-      "text": "RFC9091を置き",
+      "text": "とRFC9091を",
       "duration_multiplier": 1.2
     },
     {
-      "text": "換えました",
+      "text": "置き換えました",
       "duration_multiplier": 1.4
     },
     {
@@ -1030,11 +1098,11 @@
       "duration_multiplier": 1.2
     },
     {
-      "text": "DMARCは役割が",
+      "text": "DMARCは",
       "duration_multiplier": 1.2
     },
     {
-      "text": "異なる",
+      "text": "役割が異なる",
       "duration_multiplier": 1.4
     },
     {
@@ -1042,11 +1110,11 @@
       "duration_multiplier": 1.2
     },
     {
-      "text": "サーバーの認可を確認",
+      "text": "サーバーの",
       "duration_multiplier": 1
     },
     {
-      "text": "します",
+      "text": "認可を確認します",
       "duration_multiplier": 1.4
     },
     {
@@ -1054,11 +1122,11 @@
       "duration_multiplier": 1.2
     },
     {
-      "text": "ドメインによる署名を",
+      "text": "ドメインによる",
       "duration_multiplier": 1
     },
     {
-      "text": "付けます",
+      "text": "署名を付けます",
       "duration_multiplier": 1.4
     },
     {
@@ -1082,11 +1150,11 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "三つは競合する技術",
+      "text": "三つは競合する",
       "duration_multiplier": 1
     },
     {
-      "text": "ではなく",
+      "text": "技術ではなく",
       "duration_multiplier": 1.1
     },
     {
@@ -1126,11 +1194,11 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "Extensionsの",
-      "duration_multiplier": 1.1
+      "text": "Extensions",
+      "duration_multiplier": 1
     },
     {
-      "text": "略です",
+      "text": "の略です",
       "duration_multiplier": 1.4
     },
     {
@@ -1138,12 +1206,20 @@
       "duration_multiplier": 1
     },
     {
-      "text": "デジタル署名を付けたり",
+      "text": "デジタル",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "署名を付けたり",
       "duration_multiplier": 1.1
     },
     {
-      "text": "暗号化したりするために",
-      "duration_multiplier": 1.1
+      "text": "暗号",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "化したりするために",
+      "duration_multiplier": 1
     },
     {
       "text": "利用される仕組みです",
@@ -1166,11 +1242,11 @@
       "duration_multiplier": 1
     },
     {
-      "text": "メール配送上の認証を",
+      "text": "メール配送上の",
       "duration_multiplier": 1
     },
     {
-      "text": "扱います",
+      "text": "認証を扱います",
       "duration_multiplier": 1.4
     },
     {
@@ -1186,15 +1262,19 @@
       "duration_multiplier": 1
     },
     {
-      "text": "署名・暗号化に使われます",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "利用には証明書や鍵の",
+      "text": "署名・暗号化に",
       "duration_multiplier": 1
     },
     {
-      "text": "管理が必要です",
+      "text": "使われます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "利用には証明書や",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "鍵の管理が必要です",
       "duration_multiplier": 1.4
     },
     {
@@ -1202,12 +1282,16 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "個々のメッセージ内容の",
-      "duration_multiplier": 1.1
+      "text": "個々のメッセージ",
+      "duration_multiplier": 1
     },
     {
-      "text": "保護を混同しないことが",
-      "duration_multiplier": 1.1
+      "text": "内容の保護を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "混同しないことが",
+      "duration_multiplier": 1
     },
     {
       "text": "重要です",
@@ -1226,11 +1310,15 @@
       "duration_multiplier": 1.2
     },
     {
-      "text": "ブラウザとサーバー間の",
-      "duration_multiplier": 1.1
+      "text": "ブラウザとサーバー",
+      "duration_multiplier": 1
     },
     {
-      "text": "通信をTLSで保護します",
+      "text": "間の通信をTLSで",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "保護します",
       "duration_multiplier": 1.4
     },
     {
@@ -1246,7 +1334,11 @@
       "duration_multiplier": 1
     },
     {
-      "text": "届く通信の内容を検査し",
+      "text": "届く通信の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "内容を検査し",
       "duration_multiplier": 1.1
     },
     {
@@ -1258,19 +1350,23 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "HTTPSを使っていても",
+      "text": "HTTPSを",
       "duration_multiplier": 1.2
     },
     {
-      "text": "暗号化された通信の中に",
+      "text": "使っていても",
       "duration_multiplier": 1.1
     },
     {
-      "text": "悪意ある入力が含ま",
+      "text": "暗号化された",
       "duration_multiplier": 1
     },
     {
-      "text": "れることがあります",
+      "text": "通信の中に悪意ある",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "入力が含まれることがあります",
       "duration_multiplier": 1.4
     },
     {
@@ -1278,8 +1374,12 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "アプリケーション攻撃への",
-      "duration_multiplier": 1.1
+      "text": "アプリケーション",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "攻撃への",
+      "duration_multiplier": 1
     },
     {
       "text": "防御を混同しないことが",
@@ -1306,11 +1406,11 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "WPA2やWPA3などの",
+      "text": "WPA2やWPA3",
       "duration_multiplier": 1.2
     },
     {
-      "text": "方式があります",
+      "text": "などの方式があります",
       "duration_multiplier": 1.4
     },
     {
@@ -1330,11 +1430,15 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "古い端末などがリスクに",
-      "duration_multiplier": 1.1
+      "text": "古い端末などが",
+      "duration_multiplier": 1
     },
     {
-      "text": "なる場合があります",
+      "text": "リスクになる",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "場合があります",
       "duration_multiplier": 1.4
     },
     {
@@ -1354,7 +1458,11 @@
       "duration_multiplier": 1
     },
     {
-      "text": "ネットワークを分離します",
+      "text": "ネットワークを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "分離します",
       "duration_multiplier": 1.4
     },
     {
@@ -1366,8 +1474,12 @@
       "duration_multiplier": 1
     },
     {
-      "text": "メール認証を設定しただけで",
-      "duration_multiplier": 1.1
+      "text": "メール",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "認証を設定しただけで",
+      "duration_multiplier": 1
     },
     {
       "text": "終わりではありません",
@@ -1394,7 +1506,11 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "こうした運用が必要です",
+      "text": "こうした",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "運用が必要です",
       "duration_multiplier": 1.4
     },
     {
@@ -1418,31 +1534,47 @@
       "duration_multiplier": 1
     },
     {
-      "text": "ネットワーク機器を",
+      "text": "ネットワーク",
       "duration_multiplier": 1
     },
     {
-      "text": "使いながら",
+      "text": "機器を使いながら",
       "duration_multiplier": 1.1
     },
     {
-      "text": "論理的にネットワークを",
-      "duration_multiplier": 1.1
+      "text": "論理的に",
+      "duration_multiplier": 1
     },
     {
-      "text": "分けるために使われます",
+      "text": "ネットワークを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "分けるために",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "使われます",
       "duration_multiplier": 1.4
     },
     {
-      "text": "部署や用途ごとに通信",
+      "text": "部署や用途ごとに",
       "duration_multiplier": 1
     },
     {
-      "text": "範囲を分けることで",
+      "text": "通信範囲を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "分けることで",
       "duration_multiplier": 1.1
     },
     {
-      "text": "不要な通信を減らせます",
+      "text": "不要な通信を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "減らせます",
       "duration_multiplier": 1.4
     },
     {
@@ -1454,23 +1586,19 @@
       "duration_multiplier": 1.2
     },
     {
-      "text": "安全になるわけでは",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "ありません",
+      "text": "安全になるわけではありません",
       "duration_multiplier": 1.4
     },
     {
-      "text": "VLAN間の通信を",
+      "text": "VLAN",
       "duration_multiplier": 1.2
     },
     {
-      "text": "どのように制御するかが",
-      "duration_multiplier": 1.1
+      "text": "間の通信をどのように",
+      "duration_multiplier": 1
     },
     {
-      "text": "重要です",
+      "text": "制御するかが重要です",
       "duration_multiplier": 1.4
     },
     {
@@ -1478,11 +1606,15 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "設計とアクセス制御を",
+      "text": "設計とアクセス",
       "duration_multiplier": 1
     },
     {
-      "text": "組み合わせて機能します",
+      "text": "制御を組み合わせて",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "機能します",
       "duration_multiplier": 1.4
     },
     {
@@ -1494,27 +1626,27 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "攻撃者の活動を観測",
+      "text": "攻撃者の",
       "duration_multiplier": 1
     },
     {
-      "text": "するため",
+      "text": "活動を観測するため",
       "duration_multiplier": 1.1
     },
     {
-      "text": "意図的に監視対象と",
+      "text": "意図的に",
       "duration_multiplier": 1
     },
     {
-      "text": "なるシステムや",
+      "text": "監視対象となる",
       "duration_multiplier": 1
     },
     {
-      "text": "サービスを用意する",
+      "text": "システムやサービスを",
       "duration_multiplier": 1
     },
     {
-      "text": "考え方です",
+      "text": "用意する考え方です",
       "duration_multiplier": 1.4
     },
     {
@@ -1522,11 +1654,11 @@
       "duration_multiplier": 1
     },
     {
-      "text": "検知に役立つ場合が",
+      "text": "検知に役立つ",
       "duration_multiplier": 1
     },
     {
-      "text": "あります",
+      "text": "場合があります",
       "duration_multiplier": 1.4
     },
     {
@@ -1534,11 +1666,11 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "適切に隔離されてい",
-      "duration_multiplier": 1
+      "text": "適切に隔離されていない",
+      "duration_multiplier": 1.1
     },
     {
-      "text": "ないハニーポットが",
+      "text": "ハニーポットが",
       "duration_multiplier": 1.1
     },
     {
@@ -1546,11 +1678,11 @@
       "duration_multiplier": 1
     },
     {
-      "text": "攻撃拠点になってはい",
-      "duration_multiplier": 1
+      "text": "攻撃",
+      "duration_multiplier": 0.9
     },
     {
-      "text": "けません",
+      "text": "拠点になってはいけません",
       "duration_multiplier": 1.4
     },
     {
@@ -1562,11 +1694,11 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "監視や分析の補助",
+      "text": "監視や分析の",
       "duration_multiplier": 1
     },
     {
-      "text": "として扱います",
+      "text": "補助として扱います",
       "duration_multiplier": 1.4
     },
     {
@@ -1582,15 +1714,23 @@
       "duration_multiplier": 1
     },
     {
-      "text": "ネットワーク上で安全",
+      "text": "ネットワーク",
       "duration_multiplier": 1
     },
     {
-      "text": "なリモートログインなどを",
-      "duration_multiplier": 1.1
+      "text": "上で安全なリモート",
+      "duration_multiplier": 1
     },
     {
-      "text": "行うためのプロトコルです",
+      "text": "ログインなどを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "行うための",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "プロトコルです",
       "duration_multiplier": 1.4
     },
     {
@@ -1614,7 +1754,11 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "その上で利用者認証を行い",
+      "text": "その上で利用者認証を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "行い",
       "duration_multiplier": 1.1
     },
     {
@@ -1642,11 +1786,15 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "不適切な権限などが",
+      "text": "不適切な",
       "duration_multiplier": 1
     },
     {
-      "text": "あれば侵害される",
+      "text": "権限などがあれば",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "侵害される",
       "duration_multiplier": 1
     },
     {
@@ -1658,11 +1806,11 @@
       "duration_multiplier": 1
     },
     {
-      "text": "アカウント管理を",
+      "text": "アカウント",
       "duration_multiplier": 1
     },
     {
-      "text": "組み合わせます",
+      "text": "管理を組み合わせます",
       "duration_multiplier": 1.4
     },
     {
@@ -1674,11 +1822,15 @@
       "duration_multiplier": 1.2
     },
     {
-      "text": "IP層で通信を保護",
+      "text": "IP層で通信を",
       "duration_multiplier": 1.2
     },
     {
-      "text": "するための仕組みです",
+      "text": "保護するための",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "仕組みです",
       "duration_multiplier": 1.4
     },
     {
@@ -1694,11 +1846,11 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "こうした通信を保護",
+      "text": "こうした",
       "duration_multiplier": 1
     },
     {
-      "text": "できます",
+      "text": "通信を保護できます",
       "duration_multiplier": 1.4
     },
     {
@@ -1718,19 +1870,23 @@
       "duration_multiplier": 1
     },
     {
-      "text": "セキュリティサービスを",
-      "duration_multiplier": 1.1
+      "text": "セキュリティ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "サービスを",
+      "duration_multiplier": 1
     },
     {
       "text": "提供できます",
       "duration_multiplier": 1.4
     },
     {
-      "text": "VPNで利用される",
+      "text": "VPNで",
       "duration_multiplier": 1.2
     },
     {
-      "text": "こともあります",
+      "text": "利用されることもあります",
       "duration_multiplier": 1.4
     },
     {
@@ -1738,15 +1894,19 @@
       "duration_multiplier": 1.2
     },
     {
-      "text": "ネットワーク全体の",
+      "text": "ネットワーク",
       "duration_multiplier": 1
     },
     {
-      "text": "安全性を自動的に保証",
+      "text": "全体の安全",
       "duration_multiplier": 1
     },
     {
-      "text": "するものではありません",
+      "text": "性を自動的に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "保証するものではありません",
       "duration_multiplier": 1.4
     },
     {
@@ -1766,7 +1926,11 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "周辺の安全性も必要です",
+      "text": "周辺の安全",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "性も必要です",
       "duration_multiplier": 1.4
     }
   ]
