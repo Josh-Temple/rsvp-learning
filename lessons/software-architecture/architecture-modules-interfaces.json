@@ -9,59 +9,171 @@
   "sources": [],
   "chunks": [
     {
-      "text": "大きなシステムは、役割ごとの部品へ分けて考えます",
+      "text": "大きなシステムは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "役割ごとの部品へ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "分けて考えます",
       "duration_multiplier": 1.35
     },
     {
-      "text": "モジュールは、関連する責務をまとめた単位です",
-      "duration_multiplier": 1.1
+      "text": "モジュールは、",
+      "duration_multiplier": 1
     },
     {
-      "text": "一つのモジュールに多くの責務を詰め込みすぎないようにします",
-      "duration_multiplier": 1.1
+      "text": "関連する責務を",
+      "duration_multiplier": 1
     },
     {
-      "text": "責務が明確だと、変更範囲を限定しやすくなります",
-      "duration_multiplier": 1.1
+      "text": "まとめた単位です",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "インターフェースは、部品同士の接点です",
-      "duration_multiplier": 1.1
+      "text": "一つのモジュールに",
+      "duration_multiplier": 1
     },
     {
-      "text": "何を受け取り、何を返すかを定めます",
-      "duration_multiplier": 1.1
+      "text": "多くの責務を",
+      "duration_multiplier": 1
     },
     {
-      "text": "内部実装を知らなくても利用できる形が望まれます",
-      "duration_multiplier": 1.1
+      "text": "詰め込みすぎないように",
+      "duration_multiplier": 1
     },
     {
-      "text": "インターフェースを安定させると、内部変更の影響を減らせます",
-      "duration_multiplier": 1.1
+      "text": "します",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "データ形式やエラー条件も、接点の一部です",
-      "duration_multiplier": 1.1
+      "text": "責務が明確だと、",
+      "duration_multiplier": 1
     },
     {
-      "text": "責務の境界が曖昧だと、同じ処理が複数箇所へ広がります",
-      "duration_multiplier": 1.1
+      "text": "変更範囲を",
+      "duration_multiplier": 1
     },
     {
-      "text": "共通処理を分ける場合も、責務を確認します",
-      "duration_multiplier": 1.1
+      "text": "限定しやすくなります",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "細かく分けすぎると、連携が複雑になります",
-      "duration_multiplier": 1.1
+      "text": "インターフェースは、",
+      "duration_multiplier": 1
     },
     {
-      "text": "分割には、適切な粒度が必要です",
-      "duration_multiplier": 1.1
+      "text": "部品同士の接点です",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "設計では、責務と接点を説明できることが重要です",
+      "text": "何を受け取り、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "何を返すかを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "定めます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "内部実装を知らなくても",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "利用できる形が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "望まれます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "インターフェースを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "安定させると、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "内部変更の影響を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "減らせます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "データ形式や",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "エラー条件も、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "接点の一部です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "責務の境界が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "曖昧だと、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "同じ処理が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "複数箇所へ広がります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "共通処理を分ける場合も、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "責務を確認します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "細かく分けすぎると、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "連携が複雑になります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "分割には、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "適切な粒度が必要です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "設計では、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "責務と接点を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "説明できることが",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "重要です",
       "duration_multiplier": 1.35
     }
   ]

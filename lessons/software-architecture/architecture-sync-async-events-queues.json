@@ -9,59 +9,159 @@
   "sources": [],
   "chunks": [
     {
-      "text": "同期処理では、相手の処理結果を待ちます",
+      "text": "同期処理では、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "相手の処理結果を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "待ちます",
       "duration_multiplier": 1.35
     },
     {
-      "text": "処理の流れを理解しやすいことが利点です",
-      "duration_multiplier": 1.1
+      "text": "処理の流れを",
+      "duration_multiplier": 1
     },
     {
-      "text": "ただし、相手が遅いと全体も待つことになります",
-      "duration_multiplier": 1.1
+      "text": "理解しやすいことが",
+      "duration_multiplier": 1
     },
     {
-      "text": "非同期処理では、依頼後に別の処理へ進めます",
-      "duration_multiplier": 1.1
+      "text": "利点です",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "時間のかかる処理を切り離せます",
-      "duration_multiplier": 1.1
+      "text": "ただし、",
+      "duration_multiplier": 1
     },
     {
-      "text": "Queueは、処理要求を一時的に保存して受け渡します",
-      "duration_multiplier": 1.1
+      "text": "相手が遅いと",
+      "duration_multiplier": 1
     },
     {
-      "text": "送信側と受信側を、時間的に分離できます",
-      "duration_multiplier": 1.1
+      "text": "全体も待つことになります",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "イベントは、何かが起きたことを表します",
-      "duration_multiplier": 1.1
+      "text": "非同期処理では、",
+      "duration_multiplier": 1
     },
     {
-      "text": "イベントを受けて別の処理を動かす設計があります",
-      "duration_multiplier": 1.1
+      "text": "依頼後に",
+      "duration_multiplier": 1
     },
     {
-      "text": "非同期では、処理完了のタイミングが分かりにくくなります",
-      "duration_multiplier": 1.1
+      "text": "別の処理へ進めます",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "重複処理や順序入れ替わりも考える必要があります",
-      "duration_multiplier": 1.1
+      "text": "時間のかかる処理を",
+      "duration_multiplier": 1
     },
     {
-      "text": "失敗したメッセージの扱いも設計します",
-      "duration_multiplier": 1.1
+      "text": "切り離せます",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "監視と追跡可能性が重要になります",
-      "duration_multiplier": 1.1
+      "text": "Queueは、",
+      "duration_multiplier": 1
     },
     {
-      "text": "非同期化は、性能だけでなく依存を緩めるためにも使われます",
+      "text": "処理要求を一時的に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "保存して受け渡します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "送信側と受信側を、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "時間的に分離できます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "イベントは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "何かが起きたことを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "表します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "イベントを受けて",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "別の処理を動かす",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "設計があります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "非同期では、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "処理完了のタイミングが",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "分かりにくくなります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "重複処理や",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "順序入れ替わりも",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "考える必要があります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "失敗したメッセージの",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "扱いも設計します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "監視と追跡可能性が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "重要になります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "非同期化は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "性能だけでなく",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "依存を緩めるためにも",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "使われます",
       "duration_multiplier": 1.35
     }
   ]

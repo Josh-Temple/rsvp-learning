@@ -9,59 +9,179 @@
   "sources": [],
   "chunks": [
     {
-      "text": "ソフトウェアの変更しやすさは、依存関係に影響されます",
+      "text": "ソフトウェアの",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "変更しやすさは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "依存関係に影響されます",
       "duration_multiplier": 1.35
     },
     {
-      "text": "一つの変更が多くの部品へ波及すると、修正が難しくなります",
-      "duration_multiplier": 1.1
+      "text": "一つの変更が",
+      "duration_multiplier": 1
     },
     {
-      "text": "結合度は、部品同士の依存の強さを考える概念です",
-      "duration_multiplier": 1.1
+      "text": "多くの部品へ波及すると、",
+      "duration_multiplier": 1
     },
     {
-      "text": "一般に、不要な強い結合は減らします",
-      "duration_multiplier": 1.1
+      "text": "修正が難しくなります",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "凝集度は、一つの部品内の責務のまとまりを考える概念です",
-      "duration_multiplier": 1.1
+      "text": "結合度は、",
+      "duration_multiplier": 1
     },
     {
-      "text": "関連の強い処理をまとめると、責務が分かりやすくなります",
-      "duration_multiplier": 1.1
+      "text": "部品同士の依存の",
+      "duration_multiplier": 1
     },
     {
-      "text": "すべての依存をなくすことはできません",
-      "duration_multiplier": 1.1
+      "text": "強さを考える概念です",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "重要なのは、依存の方向と理由を管理することです",
-      "duration_multiplier": 1.1
+      "text": "一般に、",
+      "duration_multiplier": 1
     },
     {
-      "text": "下位の詳細へ上位の業務ロジックが強く依存すると変更しにくくなる場合があります",
-      "duration_multiplier": 1.1
+      "text": "不要な強い結合は",
+      "duration_multiplier": 1
     },
     {
-      "text": "インターフェースを使って依存を分離する方法があります",
-      "duration_multiplier": 1.1
+      "text": "減らします",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "共通ライブラリも、依存を増やす可能性があります",
-      "duration_multiplier": 1.1
+      "text": "凝集度は、",
+      "duration_multiplier": 1
     },
     {
-      "text": "変更頻度が異なるものを分けることも有効です",
-      "duration_multiplier": 1.1
+      "text": "一つの部品内の",
+      "duration_multiplier": 1
     },
     {
-      "text": "依存関係は、図で可視化すると理解しやすくなります",
-      "duration_multiplier": 1.1
+      "text": "責務のまとまりを",
+      "duration_multiplier": 1
     },
     {
-      "text": "良い設計は、変更の影響範囲を予測しやすくします",
+      "text": "考える概念です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "関連の強い処理を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "まとめると、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "責務が分かりやすく",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "なります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "すべての依存を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "なくすことはできません",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "重要なのは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "依存の方向と理由を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "管理することです",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "下位の詳細へ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "上位の業務ロジックが",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "強く依存すると",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "変更しにくくなる",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "場合があります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "インターフェースを使って",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "依存を分離する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "方法があります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "共通ライブラリも、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "依存を増やす",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "可能性があります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "変更頻度が異なるものを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "分けることも有効です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "依存関係は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "図で可視化すると",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "理解しやすくなります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "良い設計は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "変更の影響範囲を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "予測しやすくします",
       "duration_multiplier": 1.35
     }
   ]
