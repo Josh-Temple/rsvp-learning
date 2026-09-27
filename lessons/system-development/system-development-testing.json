@@ -9,59 +9,159 @@
   "sources": [],
   "chunks": [
     {
-      "text": "テストは、期待どおり動くかを確認する活動です",
+      "text": "テストは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "期待どおり動くかを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "確認する活動です",
       "duration_multiplier": 1.35
     },
     {
-      "text": "単体テストは、小さな部品を確認します",
-      "duration_multiplier": 1.1
+      "text": "単体テストは、",
+      "duration_multiplier": 1
     },
     {
-      "text": "結合テストは、複数の部品の連携を確認します",
-      "duration_multiplier": 1.1
+      "text": "小さな部品を",
+      "duration_multiplier": 1
     },
     {
-      "text": "システムテストは、システム全体を確認します",
-      "duration_multiplier": 1.1
+      "text": "確認します",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "受入テストは、利用者側の要求を満たすか確認します",
-      "duration_multiplier": 1.1
+      "text": "結合テストは、",
+      "duration_multiplier": 1
     },
     {
-      "text": "工程名や範囲は、組織によって異なることがあります",
-      "duration_multiplier": 1.1
+      "text": "複数の部品の",
+      "duration_multiplier": 1
     },
     {
-      "text": "テストケースは、確認する条件と期待結果を定めます",
-      "duration_multiplier": 1.1
+      "text": "連携を確認します",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "正常系だけでは不十分です",
-      "duration_multiplier": 1.1
+      "text": "システムテストは、",
+      "duration_multiplier": 1
     },
     {
-      "text": "異常入力や境界値も確認します",
-      "duration_multiplier": 1.1
+      "text": "システム全体を",
+      "duration_multiplier": 1
     },
     {
-      "text": "権限による違いもテスト対象です",
-      "duration_multiplier": 1.1
+      "text": "確認します",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "非機能要件には、性能や可用性のテストがあります",
-      "duration_multiplier": 1.1
+      "text": "受入テストは、",
+      "duration_multiplier": 1
     },
     {
-      "text": "不具合は、再現条件を明確にして管理します",
-      "duration_multiplier": 1.1
+      "text": "利用者側の要求を",
+      "duration_multiplier": 1
     },
     {
-      "text": "要件からテストまで追えることが重要です",
-      "duration_multiplier": 1.1
+      "text": "満たすか確認します",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "テストは、品質を作る最後の工程ではなく、品質を確認する工程です",
+      "text": "工程名や範囲は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "組織によって",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "異なることがあります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "テストケースは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "確認する条件と",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "期待結果を定めます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "正常系だけでは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "不十分です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "異常入力や",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "境界値も確認します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "権限による違いも",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "テスト対象です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "非機能要件には、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "性能や可用性の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "テストがあります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "不具合は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "再現条件を明確にして",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "管理します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "要件からテストまで",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "追えることが重要です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "テストは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "品質を作る最後の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "工程ではなく、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "品質を確認する工程です",
       "duration_multiplier": 1.35
     }
   ]
