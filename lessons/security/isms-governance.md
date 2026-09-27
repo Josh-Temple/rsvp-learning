@@ -1,7 +1,11 @@
 # 情報セキュリティポリシー、ISMS、ガバナンス
 
-Status: Draft v0.2  
+Status: Draft v0.3  
 確認日: 2026-09-27
+
+ISMSはInformation Security Management Systemの略です。
+
+組織として情報セキュリティを継続的に管理する仕組みです。
 
 ## 1. 技術対策だけでは組織を守れない
 
@@ -71,11 +75,9 @@ NIST Cybersecurity Framework 2.0では、Governが独立した機能として追
 
 こうした情報を明確にします。
 
-## 6. ISMS
+## 6. ISMSを運用する
 
-ISMSは、Information Security Management Systemの略です。
-
-個別の技術対策だけでなく、組織として情報セキュリティを継続的に管理する仕組みです。
+ISMSでは、個別の技術対策だけでなく、組織として情報セキュリティを継続的に管理します。
 
 組織は、自らのリスクを評価します。
 
@@ -229,6 +231,8 @@ IPAが公表した情報でも、対象年度や更新日を確認します。
 
 JPCERTコーディネーションセンターは、日本国内に関連するインシデントへの対応調整を行うCSIRTです。
 
+CSIRTはComputer Security Incident Response Teamの略です。
+
 インシデント報告の受付。
 
 対応支援。
@@ -244,6 +248,10 @@ JPCERTコーディネーションセンターは、日本国内に関連する�
 こうした活動を行っています。
 
 特定企業のSOCや、政府機関そのものとは役割が異なります。
+
+SOCはSecurity Operations Centerの略です。
+
+組織のセキュリティ監視や分析を担う機能を指します。
 
 ## 21. JVN
 
