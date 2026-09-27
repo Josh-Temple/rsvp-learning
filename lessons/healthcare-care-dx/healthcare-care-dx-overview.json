@@ -9,51 +9,175 @@
   "sources": [],
   "chunks": [
     {
-      "text": "ヘルスケアと介護のDXでは、業務改善と安全性を両立させます",
+      "text": "ヘルスケアと介護のDXでは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "業務改善と安全性を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "両立させます",
       "duration_multiplier": 1.4
     },
     {
-      "text": "制度や報酬のルールが、現場業務へ直接影響します",
+      "text": "制度や報酬のルールが、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "現場業務へ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "直接影響します",
       "duration_multiplier": 1.15
     },
     {
-      "text": "利用者情報には、機微な個人情報が含まれます",
+      "text": "利用者情報には、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "機微な個人情報が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "含まれます",
       "duration_multiplier": 1.15
     },
     {
-      "text": "データ共有では、目的、権限、保存、追跡可能性を考えます",
+      "text": "データ共有では、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "目的、権限、保存、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "追跡可能性を考えます",
       "duration_multiplier": 1.15
     },
     {
-      "text": "標準化は、異なる組織やシステム間の連携に重要です",
+      "text": "標準化は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "異なる組織や",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "システム間の連携に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "重要です",
       "duration_multiplier": 1.15
     },
     {
-      "text": "現場では、記録、請求、連携、監査など複数の業務がつながっています",
+      "text": "現場では、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "記録、請求、連携、監査など",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "複数の業務が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "つながっています",
       "duration_multiplier": 1.15
     },
     {
-      "text": "システム化では、入力負担とデータ品質の両方を見ます",
+      "text": "システム化では、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "入力負担と",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "データ品質の両方を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "見ます",
       "duration_multiplier": 1.15
     },
     {
-      "text": "AI利用では、誤りが利用者へ与える影響を評価します",
+      "text": "AI利用では、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "誤りが利用者へ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "与える影響を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "評価します",
       "duration_multiplier": 1.15
     },
     {
-      "text": "高リスク判断では、人間確認を残す設計が重要です",
+      "text": "高リスク判断では、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "人間確認を残す",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "設計が重要です",
       "duration_multiplier": 1.15
     },
     {
-      "text": "制度改正に追随できる保守性も必要です",
+      "text": "制度改正に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "追随できる保守性も",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "必要です",
       "duration_multiplier": 1.15
     },
     {
-      "text": "技術だけでなく、現場で継続利用できる運用を設計します",
+      "text": "技術だけでなく、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "現場で継続利用できる",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "運用を設計します",
       "duration_multiplier": 1.15
     },
     {
-      "text": "まずは、制度、業務、データ、システムの関係を一つの図として説明できることを目標にします",
+      "text": "まずは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "制度、業務、データ、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "システムの関係を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "一つの図として",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "説明できることを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "目標にします",
       "duration_multiplier": 1.4
     }
   ]
