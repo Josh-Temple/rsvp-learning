@@ -434,6 +434,10 @@ button {
   letter-spacing: -0.035em;
 }
 
+.course-head .mastery-mini {
+  margin-top: 8px;
+}
+
 .library-mode {
   display: flex;
   gap: 4px;
