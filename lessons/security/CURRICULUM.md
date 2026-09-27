@@ -91,7 +91,7 @@ PKIの補足原稿: `pki-certificates.md`
 
 ### 6. ネットワーク、メール、Webの防御
 
-現在: `05-network-web-and-system-defense.md` を分割・拡張予定
+現在: `05-network-web-and-system-defense.md`, `network-mail-defense.md`
 
 - ファイアウォール
 - ネットワーク分割
@@ -106,7 +106,7 @@ PKIの補足原稿: `pki-certificates.md`
 
 ### 7. アプリケーションとデータベースのセキュリティ
 
-新規作成予定
+現在: `application-database-security.md`
 
 - セキュア開発
 - 入力処理
@@ -123,7 +123,7 @@ PKIの補足原稿: `pki-certificates.md`
 
 ### 8. 端末、クラウド、モバイル、IoT、物理対策
 
-新規作成予定
+現在: `endpoint-cloud-physical-security.md`
 
 - エンドポイント防御
 - EDR
@@ -192,7 +192,7 @@ PKIの補足原稿: `pki-certificates.md`
 
 ### 12. 監視、インシデント対応、フォレンジックス
 
-現在: `06-security-operations-and-governance.md` の一部を分割・拡張予定
+現在: `06-security-operations-and-governance.md`, `incident-monitoring-forensics.md`
 
 - ログ
 - SIEM
@@ -210,7 +210,7 @@ PKIの補足原稿: `pki-certificates.md`
 
 ### 13. 事業継続とレジリエンス
 
-新規作成予定
+現在: `business-continuity-resilience.md`
 
 - バックアップ
 - 3-2-1
@@ -243,7 +243,7 @@ PKIの補足原稿: `pki-certificates.md`
 
 ### 15. 監査と内部統制
 
-新規作成予定
+現在: `audit-internal-control.md`
 
 - 監査の目的
 - 独立性と客観性
