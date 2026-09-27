@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "id": "api-webhook-async",
+  "title": "Webhookと非同期処理",
+  "topic": "Web・API",
+  "summary": "イベント通知、Webhook、Queueなどを使う非同期処理の基本を学びます。",
+  "created_at": "2026-09-27",
+  "base_duration_ms": 680,
+  "sources": [],
+  "chunks": [
+    {
+      "text": "同期処理では、処理結果を待ってから次へ進みます",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "非同期処理では、結果を待たずに別の処理へ進めます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "時間のかかる処理では、非同期が有効な場合があります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "Webhookは、出来事が起きた側から通知する仕組みです",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "例えば、決済完了後に通知を送ることができます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "通知を受けるURLを、事前に登録します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "Webhookは、同じ通知が複数回来る可能性も考えます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "そのため、受信側には冪等性が重要です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "Queueは、処理要求を一時的にためる仕組みです",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "送信側と処理側を、時間的に分離できます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "再試行や失敗処理を設計しやすくなります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "一方で、処理状況が見えにくくなることがあります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "監視とログが、より重要になります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "非同期化は、複雑性と引き換えに柔軟性を得る設計です",
+      "duration_multiplier": 1.35
+    }
+  ]
+}

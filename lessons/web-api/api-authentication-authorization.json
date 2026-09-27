@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "id": "api-authentication-authorization",
+  "title": "認証と認可",
+  "topic": "Web・API",
+  "summary": "利用者やシステムの本人性を確認する認証と、操作権限を決める認可の違いを学びます。",
+  "created_at": "2026-09-27",
+  "base_duration_ms": 680,
+  "sources": [],
+  "chunks": [
+    {
+      "text": "認証は、誰であるかを確認することです",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "認可は、何をしてよいかを決めることです",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "この二つは、同じではありません",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "ログインは、認証の代表例です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "パスワードだけでなく、多要素認証も使われます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "セッションは、ログイン状態を維持する方法の一つです",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "Tokenを使って、API呼び出しを認証する方法もあります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "OAuthは、別サービスへ限定的な権限を委任するために使われます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "API Keyは、呼び出し元識別に使われることがあります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "秘密情報は、ソースコードへ直接書かないようにします",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "認可では、RoleやPermissionを使うことがあります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "最小権限は、必要な権限だけを与える考え方です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "認証済みでも、すべての操作を許可してよいとは限りません",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "重要な操作ほど、認証と認可の両方を確認します",
+      "duration_multiplier": 1.35
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "id": "requirements-stakeholders-scope",
+  "title": "ステークホルダーとスコープ",
+  "topic": "システム開発",
+  "summary": "関係者の要望を整理し、プロジェクトで実現する範囲を明確にする方法を学びます。",
+  "created_at": "2026-09-27",
+  "base_duration_ms": 680,
+  "sources": [],
+  "chunks": [
+    {
+      "text": "ステークホルダーは、プロジェクトに関係する人や組織です",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "利用者だけが、ステークホルダーではありません",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "管理者、保守担当、セキュリティ担当も関係します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "経営層や発注部門も、異なる期待を持ちます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "同じ業務でも、立場によって重要な点は変わります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "そのため、要望を収集するだけでは足りません",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "要望同士の矛盾を整理します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "目的への寄与と優先順位を確認します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "スコープは、プロジェクトで扱う範囲です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "何を含むかだけでなく、何を含まないかも明確にします",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "スコープが曖昧だと、追加要求が増えやすくなります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "追加要求には、費用と期間への影響があります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "変更する場合は、影響を評価して合意します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "スコープ管理は、目的を守るための作業です",
+      "duration_multiplier": 1.35
+    }
+  ]
+}

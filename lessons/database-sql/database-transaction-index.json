@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "id": "database-transaction-index",
+  "title": "トランザクションとインデックス",
+  "topic": "データ",
+  "summary": "データ更新の整合性を守るトランザクションと、検索性能を支えるインデックスの基本を学びます。",
+  "created_at": "2026-09-27",
+  "base_duration_ms": 680,
+  "sources": [],
+  "chunks": [
+    {
+      "text": "トランザクションは、複数の処理を一まとまりとして扱います",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "途中で失敗した場合、処理を取り消すことがあります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "これをrollbackと呼びます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "すべて成功したら、変更を確定します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "これをcommitと呼びます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "ACIDは、トランザクションの代表的な性質を表します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "Atomicityは、処理を全部成功か全部失敗にします",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "Consistencyは、整合性を保つことに関係します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "Isolationは、同時実行の影響を制御します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "Durabilityは、確定した結果を保持する性質です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "インデックスは、検索を高速化するための構造です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "ただし、インデックスにも保存容量と更新コストがあります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "すべての列へ付ければ良いわけではありません",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "整合性と性能は、用途に応じて設計します",
+      "duration_multiplier": 1.35
+    }
+  ]
+}

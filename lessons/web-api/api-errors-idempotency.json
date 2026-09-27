@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "id": "api-errors-idempotency",
+  "title": "エラー処理と冪等性",
+  "topic": "Web・API",
+  "summary": "APIの失敗を扱うためのStatus Code、Retry、冪等性の基本を学びます。",
+  "created_at": "2026-09-27",
+  "base_duration_ms": 680,
+  "sources": [],
+  "chunks": [
+    {
+      "text": "API通信は、常に成功するとは限りません",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "入力が不正な場合があります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "権限が不足している場合があります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "対象データが存在しない場合があります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "サーバー内部で失敗する場合もあります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "HTTP Status Codeは、失敗の種類を伝えるために使われます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "4xxは、要求側に原因がある場合に使われることが多いです",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "5xxは、サーバー側の失敗を表すことが多いです",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "失敗時に、何でもRetryすれば良いわけではありません",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "同じ要求を再送すると、二重登録が起こることがあります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "冪等性は、同じ操作を繰り返しても結果が壊れない性質です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "GETは、通常は副作用を持たないように設計します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "重要な登録処理では、Idempotency Keyを使う設計もあります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "エラー処理は、正常処理と同じくらい重要です",
+      "duration_multiplier": 1.35
+    }
+  ]
+}

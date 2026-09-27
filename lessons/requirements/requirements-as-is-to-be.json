@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "id": "requirements-as-is-to-be",
+  "title": "As-IsとTo-Be",
+  "topic": "システム開発",
+  "summary": "現行業務を把握し、改善後の業務像を設計するためのAs-Is / To-Beの基本を学びます。",
+  "created_at": "2026-09-27",
+  "base_duration_ms": 680,
+  "sources": [],
+  "chunks": [
+    {
+      "text": "As-Isは、現在の業務の姿です",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "To-Beは、目指す業務の姿です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "改善では、最初にAs-Isを観察します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "誰が、何を、どの順番で行うかを整理します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "使っている帳票やシステムも確認します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "待ち時間、手戻り、重複入力を探します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "例外処理も、現行業務の一部です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "To-Beでは、目的から必要な変化を考えます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "単に現行業務をデジタル化するだけでは不十分です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "不要な工程は、削除できないか検討します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "自動化できる工程と、人が判断すべき工程を分けます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "To-Beは、現場で運用できる必要があります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "移行時には、As-IsからTo-Beへどう変えるかも考えます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "良いTo-Beは、改善目的とつながっています",
+      "duration_multiplier": 1.35
+    }
+  ]
+}
