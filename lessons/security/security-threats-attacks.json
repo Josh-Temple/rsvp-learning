@@ -1234,11 +1234,7 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "こうした",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "対策を組み合わせます",
+      "text": "こうした対策を組み合わせます",
       "duration_multiplier": 1.4
     },
     {
@@ -1250,11 +1246,7 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "通信の途中へ攻撃者が",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "入り",
+      "text": "通信の途中へ攻撃者が入り",
       "duration_multiplier": 1.1
     },
     {
@@ -1430,11 +1422,11 @@
       "duration_multiplier": 1.2
     },
     {
-      "text": "DNS情報の真正",
+      "text": "DNS情報の真正性を",
       "duration_multiplier": 1.2
     },
     {
-      "text": "性を確認するための",
+      "text": "確認するための",
       "duration_multiplier": 1
     },
     {
