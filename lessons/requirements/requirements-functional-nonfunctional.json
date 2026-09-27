@@ -9,59 +9,175 @@
   "sources": [],
   "chunks": [
     {
-      "text": "機能要件は、システムが何をするかを示します",
+      "text": "機能要件は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "システムが何をするかを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "示します",
       "duration_multiplier": 1.35
     },
     {
-      "text": "登録、検索、更新、通知などが代表例です",
-      "duration_multiplier": 1.1
+      "text": "登録、検索、更新、",
+      "duration_multiplier": 1
     },
     {
-      "text": "非機能要件は、どのような品質や条件で動くかを示します",
-      "duration_multiplier": 1.1
+      "text": "通知などが代表例です",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "性能は、応答時間や処理量に関係します",
-      "duration_multiplier": 1.1
+      "text": "非機能要件は、",
+      "duration_multiplier": 1
     },
     {
-      "text": "可用性は、必要なときに利用できる度合いです",
-      "duration_multiplier": 1.1
+      "text": "どのような品質や条件で",
+      "duration_multiplier": 1
     },
     {
-      "text": "信頼性は、安定して正しく動くことに関係します",
-      "duration_multiplier": 1.1
+      "text": "動くかを示します",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "セキュリティは、アクセス制御やデータ保護を含みます",
-      "duration_multiplier": 1.1
+      "text": "性能は、",
+      "duration_multiplier": 1
     },
     {
-      "text": "運用性は、監視や障害対応のしやすさに関係します",
-      "duration_multiplier": 1.1
+      "text": "応答時間や処理量に",
+      "duration_multiplier": 1
     },
     {
-      "text": "保守性は、変更や修正のしやすさに関係します",
-      "duration_multiplier": 1.1
+      "text": "関係します",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "バックアップや復旧条件も、非機能要件です",
-      "duration_multiplier": 1.1
+      "text": "可用性は、",
+      "duration_multiplier": 1
     },
     {
-      "text": "非機能要件は、後から追加すると高コストになりやすいです",
-      "duration_multiplier": 1.1
+      "text": "必要なときに",
+      "duration_multiplier": 1
     },
     {
-      "text": "重要な品質条件は、要件定義で明確にします",
-      "duration_multiplier": 1.1
+      "text": "利用できる度合いです",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "できるだけ測定可能な表現にします",
-      "duration_multiplier": 1.1
+      "text": "信頼性は、",
+      "duration_multiplier": 1
     },
     {
-      "text": "機能と非機能の両方が揃って、実用的なシステムになります",
+      "text": "安定して正しく動くことに",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "関係します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "セキュリティは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "アクセス制御や",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "データ保護を含みます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "運用性は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "監視や障害対応の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "しやすさに関係します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "保守性は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "変更や修正の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "しやすさに関係します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "バックアップや",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "復旧条件も、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "非機能要件です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "非機能要件は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "後から追加すると",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "高コストに",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "なりやすいです",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "重要な品質条件は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "要件定義で",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "明確にします",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "できるだけ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "測定可能な表現に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "機能と非機能の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "両方が揃って、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "実用的なシステムに",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "なります",
       "duration_multiplier": 1.35
     }
   ]

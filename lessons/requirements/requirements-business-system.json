@@ -9,59 +9,175 @@
   "sources": [],
   "chunks": [
     {
-      "text": "業務要件は、業務として実現したいことです",
+      "text": "業務要件は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "業務として",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "実現したいことです",
       "duration_multiplier": 1.35
     },
     {
-      "text": "システム要件は、それを支えるシステム側の条件です",
-      "duration_multiplier": 1.1
+      "text": "システム要件は、",
+      "duration_multiplier": 1
     },
     {
-      "text": "最初に、技術ではなく業務目的を確認します",
-      "duration_multiplier": 1.1
+      "text": "それを支える",
+      "duration_multiplier": 1
     },
     {
-      "text": "例えば、申請処理時間を短縮したいとします",
-      "duration_multiplier": 1.1
+      "text": "システム側の条件です",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "これは、業務要件です",
-      "duration_multiplier": 1.1
+      "text": "最初に、",
+      "duration_multiplier": 1
     },
     {
-      "text": "オンライン受付を実装することは、システム側の手段です",
-      "duration_multiplier": 1.1
+      "text": "技術ではなく",
+      "duration_multiplier": 1
     },
     {
-      "text": "入力内容を自動確認することも、システム要件になり得ます",
-      "duration_multiplier": 1.1
+      "text": "業務目的を確認します",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "一つの業務要件に、複数のシステム要件が対応することがあります",
-      "duration_multiplier": 1.1
+      "text": "例えば、",
+      "duration_multiplier": 1
     },
     {
-      "text": "逆に、システムを作らず業務変更だけで解決できる場合もあります",
-      "duration_multiplier": 1.1
+      "text": "申請処理時間を",
+      "duration_multiplier": 1
     },
     {
-      "text": "要望を、そのまま要件にしないことが重要です",
-      "duration_multiplier": 1.1
+      "text": "短縮したいとします",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "業務目的とのつながりを確認します",
-      "duration_multiplier": 1.1
+      "text": "これは、",
+      "duration_multiplier": 1
     },
     {
-      "text": "必要性が説明できない機能は、スコープを再検討します",
-      "duration_multiplier": 1.1
+      "text": "業務要件です",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "業務要件からシステム要件へ落とす過程を追えるようにします",
-      "duration_multiplier": 1.1
+      "text": "オンライン受付を",
+      "duration_multiplier": 1
     },
     {
-      "text": "このつながりが、後の設計とテストの基準になります",
+      "text": "実装することは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "システム側の手段です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "入力内容を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "自動確認することも、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "システム要件に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "なり得ます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一つの業務要件に、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "複数のシステム要件が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "対応することがあります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "逆に、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "システムを作らず",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "業務変更だけで",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "解決できる場合もあります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "要望を、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "そのまま要件に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "しないことが重要です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "業務目的との",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "つながりを確認します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "必要性が説明できない",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "機能は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "スコープを再検討します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "業務要件から",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "システム要件へ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "落とす過程を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "追えるようにします",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "このつながりが、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "後の設計とテストの",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "基準になります",
       "duration_multiplier": 1.35
     }
   ]
