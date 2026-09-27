@@ -31,6 +31,102 @@
       "path": "./lessons/information-security/information-security-overview.json"
     },
     {
+      "id": "security-fundamentals",
+      "title": "情報セキュリティの基本",
+      "topic": "情報セキュリティ",
+      "path": "./lessons/security/security-fundamentals.json"
+    },
+    {
+      "id": "security-threats-attacks",
+      "title": "脅威と攻撃",
+      "topic": "情報セキュリティ",
+      "path": "./lessons/security/security-threats-attacks.json"
+    },
+    {
+      "id": "security-authentication-access",
+      "title": "認証とアクセス制御",
+      "topic": "情報セキュリティ",
+      "path": "./lessons/security/security-authentication-access.json"
+    },
+    {
+      "id": "security-cryptography-pki",
+      "title": "暗号・ハッシュ・PKI",
+      "topic": "情報セキュリティ",
+      "path": "./lessons/security/security-cryptography-pki.json"
+    },
+    {
+      "id": "security-network-basics",
+      "title": "ネットワークとインターネットの基礎",
+      "topic": "情報セキュリティ",
+      "path": "./lessons/security/security-network-basics.json"
+    },
+    {
+      "id": "security-network-defense",
+      "title": "ネットワーク・メール・Webの防御",
+      "topic": "情報セキュリティ",
+      "path": "./lessons/security/security-network-defense.json"
+    },
+    {
+      "id": "security-application-database-ai",
+      "title": "アプリ・DB・生成AIのセキュリティ",
+      "topic": "情報セキュリティ",
+      "path": "./lessons/security/security-application-database-ai.json"
+    },
+    {
+      "id": "security-endpoint-cloud-physical",
+      "title": "端末・クラウド・IoT・物理対策",
+      "topic": "情報セキュリティ",
+      "path": "./lessons/security/security-endpoint-cloud-physical.json"
+    },
+    {
+      "id": "security-vulnerability-management",
+      "title": "脆弱性管理とセキュリティ評価",
+      "topic": "情報セキュリティ",
+      "path": "./lessons/security/security-vulnerability-management.json"
+    },
+    {
+      "id": "security-risk-management",
+      "title": "情報資産とリスクマネジメント",
+      "topic": "情報セキュリティ",
+      "path": "./lessons/security/security-risk-management.json"
+    },
+    {
+      "id": "security-isms-governance",
+      "title": "ポリシー・ISMS・ガバナンス",
+      "topic": "情報セキュリティ",
+      "path": "./lessons/security/security-isms-governance.json"
+    },
+    {
+      "id": "security-incident-forensics",
+      "title": "監視・インシデント対応・フォレンジックス",
+      "topic": "情報セキュリティ",
+      "path": "./lessons/security/security-incident-forensics.json"
+    },
+    {
+      "id": "security-business-continuity",
+      "title": "事業継続とレジリエンス",
+      "topic": "情報セキュリティ",
+      "path": "./lessons/security/security-business-continuity.json"
+    },
+    {
+      "id": "security-law-privacy",
+      "title": "法律・プライバシー・コンプライアンス",
+      "topic": "情報セキュリティ",
+      "path": "./lessons/security/security-law-privacy.json"
+    },
+    {
+      "id": "security-audit-control",
+      "title": "監査と内部統制",
+      "topic": "情報セキュリティ",
+      "path": "./lessons/security/security-audit-control.json"
+    },
+    {
+      "id": "security-threat-landscape-2026",
+      "title": "2026年の脅威動向",
+      "topic": "情報セキュリティ",
+      "path": "./lessons/security/security-threat-landscape-2026.json"
+    },
+    {
       "id": "cloud-overview",
       "title": "クラウドコンピューティングの入口",
       "topic": "クラウド",
