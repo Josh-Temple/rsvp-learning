@@ -1,0 +1,1841 @@
+{
+  "schema_version": 1,
+  "id": "security-law-privacy",
+  "title": "法律・プライバシー・コンプライアンス",
+  "topic": "情報セキュリティ",
+  "summary": "個人情報保護、PIA、不正アクセス、電子署名、営業秘密、契約とコンプライアンスの基本を学びます。",
+  "created_at": "2026-09-27",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "個人情報保護委員会, 個人情報保護法等",
+      "url": "https://www.ppc.go.jp/personalinfo/"
+    },
+    {
+      "title": "個人情報保護委員会, 個人情報の保護に関する法律についてのガイドライン（通則編）",
+      "url": "https://www.ppc.go.jp/personalinfo/legal/guidelines_tsusoku/"
+    },
+    {
+      "title": "個人情報保護委員会, 仮名加工情報・匿名加工情報編",
+      "url": "https://www.ppc.go.jp/personalinfo/legal/guidelines_anonymous/"
+    },
+    {
+      "title": "個人情報保護委員会, データガバナンス・PIA",
+      "url": "https://www.ppc.go.jp/personalinfo/independent_effort/"
+    },
+    {
+      "title": "個人情報保護委員会, 特定個人情報保護評価",
+      "url": "https://www.ppc.go.jp/legal/assessment/"
+    },
+    {
+      "title": "e-Gov法令検索, 不正アクセス行為の禁止等に関する法律",
+      "url": "https://laws.e-gov.go.jp/law/411AC0000000128"
+    },
+    {
+      "title": "e-Gov法令検索, サイバーセキュリティ基本法",
+      "url": "https://laws.e-gov.go.jp/law/426AC1000000104"
+    },
+    {
+      "title": "e-Gov法令検索, 電子署名及び認証業務に関する法律",
+      "url": "https://laws.e-gov.go.jp/law/412AC0000000102"
+    },
+    {
+      "title": "経済産業省, 営業秘密",
+      "url": "https://www.meti.go.jp/policy/economy/chizai/chiteki/trade-secret.html"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "法律・プライバシー・コンプライアンス",
+      "duration_multiplier": 1.5
+    },
+    {
+      "text": "セキュリティと法律",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "情報セキュリティでは",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "技術的に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "安全であることだけでなく",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "法令や契約上の義務も",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "考える必要があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "何を保護するか",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "何をしてよいか",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "事故が起きたときに",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "何を報告するか",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "情報を誰へ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "提供できるか",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "こうした条件は",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "法律や組織の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "立場によって",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "変わります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "この章は法律",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "相談の代替ではなく",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "情報セキュリティを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "理解するための",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "基礎知識を扱います",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "セキュリティと",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "プライバシー",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "セキュリティと",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "プライバシーは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "重なりますが",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "同じ概念ではありません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "セキュリティは",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "情報やシステムの",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "機密性",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "完全性",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "可用性などを守ります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "プライバシーでは",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "個人に関する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "情報がどのような",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "目的で収集され",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "利用され",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "共有されるかという",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "問題も扱います",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "強固に暗号",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "化して保管していても",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "本人が想定していない",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "目的で個人データを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "利用すれば",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "プライバシー",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "上の問題が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "生じる可能性があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "個人情報保護法",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "日本には個人情報の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "保護に関する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "法律があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "個人情報保護委員会は",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "法律に基づく",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ガイドラインを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "公開しています",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "個人情報",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "個人データ",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "保有個人データ",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "要配慮個人情報",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "個人関連情報",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "仮名加工情報",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "匿名加工情報",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "これらは似ていますが",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "法律上の意味と義務が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "異なります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "実務では",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "まず扱っている",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "情報がどの",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "区分に該当するかを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "確認する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "必要があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "利用目的",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "個人情報を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "取り扱うときは",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "何のために",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "利用するかが重要です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "必要以上に広い目的を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "曖昧に",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "設定すればよいわけではありません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "収集した情報を当初の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "目的と異なる",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "用途へ使う場合には",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "法律上の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "条件を確認する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "必要があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "セキュリティ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "対策だけでなく",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "データの",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ライフサイクル",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "全体を管理することが",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "重要です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "安全管理措置",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "個人データを扱う事業",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "者には",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "安全管理措置が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "求められます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "組織的な対策",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "人的な対策",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "物理的な対策",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "技術的な対策",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "委託先の監督",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "実際の対策は",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "扱う情報や",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "事業の状況などに",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "応じて考えます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "「暗号化しているから",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "法律上の対応は終わり",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "」ではありません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "第三者提供",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "個人データを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "別の組織へ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "渡す場合には",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "第三者提供に関する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ルールを確認する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "必要があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "本人同意が必要になる",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "場合があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "提供・受領に関する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "確認や記録が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "必要になる",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "場合もあります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "委託",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "共同利用など",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "法律上の扱いが異なる",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "形もあります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "外部サービスへ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "データを送るときは",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "単に通信が暗号",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "化されているかだけでなく",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "法的な位置付けも",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "確認します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "漏えい等への対応",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "個人データの",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "漏えいなどが発生した",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "場合",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "一定の条件では",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "個人情報保護委員",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "会への報告や本人への",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "通知が必要になります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "すべての事故が同じ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "扱いになるわけではありません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "情報の種類",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "件数",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "被害のおそれなどによって",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "扱いが異なります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "事故対応計画では",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "技術的な",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "封じ込めだけでなく",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "法務・広報・",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "関係機関への",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "報告も考える",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "必要があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "仮名加工情報",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "仮名加工情報は",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "他の情報と照合しない",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "限り特定の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "個人を識別できないよう",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "個人情報を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "加工したものとして",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "法律上",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "定義されています",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "匿名加工情報とは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "異なる制度です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "仮名加工したから",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "自由に",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "利用できるわけではありません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "適用される",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "義務と制限を確認する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "必要があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "匿名加工情報",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "匿名加工情報は",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "特定の個人を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "識別できず",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "元の個人",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "情報を復元できないよう",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "加工した情報です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "法律上",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "加工方法や",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "取扱いについて",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ルールがあります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "単に氏名を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "削除しただけで",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "匿名加工",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "情報になるとは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "限りません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "再識別の可能性を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "考える必要があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "PIA",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "PIAは",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "Privacy Impact",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "Assessment",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "の略です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "個人情報などを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "扱う新しい",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "事業や変更について",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "プライバシーへの",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "影響を事前に評価する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "方法です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "個人情報保護委員会も",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "プライバシー・バイ・",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "デザインの実践として",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "PIAの",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "利用を推進しています",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "どのデータを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "集めるのか",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "なぜ必要なのか",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "誰が利用するのか",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "どこへ流れるのか",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "どのような",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "権利利益への",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "影響があるのか",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "こうした点を設計",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "段階で確認します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "プライバシー・バイ・",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "デザイン",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "問題が起きてから",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "対策するのではなく",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "サービスやシステムを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "設計するときから",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "プライバシーを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "組み込みます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "必要なデータだけを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "収集する",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "保存期間を決める",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "アクセス権を限定する",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "利用者へ分かりやすく",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "説明する",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "削除や訂正の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "方法を考える",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "こうした",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "設計が重要です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "不正アクセス禁止法",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "不正アクセス",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "行為の禁止等に関する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "法律は",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "アクセス制御された",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "コンピュータへの不正",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "アクセス行為などを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "禁止しています",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "他人の識別",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "符号を不正に取得する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "行為や",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "不正アクセスを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "助長する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "行為などについても",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "規定があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "「セキュリティ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "診断のつもりだった",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "」という理由だけで",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "他者のシステムへ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "無断で侵入を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "試みてよいわけではありません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "ペネトレーション",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "テストでは",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "対象",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "方法",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "期間などについて",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "明確な権限と",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "許可が必要です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "サイバーセキュリティ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "基本法",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "サイバーセキュリティ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "基本法は",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "日本の",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "サイバーセキュリティ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "政策の基本",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "的な枠組みを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "定めています",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "基本理念",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "国や地方",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "公共団体などの責務",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "サイバーセキュリティ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "戦略などを扱います",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "個別のシステム",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "設定を定める",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "法律ではありません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "国全体として",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "サイバーセキュリティ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "施策を推進するための",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "基本的な枠組みです",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "マイナンバーと",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "特定個人情報",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "マイナンバーを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "含む特定個人情報には",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "個人情報一般とは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "別に特別な",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ルールがあります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "地方公共団体などでは",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "特定個人情報保護",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "評価が必要になる",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "場合があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "これは",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "プライバシーなどの",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "権利利益への",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "影響を予測し",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "漏えいなどのリスクを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "分析し",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "対策を講じる",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "仕組みです",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "一般のPIAと",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "似た考え方がありますが",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "法制度上の位置付けは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "区別して理解します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "電子署名",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "日本には電子署名及び",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "認証業務に関する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "法律があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "一方",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "技術用語としての",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "デジタル署名と",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "法律上の「電子署名",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "」は完全に同義とは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "限りません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "技術と法律の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "用語を混同しないことが",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "重要です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "技術的には",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "デジタル署名は真正",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "性や完全性の確認に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "利用されます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "法的効力について",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "判断するときは",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "法律上の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "要件を確認します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "契約と委託先",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "法律だけでなく",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "契約も重要です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "秘密保持",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "インシデント報告",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "再委託",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "データの保存場所",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "契約終了時の削除",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "監査権",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "こうした条件が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "セキュリティに",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "影響します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "クラウドや",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "業務委託では",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "自組織と相手方の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "責任分担を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "明確にします",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "コンプライアンスは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "最低ラインである",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "法令へ違反しないことは",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "重要です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "しかし",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "法令を守ればすべての",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "セキュリティ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "リスクがなくなるわけではありません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "法律は最低限の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "義務を定める",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "場合があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "組織の情報資産や利用",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "者への影響によっては",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "それ以上の対策が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "必要です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "法令遵守とリスク",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "管理を分けて考えます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "法律は更新される",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "法律",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "政令",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "規則",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "ガイドラインは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "改正されます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "この章の具体的な法",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "制度は",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "固定知識として",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "扱いません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "実務で判断するときは",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "e-Gov法令検索",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "個人情報保護委員",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "会などの最新資料を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "確認します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "営業秘密",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "組織が持つ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "重要情報のすべてが",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "法律上の営業",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "秘密になるわけではありません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "経済産業省は",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "不正競争防止法上の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "営業秘密について",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "有用性",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "秘密管理性",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "非公知性の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "三つの要件を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "示しています",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "有用性は",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "事業活動に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "役立つ情報であることです",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "秘密管理性は",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "組織がその",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "情報を秘密として",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "管理していることです",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "非公知性は",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "公然と知られていないことです",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "技術情報",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "顧客情報",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "製造方法",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "営業上のノウハウ",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "内容によって",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "営業秘密になり得ます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "秘密にしたいと",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "思うだけでは足りない",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "営業秘密として",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "保護を受けるには",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "実際に秘密として",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "管理していることが",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "重要です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "アクセス権を限定する",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "秘密であることを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "認識できるようにする",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "持ち出しや",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "共有を管理する",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "退職や委託終了時の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "権限を見直す",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "こうした情報",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "セキュリティ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "上の管理は",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "法的",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "保護ともつながります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "ただし",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "どの管理が十分かは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "具体的状況によって",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "判断されます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "実務では最新の営業",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "秘密管理指針を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "確認します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "法律とセキュリティ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "管理はつながる",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "アクセス制御",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "ログ",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "秘密保持契約",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "端末管理などは",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "単なる技術",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "対策ではありません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "個人情報",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "営業秘密",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "契約上の秘密情報",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "同じデータでも",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "法的な位置付けによって",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "必要な管理や事故後の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "対応が変わる",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "場合があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "まず情報の性質を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "把握し",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "その上で技術・運用・",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "法務を組み合わせます",
+      "duration_multiplier": 1.4
+    }
+  ]
+}
