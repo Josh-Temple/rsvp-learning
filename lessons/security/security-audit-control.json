@@ -1,0 +1,1081 @@
+{
+  "schema_version": 1,
+  "id": "security-audit-control",
+  "title": "監査と内部統制",
+  "topic": "情報セキュリティ",
+  "summary": "監査基準、独立性、監査証拠、内部統制、職務分掌、変更管理、フォローアップを学びます。",
+  "created_at": "2026-09-27",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "経済産業省, サイバーセキュリティ政策・システム監査制度",
+      "url": "https://www.meti.go.jp/policy/netsecurity/vendor.html"
+    },
+    {
+      "title": "経済産業省, システム監査基準・システム管理基準",
+      "url": "https://www.meti.go.jp/policy/netsecurity/sys-kansa/"
+    },
+    {
+      "title": "ISO/IEC 27001:2022",
+      "url": "https://www.iso.org/standard/27001"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "監査と内部統制",
+      "duration_multiplier": 1.5
+    },
+    {
+      "text": "ルールがあることと",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "守られていることは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "違う",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "情報セキュリティ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "方針を作っても",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "実際に運用されているとは",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "限りません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "設定したはずの",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "アクセス",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "制御が外れている",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "退職者のアカウントが",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "残っている",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "バックアップはあるが",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "復元したことがない",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "ログは取っているが",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "誰も確認していない",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "監査では",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "文書だけでなく",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "実際の運用を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "確認します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "監査の目的",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "監査では",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "対象となる仕組みや",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "活動を一定の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "基準に照らして",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "評価します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "組織内部の改善に使う",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "場合があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "第三者への",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "説明や保証に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "使う場合もあります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "目的によって",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "監査の対象",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "基準",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "方法",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "報告先が異なります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "監査基準",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "監査するには",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "何をもって",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "適切と判断するかという",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "基準が必要です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "法令",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "契約",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "社内規程",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "ISO規格",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "業界基準",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "システム要件",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "こうしたものが",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "監査基準になり得ます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "基準が曖昧だと",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "監査人の感覚だけで",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "評価することになります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "独立性と客観性",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "自分が設計・運用した",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "仕組みを自分だけで",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "評価すると",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "見落としや",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "利害の衝突が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "起きる可能性があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "監査では",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "評価する者が対象から",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "十分に独立し",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "客観的に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "判断できることが",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "重要です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "完全に組織",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "外でなければ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "監査できないという",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "意味ではありません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "内部監査でも",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "監査対象の実務から",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "適切に分離します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "監査証拠",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "監査では",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "判断の根拠を残します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "設定画面",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "ログ",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "申請記録",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "承認記録",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "契約書",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "インタビュー",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "観察",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "テスト結果",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "複数の証拠を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "組み合わせて確認する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "場合があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "サンプリング",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "すべての",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "記録を一件ずつ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "確認できない",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "場合があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "そこで",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "一定の方法で",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "対象を抽出して",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "確認することがあります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "サンプルで",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "問題が見つからなかったことと",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "全件に問題がないことは",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "同じではありません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "抽出方法と",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "限界を理解します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "設計と運用",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "統制が適切に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "設計されているか",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "実際に運用されているか",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "この二つは分けて",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "考えます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "例えば",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "退職者アカウントを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "当日停止する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "手順が文書",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "化されていても",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "実際に停止されていなければ",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "機能していません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "逆に",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "現場の努力でたまたま",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "運用できていても",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "仕組みとして",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "再現できなければ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "持続しません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "内部統制",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "内部統制は",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "組織の目的を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "達成するために",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "業務を適切に管理する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "仕組みです",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "承認",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "職務分掌",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "アクセス制御",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "照合",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "記録",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "レビュー",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "こうした",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "活動が含まれます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "情報セキュリティ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "対策の多くも",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "内部統制の一部として",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "機能します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "職務分掌",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "一人の担当者に",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "申請",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "承認",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "実施",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "確認のすべてを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "集中させると",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "不正や誤りが",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "発見されにくくなります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "重要な業務では",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "役割を分けることがあります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "ただし",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "小規模組織では",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "完全な分離が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "難しい場合があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "その場合は",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "事後レビューなど",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "代替的な",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "統制を考えます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "変更管理",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "システムの変更は",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "新しい脆弱性や障害を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "生む可能性があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "変更内容を記録します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "必要な承認を得ます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "テストします",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "本番へ反映します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "問題があれば",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "戻せるようにします",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "緊急変更では",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "通常手順を簡略化する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "場合がありますが",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "後から確認できるよう",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "記録を残します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "アクセス権レビュー",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "利用者の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "権限は時間とともに",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "変化します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "異動",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "退職",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "兼務",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "プロジェクト終了",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "定期的に権限を確認し",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "不要な権限を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "削除します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "特権アカウントは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "特に厳格に管理します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "例外管理",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "ルールを適用できない",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "場合",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "例外を正式に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "管理します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "理由",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "リスク",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "代替策",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "承認者",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "期限",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "見直し日",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "例外が無期限に残ると",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "通常運用として",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "固定化される",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "可能性があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "不備の重要度",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "監査で見つかった",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "問題は",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "すべて同じ重要",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "度ではありません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "影響",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "発生可能性",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "対象資産",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "既存の代替統制",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "改善の緊急性",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "こうした",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "条件を考えます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "指摘件数が多いことと",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "リスクが高いことは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "同じではありません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "改善とフォローアップ",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "監査報告を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "出して終わりではありません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "誰が改善するか",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "期限はいつか",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "どの対応を行うか",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "完了したか",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "リスクが下がったか",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "必要に応じて",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "フォローアップします",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "監査にも限界がある",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "監査は",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "将来の事故が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "起きないことを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "保証するものではありません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "サンプリング",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "確認時点",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "証拠の範囲",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "監査人の判断",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "こうした",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "制約があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "「監査済みだから安全",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "」と",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "単純化しないことが",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "重要です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "日本のシステム",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "監査制度",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "経済産業省は",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "システム監査基準と",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "システム管理基準に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "基づくシステム",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "監査制度を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "運用しています",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "また",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "情報セキュリティ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "監査基準と情報",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "セキュリティ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "管理基準に基づく情報",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "セキュリティ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "監査制度もあります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "教材では",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "制度名称の暗記よりも",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "独立した評価",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "基準",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "証拠",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "改善という監査の基本",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "構造を理解することを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "優先します",
+      "duration_multiplier": 1.4
+    }
+  ]
+}
