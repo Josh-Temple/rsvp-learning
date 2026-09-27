@@ -686,11 +686,11 @@
       "duration_multiplier": 1
     },
     {
-      "text": "権限変更時に無効",
+      "text": "権限変更時に無効化で",
       "duration_multiplier": 1
     },
     {
-      "text": "化できるようにします",
+      "text": "きるようにします",
       "duration_multiplier": 1.4
     },
     {
@@ -766,11 +766,11 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "こうした実装も安全",
+      "text": "こうした実装も安全性に",
       "duration_multiplier": 1
     },
     {
-      "text": "性に影響します",
+      "text": "影響します",
       "duration_multiplier": 1.4
     },
     {
@@ -1230,11 +1230,7 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "こうした",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "ソフトウェアサプライ",
+      "text": "こうしたソフトウェアサプライ",
       "duration_multiplier": 1
     },
     {
@@ -1550,11 +1546,11 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "脆弱",
+      "text": "脆弱性が",
       "duration_multiplier": 0.9
     },
     {
-      "text": "性がなくなるわけではありません",
+      "text": "なくなるわけではありません",
       "duration_multiplier": 1.4
     },
     {
@@ -2378,11 +2374,7 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "こうした",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "サプライチェーン",
+      "text": "こうしたサプライチェーン",
       "duration_multiplier": 1
     },
     {
@@ -2470,11 +2462,7 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "教材では基本原則を",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "学び",
+      "text": "教材では基本原則を学び",
       "duration_multiplier": 1.1
     },
     {
