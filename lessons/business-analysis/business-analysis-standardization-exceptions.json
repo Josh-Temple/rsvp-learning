@@ -9,59 +9,155 @@
   "sources": [],
   "chunks": [
     {
-      "text": "標準化は、業務のばらつきを減らします",
+      "text": "標準化は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "業務のばらつきを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "減らします",
       "duration_multiplier": 1.35
     },
     {
-      "text": "同じ条件なら、同じ手順で処理できる状態を目指します",
-      "duration_multiplier": 1.1
+      "text": "同じ条件なら、",
+      "duration_multiplier": 1
     },
     {
-      "text": "標準化すると、教育しやすくなります",
-      "duration_multiplier": 1.1
+      "text": "同じ手順で処理できる",
+      "duration_multiplier": 1
     },
     {
-      "text": "品質の安定にもつながります",
-      "duration_multiplier": 1.1
+      "text": "状態を目指します",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "自動化もしやすくなります",
-      "duration_multiplier": 1.1
+      "text": "標準化すると、",
+      "duration_multiplier": 1
     },
     {
-      "text": "ただし、現実の業務には例外があります",
-      "duration_multiplier": 1.1
+      "text": "教育しやすくなります",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "例外を無視して標準化すると、現場で回避策が生まれます",
-      "duration_multiplier": 1.1
+      "text": "品質の安定にも",
+      "duration_multiplier": 1
     },
     {
-      "text": "まず、例外の種類と頻度を確認します",
-      "duration_multiplier": 1.1
+      "text": "つながります",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "本当に必要な例外かも検討します",
-      "duration_multiplier": 1.1
+      "text": "自動化も",
+      "duration_multiplier": 1
     },
     {
-      "text": "例外には、判断者と処理方法を決めます",
-      "duration_multiplier": 1.1
+      "text": "しやすくなります",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "記録を残せるようにします",
-      "duration_multiplier": 1.1
+      "text": "ただし、",
+      "duration_multiplier": 1
     },
     {
-      "text": "頻発する例外は、標準手順側の問題かもしれません",
-      "duration_multiplier": 1.1
+      "text": "現実の業務には",
+      "duration_multiplier": 1
     },
     {
-      "text": "標準と例外の境界を明確にします",
-      "duration_multiplier": 1.1
+      "text": "例外があります",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "良い標準化は、現場の判断をゼロにすることではありません",
+      "text": "例外を無視して",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "標準化すると、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "現場で回避策が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "生まれます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "まず、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "例外の種類と",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "頻度を確認します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "本当に必要な",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "例外かも検討します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "例外には、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "判断者と処理方法を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "決めます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "記録を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "残せるようにします",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "頻発する例外は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "標準手順側の問題かも",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "しれません",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "標準と例外の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "境界を明確にします",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "良い標準化は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "現場の判断を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ゼロにすることでは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ありません",
       "duration_multiplier": 1.35
     }
   ]
