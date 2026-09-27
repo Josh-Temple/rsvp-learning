@@ -266,11 +266,11 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "フィッシング",
-      "duration_multiplier": 1
+      "text": "フィッシング耐性",
+      "duration_multiplier": 1.1
     },
     {
-      "text": "耐性のある認証方式を",
+      "text": "のある認証方式を",
       "duration_multiplier": 1
     },
     {
