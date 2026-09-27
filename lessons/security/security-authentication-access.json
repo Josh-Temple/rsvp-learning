@@ -214,11 +214,7 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "パスワード",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "マネージャーを",
+      "text": "パスワードマネージャーを",
       "duration_multiplier": 1
     },
     {
@@ -506,11 +502,11 @@
       "duration_multiplier": 1
     },
     {
-      "text": "フィッシング",
-      "duration_multiplier": 1
+      "text": "フィッシング耐性",
+      "duration_multiplier": 1.1
     },
     {
-      "text": "耐性のある認証として",
+      "text": "のある認証として",
       "duration_multiplier": 1
     },
     {
@@ -558,11 +554,11 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "これがアクセス",
+      "text": "これが",
       "duration_multiplier": 1
     },
     {
-      "text": "制御です",
+      "text": "アクセス制御です",
       "duration_multiplier": 1.4
     },
     {
@@ -1138,11 +1134,11 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "認証要素やアクセス",
+      "text": "認証要素や",
       "duration_multiplier": 1
     },
     {
-      "text": "制御と組み合わせます",
+      "text": "アクセス制御と組み合わせます",
       "duration_multiplier": 1.4
     },
     {
