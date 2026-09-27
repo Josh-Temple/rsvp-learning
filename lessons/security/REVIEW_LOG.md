@@ -1,0 +1,73 @@
+# 情報セキュリティ教材 レビューログ
+
+このファイルは、教材本文とは分離して、精度レビューで確認した内容と未解決事項を記録します。
+
+教材本文の内容上の正本は各Markdownファイルです。
+
+## 2026-09-27 — 第1回精度レビュー
+
+対象: Draft v0.1 → Draft v0.2
+
+### 確認した主要資料
+
+- IPA「情報セキュリティ10大脅威 2026」
+  - https://www.ipa.go.jp/security/10threats/10threats2026.html
+- IPA「情報セキュリティ10大脅威2026」解説書［組織編］
+  - https://www.ipa.go.jp/security/10threats/omgdg50000008fi8-att/kaisetsu_2026_soshiki.pdf
+- NIST Cybersecurity Framework 2.0
+  - https://www.nist.gov/cyberframework
+- NIST SP 800-63B-4
+  - https://csrc.nist.gov/pubs/sp/800/63/b/4/final
+- NIST SP 800-207 Zero Trust Architecture
+  - https://csrc.nist.gov/pubs/sp/800/207/final
+- NIST SP 800-61 Rev. 3
+  - https://csrc.nist.gov/pubs/sp/800/61/r3/final
+- NIST FIPS 197
+  - https://csrc.nist.gov/pubs/fips/197/final
+- NIST CSRC Glossary, Digital Signature
+  - https://csrc.nist.gov/glossary/term/digital_signature
+- CISA Implementing Phishing-Resistant MFA
+  - https://www.cisa.gov/sites/default/files/2023-01/fact-sheet-implementing-phishing-resistant-mfa-508c.pdf
+- OWASP Top 10:2025
+  - https://top10.owasp.org/2025/
+
+### 修正した点
+
+1. CIAは情報セキュリティの代表的な三要素であり、すべてではないことを明記した。
+2. リスクの説明へ発生可能性と影響の両方を入れた。
+3. NIST CSF 2.0の六機能は時系列の六段階ではなく、同時並行・継続的に扱う機能であることを明記した。
+4. NIST SP 800-63B-4の現行パスワード要件を、適用範囲を限定したうえで教材へ反映した。
+5. MFAは方式によってフィッシング耐性が異なることを明記した。
+6. SQLインジェクションの対策例が他のインジェクション全般にそのまま適用されるように読める表現を修正した。
+7. DDoSを単に「多数の機器」と定義せず、分散した送信元からの攻撃として説明した。
+8. 暗号学的ハッシュとデジタル署名の役割を区別した。
+9. デジタル署名を単純に「データの作成者確認」とせず、出所の真正性、完全性、公開鍵の信頼まで説明した。
+10. ゼロトラストを、ネットワーク位置や所有関係だけに基づく暗黙の信頼を与えない原則として説明した。
+11. NIST SP 800-61 Rev. 3に合わせ、インシデント対応を単純な一本道の手順として扱わないよう補足した。
+12. IPA 2026の組織向け順位と、順位が危険度や各組織の対策優先順位そのものではない点を明確にした。
+13. IPA 2026のAI関連記述を、情報漏えい、生成結果の未検証、攻撃の容易化・巧妙化、AIシステムの脆弱性という観点に整理した。
+14. 個人向け10大脅威は順位ではなく五十音順であることを明記した。
+
+### 第2回レビュー候補
+
+以下は重要そうだが、今回のレビューでは追加を確定していない。
+
+- セキュリティとプライバシーの違い
+- データ分類と取扱区分
+- ソーシャルエンジニアリングをフィッシング以外まで広げるか
+- パスキーとフィッシング耐性認証を独立した節にするか
+- クラウドの責任分界
+- エンドポイント防御
+- 脆弱性管理の優先順位付け
+- セキュア開発ライフサイクル
+- メール、DNSなど基盤サービスのセキュリティ
+- バックアップでRPO・RTOまで扱うか
+- AIセキュリティを年次動向だけでなく独立章へ分離するか
+
+これらは、教材の射程と総量を見て次回以降に判断する。
+
+### RSVP化について
+
+Draft v0.2の段階では、まだRSVP用JSONへ変換しない。
+
+少なくとももう一度、章構成と重要概念の抜けをレビューしてからチャンク化する。
