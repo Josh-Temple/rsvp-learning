@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "id": "cicd-deployment-environments-rollback",
+  "title": "CD・環境・Deployment・Rollback",
+  "topic": "開発運用",
+  "summary": "変更を安全に環境へ配布し、問題時に戻すためのCDとデプロイ運用を学びます。",
+  "created_at": "2026-09-27",
+  "base_duration_ms": 680,
+  "sources": [],
+  "chunks": [
+    {
+      "text": "CDは、変更を継続的に配布する考え方です",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "開発環境、検証環境、本番環境を分けることがあります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "環境ごとに設定値が異なる場合があります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "秘密情報は、コードへ直接保存しないようにします",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "Deploymentは、変更を実行環境へ反映する作業です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "自動デプロイにすると、手作業のばらつきを減らせます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "ただし、本番反映には承認を必要とする運用もあります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "リリース前に、必要なテスト結果を確認します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "リリース後には、正常に動いているか確認します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "問題があれば、以前の状態へ戻すことがあります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "これがRollbackです",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "データベース変更は、単純に戻せない場合があります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "そのため、変更前に復旧手順を考えます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "CDは、速さより安全に繰り返せることが重要です",
+      "duration_multiplier": 1.35
+    }
+  ]
+}

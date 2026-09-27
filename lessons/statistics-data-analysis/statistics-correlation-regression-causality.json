@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "id": "statistics-correlation-regression-causality",
+  "title": "相関・回帰・因果関係",
+  "topic": "データ分析",
+  "summary": "変数間の関連を表す相関と回帰、因果関係との違いを学びます。",
+  "created_at": "2026-09-27",
+  "base_duration_ms": 680,
+  "sources": [],
+  "chunks": [
+    {
+      "text": "相関は、二つの変数が一緒に変化する程度を表します",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "相関があっても、因果関係があるとは限りません",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "第三の要因が、両方へ影響している場合があります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "逆方向の因果がある場合もあります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "回帰は、変数同士の関係をモデル化する方法です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "説明変数から、目的変数の変化を表します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "回帰係数は、他の条件を一定とした関係として解釈する場合があります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "ただし、モデルの前提が崩れると解釈も変わります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "観測データだけで因果を断定するのは難しい場合があります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "無作為化比較試験は、因果推論で強い方法の一つです",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "実務では、無作為化できないこともあります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "その場合は、設計と仮定を明示して分析します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "予測が当たることと、原因を説明できることは別です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "分析目的が予測か因果理解かを最初に分けます",
+      "duration_multiplier": 1.35
+    }
+  ]
+}

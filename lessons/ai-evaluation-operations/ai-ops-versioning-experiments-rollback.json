@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "id": "ai-ops-versioning-experiments-rollback",
+  "title": "バージョン管理・比較実験・Rollback",
+  "topic": "AI運用",
+  "summary": "プロンプトやモデルなどの変更を比較し、問題時に戻せる運用の基本を学びます。",
+  "created_at": "2026-09-27",
+  "base_duration_ms": 680,
+  "sources": [],
+  "chunks": [
+    {
+      "text": "AIシステムでは、モデル以外にも多くの要素が変わります",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "プロンプト、検索設定、ツール、評価基準も変更対象です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "どの変更で結果が変わったか追えるようにします",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "設定やコードに、バージョンを持たせます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "変更前と変更後を、同じ評価条件で比較します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "一度に多くを変えると、原因を特定しにくくなります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "可能なら、変更点を小さく分けます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "A/Bテストなどで、本番影響を比較する方法もあります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "ただし、高リスク業務では実験方法に制約があります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "問題が起きたときに、以前の状態へ戻せるようにします",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "これが、Rollbackです",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "Rollback対象には、コードだけでなく設定も含まれます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "変更履歴と評価結果を対応づけます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "改善速度と復旧可能性を両立させることが重要です",
+      "duration_multiplier": 1.35
+    }
+  ]
+}

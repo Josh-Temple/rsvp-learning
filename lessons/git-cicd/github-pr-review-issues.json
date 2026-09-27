@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "id": "github-pr-review-issues",
+  "title": "Pull Request・Review・Issue",
+  "topic": "開発運用",
+  "summary": "GitHubで変更を提案し、レビューし、課題を追跡する基本を学びます。",
+  "created_at": "2026-09-27",
+  "base_duration_ms": 680,
+  "sources": [],
+  "chunks": [
+    {
+      "text": "Pull Requestは、変更を統合するための提案です",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "変更内容を、差分として確認できます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "目的や背景を説明する文章も重要です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "Reviewでは、コードや設計の問題を確認します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "動作だけでなく、保守性や安全性も見ます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "コメントは、具体的な変更箇所へ付けられます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "承認条件を、チームで決めることがあります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "Issueは、課題や要望を記録するために使えます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "一つのIssueからPull Requestへつなげる運用もあります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "何を完了条件とするか明確にします",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "大きな変更は、小さなPull Requestへ分けると確認しやすくなります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "自動テストの結果も、Review材料になります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "Review履歴は、意思決定の記録にもなります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "GitHubは、コードだけでなく変更管理の場として使えます",
+      "duration_multiplier": 1.35
+    }
+  ]
+}

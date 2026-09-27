@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "id": "cicd-ci-tests-automation",
+  "title": "CIと自動テスト",
+  "topic": "開発運用",
+  "summary": "変更ごとにテストや検査を自動実行するCIの役割を学びます。",
+  "created_at": "2026-09-27",
+  "base_duration_ms": 680,
+  "sources": [],
+  "chunks": [
+    {
+      "text": "CIは、Continuous Integrationの略です",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "変更を頻繁に統合し、問題を早く見つける考え方です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "コードをpushしたときに、自動処理を実行できます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "自動テストは、代表的なCI処理です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "Lintや型検査を実行することもあります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "Buildが成功するか確認できます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "Pull RequestごとにCIを動かす運用があります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "失敗した変更を、mainへ入れないための条件にできます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "自動化すると、同じ検査を毎回同じ条件で行えます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "一方で、自動テスト自体にも不具合はあり得ます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "不安定なテストは、判断を難しくします",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "実行時間が長すぎると、開発速度へ影響します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "重要な検査から自動化します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "CIは、問題を早い段階で発見する仕組みです",
+      "duration_multiplier": 1.35
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "id": "statistics-hypothesis-testing-effect-size",
+  "title": "仮説検定・p値・効果量",
+  "topic": "データ分析",
+  "summary": "仮説検定の考え方、p値の読み方、効果量の重要性を学びます。",
+  "created_at": "2026-09-27",
+  "base_duration_ms": 680,
+  "sources": [],
+  "chunks": [
+    {
+      "text": "仮説検定は、観測された差を統計的に検討する方法です",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "帰無仮説は、差がないなどの基準となる仮説です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "p値は、帰無仮説のもとで観測結果以上の極端さが得られる確率を表します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "p値は、仮説が正しい確率ではありません",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "p値が小さくても、差が大きいとは限りません",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "標本数が大きいと、小さな差でも検出されることがあります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "そのため、効果量も確認します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "効果量は、差や関係の大きさを表します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "信頼区間を合わせて見ると、不確実性も分かります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "有意差がないことは、差がない証明とは限りません",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "検出力が不足している場合もあります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "多数の検定を行うと、偶然の有意差が増えます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "分析前に、何を検定するか決めることが重要です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "統計的有意性と実務上の重要性を分けて考えます",
+      "duration_multiplier": 1.35
+    }
+  ]
+}

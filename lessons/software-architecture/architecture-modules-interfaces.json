@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "id": "architecture-modules-interfaces",
+  "title": "モジュールとインターフェース",
+  "topic": "ソフトウェア設計",
+  "summary": "システムを責務ごとに分け、部品同士の接点を明確にする基本を学びます。",
+  "created_at": "2026-09-27",
+  "base_duration_ms": 680,
+  "sources": [],
+  "chunks": [
+    {
+      "text": "大きなシステムは、役割ごとの部品へ分けて考えます",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "モジュールは、関連する責務をまとめた単位です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "一つのモジュールに多くの責務を詰め込みすぎないようにします",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "責務が明確だと、変更範囲を限定しやすくなります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "インターフェースは、部品同士の接点です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "何を受け取り、何を返すかを定めます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "内部実装を知らなくても利用できる形が望まれます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "インターフェースを安定させると、内部変更の影響を減らせます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "データ形式やエラー条件も、接点の一部です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "責務の境界が曖昧だと、同じ処理が複数箇所へ広がります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "共通処理を分ける場合も、責務を確認します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "細かく分けすぎると、連携が複雑になります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "分割には、適切な粒度が必要です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "設計では、責務と接点を説明できることが重要です",
+      "duration_multiplier": 1.35
+    }
+  ]
+}

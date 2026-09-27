@@ -353,6 +353,126 @@
       "title": "コスト・速度・セキュリティ",
       "topic": "生成AI",
       "path": "./lessons/generative-ai/genai-cost-latency-security.json"
+    },
+    {
+      "id": "ai-eval-goals-datasets",
+      "title": "評価目的と評価データ",
+      "topic": "AI運用",
+      "path": "./lessons/ai-evaluation-operations/ai-eval-goals-datasets.json"
+    },
+    {
+      "id": "ai-eval-metrics-error-analysis",
+      "title": "評価指標とエラー分析",
+      "topic": "AI運用",
+      "path": "./lessons/ai-evaluation-operations/ai-eval-metrics-error-analysis.json"
+    },
+    {
+      "id": "ai-eval-human-judge",
+      "title": "人間評価とLLM-as-a-judge",
+      "topic": "AI運用",
+      "path": "./lessons/ai-evaluation-operations/ai-eval-human-judge.json"
+    },
+    {
+      "id": "ai-ops-monitoring-drift-incidents",
+      "title": "監視・変化・インシデント",
+      "topic": "AI運用",
+      "path": "./lessons/ai-evaluation-operations/ai-ops-monitoring-drift-incidents.json"
+    },
+    {
+      "id": "ai-ops-versioning-experiments-rollback",
+      "title": "バージョン管理・比較実験・Rollback",
+      "topic": "AI運用",
+      "path": "./lessons/ai-evaluation-operations/ai-ops-versioning-experiments-rollback.json"
+    },
+    {
+      "id": "architecture-modules-interfaces",
+      "title": "モジュールとインターフェース",
+      "topic": "ソフトウェア設計",
+      "path": "./lessons/software-architecture/architecture-modules-interfaces.json"
+    },
+    {
+      "id": "architecture-coupling-cohesion-dependencies",
+      "title": "依存関係・結合度・凝集度",
+      "topic": "ソフトウェア設計",
+      "path": "./lessons/software-architecture/architecture-coupling-cohesion-dependencies.json"
+    },
+    {
+      "id": "architecture-state-source-of-truth",
+      "title": "状態管理とSingle Source of Truth",
+      "topic": "ソフトウェア設計",
+      "path": "./lessons/software-architecture/architecture-state-source-of-truth.json"
+    },
+    {
+      "id": "architecture-sync-async-events-queues",
+      "title": "同期・非同期・イベント・Queue",
+      "topic": "ソフトウェア設計",
+      "path": "./lessons/software-architecture/architecture-sync-async-events-queues.json"
+    },
+    {
+      "id": "architecture-idempotency-retry-failures",
+      "title": "冪等性・Retry・失敗時の挙動",
+      "topic": "ソフトウェア設計",
+      "path": "./lessons/software-architecture/architecture-idempotency-retry-failures.json"
+    },
+    {
+      "id": "git-commits-history",
+      "title": "Commitと履歴",
+      "topic": "開発運用",
+      "path": "./lessons/git-cicd/git-commits-history.json"
+    },
+    {
+      "id": "git-branches-merges",
+      "title": "BranchとMerge",
+      "topic": "開発運用",
+      "path": "./lessons/git-cicd/git-branches-merges.json"
+    },
+    {
+      "id": "github-pr-review-issues",
+      "title": "Pull Request・Review・Issue",
+      "topic": "開発運用",
+      "path": "./lessons/git-cicd/github-pr-review-issues.json"
+    },
+    {
+      "id": "cicd-ci-tests-automation",
+      "title": "CIと自動テスト",
+      "topic": "開発運用",
+      "path": "./lessons/git-cicd/cicd-ci-tests-automation.json"
+    },
+    {
+      "id": "cicd-deployment-environments-rollback",
+      "title": "CD・環境・Deployment・Rollback",
+      "topic": "開発運用",
+      "path": "./lessons/git-cicd/cicd-deployment-environments-rollback.json"
+    },
+    {
+      "id": "statistics-descriptive-distributions",
+      "title": "代表値・ばらつき・分布",
+      "topic": "データ分析",
+      "path": "./lessons/statistics-data-analysis/statistics-descriptive-distributions.json"
+    },
+    {
+      "id": "statistics-population-sample-bias",
+      "title": "母集団・標本・バイアス",
+      "topic": "データ分析",
+      "path": "./lessons/statistics-data-analysis/statistics-population-sample-bias.json"
+    },
+    {
+      "id": "statistics-estimation-confidence-intervals",
+      "title": "推定と信頼区間",
+      "topic": "データ分析",
+      "path": "./lessons/statistics-data-analysis/statistics-estimation-confidence-intervals.json"
+    },
+    {
+      "id": "statistics-hypothesis-testing-effect-size",
+      "title": "仮説検定・p値・効果量",
+      "topic": "データ分析",
+      "path": "./lessons/statistics-data-analysis/statistics-hypothesis-testing-effect-size.json"
+    },
+    {
+      "id": "statistics-correlation-regression-causality",
+      "title": "相関・回帰・因果関係",
+      "topic": "データ分析",
+      "path": "./lessons/statistics-data-analysis/statistics-correlation-regression-causality.json"
     }
   ]
 }

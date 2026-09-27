@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "id": "statistics-descriptive-distributions",
+  "title": "代表値・ばらつき・分布",
+  "topic": "データ分析",
+  "summary": "平均、中央値、分散、標準偏差、分布など記述統計の基本を学びます。",
+  "created_at": "2026-09-27",
+  "base_duration_ms": 680,
+  "sources": [],
+  "chunks": [
+    {
+      "text": "データ分析では、まずデータの形を把握します",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "平均は、値の合計を件数で割ったものです",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "中央値は、並べたとき中央にある値です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "外れ値があると、平均は大きく影響を受けます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "中央値は、外れ値の影響を受けにくい特徴があります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "分散は、値がどの程度ばらつくかを表します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "標準偏差は、分散の平方根です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "最小値と最大値だけでは、分布全体は分かりません",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "四分位数を使うと、分布の位置を把握できます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "ヒストグラムは、値の分布を見る方法です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "分布が左右対称とは限りません",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "複数の山を持つ分布もあります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "代表値だけで判断せず、分布を見ることが重要です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "集計前に、欠損値や異常値も確認します",
+      "duration_multiplier": 1.35
+    }
+  ]
+}

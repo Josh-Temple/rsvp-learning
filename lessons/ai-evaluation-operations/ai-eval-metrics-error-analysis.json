@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "id": "ai-eval-metrics-error-analysis",
+  "title": "評価指標とエラー分析",
+  "topic": "AI運用",
+  "summary": "Accuracy、Precision、Recallなどの指標と、集計値だけに頼らないエラー分析の基本を学びます。",
+  "created_at": "2026-09-27",
+  "base_duration_ms": 680,
+  "sources": [],
+  "chunks": [
+    {
+      "text": "評価指標は、目的に合うものを選びます",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "Accuracyは、全体のうち正しく判定した割合です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "Precisionは、陽性と判定した中で正しかった割合です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "Recallは、本当の陽性をどれだけ拾えたかを表します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "どの誤りを重く見るかで、重視する指標は変わります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "生成AIでは、単純な正解率を使えない課題もあります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "その場合は、複数の評価観点を使います",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "平均値だけでは、特定条件での弱点を見落とします",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "利用者属性や入力種類ごとに分けて見ることがあります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "エラー分析では、失敗例を具体的に読みます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "失敗を種類ごとに分類します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "頻度と影響を分けて考えます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "指標の改善が、業務価値の改善につながるか確認します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "数字と実例を組み合わせて評価することが重要です",
+      "duration_multiplier": 1.35
+    }
+  ]
+}

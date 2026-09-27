@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "id": "architecture-idempotency-retry-failures",
+  "title": "冪等性・Retry・失敗時の挙動",
+  "topic": "ソフトウェア設計",
+  "summary": "分散システムで避けにくい失敗に備え、再試行しても壊れにくい設計を学びます。",
+  "created_at": "2026-09-27",
+  "base_duration_ms": 680,
+  "sources": [],
+  "chunks": [
+    {
+      "text": "外部通信を含む処理は、途中で失敗することがあります",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "失敗したか成功したか分からない場合もあります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "そのとき、同じ処理を再試行することがあります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "Retryは、一時的な失敗から回復する方法の一つです",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "ただし、無制限のRetryは負荷を増やします",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "一定時間を空けて再試行する方法があります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "冪等性は、同じ操作を繰り返しても結果が壊れない性質です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "二重登録や二重送信を防ぐために重要です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "処理IDを使って重複を検出する方法があります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "失敗時に、部分的な更新が残らないように考えます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "すべてを元に戻せない処理もあります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "その場合は、補償処理を設計することがあります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "失敗を隠すのではなく、状態として表現することも重要です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "復旧手順まで含めて、正常な設計と考えます",
+      "duration_multiplier": 1.35
+    }
+  ]
+}
