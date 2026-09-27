@@ -1,0 +1,708 @@
+{
+  "schema_version": 1,
+  "id": "requirements-basics",
+  "title": "要件定義の基礎",
+  "topic": "システム開発",
+  "summary": "業務要件・システム要件・機能要件・非機能要件から、検証可能性や行政実務との共通点までを学ぶ基礎教材です。",
+  "created_at": "2026-09-27",
+  "base_duration_ms": 680,
+  "sources": [],
+  "chunks": [
+    {
+      "text": "要件定義とは",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "本格的な実装へ進む前に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "何を実現する必要があるか",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "整理する作業です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "まず",
+      "duration_multiplier": 0.8
+    },
+    {
+      "text": "現在の業務を理解します",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "誰が何のために",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "どのような作業をしているのか",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "どこに問題があるのか",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "何を改善したいのか",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "これらを整理します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "この段階では",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "システムより先に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "業務そのものを見ます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "現在の業務を",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "As-Isと呼ぶことがあります",
+      "duration_multiplier": 1.3
+    },
+    {
+      "text": "改善後の業務を",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "To-Beと呼ぶことがあります",
+      "duration_multiplier": 1.3
+    },
+    {
+      "text": "As-Isを理解せず",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "To-Beだけを考えると",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "実際の業務に合わない",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "仕組みになりやすくなります",
+      "duration_multiplier": 1.5
+    },
+    {
+      "text": "次に",
+      "duration_multiplier": 0.8
+    },
+    {
+      "text": "業務要件を考えます",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "業務要件は",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "業務として",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "何を実現したいかを示します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "例えば",
+      "duration_multiplier": 0.8
+    },
+    {
+      "text": "申請処理の時間を減らしたい",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "入力ミスを減らしたい",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "問い合わせを減らしたい",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "こうしたものが",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "業務要件です",
+      "duration_multiplier": 1.5
+    },
+    {
+      "text": "その次に",
+      "duration_multiplier": 0.8
+    },
+    {
+      "text": "業務要件を実現するため",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "システムが何をする必要があるか",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "整理します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "これがシステム要件です",
+      "duration_multiplier": 1.5
+    },
+    {
+      "text": "例えば",
+      "duration_multiplier": 0.8
+    },
+    {
+      "text": "申請をオンラインで受け付ける",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "入力内容を自動で確認する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "処理状況を記録する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "担当者へ通知する",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "こうした内容が",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "システム要件になります",
+      "duration_multiplier": 1.5
+    },
+    {
+      "text": "システム要件では",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "機能と品質の両方を見ます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "機能要件とは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "システムが何をするかです",
+      "duration_multiplier": 1.3
+    },
+    {
+      "text": "検索する",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "登録する",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "更新する",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "通知する",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "集計する",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "これらは機能要件です",
+      "duration_multiplier": 1.5
+    },
+    {
+      "text": "一方",
+      "duration_multiplier": 0.8
+    },
+    {
+      "text": "非機能要件は",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "どのような条件や品質で",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "動く必要があるかを示します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "同時に何人まで使えるか",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "どの程度の速度で応答するか",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "障害時に",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "どの程度で復旧するか",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "誰がどの情報を見られるか",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ログをどのくらい保存するか",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "こうした条件です",
+      "duration_multiplier": 1.5
+    },
+    {
+      "text": "行政システムでは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "非機能要件を軽視できません",
+      "duration_multiplier": 1.5
+    },
+    {
+      "text": "個人情報を扱うことがあります",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "法令に基づく処理があります",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "処理を間違えると",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "市民や事業者へ",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "影響することがあります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "そのため",
+      "duration_multiplier": 0.8
+    },
+    {
+      "text": "正しく動くだけでは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "十分ではありません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "安全に運用できること",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "原因を確認できること",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "誤った処理を修正できること",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "誰が何を行ったか",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "確認できること",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "こうした設計が必要です",
+      "duration_multiplier": 1.5
+    },
+    {
+      "text": "要件定義では",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "関係者の整理も重要です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "利用者だけが",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "関係者ではありません",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "実際に操作する職員",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "管理する職員",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "問い合わせを受ける職員",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "保守する担当者",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "情報セキュリティ担当者",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "管理職",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "外部事業者",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "それぞれが",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "異なる要望を持っています",
+      "duration_multiplier": 1.5
+    },
+    {
+      "text": "ただし",
+      "duration_multiplier": 0.8
+    },
+    {
+      "text": "要望と要件は",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "同じではありません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "要望は",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "関係者が望んでいること",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "要件は",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "目的を達成するために",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "必要だと判断された条件です",
+      "duration_multiplier": 1.5
+    },
+    {
+      "text": "すべての要望を",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "そのまま入れるわけではありません",
+      "duration_multiplier": 1.5
+    },
+    {
+      "text": "何を作るかだけでなく",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "何を作らないかも決めます",
+      "duration_multiplier": 1.5
+    },
+    {
+      "text": "機能を増やすほど",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "開発費は増えます",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "テスト項目も増えます",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "保守も複雑になります",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "障害が起きる場所も増えます",
+      "duration_multiplier": 1.3
+    },
+    {
+      "text": "だから",
+      "duration_multiplier": 0.8
+    },
+    {
+      "text": "業務目的に必要な範囲を選び",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "優先順位を決めます",
+      "duration_multiplier": 1.5
+    },
+    {
+      "text": "要件は",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "書けば終わりではありません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "曖昧ではないか",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "実現可能か",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "テストで確認できるか",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "他の要件と矛盾していないか",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "優先順位は明確か",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "業務目的とつながっているか",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "こうした点を確認します",
+      "duration_multiplier": 1.5
+    },
+    {
+      "text": "特に重要なのが",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "検証できることです",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "使いやすいシステムにする",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "これだけでは",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "達成できたか判断しにくい",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "例えば",
+      "duration_multiplier": 0.8
+    },
+    {
+      "text": "申請完了までの操作を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "5画面以内にする",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "このように具体化すれば",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "テストで確認できます",
+      "duration_multiplier": 1.5
+    },
+    {
+      "text": "さらに",
+      "duration_multiplier": 0.8
+    },
+    {
+      "text": "各要件が",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "どの業務目的から生まれたか",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "追えるようにしておきます",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "これを",
+      "duration_multiplier": 0.8
+    },
+    {
+      "text": "トレーサビリティと呼びます",
+      "duration_multiplier": 1.6
+    },
+    {
+      "text": "基本の流れは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "業務の目的から考える",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "現在の業務を理解する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "問題を特定する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "改善後の業務を考える",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "必要な機能を整理する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "必要な品質を整理する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "関係者と認識を合わせる",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "要件を検証する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "優先順位を決める",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "実現する範囲を決める",
+      "duration_multiplier": 1.5
+    },
+    {
+      "text": "最後に",
+      "duration_multiplier": 0.8
+    },
+    {
+      "text": "行政実務との共通点です",
+      "duration_multiplier": 1.5
+    },
+    {
+      "text": "重要なのは",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "技術そのものだけではありません",
+      "duration_multiplier": 1.3
+    },
+    {
+      "text": "現場の業務を理解する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "曖昧な要望を整理する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "実装可能な条件へ変える",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "検証できる条件へ変える",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "行政での制度運用や",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "業務改善の経験には",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "共通する部分があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "法令を読む",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "現場の運用を確認する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "関係者の意見を整理する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "例外を考える",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "手続きを標準化する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "問題時の対応方法を決める",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "これらは",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "要件定義でも必要な考え方です",
+      "duration_multiplier": 1.5
+    },
+    {
+      "text": "重要なのは",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "これまでの経験を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ITの言葉で",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "説明できるようになることです",
+      "duration_multiplier": 1.7
+    }
+  ]
+}
