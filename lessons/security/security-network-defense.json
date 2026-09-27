@@ -1,0 +1,1413 @@
+{
+  "schema_version": 1,
+  "id": "security-network-defense",
+  "title": "ネットワーク・メール・Webの防御",
+  "topic": "情報セキュリティ",
+  "summary": "ファイアウォール、IDS・IPS、WAF、VPN、ゼロトラスト、メール認証、SSH、IPsecなどの防御を学びます。",
+  "created_at": "2026-09-27",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "NIST Cybersecurity Framework 2.0",
+      "url": "https://www.nist.gov/cyberframework"
+    },
+    {
+      "title": "NIST SP 800-207, Zero Trust Architecture",
+      "url": "https://csrc.nist.gov/pubs/sp/800/207/final"
+    },
+    {
+      "title": "OWASP Top 10:2025",
+      "url": "https://top10.owasp.org/2025/"
+    },
+    {
+      "title": "RFC 4251, The Secure Shell (SSH) Protocol Architecture",
+      "url": "https://www.rfc-editor.org/rfc/rfc4251.html"
+    },
+    {
+      "title": "RFC 4301, Security Architecture for the Internet Protocol",
+      "url": "https://www.rfc-editor.org/rfc/rfc4301.html"
+    },
+    {
+      "title": "RFC 7208, Sender Policy Framework",
+      "url": "https://www.rfc-editor.org/rfc/rfc7208.html"
+    },
+    {
+      "title": "RFC 6376, DomainKeys Identified Mail",
+      "url": "https://www.rfc-editor.org/rfc/rfc6376.html"
+    },
+    {
+      "title": "RFC 9989, Domain-Based Message Authentication, Reporting, and Conformance",
+      "url": "https://www.rfc-editor.org/rfc/rfc9989.html"
+    },
+    {
+      "title": "RFC 8551, Secure/Multipurpose Internet Mail Extensions (S/MIME) Version 4.0",
+      "url": "https://www.rfc-editor.org/rfc/rfc8551.html"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "ネットワーク・メール・Webの防御",
+      "duration_multiplier": 1.5
+    },
+    {
+      "text": "一つの境界だけでは守れない",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "組織のネットワークと外部",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "ネットワークの境界を守る",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "ことは重要です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "しかしクラウドモバイル",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "端末リモートアクセスが",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "広がり社内と社外だけで",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "安全性を判断することは難",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "しくなっています",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "利用者",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "端末",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "通信",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "アプリケーション",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "データ",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "複数の場所で安全性を確認",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "する必要があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "多層防御",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "一つの対策が失敗しても別",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "の対策で被害を抑える",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "考え方があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "認証",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "アクセス制御",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "ネットワーク分割",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "端末防御",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "アプリケーション防御",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "ログ監視",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "バックアップ",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "それぞれが異なる役割を",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "持ちます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "重要なのは製品を多く導入",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "することではありません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "想定する攻撃や障害",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "に対して各対策が何を防ぎ",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "何を防げないかを理解して",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "組み合わせることです",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "ファイアウォール",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "ファイアウォールは通信の",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "送信元宛先ポート通信状態",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "などに基づいて通信を許可",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "または拒否します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "必要な通信だけを許可する",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "ことで攻撃可能な範囲を小",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "さくできます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "ただし許可されたHTTP",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "通信の中に攻撃用の入力が",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "含まれる場合もあります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "ファイアウォールだけで",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "すべての攻撃を防ぐことは",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "できません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "IDSとIPS",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "IDSは",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "Intrusion",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "Detection",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "Systemの略です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "通信やシステムの挙動を",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "監視し攻撃や異常の兆候を",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "検知します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "IPSは",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "Intrusion",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "Prevention",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "Systemの略です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "検知だけでなく条件に応じ",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "て通信を遮断するなどの",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "防御を行います",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "誤検知を減らしつつ見逃し",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "も抑えるためにルールや",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "運用の調整が必要です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "WAF",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "WAFはWeb",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "Application",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "Firewallの略です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "Webアプリケーションへ",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "のHTTP通信などを検査",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "し攻撃を遮断するために使",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "われます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "SQLインジェクションや",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "XSSなどの攻撃を緩和",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "できる場合があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "ただしWAFは安全な",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "アプリケーション設計や",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "修正の代わりではありません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "根本的な脆弱性がある場合",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "はアプリケーション側の",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "修正が必要です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "ネットワーク分割",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "重要なシステムと一般利用",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "端末を無制限に接続すると",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "一つの端末が侵害された",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "ときに被害が広がりやすく",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "なります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "用途や重要度に応じて",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ネットワークを分け必要な",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "通信だけを許可します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "これは侵入を完全に防ぐ",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "だけでなく侵入後の横方向",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "への移動を難しくするため",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "にも使われます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "VPN",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "VPNはVirtual",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "Private",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "Networkの略です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "ネットワーク間または端末",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "とネットワークの間に保護",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "された通信経路を作るため",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "に使われます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "リモートアクセスでは外部",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "から組織のシステムへ接続",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "する際に利用されます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "VPNを使っても接続端末",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "や利用者が自動的に安全に",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "なるわけではありません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "強い認証端末管理VPN",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "装置自体の脆弱性対応が",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "必要です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "ゼロトラスト",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "ゼロトラストでは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ネットワーク上の場所だけ",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "を理由に暗黙の信頼を与え",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "ません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "社内ネットワークだから安全",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "会社の端末だから安全",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "このように一つの条件だけ",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "で判断しないことが重要です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "利用者端末権限対象資源",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "状況などを確認し必要な",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "アクセスだけを許可します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "メールのなりすまし",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "電子メールでは表示上の",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "送信者名だけを見て本当の",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "送信元を判断することは",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "できません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "メール配送では複数の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ドメインやヘッダーが関係",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "送信ドメイン認証はメール",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "のなりすましを減らすため",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "の重要な仕組みです",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "代表的なものにSPF",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "DKIMDMARCがあります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "SPF",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "SPFはSender",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "Policy",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "Frameworkの略です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "ドメインの管理者がその",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "ドメインを使ってメールを",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "送信してよいサーバーを",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "DNSで公開します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "受信側は接続してきた",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "メールサーバーがその",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ドメインから送信する権限",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "を持つかを確認できます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "SPFだけでは利用者が",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "画面で見るFrom",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ヘッダーの正当性を直接",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "保証するものではありません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "転送などの構成によっても",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "結果が影響を受けます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "DKIM",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "DKIMは",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "DomainKeys",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "Identified",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "Mailの略です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "送信側がメールの一部に",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "デジタル署名を付けます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "受信側はDNSで公開され",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "た公開鍵を使って署名を",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "検証します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "これにより署名した",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ドメインがメッセージに",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "責任を持つことと署名対象",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "部分が配送途中で変更され",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "ていないことを確認できます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "DKIMだけで表示上の",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "Fromアドレスが正しい",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "と保証するものではありません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "DMARC",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "DMARCはSPFや",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "DKIMの結果と利用者に",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "表示されるFrom",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ドメインとの整合性を確認",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "する仕組みです",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "ドメイン所有者は認証に",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "失敗したメールを受信側が",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "どう扱うことを望むか",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "という方針を公開できます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "また認証状況に関する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "レポートを受け取る仕組み",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "2026年5月にRFC",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "9989が公開され従来の",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "RFC7489とRFC",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "9091を置き換えました",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "教材ではRFC9989を",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "現行のDMARC仕様",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "として扱います",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "SPFDKIMDMARC",
+      "duration_multiplier": 1.3
+    },
+    {
+      "text": "は役割が異なる",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "SPFは送信元サーバーの",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "認可を確認します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "DKIMはメールへ",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "ドメインによる署名を付けます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "DMARCはSPFや",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "DKIMを表示上の",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "Fromドメインとの",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "整合性と組み合わせて扱います",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "三つは競合する技術では",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "なく役割が異なります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "組み合わせることで",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ドメインなりすましへの",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "防御を強化できます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "S/MIME",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "S/MIMEは",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "Secure/",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "Multipurpose",
+      "duration_multiplier": 1.3
+    },
+    {
+      "text": "InternetMail",
+      "duration_multiplier": 1.3
+    },
+    {
+      "text": "Extensionsの略です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "電子メールの内容へ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "デジタル署名を付けたり",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "暗号化したりするために",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "利用される仕組みです",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "SPFDKIMDMARC",
+      "duration_multiplier": 1.3
+    },
+    {
+      "text": "は主に送信ドメインや",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "メール配送上の認証を扱います",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "S/MIMEはメール本文",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "や添付ファイルそのものの",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "署名・暗号化に使われます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "利用には証明書や鍵の管理",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "が必要です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "送信ドメイン認証と個々の",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "メッセージ内容の保護を",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "混同しないことが重要です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "HTTPSとWAFは別の役割",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "HTTPSはブラウザと",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "サーバー間の通信をTLS",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "で保護します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "WAFはWeb",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "アプリケーションへ届く",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "通信の内容を検査し攻撃を",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "遮断するために使われます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "HTTPSを使っていても",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "暗号化された通信の中に",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "悪意ある入力が含まれる",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "ことがあります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "通信経路の暗号化と",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "アプリケーション攻撃への",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "防御を混同しないことが",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "重要です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "無線LAN",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "無線LANでは適切な認証",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "と暗号化を利用します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "WPA2やWPA3などの",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "方式があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "安全性は方式名だけで",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "決まりません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "弱い共有パスワード不適切",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "な設定古い端末などが",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "リスクになる場合があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "組織では利用者や端末を",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "適切に認証し必要に応じて",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "ネットワークを分離します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "防御は運用まで含む",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "ネットワーク機器やメール",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "認証を設定しただけで終",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "わりではありません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "設定変更",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "証明書更新",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "ログ監視",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "脆弱性対応",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "ルールの見直し",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "こうした運用が必要です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "安全な設計と継続的な管理",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "を組み合わせます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "VLAN",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "VLANは同じ物理的な",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "ネットワーク機器を使い",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "ながら論理的に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ネットワークを分けるため",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "に使われます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "部署や用途ごとに通信範囲",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "を分けることで不要な通信",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "を減らせます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "ただしVLANを作るだけ",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "で安全になるわけでは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ありません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "VLAN間の通信をどの",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "ように制御するかが重要です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "ネットワーク分割は設計と",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "アクセス制御を組み合わせ",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "て機能します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "ハニーポット",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "ハニーポットは攻撃者の",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "活動を観測するため意図的",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "に監視対象となるシステム",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "やサービスを用意する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "考え方です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "攻撃手法の把握や早期検知",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "に役立つ場合があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "一方適切に隔離されてい",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "ないハニーポットがほかの",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "システムへの攻撃拠点にな",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "ってはいけません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "本番資産を守る基本対策の",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "代わりではなく監視や分析",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "の補助として扱います",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "SSH",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "SSHは信頼できない",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "ネットワーク上で安全な",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "リモートログインなどを",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "行うためのプロトコルです",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "SSHのトランスポート層",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "はサーバー認証機密性完全",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "性を提供します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "その上で利用者認証を行い",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "暗号化された接続上で複数",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "の通信チャネルを扱えます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "SSHを使っていても弱い",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "認証盗まれた秘密鍵不適切",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "な権限などがあれば侵害さ",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "れる可能性があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "プロトコルの保護と",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "アカウント管理を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "組み合わせます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "IPsec",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "IPsecはIP層で通信",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "を保護するための仕組みです",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "ホスト同士",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "ゲートウェイ同士",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "ホストとゲートウェイ",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "こうした通信を保護できます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "IPsecでは暗号化完全",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "性送信元認証などの",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "セキュリティサービスを",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "提供できます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "VPNで利用されることも",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "あります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "IPsecはネットワーク",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "全体の安全性を自動的に",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "保証するものではありません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "端末鍵管理認証設定など",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "周辺の安全性も必要です",
+      "duration_multiplier": 1.4
+    }
+  ]
+}
