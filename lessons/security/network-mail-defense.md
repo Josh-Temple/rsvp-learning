@@ -133,7 +133,17 @@ DMARCはSPFやDKIMを、表示上のFromドメインとの整合性と組み合�
 
 組み合わせることで、ドメインなりすましへの防御を強化できます。
 
-## 13. HTTPSとWAFは別の役割
+## 13. S/MIME
+
+S/MIMEは、電子メールの内容へデジタル署名を付けたり、暗号化したりするために利用される仕組みです。
+
+SPF、DKIM、DMARCが主に送信ドメインやメール配送上の認証を扱うのに対し、S/MIMEはメール本文や添付ファイルそのものの署名・暗号化に使われます。
+
+利用には証明書や鍵の管理が必要です。
+
+送信ドメイン認証と、個々のメッセージ内容の保護を混同しないことが重要です。
+
+## 14. HTTPSとWAFは別の役割
 
 HTTPSは、ブラウザとサーバー間の通信をTLSで保護します。
 
@@ -143,7 +153,7 @@ HTTPSを使っていても、暗号化された通信の中に悪意ある入力
 
 通信経路の暗号化と、アプリケーション攻撃への防御を混同しないことが重要です。
 
-## 14. 無線LAN
+## 15. 無線LAN
 
 無線LANでは、適切な認証と暗号化を利用します。
 
@@ -155,7 +165,7 @@ WPA2やWPA3などの方式があります。
 
 組織では、利用者や端末を適切に認証し、必要に応じてネットワークを分離します。
 
-## 15. 防御は運用まで含む
+## 16. 防御は運用まで含む
 
 ネットワーク機器やメール認証を設定しただけで終わりではありません。
 
@@ -183,5 +193,7 @@ WPA2やWPA3などの方式があります。
   https://www.rfc-editor.org/rfc/rfc6376.html
 - RFC 9989, Domain-Based Message Authentication, Reporting, and Conformance
   https://www.rfc-editor.org/rfc/rfc9989.html
+- RFC 8551, Secure/Multipurpose Internet Mail Extensions (S/MIME) Version 4.0
+  https://www.rfc-editor.org/rfc/rfc8551.html
 - OWASP Top 10:2025
   https://top10.owasp.org/2025/
