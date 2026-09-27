@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "id": "api-rest-json",
+  "title": "REST APIとJSON",
+  "topic": "Web・API",
+  "summary": "REST APIの基本的な考え方と、データ交換形式JSONの読み方を学びます。",
+  "created_at": "2026-09-27",
+  "base_duration_ms": 680,
+  "sources": [],
+  "chunks": [
+    {
+      "text": "APIは、ソフトウェア同士の接点です",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "RESTは、Web APIで広く使われる設計上の考え方です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "資源を、URLで表すことがあります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "HTTPメソッドで、操作の種類を表します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "例えば、顧客一覧をGETで取得できます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "新しい顧客をPOSTで登録する設計もあります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "RESTの実装には、さまざまな流儀があります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "名前より、一貫したAPI設計が重要です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "JSONは、データ交換でよく使われる形式です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "オブジェクトは、キーと値の組で表します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "配列は、複数の値を順番に持ちます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "文字列、数値、真偽値、nullなどを扱えます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "API仕様では、入力と出力の形を明確にします",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "エラー時の応答も、API仕様の一部です",
+      "duration_multiplier": 1.35
+    }
+  ]
+}

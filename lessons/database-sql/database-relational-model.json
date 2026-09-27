@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "id": "database-relational-model",
+  "title": "リレーショナルモデルの基本",
+  "topic": "データ",
+  "summary": "テーブル、行、列、主キー、外部キーなどリレーショナルデータベースの基本構造を学びます。",
+  "created_at": "2026-09-27",
+  "base_duration_ms": 680,
+  "sources": [],
+  "chunks": [
+    {
+      "text": "リレーショナルデータベースは、表の関係としてデータを扱います",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "表を、テーブルと呼びます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "一件分のデータを、行として表します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "属性を、列として表します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "主キーは、行を一意に識別します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "同じ主キーを、複数の行で使わないようにします",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "外部キーは、別のテーブルの行との関係を表します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "例えば、注文は顧客IDを持つことがあります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "顧客情報を毎回注文表へ重複保存する必要はありません",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "関係を使うことで、データを分けて管理できます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "NULLは、値が存在しない状態を表すために使われます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "データ型は、列に入る値の種類を定めます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "制約は、データの整合性を守るために使われます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "良いデータ設計は、業務上の関係を正しく表します",
+      "duration_multiplier": 1.35
+    }
+  ]
+}

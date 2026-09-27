@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "id": "web-client-server-http",
+  "title": "クライアント・サーバーとHTTP",
+  "topic": "Web・API",
+  "summary": "ブラウザなどのクライアントとサーバーがHTTPで通信する基本構造を学びます。",
+  "created_at": "2026-09-27",
+  "base_duration_ms": 680,
+  "sources": [],
+  "chunks": [
+    {
+      "text": "Webシステムでは、クライアントとサーバーが通信します",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "ブラウザは、代表的なクライアントです",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "サーバーは、要求を受けて処理し、応答を返します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "HTTPは、Webで広く使われる通信の仕組みです",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "クライアントは、HTTP Requestを送ります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "サーバーは、HTTP Responseを返します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "URLは、アクセスする資源の場所を示します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "GETは、情報取得に使われることが多いです",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "POSTは、新しい処理や登録に使われることが多いです",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "PUTやPATCHは、更新に使われることがあります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "DELETEは、削除を表すために使われます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "Status Codeは、処理結果の種類を示します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "Headerは、通信に関する追加情報を持ちます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "Bodyは、送受信するデータ本体を持つことがあります",
+      "duration_multiplier": 1.35
+    }
+  ]
+}

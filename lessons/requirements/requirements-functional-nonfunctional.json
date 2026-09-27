@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "id": "requirements-functional-nonfunctional",
+  "title": "機能要件と非機能要件",
+  "topic": "システム開発",
+  "summary": "システムが何をするかと、どの品質・条件で動くかを分けて考える基本を学びます。",
+  "created_at": "2026-09-27",
+  "base_duration_ms": 680,
+  "sources": [],
+  "chunks": [
+    {
+      "text": "機能要件は、システムが何をするかを示します",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "登録、検索、更新、通知などが代表例です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "非機能要件は、どのような品質や条件で動くかを示します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "性能は、応答時間や処理量に関係します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "可用性は、必要なときに利用できる度合いです",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "信頼性は、安定して正しく動くことに関係します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "セキュリティは、アクセス制御やデータ保護を含みます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "運用性は、監視や障害対応のしやすさに関係します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "保守性は、変更や修正のしやすさに関係します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "バックアップや復旧条件も、非機能要件です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "非機能要件は、後から追加すると高コストになりやすいです",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "重要な品質条件は、要件定義で明確にします",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "できるだけ測定可能な表現にします",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "機能と非機能の両方が揃って、実用的なシステムになります",
+      "duration_multiplier": 1.35
+    }
+  ]
+}

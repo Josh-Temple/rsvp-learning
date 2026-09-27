@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "id": "sql-join-aggregation",
+  "title": "JOINと集計",
+  "topic": "データ",
+  "summary": "複数テーブルの結合とGROUP BYによる集計の基本を学びます。",
+  "created_at": "2026-09-27",
+  "base_duration_ms": 680,
+  "sources": [],
+  "chunks": [
+    {
+      "text": "JOINは、複数のテーブルを関連づけて取得する操作です",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "INNER JOINは、両方に一致する行を取得します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "LEFT JOINは、左側の行を残しながら結合します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "結合条件には、主キーと外部キーを使うことが多いです",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "結合条件を誤ると、行数が想定以上に増えることがあります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "まず、テーブルの粒度を確認します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "COUNTは、件数を数えます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "SUMは、合計を求めます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "AVGは、平均を求めます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "GROUP BYは、グループ単位で集計します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "HAVINGは、集計後の結果を条件で絞ります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "集計値だけでなく、分母の定義も確認します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "JOINとGROUP BYを組み合わせると、多くの業務集計ができます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "結果が正しいか、小さな例で検算する習慣が重要です",
+      "duration_multiplier": 1.35
+    }
+  ]
+}

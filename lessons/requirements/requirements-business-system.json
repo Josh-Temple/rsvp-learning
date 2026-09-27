@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "id": "requirements-business-system",
+  "title": "業務要件とシステム要件",
+  "topic": "システム開発",
+  "summary": "業務として実現したいことと、システムが満たすべき条件を分けて考える方法を学びます。",
+  "created_at": "2026-09-27",
+  "base_duration_ms": 680,
+  "sources": [],
+  "chunks": [
+    {
+      "text": "業務要件は、業務として実現したいことです",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "システム要件は、それを支えるシステム側の条件です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "最初に、技術ではなく業務目的を確認します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "例えば、申請処理時間を短縮したいとします",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "これは、業務要件です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "オンライン受付を実装することは、システム側の手段です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "入力内容を自動確認することも、システム要件になり得ます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "一つの業務要件に、複数のシステム要件が対応することがあります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "逆に、システムを作らず業務変更だけで解決できる場合もあります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "要望を、そのまま要件にしないことが重要です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "業務目的とのつながりを確認します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "必要性が説明できない機能は、スコープを再検討します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "業務要件からシステム要件へ落とす過程を追えるようにします",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "このつながりが、後の設計とテストの基準になります",
+      "duration_multiplier": 1.35
+    }
+  ]
+}

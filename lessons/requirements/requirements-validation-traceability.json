@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "id": "requirements-validation-traceability",
+  "title": "要件の検証とトレーサビリティ",
+  "topic": "システム開発",
+  "summary": "良い要件の条件と、業務目的からテストまでのつながりを追えるようにする考え方を学びます。",
+  "created_at": "2026-09-27",
+  "base_duration_ms": 680,
+  "sources": [],
+  "chunks": [
+    {
+      "text": "要件は、書けば完成ではありません",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "曖昧さがないか確認します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "実現可能か確認します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "他の要件と矛盾していないか確認します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "テストで確認できる表現か確認します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "使いやすいシステム、だけでは検証しにくい要件です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "測定条件を加えると、確認しやすくなります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "要件には、優先順位も必要です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "すべてを同じ重要度にすると判断できません",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "トレーサビリティは、要件のつながりを追える性質です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "業務目的から、業務要件へつなげます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "業務要件から、システム要件へつなげます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "システム要件から、設計やテストへつなげます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "変更時に影響範囲を確認できることが重要です",
+      "duration_multiplier": 1.35
+    }
+  ]
+}
