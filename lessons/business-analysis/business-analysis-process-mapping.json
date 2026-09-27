@@ -9,59 +9,151 @@
   "sources": [],
   "chunks": [
     {
-      "text": "業務フローは、仕事の流れを可視化します",
+      "text": "業務フローは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "仕事の流れを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "可視化します",
       "duration_multiplier": 1.35
     },
     {
-      "text": "開始条件と終了条件を決めます",
-      "duration_multiplier": 1.1
+      "text": "開始条件と",
+      "duration_multiplier": 1
     },
     {
-      "text": "途中の作業を順番に並べます",
-      "duration_multiplier": 1.1
+      "text": "終了条件を決めます",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "誰が担当するかも記録します",
-      "duration_multiplier": 1.1
+      "text": "途中の作業を",
+      "duration_multiplier": 1
     },
     {
-      "text": "部門をまたぐ受け渡しを確認します",
-      "duration_multiplier": 1.1
+      "text": "順番に並べます",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "判断が必要な箇所を明確にします",
-      "duration_multiplier": 1.1
+      "text": "誰が担当するかも",
+      "duration_multiplier": 1
     },
     {
-      "text": "例外処理も、別の流れとして確認します",
-      "duration_multiplier": 1.1
+      "text": "記録します",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "帳票やシステム入力も流れへ含めます",
-      "duration_multiplier": 1.1
+      "text": "部門をまたぐ",
+      "duration_multiplier": 1
     },
     {
-      "text": "口頭やメールだけの引継ぎも見落とさないようにします",
-      "duration_multiplier": 1.1
+      "text": "受け渡しを確認します",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "待ち時間は、処理時間と分けて考えます",
-      "duration_multiplier": 1.1
+      "text": "判断が必要な箇所を",
+      "duration_multiplier": 1
     },
     {
-      "text": "As-Isでは、実際に行われている業務を描きます",
-      "duration_multiplier": 1.1
+      "text": "明確にします",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "規程上の理想だけを描かないことが重要です",
-      "duration_multiplier": 1.1
+      "text": "例外処理も、",
+      "duration_multiplier": 1
     },
     {
-      "text": "可視化すると、重複や抜けが見えやすくなります",
-      "duration_multiplier": 1.1
+      "text": "別の流れとして",
+      "duration_multiplier": 1
     },
     {
-      "text": "業務フローは、改善議論の共通言語になります",
+      "text": "確認します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "帳票やシステム入力も",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "流れへ含めます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "口頭やメールだけの",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "引継ぎも",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "見落とさないように",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "待ち時間は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "処理時間と",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "分けて考えます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "As-Isでは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "実際に行われている",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "業務を描きます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "規程上の理想だけを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "描かないことが",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "重要です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "可視化すると、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "重複や抜けが",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "見えやすくなります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "業務フローは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "改善議論の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "共通言語になります",
       "duration_multiplier": 1.35
     }
   ]
