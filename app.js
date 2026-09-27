@@ -326,6 +326,8 @@ function startPlayback() {
   if (state.index >= state.lesson.chunks.length - 1 && state.completionCounted) {
     state.index = 0;
     state.completionCounted = false;
+    state.playCounted = false;
+    render();
   }
 
   markPlayStarted();
@@ -527,6 +529,7 @@ els.nextOne.addEventListener("click", () => move(1));
 els.restart.addEventListener("click", () => {
   stopPlayback();
   state.index = 0;
+  state.playCounted = false;
   state.completionCounted = false;
   render();
 });
@@ -537,7 +540,9 @@ els.nextChapter.addEventListener("click", () => moveChapter(1));
 for (const button of els.masteryControl.querySelectorAll("button")) {
   button.addEventListener("click", () => {
     if (!state.lessonId) return;
-    setMastery(state.lessonId, Number(button.dataset.level));
+    const level = Number(button.dataset.level);
+    const current = getProgress(state.lessonId).mastery;
+    setMastery(state.lessonId, current === level ? 0 : level);
   });
 }
 
