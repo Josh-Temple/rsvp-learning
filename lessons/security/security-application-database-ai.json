@@ -286,11 +286,7 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "アクセス",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "制御の不備です",
+      "text": "アクセス制御の不備です",
       "duration_multiplier": 1.4
     },
     {
@@ -998,11 +994,11 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "暗号化だけでアクセス",
+      "text": "暗号化だけで",
       "duration_multiplier": 1
     },
     {
-      "text": "制御の問題は",
+      "text": "アクセス制御の問題は",
       "duration_multiplier": 1
     },
     {
@@ -1170,12 +1166,12 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "ソフトウェアサプライ",
+      "text": "ソフトウェア",
       "duration_multiplier": 1
     },
     {
-      "text": "チェーン",
-      "duration_multiplier": 1.4
+      "text": "サプライチェーン",
+      "duration_multiplier": 1.1
     },
     {
       "text": "アプリケーションは",
@@ -1230,11 +1226,11 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "こうしたソフトウェアサプライ",
+      "text": "こうしたソフトウェア",
       "duration_multiplier": 1
     },
     {
-      "text": "チェーンも管理します",
+      "text": "サプライチェーンも管理します",
       "duration_multiplier": 1.4
     },
     {
