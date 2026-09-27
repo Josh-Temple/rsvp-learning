@@ -9,59 +9,159 @@
   "sources": [],
   "chunks": [
     {
-      "text": "生成AIアプリでは、品質だけを見ても不十分です",
+      "text": "生成AIアプリでは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "品質だけを見ても",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "不十分です",
       "duration_multiplier": 1.35
     },
     {
-      "text": "利用量が増えると、推論コストも増えることがあります",
-      "duration_multiplier": 1.1
+      "text": "利用量が増えると、",
+      "duration_multiplier": 1
     },
     {
-      "text": "不要に長い入力や出力は、コストへ影響します",
-      "duration_multiplier": 1.1
+      "text": "推論コストも",
+      "duration_multiplier": 1
     },
     {
-      "text": "応答速度も、利用体験へ影響します",
-      "duration_multiplier": 1.1
+      "text": "増えることがあります",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "複数のモデルやツールを呼ぶと、待ち時間が増えることがあります",
-      "duration_multiplier": 1.1
+      "text": "不要に長い入力や出力は、",
+      "duration_multiplier": 1
     },
     {
-      "text": "重要度に応じて、モデルや処理方法を選びます",
-      "duration_multiplier": 1.1
+      "text": "コストへ影響します",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "入力データには、個人情報や機密情報が含まれる場合があります",
-      "duration_multiplier": 1.1
+      "text": "応答速度も、",
+      "duration_multiplier": 1
     },
     {
-      "text": "送信してよい情報のルールを明確にします",
-      "duration_multiplier": 1.1
+      "text": "利用体験へ影響します",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "外部ツールへ渡すデータも確認します",
-      "duration_multiplier": 1.1
+      "text": "複数のモデルや",
+      "duration_multiplier": 1
     },
     {
-      "text": "Prompt Injectionなど、AI特有の攻撃も考慮します",
-      "duration_multiplier": 1.1
+      "text": "ツールを呼ぶと、",
+      "duration_multiplier": 1
     },
     {
-      "text": "失敗時に、安全側へ倒れる設計が必要です",
-      "duration_multiplier": 1.1
+      "text": "待ち時間が増える",
+      "duration_multiplier": 1
     },
     {
-      "text": "外部サービス障害時の代替動作も考えます",
-      "duration_multiplier": 1.1
+      "text": "ことがあります",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "ログには、必要な情報を残しつつ秘密情報を避けます",
-      "duration_multiplier": 1.1
+      "text": "重要度に応じて、",
+      "duration_multiplier": 1
     },
     {
-      "text": "実運用では、品質、費用、速度、安全性のバランスを取ります",
+      "text": "モデルや処理方法を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "選びます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "入力データには、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "個人情報や機密情報が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "含まれる場合があります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "送信してよい情報の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ルールを明確にします",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "外部ツールへ渡す",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "データも確認します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Prompt Injectionなど、",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "AI特有の攻撃も",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "考慮します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "失敗時に、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "安全側へ倒れる",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "設計が必要です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "外部サービス障害時の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "代替動作も考えます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ログには、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "必要な情報を残しつつ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "秘密情報を避けます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "実運用では、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "品質、費用、速度、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "安全性のバランスを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "取ります",
       "duration_multiplier": 1.35
     }
   ]
