@@ -9,59 +9,167 @@
   "sources": [],
   "chunks": [
     {
-      "text": "IAMは、Identity and Access Managementの略です",
+      "text": "IAMは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "Identity and Access Management",
+      "duration_multiplier": 2.4
+    },
+    {
+      "text": "の略です",
       "duration_multiplier": 1.35
     },
     {
-      "text": "誰が、何へ、何をできるかを管理します",
-      "duration_multiplier": 1.1
+      "text": "誰が、何へ、",
+      "duration_multiplier": 1
     },
     {
-      "text": "認証は、利用者やシステムの本人性を確認します",
-      "duration_multiplier": 1.1
+      "text": "何をできるかを",
+      "duration_multiplier": 1
     },
     {
-      "text": "認可は、許可する操作を決めます",
-      "duration_multiplier": 1.1
+      "text": "管理します",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "クラウドでは、人だけでなくアプリにも権限が必要です",
-      "duration_multiplier": 1.1
+      "text": "認証は、",
+      "duration_multiplier": 1
     },
     {
-      "text": "長期間使う強い権限は、リスクを高めます",
-      "duration_multiplier": 1.1
+      "text": "利用者やシステムの",
+      "duration_multiplier": 1
     },
     {
-      "text": "最小権限は、必要な権限だけを与える考え方です",
-      "duration_multiplier": 1.1
+      "text": "本人性を確認します",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "管理者権限を日常作業で使わないようにします",
-      "duration_multiplier": 1.1
+      "text": "認可は、",
+      "duration_multiplier": 1
     },
     {
-      "text": "役割ごとに権限をまとめる方法があります",
-      "duration_multiplier": 1.1
+      "text": "許可する操作を",
+      "duration_multiplier": 1
     },
     {
-      "text": "重要操作では、多要素認証が有効です",
-      "duration_multiplier": 1.1
+      "text": "決めます",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "秘密情報は、安全な保管場所で管理します",
-      "duration_multiplier": 1.1
+      "text": "クラウドでは、",
+      "duration_multiplier": 1
     },
     {
-      "text": "退職や異動時には、不要な権限を速やかに外します",
-      "duration_multiplier": 1.1
+      "text": "人だけでなく",
+      "duration_multiplier": 1
     },
     {
-      "text": "権限変更のログを残すことも重要です",
-      "duration_multiplier": 1.1
+      "text": "アプリにも権限が",
+      "duration_multiplier": 1
     },
     {
-      "text": "IAMは、クラウドセキュリティの中心的な要素です",
+      "text": "必要です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "長期間使う",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "強い権限は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "リスクを高めます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "最小権限は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "必要な権限だけを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "与える考え方です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "管理者権限を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "日常作業で",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "使わないようにします",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "役割ごとに",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "権限をまとめる",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "方法があります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "重要操作では、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "多要素認証が有効です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "秘密情報は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "安全な保管場所で",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "管理します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "退職や異動時には、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "不要な権限を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "速やかに外します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "権限変更のログを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "残すことも重要です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "IAMは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "クラウドセキュリティの",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "中心的な要素です",
       "duration_multiplier": 1.35
     }
   ]
