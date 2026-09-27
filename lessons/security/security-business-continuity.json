@@ -1,0 +1,897 @@
+{
+  "schema_version": 1,
+  "id": "security-business-continuity",
+  "title": "事業継続とレジリエンス",
+  "topic": "情報セキュリティ",
+  "summary": "BIA、RTO・RPO、バックアップ、冗長化、災害復旧、演習、レジリエンスを学びます。",
+  "created_at": "2026-09-27",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "NIST SP 800-34 Rev. 1, Contingency Planning Guide for Federal Information Systems",
+      "url": "https://csrc.nist.gov/pubs/sp/800/34/r1/upd1/final"
+    },
+    {
+      "title": "NIST CSRC Glossary, Recovery Time Objective",
+      "url": "https://csrc.nist.gov/glossary/term/Recovery_Time_Objective"
+    },
+    {
+      "title": "NIST CSRC Glossary, Recovery Point Objective",
+      "url": "https://csrc.nist.gov/glossary/term/recovery_point_objective"
+    },
+    {
+      "title": "NIST SP 800-61 Rev. 3",
+      "url": "https://csrc.nist.gov/pubs/sp/800/61/r3/final"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "事業継続とレジリエンス",
+      "duration_multiplier": 1.5
+    },
+    {
+      "text": "セキュリティは止めない",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "ことも含む",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "情報セキュリティでは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "機密性だけでなく可用性も",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "重要です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "サイバー攻撃",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "機器故障",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "停電",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "災害",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "誤操作",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "クラウド障害",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "原因が何であっても重要な",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "業務が止まる可能性があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "そのため障害を防ぐだけで",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "なく止まったときにどの",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "ように継続・復旧するかを",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "考えます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "事業継続とシステム復旧",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "事業継続では組織として",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "重要な業務を続けることを",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "考えます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "システム復旧はその一部です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "システムが停止しても",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "短時間なら手作業で業務を",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "続けられる場合があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "逆にシステムは動いていて",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "も担当者や施設が使えなけ",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "れば業務が続かない場合が",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "あります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "技術だけでなく人施設委託",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "先手順も含めて考えます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "BIA",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "Business",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "Impact",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "AnalysisBIA",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "では業務が停止した場合の",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "影響を分析します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "どの業務が重要か",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "どの程度の停止まで許容",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "できるか",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "何が業務の前提になって",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "いるか",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "時間が経つと影響がどう",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "大きくなるか",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "こうした情報を整理します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "復旧の優先順位を決める",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "基礎になります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "RTO",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "RTOはRecovery",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "Time",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "Objectiveの略です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "障害後システムや業務を",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "復旧させるまでの目標時間",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "を示します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "例えばRTOが4時間なら",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "4時間以内の復旧を目標と",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "RTOは単なる技術性能",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "ではありません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "業務がどの程度の停止を",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "許容できるかを踏まえて",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "設定します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "RPO",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "RPOはRecovery",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "Point",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "Objectiveの略です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "障害後どの時点までデータ",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "を戻せればよいかという",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "目標です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "例えばRPOが1時間なら",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "最大で直近1時間分の",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "データを失う可能性を前提",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "に復旧方法を設計します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "RTOは時間内に復旧する",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "目標です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "RPOはどの時点のデータ",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "まで戻すかという目標です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "二つを混同しないことが",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "重要です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "バックアップ",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "バックアップはデータや",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "システムを復旧するための",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "コピーです",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "バックアップを作ること",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "自体が目的ではありません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "必要なデータが入って",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "いるか",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "攻撃者から保護されて",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "いるか",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "必要な時間で復元できるか",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "実際に復元できるか",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "ここまで確認します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "バックアップも攻撃される",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "ランサム攻撃では",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "バックアップも削除や暗号",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "化の対象になることがあります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "本番環境と同じ認証情報",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "だけで簡単に削除できる",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "バックアップは危険です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "分離",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "変更不能な保存",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "別の認証",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "オフライン保管",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "環境に応じて複数の方法を",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "検討します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "3-2-1という考え方",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "バックアップ運用では複数",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "のコピーを持ち異なる媒体",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "や場所へ分散する3-2-",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "1という考え方が広く使",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "われます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "ただし数字だけを形式的に",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "満たせば安全というわけ",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "ではありません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "クラウド同期が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "バックアップと同じ役割を",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "果たさない場合もあります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "想定する事故に対して復旧",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "できるかを確認します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "復元テスト",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "バックアップが存在してい",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "ても復元できないことが",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "あります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "データが壊れている",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "必要な設定が含まれていない",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "手順が古い",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "復元に想定以上の時間が",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "かかる",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "そのため実際に復元する",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "テストを行います",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "冗長化",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "重要な機器や通信経路を",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "複数用意し一つが故障して",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "も継続できるようにする",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "方法があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "サーバー",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "電源",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "ネットワーク",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "拠点",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "クラウドリージョン",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "必要な可用性に応じて冗長",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "化します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "同じ原因で同時に停止する",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "構成では見かけ上の冗長化",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "になってしまう場合があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "単一障害点",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "一つの構成要素が壊れる",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "だけでサービス全体が停止",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "する場所をSingle",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "Pointof",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "Failure単一障害点",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "と呼びます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "重要システムでは単一障害",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "点を把握します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "ただしすべてを二重化すれ",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "ばよいわけではありません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "費用と影響を踏まえて優先",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "順位を決めます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "災害復旧",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "Disaster",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "RecoveryDRでは",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "大規模な障害や災害から",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "ITサービスを復旧する",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "方法を考えます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "代替拠点",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "クラウド",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "バックアップ",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "予備回線",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "復旧手順",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "担当者",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "必要な資源を事前に整理します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "手順と連絡",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "障害時には通常と異なる",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "判断が必要になります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "誰が指揮するか",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "誰へ連絡するか",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "どのサービスを先に復旧",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "するか",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "利用者へどう知らせるか",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "外部事業者へどう連絡するか",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "緊急時の役割と連絡方法を",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "事前に決めます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "演習",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "文書だけでは緊急時に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "動けるか分かりません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "机上演習",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "復旧訓練",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "フェイルオーバーテスト",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "連絡網の確認",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "実際に試すことで手順の",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "不足や依存関係を見つけます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "本番への影響を考慮し安全",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "に実施します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "サイバー攻撃と事業継続",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "ランサム攻撃では単に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "サーバーを再起動して復旧",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "することはできません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "攻撃者が残っていないか",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "認証情報が盗まれていないか",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "バックアップが安全か",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "復旧した環境へ再侵入され",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "ないか",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "インシデント対応と事業",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "継続を連携させます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "レジリエンス",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "レジリエンスは障害や攻撃",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "が起きる可能性を前提に",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "影響を抑え適応し復旧する",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "能力と関係します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "完全に止まらないことだけ",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "を意味しません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "重要な機能を維持する",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "安全に縮退する",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "必要な時間で復旧する",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "経験から改善する",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "こうした能力を組み合わせます",
+      "duration_multiplier": 1.4
+    }
+  ]
+}
