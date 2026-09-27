@@ -9,59 +9,175 @@
   "sources": [],
   "chunks": [
     {
-      "text": "相関は、二つの変数が一緒に変化する程度を表します",
+      "text": "相関は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "二つの変数が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "一緒に変化する程度を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "表します",
       "duration_multiplier": 1.35
     },
     {
-      "text": "相関があっても、因果関係があるとは限りません",
-      "duration_multiplier": 1.1
+      "text": "相関があっても、",
+      "duration_multiplier": 1
     },
     {
-      "text": "第三の要因が、両方へ影響している場合があります",
-      "duration_multiplier": 1.1
+      "text": "因果関係があるとは",
+      "duration_multiplier": 1
     },
     {
-      "text": "逆方向の因果がある場合もあります",
-      "duration_multiplier": 1.1
+      "text": "限りません",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "回帰は、変数同士の関係をモデル化する方法です",
-      "duration_multiplier": 1.1
+      "text": "第三の要因が、",
+      "duration_multiplier": 1
     },
     {
-      "text": "説明変数から、目的変数の変化を表します",
-      "duration_multiplier": 1.1
+      "text": "両方へ影響している",
+      "duration_multiplier": 1
     },
     {
-      "text": "回帰係数は、他の条件を一定とした関係として解釈する場合があります",
-      "duration_multiplier": 1.1
+      "text": "場合があります",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "ただし、モデルの前提が崩れると解釈も変わります",
-      "duration_multiplier": 1.1
+      "text": "逆方向の因果が",
+      "duration_multiplier": 1
     },
     {
-      "text": "観測データだけで因果を断定するのは難しい場合があります",
-      "duration_multiplier": 1.1
+      "text": "ある場合もあります",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "無作為化比較試験は、因果推論で強い方法の一つです",
-      "duration_multiplier": 1.1
+      "text": "回帰は、",
+      "duration_multiplier": 1
     },
     {
-      "text": "実務では、無作為化できないこともあります",
-      "duration_multiplier": 1.1
+      "text": "変数同士の関係を",
+      "duration_multiplier": 1
     },
     {
-      "text": "その場合は、設計と仮定を明示して分析します",
-      "duration_multiplier": 1.1
+      "text": "モデル化する方法です",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "予測が当たることと、原因を説明できることは別です",
-      "duration_multiplier": 1.1
+      "text": "説明変数から、",
+      "duration_multiplier": 1
     },
     {
-      "text": "分析目的が予測か因果理解かを最初に分けます",
+      "text": "目的変数の変化を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "表します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "回帰係数は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "他の条件を一定とした",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "関係として解釈する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "場合があります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ただし、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "モデルの前提が崩れると",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "解釈も変わります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "観測データだけで",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "因果を断定するのは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "難しい場合があります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "無作為化比較試験は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "因果推論で",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "強い方法の一つです",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "実務では、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "無作為化できない",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "こともあります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "その場合は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "設計と仮定を明示して",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "分析します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "予測が当たることと、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "原因を説明できることは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "別です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "分析目的が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "予測か因果理解かを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "最初に分けます",
       "duration_multiplier": 1.35
     }
   ]

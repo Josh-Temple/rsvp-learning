@@ -9,59 +9,183 @@
   "sources": [],
   "chunks": [
     {
-      "text": "仮説検定は、観測された差を統計的に検討する方法です",
+      "text": "仮説検定は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "観測された差を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "統計的に検討する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "方法です",
       "duration_multiplier": 1.35
     },
     {
-      "text": "帰無仮説は、差がないなどの基準となる仮説です",
-      "duration_multiplier": 1.1
+      "text": "帰無仮説は、",
+      "duration_multiplier": 1
     },
     {
-      "text": "p値は、帰無仮説のもとで観測結果以上の極端さが得られる確率を表します",
-      "duration_multiplier": 1.1
+      "text": "差がないなどの",
+      "duration_multiplier": 1
     },
     {
-      "text": "p値は、仮説が正しい確率ではありません",
-      "duration_multiplier": 1.1
+      "text": "基準となる仮説です",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "p値が小さくても、差が大きいとは限りません",
-      "duration_multiplier": 1.1
+      "text": "p値は、",
+      "duration_multiplier": 1
     },
     {
-      "text": "標本数が大きいと、小さな差でも検出されることがあります",
-      "duration_multiplier": 1.1
+      "text": "帰無仮説のもとで",
+      "duration_multiplier": 1
     },
     {
-      "text": "そのため、効果量も確認します",
-      "duration_multiplier": 1.1
+      "text": "観測結果以上の",
+      "duration_multiplier": 1
     },
     {
-      "text": "効果量は、差や関係の大きさを表します",
-      "duration_multiplier": 1.1
+      "text": "極端さが得られる",
+      "duration_multiplier": 1
     },
     {
-      "text": "信頼区間を合わせて見ると、不確実性も分かります",
-      "duration_multiplier": 1.1
+      "text": "確率を表します",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "有意差がないことは、差がない証明とは限りません",
-      "duration_multiplier": 1.1
+      "text": "p値は、",
+      "duration_multiplier": 1
     },
     {
-      "text": "検出力が不足している場合もあります",
-      "duration_multiplier": 1.1
+      "text": "仮説が正しい確率では",
+      "duration_multiplier": 1
     },
     {
-      "text": "多数の検定を行うと、偶然の有意差が増えます",
-      "duration_multiplier": 1.1
+      "text": "ありません",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "分析前に、何を検定するか決めることが重要です",
-      "duration_multiplier": 1.1
+      "text": "p値が小さくても、",
+      "duration_multiplier": 1
     },
     {
-      "text": "統計的有意性と実務上の重要性を分けて考えます",
+      "text": "差が大きいとは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "限りません",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "標本数が大きいと、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "小さな差でも",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "検出される",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ことがあります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "そのため、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "効果量も確認します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "効果量は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "差や関係の大きさを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "表します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "信頼区間を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "合わせて見ると、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "不確実性も分かります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "有意差がないことは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "差がない証明とは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "限りません",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "検出力が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "不足している",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "場合もあります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "多数の検定を行うと、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "偶然の有意差が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "増えます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "分析前に、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "何を検定するか",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "決めることが重要です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "統計的有意性と",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "実務上の重要性を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "分けて考えます",
       "duration_multiplier": 1.35
     }
   ]

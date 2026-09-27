@@ -9,59 +9,155 @@
   "sources": [],
   "chunks": [
     {
-      "text": "母集団は、知りたい対象全体です",
+      "text": "母集団は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "知りたい対象全体です",
       "duration_multiplier": 1.35
     },
     {
-      "text": "標本は、実際に観測した一部です",
-      "duration_multiplier": 1.1
+      "text": "標本は、",
+      "duration_multiplier": 1
     },
     {
-      "text": "標本から、母集団の特徴を推定します",
-      "duration_multiplier": 1.1
+      "text": "実際に観測した一部です",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "標本が偏っていると、推定も偏ります",
-      "duration_multiplier": 1.1
+      "text": "標本から、",
+      "duration_multiplier": 1
     },
     {
-      "text": "これを、選択バイアスとして考えることがあります",
-      "duration_multiplier": 1.1
+      "text": "母集団の特徴を",
+      "duration_multiplier": 1
     },
     {
-      "text": "回答した人だけを見ると、回答者の特徴が影響する場合があります",
-      "duration_multiplier": 1.1
+      "text": "推定します",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "測定方法そのものが、結果へ影響することもあります",
-      "duration_multiplier": 1.1
+      "text": "標本が偏っていると、",
+      "duration_multiplier": 1
     },
     {
-      "text": "データが多ければ、偏りが自動で消えるわけではありません",
-      "duration_multiplier": 1.1
+      "text": "推定も偏ります",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "誰がデータに含まれているか確認します",
-      "duration_multiplier": 1.1
+      "text": "これを、",
+      "duration_multiplier": 1
     },
     {
-      "text": "誰が含まれていないかも確認します",
-      "duration_multiplier": 1.1
+      "text": "選択バイアスとして",
+      "duration_multiplier": 1
     },
     {
-      "text": "観測期間も重要です",
-      "duration_multiplier": 1.1
+      "text": "考えることがあります",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "特定時期だけでは、季節性を誤解することがあります",
-      "duration_multiplier": 1.1
+      "text": "回答した人だけを見ると、",
+      "duration_multiplier": 1
     },
     {
-      "text": "対象範囲を明示して結論を書きます",
-      "duration_multiplier": 1.1
+      "text": "回答者の特徴が",
+      "duration_multiplier": 1
     },
     {
-      "text": "標本の限界を説明することが、分析の信頼性につながります",
+      "text": "影響する場合があります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "測定方法そのものが、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "結果へ影響する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "こともあります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "データが多ければ、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "偏りが自動で消える",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "わけではありません",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "誰がデータに",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "含まれているか",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "確認します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "誰が含まれて",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "いないかも",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "確認します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "観測期間も",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "重要です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "特定時期だけでは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "季節性を誤解する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ことがあります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "対象範囲を明示して",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "結論を書きます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "標本の限界を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "説明することが、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "分析の信頼性に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "つながります",
       "duration_multiplier": 1.35
     }
   ]
