@@ -9,59 +9,143 @@
   "sources": [],
   "chunks": [
     {
-      "text": "要件は、書けば完成ではありません",
+      "text": "要件は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "書けば完成ではありません",
       "duration_multiplier": 1.35
     },
     {
-      "text": "曖昧さがないか確認します",
-      "duration_multiplier": 1.1
+      "text": "曖昧さがないか",
+      "duration_multiplier": 1
     },
     {
-      "text": "実現可能か確認します",
-      "duration_multiplier": 1.1
+      "text": "確認します",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "他の要件と矛盾していないか確認します",
-      "duration_multiplier": 1.1
+      "text": "実現可能か",
+      "duration_multiplier": 1
     },
     {
-      "text": "テストで確認できる表現か確認します",
-      "duration_multiplier": 1.1
+      "text": "確認します",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "使いやすいシステム、だけでは検証しにくい要件です",
-      "duration_multiplier": 1.1
+      "text": "他の要件と",
+      "duration_multiplier": 1
     },
     {
-      "text": "測定条件を加えると、確認しやすくなります",
-      "duration_multiplier": 1.1
+      "text": "矛盾していないか",
+      "duration_multiplier": 1
     },
     {
-      "text": "要件には、優先順位も必要です",
-      "duration_multiplier": 1.1
+      "text": "確認します",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "すべてを同じ重要度にすると判断できません",
-      "duration_multiplier": 1.1
+      "text": "テストで確認できる",
+      "duration_multiplier": 1
     },
     {
-      "text": "トレーサビリティは、要件のつながりを追える性質です",
-      "duration_multiplier": 1.1
+      "text": "表現か確認します",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "業務目的から、業務要件へつなげます",
-      "duration_multiplier": 1.1
+      "text": "使いやすいシステム、",
+      "duration_multiplier": 1
     },
     {
-      "text": "業務要件から、システム要件へつなげます",
-      "duration_multiplier": 1.1
+      "text": "だけでは",
+      "duration_multiplier": 1
     },
     {
-      "text": "システム要件から、設計やテストへつなげます",
-      "duration_multiplier": 1.1
+      "text": "検証しにくい要件です",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "変更時に影響範囲を確認できることが重要です",
+      "text": "測定条件を加えると、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "確認しやすくなります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "要件には、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "優先順位も必要です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "すべてを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "同じ重要度にすると",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "判断できません",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "トレーサビリティは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "要件のつながりを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "追える性質です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "業務目的から、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "業務要件へつなげます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "業務要件から、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "システム要件へ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "つなげます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "システム要件から、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "設計やテストへ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "つなげます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "変更時に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "影響範囲を確認できる",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ことが重要です",
       "duration_multiplier": 1.35
     }
   ]

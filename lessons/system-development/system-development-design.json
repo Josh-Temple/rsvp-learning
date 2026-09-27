@@ -9,59 +9,163 @@
   "sources": [],
   "chunks": [
     {
-      "text": "設計は、要件を実装可能な形へ変える工程です",
+      "text": "設計は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "要件を実装可能な",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "形へ変える工程です",
       "duration_multiplier": 1.35
     },
     {
-      "text": "基本設計は、利用者や外部から見える仕様を扱うことが多いです",
-      "duration_multiplier": 1.1
+      "text": "基本設計は、",
+      "duration_multiplier": 1
     },
     {
-      "text": "画面、帳票、API、データの大枠を整理します",
-      "duration_multiplier": 1.1
+      "text": "利用者や外部から",
+      "duration_multiplier": 1
     },
     {
-      "text": "権限や業務フローも、設計対象になります",
-      "duration_multiplier": 1.1
+      "text": "見える仕様を扱う",
+      "duration_multiplier": 1
     },
     {
-      "text": "詳細設計は、実装に近い内部構造を具体化します",
-      "duration_multiplier": 1.1
+      "text": "ことが多いです",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "処理手順やデータ構造を細かく決めます",
-      "duration_multiplier": 1.1
+      "text": "画面、帳票、API、",
+      "duration_multiplier": 1
     },
     {
-      "text": "組織によって、基本設計と詳細設計の境界は異なります",
-      "duration_multiplier": 1.1
+      "text": "データの大枠を",
+      "duration_multiplier": 1
     },
     {
-      "text": "重要なのは、名前より責務です",
-      "duration_multiplier": 1.1
+      "text": "整理します",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "設計では、正常系だけでなく異常系も考えます",
-      "duration_multiplier": 1.1
+      "text": "権限や業務フローも、",
+      "duration_multiplier": 1
     },
     {
-      "text": "入力エラーや通信失敗時の動作を決めます",
-      "duration_multiplier": 1.1
+      "text": "設計対象になります",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "運用時に必要なログも設計します",
-      "duration_multiplier": 1.1
+      "text": "詳細設計は、",
+      "duration_multiplier": 1
     },
     {
-      "text": "変更しやすさも、設計品質の一部です",
-      "duration_multiplier": 1.1
+      "text": "実装に近い内部構造を",
+      "duration_multiplier": 1
     },
     {
-      "text": "設計判断には、コストと複雑性のトレードオフがあります",
-      "duration_multiplier": 1.1
+      "text": "具体化します",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "良い設計は、要件とのつながりを説明できます",
+      "text": "処理手順や",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "データ構造を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "細かく決めます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "組織によって、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "基本設計と詳細設計の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "境界は異なります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "重要なのは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "名前より責務です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "設計では、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "正常系だけでなく",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "異常系も考えます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "入力エラーや",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "通信失敗時の動作を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "決めます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "運用時に必要な",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ログも設計します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "変更しやすさも、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "設計品質の一部です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "設計判断には、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "コストと複雑性の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "トレードオフが",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "あります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "良い設計は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "要件とのつながりを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "説明できます",
       "duration_multiplier": 1.35
     }
   ]
