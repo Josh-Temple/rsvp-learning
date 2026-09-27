@@ -26,19 +26,23 @@
       "duration_multiplier": 1.5
     },
     {
-      "text": "ルールがあることと守",
+      "text": "ルールがあることと",
       "duration_multiplier": 1
     },
     {
-      "text": "られていることは違う",
+      "text": "守られていることは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "違う",
       "duration_multiplier": 1.4
     },
     {
-      "text": "情報セキュリティ方針を",
-      "duration_multiplier": 1.1
+      "text": "情報セキュリティ",
+      "duration_multiplier": 1
     },
     {
-      "text": "作っても",
+      "text": "方針を作っても",
       "duration_multiplier": 1.1
     },
     {
@@ -54,7 +58,11 @@
       "duration_multiplier": 1
     },
     {
-      "text": "アクセス制御が外れている",
+      "text": "アクセス",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "制御が外れている",
       "duration_multiplier": 1.4
     },
     {
@@ -74,11 +82,11 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "ログは取っているが誰も",
-      "duration_multiplier": 1.1
+      "text": "ログは取っているが",
+      "duration_multiplier": 1
     },
     {
-      "text": "確認していない",
+      "text": "誰も確認していない",
       "duration_multiplier": 1.4
     },
     {
@@ -86,11 +94,15 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "文書だけでなく実際の",
+      "text": "文書だけでなく",
       "duration_multiplier": 1
     },
     {
-      "text": "運用を確認します",
+      "text": "実際の運用を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "確認します",
       "duration_multiplier": 1.4
     },
     {
@@ -106,11 +118,15 @@
       "duration_multiplier": 1
     },
     {
-      "text": "活動を一定の基準に照",
+      "text": "活動を一定の",
       "duration_multiplier": 1
     },
     {
-      "text": "らして評価します",
+      "text": "基準に照らして",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "評価します",
       "duration_multiplier": 1.4
     },
     {
@@ -122,8 +138,12 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "第三者への説明や保証に",
-      "duration_multiplier": 1.1
+      "text": "第三者への",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "説明や保証に",
+      "duration_multiplier": 1
     },
     {
       "text": "使う場合もあります",
@@ -158,15 +178,15 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "何をもって適切と判断",
+      "text": "何をもって",
       "duration_multiplier": 1
     },
     {
-      "text": "するかという基準が",
-      "duration_multiplier": 1
+      "text": "適切と判断するかという",
+      "duration_multiplier": 1.1
     },
     {
-      "text": "必要です",
+      "text": "基準が必要です",
       "duration_multiplier": 1.4
     },
     {
@@ -194,11 +214,11 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "こうしたものが監査",
+      "text": "こうしたものが",
       "duration_multiplier": 1
     },
     {
-      "text": "基準になり得ます",
+      "text": "監査基準になり得ます",
       "duration_multiplier": 1.4
     },
     {
@@ -230,8 +250,12 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "見落としや利害の衝突が",
-      "duration_multiplier": 1.1
+      "text": "見落としや",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "利害の衝突が",
+      "duration_multiplier": 1
     },
     {
       "text": "起きる可能性があります",
@@ -250,27 +274,31 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "客観的に判断できる",
+      "text": "客観的に",
       "duration_multiplier": 1
     },
     {
-      "text": "ことが重要です",
+      "text": "判断できることが",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "重要です",
       "duration_multiplier": 1.4
     },
     {
-      "text": "完全に組織外",
+      "text": "完全に組織",
       "duration_multiplier": 1
     },
     {
-      "text": "でなければ監査でき",
+      "text": "外でなければ",
       "duration_multiplier": 1
     },
     {
-      "text": "ないという意味では",
+      "text": "監査できないという",
       "duration_multiplier": 1
     },
     {
-      "text": "ありません",
+      "text": "意味ではありません",
       "duration_multiplier": 1.4
     },
     {
@@ -346,15 +374,19 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "すべての記録を一件",
+      "text": "すべての",
       "duration_multiplier": 1
     },
     {
-      "text": "ずつ確認できない場合が",
-      "duration_multiplier": 1.1
+      "text": "記録を一件ずつ",
+      "duration_multiplier": 1
     },
     {
-      "text": "あります",
+      "text": "確認できない",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "場合があります",
       "duration_multiplier": 1.4
     },
     {
@@ -362,23 +394,23 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "一定の方法で対象を",
+      "text": "一定の方法で",
       "duration_multiplier": 1
     },
     {
-      "text": "抽出して確認することが",
-      "duration_multiplier": 1.1
+      "text": "対象を抽出して",
+      "duration_multiplier": 1
     },
     {
-      "text": "あります",
+      "text": "確認することがあります",
       "duration_multiplier": 1.4
     },
     {
-      "text": "サンプルで問題が見つから",
-      "duration_multiplier": 1.1
+      "text": "サンプルで",
+      "duration_multiplier": 1
     },
     {
-      "text": "なかったことと",
+      "text": "問題が見つからなかったことと",
       "duration_multiplier": 1.1
     },
     {
@@ -390,11 +422,11 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "抽出方法と限界を理解",
+      "text": "抽出方法と",
       "duration_multiplier": 1
     },
     {
-      "text": "します",
+      "text": "限界を理解します",
       "duration_multiplier": 1.4
     },
     {
@@ -402,23 +434,23 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "統制が適切に設計され",
+      "text": "統制が適切に",
       "duration_multiplier": 1
     },
     {
-      "text": "ているか",
+      "text": "設計されているか",
       "duration_multiplier": 1.4
     },
     {
-      "text": "実際に運用されて",
+      "text": "実際に運用されているか",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "この二つは分けて",
       "duration_multiplier": 1
     },
     {
-      "text": "いるか",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "この二つは分けて考えます",
+      "text": "考えます",
       "duration_multiplier": 1.4
     },
     {
@@ -430,19 +462,23 @@
       "duration_multiplier": 1
     },
     {
-      "text": "当日停止する手順が",
+      "text": "当日停止する",
       "duration_multiplier": 1
     },
     {
-      "text": "文書化されていても",
+      "text": "手順が文書",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "化されていても",
       "duration_multiplier": 1.1
     },
     {
-      "text": "実際に停止されていな",
-      "duration_multiplier": 1
+      "text": "実際に停止されていなければ",
+      "duration_multiplier": 1.1
     },
     {
-      "text": "ければ機能していません",
+      "text": "機能していません",
       "duration_multiplier": 1.4
     },
     {
@@ -458,11 +494,15 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "仕組みとして再現でき",
+      "text": "仕組みとして",
       "duration_multiplier": 1
     },
     {
-      "text": "なければ持続しません",
+      "text": "再現できなければ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "持続しません",
       "duration_multiplier": 1.4
     },
     {
@@ -474,11 +514,11 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "組織の目的を達成する",
+      "text": "組織の目的を",
       "duration_multiplier": 1
     },
     {
-      "text": "ために",
+      "text": "達成するために",
       "duration_multiplier": 1.1
     },
     {
@@ -514,19 +554,27 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "こうした活動が含まれます",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "情報セキュリティ対策の",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "多くも内部統制の一部",
+      "text": "こうした",
       "duration_multiplier": 1
     },
     {
-      "text": "として機能します",
+      "text": "活動が含まれます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "情報セキュリティ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "対策の多くも",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "内部統制の一部として",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "機能します",
       "duration_multiplier": 1.4
     },
     {
@@ -550,19 +598,19 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "確認のすべてを集中",
+      "text": "確認のすべてを",
       "duration_multiplier": 1
     },
     {
-      "text": "させると",
+      "text": "集中させると",
       "duration_multiplier": 1.1
     },
     {
-      "text": "不正や誤りが発見されに",
-      "duration_multiplier": 1.1
+      "text": "不正や誤りが",
+      "duration_multiplier": 1
     },
     {
-      "text": "くくなります",
+      "text": "発見されにくくなります",
       "duration_multiplier": 1.4
     },
     {
@@ -570,11 +618,7 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "役割を分けることが",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "あります",
+      "text": "役割を分けることがあります",
       "duration_multiplier": 1.4
     },
     {
@@ -582,15 +626,15 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "小規模組織では完全な",
+      "text": "小規模組織では",
       "duration_multiplier": 1
     },
     {
-      "text": "分離が難しい場合が",
+      "text": "完全な分離が",
       "duration_multiplier": 1
     },
     {
-      "text": "あります",
+      "text": "難しい場合があります",
       "duration_multiplier": 1.4
     },
     {
@@ -598,11 +642,15 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "事後レビューなど代替",
+      "text": "事後レビューなど",
       "duration_multiplier": 1
     },
     {
-      "text": "的な統制を考えます",
+      "text": "代替的な",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "統制を考えます",
       "duration_multiplier": 1.4
     },
     {
@@ -638,23 +686,23 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "問題があれば戻せる",
+      "text": "問題があれば",
       "duration_multiplier": 1
     },
     {
-      "text": "ようにします",
+      "text": "戻せるようにします",
       "duration_multiplier": 1.4
     },
     {
-      "text": "緊急変更では通常手順を",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "簡略化する場合があり",
+      "text": "緊急変更では",
       "duration_multiplier": 1
     },
     {
-      "text": "ますが",
+      "text": "通常手順を簡略化する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "場合がありますが",
       "duration_multiplier": 1.1
     },
     {
@@ -670,11 +718,15 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "利用者の権限は時間",
+      "text": "利用者の",
       "duration_multiplier": 1
     },
     {
-      "text": "とともに変化します",
+      "text": "権限は時間とともに",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "変化します",
       "duration_multiplier": 1.4
     },
     {
@@ -698,15 +750,19 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "不要な権限を削除します",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "特権アカウントは特に",
+      "text": "不要な権限を",
       "duration_multiplier": 1
     },
     {
-      "text": "厳格に管理します",
+      "text": "削除します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "特権アカウントは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "特に厳格に管理します",
       "duration_multiplier": 1.4
     },
     {
@@ -714,11 +770,19 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "ルールを適用できない場合",
+      "text": "ルールを適用できない",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "場合",
       "duration_multiplier": 1.1
     },
     {
-      "text": "例外を正式に管理します",
+      "text": "例外を正式に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "管理します",
       "duration_multiplier": 1.4
     },
     {
@@ -750,11 +814,15 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "通常運用として固定化",
+      "text": "通常運用として",
       "duration_multiplier": 1
     },
     {
-      "text": "される可能性があります",
+      "text": "固定化される",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "可能性があります",
       "duration_multiplier": 1.4
     },
     {
@@ -762,15 +830,19 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "監査で見つかった問題は",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "すべて同じ重要度では",
+      "text": "監査で見つかった",
       "duration_multiplier": 1
     },
     {
-      "text": "ありません",
+      "text": "問題は",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "すべて同じ重要",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "度ではありません",
       "duration_multiplier": 1.4
     },
     {
@@ -794,7 +866,11 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "こうした条件を考えます",
+      "text": "こうした",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "条件を考えます",
       "duration_multiplier": 1.4
     },
     {
@@ -814,11 +890,11 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "監査報告を出して終",
+      "text": "監査報告を",
       "duration_multiplier": 1
     },
     {
-      "text": "わりではありません",
+      "text": "出して終わりではありません",
       "duration_multiplier": 1.4
     },
     {
@@ -858,15 +934,15 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "将来の事故が起きない",
+      "text": "将来の事故が",
       "duration_multiplier": 1
     },
     {
-      "text": "ことを保証するもの",
+      "text": "起きないことを",
       "duration_multiplier": 1
     },
     {
-      "text": "ではありません",
+      "text": "保証するものではありません",
       "duration_multiplier": 1.4
     },
     {
@@ -886,7 +962,11 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "こうした制約があります",
+      "text": "こうした",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "制約があります",
       "duration_multiplier": 1.4
     },
     {
@@ -894,15 +974,23 @@
       "duration_multiplier": 1
     },
     {
-      "text": "」と単純化しないことが",
-      "duration_multiplier": 1.1
+      "text": "」と",
+      "duration_multiplier": 0.9
+    },
+    {
+      "text": "単純化しないことが",
+      "duration_multiplier": 1
     },
     {
       "text": "重要です",
       "duration_multiplier": 1.4
     },
     {
-      "text": "日本のシステム監査制度",
+      "text": "日本のシステム",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "監査制度",
       "duration_multiplier": 1.4
     },
     {
@@ -918,11 +1006,15 @@
       "duration_multiplier": 1
     },
     {
-      "text": "基づくシステム監査",
+      "text": "基づくシステム",
       "duration_multiplier": 1
     },
     {
-      "text": "制度を運用しています",
+      "text": "監査制度を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "運用しています",
       "duration_multiplier": 1.4
     },
     {
@@ -930,27 +1022,27 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "情報セキュリティ監査",
+      "text": "情報セキュリティ",
       "duration_multiplier": 1
     },
     {
-      "text": "基準と情報",
+      "text": "監査基準と情報",
       "duration_multiplier": 1
     },
     {
-      "text": "セキュリティ管理基準に",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "基づく情報",
+      "text": "セキュリティ",
       "duration_multiplier": 1
     },
     {
-      "text": "セキュリティ監査制度も",
-      "duration_multiplier": 1.1
+      "text": "管理基準に基づく情報",
+      "duration_multiplier": 1
     },
     {
-      "text": "あります",
+      "text": "セキュリティ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "監査制度もあります",
       "duration_multiplier": 1.4
     },
     {
