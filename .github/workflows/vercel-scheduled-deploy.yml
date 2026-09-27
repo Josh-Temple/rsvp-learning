@@ -4,9 +4,6 @@ on:
   schedule:
     - cron: "0 0,12 * * *"
   workflow_dispatch:
-  push:
-    paths:
-      - ".github/workflows/vercel-scheduled-deploy.yml"
 
 permissions:
   contents: write
@@ -16,24 +13,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  config-check:
-    if: github.event_name == 'push'
-    runs-on: ubuntu-latest
-    env:
-      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-    steps:
-      - name: Check Vercel token
-        shell: bash
-        run: |
-          if [ -n "$VERCEL_TOKEN" ]; then
-            echo "VERCEL_TOKEN_CONFIGURED"
-          else
-            echo "VERCEL_TOKEN_MISSING"
-            exit 1
-          fi
-
   deploy:
-    if: github.event_name != 'push'
     runs-on: ubuntu-latest
     env:
       VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
