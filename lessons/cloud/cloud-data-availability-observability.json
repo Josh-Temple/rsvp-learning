@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "id": "cloud-data-availability-observability",
+  "title": "データ・可用性・監視",
+  "topic": "クラウド",
+  "summary": "クラウドでのデータ保存、バックアップ、冗長化、監視の基本を学びます。",
+  "created_at": "2026-09-27",
+  "base_duration_ms": 680,
+  "sources": [],
+  "chunks": [
+    {
+      "text": "クラウドでは、データの置き場所も用途に応じて選びます",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "ファイル向けのObject Storageがあります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "構造化データには、データベースを使うことが多いです",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "保存場所が違えば、性能や費用も変わります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "重要データには、バックアップが必要です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "バックアップは、作るだけでなく復元できるか確認します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "可用性は、必要なときにサービスを使える度合いです",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "単一障害点を減らすために、冗長化を考えます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "複数の障害領域へ分散する設計もあります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "ただし、冗長化すると構成と費用は増えます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "監視では、CPUなどの資源だけを見るわけではありません",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "エラー率、応答時間、業務処理数も重要です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "ログとメトリクスを組み合わせて状態を把握します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "可用性は、技術設計と運用設計の両方で作ります",
+      "duration_multiplier": 1.35
+    }
+  ]
+}

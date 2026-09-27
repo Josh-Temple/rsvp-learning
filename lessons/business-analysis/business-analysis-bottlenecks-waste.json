@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "id": "business-analysis-bottlenecks-waste",
+  "title": "ボトルネックとムダの発見",
+  "topic": "業務改革",
+  "summary": "処理能力を制約する箇所や、待ち・手戻り・重複などの改善候補を見つける方法を学びます。",
+  "created_at": "2026-09-27",
+  "base_duration_ms": 680,
+  "sources": [],
+  "chunks": [
+    {
+      "text": "改善では、どこが全体を制約しているかを探します",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "ボトルネックは、全体の処理能力を制限する箇所です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "一部の工程だけ速くしても、全体が速くなるとは限りません",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "待ち時間が長い工程を確認します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "承認待ちや情報待ちも、待ち時間です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "手戻りは、同じ作業をやり直すことです",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "入力ミスや確認不足が、手戻りを生むことがあります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "同じ情報の重複入力も改善候補です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "不要な転記や集計も確認します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "問い合わせが多い箇所には、分かりにくさがあるかもしれません",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "件数と処理時間を測ると、優先順位をつけやすくなります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "例外の頻度も確認します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "目立つ不満だけで、改善箇所を決めないようにします",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "全体への影響が大きい箇所から改善します",
+      "duration_multiplier": 1.35
+    }
+  ]
+}

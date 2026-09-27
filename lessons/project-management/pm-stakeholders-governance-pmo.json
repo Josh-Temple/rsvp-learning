@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "id": "pm-stakeholders-governance-pmo",
+  "title": "ステークホルダー・ガバナンス・PMO",
+  "topic": "プロジェクト管理",
+  "summary": "関係者調整、意思決定の仕組み、PMOの役割を整理します。",
+  "created_at": "2026-09-27",
+  "base_duration_ms": 680,
+  "sources": [],
+  "chunks": [
+    {
+      "text": "プロジェクトには、立場の異なる関係者がいます",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "経営層、利用部門、IT部門、ベンダーなどが関わります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "関心や責任は、それぞれ異なります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "誰に何を伝えるかを整理します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "重要な意思決定には、責任者が必要です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "承認経路が曖昧だと、判断が止まりやすくなります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "ガバナンスは、意思決定と監督の仕組みです",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "定例会議だけで、ガバナンスが成立するわけではありません",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "判断事項、権限、エスカレーション先を明確にします",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "PMOは、プロジェクト管理を支援する機能です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "進捗や課題の見える化を支援します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "管理方法や報告形式を標準化することもあります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "PMOが判断主体になるとは限りません",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "役割とauthorityを混同しないことが重要です",
+      "duration_multiplier": 1.35
+    }
+  ]
+}

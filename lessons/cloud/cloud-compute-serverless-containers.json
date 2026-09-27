@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "id": "cloud-compute-serverless-containers",
+  "title": "仮想マシン・コンテナ・Serverless",
+  "topic": "クラウド",
+  "summary": "代表的なクラウド実行環境の違いと選択の考え方を学びます。",
+  "created_at": "2026-09-27",
+  "base_duration_ms": 680,
+  "sources": [],
+  "chunks": [
+    {
+      "text": "クラウドでは、アプリの実行方法を選べます",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "仮想マシンは、OSを含む実行環境を比較的自由に管理できます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "自由度が高い代わりに、OS管理の負担もあります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "コンテナは、アプリと依存関係をまとめて実行します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "環境差を減らしやすいことが利点です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "一方で、コンテナ運用には別の管理知識が必要です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "Serverlessは、サーバー管理を減らして処理を実行する考え方です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "イベントに応じて処理を起動する用途と相性があります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "利用量に応じて拡張しやすい場合があります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "ただし、実行時間や構成に制約がある場合があります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "どの方式にも、長所と短所があります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "既存システムとの相性も考えます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "運用できる人材と監視方法も選択条件です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "実行方式は、技術だけでなく運用負担を含めて選びます",
+      "duration_multiplier": 1.35
+    }
+  ]
+}

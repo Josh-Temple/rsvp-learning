@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "id": "cloud-service-models-responsibility",
+  "title": "クラウドのサービスモデルと責任分界",
+  "topic": "クラウド",
+  "summary": "IaaS・PaaS・SaaSと、利用者側・提供者側の責任分界を整理します。",
+  "created_at": "2026-09-27",
+  "base_duration_ms": 680,
+  "sources": [],
+  "chunks": [
+    {
+      "text": "クラウドでは、どこまでを自分で管理するかが重要です",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "IaaSは、仮想マシンやネットワークなど基盤に近い資源を利用します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "利用者は、OSやアプリを管理する場面が多くなります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "PaaSは、アプリ実行環境まで提供される形です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "利用者は、基盤管理を減らしてアプリへ集中できます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "SaaSは、完成したソフトウェアをサービスとして利用します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "サービスモデルが変わると、管理責任も変わります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "クラウド事業者がすべてを守ってくれるわけではありません",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "利用者側には、設定や権限管理の責任が残ります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "これを、責任共有モデルとして考えます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "どの層を誰が管理するかを確認します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "障害対応でも、責任分界が重要です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "契約やサービス仕様も、責任範囲へ影響します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "クラウド選定では、便利さだけでなく責任範囲を見ます",
+      "duration_multiplier": 1.35
+    }
+  ]
+}

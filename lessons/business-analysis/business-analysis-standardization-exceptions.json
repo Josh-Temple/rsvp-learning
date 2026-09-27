@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "id": "business-analysis-standardization-exceptions",
+  "title": "標準化と例外処理",
+  "topic": "業務改革",
+  "summary": "業務のばらつきを減らす標準化と、避けられない例外を安全に扱う考え方を学びます。",
+  "created_at": "2026-09-27",
+  "base_duration_ms": 680,
+  "sources": [],
+  "chunks": [
+    {
+      "text": "標準化は、業務のばらつきを減らします",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "同じ条件なら、同じ手順で処理できる状態を目指します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "標準化すると、教育しやすくなります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "品質の安定にもつながります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "自動化もしやすくなります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "ただし、現実の業務には例外があります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "例外を無視して標準化すると、現場で回避策が生まれます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "まず、例外の種類と頻度を確認します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "本当に必要な例外かも検討します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "例外には、判断者と処理方法を決めます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "記録を残せるようにします",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "頻発する例外は、標準手順側の問題かもしれません",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "標準と例外の境界を明確にします",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "良い標準化は、現場の判断をゼロにすることではありません",
+      "duration_multiplier": 1.35
+    }
+  ]
+}

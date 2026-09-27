@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "id": "business-analysis-problem-value",
+  "title": "課題設定と価値",
+  "topic": "業務改革",
+  "summary": "表面的な要望から、本当に解くべき業務課題と価値を整理する方法を学びます。",
+  "created_at": "2026-09-27",
+  "base_duration_ms": 680,
+  "sources": [],
+  "chunks": [
+    {
+      "text": "業務改革では、最初に課題を正しく捉えます",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "利用者の要望が、そのまま本当の課題とは限りません",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "例えば、システムを導入したい、という要望があります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "その背景に、処理時間の長さがあるかもしれません",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "本当に改善したい結果を確認します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "誰にとっての価値かも明確にします",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "利用者、職員、管理者で価値は異なることがあります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "現象と原因を分けます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "問い合わせが多いことは、現象です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "原因は、説明不足や手続の複雑さかもしれません",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "仮説を置いて、事実で確認します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "解決策を先に決めないことが重要です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "課題が明確になると、施策比較がしやすくなります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "業務改革は、手段ではなく価値から考えます",
+      "duration_multiplier": 1.35
+    }
+  ]
+}

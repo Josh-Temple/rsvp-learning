@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "id": "cloud-networking",
+  "title": "クラウドネットワークの基本",
+  "topic": "クラウド",
+  "summary": "仮想ネットワーク、公開・非公開の境界、通信制御の基本を学びます。",
+  "created_at": "2026-09-27",
+  "base_duration_ms": 680,
+  "sources": [],
+  "chunks": [
+    {
+      "text": "クラウドでも、ネットワークの基本は変わりません",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "システム同士は、ネットワークを通じて通信します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "仮想ネットワークは、クラウド上に論理的な通信範囲を作ります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "サブネットで、ネットワークを複数の範囲へ分けられます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "外部公開が必要な部分と、内部だけで使う部分を分けます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "データベースを直接インターネットへ公開しない設計が一般的です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "FirewallやSecurity Groupなどで通信を制御します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "必要な宛先とポートだけを許可します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "DNSは、名前と接続先を対応づけます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "Load Balancerは、複数の処理先へ通信を分散します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "通信経路を複雑にすると、障害調査も難しくなります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "ネットワーク設計では、到達性と安全性を両方考えます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "通信ログは、問題調査に役立ちます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "まずは、利用者からアプリ、データベースまでの経路を説明できるようにします",
+      "duration_multiplier": 1.35
+    }
+  ]
+}

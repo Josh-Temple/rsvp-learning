@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "id": "pm-change-quality",
+  "title": "変更管理と品質管理",
+  "topic": "プロジェクト管理",
+  "summary": "途中変更の影響評価と、成果物が要求を満たすための品質管理の基本を学びます。",
+  "created_at": "2026-09-27",
+  "base_duration_ms": 680,
+  "sources": [],
+  "chunks": [
+    {
+      "text": "プロジェクトでは、途中で変更要求が発生します",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "変更そのものが悪いわけではありません",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "重要なのは、影響を確認せず追加しないことです",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "変更は、範囲、費用、期限、品質へ影響します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "関連する要件やテストへの影響も確認します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "変更理由と承認者を記録します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "品質管理では、成果物が基準を満たすか確認します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "品質は、最後のテストだけで作るものではありません",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "要件や設計の段階から品質を考えます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "レビューは、早い段階で問題を見つける手段です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "不具合の件数だけが、品質ではありません",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "重大度や利用者影響も見ます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "変更と品質は、互いに影響します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "変更を制御しながら、価値を守ることが重要です",
+      "duration_multiplier": 1.35
+    }
+  ]
+}

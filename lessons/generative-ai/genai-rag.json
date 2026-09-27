@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "id": "genai-rag",
+  "title": "RAGの基本",
+  "topic": "生成AI",
+  "summary": "外部資料を検索し、回答生成へ利用するRAGの構成と限界を学びます。",
+  "created_at": "2026-09-27",
+  "base_duration_ms": 680,
+  "sources": [],
+  "chunks": [
+    {
+      "text": "RAGは、外部情報を検索して生成へ利用する方法です",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "Retrieval Augmented Generationの略です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "最初に、参照対象となる文書を準備します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "文書を検索しやすい単位へ分割します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "検索では、質問に関係する部分を探します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "Embeddingを使った意味検索が使われることがあります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "キーワード検索と組み合わせる方法もあります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "取得した文章を、LLMのコンテキストへ渡します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "LLMは、その情報を使って回答を生成します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "検索に失敗すれば、生成も正確になりにくくなります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "RAGは、モデルへ知識を完全に覚えさせる方法ではありません",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "権限のない文書を検索対象へ入れないことが重要です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "引用や出典を返す設計も有効です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "RAGでは、検索品質と生成品質を分けて確認します",
+      "duration_multiplier": 1.35
+    }
+  ]
+}

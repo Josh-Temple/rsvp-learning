@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "id": "pm-initiation-scope-wbs",
+  "title": "目的・スコープ・WBS",
+  "topic": "プロジェクト管理",
+  "summary": "プロジェクトの目的を定め、スコープを明確にし、作業をWBSへ分解する基本を学びます。",
+  "created_at": "2026-09-27",
+  "base_duration_ms": 680,
+  "sources": [],
+  "chunks": [
+    {
+      "text": "プロジェクト管理は、目的を明確にするところから始まります",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "何を達成すれば成功かを定義します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "成果物も、できるだけ具体的にします",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "スコープは、プロジェクトで扱う範囲です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "含むものと、含まないものを明確にします",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "曖昧なスコープは、追加作業を生みやすくなります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "WBSは、Work Breakdown Structureの略です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "成果を実現するための作業を、管理可能な単位へ分解します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "大きすぎる作業は、進捗を判断しにくくなります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "細かすぎる作業は、管理負担を増やします",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "担当者と期限を割り当てられる程度まで分けます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "依存関係も確認します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "WBSは、単なるToDoリストではありません",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "目的、成果物、作業のつながりを保つことが重要です",
+      "duration_multiplier": 1.35
+    }
+  ]
+}
