@@ -22,6 +22,16 @@ ChatGPT等で調査した内容を、RSVP（Rapid Serial Visual Presentation）�
 
 UIは個人利用を前提に、Playerは本文・進捗・操作だけに絞り、教材選択と再生モードはLibraryへ分離しています。
 
+## Learn 読み上げモード
+
+Android Chrome の「このページを読み上げ」で使える連続読み上げ教材を、RSVPと同じリポジトリ内に試験導入しています。
+
+現在のパイロット:
+- `learn/api-authentication-authorization.html`
+- RSVP の「認証と認可」チャプターから `LEARN` で遷移
+
+Learn本文は通常のHTMLテキストとして持たせ、読み上げ互換性を優先します。
+
 ## 教材構造
 
 `lessons/index.json` がLessonのメタデータ、`courses/index.json` がCourseとChapter順を管理します。
