@@ -9,59 +9,183 @@
   "sources": [],
   "chunks": [
     {
-      "text": "クラウドでは、データの置き場所も用途に応じて選びます",
+      "text": "クラウドでは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "データの置き場所も",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "用途に応じて",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "選びます",
       "duration_multiplier": 1.35
     },
     {
-      "text": "ファイル向けのObject Storageがあります",
-      "duration_multiplier": 1.1
+      "text": "ファイル向けの",
+      "duration_multiplier": 1
     },
     {
-      "text": "構造化データには、データベースを使うことが多いです",
-      "duration_multiplier": 1.1
+      "text": "Object Storageが",
+      "duration_multiplier": 1.35
     },
     {
-      "text": "保存場所が違えば、性能や費用も変わります",
-      "duration_multiplier": 1.1
+      "text": "あります",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "重要データには、バックアップが必要です",
-      "duration_multiplier": 1.1
+      "text": "構造化データには、",
+      "duration_multiplier": 1
     },
     {
-      "text": "バックアップは、作るだけでなく復元できるか確認します",
-      "duration_multiplier": 1.1
+      "text": "データベースを",
+      "duration_multiplier": 1
     },
     {
-      "text": "可用性は、必要なときにサービスを使える度合いです",
-      "duration_multiplier": 1.1
+      "text": "使うことが多いです",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "単一障害点を減らすために、冗長化を考えます",
-      "duration_multiplier": 1.1
+      "text": "保存場所が違えば、",
+      "duration_multiplier": 1
     },
     {
-      "text": "複数の障害領域へ分散する設計もあります",
-      "duration_multiplier": 1.1
+      "text": "性能や費用も",
+      "duration_multiplier": 1
     },
     {
-      "text": "ただし、冗長化すると構成と費用は増えます",
-      "duration_multiplier": 1.1
+      "text": "変わります",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "監視では、CPUなどの資源だけを見るわけではありません",
-      "duration_multiplier": 1.1
+      "text": "重要データには、",
+      "duration_multiplier": 1
     },
     {
-      "text": "エラー率、応答時間、業務処理数も重要です",
-      "duration_multiplier": 1.1
+      "text": "バックアップが必要です",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "ログとメトリクスを組み合わせて状態を把握します",
-      "duration_multiplier": 1.1
+      "text": "バックアップは、",
+      "duration_multiplier": 1
     },
     {
-      "text": "可用性は、技術設計と運用設計の両方で作ります",
+      "text": "作るだけでなく",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "復元できるか",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "確認します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "可用性は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "必要なときに",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "サービスを使える",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "度合いです",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "単一障害点を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "減らすために、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "冗長化を考えます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "複数の障害領域へ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "分散する設計も",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "あります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ただし、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "冗長化すると",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "構成と費用は",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "増えます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "監視では、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "CPUなどの資源だけを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "見るわけではありません",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "エラー率、応答時間、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "業務処理数も",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "重要です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ログとメトリクスを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "組み合わせて",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "状態を把握します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "可用性は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "技術設計と運用設計の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "両方で作ります",
       "duration_multiplier": 1.35
     }
   ]
