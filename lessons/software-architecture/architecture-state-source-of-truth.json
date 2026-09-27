@@ -9,59 +9,175 @@
   "sources": [],
   "chunks": [
     {
-      "text": "状態は、システムが現在どの状況にあるかを表します",
+      "text": "状態は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "システムが現在",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "どの状況にあるかを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "表します",
       "duration_multiplier": 1.35
     },
     {
-      "text": "例えば、申請中、承認済み、取消済みなどがあります",
-      "duration_multiplier": 1.1
+      "text": "例えば、",
+      "duration_multiplier": 1
     },
     {
-      "text": "同じ状態を複数の場所で管理すると、ずれが起こることがあります",
-      "duration_multiplier": 1.1
+      "text": "申請中、承認済み、",
+      "duration_multiplier": 1
     },
     {
-      "text": "どの情報を正本とするかを決めます",
-      "duration_multiplier": 1.1
+      "text": "取消済みなどがあります",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "Single Source of Truthは、正しい状態の基準を一つに定める考え方です",
-      "duration_multiplier": 1.1
+      "text": "同じ状態を",
+      "duration_multiplier": 1
     },
     {
-      "text": "他の画面や集計表は、正本から派生させます",
-      "duration_multiplier": 1.1
+      "text": "複数の場所で管理すると、",
+      "duration_multiplier": 1
     },
     {
-      "text": "派生データは、遅れて更新される場合があります",
-      "duration_multiplier": 1.1
+      "text": "ずれが起こる",
+      "duration_multiplier": 1
     },
     {
-      "text": "その場合、どの程度の遅延を許すか考えます",
-      "duration_multiplier": 1.1
+      "text": "ことがあります",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "状態変更には、権限と条件を設けることがあります",
-      "duration_multiplier": 1.1
+      "text": "どの情報を",
+      "duration_multiplier": 1
     },
     {
-      "text": "不正な順序で状態が変わらないようにします",
-      "duration_multiplier": 1.1
+      "text": "正本とするかを",
+      "duration_multiplier": 1
     },
     {
-      "text": "履歴を残すと、後から変化を追えます",
-      "duration_multiplier": 1.1
+      "text": "決めます",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "更新が途中で失敗した場合の扱いも決めます",
-      "duration_multiplier": 1.1
+      "text": "Single Source of Truthは、",
+      "duration_multiplier": 1.35
     },
     {
-      "text": "状態と履歴を混同しないことが重要です",
-      "duration_multiplier": 1.1
+      "text": "正しい状態の基準を",
+      "duration_multiplier": 1
     },
     {
-      "text": "正本と派生情報を区別すると、復旧しやすくなります",
+      "text": "一つに定める",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "考え方です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "他の画面や集計表は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "正本から派生させます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "派生データは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "遅れて更新される",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "場合があります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "その場合、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "どの程度の遅延を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "許すか考えます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "状態変更には、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "権限と条件を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "設けることがあります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "不正な順序で",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "状態が変わらないように",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "履歴を残すと、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "後から変化を追えます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "更新が途中で",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "失敗した場合の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "扱いも決めます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "状態と履歴を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "混同しないことが",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "重要です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "正本と派生情報を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "区別すると、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "復旧しやすくなります",
       "duration_multiplier": 1.35
     }
   ]
