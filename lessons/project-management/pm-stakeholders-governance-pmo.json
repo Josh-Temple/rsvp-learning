@@ -9,59 +9,163 @@
   "sources": [],
   "chunks": [
     {
-      "text": "プロジェクトには、立場の異なる関係者がいます",
+      "text": "プロジェクトには、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "立場の異なる",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "関係者がいます",
       "duration_multiplier": 1.35
     },
     {
-      "text": "経営層、利用部門、IT部門、ベンダーなどが関わります",
-      "duration_multiplier": 1.1
+      "text": "経営層、利用部門、",
+      "duration_multiplier": 1
     },
     {
-      "text": "関心や責任は、それぞれ異なります",
-      "duration_multiplier": 1.1
+      "text": "IT部門、ベンダーなどが",
+      "duration_multiplier": 1
     },
     {
-      "text": "誰に何を伝えるかを整理します",
-      "duration_multiplier": 1.1
+      "text": "関わります",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "重要な意思決定には、責任者が必要です",
-      "duration_multiplier": 1.1
+      "text": "関心や責任は、",
+      "duration_multiplier": 1
     },
     {
-      "text": "承認経路が曖昧だと、判断が止まりやすくなります",
-      "duration_multiplier": 1.1
+      "text": "それぞれ異なります",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "ガバナンスは、意思決定と監督の仕組みです",
-      "duration_multiplier": 1.1
+      "text": "誰に何を",
+      "duration_multiplier": 1
     },
     {
-      "text": "定例会議だけで、ガバナンスが成立するわけではありません",
-      "duration_multiplier": 1.1
+      "text": "伝えるかを",
+      "duration_multiplier": 1
     },
     {
-      "text": "判断事項、権限、エスカレーション先を明確にします",
-      "duration_multiplier": 1.1
+      "text": "整理します",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "PMOは、プロジェクト管理を支援する機能です",
-      "duration_multiplier": 1.1
+      "text": "重要な意思決定には、",
+      "duration_multiplier": 1
     },
     {
-      "text": "進捗や課題の見える化を支援します",
-      "duration_multiplier": 1.1
+      "text": "責任者が必要です",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "管理方法や報告形式を標準化することもあります",
-      "duration_multiplier": 1.1
+      "text": "承認経路が曖昧だと、",
+      "duration_multiplier": 1
     },
     {
-      "text": "PMOが判断主体になるとは限りません",
-      "duration_multiplier": 1.1
+      "text": "判断が止まりやすく",
+      "duration_multiplier": 1
     },
     {
-      "text": "役割とauthorityを混同しないことが重要です",
+      "text": "なります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ガバナンスは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "意思決定と監督の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "仕組みです",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "定例会議だけで、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ガバナンスが",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "成立するわけでは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ありません",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "判断事項、権限、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "エスカレーション先を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "明確にします",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "PMOは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "プロジェクト管理を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "支援する機能です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "進捗や課題の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "見える化を支援します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "管理方法や報告形式を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "標準化することも",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "あります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "PMOが",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "判断主体になるとは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "限りません",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "役割とauthorityを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "混同しないことが",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "重要です",
       "duration_multiplier": 1.35
     }
   ]
