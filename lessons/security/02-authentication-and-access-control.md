@@ -1,6 +1,6 @@
 # 2. 認証とアクセス制御
 
-Status: Draft v0.3  
+Status: Draft v0.4  
 確認日: 2026-09-27
 
 ## 1. 識別、認証、認可
@@ -137,6 +137,41 @@ SSOは「パスワードを一回入力すれば安全」という機能では�
 
 リスク判定だけを本人確認そのものと考えず、認証要素やアクセス制御と組み合わせます。
 
+## 9. パスキー
+
+パスキーは、WebAuthnなどの公開鍵暗号を利用する認証資格情報を、利用者が使いやすい形で提供する仕組みです。
+
+サービスごとに異なる鍵を利用するため、通常のパスワードのように同じ秘密文字列を複数サイトへ入力しません。
+
+正しく構成されたWebAuthn認証では、認証情報が特定のサイトやRelying Partyへ暗号学的に結び付けられます。
+
+そのため、偽サイトへ認証情報を入力させて正規サイトへ転用する典型的なフィッシングに強い性質があります。
+
+## 10. 同期型パスキー
+
+認証鍵をクラウドなどを通じて複数端末へ同期できる仕組みがあります。
+
+NIST SP 800-63B-4では、Syncable Authenticatorsとして要件を整理しています。
+
+同期によって端末変更時の利用性や復旧性を高められます。
+
+一方、同期基盤自体のアクセス制御やMFA、鍵の保護が重要になります。
+
+「同期できるから弱い」「端末固定だから常に強い」と単純に判断せず、利用目的と保証水準を踏まえて選びます。
+
+## 11. チャレンジとリプレイ耐性
+
+暗号学的認証では、認証のたびに異なるチャレンジやノンスを使う方法があります。
+
+過去の認証メッセージを盗んでも、そのまま再利用できないようにします。
+
+この性質をリプレイ耐性と呼びます。
+
+WebAuthnなどの暗号学的認証では、このようなチャレンジレスポンスの仕組みが使われます。
+
+パスワードは毎回同じ値を送るため、それ自体はリプレイ耐性を持つ認証情報とは扱われません。
+
+
 ## 主要資料
 
 - NIST SP 800-63B-4, Digital Identity Guidelines: Authentication and Authenticator Management  
@@ -149,3 +184,7 @@ SSOは「パスワードを一回入力すれば安全」という機能では�
   https://www.cisa.gov/sites/default/files/2023-01/fact-sheet-implementing-phishing-resistant-mfa-508c.pdf
 - NIST SP 800-63C-4, Federation and Assertions
   https://pages.nist.gov/800-63-4/sp800-63c.html
+- NIST SP 800-63B-4, Syncable Authenticators
+  https://pages.nist.gov/800-63-4/sp800-63b/syncable/
+- NIST SP 800-63B-4, Authentication and Phishing Resistance
+  https://pages.nist.gov/800-63-4/sp800-63b/authenticators/
