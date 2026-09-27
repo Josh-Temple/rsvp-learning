@@ -9,51 +9,159 @@
   "sources": [],
   "chunks": [
     {
-      "text": "業務改革では、ツール導入より先に業務を理解します",
+      "text": "業務改革では、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ツール導入より先に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "業務を理解します",
       "duration_multiplier": 1.4
     },
     {
-      "text": "業務フローは、作業の順序と関係者を可視化します",
+      "text": "業務フローは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "作業の順序と",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "関係者を可視化します",
       "duration_multiplier": 1.15
     },
     {
-      "text": "As-Isは現在の業務、To-Beは目指す業務です",
+      "text": "As-Isは現在の業務、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "To-Beは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "目指す業務です",
       "duration_multiplier": 1.15
     },
     {
-      "text": "ボトルネックは、全体の処理能力を制約する部分です",
+      "text": "ボトルネックは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "全体の処理能力を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "制約する部分です",
       "duration_multiplier": 1.15
     },
     {
-      "text": "待ち時間、手戻り、重複入力は改善候補になります",
+      "text": "待ち時間、手戻り、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "重複入力は",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "改善候補になります",
       "duration_multiplier": 1.15
     },
     {
-      "text": "標準化は、ばらつきを減らし再現性を高めます",
+      "text": "標準化は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ばらつきを減らし",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "再現性を高めます",
       "duration_multiplier": 1.15
     },
     {
-      "text": "ただし、例外処理を無視すると現場で破綻します",
+      "text": "ただし、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "例外処理を無視すると",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "現場で破綻します",
       "duration_multiplier": 1.15
     },
     {
-      "text": "KPIは、改善が目的に近づいているかを見る指標です",
+      "text": "KPIは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "改善が目的に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "近づいているかを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "見る指標です",
       "duration_multiplier": 1.15
     },
     {
-      "text": "自動化は、安定した反復作業に向いています",
+      "text": "自動化は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "安定した反復作業に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "向いています",
       "duration_multiplier": 1.15
     },
     {
-      "text": "判断が必要な工程は、人間との役割分担を考えます",
+      "text": "判断が必要な工程は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "人間との役割分担を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "考えます",
       "duration_multiplier": 1.15
     },
     {
-      "text": "改善前後を比較し、効果を観測できる形にします",
+      "text": "改善前後を比較し、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "効果を観測できる",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "形にします",
       "duration_multiplier": 1.15
     },
     {
-      "text": "まずは、一つの業務を分解して改善仮説を説明できることを目標にします",
+      "text": "まずは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "一つの業務を分解して",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "改善仮説を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "説明できることを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "目標にします",
       "duration_multiplier": 1.4
     }
   ]
