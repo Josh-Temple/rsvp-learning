@@ -34,7 +34,18 @@
 
       <div class="top-actions">
         <button id="current-lesson" class="current-lesson" type="button" aria-label="教材を選択">…</button>
-        <a id="learn-link" class="mode-link" href="./learn/api-authentication-authorization.html" aria-label="認証と認可をLearn版で開く" hidden>LEARN</a>
+        <a id="learn-link" class="mode-link icon-mode-link" href="./learn/api-authentication-authorization.html" aria-label="認証と認可をLearn版で開く" title="Learn" hidden>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M4 5.5c2.6-.8 5.3-.4 8 1.2v12c-2.7-1.6-5.4-2-8-1.2v-12Z" />
+            <path d="M20 5.5c-2.6-.8-5.3-.4-8 1.2v12c2.7-1.6 5.4-2 8-1.2v-12Z" />
+          </svg>
+        </a>
+        <a id="listen-link" class="mode-link icon-mode-link" href="./listen/" aria-label="Listenを開く" title="Listen">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M4 13v-1a8 8 0 0 1 16 0v1" />
+            <path d="M4 13h3v7H5a1 1 0 0 1-1-1v-6Zm16 0h-3v7h2a1 1 0 0 0 1-1v-6Z" />
+          </svg>
+        </a>
         <button id="theme-toggle" class="icon-button" type="button" aria-label="テーマ切替">☾</button>
       </div>
     </header>
