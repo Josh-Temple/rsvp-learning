@@ -9,51 +9,171 @@
   "sources": [],
   "chunks": [
     {
-      "text": "Gitは、ファイルの変更履歴を管理する仕組みです",
+      "text": "Gitは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ファイルの変更履歴を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "管理する仕組みです",
       "duration_multiplier": 1.4
     },
     {
-      "text": "commitは、変更を一つの履歴として記録します",
+      "text": "commitは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "変更を一つの履歴として",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "記録します",
       "duration_multiplier": 1.15
     },
     {
-      "text": "branchは、作業の流れを分けるために使います",
+      "text": "branchは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "作業の流れを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "分けるために使います",
       "duration_multiplier": 1.15
     },
     {
-      "text": "mergeは、分かれた変更を統合します",
+      "text": "mergeは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "分かれた変更を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "統合します",
       "duration_multiplier": 1.15
     },
     {
-      "text": "GitHubでは、Pull Requestで変更内容をレビューできます",
+      "text": "GitHubでは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "Pull Requestで",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "変更内容を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "レビューできます",
       "duration_multiplier": 1.15
     },
     {
-      "text": "Issueは、課題や作業を記録するために使えます",
+      "text": "Issueは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "課題や作業を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "記録するために",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "使えます",
       "duration_multiplier": 1.15
     },
     {
-      "text": "CIは、変更のたびにテストや検査を自動実行する考え方です",
+      "text": "CIは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "変更のたびに",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "テストや検査を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "自動実行する考え方です",
       "duration_multiplier": 1.15
     },
     {
-      "text": "CDは、成果物を継続的に配布またはデプロイする考え方です",
+      "text": "CDは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "成果物を継続的に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "配布またはデプロイする",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "考え方です",
       "duration_multiplier": 1.15
     },
     {
-      "text": "GitHub Actionsは、GitHub上で自動処理を実行できます",
+      "text": "GitHub Actionsは、",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "GitHub上で",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "自動処理を実行できます",
       "duration_multiplier": 1.15
     },
     {
-      "text": "環境ごとに設定や秘密情報を分離します",
+      "text": "環境ごとに",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "設定や秘密情報を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "分離します",
       "duration_multiplier": 1.15
     },
     {
-      "text": "デプロイ後には、動作確認とrollback経路を考えます",
+      "text": "デプロイ後には、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "動作確認と",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "rollback経路を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "考えます",
       "duration_multiplier": 1.15
     },
     {
-      "text": "まずは、変更が本番へ届くまでの流れを説明できることを目標にします",
+      "text": "まずは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "変更が本番へ届くまでの",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "流れを説明できることを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "目標にします",
       "duration_multiplier": 1.4
     }
   ]
