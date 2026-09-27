@@ -9,59 +9,171 @@
   "sources": [],
   "chunks": [
     {
-      "text": "LLMは、文章を生成するだけでなく外部機能を呼び出せます",
+      "text": "LLMは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "文章を生成するだけでなく",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "外部機能を呼び出せます",
       "duration_multiplier": 1.35
     },
     {
-      "text": "これを、Tool Callingとして扱います",
-      "duration_multiplier": 1.1
+      "text": "これを、",
+      "duration_multiplier": 1
     },
     {
-      "text": "例えば、検索、計算、データ取得をツールへ任せられます",
-      "duration_multiplier": 1.1
+      "text": "Tool Callingとして",
+      "duration_multiplier": 1.35
     },
     {
-      "text": "モデルは、使うツールと引数を選びます",
-      "duration_multiplier": 1.1
+      "text": "扱います",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "実際の処理は、外部システムが実行します",
-      "duration_multiplier": 1.1
+      "text": "例えば、",
+      "duration_multiplier": 1
     },
     {
-      "text": "ツールの結果を、再びLLMへ返します",
-      "duration_multiplier": 1.1
+      "text": "検索、計算、",
+      "duration_multiplier": 1
     },
     {
-      "text": "Agentでは、この判断と実行を複数回繰り返すことがあります",
-      "duration_multiplier": 1.1
+      "text": "データ取得を",
+      "duration_multiplier": 1
     },
     {
-      "text": "複雑な仕事を、複数ステップへ分けられます",
-      "duration_multiplier": 1.1
+      "text": "ツールへ任せられます",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "一方で、実行回数が増えるほど失敗経路も増えます",
-      "duration_multiplier": 1.1
+      "text": "モデルは、",
+      "duration_multiplier": 1
     },
     {
-      "text": "書込みや送信などの副作用には特に注意します",
-      "duration_multiplier": 1.1
+      "text": "使うツールと",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "引数を選びます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "実際の処理は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "外部システムが",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "実行します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ツールの結果を、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "再びLLMへ返します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Agentでは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "この判断と実行を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "複数回繰り返す",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ことがあります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "複雑な仕事を、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "複数ステップへ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "分けられます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一方で、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "実行回数が増えるほど",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "失敗経路も増えます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "書込みや送信などの",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "副作用には",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "特に注意します",
+      "duration_multiplier": 1.15
     },
     {
       "text": "権限を必要最小限にします",
       "duration_multiplier": 1.1
     },
     {
-      "text": "重要な操作前に、人間承認を置くことがあります",
-      "duration_multiplier": 1.1
+      "text": "重要な操作前に、",
+      "duration_multiplier": 1
     },
     {
-      "text": "途中状態と実行履歴を記録すると復旧しやすくなります",
-      "duration_multiplier": 1.1
+      "text": "人間承認を置く",
+      "duration_multiplier": 1
     },
     {
-      "text": "Agentは、自律性より制御可能性を含めて設計します",
+      "text": "ことがあります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "途中状態と実行履歴を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "記録すると",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "復旧しやすくなります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Agentは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "自律性より",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "制御可能性を含めて",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "設計します",
       "duration_multiplier": 1.35
     }
   ]
