@@ -30,23 +30,23 @@
       "duration_multiplier": 1.5
     },
     {
-      "text": "セキュリティは止めない",
-      "duration_multiplier": 1.1
+      "text": "セキュリティは止め",
+      "duration_multiplier": 1
     },
     {
-      "text": "ことも含む",
+      "text": "ないことも含む",
       "duration_multiplier": 1.4
     },
     {
       "text": "情報セキュリティでは",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "機密性だけでなく可用性も",
       "duration_multiplier": 1.1
     },
     {
-      "text": "重要です",
+      "text": "機密性だけでなく",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "可用性も重要です",
       "duration_multiplier": 1.4
     },
     {
@@ -74,20 +74,28 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "原因が何であっても重要な",
+      "text": "原因が何であっても",
       "duration_multiplier": 1.1
     },
     {
-      "text": "業務が止まる可能性があります",
+      "text": "重要な業務が止まる",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "可能性があります",
       "duration_multiplier": 1.4
     },
     {
-      "text": "そのため障害を防ぐだけで",
+      "text": "そのため",
       "duration_multiplier": 1.1
     },
     {
-      "text": "なく止まったときにどの",
+      "text": "障害を防ぐだけでなく",
       "duration_multiplier": 1.1
+    },
+    {
+      "text": "止まったときにどの",
+      "duration_multiplier": 1
     },
     {
       "text": "ように継続・復旧するかを",
@@ -102,43 +110,35 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "事業継続では組織として",
+      "text": "事業継続では",
       "duration_multiplier": 1.1
     },
     {
-      "text": "重要な業務を続けることを",
+      "text": "組織として重要な業務を",
       "duration_multiplier": 1.1
     },
     {
-      "text": "考えます",
+      "text": "続けることを考えます",
       "duration_multiplier": 1.4
     },
     {
-      "text": "システム復旧はその一部です",
+      "text": "システム復旧はその",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "一部です",
       "duration_multiplier": 1.4
     },
     {
       "text": "システムが停止しても",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "短時間なら手作業で",
       "duration_multiplier": 1
     },
     {
-      "text": "短時間なら手作業で業務を",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "続けられる場合があります",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "逆にシステムは動いていて",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "も担当者や施設が使えなけ",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "れば業務が続かない場合が",
+      "text": "業務を続けられる場合が",
       "duration_multiplier": 1.1
     },
     {
@@ -146,11 +146,43 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "技術だけでなく人施設委託",
+      "text": "逆に",
       "duration_multiplier": 1.1
     },
     {
-      "text": "先手順も含めて考えます",
+      "text": "システムは動いていても",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "担当者や施設が使えな",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ければ業務が続かない",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "場合があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "技術だけでなく",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "人",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "施設",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "委託先",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "手順も含めて考えます",
       "duration_multiplier": 1.4
     },
     {
@@ -158,20 +190,20 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "Business",
-      "duration_multiplier": 1
+      "text": "Business Impact",
+      "duration_multiplier": 1.1
     },
     {
-      "text": "Impact",
-      "duration_multiplier": 1
+      "text": "Analysis",
+      "duration_multiplier": 1.1
     },
     {
-      "text": "AnalysisBIA",
+      "text": "BIAでは",
       "duration_multiplier": 1.2
     },
     {
-      "text": "では業務が停止した場合の",
-      "duration_multiplier": 1.1
+      "text": "業務が停止した場合の",
+      "duration_multiplier": 1
     },
     {
       "text": "影響を分析します",
@@ -182,27 +214,27 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "どの程度の停止まで許容",
-      "duration_multiplier": 1.1
+      "text": "どの程度の停止まで",
+      "duration_multiplier": 1
     },
     {
-      "text": "できるか",
+      "text": "許容できるか",
       "duration_multiplier": 1.4
     },
     {
-      "text": "何が業務の前提になって",
-      "duration_multiplier": 1.1
+      "text": "何が業務の前提にな",
+      "duration_multiplier": 1
     },
     {
-      "text": "いるか",
+      "text": "っているか",
       "duration_multiplier": 1.4
     },
     {
-      "text": "時間が経つと影響がどう",
-      "duration_multiplier": 1.1
+      "text": "時間が経つと影響が",
+      "duration_multiplier": 1
     },
     {
-      "text": "大きくなるか",
+      "text": "どう大きくなるか",
       "duration_multiplier": 1.4
     },
     {
@@ -210,11 +242,11 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "復旧の優先順位を決める",
-      "duration_multiplier": 1.1
+      "text": "復旧の優先順位を",
+      "duration_multiplier": 1
     },
     {
-      "text": "基礎になります",
+      "text": "決める基礎になります",
       "duration_multiplier": 1.4
     },
     {
@@ -222,27 +254,31 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "RTOはRecovery",
+      "text": "RTOは",
       "duration_multiplier": 1.2
     },
     {
-      "text": "Time",
-      "duration_multiplier": 1
+      "text": "Recovery Time Objectiveの",
+      "duration_multiplier": 1.1
     },
     {
-      "text": "Objectiveの略です",
+      "text": "略です",
       "duration_multiplier": 1.4
     },
     {
-      "text": "障害後システムや業務を",
+      "text": "障害後",
       "duration_multiplier": 1.1
     },
     {
-      "text": "復旧させるまでの目標時間",
+      "text": "システムや業務を復旧",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "させるまでの目標時間を",
       "duration_multiplier": 1.1
     },
     {
-      "text": "を示します",
+      "text": "示します",
       "duration_multiplier": 1.4
     },
     {
@@ -250,19 +286,19 @@
       "duration_multiplier": 1.2
     },
     {
-      "text": "4時間以内の復旧を目標と",
+      "text": "4時間以内の復旧を",
       "duration_multiplier": 1.2
     },
     {
-      "text": "します",
+      "text": "目標とします",
       "duration_multiplier": 1.4
     },
     {
-      "text": "RTOは単なる技術性能",
+      "text": "RTOは単なる技術",
       "duration_multiplier": 1.2
     },
     {
-      "text": "ではありません",
+      "text": "性能ではありません",
       "duration_multiplier": 1.4
     },
     {
@@ -270,11 +306,11 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "許容できるかを踏まえて",
-      "duration_multiplier": 1.1
+      "text": "許容できるかを踏ま",
+      "duration_multiplier": 1
     },
     {
-      "text": "設定します",
+      "text": "えて設定します",
       "duration_multiplier": 1.4
     },
     {
@@ -282,24 +318,32 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "RPOはRecovery",
+      "text": "RPOは",
       "duration_multiplier": 1.2
     },
     {
-      "text": "Point",
+      "text": "Recovery Point",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "Objectiveの",
       "duration_multiplier": 1
     },
     {
-      "text": "Objectiveの略です",
+      "text": "略です",
       "duration_multiplier": 1.4
     },
     {
-      "text": "障害後どの時点までデータ",
+      "text": "障害後",
       "duration_multiplier": 1.1
     },
     {
-      "text": "を戻せればよいかという",
-      "duration_multiplier": 1.1
+      "text": "どの時点までデータを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "戻せればよいかという",
+      "duration_multiplier": 1
     },
     {
       "text": "目標です",
@@ -314,27 +358,35 @@
       "duration_multiplier": 1.2
     },
     {
-      "text": "データを失う可能性を前提",
-      "duration_multiplier": 1.1
+      "text": "データを失う可能性を",
+      "duration_multiplier": 1
     },
     {
-      "text": "に復旧方法を設計します",
+      "text": "前提に復旧方法を設計",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "します",
       "duration_multiplier": 1.4
     },
     {
-      "text": "RTOは時間内に復旧する",
+      "text": "RTOは時間内に復旧",
       "duration_multiplier": 1.2
     },
     {
-      "text": "目標です",
+      "text": "する目標です",
       "duration_multiplier": 1.4
     },
     {
-      "text": "RPOはどの時点のデータ",
+      "text": "RPOはどの時点の",
       "duration_multiplier": 1.2
     },
     {
-      "text": "まで戻すかという目標です",
+      "text": "データまで戻すか",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "という目標です",
       "duration_multiplier": 1.4
     },
     {
@@ -350,23 +402,27 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "バックアップはデータや",
+      "text": "バックアップは",
       "duration_multiplier": 1.1
     },
     {
-      "text": "システムを復旧するための",
-      "duration_multiplier": 1.1
+      "text": "データやシステムを",
+      "duration_multiplier": 1
     },
     {
-      "text": "コピーです",
+      "text": "復旧するためのコピーです",
       "duration_multiplier": 1.4
     },
     {
-      "text": "バックアップを作ること",
-      "duration_multiplier": 1.1
+      "text": "バックアップを作る",
+      "duration_multiplier": 1
     },
     {
-      "text": "自体が目的ではありません",
+      "text": "こと自体が目的では",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ありません",
       "duration_multiplier": 1.4
     },
     {
@@ -386,7 +442,11 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "必要な時間で復元できるか",
+      "text": "必要な時間で復元",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "できるか",
       "duration_multiplier": 1.4
     },
     {
@@ -403,26 +463,34 @@
     },
     {
       "text": "ランサム攻撃では",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "バックアップも削除や",
       "duration_multiplier": 1
     },
     {
-      "text": "バックアップも削除や暗号",
-      "duration_multiplier": 1.1
+      "text": "暗号化の対象になる",
+      "duration_multiplier": 1
     },
     {
-      "text": "化の対象になることがあります",
+      "text": "ことがあります",
       "duration_multiplier": 1.4
     },
     {
-      "text": "本番環境と同じ認証情報",
-      "duration_multiplier": 1.1
+      "text": "本番環境と同じ認証",
+      "duration_multiplier": 1
     },
     {
-      "text": "だけで簡単に削除できる",
-      "duration_multiplier": 1.1
+      "text": "情報だけで簡単に削除",
+      "duration_multiplier": 1
     },
     {
-      "text": "バックアップは危険です",
+      "text": "できるバックアップは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "危険です",
       "duration_multiplier": 1.4
     },
     {
@@ -442,47 +510,55 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "環境に応じて複数の方法を",
-      "duration_multiplier": 1.1
+      "text": "環境に応じて複数の",
+      "duration_multiplier": 1
     },
     {
-      "text": "検討します",
+      "text": "方法を検討します",
       "duration_multiplier": 1.4
     },
     {
-      "text": "3-2-1という考え方",
+      "text": "3-2-1という",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "考え方",
       "duration_multiplier": 1.4
     },
     {
-      "text": "バックアップ運用では複数",
+      "text": "バックアップ運用では",
       "duration_multiplier": 1.1
     },
     {
-      "text": "のコピーを持ち異なる媒体",
+      "text": "複数のコピーを持ち",
       "duration_multiplier": 1.1
     },
     {
-      "text": "や場所へ分散する3-2-",
+      "text": "異なる媒体や場所へ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "分散する3-2-1",
       "duration_multiplier": 1.2
     },
     {
-      "text": "1という考え方が広く使",
-      "duration_multiplier": 1.2
+      "text": "という考え方が広く使",
+      "duration_multiplier": 1
     },
     {
       "text": "われます",
       "duration_multiplier": 1.4
     },
     {
-      "text": "ただし数字だけを形式的に",
-      "duration_multiplier": 1.1
+      "text": "ただし数字だけを形式",
+      "duration_multiplier": 1
     },
     {
-      "text": "満たせば安全というわけ",
-      "duration_multiplier": 1.1
+      "text": "的に満たせば安全",
+      "duration_multiplier": 1
     },
     {
-      "text": "ではありません",
+      "text": "というわけではありません",
       "duration_multiplier": 1.4
     },
     {
@@ -490,19 +566,23 @@
       "duration_multiplier": 1
     },
     {
-      "text": "バックアップと同じ役割を",
+      "text": "バックアップと同じ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "役割を果たさない場合も",
       "duration_multiplier": 1.1
     },
     {
-      "text": "果たさない場合もあります",
+      "text": "あります",
       "duration_multiplier": 1.4
     },
     {
-      "text": "想定する事故に対して復旧",
-      "duration_multiplier": 1.1
+      "text": "想定する事故に対して",
+      "duration_multiplier": 1
     },
     {
-      "text": "できるかを確認します",
+      "text": "復旧できるかを確認します",
       "duration_multiplier": 1.4
     },
     {
@@ -510,12 +590,16 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "バックアップが存在してい",
+      "text": "バックアップが存在し",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ていても",
       "duration_multiplier": 1.1
     },
     {
-      "text": "ても復元できないことが",
-      "duration_multiplier": 1.1
+      "text": "復元できないことが",
+      "duration_multiplier": 1
     },
     {
       "text": "あります",
@@ -526,7 +610,11 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "必要な設定が含まれていない",
+      "text": "必要な設定が含まれ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ていない",
       "duration_multiplier": 1.4
     },
     {
@@ -542,11 +630,15 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "そのため実際に復元する",
+      "text": "そのため",
       "duration_multiplier": 1.1
     },
     {
-      "text": "テストを行います",
+      "text": "実際に復元するテストを",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "行います",
       "duration_multiplier": 1.4
     },
     {
@@ -558,15 +650,19 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "複数用意し一つが故障して",
+      "text": "複数用意し",
       "duration_multiplier": 1.1
     },
     {
-      "text": "も継続できるようにする",
+      "text": "一つが故障しても継続",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "できるようにする方法が",
       "duration_multiplier": 1.1
     },
     {
-      "text": "方法があります",
+      "text": "あります",
       "duration_multiplier": 1.4
     },
     {
@@ -590,23 +686,27 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "必要な可用性に応じて冗長",
-      "duration_multiplier": 1.1
+      "text": "必要な可用性に応じて",
+      "duration_multiplier": 1
     },
     {
-      "text": "化します",
+      "text": "冗長化します",
       "duration_multiplier": 1.4
     },
     {
-      "text": "同じ原因で同時に停止する",
+      "text": "同じ原因で同時に停止",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "する構成では",
       "duration_multiplier": 1.1
     },
     {
-      "text": "構成では見かけ上の冗長化",
-      "duration_multiplier": 1.1
+      "text": "見かけ上の冗長化にな",
+      "duration_multiplier": 1
     },
     {
-      "text": "になってしまう場合があります",
+      "text": "ってしまう場合があります",
       "duration_multiplier": 1.4
     },
     {
@@ -614,51 +714,51 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "一つの構成要素が壊れる",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "だけでサービス全体が停止",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "する場所をSingle",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "Pointof",
+      "text": "一つの構成要素が",
       "duration_multiplier": 1
     },
     {
-      "text": "Failure単一障害点",
+      "text": "壊れるだけでサービス",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "全体が停止する場所を",
       "duration_multiplier": 1.1
     },
     {
-      "text": "と呼びます",
+      "text": "Single Point of Failure",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "単一障害点と呼びます",
       "duration_multiplier": 1.4
     },
     {
-      "text": "重要システムでは単一障害",
-      "duration_multiplier": 1.1
+      "text": "重要システムでは単一",
+      "duration_multiplier": 1
     },
     {
-      "text": "点を把握します",
+      "text": "障害点を把握します",
       "duration_multiplier": 1.4
     },
     {
-      "text": "ただしすべてを二重化すれ",
+      "text": "ただし",
       "duration_multiplier": 1.1
     },
     {
-      "text": "ばよいわけではありません",
+      "text": "すべてを二重化すれば",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "よいわけではありません",
       "duration_multiplier": 1.4
     },
     {
-      "text": "費用と影響を踏まえて優先",
-      "duration_multiplier": 1.1
+      "text": "費用と影響を踏まえて",
+      "duration_multiplier": 1
     },
     {
-      "text": "順位を決めます",
+      "text": "優先順位を決めます",
       "duration_multiplier": 1.4
     },
     {
@@ -666,11 +766,11 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "Disaster",
-      "duration_multiplier": 1
+      "text": "Disaster Recovery",
+      "duration_multiplier": 1.1
     },
     {
-      "text": "RecoveryDRでは",
+      "text": "DRでは",
       "duration_multiplier": 1.2
     },
     {
@@ -678,11 +778,11 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "ITサービスを復旧する",
+      "text": "ITサービスを復旧",
       "duration_multiplier": 1.2
     },
     {
-      "text": "方法を考えます",
+      "text": "する方法を考えます",
       "duration_multiplier": 1.4
     },
     {
@@ -710,7 +810,11 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "必要な資源を事前に整理します",
+      "text": "必要な資源を事前に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "整理します",
       "duration_multiplier": 1.4
     },
     {
@@ -718,11 +822,15 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "障害時には通常と異なる",
-      "duration_multiplier": 1.1
+      "text": "障害時には通常と",
+      "duration_multiplier": 1
     },
     {
-      "text": "判断が必要になります",
+      "text": "異なる判断が必要に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "なります",
       "duration_multiplier": 1.4
     },
     {
@@ -734,11 +842,11 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "どのサービスを先に復旧",
-      "duration_multiplier": 1.1
+      "text": "どのサービスを先に",
+      "duration_multiplier": 1
     },
     {
-      "text": "するか",
+      "text": "復旧するか",
       "duration_multiplier": 1.4
     },
     {
@@ -746,15 +854,19 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "外部事業者へどう連絡するか",
+      "text": "外部事業者へどう連絡",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "するか",
       "duration_multiplier": 1.4
     },
     {
-      "text": "緊急時の役割と連絡方法を",
-      "duration_multiplier": 1.1
+      "text": "緊急時の役割と連絡",
+      "duration_multiplier": 1
     },
     {
-      "text": "事前に決めます",
+      "text": "方法を事前に決めます",
       "duration_multiplier": 1.4
     },
     {
@@ -762,11 +874,15 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "文書だけでは緊急時に",
+      "text": "文書だけでは",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "緊急時に動けるか分か",
       "duration_multiplier": 1
     },
     {
-      "text": "動けるか分かりません",
+      "text": "りません",
       "duration_multiplier": 1.4
     },
     {
@@ -778,7 +894,11 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "フェイルオーバーテスト",
+      "text": "フェイルオーバー",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "テスト",
       "duration_multiplier": 1.4
     },
     {
@@ -786,19 +906,23 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "実際に試すことで手順の",
+      "text": "実際に試すことで",
       "duration_multiplier": 1.1
     },
     {
-      "text": "不足や依存関係を見つけます",
+      "text": "手順の不足や依存関係を",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "見つけます",
       "duration_multiplier": 1.4
     },
     {
-      "text": "本番への影響を考慮し安全",
+      "text": "本番への影響を考慮し",
       "duration_multiplier": 1.1
     },
     {
-      "text": "に実施します",
+      "text": "安全に実施します",
       "duration_multiplier": 1.4
     },
     {
@@ -806,15 +930,19 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "ランサム攻撃では単に",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "サーバーを再起動して復旧",
+      "text": "ランサム攻撃では",
       "duration_multiplier": 1.1
     },
     {
-      "text": "することはできません",
+      "text": "単にサーバーを再起動",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "して復旧することは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "できません",
       "duration_multiplier": 1.4
     },
     {
@@ -822,7 +950,11 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "認証情報が盗まれていないか",
+      "text": "認証情報が盗まれてい",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ないか",
       "duration_multiplier": 1.4
     },
     {
@@ -830,19 +962,19 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "復旧した環境へ再侵入され",
-      "duration_multiplier": 1.1
+      "text": "復旧した環境へ再侵入",
+      "duration_multiplier": 1
     },
     {
-      "text": "ないか",
+      "text": "されないか",
       "duration_multiplier": 1.4
     },
     {
-      "text": "インシデント対応と事業",
-      "duration_multiplier": 1.1
+      "text": "インシデント対応と",
+      "duration_multiplier": 1
     },
     {
-      "text": "継続を連携させます",
+      "text": "事業継続を連携させます",
       "duration_multiplier": 1.4
     },
     {
@@ -850,27 +982,35 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "レジリエンスは障害や攻撃",
+      "text": "レジリエンスは",
       "duration_multiplier": 1.1
     },
     {
-      "text": "が起きる可能性を前提に",
+      "text": "障害や攻撃が起きる",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "可能性を前提に",
       "duration_multiplier": 1.1
     },
     {
-      "text": "影響を抑え適応し復旧する",
+      "text": "影響を抑え",
       "duration_multiplier": 1.1
     },
     {
-      "text": "能力と関係します",
+      "text": "適応し",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "復旧する能力と関係します",
       "duration_multiplier": 1.4
     },
     {
-      "text": "完全に止まらないことだけ",
+      "text": "完全に止まらないことだけを",
       "duration_multiplier": 1.1
     },
     {
-      "text": "を意味しません",
+      "text": "意味しません",
       "duration_multiplier": 1.4
     },
     {
@@ -890,7 +1030,11 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "こうした能力を組み合わせます",
+      "text": "こうした能力を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "組み合わせます",
       "duration_multiplier": 1.4
     }
   ]
