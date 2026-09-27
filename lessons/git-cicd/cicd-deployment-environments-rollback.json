@@ -9,59 +9,171 @@
   "sources": [],
   "chunks": [
     {
-      "text": "CDは、変更を継続的に配布する考え方です",
+      "text": "CDは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "変更を継続的に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "配布する考え方です",
       "duration_multiplier": 1.35
     },
     {
-      "text": "開発環境、検証環境、本番環境を分けることがあります",
-      "duration_multiplier": 1.1
+      "text": "開発環境、検証環境、",
+      "duration_multiplier": 1
     },
     {
-      "text": "環境ごとに設定値が異なる場合があります",
-      "duration_multiplier": 1.1
+      "text": "本番環境を",
+      "duration_multiplier": 1
     },
     {
-      "text": "秘密情報は、コードへ直接保存しないようにします",
-      "duration_multiplier": 1.1
+      "text": "分けることがあります",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "Deploymentは、変更を実行環境へ反映する作業です",
-      "duration_multiplier": 1.1
+      "text": "環境ごとに",
+      "duration_multiplier": 1
     },
     {
-      "text": "自動デプロイにすると、手作業のばらつきを減らせます",
-      "duration_multiplier": 1.1
+      "text": "設定値が異なる",
+      "duration_multiplier": 1
     },
     {
-      "text": "ただし、本番反映には承認を必要とする運用もあります",
-      "duration_multiplier": 1.1
+      "text": "場合があります",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "リリース前に、必要なテスト結果を確認します",
-      "duration_multiplier": 1.1
+      "text": "秘密情報は、",
+      "duration_multiplier": 1
     },
     {
-      "text": "リリース後には、正常に動いているか確認します",
-      "duration_multiplier": 1.1
+      "text": "コードへ直接",
+      "duration_multiplier": 1
     },
     {
-      "text": "問題があれば、以前の状態へ戻すことがあります",
-      "duration_multiplier": 1.1
+      "text": "保存しないようにします",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Deploymentは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "変更を実行環境へ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "反映する作業です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "自動デプロイにすると、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "手作業のばらつきを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "減らせます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ただし、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "本番反映には",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "承認を必要とする",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "運用もあります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "リリース前に、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "必要なテスト結果を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "確認します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "リリース後には、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "正常に動いているか",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "確認します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "問題があれば、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "以前の状態へ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "戻すことがあります",
+      "duration_multiplier": 1.15
     },
     {
       "text": "これがRollbackです",
       "duration_multiplier": 1.1
     },
     {
-      "text": "データベース変更は、単純に戻せない場合があります",
-      "duration_multiplier": 1.1
+      "text": "データベース変更は、",
+      "duration_multiplier": 1
     },
     {
-      "text": "そのため、変更前に復旧手順を考えます",
-      "duration_multiplier": 1.1
+      "text": "単純に戻せない",
+      "duration_multiplier": 1
     },
     {
-      "text": "CDは、速さより安全に繰り返せることが重要です",
+      "text": "場合があります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "そのため、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "変更前に復旧手順を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "考えます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "CDは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "速さより",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "安全に繰り返せることが",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "重要です",
       "duration_multiplier": 1.35
     }
   ]

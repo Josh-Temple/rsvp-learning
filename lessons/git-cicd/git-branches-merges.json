@@ -9,59 +9,163 @@
   "sources": [],
   "chunks": [
     {
-      "text": "Branchは、変更の流れを分けるために使います",
+      "text": "Branchは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "変更の流れを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "分けるために使います",
       "duration_multiplier": 1.35
     },
     {
-      "text": "mainとは別に作業用Branchを作ることができます",
-      "duration_multiplier": 1.1
+      "text": "mainとは別に",
+      "duration_multiplier": 1
     },
     {
-      "text": "他の変更から独立して作業しやすくなります",
-      "duration_multiplier": 1.1
+      "text": "作業用Branchを",
+      "duration_multiplier": 1
     },
     {
-      "text": "作業が終わったら、変更を統合します",
-      "duration_multiplier": 1.1
+      "text": "作ることができます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "他の変更から独立して",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "作業しやすくなります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "作業が終わったら、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "変更を統合します",
+      "duration_multiplier": 1.15
     },
     {
       "text": "これがMergeです",
       "duration_multiplier": 1.1
     },
     {
-      "text": "同じ箇所を別々に変更すると、Conflictが起きることがあります",
-      "duration_multiplier": 1.1
+      "text": "同じ箇所を",
+      "duration_multiplier": 1
     },
     {
-      "text": "Conflictでは、どの変更を残すか判断します",
-      "duration_multiplier": 1.1
+      "text": "別々に変更すると、",
+      "duration_multiplier": 1
     },
     {
-      "text": "Branchを長期間分離すると、差分が大きくなりやすくなります",
-      "duration_multiplier": 1.1
+      "text": "Conflictが起きる",
+      "duration_multiplier": 1
     },
     {
-      "text": "小さく統合する方が、競合を減らせる場合があります",
-      "duration_multiplier": 1.1
+      "text": "ことがあります",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "Merge commitを残す方法があります",
-      "duration_multiplier": 1.1
+      "text": "Conflictでは、",
+      "duration_multiplier": 1
     },
     {
-      "text": "Squashで複数Commitを一つにまとめる方法もあります",
-      "duration_multiplier": 1.1
+      "text": "どの変更を残すか",
+      "duration_multiplier": 1
     },
     {
-      "text": "Rebaseで履歴を並べ直す方法もあります",
-      "duration_multiplier": 1.1
+      "text": "判断します",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "運用方法は、チームのルールに合わせます",
-      "duration_multiplier": 1.1
+      "text": "Branchを長期間",
+      "duration_multiplier": 1
     },
     {
-      "text": "重要なのは、変更経路を追えることです",
+      "text": "分離すると、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "差分が大きく",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "なりやすくなります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "小さく統合する方が、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "競合を減らせる",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "場合があります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Merge commitを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "残す方法があります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Squashで",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "複数Commitを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "一つにまとめる",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "方法もあります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Rebaseで",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "履歴を並べ直す",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "方法もあります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "運用方法は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "チームのルールに",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "合わせます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "重要なのは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "変更経路を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "追えることです",
       "duration_multiplier": 1.35
     }
   ]
