@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "id": "system-development-overview",
+  "title": "システム開発の全体像",
+  "topic": "システム開発",
+  "summary": "企画から要件定義、設計、実装、テスト、移行、運用までの全体像をつかむ入口教材です。",
+  "created_at": "2026-09-27",
+  "base_duration_ms": 680,
+  "sources": [],
+  "chunks": [
+    {
+      "text": "システム開発は、実装だけではありません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "最初に、解決したい業務課題を整理します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "企画では、目的と投資範囲を決めます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "要件定義では、実現すべき条件を明確にします",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "設計では、要件を実装可能な構造へ落とします",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "実装では、設計をコードや設定として形にします",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "テストでは、期待どおり動くかを確認します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "移行では、旧業務から新しい仕組みへ切り替えます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "運用保守では、障害対応と継続改善を行います",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "WaterfallとAgileは、進め方の違いとして理解します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "まずは、各工程の目的と成果物を説明できることを目標にします",
+      "duration_multiplier": 1.4
+    }
+  ]
+}

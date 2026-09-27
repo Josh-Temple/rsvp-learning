@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "id": "web-api-overview",
+  "title": "APIとWebシステムの入口",
+  "topic": "Web・API",
+  "summary": "Webシステムの構成とHTTP、REST API、JSONの役割をつかむ入口教材です。",
+  "created_at": "2026-09-27",
+  "base_duration_ms": 680,
+  "sources": [],
+  "chunks": [
+    {
+      "text": "Webシステムは、複数の役割が連携して動きます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "ブラウザなどのクライアントが、サーバーへ要求を送ります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "HTTPは、その通信で広く使われる仕組みです",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Requestは要求、Responseは応答です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "GETやPOSTなどのHTTPメソッドは、操作の種類を表します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "APIは、ソフトウェア同士が機能を利用するための接点です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "REST APIでは、HTTPを使って資源を操作する設計がよく使われます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "JSONは、APIでデータ交換によく使われる形式です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "認証は誰かを確認し、認可は何を許すかを決めます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Webhookは、出来事が起きた側から通知する仕組みです",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "まずは、画面、API、サーバー、データベースの関係を説明できることを目標にします",
+      "duration_multiplier": 1.4
+    }
+  ]
+}

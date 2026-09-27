@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "id": "project-management-overview",
+  "title": "プロジェクトマネジメントとPMOの入口",
+  "topic": "プロジェクト管理",
+  "summary": "WBS、課題、リスク、変更、品質、ステークホルダー管理などPM・PMOの基本をつかむ入口教材です。",
+  "created_at": "2026-09-27",
+  "base_duration_ms": 680,
+  "sources": [],
+  "chunks": [
+    {
+      "text": "プロジェクトは、期限と目的を持つ一時的な活動です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "最初に、目的、範囲、成果物を明確にします",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "WBSは、作業を管理可能な単位へ分解します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "スケジュールでは、順序、依存関係、期限を管理します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "課題は、すでに発生して対応が必要な問題です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "リスクは、将来起こる可能性がある不確実な事象です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "変更管理では、追加要望が範囲や費用へ与える影響を確認します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "品質管理では、成果物が基準を満たすかを確認します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ステークホルダー管理では、関係者の期待と影響を整理します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "PMOは、プロジェクト管理を標準化し、意思決定を支援します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "会議や報告は、情報共有ではなく意思決定のために設計します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "まずは、進捗、課題、リスクを区別して説明できることを目標にします",
+      "duration_multiplier": 1.4
+    }
+  ]
+}

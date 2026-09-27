@@ -7,6 +7,108 @@
       "path": "./lessons/requirements/requirements-basics.json"
     },
     {
+      "id": "system-development-overview",
+      "title": "システム開発の全体像",
+      "topic": "システム開発",
+      "path": "./lessons/system-development/system-development-overview.json"
+    },
+    {
+      "id": "database-sql-overview",
+      "title": "データベースとSQLの入口",
+      "topic": "データ",
+      "path": "./lessons/database-sql/database-sql-overview.json"
+    },
+    {
+      "id": "web-api-overview",
+      "title": "APIとWebシステムの入口",
+      "topic": "Web・API",
+      "path": "./lessons/web-api/web-api-overview.json"
+    },
+    {
+      "id": "information-security-overview",
+      "title": "情報セキュリティ概観",
+      "topic": "情報セキュリティ",
+      "path": "./lessons/information-security/information-security-overview.json"
+    },
+    {
+      "id": "cloud-overview",
+      "title": "クラウドコンピューティングの入口",
+      "topic": "クラウド",
+      "path": "./lessons/cloud/cloud-overview.json"
+    },
+    {
+      "id": "project-management-overview",
+      "title": "プロジェクトマネジメントとPMOの入口",
+      "topic": "プロジェクト管理",
+      "path": "./lessons/project-management/project-management-overview.json"
+    },
+    {
+      "id": "business-analysis-overview",
+      "title": "業務分析と業務改革の入口",
+      "topic": "業務改革",
+      "path": "./lessons/business-analysis/business-analysis-overview.json"
+    },
+    {
+      "id": "generative-ai-overview",
+      "title": "生成AIアプリケーション設計の入口",
+      "topic": "生成AI",
+      "path": "./lessons/generative-ai/generative-ai-overview.json"
+    },
+    {
+      "id": "ai-evaluation-operations-overview",
+      "title": "AIの評価と運用の入口",
+      "topic": "AI運用",
+      "path": "./lessons/ai-evaluation-operations/ai-evaluation-operations-overview.json"
+    },
+    {
+      "id": "software-architecture-overview",
+      "title": "ソフトウェア設計とアーキテクチャの入口",
+      "topic": "ソフトウェア設計",
+      "path": "./lessons/software-architecture/software-architecture-overview.json"
+    },
+    {
+      "id": "git-cicd-overview",
+      "title": "Git・GitHub・CI/CDの入口",
+      "topic": "開発運用",
+      "path": "./lessons/git-cicd/git-cicd-overview.json"
+    },
+    {
+      "id": "statistics-data-analysis-overview",
+      "title": "データ分析と統計の入口",
+      "topic": "データ分析",
+      "path": "./lessons/statistics-data-analysis/statistics-data-analysis-overview.json"
+    },
+    {
+      "id": "ai-governance-overview",
+      "title": "AIガバナンスとリスク管理の入口",
+      "topic": "AIガバナンス",
+      "path": "./lessons/ai-governance/ai-governance-overview.json"
+    },
+    {
+      "id": "network-os-infra-overview",
+      "title": "ネットワーク・OS・インフラの入口",
+      "topic": "IT基盤",
+      "path": "./lessons/network-os-infra/network-os-infra-overview.json"
+    },
+    {
+      "id": "it-consulting-overview",
+      "title": "ITコンサルティングの入口",
+      "topic": "コンサルティング",
+      "path": "./lessons/it-consulting/it-consulting-overview.json"
+    },
+    {
+      "id": "public-dx-govtech-overview",
+      "title": "公共DX・GovTechの入口",
+      "topic": "公共DX",
+      "path": "./lessons/public-dx-govtech/public-dx-govtech-overview.json"
+    },
+    {
+      "id": "healthcare-care-dx-overview",
+      "title": "ヘルスケア・介護DXの入口",
+      "topic": "ヘルスケアDX",
+      "path": "./lessons/healthcare-care-dx/healthcare-care-dx-overview.json"
+    },
+    {
       "id": "rsvp-basics",
       "title": "RSVP学習の使い方",
       "topic": "使い方",

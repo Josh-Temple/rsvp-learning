@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "id": "cloud-overview",
+  "title": "クラウドコンピューティングの入口",
+  "topic": "クラウド",
+  "summary": "IaaS、PaaS、SaaS、IAM、ネットワーク、ストレージ、可用性などクラウドの基本をつかむ入口教材です。",
+  "created_at": "2026-09-27",
+  "base_duration_ms": 680,
+  "sources": [],
+  "chunks": [
+    {
+      "text": "クラウドは、計算資源をネットワーク経由で利用する形態です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "必要な資源を、必要に応じて増減できます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "IaaSは、仮想マシンなど基盤に近い資源を提供します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "PaaSは、アプリ実行環境をより管理された形で提供します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "SaaSは、完成したソフトウェアをサービスとして利用します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "IAMは、誰が何へアクセスできるかを管理します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ネットワーク設計は、通信経路と境界を決めます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ストレージとデータベースは、データの性質に応じて選びます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Serverlessは、サーバー管理を減らして処理を実行する選択肢です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "可用性では、障害が起きてもサービスを継続できる構成を考えます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "監視とログは、異常の検知と原因調査に必要です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "最初は、Azureを軸に各サービスの役割を理解します",
+      "duration_multiplier": 1.4
+    }
+  ]
+}

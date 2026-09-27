@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "id": "software-architecture-overview",
+  "title": "ソフトウェア設計とアーキテクチャの入口",
+  "topic": "ソフトウェア設計",
+  "summary": "モジュール、インターフェース、依存関係、状態、非同期、キュー、冪等性など設計議論の基礎をつかむ入口教材です。",
+  "created_at": "2026-09-27",
+  "base_duration_ms": 680,
+  "sources": [],
+  "chunks": [
+    {
+      "text": "ソフトウェア設計では、責務を分けることが重要です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "モジュールは、関連する処理をまとまりとして扱います",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "インターフェースは、部品同士の接点を定めます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "依存関係が増えるほど、変更の影響範囲は広がります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "状態は、システムが現在どの段階にあるかを表します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "同期処理は結果を待ち、非同期処理は待たずに進められます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "キューは、処理要求を順番に受け渡すために使われます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "イベント駆動では、出来事をきっかけに処理します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Single Source of Truthは、正しい情報の基準を一つに定めます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "冪等性は、同じ処理を繰り返しても結果が壊れない性質です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Retryには、重複や副作用への対策が必要です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "まずは、責務、状態、失敗時の挙動を説明できることを目標にします",
+      "duration_multiplier": 1.4
+    }
+  ]
+}

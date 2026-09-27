@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "id": "ai-evaluation-operations-overview",
+  "title": "AIの評価と運用の入口",
+  "topic": "AI運用",
+  "summary": "評価データ、指標、監視、ログ、Human Review、rollbackなどAIを継続運用するための基本をつかむ入口教材です。",
+  "created_at": "2026-09-27",
+  "base_duration_ms": 680,
+  "sources": [],
+  "chunks": [
+    {
+      "text": "AIは、動いたかどうかだけでは品質を判断できません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "まず、何を良い出力とするかを定義します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "評価用データは、代表的な入力と期待結果を集めます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "正解が明確な課題では、定量指標を使えます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "生成結果の評価では、人間評価が必要な場合があります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "LLM-as-a-judgeは便利ですが、評価者自身にも誤りがあります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "本番運用では、入力と出力の変化を監視します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ログは、失敗原因を追跡するために残します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Human Reviewは、重要な例外や高リスク判断に使います",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "変更後に問題が出たときは、rollbackできる設計が重要です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "評価結果を次の改善へつなげます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "まずは、変更前後を同じ条件で比較できることを目標にします",
+      "duration_multiplier": 1.4
+    }
+  ]
+}

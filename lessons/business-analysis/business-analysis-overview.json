@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "id": "business-analysis-overview",
+  "title": "業務分析と業務改革の入口",
+  "topic": "業務改革",
+  "summary": "業務フロー、ボトルネック、標準化、例外処理、KPI、自動化の基本をつかむ入口教材です。",
+  "created_at": "2026-09-27",
+  "base_duration_ms": 680,
+  "sources": [],
+  "chunks": [
+    {
+      "text": "業務改革では、ツール導入より先に業務を理解します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "業務フローは、作業の順序と関係者を可視化します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "As-Isは現在の業務、To-Beは目指す業務です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ボトルネックは、全体の処理能力を制約する部分です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "待ち時間、手戻り、重複入力は改善候補になります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "標準化は、ばらつきを減らし再現性を高めます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ただし、例外処理を無視すると現場で破綻します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "KPIは、改善が目的に近づいているかを見る指標です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "自動化は、安定した反復作業に向いています",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "判断が必要な工程は、人間との役割分担を考えます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "改善前後を比較し、効果を観測できる形にします",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "まずは、一つの業務を分解して改善仮説を説明できることを目標にします",
+      "duration_multiplier": 1.4
+    }
+  ]
+}

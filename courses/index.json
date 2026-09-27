@@ -8,6 +8,125 @@
       ]
     },
     {
+      "id": "system-development",
+      "title": "システム開発",
+      "chapters": [
+        "system-development-overview"
+      ]
+    },
+    {
+      "id": "database-sql",
+      "title": "データベース・SQL",
+      "chapters": [
+        "database-sql-overview"
+      ]
+    },
+    {
+      "id": "web-api",
+      "title": "API・Webシステム",
+      "chapters": [
+        "web-api-overview"
+      ]
+    },
+    {
+      "id": "information-security",
+      "title": "情報セキュリティ",
+      "chapters": [
+        "information-security-overview"
+      ]
+    },
+    {
+      "id": "cloud",
+      "title": "クラウド",
+      "chapters": [
+        "cloud-overview"
+      ]
+    },
+    {
+      "id": "project-management",
+      "title": "プロジェクトマネジメント・PMO",
+      "chapters": [
+        "project-management-overview"
+      ]
+    },
+    {
+      "id": "business-analysis",
+      "title": "業務分析・業務改革",
+      "chapters": [
+        "business-analysis-overview"
+      ]
+    },
+    {
+      "id": "generative-ai",
+      "title": "生成AIアプリケーション設計",
+      "chapters": [
+        "generative-ai-overview"
+      ]
+    },
+    {
+      "id": "ai-evaluation-operations",
+      "title": "AIの評価・運用",
+      "chapters": [
+        "ai-evaluation-operations-overview"
+      ]
+    },
+    {
+      "id": "software-architecture",
+      "title": "ソフトウェア設計・アーキテクチャ",
+      "chapters": [
+        "software-architecture-overview"
+      ]
+    },
+    {
+      "id": "git-cicd",
+      "title": "Git・GitHub・CI/CD",
+      "chapters": [
+        "git-cicd-overview"
+      ]
+    },
+    {
+      "id": "statistics-data-analysis",
+      "title": "データ分析・統計",
+      "chapters": [
+        "statistics-data-analysis-overview"
+      ]
+    },
+    {
+      "id": "ai-governance",
+      "title": "AIガバナンス・リスク管理",
+      "chapters": [
+        "ai-governance-overview"
+      ]
+    },
+    {
+      "id": "network-os-infra",
+      "title": "ネットワーク・OS・インフラ",
+      "chapters": [
+        "network-os-infra-overview"
+      ]
+    },
+    {
+      "id": "it-consulting",
+      "title": "ITコンサルティング",
+      "chapters": [
+        "it-consulting-overview"
+      ]
+    },
+    {
+      "id": "public-dx-govtech",
+      "title": "公共DX・GovTech",
+      "chapters": [
+        "public-dx-govtech-overview"
+      ]
+    },
+    {
+      "id": "healthcare-care-dx",
+      "title": "ヘルスケア・介護DX",
+      "chapters": [
+        "healthcare-care-dx-overview"
+      ]
+    },
+    {
       "id": "rsvp",
       "title": "RSVP",
       "chapters": [

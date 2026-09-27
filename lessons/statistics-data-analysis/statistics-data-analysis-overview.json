@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "id": "statistics-data-analysis-overview",
+  "title": "データ分析と統計の入口",
+  "topic": "データ分析",
+  "summary": "代表値、ばらつき、標本、信頼区間、仮説検定、相関と因果など分析の基礎をつかむ入口教材です。",
+  "created_at": "2026-09-27",
+  "base_duration_ms": 680,
+  "sources": [],
+  "chunks": [
+    {
+      "text": "データ分析では、数字を出すだけでなく意味を考えます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "平均は全体の中心を表す代表値の一つです",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "中央値は、外れ値の影響を受けにくい代表値です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "分散や標準偏差は、データのばらつきを表します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "母集団は知りたい対象全体、標本は実際に観測する一部です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "標本には、選び方による偏りが入ることがあります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "信頼区間は、推定の不確実性を幅として表します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "仮説検定は、観測結果が偶然だけで説明できるかを検討します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "相関があっても、因果関係があるとは限りません",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "回帰は、変数同士の関係をモデル化する代表的な方法です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "分析では、事前に問いと比較条件を明確にします",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "まずは、数字の差とその不確実性を分けて説明できることを目標にします",
+      "duration_multiplier": 1.4
+    }
+  ]
+}

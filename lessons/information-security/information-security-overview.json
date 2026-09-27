@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "id": "information-security-overview",
+  "title": "情報セキュリティ概観",
+  "topic": "情報セキュリティ",
+  "summary": "情報セキュリティを機密性・完全性・可用性、リスク、認証、暗号、ネットワーク、インシデント対応の観点から眺める入口教材です。",
+  "created_at": "2026-09-27",
+  "base_duration_ms": 680,
+  "sources": [],
+  "chunks": [
+    {
+      "text": "情報セキュリティは、情報とシステムを適切に守るための分野です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "機密性は、許可された人だけが情報へアクセスできる状態です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "完全性は、情報が正確で不正に変更されていない状態です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "可用性は、必要なときに利用できる状態です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "脅威は、損害を起こす原因になり得るものです",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "脆弱性は、攻撃や事故につながる弱点です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "リスクは、脅威と脆弱性と影響を踏まえて考えます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "認証と認可は、アクセス制御の基本です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "暗号は、通信や保存データを守る重要な技術です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ネットワーク防御だけでなく、人と運用の対策も必要です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "インシデントでは、検知、封じ込め、復旧、再発防止を考えます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "この章は入口であり、IPA範囲を扱う本編は別章で拡張します",
+      "duration_multiplier": 1.4
+    }
+  ]
+}
