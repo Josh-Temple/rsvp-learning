@@ -9,51 +9,163 @@
   "sources": [],
   "chunks": [
     {
-      "text": "AIガバナンスは、AIを安全かつ説明可能に利用するための管理です",
+      "text": "AIガバナンスは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "AIを安全かつ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "説明可能に利用する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ための管理です",
       "duration_multiplier": 1.4
     },
     {
-      "text": "導入時だけでなく、設計、開発、運用、廃止までを考えます",
+      "text": "導入時だけでなく、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "設計、開発、運用、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "廃止までを考えます",
       "duration_multiplier": 1.15
     },
     {
-      "text": "利用目的と許容できるリスクを明確にします",
+      "text": "利用目的と",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "許容できるリスクを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "明確にします",
       "duration_multiplier": 1.15
     },
     {
-      "text": "データには、個人情報や機密情報が含まれる場合があります",
+      "text": "データには、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "個人情報や機密情報が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "含まれる場合があります",
       "duration_multiplier": 1.15
     },
     {
-      "text": "セキュリティでは、モデルだけでなく周辺システムも守ります",
+      "text": "セキュリティでは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "モデルだけでなく",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "周辺システムも守ります",
       "duration_multiplier": 1.15
     },
     {
-      "text": "バイアスは、特定の集団や条件で不公平な結果を生む可能性があります",
+      "text": "バイアスは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "特定の集団や条件で",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "不公平な結果を生む",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "可能性があります",
       "duration_multiplier": 1.15
     },
     {
-      "text": "説明可能性は、判断の根拠をどこまで説明できるかという問題です",
+      "text": "説明可能性は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "判断の根拠を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "どこまで説明できるか",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "という問題です",
       "duration_multiplier": 1.15
     },
     {
-      "text": "Human Oversightは、人間が介入すべき境界を定めます",
+      "text": "Human Oversightは、",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "人間が介入すべき",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "境界を定めます",
       "duration_multiplier": 1.15
     },
     {
-      "text": "ログと証拠は、後から判断を検証するために必要です",
+      "text": "ログと証拠は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "後から判断を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "検証するために必要です",
       "duration_multiplier": 1.15
     },
     {
-      "text": "責任の所在と承認権限を明確にします",
+      "text": "責任の所在と",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "承認権限を明確にします",
       "duration_multiplier": 1.15
     },
     {
-      "text": "ルールは、実運用で守れる形に落とす必要があります",
+      "text": "ルールは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "実運用で守れる形に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "落とす必要があります",
       "duration_multiplier": 1.15
     },
     {
-      "text": "まずは、一つのAI利用について主要リスクと統制を説明できることを目標にします",
+      "text": "まずは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "一つのAI利用について",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "主要リスクと統制を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "説明できることを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "目標にします",
       "duration_multiplier": 1.4
     }
   ]

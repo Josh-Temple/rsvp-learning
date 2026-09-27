@@ -9,51 +9,163 @@
   "sources": [],
   "chunks": [
     {
-      "text": "ネットワークは、複数の機器やサービスを接続します",
+      "text": "ネットワークは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "複数の機器やサービスを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "接続します",
       "duration_multiplier": 1.4
     },
     {
-      "text": "IPアドレスは、ネットワーク上の機器を識別します",
+      "text": "IPアドレスは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ネットワーク上の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "機器を識別します",
       "duration_multiplier": 1.15
     },
     {
-      "text": "TCPは、信頼性のある通信を提供する代表的な仕組みです",
+      "text": "TCPは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "信頼性のある通信を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "提供する代表的な",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "仕組みです",
       "duration_multiplier": 1.15
     },
     {
-      "text": "DNSは、ドメイン名をIPアドレスへ対応づけます",
+      "text": "DNSは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ドメイン名を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "IPアドレスへ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "対応づけます",
       "duration_multiplier": 1.15
     },
     {
-      "text": "Portは、一台の機器内で通信先のサービスを区別します",
+      "text": "Portは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "一台の機器内で",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "通信先のサービスを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "区別します",
       "duration_multiplier": 1.15
     },
     {
-      "text": "HTTPはWeb通信、TLSは通信の暗号化に使われます",
+      "text": "HTTPはWeb通信、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "TLSは通信の暗号化に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "使われます",
       "duration_multiplier": 1.15
     },
     {
-      "text": "OSは、アプリとハードウェアの間で資源を管理します",
+      "text": "OSは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "アプリとハードウェアの",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "間で資源を管理します",
       "duration_multiplier": 1.15
     },
     {
-      "text": "Processは、実行中のプログラムです",
+      "text": "Processは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "実行中のプログラムです",
       "duration_multiplier": 1.15
     },
     {
-      "text": "Memoryは、処理中のデータを保持する重要な資源です",
+      "text": "Memoryは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "処理中のデータを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "保持する重要な資源です",
       "duration_multiplier": 1.15
     },
     {
-      "text": "Filesystemは、ファイルとディレクトリを管理します",
+      "text": "Filesystemは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ファイルとディレクトリを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "管理します",
       "duration_multiplier": 1.15
     },
     {
-      "text": "Linuxの基本操作は、クラウドやサーバー理解に役立ちます",
+      "text": "Linuxの基本操作は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "クラウドやサーバー",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "理解に役立ちます",
       "duration_multiplier": 1.15
     },
     {
-      "text": "まずは、ブラウザからサーバーまで通信が届く流れを説明できることを目標にします",
+      "text": "まずは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ブラウザからサーバーまで",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "通信が届く流れを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "説明できることを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "目標にします",
       "duration_multiplier": 1.4
     }
   ]
