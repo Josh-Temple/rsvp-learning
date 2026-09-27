@@ -30,11 +30,20 @@ const schema = await readJson(path.join(root, "schema/lesson.schema.json"));
 const lessonIndex = await readJson(path.join(root, "lessons/index.json"));
 const courseIndex = await readJson(path.join(root, "courses/index.json"));
 
+let listenIndex = { items: [] };
+try {
+  listenIndex = await readJson(path.join(root, "listen/index.json"));
+} catch (error) {
+  if (error.code !== "ENOENT") throw error;
+}
+
 const lessons = lessonIndex.lessons ?? [];
 const courses = courseIndex.courses ?? [];
+const listenItems = listenIndex.items ?? [];
 
 duplicateIds(lessons, "Lesson");
 duplicateIds(courses, "Course");
+duplicateIds(listenItems, "Listen");
 
 const lessonIds = new Set(lessons.map((item) => item.id));
 const ajv = new Ajv2020({ allErrors: true, strict: false });
@@ -92,6 +101,30 @@ for (const meta of lessons) {
   }
 }
 
+for (const item of listenItems) {
+  if (!item?.title || typeof item.title !== "string") {
+    errors.push(`Listen ${item?.id ?? "(unknown)"} にtitleがありません`);
+  }
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(item?.date ?? "")) {
+    errors.push(`Listen ${item?.id ?? "(unknown)"} のdateがYYYY-MM-DDではありません`);
+  }
+  if (!["news", "research", "report", "note"].includes(item?.category)) {
+    errors.push(`Listen ${item?.id ?? "(unknown)"} のcategoryが不正です: ${item?.category ?? "(missing)"}`);
+  }
+  if (!item?.path || typeof item.path !== "string") {
+    errors.push(`Listen ${item?.id ?? "(unknown)"} にpathがありません`);
+    continue;
+  }
+
+  const filePath = path.resolve(root, "listen", item.path.replace(/^\.\//, ""));
+  try {
+    const stat = await fs.stat(filePath);
+    if (!stat.isFile()) errors.push(`Listen ${item.id} のpathがファイルではありません: ${item.path}`);
+  } catch (error) {
+    errors.push(`Listen ${item.id} のpathを読めません: ${item.path} (${error.message})`);
+  }
+}
+
 for (const course of courses) {
   if (!Array.isArray(course.chapters) || course.chapters.length === 0) {
     errors.push(`Course ${course.id} にchapterがありません`);
@@ -113,6 +146,7 @@ for (const course of courses) {
 
 console.log(`Lessons: ${lessons.length}`);
 console.log(`Courses: ${courses.length}`);
+console.log(`Listen items: ${listenItems.length}`);
 console.log(`Chunks: ${chunkCount}`);
 console.log(`Lessons without sources: ${emptySourceLessons}`);
 console.log(`Chunks over 24 chars (warning): ${longChunkCount}`);
