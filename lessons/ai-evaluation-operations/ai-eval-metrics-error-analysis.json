@@ -9,44 +9,128 @@
   "sources": [],
   "chunks": [
     {
-      "text": "評価指標は、目的に合うものを選びます",
+      "text": "評価指標は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "目的に合うものを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "選びます",
       "duration_multiplier": 1.35
     },
     {
-      "text": "Accuracyは、全体のうち正しく判定した割合です",
-      "duration_multiplier": 1.1
+      "text": "Accuracyは、",
+      "duration_multiplier": 1
     },
     {
-      "text": "Precisionは、陽性と判定した中で正しかった割合です",
-      "duration_multiplier": 1.1
+      "text": "全体のうち",
+      "duration_multiplier": 1
     },
     {
-      "text": "Recallは、本当の陽性をどれだけ拾えたかを表します",
-      "duration_multiplier": 1.1
+      "text": "正しく判定した割合です",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "どの誤りを重く見るかで、重視する指標は変わります",
-      "duration_multiplier": 1.1
+      "text": "Precisionは、",
+      "duration_multiplier": 1
     },
     {
-      "text": "生成AIでは、単純な正解率を使えない課題もあります",
-      "duration_multiplier": 1.1
+      "text": "陽性と判定した中で",
+      "duration_multiplier": 1
     },
     {
-      "text": "その場合は、複数の評価観点を使います",
-      "duration_multiplier": 1.1
+      "text": "正しかった割合です",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "平均値だけでは、特定条件での弱点を見落とします",
-      "duration_multiplier": 1.1
+      "text": "Recallは、",
+      "duration_multiplier": 1
     },
     {
-      "text": "利用者属性や入力種類ごとに分けて見ることがあります",
-      "duration_multiplier": 1.1
+      "text": "本当の陽性を",
+      "duration_multiplier": 1
     },
     {
-      "text": "エラー分析では、失敗例を具体的に読みます",
-      "duration_multiplier": 1.1
+      "text": "どれだけ拾えたかを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "表します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "どの誤りを重く見るかで、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "重視する指標は",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "変わります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "生成AIでは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "単純な正解率を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "使えない課題もあります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "その場合は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "複数の評価観点を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "使います",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "平均値だけでは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "特定条件での弱点を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "見落とします",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用者属性や",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "入力種類ごとに",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "分けて見ることがあります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "エラー分析では、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "失敗例を具体的に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "読みます",
+      "duration_multiplier": 1.15
     },
     {
       "text": "失敗を種類ごとに分類します",
@@ -57,11 +141,27 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "指標の改善が、業務価値の改善につながるか確認します",
-      "duration_multiplier": 1.1
+      "text": "指標の改善が、",
+      "duration_multiplier": 1
     },
     {
-      "text": "数字と実例を組み合わせて評価することが重要です",
+      "text": "業務価値の改善に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "つながるか確認します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "数字と実例を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "組み合わせて",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "評価することが重要です",
       "duration_multiplier": 1.35
     }
   ]

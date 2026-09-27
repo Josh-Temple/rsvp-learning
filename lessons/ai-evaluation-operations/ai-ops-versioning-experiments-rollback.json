@@ -9,59 +9,155 @@
   "sources": [],
   "chunks": [
     {
-      "text": "AIシステムでは、モデル以外にも多くの要素が変わります",
+      "text": "AIシステムでは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "モデル以外にも",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "多くの要素が変わります",
       "duration_multiplier": 1.35
     },
     {
-      "text": "プロンプト、検索設定、ツール、評価基準も変更対象です",
-      "duration_multiplier": 1.1
+      "text": "プロンプト、検索設定、",
+      "duration_multiplier": 1
     },
     {
-      "text": "どの変更で結果が変わったか追えるようにします",
-      "duration_multiplier": 1.1
+      "text": "ツール、評価基準も",
+      "duration_multiplier": 1
     },
     {
-      "text": "設定やコードに、バージョンを持たせます",
-      "duration_multiplier": 1.1
+      "text": "変更対象です",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "変更前と変更後を、同じ評価条件で比較します",
-      "duration_multiplier": 1.1
+      "text": "どの変更で",
+      "duration_multiplier": 1
     },
     {
-      "text": "一度に多くを変えると、原因を特定しにくくなります",
-      "duration_multiplier": 1.1
+      "text": "結果が変わったか",
+      "duration_multiplier": 1
     },
     {
-      "text": "可能なら、変更点を小さく分けます",
-      "duration_multiplier": 1.1
+      "text": "追えるようにします",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "A/Bテストなどで、本番影響を比較する方法もあります",
-      "duration_multiplier": 1.1
+      "text": "設定やコードに、",
+      "duration_multiplier": 1
     },
     {
-      "text": "ただし、高リスク業務では実験方法に制約があります",
-      "duration_multiplier": 1.1
+      "text": "バージョンを持たせます",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "問題が起きたときに、以前の状態へ戻せるようにします",
-      "duration_multiplier": 1.1
+      "text": "変更前と変更後を、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "同じ評価条件で",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "比較します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一度に多くを変えると、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "原因を特定しにくく",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "なります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "可能なら、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "変更点を小さく",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "分けます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "A/Bテストなどで、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "本番影響を比較する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "方法もあります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ただし、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "高リスク業務では",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "実験方法に制約があります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "問題が起きたときに、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "以前の状態へ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "戻せるようにします",
+      "duration_multiplier": 1.15
     },
     {
       "text": "これが、Rollbackです",
       "duration_multiplier": 1.1
     },
     {
-      "text": "Rollback対象には、コードだけでなく設定も含まれます",
-      "duration_multiplier": 1.1
+      "text": "Rollback対象には、",
+      "duration_multiplier": 1
     },
     {
-      "text": "変更履歴と評価結果を対応づけます",
-      "duration_multiplier": 1.1
+      "text": "コードだけでなく",
+      "duration_multiplier": 1
     },
     {
-      "text": "改善速度と復旧可能性を両立させることが重要です",
+      "text": "設定も含まれます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "変更履歴と",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "評価結果を対応づけます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "改善速度と",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "復旧可能性を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "両立させることが重要です",
       "duration_multiplier": 1.35
     }
   ]
