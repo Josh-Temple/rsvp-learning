@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light dark" />
+  <title>RSVP Web Reader — Android bookmarklet test</title>
+  <style>
+    :root {
+      --bg: #f2efe8;
+      --ink: #121722;
+      --muted: #73766f;
+      --line: #cbc8bf;
+      --soft: #e5e1d8;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #11151a;
+        --ink: #edf0eb;
+        --muted: #959b97;
+        --line: #343a3e;
+        --soft: #20262a;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Inter, "Noto Sans JP", system-ui, sans-serif;
+    }
+    main {
+      width: min(720px, 100%);
+      margin: 0 auto;
+      padding: 32px 20px 64px;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: clamp(28px, 8vw, 48px);
+      letter-spacing: -.04em;
+    }
+    p, li {
+      line-height: 1.75;
+    }
+    .lede {
+      color: var(--muted);
+    }
+    section {
+      margin-top: 36px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+    }
+    h2 {
+      margin: 0 0 14px;
+      font-size: 18px;
+    }
+    ol {
+      padding-left: 1.4em;
+    }
+    button {
+      min-height: 48px;
+      padding: 0 18px;
+      border: 1px solid var(--ink);
+      background: var(--ink);
+      color: var(--bg);
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    button:disabled {
+      opacity: .45;
+      cursor: wait;
+    }
+    code {
+      padding: .1em .3em;
+      background: var(--soft);
+      font-family: ui-monospace, monospace;
+      font-size: .92em;
+    }
+    .status {
+      min-height: 1.6em;
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .note {
+      color: var(--muted);
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>RSVP Web Reader</h1>
+    <p class="lede">Android Chromeで、閲覧中のページの下部にRSVPプレイヤーを重ねる実験版です。</p>
+
+    <section>
+      <h2>セットアップ</h2>
+      <ol>
+        <li>下の「ブックマークレットをコピー」を押します。</li>
+        <li>Chromeで任意のページを一度ブックマークします。</li>
+        <li>そのブックマークを編集し、名前を <code>RSVP Reader</code> などに変更します。</li>
+        <li>URL欄をすべて削除し、コピーした <code>javascript:</code> から始まる文字列を貼り付けて保存します。</li>
+        <li>読みたいページを開いた状態でアドレスバーへ <code>RSVP Reader</code> と入力し、候補に出たブックマークを選びます。</li>
+      </ol>
+      <button id="copy" type="button" disabled>読み込み中…</button>
+      <div id="status" class="status" role="status"></div>
+      <p class="note">Android Chromeのブックマークレット実行は正式な主要UIではなく、バージョンやサイトの制約で動かない場合があります。まず実機検証用として使ってください。</p>
+    </section>
+
+    <section>
+      <h2>動作</h2>
+      <p>テキストを選択してから起動した場合は選択範囲を優先します。未選択なら <code>article</code>、<code>main</code> などから本文候補を取得します。</p>
+      <p>再度起動すると既存パネルを閉じます。ページ外への通信や外部スクリプト読み込みは行いません。</p>
+    </section>
+  </main>
+
+  <script>
+    const copyButton = document.querySelector("#copy");
+    const status = document.querySelector("#status");
+    let bookmarklet = "";
+
+    function oneLine(source) {
+      return source
+        .replace(/^\s*\/\/.*$/gm, "")
+        .replace(/\s*\n\s*/g, " ")
+        .trim();
+    }
+
+    async function load() {
+      try {
+        const response = await fetch("./bookmarklet.js", { cache: "no-store" });
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const source = await response.text();
+        bookmarklet = `javascript:${oneLine(source)}`;
+        copyButton.disabled = false;
+        copyButton.textContent = "ブックマークレットをコピー";
+        status.textContent = `準備完了 · ${bookmarklet.length.toLocaleString()} 文字`;
+      } catch (error) {
+        console.error(error);
+        status.textContent = "ブックマークレットの読み込みに失敗しました。";
+      }
+    }
+
+    copyButton.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(bookmarklet);
+        status.textContent = "コピーしました。ChromeのブックマークURL欄へ貼り付けてください。";
+      } catch {
+        const textarea = document.createElement("textarea");
+        textarea.value = bookmarklet;
+        document.body.append(textarea);
+        textarea.select();
+        document.execCommand("copy");
+        textarea.remove();
+        status.textContent = "コピーしました。ChromeのブックマークURL欄へ貼り付けてください。";
+      }
+    });
+
+    load();
+  </script>
+</body>
+</html>
