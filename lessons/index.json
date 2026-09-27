@@ -233,6 +233,126 @@
       "title": "Webhookと非同期処理",
       "topic": "Web・API",
       "path": "./lessons/web-api/api-webhook-async.json"
+    },
+    {
+      "id": "cloud-service-models-responsibility",
+      "title": "クラウドのサービスモデルと責任分界",
+      "topic": "クラウド",
+      "path": "./lessons/cloud/cloud-service-models-responsibility.json"
+    },
+    {
+      "id": "cloud-iam",
+      "title": "クラウドのIAM",
+      "topic": "クラウド",
+      "path": "./lessons/cloud/cloud-iam.json"
+    },
+    {
+      "id": "cloud-networking",
+      "title": "クラウドネットワークの基本",
+      "topic": "クラウド",
+      "path": "./lessons/cloud/cloud-networking.json"
+    },
+    {
+      "id": "cloud-compute-serverless-containers",
+      "title": "仮想マシン・コンテナ・Serverless",
+      "topic": "クラウド",
+      "path": "./lessons/cloud/cloud-compute-serverless-containers.json"
+    },
+    {
+      "id": "cloud-data-availability-observability",
+      "title": "データ・可用性・監視",
+      "topic": "クラウド",
+      "path": "./lessons/cloud/cloud-data-availability-observability.json"
+    },
+    {
+      "id": "pm-initiation-scope-wbs",
+      "title": "目的・スコープ・WBS",
+      "topic": "プロジェクト管理",
+      "path": "./lessons/project-management/pm-initiation-scope-wbs.json"
+    },
+    {
+      "id": "pm-schedule-dependencies",
+      "title": "スケジュールと依存関係",
+      "topic": "プロジェクト管理",
+      "path": "./lessons/project-management/pm-schedule-dependencies.json"
+    },
+    {
+      "id": "pm-issues-risks",
+      "title": "課題管理とリスク管理",
+      "topic": "プロジェクト管理",
+      "path": "./lessons/project-management/pm-issues-risks.json"
+    },
+    {
+      "id": "pm-change-quality",
+      "title": "変更管理と品質管理",
+      "topic": "プロジェクト管理",
+      "path": "./lessons/project-management/pm-change-quality.json"
+    },
+    {
+      "id": "pm-stakeholders-governance-pmo",
+      "title": "ステークホルダー・ガバナンス・PMO",
+      "topic": "プロジェクト管理",
+      "path": "./lessons/project-management/pm-stakeholders-governance-pmo.json"
+    },
+    {
+      "id": "business-analysis-problem-value",
+      "title": "課題設定と価値",
+      "topic": "業務改革",
+      "path": "./lessons/business-analysis/business-analysis-problem-value.json"
+    },
+    {
+      "id": "business-analysis-process-mapping",
+      "title": "業務フローの可視化",
+      "topic": "業務改革",
+      "path": "./lessons/business-analysis/business-analysis-process-mapping.json"
+    },
+    {
+      "id": "business-analysis-bottlenecks-waste",
+      "title": "ボトルネックとムダの発見",
+      "topic": "業務改革",
+      "path": "./lessons/business-analysis/business-analysis-bottlenecks-waste.json"
+    },
+    {
+      "id": "business-analysis-standardization-exceptions",
+      "title": "標準化と例外処理",
+      "topic": "業務改革",
+      "path": "./lessons/business-analysis/business-analysis-standardization-exceptions.json"
+    },
+    {
+      "id": "business-analysis-kpi-automation-change",
+      "title": "KPI・自動化・定着",
+      "topic": "業務改革",
+      "path": "./lessons/business-analysis/business-analysis-kpi-automation-change.json"
+    },
+    {
+      "id": "genai-llm-context",
+      "title": "LLMとコンテキスト",
+      "topic": "生成AI",
+      "path": "./lessons/generative-ai/genai-llm-context.json"
+    },
+    {
+      "id": "genai-rag",
+      "title": "RAGの基本",
+      "topic": "生成AI",
+      "path": "./lessons/generative-ai/genai-rag.json"
+    },
+    {
+      "id": "genai-tools-agents",
+      "title": "Tool CallingとAgent",
+      "topic": "生成AI",
+      "path": "./lessons/generative-ai/genai-tools-agents.json"
+    },
+    {
+      "id": "genai-structured-workflows-hitl",
+      "title": "Structured Output・Workflow・Human-in-the-loop",
+      "topic": "生成AI",
+      "path": "./lessons/generative-ai/genai-structured-workflows-hitl.json"
+    },
+    {
+      "id": "genai-cost-latency-security",
+      "title": "コスト・速度・セキュリティ",
+      "topic": "生成AI",
+      "path": "./lessons/generative-ai/genai-cost-latency-security.json"
     }
   ]
 }

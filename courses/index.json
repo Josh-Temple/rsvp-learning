@@ -59,28 +59,48 @@
       "id": "cloud",
       "title": "クラウド",
       "chapters": [
-        "cloud-overview"
+        "cloud-overview",
+        "cloud-service-models-responsibility",
+        "cloud-iam",
+        "cloud-networking",
+        "cloud-compute-serverless-containers",
+        "cloud-data-availability-observability"
       ]
     },
     {
       "id": "project-management",
       "title": "プロジェクトマネジメント・PMO",
       "chapters": [
-        "project-management-overview"
+        "project-management-overview",
+        "pm-initiation-scope-wbs",
+        "pm-schedule-dependencies",
+        "pm-issues-risks",
+        "pm-change-quality",
+        "pm-stakeholders-governance-pmo"
       ]
     },
     {
       "id": "business-analysis",
       "title": "業務分析・業務改革",
       "chapters": [
-        "business-analysis-overview"
+        "business-analysis-overview",
+        "business-analysis-problem-value",
+        "business-analysis-process-mapping",
+        "business-analysis-bottlenecks-waste",
+        "business-analysis-standardization-exceptions",
+        "business-analysis-kpi-automation-change"
       ]
     },
     {
       "id": "generative-ai",
       "title": "生成AIアプリケーション設計",
       "chapters": [
-        "generative-ai-overview"
+        "generative-ai-overview",
+        "genai-llm-context",
+        "genai-rag",
+        "genai-tools-agents",
+        "genai-structured-workflows-hitl",
+        "genai-cost-latency-security"
       ]
     },
     {

@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "id": "genai-tools-agents",
+  "title": "Tool CallingとAgent",
+  "topic": "生成AI",
+  "summary": "LLMが外部ツールを使う仕組みと、複数ステップを進めるAgentの設計上の注意点を学びます。",
+  "created_at": "2026-09-27",
+  "base_duration_ms": 680,
+  "sources": [],
+  "chunks": [
+    {
+      "text": "LLMは、文章を生成するだけでなく外部機能を呼び出せます",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "これを、Tool Callingとして扱います",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "例えば、検索、計算、データ取得をツールへ任せられます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "モデルは、使うツールと引数を選びます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "実際の処理は、外部システムが実行します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "ツールの結果を、再びLLMへ返します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "Agentでは、この判断と実行を複数回繰り返すことがあります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "複雑な仕事を、複数ステップへ分けられます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "一方で、実行回数が増えるほど失敗経路も増えます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "書込みや送信などの副作用には特に注意します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "権限を必要最小限にします",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "重要な操作前に、人間承認を置くことがあります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "途中状態と実行履歴を記録すると復旧しやすくなります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "Agentは、自律性より制御可能性を含めて設計します",
+      "duration_multiplier": 1.35
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "id": "genai-llm-context",
+  "title": "LLMとコンテキスト",
+  "topic": "生成AI",
+  "summary": "LLMの基本的な入出力と、コンテキストを設計する考え方を学びます。",
+  "created_at": "2026-09-27",
+  "base_duration_ms": 680,
+  "sources": [],
+  "chunks": [
+    {
+      "text": "LLMは、与えられた入力から出力を生成します",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "モデルが利用できる情報は、入力された文脈に強く依存します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "この文脈を、コンテキストとして扱います",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "指示だけでなく、資料や会話履歴もコンテキストになります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "必要な情報が入っていなければ、正確に答えられない場合があります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "一方で、不要な情報を大量に入れると判断を難しくすることがあります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "コンテキストには、量の上限があります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "重要な情報を選んで渡す設計が必要です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "指示と参照資料を区別すると、役割が分かりやすくなります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "出力形式も、事前に明確にできます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "曖昧な依頼は、曖昧な出力につながりやすくなります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "ただし、指示を細かくすれば必ず正しくなるわけではありません",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "モデルの能力と情報の質の両方が影響します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "LLM利用では、何をコンテキストへ入れるかが設計の中心です",
+      "duration_multiplier": 1.35
+    }
+  ]
+}

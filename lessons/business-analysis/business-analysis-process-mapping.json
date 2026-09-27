@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "id": "business-analysis-process-mapping",
+  "title": "業務フローの可視化",
+  "topic": "業務改革",
+  "summary": "業務の開始から終了までを可視化し、関係者・判断・受け渡しを把握する方法を学びます。",
+  "created_at": "2026-09-27",
+  "base_duration_ms": 680,
+  "sources": [],
+  "chunks": [
+    {
+      "text": "業務フローは、仕事の流れを可視化します",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "開始条件と終了条件を決めます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "途中の作業を順番に並べます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "誰が担当するかも記録します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "部門をまたぐ受け渡しを確認します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "判断が必要な箇所を明確にします",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "例外処理も、別の流れとして確認します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "帳票やシステム入力も流れへ含めます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "口頭やメールだけの引継ぎも見落とさないようにします",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "待ち時間は、処理時間と分けて考えます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "As-Isでは、実際に行われている業務を描きます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "規程上の理想だけを描かないことが重要です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "可視化すると、重複や抜けが見えやすくなります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "業務フローは、改善議論の共通言語になります",
+      "duration_multiplier": 1.35
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "id": "pm-issues-risks",
+  "title": "課題管理とリスク管理",
+  "topic": "プロジェクト管理",
+  "summary": "すでに起きた課題と、将来起こり得るリスクを分けて管理する基本を学びます。",
+  "created_at": "2026-09-27",
+  "base_duration_ms": 680,
+  "sources": [],
+  "chunks": [
+    {
+      "text": "課題とリスクは、分けて考えます",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "課題は、すでに発生して対応が必要な問題です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "リスクは、将来起こる可能性がある不確実な事象です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "課題には、担当者と対応期限を置きます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "解決条件も、できるだけ明確にします",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "リスクは、発生可能性と影響を考えます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "重大なリスクから、優先して対策します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "回避、低減、移転、受容などの対応があります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "リスクが実際に起きたら、課題として扱うことがあります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "兆候を事前に定めると、早く気づけます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "一覧を作るだけでは、管理したことになりません",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "定期的に状態を更新します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "重要なものは、適切な意思決定者へ上げます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "良い管理は、問題を早く表面化させます",
+      "duration_multiplier": 1.35
+    }
+  ]
+}

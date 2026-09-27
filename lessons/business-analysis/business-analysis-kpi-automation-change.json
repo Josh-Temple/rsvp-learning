@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "id": "business-analysis-kpi-automation-change",
+  "title": "KPI・自動化・定着",
+  "topic": "業務改革",
+  "summary": "改善効果を測るKPI、自動化対象の選び方、業務変更を定着させる考え方を学びます。",
+  "created_at": "2026-09-27",
+  "base_duration_ms": 680,
+  "sources": [],
+  "chunks": [
+    {
+      "text": "業務改革では、改善したかを測る必要があります",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "KPIは、目的へ近づいているかを見る指標です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "指標は、改善目的と直接つながるものを選びます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "処理時間、エラー率、問い合わせ件数などが候補になります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "測りやすい数字だけを選ばないことが重要です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "自動化は、反復性が高くルールが明確な作業に向きます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "不安定な業務を、そのまま自動化すると問題も自動化します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "先に業務を整理してから自動化します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "例外が多い処理は、人の判断を残すことも考えます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "新しい仕組みは、導入しただけでは定着しません",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "利用者への説明と教育が必要です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "問い合わせ経路や改善窓口も準備します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "KPIで変化を確認し、必要なら業務を調整します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "改善は、導入ではなく定着までを含みます",
+      "duration_multiplier": 1.35
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "id": "genai-cost-latency-security",
+  "title": "コスト・速度・セキュリティ",
+  "topic": "生成AI",
+  "summary": "生成AIアプリを実運用する際のコスト、レイテンシ、データ保護、障害時設計を学びます。",
+  "created_at": "2026-09-27",
+  "base_duration_ms": 680,
+  "sources": [],
+  "chunks": [
+    {
+      "text": "生成AIアプリでは、品質だけを見ても不十分です",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "利用量が増えると、推論コストも増えることがあります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "不要に長い入力や出力は、コストへ影響します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "応答速度も、利用体験へ影響します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "複数のモデルやツールを呼ぶと、待ち時間が増えることがあります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "重要度に応じて、モデルや処理方法を選びます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "入力データには、個人情報や機密情報が含まれる場合があります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "送信してよい情報のルールを明確にします",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "外部ツールへ渡すデータも確認します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "Prompt Injectionなど、AI特有の攻撃も考慮します",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "失敗時に、安全側へ倒れる設計が必要です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "外部サービス障害時の代替動作も考えます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "ログには、必要な情報を残しつつ秘密情報を避けます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "実運用では、品質、費用、速度、安全性のバランスを取ります",
+      "duration_multiplier": 1.35
+    }
+  ]
+}

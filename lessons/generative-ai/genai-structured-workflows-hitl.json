@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "id": "genai-structured-workflows-hitl",
+  "title": "Structured Output・Workflow・Human-in-the-loop",
+  "topic": "生成AI",
+  "summary": "AI出力を業務処理へ安全につなぐための構造化出力、決定的処理、人間確認を学びます。",
+  "created_at": "2026-09-27",
+  "base_duration_ms": 680,
+  "sources": [],
+  "chunks": [
+    {
+      "text": "業務システムでは、自由文だけでは扱いにくい場合があります",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "Structured Outputは、出力形式をあらかじめ定める方法です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "例えば、項目名と値を持つJSONとして出力できます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "形式が決まると、後続処理へ渡しやすくなります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "ただし、形式が正しくても内容が正しいとは限りません",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "AI判断と、通常のプログラム処理を分けることが重要です",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "決定ルールが明確な部分は、プログラムで処理できます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "曖昧な分類や要約は、LLMが適する場合があります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "Workflowは、複数の処理を決めた順序でつなぎます",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "重要な判断には、人間確認を入れることがあります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "これが、Human-in-the-loopです",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "高リスクな処理ほど、人間確認の価値が高くなります",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "人間確認の結果も、後から追えるようにします",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "AIと決定的処理と人間判断の境界を設計します",
+      "duration_multiplier": 1.35
+    }
+  ]
+}
