@@ -9,59 +9,167 @@
   "sources": [],
   "chunks": [
     {
-      "text": "リレーショナルデータベースは、表の関係としてデータを扱います",
+      "text": "リレーショナル",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "データベースは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "表の関係として",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "データを扱います",
       "duration_multiplier": 1.35
     },
     {
-      "text": "表を、テーブルと呼びます",
-      "duration_multiplier": 1.1
+      "text": "表を、",
+      "duration_multiplier": 1
     },
     {
-      "text": "一件分のデータを、行として表します",
-      "duration_multiplier": 1.1
+      "text": "テーブルと呼びます",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "属性を、列として表します",
-      "duration_multiplier": 1.1
+      "text": "一件分のデータを、",
+      "duration_multiplier": 1
     },
     {
-      "text": "主キーは、行を一意に識別します",
-      "duration_multiplier": 1.1
+      "text": "行として表します",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "同じ主キーを、複数の行で使わないようにします",
-      "duration_multiplier": 1.1
+      "text": "属性を、",
+      "duration_multiplier": 1
     },
     {
-      "text": "外部キーは、別のテーブルの行との関係を表します",
-      "duration_multiplier": 1.1
+      "text": "列として表します",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "例えば、注文は顧客IDを持つことがあります",
-      "duration_multiplier": 1.1
+      "text": "主キーは、",
+      "duration_multiplier": 1
     },
     {
-      "text": "顧客情報を毎回注文表へ重複保存する必要はありません",
-      "duration_multiplier": 1.1
+      "text": "行を一意に",
+      "duration_multiplier": 1
     },
     {
-      "text": "関係を使うことで、データを分けて管理できます",
-      "duration_multiplier": 1.1
+      "text": "識別します",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "NULLは、値が存在しない状態を表すために使われます",
-      "duration_multiplier": 1.1
+      "text": "同じ主キーを、",
+      "duration_multiplier": 1
     },
     {
-      "text": "データ型は、列に入る値の種類を定めます",
-      "duration_multiplier": 1.1
+      "text": "複数の行で",
+      "duration_multiplier": 1
     },
     {
-      "text": "制約は、データの整合性を守るために使われます",
-      "duration_multiplier": 1.1
+      "text": "使わないようにします",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "良いデータ設計は、業務上の関係を正しく表します",
+      "text": "外部キーは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "別のテーブルの行との",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "関係を表します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "例えば、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "注文は顧客IDを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "持つことがあります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "顧客情報を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "毎回注文表へ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "重複保存する必要は",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ありません",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "関係を使うことで、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "データを分けて",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "管理できます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "NULLは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "値が存在しない状態を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "表すために使われます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "データ型は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "列に入る値の種類を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "定めます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "制約は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "データの整合性を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "守るために使われます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "良いデータ設計は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "業務上の関係を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "正しく表します",
       "duration_multiplier": 1.35
     }
   ]

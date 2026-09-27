@@ -9,59 +9,171 @@
   "sources": [],
   "chunks": [
     {
-      "text": "トランザクションは、複数の処理を一まとまりとして扱います",
+      "text": "トランザクションは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "複数の処理を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "一まとまりとして",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "扱います",
       "duration_multiplier": 1.35
     },
     {
-      "text": "途中で失敗した場合、処理を取り消すことがあります",
-      "duration_multiplier": 1.1
+      "text": "途中で失敗した場合、",
+      "duration_multiplier": 1
     },
     {
-      "text": "これをrollbackと呼びます",
-      "duration_multiplier": 1.1
+      "text": "処理を取り消す",
+      "duration_multiplier": 1
     },
     {
-      "text": "すべて成功したら、変更を確定します",
-      "duration_multiplier": 1.1
+      "text": "ことがあります",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "これをcommitと呼びます",
-      "duration_multiplier": 1.1
+      "text": "これを",
+      "duration_multiplier": 1
     },
     {
-      "text": "ACIDは、トランザクションの代表的な性質を表します",
-      "duration_multiplier": 1.1
+      "text": "rollbackと呼びます",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "Atomicityは、処理を全部成功か全部失敗にします",
-      "duration_multiplier": 1.1
+      "text": "すべて成功したら、",
+      "duration_multiplier": 1
     },
     {
-      "text": "Consistencyは、整合性を保つことに関係します",
-      "duration_multiplier": 1.1
+      "text": "変更を確定します",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "Isolationは、同時実行の影響を制御します",
-      "duration_multiplier": 1.1
+      "text": "これを",
+      "duration_multiplier": 1
     },
     {
-      "text": "Durabilityは、確定した結果を保持する性質です",
-      "duration_multiplier": 1.1
+      "text": "commitと呼びます",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "インデックスは、検索を高速化するための構造です",
-      "duration_multiplier": 1.1
+      "text": "ACIDは、",
+      "duration_multiplier": 1
     },
     {
-      "text": "ただし、インデックスにも保存容量と更新コストがあります",
-      "duration_multiplier": 1.1
+      "text": "トランザクションの",
+      "duration_multiplier": 1
     },
     {
-      "text": "すべての列へ付ければ良いわけではありません",
-      "duration_multiplier": 1.1
+      "text": "代表的な性質を",
+      "duration_multiplier": 1
     },
     {
-      "text": "整合性と性能は、用途に応じて設計します",
+      "text": "表します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Atomicityは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "処理を全部成功か",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "全部失敗にします",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Consistencyは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "整合性を保つことに",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "関係します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Isolationは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "同時実行の影響を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "制御します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Durabilityは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "確定した結果を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "保持する性質です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "インデックスは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "検索を高速化するための",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "構造です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ただし、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "インデックスにも",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "保存容量と更新コストが",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "あります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "すべての列へ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "付ければ良いわけでは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ありません",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "整合性と性能は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "用途に応じて",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "設計します",
       "duration_multiplier": 1.35
     }
   ]

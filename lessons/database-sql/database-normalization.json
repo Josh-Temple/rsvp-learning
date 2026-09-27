@@ -9,59 +9,191 @@
   "sources": [],
   "chunks": [
     {
-      "text": "正規化は、データ構造を整理する考え方です",
+      "text": "正規化は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "データ構造を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "整理する考え方です",
       "duration_multiplier": 1.35
     },
     {
-      "text": "目的の一つは、不要な重複を減らすことです",
-      "duration_multiplier": 1.1
+      "text": "目的の一つは、",
+      "duration_multiplier": 1
     },
     {
-      "text": "同じ情報を何度も保存すると、更新漏れが起きやすくなります",
-      "duration_multiplier": 1.1
+      "text": "不要な重複を",
+      "duration_multiplier": 1
     },
     {
-      "text": "一部だけ更新されると、矛盾したデータが残ります",
-      "duration_multiplier": 1.1
+      "text": "減らすことです",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "これを、更新異常と呼ぶことがあります",
-      "duration_multiplier": 1.1
+      "text": "同じ情報を",
+      "duration_multiplier": 1
     },
     {
-      "text": "第一正規形では、繰り返し項目を避けます",
-      "duration_multiplier": 1.1
+      "text": "何度も保存すると、",
+      "duration_multiplier": 1
     },
     {
-      "text": "第二正規形では、主キーの一部だけに依存する属性を分けます",
-      "duration_multiplier": 1.1
+      "text": "更新漏れが",
+      "duration_multiplier": 1
     },
     {
-      "text": "第三正規形では、非キー属性同士の依存を整理します",
-      "duration_multiplier": 1.1
+      "text": "起きやすくなります",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "厳密な定義は、後で段階的に学べば十分です",
-      "duration_multiplier": 1.1
+      "text": "一部だけ更新されると、",
+      "duration_multiplier": 1
     },
     {
-      "text": "最初は、何の事実をどのテーブルが持つかを考えます",
-      "duration_multiplier": 1.1
+      "text": "矛盾したデータが",
+      "duration_multiplier": 1
     },
     {
-      "text": "一つの事実を、複数箇所で重複管理しないようにします",
-      "duration_multiplier": 1.1
+      "text": "残ります",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "ただし、性能や分析目的で意図的に重複させる場合もあります",
-      "duration_multiplier": 1.1
+      "text": "これを、",
+      "duration_multiplier": 1
     },
     {
-      "text": "これを非正規化と呼ぶことがあります",
-      "duration_multiplier": 1.1
+      "text": "更新異常と呼ぶ",
+      "duration_multiplier": 1
     },
     {
-      "text": "正規化は、目的ではなく整合性を保つ手段です",
+      "text": "ことがあります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "第一正規形では、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "繰り返し項目を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "避けます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "第二正規形では、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "主キーの一部だけに",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "依存する属性を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "分けます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "第三正規形では、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "非キー属性同士の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "依存を整理します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "厳密な定義は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "後で段階的に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "学べば十分です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "最初は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "何の事実を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "どのテーブルが持つかを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "考えます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一つの事実を、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "複数箇所で",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "重複管理しないように",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ただし、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "性能や分析目的で",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "意図的に重複させる",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "場合もあります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "これを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "非正規化と呼ぶ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ことがあります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "正規化は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "目的ではなく",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "整合性を保つ手段です",
       "duration_multiplier": 1.35
     }
   ]

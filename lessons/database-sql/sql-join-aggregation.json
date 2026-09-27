@@ -9,59 +9,167 @@
   "sources": [],
   "chunks": [
     {
-      "text": "JOINは、複数のテーブルを関連づけて取得する操作です",
+      "text": "JOINは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "複数のテーブルを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "関連づけて取得する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "操作です",
       "duration_multiplier": 1.35
     },
     {
-      "text": "INNER JOINは、両方に一致する行を取得します",
-      "duration_multiplier": 1.1
+      "text": "INNER JOINは、",
+      "duration_multiplier": 1
     },
     {
-      "text": "LEFT JOINは、左側の行を残しながら結合します",
-      "duration_multiplier": 1.1
+      "text": "両方に一致する行を",
+      "duration_multiplier": 1
     },
     {
-      "text": "結合条件には、主キーと外部キーを使うことが多いです",
-      "duration_multiplier": 1.1
+      "text": "取得します",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "結合条件を誤ると、行数が想定以上に増えることがあります",
-      "duration_multiplier": 1.1
+      "text": "LEFT JOINは、",
+      "duration_multiplier": 1
     },
     {
-      "text": "まず、テーブルの粒度を確認します",
-      "duration_multiplier": 1.1
+      "text": "左側の行を残しながら",
+      "duration_multiplier": 1
     },
     {
-      "text": "COUNTは、件数を数えます",
-      "duration_multiplier": 1.1
+      "text": "結合します",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "SUMは、合計を求めます",
-      "duration_multiplier": 1.1
+      "text": "結合条件には、",
+      "duration_multiplier": 1
     },
     {
-      "text": "AVGは、平均を求めます",
-      "duration_multiplier": 1.1
+      "text": "主キーと外部キーを",
+      "duration_multiplier": 1
     },
     {
-      "text": "GROUP BYは、グループ単位で集計します",
-      "duration_multiplier": 1.1
+      "text": "使うことが多いです",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "HAVINGは、集計後の結果を条件で絞ります",
-      "duration_multiplier": 1.1
+      "text": "結合条件を誤ると、",
+      "duration_multiplier": 1
     },
     {
-      "text": "集計値だけでなく、分母の定義も確認します",
-      "duration_multiplier": 1.1
+      "text": "行数が想定以上に",
+      "duration_multiplier": 1
     },
     {
-      "text": "JOINとGROUP BYを組み合わせると、多くの業務集計ができます",
-      "duration_multiplier": 1.1
+      "text": "増えることがあります",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "結果が正しいか、小さな例で検算する習慣が重要です",
+      "text": "まず、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "テーブルの粒度を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "確認します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "COUNTは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "件数を数えます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "SUMは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "合計を求めます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "AVGは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "平均を求めます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "GROUP BYは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "グループ単位で",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "集計します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "HAVINGは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "集計後の結果を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "条件で絞ります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "集計値だけでなく、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "分母の定義も",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "確認します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "JOINとGROUP BYを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "組み合わせると、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "多くの業務集計が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "できます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "結果が正しいか、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "小さな例で検算する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "習慣が重要です",
       "duration_multiplier": 1.35
     }
   ]
