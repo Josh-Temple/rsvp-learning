@@ -9,51 +9,183 @@
   "sources": [],
   "chunks": [
     {
-      "text": "公共DXは、行政サービスと行政内部の業務をデジタルで改善する取り組みです",
+      "text": "公共DXは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "行政サービスと",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "行政内部の業務を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "デジタルで改善する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "取り組みです",
       "duration_multiplier": 1.4
     },
     {
-      "text": "目的は、システム導入ではなく住民や職員への価値です",
+      "text": "目的は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "システム導入ではなく",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "住民や職員への価値です",
       "duration_multiplier": 1.15
     },
     {
-      "text": "行政では、法令と制度が業務要件に強く影響します",
+      "text": "行政では、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "法令と制度が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "業務要件に強く",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "影響します",
       "duration_multiplier": 1.15
     },
     {
-      "text": "調達では、発注者と事業者の役割分担を明確にします",
+      "text": "調達では、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "発注者と事業者の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "役割分担を明確にします",
       "duration_multiplier": 1.15
     },
     {
-      "text": "標準化は、自治体ごとの過度な個別差を減らす狙いがあります",
+      "text": "標準化は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "自治体ごとの",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "過度な個別差を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "減らす狙いがあります",
       "duration_multiplier": 1.15
     },
     {
-      "text": "データ連携では、形式だけでなく意味の一致が必要です",
+      "text": "データ連携では、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "形式だけでなく",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "意味の一致が必要です",
       "duration_multiplier": 1.15
     },
     {
-      "text": "クラウド利用では、可用性、セキュリティ、責任分界を考えます",
+      "text": "クラウド利用では、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "可用性、セキュリティ、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "責任分界を考えます",
       "duration_multiplier": 1.15
     },
     {
-      "text": "デジタル化しても、対面や紙が必要な利用者への配慮が必要です",
+      "text": "デジタル化しても、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "対面や紙が必要な",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "利用者への配慮が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "必要です",
       "duration_multiplier": 1.15
     },
     {
-      "text": "アクセシビリティは、多様な利用者がサービスを使えるようにする考え方です",
+      "text": "アクセシビリティは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "多様な利用者が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "サービスを使える",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ようにする考え方です",
       "duration_multiplier": 1.15
     },
     {
-      "text": "制度改正への追随を、運用とシステムの両面で設計します",
+      "text": "制度改正への追随を、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "運用とシステムの",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "両面で設計します",
       "duration_multiplier": 1.15
     },
     {
-      "text": "現場運用を理解しないシステム化は、別の負担を生むことがあります",
+      "text": "現場運用を理解しない",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "システム化は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "別の負担を生む",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ことがあります",
       "duration_multiplier": 1.15
     },
     {
-      "text": "まずは、行政課題を業務要件とシステム要件へ分けて説明できることを目標にします",
+      "text": "まずは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "行政課題を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "業務要件とシステム要件へ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "分けて説明できる",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ことを目標にします",
       "duration_multiplier": 1.4
     }
   ]
