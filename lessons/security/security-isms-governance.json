@@ -50,16 +50,16 @@
       "duration_multiplier": 1.5
     },
     {
-      "text": "セキュリティは組織の活動",
-      "duration_multiplier": 1.1
+      "text": "セキュリティは組織の",
+      "duration_multiplier": 1
     },
     {
-      "text": "である",
+      "text": "活動である",
       "duration_multiplier": 1.4
     },
     {
       "text": "情報セキュリティは",
-      "duration_multiplier": 1
+      "duration_multiplier": 1.1
     },
     {
       "text": "セキュリティ担当者だけの",
@@ -90,35 +90,43 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "組織として何を守るかを",
+      "text": "組織として",
       "duration_multiplier": 1.1
     },
     {
-      "text": "決めます",
+      "text": "何を守るかを決めます",
       "duration_multiplier": 1.4
     },
     {
-      "text": "どのリスクを受け入れるか",
+      "text": "どのリスクを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "受け入れるかを決めます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "誰が判断するかを明確",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "にします",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "委託先とサプライ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "チェーン",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "組織の情報やシステムは",
       "duration_multiplier": 1.1
     },
     {
-      "text": "を決めます",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "誰が判断するかを明確にします",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "委託先とサプライチェーン",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "組織の情報やシステムは自",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "組織だけで完結しません",
+      "text": "自組織だけで完結しません",
       "duration_multiplier": 1.4
     },
     {
@@ -138,31 +146,39 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "外部組織を通じてリスクが",
-      "duration_multiplier": 1.1
+      "text": "外部組織を通じて",
+      "duration_multiplier": 1
     },
     {
-      "text": "入る可能性があります",
+      "text": "リスクが入る可能性が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "あります",
       "duration_multiplier": 1.4
     },
     {
-      "text": "どの情報と権限を渡して",
-      "duration_multiplier": 1.1
+      "text": "どの情報と権限を渡し",
+      "duration_multiplier": 1
     },
     {
-      "text": "いるかを把握します",
+      "text": "ているかを把握します",
       "duration_multiplier": 1.4
     },
     {
-      "text": "事故時の連絡や責任分担も",
-      "duration_multiplier": 1.1
+      "text": "事故時の連絡や責任",
+      "duration_multiplier": 1
     },
     {
-      "text": "決めます",
+      "text": "分担も決めます",
       "duration_multiplier": 1.4
     },
     {
-      "text": "人の注意だけに依存しない",
+      "text": "人の注意だけに依存",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "しない",
       "duration_multiplier": 1.4
     },
     {
@@ -170,8 +186,12 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "しかし事故が起きるたびに",
+      "text": "しかし",
       "duration_multiplier": 1.1
+    },
+    {
+      "text": "事故が起きるたびに",
+      "duration_multiplier": 1
     },
     {
       "text": "注意だけを求める方法には",
@@ -206,11 +226,19 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "人が間違える可能性を前提",
+      "text": "人が間違える可能性を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "前提に",
       "duration_multiplier": 1.1
     },
     {
-      "text": "に技術と運用を組み合わせます",
+      "text": "技術と運用を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "組み合わせます",
       "duration_multiplier": 1.4
     },
     {
@@ -242,11 +270,15 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "監査やインシデントから得",
+      "text": "監査やインシデントから",
       "duration_multiplier": 1.1
     },
     {
-      "text": "た知見を使い対策を見直します",
+      "text": "得た知見を使い",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "対策を見直します",
       "duration_multiplier": 1.4
     },
     {
@@ -254,39 +286,43 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "なく不要になった手順や",
+      "text": "なく",
       "duration_multiplier": 1.1
     },
     {
-      "text": "重複した管理を減らすこと",
-      "duration_multiplier": 1.1
+      "text": "不要になった手順や",
+      "duration_multiplier": 1
     },
     {
-      "text": "も改善です",
+      "text": "重複した管理を減らす",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ことも改善です",
       "duration_multiplier": 1.4
     },
     {
-      "text": "技術対策だけでは組織を守",
+      "text": "技術対策だけでは組織を",
       "duration_multiplier": 1.1
     },
     {
-      "text": "れない",
+      "text": "守れない",
       "duration_multiplier": 1.4
     },
     {
-      "text": "ファイアウォールや暗号化",
+      "text": "ファイアウォールや",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "暗号化を導入しても",
       "duration_multiplier": 1.1
     },
     {
-      "text": "を導入しても誰が責任を",
+      "text": "誰が責任を持つか分から",
       "duration_multiplier": 1.1
     },
     {
-      "text": "持つか分からなければ運用",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "は続きません",
+      "text": "なければ運用は続きません",
       "duration_multiplier": 1.4
     },
     {
@@ -294,7 +330,11 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "重大事故を誰に報告するのか",
+      "text": "重大事故を誰に報告",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "するのか",
       "duration_multiplier": 1.4
     },
     {
@@ -306,11 +346,15 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "こうした組織上の仕組みも",
-      "duration_multiplier": 1.1
+      "text": "こうした組織上の",
+      "duration_multiplier": 1
     },
     {
-      "text": "情報セキュリティの一部です",
+      "text": "仕組みも情報",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "セキュリティの一部です",
       "duration_multiplier": 1.4
     },
     {
@@ -318,15 +362,23 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "ガバナンスでは組織の目的",
+      "text": "ガバナンスでは",
       "duration_multiplier": 1.1
     },
     {
-      "text": "に沿ってセキュリティを",
+      "text": "組織の目的に沿って",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "セキュリティを管理",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "するための方向性",
       "duration_multiplier": 1.1
     },
     {
-      "text": "管理するための方向性責任",
+      "text": "責任",
       "duration_multiplier": 1.1
     },
     {
@@ -338,43 +390,55 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "完結するものではありません",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "経営層や管理者が組織",
+      "text": "完結するものでは",
       "duration_multiplier": 1
     },
     {
-      "text": "としてどのリスクを重視し",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "どの水準を求めるかを決めます",
+      "text": "ありません",
       "duration_multiplier": 1.4
     },
     {
-      "text": "NIST",
-      "duration_multiplier": 1.2
+      "text": "経営層や管理者が",
+      "duration_multiplier": 1.1
     },
     {
-      "text": "Cybersecurity",
+      "text": "組織としてどのリスクを",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "重視し",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "どの水準を求めるかを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "決めます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "NIST Cybersecurity",
       "duration_multiplier": 1.3
     },
     {
-      "text": "Framework2.0",
+      "text": "Framework",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "2.0では",
       "duration_multiplier": 1.2
     },
     {
-      "text": "ではGovernが独立",
-      "duration_multiplier": 1.1
+      "text": "Governが独立",
+      "duration_multiplier": 1
     },
     {
-      "text": "した機能として追加され",
-      "duration_multiplier": 1.1
+      "text": "した機能として追加さ",
+      "duration_multiplier": 1
     },
     {
-      "text": "ています",
+      "text": "れています",
       "duration_multiplier": 1.4
     },
     {
@@ -382,15 +446,99 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "組織が情報セキュリティを",
+      "text": "組織が情報",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "セキュリティをどの",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ように扱うかという",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "基本的な考え方を",
       "duration_multiplier": 1.1
     },
     {
-      "text": "どのように扱うかという",
+      "text": "方針として定めます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "方針は",
       "duration_multiplier": 1.1
     },
     {
-      "text": "基本的な考え方を方針",
+      "text": "個別の製品設定を並",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "べたものではありません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "組織の目的",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "責任",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "基本原則などを示す",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "上位のルールです",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "その下に",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "より具体的な対策基準や",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "実施手順を置く構成が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "あります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "方針",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "基準",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "手順",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "上位の方針だけでは",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "現場は具体的に何をす",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ればよいか分かりません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "そこで",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "必要な対策を基準",
       "duration_multiplier": 1
     },
     {
@@ -398,79 +546,43 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "方針は個別の製品設定を並",
+      "text": "さらに",
       "duration_multiplier": 1.1
     },
     {
-      "text": "べたものではありません",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "組織の目的責任基本原則",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "などを示す上位のルールです",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "その下により具体的な対策",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "基準や実施手順を置く構成",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "があります",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "方針基準手順",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "上位の方針だけでは現場は",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "具体的に何をすればよいか",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "分かりません",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "そこで必要な対策を基準",
-      "duration_multiplier": 1.1
+      "text": "実際の作業方法を手順",
+      "duration_multiplier": 1
     },
     {
       "text": "として定めます",
       "duration_multiplier": 1.4
     },
     {
-      "text": "さらに実際の作業方法を",
+      "text": "例えば",
       "duration_multiplier": 1.1
     },
     {
-      "text": "手順として定めます",
+      "text": "方針で「重要情報を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "適切に保護する」と",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "定めます",
       "duration_multiplier": 1.4
     },
     {
-      "text": "例えば方針で「重要情報を",
-      "duration_multiplier": 1.1
+      "text": "基準で「重要情報へ",
+      "duration_multiplier": 1
     },
     {
-      "text": "適切に保護する」と定めます",
-      "duration_multiplier": 1.4
+      "text": "多要素認証を適用する",
+      "duration_multiplier": 1
     },
     {
-      "text": "基準で「重要情報へ多要素",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "認証を適用する」と定めます",
+      "text": "」と定めます",
       "duration_multiplier": 1.4
     },
     {
@@ -478,7 +590,11 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "どの設定を行うか」を定めます",
+      "text": "どの設定を行うか」を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "定めます",
       "duration_multiplier": 1.4
     },
     {
@@ -486,15 +602,19 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "現場ではすべてのルールを",
+      "text": "現場では",
       "duration_multiplier": 1.1
     },
     {
-      "text": "常に同じ方法で適用できる",
+      "text": "すべてのルールを常に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "同じ方法で適用できるとは",
       "duration_multiplier": 1.1
     },
     {
-      "text": "とは限りません",
+      "text": "限りません",
       "duration_multiplier": 1.4
     },
     {
@@ -506,15 +626,23 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "重要なのは非公式にルール",
+      "text": "重要なのは",
       "duration_multiplier": 1.1
     },
     {
-      "text": "を無視することと管理され",
+      "text": "非公式にルールを無視",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "することと",
       "duration_multiplier": 1.1
     },
     {
-      "text": "た例外を区別することです",
+      "text": "管理された例外を区別",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "することです",
       "duration_multiplier": 1.4
     },
     {
@@ -538,7 +666,11 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "こうした情報を明確にします",
+      "text": "こうした情報を明確",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "にします",
       "duration_multiplier": 1.4
     },
     {
@@ -546,27 +678,31 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "ISMSでは個別の技術",
+      "text": "ISMSでは",
       "duration_multiplier": 1.2
     },
     {
-      "text": "対策だけでなく組織として",
+      "text": "個別の技術対策だけでなく",
       "duration_multiplier": 1.1
     },
     {
-      "text": "情報セキュリティを継続的",
+      "text": "組織として情報",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "セキュリティを継続的に",
       "duration_multiplier": 1.1
     },
     {
-      "text": "に管理します",
+      "text": "管理します",
       "duration_multiplier": 1.4
     },
     {
-      "text": "組織は自らのリスクを評価",
+      "text": "組織は",
       "duration_multiplier": 1.1
     },
     {
-      "text": "します",
+      "text": "自らのリスクを評価します",
       "duration_multiplier": 1.4
     },
     {
@@ -578,39 +714,63 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "結果を確認し改善します",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "ISMSは「ISO認証を",
-      "duration_multiplier": 1.2
-    },
-    {
-      "text": "取ること」と同じ意味では",
+      "text": "結果を確認し",
       "duration_multiplier": 1.1
     },
     {
-      "text": "ありません",
+      "text": "改善します",
       "duration_multiplier": 1.4
     },
     {
-      "text": "認証はISMSが一定の",
+      "text": "ISMSは「ISO",
       "duration_multiplier": 1.2
     },
     {
-      "text": "規格へ適合しているかを",
+      "text": "認証を取ること」と",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "同じ意味ではありません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "認証は",
       "duration_multiplier": 1.1
     },
     {
-      "text": "第三者が評価する仕組みです",
+      "text": "ISMSが一定の規格へ",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "適合しているかを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "第三者が評価する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "仕組みです",
       "duration_multiplier": 1.4
     },
     {
-      "text": "ISO/IEC27001",
+      "text": "ISO/IEC",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "27001",
       "duration_multiplier": 1.4
     },
     {
-      "text": "はISMSに対する要求",
+      "text": "ISO/IEC",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "27001は",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "ISMSに対する要求",
       "duration_multiplier": 1.2
     },
     {
@@ -622,23 +782,31 @@
       "duration_multiplier": 1.2
     },
     {
-      "text": "ISO/IEC27001",
+      "text": "ISO/IEC",
       "duration_multiplier": 1.2
     },
     {
-      "text": "2022に2024年の",
+      "text": "270012022に",
       "duration_multiplier": 1.2
     },
     {
-      "text": "追補を併せて適用する形が",
-      "duration_multiplier": 1.1
+      "text": "2024年の追補を",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "併せて適用する形が",
+      "duration_multiplier": 1
     },
     {
       "text": "現行です",
       "duration_multiplier": 1.4
     },
     {
-      "text": "日本では対応するJISQ",
+      "text": "日本では",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "対応するJIS Q",
       "duration_multiplier": 1.2
     },
     {
@@ -646,43 +814,67 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "規格は組織がISMSを",
+      "text": "規格は",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "組織がISMSを確立し",
       "duration_multiplier": 1.2
     },
     {
-      "text": "確立し実施し維持し継続的",
+      "text": "実施し",
       "duration_multiplier": 1.1
     },
     {
-      "text": "に改善するための要求事項",
+      "text": "維持し",
       "duration_multiplier": 1.1
     },
     {
-      "text": "を定めます",
+      "text": "継続的に改善するための",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "要求事項を定めます",
       "duration_multiplier": 1.4
     },
     {
-      "text": "ISO/IEC27002",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "は情報セキュリティ管理策",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "に関する指針を提供する",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "規格です",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "27001と27002は",
+      "text": "ISO/IEC",
       "duration_multiplier": 1.2
     },
     {
-      "text": "役割が異なります",
+      "text": "27002",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "ISO/IEC",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "27002は",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "情報セキュリティ管理",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "策に関する指針を提供",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "する規格です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "27001と",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "27002は役割が異",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "なります",
       "duration_multiplier": 1.4
     },
     {
@@ -694,35 +886,39 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "27002は管理策を実施",
+      "text": "27002は管理策を",
       "duration_multiplier": 1.2
     },
     {
-      "text": "するときの考え方を支援します",
+      "text": "実施するときの考え方を",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "支援します",
       "duration_multiplier": 1.4
     },
     {
-      "text": "「27002に書かれた",
+      "text": "「27002に書かれ",
       "duration_multiplier": 1.2
     },
     {
-      "text": "対策を全部そのまま導入す",
-      "duration_multiplier": 1.1
+      "text": "た対策を全部そのまま",
+      "duration_multiplier": 1
     },
     {
-      "text": "ればよい」というものでは",
-      "duration_multiplier": 1.1
+      "text": "導入すればよい」",
+      "duration_multiplier": 1
     },
     {
-      "text": "ありません",
+      "text": "というものではありません",
       "duration_multiplier": 1.4
     },
     {
-      "text": "組織のリスクに応じて対策",
-      "duration_multiplier": 1.1
+      "text": "組織のリスクに応じて",
+      "duration_multiplier": 1
     },
     {
-      "text": "を選ぶ必要があります",
+      "text": "対策を選ぶ必要があります",
       "duration_multiplier": 1.4
     },
     {
@@ -730,83 +926,123 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "組織全体を一度にISMS",
-      "duration_multiplier": 1.2
-    },
-    {
-      "text": "の対象にするとは限りません",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "どの組織拠点業務システム",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "を対象にするかを明確にします",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "対象範囲を曖昧にすると何",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "を管理しているのか分から",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "なくなります",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "一方都合の悪い部分を",
+      "text": "組織全体を一度に",
       "duration_multiplier": 1
     },
     {
-      "text": "不自然に除外すれば重要な",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "リスクを見落とす可能性が",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "あります",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "リスクアセスメントと管理策",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "ISMSでは組織自身が",
+      "text": "ISMSの対象に",
       "duration_multiplier": 1.2
     },
     {
-      "text": "リスクを評価します",
+      "text": "するとは限りません",
       "duration_multiplier": 1.4
     },
     {
-      "text": "その結果に基づいて管理策",
+      "text": "どの組織",
       "duration_multiplier": 1.1
     },
     {
-      "text": "を選択します",
+      "text": "拠点",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "業務",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "システムを対象にするかを",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "明確にします",
       "duration_multiplier": 1.4
     },
     {
-      "text": "重要なのは管理策を先に並",
+      "text": "対象範囲を曖昧に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "すると",
       "duration_multiplier": 1.1
     },
     {
-      "text": "べその後で理由を付ける",
+      "text": "何を管理しているのか",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "分からなくなります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "一方",
       "duration_multiplier": 1.1
+    },
+    {
+      "text": "都合の悪い部分を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "不自然に除外すれば",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "重要なリスクを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "見落とす可能性があります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "リスクアセスメントと",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "管理策",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "ISMSでは",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "組織自身がリスクを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "評価します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "その結果に基づいて",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "管理策を選択します",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "重要なのは",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "管理策を先に並べ",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "その後で理由を付ける",
+      "duration_multiplier": 1
     },
     {
       "text": "ことではありません",
       "duration_multiplier": 1.4
     },
     {
-      "text": "守る資産とリスクを理解し",
+      "text": "守る資産とリスクを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "理解し",
       "duration_multiplier": 1.1
     },
     {
@@ -818,43 +1054,51 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "情報セキュリティには複数",
-      "duration_multiplier": 1.1
+      "text": "情報セキュリティには",
+      "duration_multiplier": 1
     },
     {
-      "text": "の役割があります",
+      "text": "複数の役割があります",
       "duration_multiplier": 1.4
     },
     {
-      "text": "経営層は方向性と資源配分",
-      "duration_multiplier": 1.1
+      "text": "経営層は方向性と資源",
+      "duration_multiplier": 1
     },
     {
-      "text": "に責任を持ちます",
+      "text": "配分に責任を持ちます",
       "duration_multiplier": 1.4
     },
     {
-      "text": "情報やシステムの所有者は",
+      "text": "情報やシステムの",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "所有者は",
       "duration_multiplier": 1.1
     },
     {
-      "text": "必要な保護水準を判断します",
+      "text": "必要な保護水準を判断",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "します",
       "duration_multiplier": 1.4
     },
     {
-      "text": "システム担当者は技術的な",
-      "duration_multiplier": 1.1
+      "text": "システム担当者は技術",
+      "duration_multiplier": 1
     },
     {
-      "text": "対策を実施します",
+      "text": "的な対策を実施します",
       "duration_multiplier": 1.4
     },
     {
-      "text": "利用者もルールに従って",
-      "duration_multiplier": 1.1
+      "text": "利用者もルール",
+      "duration_multiplier": 1
     },
     {
-      "text": "情報を扱います",
+      "text": "に従って情報を扱います",
       "duration_multiplier": 1.4
     },
     {
@@ -870,35 +1114,47 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "ルールを文書化しても利用",
+      "text": "ルールを文書化しても",
       "duration_multiplier": 1.1
     },
     {
-      "text": "者が知らなければ機能しません",
+      "text": "利用者が知らなければ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "機能しません",
       "duration_multiplier": 1.4
     },
     {
-      "text": "役割に応じた教育と訓練が",
-      "duration_multiplier": 1.1
+      "text": "役割に応じた教育と",
+      "duration_multiplier": 1
     },
     {
-      "text": "必要です",
+      "text": "訓練が必要です",
       "duration_multiplier": 1.4
     },
     {
-      "text": "全員に同じ内容を教える",
+      "text": "全員に同じ内容を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "教えるだけではなく",
       "duration_multiplier": 1.1
     },
     {
-      "text": "だけではなく管理者開発者",
+      "text": "管理者",
       "duration_multiplier": 1.1
     },
     {
-      "text": "一般利用者などで必要な",
+      "text": "開発者",
       "duration_multiplier": 1.1
     },
     {
-      "text": "知識は異なります",
+      "text": "一般利用者などで必要",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "な知識は異なります",
       "duration_multiplier": 1.4
     },
     {
@@ -906,11 +1162,15 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "なく必要な行動ができるか",
+      "text": "なく",
       "duration_multiplier": 1.1
     },
     {
-      "text": "を見ることも重要です",
+      "text": "必要な行動ができるかを",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "見ることも重要です",
       "duration_multiplier": 1.4
     },
     {
@@ -918,15 +1178,19 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "ISMSでは自分たちの",
+      "text": "ISMSでは",
       "duration_multiplier": 1.2
     },
     {
-      "text": "仕組みが意図したとおり",
-      "duration_multiplier": 1.1
+      "text": "自分たちの仕組みが",
+      "duration_multiplier": 1
     },
     {
-      "text": "機能しているか確認します",
+      "text": "意図したとおり機能し",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ているか確認します",
       "duration_multiplier": 1.4
     },
     {
@@ -934,27 +1198,39 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "監査では規程が存在するか",
+      "text": "監査では",
       "duration_multiplier": 1.1
     },
     {
-      "text": "だけでなく実際に運用され",
+      "text": "規程が存在するかだけで",
       "duration_multiplier": 1.1
     },
     {
-      "text": "要求事項へ適合しているか",
+      "text": "なく",
       "duration_multiplier": 1.1
     },
     {
-      "text": "を確認します",
+      "text": "実際に運用され",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "要求事項へ適合して",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "いるかを確認します",
       "duration_multiplier": 1.4
     },
     {
-      "text": "監査する側には対象からの",
+      "text": "監査する側には",
       "duration_multiplier": 1.1
     },
     {
-      "text": "独立性や客観性が必要です",
+      "text": "対象からの独立性や",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "客観性が必要です",
       "duration_multiplier": 1.4
     },
     {
@@ -962,11 +1238,11 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "経営層もISMSの状態を",
+      "text": "経営層もISMSの",
       "duration_multiplier": 1.2
     },
     {
-      "text": "定期的に確認します",
+      "text": "状態を定期的に確認します",
       "duration_multiplier": 1.4
     },
     {
@@ -990,11 +1266,15 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "こうした情報を使い方向性",
+      "text": "こうした情報を使い",
       "duration_multiplier": 1.1
     },
     {
-      "text": "や資源配分を見直します",
+      "text": "方向性や資源配分を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "見直します",
       "duration_multiplier": 1.4
     },
     {
@@ -1002,23 +1282,39 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "ISMSは一度完成したら",
+      "text": "ISMSは",
       "duration_multiplier": 1.2
     },
     {
-      "text": "固定する仕組みではありません",
+      "text": "一度完成したら固定",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "する仕組みではありません",
       "duration_multiplier": 1.4
     },
     {
-      "text": "監査インシデント組織変更",
+      "text": "監査",
       "duration_multiplier": 1.1
     },
     {
-      "text": "新しい技術法令改正などを",
+      "text": "インシデント",
       "duration_multiplier": 1.1
     },
     {
-      "text": "踏まえて改善します",
+      "text": "組織変更",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "新しい技術",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "法令改正などを踏ま",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "えて改善します",
       "duration_multiplier": 1.4
     },
     {
@@ -1026,64 +1322,88 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "不要な手順や重複した管理",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "を減らすことも改善です",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "認証と実効性は同じではない",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "認証はISMSが規格に",
-      "duration_multiplier": 1.2
-    },
-    {
-      "text": "適合していることを第三者",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "が評価した結果です",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "しかし認証を持っている",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "ことだけで事故が起こら",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "ないとは言えません",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "逆に認証を取得していない",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "組織でも優れた",
+      "text": "不要な手順や重複した",
       "duration_multiplier": 1
     },
     {
-      "text": "セキュリティ管理を行う",
-      "duration_multiplier": 1.1
+      "text": "管理を減らすことも",
+      "duration_multiplier": 1
     },
     {
-      "text": "ことは可能です",
+      "text": "改善です",
       "duration_multiplier": 1.4
     },
     {
-      "text": "重要なのは実際のリスクを",
+      "text": "認証と実効性は同じ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ではない",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "認証は",
       "duration_multiplier": 1.1
     },
     {
-      "text": "管理できる仕組みとして",
+      "text": "ISMSが規格に適合",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "していることを第三者が",
       "duration_multiplier": 1.1
+    },
+    {
+      "text": "評価した結果です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "しかし",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "認証を持っていることだけで",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "事故が起こらないとは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "言えません",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "逆に",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "認証を取得していない",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "組織でも",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "優れたセキュリティ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "管理を行うことは可能です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "重要なのは",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "実際のリスクを管理",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "できる仕組みとして",
+      "duration_multiplier": 1
     },
     {
       "text": "機能しているかです",
@@ -1094,11 +1414,23 @@
       "duration_multiplier": 1
     },
     {
-      "text": "セキュリティ政策を担う組織",
+      "text": "セキュリティ政策を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "担う組織",
       "duration_multiplier": 1.4
     },
     {
-      "text": "日本では国独立行政法人",
+      "text": "日本では",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "国",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "独立行政法人",
       "duration_multiplier": 1.1
     },
     {
@@ -1110,23 +1442,27 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "制度名を暗記するより「",
+      "text": "制度名を暗記するより",
       "duration_multiplier": 1.1
     },
     {
-      "text": "政策」「技術支援」「",
+      "text": "「政策」「技術支援」",
       "duration_multiplier": 1
     },
     {
-      "text": "インシデント調整」「脆弱",
-      "duration_multiplier": 1.1
+      "text": "「インシデント調整」",
+      "duration_multiplier": 1
     },
     {
-      "text": "性情報」「評価制度」の",
-      "duration_multiplier": 1.1
+      "text": "「脆弱性情報」「評価",
+      "duration_multiplier": 1
     },
     {
-      "text": "役割を分けて理解します",
+      "text": "制度」の役割を分けて",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "理解します",
       "duration_multiplier": 1.4
     },
     {
@@ -1134,19 +1470,27 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "2025年7月内閣サイ",
+      "text": "2025年7月",
       "duration_multiplier": 1.2
     },
     {
-      "text": "バーセキュリティセンター",
+      "text": "内閣サイバー",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "セキュリティセンターを",
       "duration_multiplier": 1.1
     },
     {
-      "text": "を改組して国家サイバー",
+      "text": "改組して",
       "duration_multiplier": 1.1
     },
     {
-      "text": "統括室NCOが設置されました",
+      "text": "国家サイバー統括室",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "NCOが設置されました",
       "duration_multiplier": 1.4
     },
     {
@@ -1162,19 +1506,27 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "政府機関の情報システム",
+      "text": "政府機関の情報",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "システムに対する不正",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "な活動の監視・分析",
       "duration_multiplier": 1.1
     },
     {
-      "text": "に対する不正な活動の監視",
+      "text": "助言",
       "duration_multiplier": 1.1
     },
     {
-      "text": "・分析助言情報提供監査",
+      "text": "情報提供",
       "duration_multiplier": 1.1
     },
     {
-      "text": "などにも関わります",
+      "text": "監査などにも関わります",
       "duration_multiplier": 1.4
     },
     {
@@ -1194,32 +1546,44 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "情報処理推進機構IPAは",
+      "text": "情報処理推進機構",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "IPAは",
       "duration_multiplier": 1.2
     },
     {
-      "text": "脆弱性情報注意喚起情報",
+      "text": "脆弱性情報",
       "duration_multiplier": 1.1
     },
     {
-      "text": "セキュリティ教材資格・",
+      "text": "注意喚起",
       "duration_multiplier": 1.1
     },
     {
-      "text": "試験など幅広い活動を行",
+      "text": "情報セキュリティ教材",
       "duration_multiplier": 1.1
     },
     {
-      "text": "っています",
+      "text": "資格・試験など",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "幅広い活動を行っています",
       "duration_multiplier": 1.4
     },
     {
-      "text": "この教材でも国内の実務や",
+      "text": "この教材でも",
       "duration_multiplier": 1.1
     },
     {
-      "text": "制度を確認する主要な一次",
-      "duration_multiplier": 1.1
+      "text": "国内の実務や制度を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "確認する主要な一次",
+      "duration_multiplier": 1
     },
     {
       "text": "情報源として利用します",
@@ -1230,7 +1594,11 @@
       "duration_multiplier": 1.2
     },
     {
-      "text": "対象年度や更新日を確認します",
+      "text": "対象年度や更新日を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "確認します",
       "duration_multiplier": 1.4
     },
     {
@@ -1246,12 +1614,16 @@
       "duration_multiplier": 1
     },
     {
-      "text": "センターは日本国内に関連",
+      "text": "センターは",
       "duration_multiplier": 1.1
     },
     {
-      "text": "するインシデントへの対応",
-      "duration_multiplier": 1.1
+      "text": "日本国内に関連する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "インシデントへの対応",
+      "duration_multiplier": 1
     },
     {
       "text": "調整を行うCSIRTです",
@@ -1262,23 +1634,15 @@
       "duration_multiplier": 1.2
     },
     {
-      "text": "Computer",
-      "duration_multiplier": 1
+      "text": "Computer Security",
+      "duration_multiplier": 1.1
     },
     {
-      "text": "Security",
-      "duration_multiplier": 1
+      "text": "Incident Response Teamの",
+      "duration_multiplier": 1.1
     },
     {
-      "text": "Incident",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "ResponseTeam",
-      "duration_multiplier": 1.3
-    },
-    {
-      "text": "の略です",
+      "text": "略です",
       "duration_multiplier": 1.4
     },
     {
@@ -1302,43 +1666,55 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "国内外のCSIRTとの調整",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "こうした活動を行っています",
-      "duration_multiplier": 1.4
-    },
-    {
-      "text": "特定企業のSOCや政府",
+      "text": "国内外のCSIRTとの",
       "duration_multiplier": 1.2
     },
     {
-      "text": "機関そのものとは役割が異",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "なります",
+      "text": "調整",
       "duration_multiplier": 1.4
     },
     {
-      "text": "SOCはSecurity",
-      "duration_multiplier": 1.2
-    },
-    {
-      "text": "Operations",
+      "text": "こうした活動を行って",
       "duration_multiplier": 1
+    },
+    {
+      "text": "います",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "特定企業のSOCや",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "政府機関そのものとは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "役割が異なります",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "SOCは",
+      "duration_multiplier": 1.2
+    },
+    {
+      "text": "Security Operations",
+      "duration_multiplier": 1.1
     },
     {
       "text": "Centerの略です",
       "duration_multiplier": 1.4
     },
     {
-      "text": "組織のセキュリティ監視や",
+      "text": "組織のセキュリティ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "監視や分析を担う機能を",
       "duration_multiplier": 1.1
     },
     {
-      "text": "分析を担う機能を指します",
+      "text": "指します",
       "duration_multiplier": 1.4
     },
     {
@@ -1346,43 +1722,55 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "JVNは日本で利用される",
+      "text": "JVNは",
       "duration_multiplier": 1.2
     },
     {
-      "text": "ソフトウェアなどの脆弱性",
-      "duration_multiplier": 1.1
+      "text": "日本で利用される",
+      "duration_multiplier": 1
     },
     {
-      "text": "対策情報を提供するポー",
-      "duration_multiplier": 1.1
+      "text": "ソフトウェアなどの",
+      "duration_multiplier": 1
     },
     {
-      "text": "タルです",
+      "text": "脆弱性対策情報を提供",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "するポータルです",
       "duration_multiplier": 1.4
     },
     {
-      "text": "JVNiPediaは脆弱",
+      "text": "JVN iPediaは",
       "duration_multiplier": 1.2
     },
     {
-      "text": "性対策情報データベースです",
+      "text": "脆弱性対策情報",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "データベースです",
       "duration_multiplier": 1.4
     },
     {
-      "text": "製品の脆弱性を確認する",
+      "text": "製品の脆弱性を確認",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "するとき",
       "duration_multiplier": 1.1
     },
     {
-      "text": "ときCVEやNVDなど",
+      "text": "CVEやNVDなど",
       "duration_multiplier": 1.2
     },
     {
-      "text": "海外の情報源とあわせて",
-      "duration_multiplier": 1.1
+      "text": "海外の情報源と",
+      "duration_multiplier": 1
     },
     {
-      "text": "利用できます",
+      "text": "あわせて利用できます",
       "duration_multiplier": 1.4
     },
     {
@@ -1390,63 +1778,87 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "ISMAPは政府情報",
+      "text": "ISMAPは",
       "duration_multiplier": 1.2
     },
     {
-      "text": "システムのための",
+      "text": "政府情報システムの",
       "duration_multiplier": 1
     },
     {
-      "text": "セキュリティ評価制度です",
+      "text": "ためのセキュリティ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "評価制度です",
       "duration_multiplier": 1.4
     },
     {
-      "text": "政府が求めるセキュリティ",
-      "duration_multiplier": 1.1
-    },
-    {
-      "text": "要求を満たすクラウド",
+      "text": "政府が求める",
       "duration_multiplier": 1
     },
     {
-      "text": "サービスをあらかじめ評価",
+      "text": "セキュリティ要求を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "満たすクラウド",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "サービスをあらかじめ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "評価・登録し",
       "duration_multiplier": 1.1
     },
     {
-      "text": "・登録し政府のクラウド",
-      "duration_multiplier": 1.1
+      "text": "政府のクラウド調達",
+      "duration_multiplier": 1
     },
     {
-      "text": "調達におけるセキュリティ",
-      "duration_multiplier": 1.1
+      "text": "におけるセキュリティ",
+      "duration_multiplier": 1
     },
     {
       "text": "水準確保を支援します",
       "duration_multiplier": 1.4
     },
     {
-      "text": "ISMAPへ登録されて",
+      "text": "ISMAPへ登録され",
       "duration_multiplier": 1.2
     },
     {
-      "text": "いることはそのクラウド",
+      "text": "ていることは",
       "duration_multiplier": 1.1
     },
     {
-      "text": "サービスを使えばあらゆる",
+      "text": "そのクラウドサービスを",
       "duration_multiplier": 1.1
     },
     {
-      "text": "リスクが解消するという",
+      "text": "使えばあらゆるリスクが",
       "duration_multiplier": 1.1
     },
     {
-      "text": "意味ではありません",
+      "text": "解消するという意味",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ではありません",
       "duration_multiplier": 1.4
     },
     {
-      "text": "実際の利用方法設定データ",
+      "text": "実際の利用方法",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "設定",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "データ",
       "duration_multiplier": 1.1
     },
     {
@@ -1454,11 +1866,11 @@
       "duration_multiplier": 1.2
     },
     {
-      "text": "利用組織側でも別途リスク",
-      "duration_multiplier": 1.1
+      "text": "利用組織側でも別途",
+      "duration_multiplier": 1
     },
     {
-      "text": "を管理します",
+      "text": "リスクを管理します",
       "duration_multiplier": 1.4
     },
     {
@@ -1490,11 +1902,15 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "これらは同じ強制力や目的",
-      "duration_multiplier": 1.1
+      "text": "これらは同じ強制力や",
+      "duration_multiplier": 1
     },
     {
-      "text": "を持つ文書ではありません",
+      "text": "目的を持つ文書では",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ありません",
       "duration_multiplier": 1.4
     },
     {
@@ -1502,31 +1918,47 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "法律上必須」とは限りません",
+      "text": "法律上必須」とは限り",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ません",
       "duration_multiplier": 1.4
     },
     {
-      "text": "反対に法律上の義務を任意",
+      "text": "反対に",
       "duration_multiplier": 1.1
     },
     {
-      "text": "のガイドラインと同じよう",
-      "duration_multiplier": 1.1
+      "text": "法律上の義務を任意の",
+      "duration_multiplier": 1
     },
     {
-      "text": "に扱ってもいけません",
+      "text": "ガイドラインと同じ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ように扱ってもいけません",
       "duration_multiplier": 1.4
     },
     {
-      "text": "資料を読むときは誰が発行",
+      "text": "資料を読むときは",
       "duration_multiplier": 1.1
     },
     {
-      "text": "し誰を対象としどのような",
+      "text": "誰が発行し",
       "duration_multiplier": 1.1
     },
     {
-      "text": "位置付けを持つかを確認します",
+      "text": "誰を対象とし",
+      "duration_multiplier": 1.1
+    },
+    {
+      "text": "どのような位置付けを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "持つかを確認します",
       "duration_multiplier": 1.4
     }
   ]
