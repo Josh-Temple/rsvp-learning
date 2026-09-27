@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="現行業務を把握し、改善後の業務像を設計するためのAs-Is / To-Beの基本を学びます。" />
+  <meta name="theme-color" content="#f2efe8" />
+  <title>As-IsとTo-Be — Learn</title>
+  <link rel="stylesheet" href="./learn.css" />
+  <script src="./learn.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="top">
+      <a href="../index.html">RSVPに戻る</a>
+      <span class="mode">LEARN · システム開発</span>
+    </header>
+    <main>
+      <section class="reader" id="speech-reader" aria-label="読み上げプレイヤー">
+        <div class="reader-row">
+          <button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+          <button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+          <button id="speech-stop" type="button" aria-label="停止" disabled>■</button>
+          <select id="speech-voice" aria-label="読み上げ音声"></select>
+          <label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+        </div>
+        <div id="speech-status" class="reader-status" role="status">読み上げ準備中</div>
+      </section>
+      <article id="learn-article">
+        <h1>As-IsとTo-Be</h1>
+        <p class="lead">この章では、現行業務を把握し、改善後の業務像を設計するためのアズイズ / トゥービーの基本を学びます。</p>
+        <h2>基本の考え方</h2>
+        <p>まず、アズイズは、現在の業務の姿です。トゥービーは、目指す業務の姿です。改善では、最初にアズイズを観察します。誰が、何を、どの順番で行うかを整理します。</p>
+        <h2>関係する用語と要素</h2>
+        <p>次に、使っている帳票やシステムも確認します。待ち時間、手戻り、重複入力を探します。例外処理も、現行業務の一部です。</p>
+        <h2>違いと判断の視点</h2>
+        <p>ここで、トゥービーでは、目的から必要な変化を考えます。単に現行業務をデジタル化するだけでは不十分です。不要な工程は、削除できないか検討します。自動化できる工程と、人が判断すべき工程を分けます。</p>
+        <h2>利用時に意識する点</h2>
+        <p>最後に、トゥービーは、現場で運用できる必要があります。移行時には、アズイズからトゥービーへどう変えるかも考えます。良いトゥービーは、改善目的とつながっています。</p>
+        <h3>この教材の扱う範囲</h3>
+        <p class="endnote">この章は基礎理解用です。 具体的な製品仕様、組織固有の工程名、法令上の要件は、この章だけで確定しません。 必要に応じて公式資料・一次資料で確認します。</p>
+      </article>
+      
+    </main>
+  </div>
+</body>
+</html>

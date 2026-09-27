@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="単体、結合、システム、受入テストの役割と、テスト設計の基本を学びます。" />
+  <meta name="theme-color" content="#f2efe8" />
+  <title>テストの基本 — Learn</title>
+  <link rel="stylesheet" href="./learn.css" />
+  <script src="./learn.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="top">
+      <a href="../index.html">RSVPに戻る</a>
+      <span class="mode">LEARN · システム開発</span>
+    </header>
+    <main>
+      <section class="reader" id="speech-reader" aria-label="読み上げプレイヤー">
+        <div class="reader-row">
+          <button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+          <button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+          <button id="speech-stop" type="button" aria-label="停止" disabled>■</button>
+          <select id="speech-voice" aria-label="読み上げ音声"></select>
+          <label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+        </div>
+        <div id="speech-status" class="reader-status" role="status">読み上げ準備中</div>
+      </section>
+      <article id="learn-article">
+        <h1>テストの基本</h1>
+        <p class="lead">この章では、単体、結合、システム、受入テストの役割と、テスト設計の基本を学びます。</p>
+        <h2>基本の考え方</h2>
+        <p>まず、テストは、期待どおり動くかを確認する活動です。単体テストは、小さな部品を確認します。結合テストは、複数の部品の連携を確認します。システムテストは、システム全体を確認します。</p>
+        <h2>関係する用語と要素</h2>
+        <p>次に、受入テストは、利用者側の要求を満たすか確認します。工程名や範囲は、組織によって異なることがあります。テストケースは、確認する条件と期待結果を定めます。</p>
+        <h2>違いと判断の視点</h2>
+        <p>ここで、正常系だけでは不十分です。異常入力や境界値も確認します。権限による違いもテスト対象です。非機能要件には、性能や可用性のテストがあります。</p>
+        <h2>利用時に意識する点</h2>
+        <p>最後に、不具合は、再現条件を明確にして管理します。要件からテストまで追えることが重要です。テストは、品質を作る最後の工程ではなく、品質を確認する工程です。</p>
+        <h3>この教材の扱う範囲</h3>
+        <p class="endnote">この章は基礎理解用です。 具体的な製品仕様、組織固有の工程名、法令上の要件は、この章だけで確定しません。 必要に応じて公式資料・一次資料で確認します。</p>
+      </article>
+      <section class="sources" aria-labelledby="sources-title">
+        <h2 id="sources-title">出典</h2>
+        <p><a href="https://csrc.nist.gov/pubs/sp/800/115/final">NIST SP 800-115: Technical Guide to Information Security Testing and Assessment</a></p>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

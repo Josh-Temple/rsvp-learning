@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="イベント通知、Webhook、Queueなどを使う非同期処理の基本を学びます。" />
+  <meta name="theme-color" content="#f2efe8" />
+  <title>Webhookと非同期処理 — Learn</title>
+  <link rel="stylesheet" href="./learn.css" />
+  <script src="./learn.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="top">
+      <a href="../index.html">RSVPに戻る</a>
+      <span class="mode">LEARN · Web・API</span>
+    </header>
+    <main>
+      <section class="reader" id="speech-reader" aria-label="読み上げプレイヤー">
+        <div class="reader-row">
+          <button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+          <button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+          <button id="speech-stop" type="button" aria-label="停止" disabled>■</button>
+          <select id="speech-voice" aria-label="読み上げ音声"></select>
+          <label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+        </div>
+        <div id="speech-status" class="reader-status" role="status">読み上げ準備中</div>
+      </section>
+      <article id="learn-article">
+        <h1>Webhookと非同期処理</h1>
+        <p class="lead">この章では、イベント通知、Webhook、Queueなどを使う非同期処理の基本を学びます。</p>
+        <h2>基本の考え方</h2>
+        <p>まず、同期処理では、処理結果を待ってから次へ進みます。非同期処理では、結果を待たずに別の処理へ進めます。時間のかかる処理では、非同期が有効な場合があります。Webhookは、出来事が起きた側から通知する仕組みです。</p>
+        <h2>関係する用語と要素</h2>
+        <p>次に、例えば、決済完了後に通知を送ることができます。通知を受けるユーアールエルを、事前に登録します。Webhookは、同じ通知が複数回来る可能性も考えます。</p>
+        <h2>違いと判断の視点</h2>
+        <p>ここで、そのため、受信側には冪等性が重要です。Queueは、処理要求を一時的にためる仕組みです。送信側と処理側を、時間的に分離できます。再試行や失敗処理を設計しやすくなります。</p>
+        <h2>利用時に意識する点</h2>
+        <p>最後に、一方で、処理状況が見えにくくなることがあります。監視とログが、より重要になります。非同期化は、複雑性と引き換えに柔軟性を得る設計です。</p>
+        <h3>この教材の扱う範囲</h3>
+        <p class="endnote">この章は基礎理解用です。 具体的な製品仕様、組織固有の工程名、法令上の要件は、この章だけで確定しません。 必要に応じて公式資料・一次資料で確認します。</p>
+      </article>
+      <section class="sources" aria-labelledby="sources-title">
+        <h2 id="sources-title">出典</h2>
+        <p><a href="https://docs.stripe.com/webhooks">Stripe Docs: Webhooks</a></p>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

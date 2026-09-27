@@ -6,7 +6,12 @@
   "summary": "テーブル、行、列、主キー、外部キーなどリレーショナルデータベースの基本構造を学びます。",
   "created_at": "2026-09-27",
   "base_duration_ms": 680,
-  "sources": [],
+  "sources": [
+    {
+      "title": "PostgreSQL 18 文書: 論理演算子",
+      "url": "https://www.postgresql.org/docs/18/functions-logical.html"
+    }
+  ],
   "chunks": [
     {
       "text": "リレーショナル",
@@ -129,12 +134,20 @@
       "duration_multiplier": 1
     },
     {
-      "text": "値が存在しない状態を",
+      "text": "値が不明または",
       "duration_multiplier": 1
     },
     {
-      "text": "表すために使われます",
-      "duration_multiplier": 1.15
+      "text": "未設定であることを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "表し、ゼロや空文字とは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "別に扱われます",
+      "duration_multiplier": 1.25
     },
     {
       "text": "データ型は、",

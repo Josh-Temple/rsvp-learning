@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="業務として実現したいことと、システムが満たすべき条件を分けて考える方法を学びます。" />
+  <meta name="theme-color" content="#f2efe8" />
+  <title>業務要件とシステム要件 — Learn</title>
+  <link rel="stylesheet" href="./learn.css" />
+  <script src="./learn.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="top">
+      <a href="../index.html">RSVPに戻る</a>
+      <span class="mode">LEARN · システム開発</span>
+    </header>
+    <main>
+      <section class="reader" id="speech-reader" aria-label="読み上げプレイヤー">
+        <div class="reader-row">
+          <button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+          <button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+          <button id="speech-stop" type="button" aria-label="停止" disabled>■</button>
+          <select id="speech-voice" aria-label="読み上げ音声"></select>
+          <label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+        </div>
+        <div id="speech-status" class="reader-status" role="status">読み上げ準備中</div>
+      </section>
+      <article id="learn-article">
+        <h1>業務要件とシステム要件</h1>
+        <p class="lead">この章では、業務として実現したいことと、システムが満たすべき条件を分けて考える方法を学びます。</p>
+        <h2>基本の考え方</h2>
+        <p>まず、業務要件は、業務として実現したいことです。システム要件は、それを支えるシステム側の条件です。最初に、技術ではなく業務目的を確認します。例えば、申請処理時間を短縮したいとします。</p>
+        <h2>関係する用語と要素</h2>
+        <p>次に、これは、業務要件です。オンライン受付を実装することは、システム側の手段です。入力内容を自動確認することも、システム要件になり得ます。</p>
+        <h2>違いと判断の視点</h2>
+        <p>ここで、一つの業務要件に、複数のシステム要件が対応することがあります。逆に、システムを作らず業務変更だけで解決できる場合もあります。要望を、そのまま要件にしないことが重要です。業務目的とのつながりを確認します。</p>
+        <h2>利用時に意識する点</h2>
+        <p>最後に、必要性が説明できない機能は、スコープを再検討します。業務要件からシステム要件へ落とす過程を追えるようにします。このつながりが、後の設計とテストの基準になります。</p>
+        <h3>この教材の扱う範囲</h3>
+        <p class="endnote">この章は基礎理解用です。 具体的な製品仕様、組織固有の工程名、法令上の要件は、この章だけで確定しません。 必要に応じて公式資料・一次資料で確認します。</p>
+      </article>
+      
+    </main>
+  </div>
+</body>
+</html>

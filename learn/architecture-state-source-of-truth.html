@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="複数の場所に状態を持つ難しさと、正本を明確にする設計の基本を学びます。" />
+  <meta name="theme-color" content="#f2efe8" />
+  <title>状態管理とSingle Source of Truth — Learn</title>
+  <link rel="stylesheet" href="./learn.css" />
+  <script src="./learn.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="top">
+      <a href="../index.html">RSVPに戻る</a>
+      <span class="mode">LEARN · ソフトウェア設計</span>
+    </header>
+    <main>
+      <section class="reader" id="speech-reader" aria-label="読み上げプレイヤー">
+        <div class="reader-row">
+          <button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+          <button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+          <button id="speech-stop" type="button" aria-label="停止" disabled>■</button>
+          <select id="speech-voice" aria-label="読み上げ音声"></select>
+          <label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+        </div>
+        <div id="speech-status" class="reader-status" role="status">読み上げ準備中</div>
+      </section>
+      <article id="learn-article">
+        <h1>状態管理とSingle Source of Truth</h1>
+        <p class="lead">この章では、複数の場所に状態を持つ難しさと、正本を明確にする設計の基本を学びます。</p>
+        <h2>基本の考え方</h2>
+        <p>まず、状態は、システムが現在どの状況にあるかを表します。例えば、申請中、承認済み、取消済みなどがあります。同じ状態を複数の場所で管理すると、ずれが起こることがあります。どの情報について、どこを正本とするかを決めます。</p>
+        <h2>関係する用語と要素</h2>
+        <p>次に、Single Source of Truthは、特定の情報について、正しい値を参照する基準を定める考え方です。他の画面や集計表は、正本から派生させます。派生データは、遅れて更新される場合があります。</p>
+        <h2>違いと判断の視点</h2>
+        <p>ここで、その場合、どの程度の遅延を許すか考えます。状態変更には、権限と条件を設けることがあります。不正な順序で状態が変わらないようにします。履歴を残すと、後から変化を追えます。</p>
+        <h2>利用時に意識する点</h2>
+        <p>最後に、更新が途中で失敗した場合の扱いも決めます。状態と履歴を混同しないことが重要です。正本と派生情報を区別すると、復旧しやすくなります。</p>
+        
+      </article>
+      <section class="sources" aria-labelledby="sources-title">
+        <h2 id="sources-title">出典</h2>
+        <p><a href="https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final">NIST SP 800-53 Rev. 5 Update 1</a></p>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

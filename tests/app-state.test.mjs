@@ -103,7 +103,7 @@ function makeHarness(fetchImpl) {
 async function loadApp(fetchImpl) {
   let source = await fs.readFile(new URL("../app.js", import.meta.url), "utf8");
   source = source.replace("loadCatalogs().catch(handleError);", "");
-  source += "\nglobalThis.__RSVP_TEST__ = { state, loadChapterAt, startCourse, startPlayback, openLibrary };\n";
+  source += "\nglobalThis.__RSVP_TEST__ = { state, loadChapterAt, startCourse, startPlayback, openLibrary, render };\n";
 
   const harness = makeHarness(fetchImpl);
   new vm.Script(source, { filename: "app.js" }).runInContext(harness.context);
@@ -267,4 +267,24 @@ test("opening the library invalidates an in-flight autoplay chapter load", async
   assert.equal(api.state.lessonId, "a");
   assert.equal(api.state.sequenceIndex, 0);
   assert.equal(api.state.playing, false);
+});
+
+
+test("Learn link follows the selected lesson catalog entry", async () => {
+  const { api, elements } = await loadApp(async () => okResponse({}));
+  api.state.lessonMap = new Map([
+    ["complete", { id: "complete", learn_path: "./learn/complete.html" }],
+    ["seed", { id: "seed" }],
+  ]);
+  api.state.sequence = [];
+  api.state.lessonId = "complete";
+  api.state.lesson = lesson("complete");
+  api.render();
+  assert.equal(elements.get("#learn-link").hidden, false);
+  assert.equal(elements.get("#learn-link").href, "./learn/complete.html");
+
+  api.state.lessonId = "seed";
+  api.state.lesson = lesson("seed");
+  api.render();
+  assert.equal(elements.get("#learn-link").hidden, true);
 });

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="平均、中央値、分散、標準偏差、分布など記述統計の基本を学びます。" />
+  <meta name="theme-color" content="#f2efe8" />
+  <title>代表値・ばらつき・分布 — Learn</title>
+  <link rel="stylesheet" href="./learn.css" />
+  <script src="./learn.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="top">
+      <a href="../index.html">RSVPに戻る</a>
+      <span class="mode">LEARN · データ分析</span>
+    </header>
+    <main>
+      <section class="reader" id="speech-reader" aria-label="読み上げプレイヤー">
+        <div class="reader-row">
+          <button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+          <button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+          <button id="speech-stop" type="button" aria-label="停止" disabled>■</button>
+          <select id="speech-voice" aria-label="読み上げ音声"></select>
+          <label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+        </div>
+        <div id="speech-status" class="reader-status" role="status">読み上げ準備中</div>
+      </section>
+      <article id="learn-article">
+        <h1>代表値・ばらつき・分布</h1>
+        <p class="lead">この章では、平均、中央値、分散、標準偏差、分布など記述統計の基本を学びます。</p>
+        <h2>基本の考え方</h2>
+        <p>まず、データ分析では、まずデータの形を把握します。平均は、値の合計を件数で割ったものです。中央値は、並べたとき中央にある値です。外れ値があると、平均は大きく影響を受けます。</p>
+        <h2>関係する用語と要素</h2>
+        <p>次に、中央値は、外れ値の影響を受けにくい特徴があります。分散は、値がどの程度ばらつくかを表します。標準偏差は、分散の平方根です。</p>
+        <h2>違いと判断の視点</h2>
+        <p>ここで、最小値と最大値だけでは、分布全体は分かりません。四分位数を使うと、分布の位置を把握できます。ヒストグラムは、値の分布を見る方法です。分布が左右対称とは限りません。</p>
+        <h2>利用時に意識する点</h2>
+        <p>最後に、複数の山を持つ分布もあります。代表値だけで判断せず、分布を見ることが重要です。集計前に、欠損値や異常値も確認します。</p>
+        
+      </article>
+      
+    </main>
+  </div>
+</body>
+</html>

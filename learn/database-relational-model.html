@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="テーブル、行、列、主キー、外部キーなどリレーショナルデータベースの基本構造を学びます。" />
+  <meta name="theme-color" content="#f2efe8" />
+  <title>リレーショナルモデルの基本 — Learn</title>
+  <link rel="stylesheet" href="./learn.css" />
+  <script src="./learn.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="top">
+      <a href="../index.html">RSVPに戻る</a>
+      <span class="mode">LEARN · データ</span>
+    </header>
+    <main>
+      <section class="reader" id="speech-reader" aria-label="読み上げプレイヤー">
+        <div class="reader-row">
+          <button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+          <button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+          <button id="speech-stop" type="button" aria-label="停止" disabled>■</button>
+          <select id="speech-voice" aria-label="読み上げ音声"></select>
+          <label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+        </div>
+        <div id="speech-status" class="reader-status" role="status">読み上げ準備中</div>
+      </section>
+      <article id="learn-article">
+        <h1>リレーショナルモデルの基本</h1>
+        <p class="lead">この章では、テーブル、行、列、主キー、外部キーなどリレーショナルデータベースの基本構造を学びます。</p>
+        <h2>基本の考え方</h2>
+        <p>まず、リレーショナルデータベースは、表の関係としてデータを扱います。表を、テーブルと呼びます。一件分のデータを、行として表します。属性を、列として表します。</p>
+        <h2>関係する用語と要素</h2>
+        <p>次に、主キーは、行を一意に識別します。同じ主キーを、複数の行で使わないようにします。外部キーは、別のテーブルの行との関係を表します。</p>
+        <h2>違いと判断の視点</h2>
+        <p>ここで、例えば、注文は顧客IDを持つことがあります。顧客情報を毎回注文表へ重複保存する必要はありません。関係を使うことで、データを分けて管理できます。NULLは、値が不明または未設定であることを表し、ゼロや空文字とは別に扱われます。</p>
+        <h2>利用時に意識する点</h2>
+        <p>最後に、データ型は、列に入る値の種類を定めます。制約は、データの整合性を守るために使われます。良いデータ設計は、業務上の関係を正しく表します。</p>
+        <h3>この教材の扱う範囲</h3>
+        <p class="endnote">この章は基礎理解用です。 具体的な製品仕様、組織固有の工程名、法令上の要件は、この章だけで確定しません。 必要に応じて公式資料・一次資料で確認します。</p>
+      </article>
+      <section class="sources" aria-labelledby="sources-title">
+        <h2 id="sources-title">出典</h2>
+        <p><a href="https://www.postgresql.org/docs/18/functions-logical.html">PostgreSQL 18 文書: 論理演算子</a></p>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

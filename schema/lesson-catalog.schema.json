@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RSVP Lesson catalog",
+  "type": "object",
+  "required": [
+    "lessons"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "lessons": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "title",
+          "topic",
+          "path"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "topic": {
+            "type": "string",
+            "minLength": 1
+          },
+          "path": {
+            "type": "string",
+            "pattern": "^\\./lessons/[^\\s]+\\.json$"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "SEED / 概要のみ",
+              "DRAFT v0.1",
+              "COMPLETE v0.1"
+            ]
+          },
+          "learn_path": {
+            "type": "string",
+            "pattern": "^\\./learn/[a-z0-9-]+\\.html$"
+          }
+        },
+        "allOf": [
+          {
+            "if": {
+              "required": [
+                "status"
+              ],
+              "properties": {
+                "status": {
+                  "const": "COMPLETE v0.1"
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "learn_path"
+              ]
+            },
+            "else": {
+              "not": {
+                "required": [
+                  "learn_path"
+                ]
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

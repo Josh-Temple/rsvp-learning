@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="IaaS・PaaS・SaaSと、利用者側・提供者側の責任分界を整理します。" />
+  <meta name="theme-color" content="#f2efe8" />
+  <title>クラウドのサービスモデルと責任分界 — Learn</title>
+  <link rel="stylesheet" href="./learn.css" />
+  <script src="./learn.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="top">
+      <a href="../index.html">RSVPに戻る</a>
+      <span class="mode">LEARN · クラウド</span>
+    </header>
+    <main>
+      <section class="reader" id="speech-reader" aria-label="読み上げプレイヤー">
+        <div class="reader-row">
+          <button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+          <button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+          <button id="speech-stop" type="button" aria-label="停止" disabled>■</button>
+          <select id="speech-voice" aria-label="読み上げ音声"></select>
+          <label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+        </div>
+        <div id="speech-status" class="reader-status" role="status">読み上げ準備中</div>
+      </section>
+      <article id="learn-article">
+        <h1>クラウドのサービスモデルと責任分界</h1>
+        <p class="lead">この章では、アイアース・パース・サースと、利用者側・提供者側の責任分界を整理します。</p>
+        <h2>基本の考え方</h2>
+        <p>まず、クラウドでは、どこまでを自分で管理するかが重要です。アイアースは、仮想マシンやネットワークなど基盤に近い資源を利用します。利用者は、OSやアプリを管理する場面が多くなります。パースは、アプリ実行環境まで提供される形です。</p>
+        <h2>関係する用語と要素</h2>
+        <p>次に、利用者は、基盤管理を減らしてアプリへ集中できます。サースは、完成したソフトウェアをサービスとして利用します。サービスモデルが変わると、管理責任も変わります。</p>
+        <h2>違いと判断の視点</h2>
+        <p>ここで、クラウド事業者がすべてを守ってくれるわけではありません。利用者側には、設定や権限管理の責任が残ります。これを、責任共有モデルとして考えます。どの層を誰が管理するかを確認します。</p>
+        <h2>利用時に意識する点</h2>
+        <p>最後に、障害対応でも、責任分界が重要です。契約やサービス仕様も、責任範囲へ影響します。クラウド選定では、便利さだけでなく責任範囲を見ます。</p>
+        
+      </article>
+      <section class="sources" aria-labelledby="sources-title">
+        <h2 id="sources-title">出典</h2>
+        <p><a href="https://csrc.nist.gov/pubs/sp/800/145/final">NIST SP 800-145: The NIST Definition of Cloud Computing</a></p>
+        <p><a href="https://www.nist.gov/publications/nist-cloud-computing-reference-architecture">NIST SP 500-292: NIST Cloud Computing Reference Architecture</a></p>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

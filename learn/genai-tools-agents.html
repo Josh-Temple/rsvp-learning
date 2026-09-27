@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="LLMが外部ツールを使う仕組みと、複数ステップを進めるAgentの設計上の注意点を学びます。" />
+  <meta name="theme-color" content="#f2efe8" />
+  <title>Tool CallingとAgent — Learn</title>
+  <link rel="stylesheet" href="./learn.css" />
+  <script src="./learn.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="top">
+      <a href="../index.html">RSVPに戻る</a>
+      <span class="mode">LEARN · 生成AI</span>
+    </header>
+    <main>
+      <section class="reader" id="speech-reader" aria-label="読み上げプレイヤー">
+        <div class="reader-row">
+          <button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+          <button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+          <button id="speech-stop" type="button" aria-label="停止" disabled>■</button>
+          <select id="speech-voice" aria-label="読み上げ音声"></select>
+          <label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+        </div>
+        <div id="speech-status" class="reader-status" role="status">読み上げ準備中</div>
+      </section>
+      <article id="learn-article">
+        <h1>Tool CallingとAgent</h1>
+        <p class="lead">この章では、エルエルエムが外部ツールを使う仕組みと、複数ステップを進めるAgentの設計上の注意点を学びます。</p>
+        <h2>基本の考え方</h2>
+        <p>まず、エルエルエムは、文章を生成するだけでなく外部機能を呼び出せます。これを、Tool Callingとして扱います。例えば、検索、計算、データ取得をツールへ任せられます。モデルは、用意されたツールの中から、呼び出すツール名と引数を応答として返します。</p>
+        <h2>関係する用語と要素</h2>
+        <p>次に、実際の処理は、呼び出し側のアプリがツール名と引数を確認して実行します。ツールの結果を、再びエルエルエムへ返します。Agentでは、この判断と実行を複数回繰り返すことがあります。</p>
+        <h2>違いと判断の視点</h2>
+        <p>ここで、複雑な仕事を、複数ステップへ分けられます。一方で、実行回数が増えるほど失敗経路も増えます。書込みや送信などの副作用には特に注意します。権限を必要最小限にします。</p>
+        <h2>利用時に意識する点</h2>
+        <p>最後に、重要な操作前に、人間承認を置くことがあります。途中状態と実行履歴を記録すると復旧しやすくなります。Agentは、自律性より制御可能性を含めて設計します。</p>
+        
+      </article>
+      <section class="sources" aria-labelledby="sources-title">
+        <h2 id="sources-title">出典</h2>
+        <p><a href="https://developers.openai.com/api/docs/guides/function-calling">OpenAI API: Function Calling</a></p>
+        <p><a href="https://platform.openai.com/docs/guides/function-calling">OpenAI API: Function Calling</a></p>
+        <p><a href="https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/">OWASP GenAI LLM Top 10 2026</a></p>
+        <p><a href="https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final">NIST SP 800-53 Rev. 5 Update 1</a></p>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

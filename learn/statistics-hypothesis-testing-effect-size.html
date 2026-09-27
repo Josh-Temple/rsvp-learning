@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="仮説検定の考え方、p値の読み方、効果量の重要性を学びます。" />
+  <meta name="theme-color" content="#f2efe8" />
+  <title>仮説検定・p値・効果量 — Learn</title>
+  <link rel="stylesheet" href="./learn.css" />
+  <script src="./learn.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="top">
+      <a href="../index.html">RSVPに戻る</a>
+      <span class="mode">LEARN · データ分析</span>
+    </header>
+    <main>
+      <section class="reader" id="speech-reader" aria-label="読み上げプレイヤー">
+        <div class="reader-row">
+          <button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+          <button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+          <button id="speech-stop" type="button" aria-label="停止" disabled>■</button>
+          <select id="speech-voice" aria-label="読み上げ音声"></select>
+          <label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+        </div>
+        <div id="speech-status" class="reader-status" role="status">読み上げ準備中</div>
+      </section>
+      <article id="learn-article">
+        <h1>仮説検定・p値・効果量</h1>
+        <p class="lead">この章では、仮説検定の考え方、p値の読み方、効果量の重要性を学びます。</p>
+        <h2>基本の考え方</h2>
+        <p>まず、仮説検定は、観測された差を統計的に検討する方法です。帰無仮説は、差がないなどの基準となる仮説です。p値は、帰無仮説と検定の前提が正しいとしたとき、観測結果以上に極端な結果が得られる確率です。p値は、帰無仮説が正しい確率を示すものではありません。</p>
+        <h2>関係する用語と要素</h2>
+        <p>次に、p値が小さくても、差が大きいとは限りません。標本数が大きいと、小さな差でも検出されることがあります。そのため、効果量も確認します。</p>
+        <h2>違いと判断の視点</h2>
+        <p>ここで、効果量は、差や関係の大きさを表します。信頼区間を合わせて見ると、不確実性も分かります。有意差がないことは、差がない証明とは限りません。検出力が不足している場合もあります。</p>
+        <h2>利用時に意識する点</h2>
+        <p>最後に、多数の検定を行うと、偶然の有意差が増えます。分析前に、何を検定するか決めることが重要です。統計的有意性と実務上の重要性を分けて考えます。</p>
+        
+      </article>
+      <section class="sources" aria-labelledby="sources-title">
+        <h2 id="sources-title">出典</h2>
+        <p><a href="https://www.amstat.org/asa/files/pdfs/p-valuestatement.pdf">ASA Statement on P-Values</a></p>
+        <p><a href="https://www.amstat.org/asa/files/pdfs/P-ValueStatement.pdf">American Statistical Association: Statement on p-Values</a></p>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

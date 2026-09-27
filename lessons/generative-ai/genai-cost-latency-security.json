@@ -6,7 +6,16 @@
   "summary": "生成AIアプリを実運用する際のコスト、レイテンシ、データ保護、障害時設計を学びます。",
   "created_at": "2026-09-27",
   "base_duration_ms": 680,
-  "sources": [],
+  "sources": [
+    {
+      "title": "NIST AI 600-1: Generative Artificial Intelligence Profile",
+      "url": "https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence"
+    },
+    {
+      "title": "OWASP GenAI LLM Top 10 2026",
+      "url": "https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/"
+    }
+  ],
   "chunks": [
     {
       "text": "生成AIアプリでは、",

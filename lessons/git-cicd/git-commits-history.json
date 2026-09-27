@@ -6,7 +6,12 @@
   "summary": "Gitのcommitが何を記録し、変更履歴をどう追跡するかを学びます。",
   "created_at": "2026-09-27",
   "base_duration_ms": 680,
-  "sources": [],
+  "sources": [
+    {
+      "title": "Pro Git: Git Internals — Git Objects",
+      "url": "https://git-scm.com/book/en/v2/Git-Internals-Git-Objects"
+    }
+  ],
   "chunks": [
     {
       "text": "Gitは、",
@@ -25,12 +30,20 @@
       "duration_multiplier": 1
     },
     {
-      "text": "ある時点の変更を",
+      "text": "その時点の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ファイル状態を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "スナップショットとして",
       "duration_multiplier": 1
     },
     {
       "text": "記録します",
-      "duration_multiplier": 1.15
+      "duration_multiplier": 1.25
     },
     {
       "text": "Commitには、",

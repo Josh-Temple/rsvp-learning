@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="生成AIアプリを実運用する際のコスト、レイテンシ、データ保護、障害時設計を学びます。" />
+  <meta name="theme-color" content="#f2efe8" />
+  <title>コスト・速度・セキュリティ — Learn</title>
+  <link rel="stylesheet" href="./learn.css" />
+  <script src="./learn.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="top">
+      <a href="../index.html">RSVPに戻る</a>
+      <span class="mode">LEARN · 生成AI</span>
+    </header>
+    <main>
+      <section class="reader" id="speech-reader" aria-label="読み上げプレイヤー">
+        <div class="reader-row">
+          <button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+          <button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+          <button id="speech-stop" type="button" aria-label="停止" disabled>■</button>
+          <select id="speech-voice" aria-label="読み上げ音声"></select>
+          <label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+        </div>
+        <div id="speech-status" class="reader-status" role="status">読み上げ準備中</div>
+      </section>
+      <article id="learn-article">
+        <h1>コスト・速度・セキュリティ</h1>
+        <p class="lead">この章では、生成AIアプリを実運用する際のコスト、レイテンシ、データ保護、障害時設計を学びます。</p>
+        <h2>基本の考え方</h2>
+        <p>まず、生成AIアプリでは、品質だけを見ても不十分です。利用量が増えると、推論コストも増えることがあります。不要に長い入力や出力は、コストへ影響します。応答速度も、利用体験へ影響します。</p>
+        <h2>関係する用語と要素</h2>
+        <p>次に、複数のモデルやツールを呼ぶと、待ち時間が増えることがあります。重要度に応じて、モデルや処理方法を選びます。入力データには、個人情報や機密情報が含まれる場合があります。</p>
+        <h2>違いと判断の視点</h2>
+        <p>ここで、送信してよい情報のルールを明確にします。外部ツールへ渡すデータも確認します。Prompt Injectionなど、AI特有の攻撃も考慮します。失敗時に、安全側へ倒れる設計が必要です。</p>
+        <h2>利用時に意識する点</h2>
+        <p>最後に、外部サービス障害時の代替動作も考えます。ログには、必要な情報を残しつつ秘密情報を避けます。実運用では、品質、費用、速度、安全性のバランスを取ります。</p>
+        
+      </article>
+      <section class="sources" aria-labelledby="sources-title">
+        <h2 id="sources-title">出典</h2>
+        <p><a href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence">NIST AI 600-1: Generative Artificial Intelligence Profile</a></p>
+        <p><a href="https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/">OWASP GenAI LLM Top 10 2026</a></p>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

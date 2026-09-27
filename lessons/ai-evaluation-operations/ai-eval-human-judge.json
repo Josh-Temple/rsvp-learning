@@ -6,7 +6,12 @@
   "summary": "生成AIの出力を人間や別のLLMで評価するときの利点と限界を学びます。",
   "created_at": "2026-09-27",
   "base_duration_ms": 680,
-  "sources": [],
+  "sources": [
+    {
+      "title": "Zheng et al., Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena",
+      "url": "https://arxiv.org/abs/2306.05685"
+    }
+  ],
   "chunks": [
     {
       "text": "生成結果には、",

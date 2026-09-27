@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="標本から母集団を推定するときの不確実性と信頼区間の基本を学びます。" />
+  <meta name="theme-color" content="#f2efe8" />
+  <title>推定と信頼区間 — Learn</title>
+  <link rel="stylesheet" href="./learn.css" />
+  <script src="./learn.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="top">
+      <a href="../index.html">RSVPに戻る</a>
+      <span class="mode">LEARN · データ分析</span>
+    </header>
+    <main>
+      <section class="reader" id="speech-reader" aria-label="読み上げプレイヤー">
+        <div class="reader-row">
+          <button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+          <button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+          <button id="speech-stop" type="button" aria-label="停止" disabled>■</button>
+          <select id="speech-voice" aria-label="読み上げ音声"></select>
+          <label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+        </div>
+        <div id="speech-status" class="reader-status" role="status">読み上げ準備中</div>
+      </section>
+      <article id="learn-article">
+        <h1>推定と信頼区間</h1>
+        <p class="lead">この章では、標本から母集団を推定するときの不確実性と信頼区間の基本を学びます。</p>
+        <h2>基本の考え方</h2>
+        <p>まず、標本から得た値には、不確実性があります。別の標本を取れば、結果は少し変わります。点推定は、一つの値で母集団の特徴を推定します。平均値の推定は、その代表例です。</p>
+        <h2>関係する用語と要素</h2>
+        <p>次に、信頼区間は、推定値の不確実性を区間で示します。区間が狭いほど、推定が精密である場合があります。標本数が増えると、一般に推定精度は上がります。</p>
+        <h2>違いと判断の視点</h2>
+        <p>ここで、ただし、バイアスのある標本を増やしても問題は残ります。信頼区間の解釈には、統計的な前提があります。同じ手順で区間を作り直すと、指定した割合の区間が真の値を含むという意味です。実務では、点の差だけでなく幅も確認します。</p>
+        <h2>利用時に意識する点</h2>
+        <p>最後に、小さな差が、実質的に重要かも考えます。統計的不確実性と業務上の重要性を分けます。推定値には、どの程度の不確実性があるかを添えます。</p>
+        
+      </article>
+      <section class="sources" aria-labelledby="sources-title">
+        <h2 id="sources-title">出典</h2>
+        <p><a href="https://www.itl.nist.gov/div898/handbook/prc/section1/prc14.htm">NIST/SEMATECH e-Handbook: Confidence Intervals</a></p>
+        <p><a href="https://www.itl.nist.gov/div898/handbook/eda/section3/eda352.htm">NIST/SEMATECH e-Handbook: Confidence Limits for the Mean</a></p>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

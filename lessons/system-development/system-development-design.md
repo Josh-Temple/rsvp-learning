@@ -1,6 +1,6 @@
 # 基本設計と詳細設計
 
-Status: DRAFT v0.1
+Status: COMPLETE v0.1
 Created: 2026-09-27
 
 ## 学習目標
@@ -29,3 +29,7 @@ Created: 2026-09-27
 この章は基礎理解用です。
 具体的な製品仕様、組織固有の工程名、法令上の要件は、この章だけで確定しません。
 必要に応じて公式資料・一次資料で確認します。
+
+## 出典
+
+- [NIST SP 800-53 Rev. 5 Update 1](https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final)

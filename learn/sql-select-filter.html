@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="SQLでデータを取得し、条件で絞り込み、並べ替える基本操作を学びます。" />
+  <meta name="theme-color" content="#f2efe8" />
+  <title>SELECTと絞り込み — Learn</title>
+  <link rel="stylesheet" href="./learn.css" />
+  <script src="./learn.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="top">
+      <a href="../index.html">RSVPに戻る</a>
+      <span class="mode">LEARN · データ</span>
+    </header>
+    <main>
+      <section class="reader" id="speech-reader" aria-label="読み上げプレイヤー">
+        <div class="reader-row">
+          <button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+          <button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+          <button id="speech-stop" type="button" aria-label="停止" disabled>■</button>
+          <select id="speech-voice" aria-label="読み上げ音声"></select>
+          <label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+        </div>
+        <div id="speech-status" class="reader-status" role="status">読み上げ準備中</div>
+      </section>
+      <article id="learn-article">
+        <h1>SELECTと絞り込み</h1>
+        <p class="lead">この章では、エスキューエルでデータを取得し、条件で絞り込み、並べ替える基本操作を学びます。</p>
+        <h2>基本の考え方</h2>
+        <p>まず、SELECTは、データを取得するエスキューエルです。FROMで、対象のテーブルを指定します。必要な列だけを選ぶことができます。WHEREで、条件に合う行を絞り込みます。</p>
+        <h2>関係する用語と要素</h2>
+        <p>次に、等しい、より大きい、含む、などの条件を使えます。複数条件は、ANDやORで組み合わせます。NULLの判定には、IS NULLを使います。</p>
+        <h2>違いと判断の視点</h2>
+        <p>ここで、ORDER BYで、結果を並べ替えます。ASCは昇順、DESCは降順です。DISTINCTは、重複した結果を除くために使えます。LIMITなどで、取得件数を制限できるDBもあります。</p>
+        <h2>利用時に意識する点</h2>
+        <p>最後に、条件を書いたら、意図した行だけ取れているか確認します。大量データでは、不要な全件取得を避けます。エスキューエルは、データ構造を理解して書くことが重要です。</p>
+        <h3>この教材の扱う範囲</h3>
+        <p class="endnote">この章は基礎理解用です。 具体的な製品仕様、組織固有の工程名、法令上の要件は、この章だけで確定しません。 必要に応じて公式資料・一次資料で確認します。</p>
+      </article>
+      
+    </main>
+  </div>
+</body>
+</html>

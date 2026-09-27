@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="変数間の関連を表す相関と回帰、因果関係との違いを学びます。" />
+  <meta name="theme-color" content="#f2efe8" />
+  <title>相関・回帰・因果関係 — Learn</title>
+  <link rel="stylesheet" href="./learn.css" />
+  <script src="./learn.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="top">
+      <a href="../index.html">RSVPに戻る</a>
+      <span class="mode">LEARN · データ分析</span>
+    </header>
+    <main>
+      <section class="reader" id="speech-reader" aria-label="読み上げプレイヤー">
+        <div class="reader-row">
+          <button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+          <button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+          <button id="speech-stop" type="button" aria-label="停止" disabled>■</button>
+          <select id="speech-voice" aria-label="読み上げ音声"></select>
+          <label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+        </div>
+        <div id="speech-status" class="reader-status" role="status">読み上げ準備中</div>
+      </section>
+      <article id="learn-article">
+        <h1>相関・回帰・因果関係</h1>
+        <p class="lead">この章では、変数間の関連を表す相関と回帰、因果関係との違いを学びます。</p>
+        <h2>基本の考え方</h2>
+        <p>まず、相関は、二つの変数が一緒に変化する程度を表します。相関があっても、因果関係があるとは限りません。第三の要因が、両方へ影響している場合があります。逆方向の因果がある場合もあります。</p>
+        <h2>関係する用語と要素</h2>
+        <p>次に、回帰は、変数同士の関係をモデル化する方法です。説明変数から、目的変数の変化を表します。回帰係数は、他の条件を一定とした関係として解釈する場合があります。</p>
+        <h2>違いと判断の視点</h2>
+        <p>ここで、ただし、モデルの前提が崩れると解釈も変わります。観測データだけで因果を断定するのは難しい場合があります。無作為化比較試験は、因果推論で強い方法の一つです。実務では、無作為化できないこともあります。</p>
+        <h2>利用時に意識する点</h2>
+        <p>最後に、その場合は、設計と仮定を明示して分析します。予測が当たることと、原因を説明できることは別です。分析目的が予測か因果理解かを最初に分けます。</p>
+        
+      </article>
+      
+    </main>
+  </div>
+</body>
+</html>

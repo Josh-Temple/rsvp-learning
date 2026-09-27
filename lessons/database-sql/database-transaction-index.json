@@ -6,7 +6,20 @@
   "summary": "データ更新の整合性を守るトランザクションと、検索性能を支えるインデックスの基本を学びます。",
   "created_at": "2026-09-27",
   "base_duration_ms": 680,
-  "sources": [],
+  "sources": [
+    {
+      "title": "PostgreSQL 18 Tutorial: Transactions",
+      "url": "https://www.postgresql.org/docs/18/tutorial-transactions.html"
+    },
+    {
+      "title": "PostgreSQL 18: Concurrency Control",
+      "url": "https://www.postgresql.org/docs/18/mvcc.html"
+    },
+    {
+      "title": "PostgreSQL 18: CREATE INDEX",
+      "url": "https://www.postgresql.org/docs/18/sql-createindex.html"
+    }
+  ],
   "chunks": [
     {
       "text": "トランザクションは、",

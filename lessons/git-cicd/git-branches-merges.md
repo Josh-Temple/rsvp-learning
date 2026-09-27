@@ -1,6 +1,6 @@
 # BranchとMerge
 
-Status: DRAFT v0.1
+Status: COMPLETE v0.1
 Created: 2026-09-27
 
 ## 学習目標
@@ -28,3 +28,7 @@ Created: 2026-09-27
 
 この章は基礎理解用です。
 実務で判断するときは、対象システムの仕様、組織ルール、データの前提を別途確認します。
+
+## 出典
+
+- [Pro Git: Basic Branching and Merging](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging)

@@ -6,7 +6,12 @@
   "summary": "APIの失敗を扱うためのStatus Code、Retry、冪等性の基本を学びます。",
   "created_at": "2026-09-27",
   "base_duration_ms": 680,
-  "sources": [],
+  "sources": [
+    {
+      "title": "RFC 9110: HTTP Semantics",
+      "url": "https://www.rfc-editor.org/rfc/rfc9110.html"
+    }
+  ],
   "chunks": [
     {
       "text": "API通信は、",
@@ -121,12 +126,20 @@
       "duration_multiplier": 1
     },
     {
-      "text": "同じ操作を繰り返しても",
+      "text": "同じ要求を何度行っても、",
       "duration_multiplier": 1
     },
     {
-      "text": "結果が壊れない性質です",
-      "duration_multiplier": 1.15
+      "text": "意図した効果が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "一度のときと",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "同じになる性質です",
+      "duration_multiplier": 1.25
     },
     {
       "text": "GETは、",

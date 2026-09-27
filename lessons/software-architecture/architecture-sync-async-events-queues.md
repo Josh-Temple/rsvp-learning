@@ -1,6 +1,6 @@
 # 同期・非同期・イベント・Queue
 
-Status: DRAFT v0.1
+Status: COMPLETE v0.1
 Created: 2026-09-27
 
 ## 学習目標

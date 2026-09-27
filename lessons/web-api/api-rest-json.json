@@ -6,7 +6,12 @@
   "summary": "REST APIの基本的な考え方と、データ交換形式JSONの読み方を学びます。",
   "created_at": "2026-09-27",
   "base_duration_ms": 680,
-  "sources": [],
+  "sources": [
+    {
+      "title": "Roy T. Fielding: REST Architectural Style",
+      "url": "https://ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm"
+    }
+  ],
   "chunks": [
     {
       "text": "APIは、",
@@ -85,16 +90,24 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "RESTの実装には、",
+      "text": "URLとHTTPメソッドを",
       "duration_multiplier": 1
     },
     {
-      "text": "さまざまな流儀が",
+      "text": "使うだけで、",
       "duration_multiplier": 1
     },
     {
-      "text": "あります",
-      "duration_multiplier": 1.15
+      "text": "RESTの原則を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "すべて満たすとは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "限りません",
+      "duration_multiplier": 1.25
     },
     {
       "text": "名前より、",

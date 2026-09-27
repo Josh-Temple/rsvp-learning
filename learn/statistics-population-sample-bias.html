@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="観測した一部のデータから全体を考えるときの標本設計とバイアスを学びます。" />
+  <meta name="theme-color" content="#f2efe8" />
+  <title>母集団・標本・バイアス — Learn</title>
+  <link rel="stylesheet" href="./learn.css" />
+  <script src="./learn.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="top">
+      <a href="../index.html">RSVPに戻る</a>
+      <span class="mode">LEARN · データ分析</span>
+    </header>
+    <main>
+      <section class="reader" id="speech-reader" aria-label="読み上げプレイヤー">
+        <div class="reader-row">
+          <button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+          <button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+          <button id="speech-stop" type="button" aria-label="停止" disabled>■</button>
+          <select id="speech-voice" aria-label="読み上げ音声"></select>
+          <label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+        </div>
+        <div id="speech-status" class="reader-status" role="status">読み上げ準備中</div>
+      </section>
+      <article id="learn-article">
+        <h1>母集団・標本・バイアス</h1>
+        <p class="lead">この章では、観測した一部のデータから全体を考えるときの標本設計とバイアスを学びます。</p>
+        <h2>基本の考え方</h2>
+        <p>まず、母集団は、知りたい対象全体です。標本は、実際に観測した一部です。標本から、母集団の特徴を推定します。標本が偏っていると、推定も偏ります。</p>
+        <h2>関係する用語と要素</h2>
+        <p>次に、これを、選択バイアスとして考えることがあります。回答した人だけを見ると、回答者の特徴が影響する場合があります。測定方法そのものが、結果へ影響することもあります。</p>
+        <h2>違いと判断の視点</h2>
+        <p>ここで、データが多ければ、偏りが自動で消えるわけではありません。誰がデータに含まれているか確認します。誰が含まれていないかも確認します。観測期間も重要です。</p>
+        <h2>利用時に意識する点</h2>
+        <p>最後に、特定時期だけでは、季節性を誤解することがあります。対象範囲を明示して結論を書きます。標本の限界を説明することが、分析の信頼性につながります。</p>
+        
+      </article>
+      
+    </main>
+  </div>
+</body>
+</html>

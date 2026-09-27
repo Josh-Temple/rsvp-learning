@@ -6,7 +6,12 @@
   "summary": "変更ごとにテストや検査を自動実行するCIの役割を学びます。",
   "created_at": "2026-09-27",
   "base_duration_ms": 680,
-  "sources": [],
+  "sources": [
+    {
+      "title": "NIST SP 800-53 Rev. 5 Update 1",
+      "url": "https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final"
+    }
+  ],
   "chunks": [
     {
       "text": "CIは、",

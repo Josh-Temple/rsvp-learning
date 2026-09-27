@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="AIを何のために評価するのかを定め、代表的な評価データを作る基本を学びます。" />
+  <meta name="theme-color" content="#f2efe8" />
+  <title>評価目的と評価データ — Learn</title>
+  <link rel="stylesheet" href="./learn.css" />
+  <script src="./learn.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="top">
+      <a href="../index.html">RSVPに戻る</a>
+      <span class="mode">LEARN · AI運用</span>
+    </header>
+    <main>
+      <section class="reader" id="speech-reader" aria-label="読み上げプレイヤー">
+        <div class="reader-row">
+          <button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+          <button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+          <button id="speech-stop" type="button" aria-label="停止" disabled>■</button>
+          <select id="speech-voice" aria-label="読み上げ音声"></select>
+          <label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+        </div>
+        <div id="speech-status" class="reader-status" role="status">読み上げ準備中</div>
+      </section>
+      <article id="learn-article">
+        <h1>評価目的と評価データ</h1>
+        <p class="lead">この章では、AIを何のために評価するのかを定め、代表的な評価データを作る基本を学びます。</p>
+        <h2>基本の考え方</h2>
+        <p>まず、AI評価では、最初に評価目的を決めます。正しさを見るのか、速さを見るのかで方法は変わります。業務上の重要な失敗を先に定義します。評価データは、実際の利用場面を代表する必要があります。</p>
+        <h2>関係する用語と要素</h2>
+        <p>次に、簡単な例だけでは、実運用の品質を判断できません。頻出ケースだけでなく、重要な例外も含めます。期待する出力を定められる場合は、正解データを用意します。</p>
+        <h2>違いと判断の視点</h2>
+        <p>ここで、正解が一つでない課題では、評価基準を言語化します。評価データは、本番改善のたびに使い回せるようにします。学習や調整に使ったデータと、最終評価用データを分けることがあります。同じ評価データを見ながら調整し続けると、評価へ過適合することがあります。</p>
+        <h2>利用時に意識する点</h2>
+        <p>最後に、データの出所と作成条件を記録します。評価対象のバージョンも記録します。評価は、再現できる条件で行うことが重要です。</p>
+        
+      </article>
+      
+    </main>
+  </div>
+</body>
+</html>

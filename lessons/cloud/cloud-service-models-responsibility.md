@@ -1,6 +1,6 @@
 # クラウドのサービスモデルと責任分界
 
-Status: DRAFT v0.1
+Status: COMPLETE v0.1
 Created: 2026-09-27
 
 ## 学習目標
@@ -29,3 +29,8 @@ IaaS・PaaS・SaaSと、利用者側・提供者側の責任分界を整理し�
 この章は基礎理解用です。
 特定クラウド事業者、特定LLM、特定フレームワークの最新仕様を説明する教材ではありません。
 製品固有の仕様や現在の制約は、利用時点の公式資料で確認します。
+
+## 出典
+
+- [NIST SP 800-145: The NIST Definition of Cloud Computing](https://csrc.nist.gov/pubs/sp/800/145/final)
+- [NIST SP 500-292: NIST Cloud Computing Reference Architecture](https://www.nist.gov/publications/nist-cloud-computing-reference-architecture)

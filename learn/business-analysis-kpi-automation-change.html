@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="改善効果を測るKPI、自動化対象の選び方、業務変更を定着させる考え方を学びます。" />
+  <meta name="theme-color" content="#f2efe8" />
+  <title>KPI・自動化・定着 — Learn</title>
+  <link rel="stylesheet" href="./learn.css" />
+  <script src="./learn.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="top">
+      <a href="../index.html">RSVPに戻る</a>
+      <span class="mode">LEARN · 業務改革</span>
+    </header>
+    <main>
+      <section class="reader" id="speech-reader" aria-label="読み上げプレイヤー">
+        <div class="reader-row">
+          <button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+          <button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+          <button id="speech-stop" type="button" aria-label="停止" disabled>■</button>
+          <select id="speech-voice" aria-label="読み上げ音声"></select>
+          <label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+        </div>
+        <div id="speech-status" class="reader-status" role="status">読み上げ準備中</div>
+      </section>
+      <article id="learn-article">
+        <h1>KPI・自動化・定着</h1>
+        <p class="lead">この章では、改善効果を測るケーピーアイ、自動化対象の選び方、業務変更を定着させる考え方を学びます。</p>
+        <h2>基本の考え方</h2>
+        <p>まず、業務改革では、改善したかを測る必要があります。ケーピーアイは、目的へ近づいているかを見る指標です。指標は、改善目的と直接つながるものを選びます。処理時間、エラー率、問い合わせ件数などが候補になります。</p>
+        <h2>関係する用語と要素</h2>
+        <p>次に、測りやすい数字だけを選ばないことが重要です。自動化は、反復性が高くルールが明確な作業に向きます。不安定な業務を、そのまま自動化すると問題も自動化します。</p>
+        <h2>違いと判断の視点</h2>
+        <p>ここで、先に業務を整理してから自動化します。例外が多い処理は、人の判断を残すことも考えます。新しい仕組みは、導入しただけでは定着しません。利用者への説明と教育が必要です。</p>
+        <h2>利用時に意識する点</h2>
+        <p>最後に、問い合わせ経路や改善窓口も準備します。ケーピーアイで変化を確認し、必要なら業務を調整します。改善は、導入ではなく定着までを含みます。</p>
+        
+      </article>
+      
+    </main>
+  </div>
+</body>
+</html>

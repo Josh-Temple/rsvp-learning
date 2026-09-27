@@ -10,103 +10,120 @@
       "id": "system-development-overview",
       "title": "システム開発の全体像",
       "topic": "システム開発",
-      "path": "./lessons/system-development/system-development-overview.json"
+      "path": "./lessons/system-development/system-development-overview.json",
+      "status": "SEED / 概要のみ"
     },
     {
       "id": "database-sql-overview",
       "title": "データベースとSQLの入口",
       "topic": "データ",
-      "path": "./lessons/database-sql/database-sql-overview.json"
+      "path": "./lessons/database-sql/database-sql-overview.json",
+      "status": "SEED / 概要のみ"
     },
     {
       "id": "web-api-overview",
       "title": "APIとWebシステムの入口",
       "topic": "Web・API",
-      "path": "./lessons/web-api/web-api-overview.json"
+      "path": "./lessons/web-api/web-api-overview.json",
+      "status": "SEED / 概要のみ"
     },
     {
       "id": "information-security-overview",
       "title": "情報セキュリティ概観",
       "topic": "情報セキュリティ",
-      "path": "./lessons/information-security/information-security-overview.json"
+      "path": "./lessons/information-security/information-security-overview.json",
+      "status": "SEED / 概要のみ"
     },
     {
       "id": "cloud-overview",
       "title": "クラウドコンピューティングの入口",
       "topic": "クラウド",
-      "path": "./lessons/cloud/cloud-overview.json"
+      "path": "./lessons/cloud/cloud-overview.json",
+      "status": "SEED / 概要のみ"
     },
     {
       "id": "project-management-overview",
       "title": "プロジェクトマネジメントとPMOの入口",
       "topic": "プロジェクト管理",
-      "path": "./lessons/project-management/project-management-overview.json"
+      "path": "./lessons/project-management/project-management-overview.json",
+      "status": "SEED / 概要のみ"
     },
     {
       "id": "business-analysis-overview",
       "title": "業務分析と業務改革の入口",
       "topic": "業務改革",
-      "path": "./lessons/business-analysis/business-analysis-overview.json"
+      "path": "./lessons/business-analysis/business-analysis-overview.json",
+      "status": "SEED / 概要のみ"
     },
     {
       "id": "generative-ai-overview",
       "title": "生成AIアプリケーション設計の入口",
       "topic": "生成AI",
-      "path": "./lessons/generative-ai/generative-ai-overview.json"
+      "path": "./lessons/generative-ai/generative-ai-overview.json",
+      "status": "SEED / 概要のみ"
     },
     {
       "id": "ai-evaluation-operations-overview",
       "title": "AIの評価と運用の入口",
       "topic": "AI運用",
-      "path": "./lessons/ai-evaluation-operations/ai-evaluation-operations-overview.json"
+      "path": "./lessons/ai-evaluation-operations/ai-evaluation-operations-overview.json",
+      "status": "SEED / 概要のみ"
     },
     {
       "id": "software-architecture-overview",
       "title": "ソフトウェア設計とアーキテクチャの入口",
       "topic": "ソフトウェア設計",
-      "path": "./lessons/software-architecture/software-architecture-overview.json"
+      "path": "./lessons/software-architecture/software-architecture-overview.json",
+      "status": "SEED / 概要のみ"
     },
     {
       "id": "git-cicd-overview",
       "title": "Git・GitHub・CI/CDの入口",
       "topic": "開発運用",
-      "path": "./lessons/git-cicd/git-cicd-overview.json"
+      "path": "./lessons/git-cicd/git-cicd-overview.json",
+      "status": "SEED / 概要のみ"
     },
     {
       "id": "statistics-data-analysis-overview",
       "title": "データ分析と統計の入口",
       "topic": "データ分析",
-      "path": "./lessons/statistics-data-analysis/statistics-data-analysis-overview.json"
+      "path": "./lessons/statistics-data-analysis/statistics-data-analysis-overview.json",
+      "status": "SEED / 概要のみ"
     },
     {
       "id": "ai-governance-overview",
       "title": "AIガバナンスとリスク管理の入口",
       "topic": "AIガバナンス",
-      "path": "./lessons/ai-governance/ai-governance-overview.json"
+      "path": "./lessons/ai-governance/ai-governance-overview.json",
+      "status": "SEED / 概要のみ"
     },
     {
       "id": "network-os-infra-overview",
       "title": "ネットワーク・OS・インフラの入口",
       "topic": "IT基盤",
-      "path": "./lessons/network-os-infra/network-os-infra-overview.json"
+      "path": "./lessons/network-os-infra/network-os-infra-overview.json",
+      "status": "SEED / 概要のみ"
     },
     {
       "id": "it-consulting-overview",
       "title": "ITコンサルティングの入口",
       "topic": "コンサルティング",
-      "path": "./lessons/it-consulting/it-consulting-overview.json"
+      "path": "./lessons/it-consulting/it-consulting-overview.json",
+      "status": "SEED / 概要のみ"
     },
     {
       "id": "public-dx-govtech-overview",
       "title": "公共DX・GovTechの入口",
       "topic": "公共DX",
-      "path": "./lessons/public-dx-govtech/public-dx-govtech-overview.json"
+      "path": "./lessons/public-dx-govtech/public-dx-govtech-overview.json",
+      "status": "SEED / 概要のみ"
     },
     {
       "id": "healthcare-care-dx-overview",
       "title": "ヘルスケア・介護DXの入口",
       "topic": "ヘルスケアDX",
-      "path": "./lessons/healthcare-care-dx/healthcare-care-dx-overview.json"
+      "path": "./lessons/healthcare-care-dx/healthcare-care-dx-overview.json",
+      "status": "SEED / 概要のみ"
     },
     {
       "id": "rsvp-basics",
@@ -118,361 +135,481 @@
       "id": "requirements-as-is-to-be",
       "title": "As-IsとTo-Be",
       "topic": "システム開発",
-      "path": "./lessons/requirements/requirements-as-is-to-be.json"
+      "path": "./lessons/requirements/requirements-as-is-to-be.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/requirements-as-is-to-be.html"
     },
     {
       "id": "requirements-business-system",
       "title": "業務要件とシステム要件",
       "topic": "システム開発",
-      "path": "./lessons/requirements/requirements-business-system.json"
+      "path": "./lessons/requirements/requirements-business-system.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/requirements-business-system.html"
     },
     {
       "id": "requirements-functional-nonfunctional",
       "title": "機能要件と非機能要件",
       "topic": "システム開発",
-      "path": "./lessons/requirements/requirements-functional-nonfunctional.json"
+      "path": "./lessons/requirements/requirements-functional-nonfunctional.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/requirements-functional-nonfunctional.html"
     },
     {
       "id": "requirements-stakeholders-scope",
       "title": "ステークホルダーとスコープ",
       "topic": "システム開発",
-      "path": "./lessons/requirements/requirements-stakeholders-scope.json"
+      "path": "./lessons/requirements/requirements-stakeholders-scope.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/requirements-stakeholders-scope.html"
     },
     {
       "id": "requirements-validation-traceability",
       "title": "要件の検証とトレーサビリティ",
       "topic": "システム開発",
-      "path": "./lessons/requirements/requirements-validation-traceability.json"
+      "path": "./lessons/requirements/requirements-validation-traceability.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/requirements-validation-traceability.html"
     },
     {
       "id": "system-development-lifecycle",
       "title": "開発ライフサイクル",
       "topic": "システム開発",
-      "path": "./lessons/system-development/system-development-lifecycle.json"
+      "path": "./lessons/system-development/system-development-lifecycle.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/system-development-lifecycle.html"
     },
     {
       "id": "system-development-design",
       "title": "基本設計と詳細設計",
       "topic": "システム開発",
-      "path": "./lessons/system-development/system-development-design.json"
+      "path": "./lessons/system-development/system-development-design.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/system-development-design.html"
     },
     {
       "id": "system-development-testing",
       "title": "テストの基本",
       "topic": "システム開発",
-      "path": "./lessons/system-development/system-development-testing.json"
+      "path": "./lessons/system-development/system-development-testing.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/system-development-testing.html"
     },
     {
       "id": "system-development-migration-operations",
       "title": "移行と運用設計",
       "topic": "システム開発",
-      "path": "./lessons/system-development/system-development-migration-operations.json"
+      "path": "./lessons/system-development/system-development-migration-operations.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/system-development-migration-operations.html"
     },
     {
       "id": "system-development-waterfall-agile",
       "title": "WaterfallとAgile",
       "topic": "システム開発",
-      "path": "./lessons/system-development/system-development-waterfall-agile.json"
+      "path": "./lessons/system-development/system-development-waterfall-agile.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/system-development-waterfall-agile.html"
     },
     {
       "id": "database-relational-model",
       "title": "リレーショナルモデルの基本",
       "topic": "データ",
-      "path": "./lessons/database-sql/database-relational-model.json"
+      "path": "./lessons/database-sql/database-relational-model.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/database-relational-model.html"
     },
     {
       "id": "database-normalization",
       "title": "正規化の基本",
       "topic": "データ",
-      "path": "./lessons/database-sql/database-normalization.json"
+      "path": "./lessons/database-sql/database-normalization.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/database-normalization.html"
     },
     {
       "id": "sql-select-filter",
       "title": "SELECTと絞り込み",
       "topic": "データ",
-      "path": "./lessons/database-sql/sql-select-filter.json"
+      "path": "./lessons/database-sql/sql-select-filter.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/sql-select-filter.html"
     },
     {
       "id": "sql-join-aggregation",
       "title": "JOINと集計",
       "topic": "データ",
-      "path": "./lessons/database-sql/sql-join-aggregation.json"
+      "path": "./lessons/database-sql/sql-join-aggregation.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/sql-join-aggregation.html"
     },
     {
       "id": "database-transaction-index",
       "title": "トランザクションとインデックス",
       "topic": "データ",
-      "path": "./lessons/database-sql/database-transaction-index.json"
+      "path": "./lessons/database-sql/database-transaction-index.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/database-transaction-index.html"
     },
     {
       "id": "web-client-server-http",
       "title": "クライアント・サーバーとHTTP",
       "topic": "Web・API",
-      "path": "./lessons/web-api/web-client-server-http.json"
+      "path": "./lessons/web-api/web-client-server-http.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/web-client-server-http.html"
     },
     {
       "id": "api-rest-json",
       "title": "REST APIとJSON",
       "topic": "Web・API",
-      "path": "./lessons/web-api/api-rest-json.json"
+      "path": "./lessons/web-api/api-rest-json.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/api-rest-json.html"
     },
     {
       "id": "api-authentication-authorization",
       "title": "認証と認可",
       "topic": "Web・API",
-      "path": "./lessons/web-api/api-authentication-authorization.json"
+      "path": "./lessons/web-api/api-authentication-authorization.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/api-authentication-authorization.html"
     },
     {
       "id": "api-errors-idempotency",
       "title": "エラー処理と冪等性",
       "topic": "Web・API",
-      "path": "./lessons/web-api/api-errors-idempotency.json"
+      "path": "./lessons/web-api/api-errors-idempotency.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/api-errors-idempotency.html"
     },
     {
       "id": "api-webhook-async",
       "title": "Webhookと非同期処理",
       "topic": "Web・API",
-      "path": "./lessons/web-api/api-webhook-async.json"
+      "path": "./lessons/web-api/api-webhook-async.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/api-webhook-async.html"
     },
     {
       "id": "cloud-service-models-responsibility",
       "title": "クラウドのサービスモデルと責任分界",
       "topic": "クラウド",
-      "path": "./lessons/cloud/cloud-service-models-responsibility.json"
+      "path": "./lessons/cloud/cloud-service-models-responsibility.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/cloud-service-models-responsibility.html"
     },
     {
       "id": "cloud-iam",
       "title": "クラウドのIAM",
       "topic": "クラウド",
-      "path": "./lessons/cloud/cloud-iam.json"
+      "path": "./lessons/cloud/cloud-iam.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/cloud-iam.html"
     },
     {
       "id": "cloud-networking",
       "title": "クラウドネットワークの基本",
       "topic": "クラウド",
-      "path": "./lessons/cloud/cloud-networking.json"
+      "path": "./lessons/cloud/cloud-networking.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/cloud-networking.html"
     },
     {
       "id": "cloud-compute-serverless-containers",
       "title": "仮想マシン・コンテナ・Serverless",
       "topic": "クラウド",
-      "path": "./lessons/cloud/cloud-compute-serverless-containers.json"
+      "path": "./lessons/cloud/cloud-compute-serverless-containers.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/cloud-compute-serverless-containers.html"
     },
     {
       "id": "cloud-data-availability-observability",
       "title": "データ・可用性・監視",
       "topic": "クラウド",
-      "path": "./lessons/cloud/cloud-data-availability-observability.json"
+      "path": "./lessons/cloud/cloud-data-availability-observability.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/cloud-data-availability-observability.html"
     },
     {
       "id": "pm-initiation-scope-wbs",
       "title": "目的・スコープ・WBS",
       "topic": "プロジェクト管理",
-      "path": "./lessons/project-management/pm-initiation-scope-wbs.json"
+      "path": "./lessons/project-management/pm-initiation-scope-wbs.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/pm-initiation-scope-wbs.html"
     },
     {
       "id": "pm-schedule-dependencies",
       "title": "スケジュールと依存関係",
       "topic": "プロジェクト管理",
-      "path": "./lessons/project-management/pm-schedule-dependencies.json"
+      "path": "./lessons/project-management/pm-schedule-dependencies.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/pm-schedule-dependencies.html"
     },
     {
       "id": "pm-issues-risks",
       "title": "課題管理とリスク管理",
       "topic": "プロジェクト管理",
-      "path": "./lessons/project-management/pm-issues-risks.json"
+      "path": "./lessons/project-management/pm-issues-risks.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/pm-issues-risks.html"
     },
     {
       "id": "pm-change-quality",
       "title": "変更管理と品質管理",
       "topic": "プロジェクト管理",
-      "path": "./lessons/project-management/pm-change-quality.json"
+      "path": "./lessons/project-management/pm-change-quality.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/pm-change-quality.html"
     },
     {
       "id": "pm-stakeholders-governance-pmo",
       "title": "ステークホルダー・ガバナンス・PMO",
       "topic": "プロジェクト管理",
-      "path": "./lessons/project-management/pm-stakeholders-governance-pmo.json"
+      "path": "./lessons/project-management/pm-stakeholders-governance-pmo.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/pm-stakeholders-governance-pmo.html"
     },
     {
       "id": "business-analysis-problem-value",
       "title": "課題設定と価値",
       "topic": "業務改革",
-      "path": "./lessons/business-analysis/business-analysis-problem-value.json"
+      "path": "./lessons/business-analysis/business-analysis-problem-value.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/business-analysis-problem-value.html"
     },
     {
       "id": "business-analysis-process-mapping",
       "title": "業務フローの可視化",
       "topic": "業務改革",
-      "path": "./lessons/business-analysis/business-analysis-process-mapping.json"
+      "path": "./lessons/business-analysis/business-analysis-process-mapping.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/business-analysis-process-mapping.html"
     },
     {
       "id": "business-analysis-bottlenecks-waste",
       "title": "ボトルネックとムダの発見",
       "topic": "業務改革",
-      "path": "./lessons/business-analysis/business-analysis-bottlenecks-waste.json"
+      "path": "./lessons/business-analysis/business-analysis-bottlenecks-waste.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/business-analysis-bottlenecks-waste.html"
     },
     {
       "id": "business-analysis-standardization-exceptions",
       "title": "標準化と例外処理",
       "topic": "業務改革",
-      "path": "./lessons/business-analysis/business-analysis-standardization-exceptions.json"
+      "path": "./lessons/business-analysis/business-analysis-standardization-exceptions.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/business-analysis-standardization-exceptions.html"
     },
     {
       "id": "business-analysis-kpi-automation-change",
       "title": "KPI・自動化・定着",
       "topic": "業務改革",
-      "path": "./lessons/business-analysis/business-analysis-kpi-automation-change.json"
+      "path": "./lessons/business-analysis/business-analysis-kpi-automation-change.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/business-analysis-kpi-automation-change.html"
     },
     {
       "id": "genai-llm-context",
       "title": "LLMとコンテキスト",
       "topic": "生成AI",
-      "path": "./lessons/generative-ai/genai-llm-context.json"
+      "path": "./lessons/generative-ai/genai-llm-context.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/genai-llm-context.html"
     },
     {
       "id": "genai-rag",
       "title": "RAGの基本",
       "topic": "生成AI",
-      "path": "./lessons/generative-ai/genai-rag.json"
+      "path": "./lessons/generative-ai/genai-rag.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/genai-rag.html"
     },
     {
       "id": "genai-tools-agents",
       "title": "Tool CallingとAgent",
       "topic": "生成AI",
-      "path": "./lessons/generative-ai/genai-tools-agents.json"
+      "path": "./lessons/generative-ai/genai-tools-agents.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/genai-tools-agents.html"
     },
     {
       "id": "genai-structured-workflows-hitl",
       "title": "Structured Output・Workflow・Human-in-the-loop",
       "topic": "生成AI",
-      "path": "./lessons/generative-ai/genai-structured-workflows-hitl.json"
+      "path": "./lessons/generative-ai/genai-structured-workflows-hitl.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/genai-structured-workflows-hitl.html"
     },
     {
       "id": "genai-cost-latency-security",
       "title": "コスト・速度・セキュリティ",
       "topic": "生成AI",
-      "path": "./lessons/generative-ai/genai-cost-latency-security.json"
+      "path": "./lessons/generative-ai/genai-cost-latency-security.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/genai-cost-latency-security.html"
     },
     {
       "id": "ai-eval-goals-datasets",
       "title": "評価目的と評価データ",
       "topic": "AI運用",
-      "path": "./lessons/ai-evaluation-operations/ai-eval-goals-datasets.json"
+      "path": "./lessons/ai-evaluation-operations/ai-eval-goals-datasets.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/ai-eval-goals-datasets.html"
     },
     {
       "id": "ai-eval-metrics-error-analysis",
       "title": "評価指標とエラー分析",
       "topic": "AI運用",
-      "path": "./lessons/ai-evaluation-operations/ai-eval-metrics-error-analysis.json"
+      "path": "./lessons/ai-evaluation-operations/ai-eval-metrics-error-analysis.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/ai-eval-metrics-error-analysis.html"
     },
     {
       "id": "ai-eval-human-judge",
       "title": "人間評価とLLM-as-a-judge",
       "topic": "AI運用",
-      "path": "./lessons/ai-evaluation-operations/ai-eval-human-judge.json"
+      "path": "./lessons/ai-evaluation-operations/ai-eval-human-judge.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/ai-eval-human-judge.html"
     },
     {
       "id": "ai-ops-monitoring-drift-incidents",
       "title": "監視・変化・インシデント",
       "topic": "AI運用",
-      "path": "./lessons/ai-evaluation-operations/ai-ops-monitoring-drift-incidents.json"
+      "path": "./lessons/ai-evaluation-operations/ai-ops-monitoring-drift-incidents.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/ai-ops-monitoring-drift-incidents.html"
     },
     {
       "id": "ai-ops-versioning-experiments-rollback",
       "title": "バージョン管理・比較実験・Rollback",
       "topic": "AI運用",
-      "path": "./lessons/ai-evaluation-operations/ai-ops-versioning-experiments-rollback.json"
+      "path": "./lessons/ai-evaluation-operations/ai-ops-versioning-experiments-rollback.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/ai-ops-versioning-experiments-rollback.html"
     },
     {
       "id": "architecture-modules-interfaces",
       "title": "モジュールとインターフェース",
       "topic": "ソフトウェア設計",
-      "path": "./lessons/software-architecture/architecture-modules-interfaces.json"
+      "path": "./lessons/software-architecture/architecture-modules-interfaces.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/architecture-modules-interfaces.html"
     },
     {
       "id": "architecture-coupling-cohesion-dependencies",
       "title": "依存関係・結合度・凝集度",
       "topic": "ソフトウェア設計",
-      "path": "./lessons/software-architecture/architecture-coupling-cohesion-dependencies.json"
+      "path": "./lessons/software-architecture/architecture-coupling-cohesion-dependencies.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/architecture-coupling-cohesion-dependencies.html"
     },
     {
       "id": "architecture-state-source-of-truth",
       "title": "状態管理とSingle Source of Truth",
       "topic": "ソフトウェア設計",
-      "path": "./lessons/software-architecture/architecture-state-source-of-truth.json"
+      "path": "./lessons/software-architecture/architecture-state-source-of-truth.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/architecture-state-source-of-truth.html"
     },
     {
       "id": "architecture-sync-async-events-queues",
       "title": "同期・非同期・イベント・Queue",
       "topic": "ソフトウェア設計",
-      "path": "./lessons/software-architecture/architecture-sync-async-events-queues.json"
+      "path": "./lessons/software-architecture/architecture-sync-async-events-queues.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/architecture-sync-async-events-queues.html"
     },
     {
       "id": "architecture-idempotency-retry-failures",
       "title": "冪等性・Retry・失敗時の挙動",
       "topic": "ソフトウェア設計",
-      "path": "./lessons/software-architecture/architecture-idempotency-retry-failures.json"
+      "path": "./lessons/software-architecture/architecture-idempotency-retry-failures.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/architecture-idempotency-retry-failures.html"
     },
     {
       "id": "git-commits-history",
       "title": "Commitと履歴",
       "topic": "開発運用",
-      "path": "./lessons/git-cicd/git-commits-history.json"
+      "path": "./lessons/git-cicd/git-commits-history.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/git-commits-history.html"
     },
     {
       "id": "git-branches-merges",
       "title": "BranchとMerge",
       "topic": "開発運用",
-      "path": "./lessons/git-cicd/git-branches-merges.json"
+      "path": "./lessons/git-cicd/git-branches-merges.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/git-branches-merges.html"
     },
     {
       "id": "github-pr-review-issues",
       "title": "Pull Request・Review・Issue",
       "topic": "開発運用",
-      "path": "./lessons/git-cicd/github-pr-review-issues.json"
+      "path": "./lessons/git-cicd/github-pr-review-issues.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/github-pr-review-issues.html"
     },
     {
       "id": "cicd-ci-tests-automation",
       "title": "CIと自動テスト",
       "topic": "開発運用",
-      "path": "./lessons/git-cicd/cicd-ci-tests-automation.json"
+      "path": "./lessons/git-cicd/cicd-ci-tests-automation.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/cicd-ci-tests-automation.html"
     },
     {
       "id": "cicd-deployment-environments-rollback",
       "title": "CD・環境・Deployment・Rollback",
       "topic": "開発運用",
-      "path": "./lessons/git-cicd/cicd-deployment-environments-rollback.json"
+      "path": "./lessons/git-cicd/cicd-deployment-environments-rollback.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/cicd-deployment-environments-rollback.html"
     },
     {
       "id": "statistics-descriptive-distributions",
       "title": "代表値・ばらつき・分布",
       "topic": "データ分析",
-      "path": "./lessons/statistics-data-analysis/statistics-descriptive-distributions.json"
+      "path": "./lessons/statistics-data-analysis/statistics-descriptive-distributions.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/statistics-descriptive-distributions.html"
     },
     {
       "id": "statistics-population-sample-bias",
       "title": "母集団・標本・バイアス",
       "topic": "データ分析",
-      "path": "./lessons/statistics-data-analysis/statistics-population-sample-bias.json"
+      "path": "./lessons/statistics-data-analysis/statistics-population-sample-bias.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/statistics-population-sample-bias.html"
     },
     {
       "id": "statistics-estimation-confidence-intervals",
       "title": "推定と信頼区間",
       "topic": "データ分析",
-      "path": "./lessons/statistics-data-analysis/statistics-estimation-confidence-intervals.json"
+      "path": "./lessons/statistics-data-analysis/statistics-estimation-confidence-intervals.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/statistics-estimation-confidence-intervals.html"
     },
     {
       "id": "statistics-hypothesis-testing-effect-size",
       "title": "仮説検定・p値・効果量",
       "topic": "データ分析",
-      "path": "./lessons/statistics-data-analysis/statistics-hypothesis-testing-effect-size.json"
+      "path": "./lessons/statistics-data-analysis/statistics-hypothesis-testing-effect-size.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/statistics-hypothesis-testing-effect-size.html"
     },
     {
       "id": "statistics-correlation-regression-causality",
       "title": "相関・回帰・因果関係",
       "topic": "データ分析",
-      "path": "./lessons/statistics-data-analysis/statistics-correlation-regression-causality.json"
+      "path": "./lessons/statistics-data-analysis/statistics-correlation-regression-causality.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/statistics-correlation-regression-causality.html"
     }
   ]
 }

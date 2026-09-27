@@ -1,6 +1,6 @@
 # 相関・回帰・因果関係
 
-Status: DRAFT v0.1
+Status: COMPLETE v0.1
 Created: 2026-09-27
 
 ## 学習目標
@@ -28,3 +28,9 @@ Created: 2026-09-27
 
 この章は基礎理解用です。
 実務で判断するときは、対象システムの仕様、組織ルール、データの前提を別途確認します。
+
+## 出典
+
+- [NIST/SEMATECH e-Handbook: Linear Correlation Plot](https://www.itl.nist.gov/div898/handbook/eda/section3/eda33g.htm)
+- [NIST/SEMATECH e-Handbook: Linear Least Squares Regression](https://www.itl.nist.gov/div898/handbook/pmd/section1/pmd141.htm)
+- [NIST/SEMATECH e-Handbook: Experiments and Experimental Design](https://www.itl.nist.gov/div898/handbook/ppc/section1/ppc136.htm)

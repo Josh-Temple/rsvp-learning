@@ -6,144 +6,8 @@
   <meta name="description" content="認証と認可を連続読み上げで学ぶLearn版教材" />
   <meta name="theme-color" content="#f2efe8" />
   <title>認証と認可 — Learn</title>
-  <style>
-    :root {
-      color-scheme: light dark;
-      --bg: #f2efe8;
-      --ink: #121722;
-      --muted: #666b68;
-      --line: #cbc8bf;
-      --accent: #a85248;
-    }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #11151a;
-        --ink: #edf0eb;
-        --muted: #a2a8a4;
-        --line: #343a3e;
-        --accent: #c36a60;
-      }
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--ink);
-      font-family: "Noto Sans JP", "Hiragino Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1.9;
-      -webkit-font-smoothing: antialiased;
-    }
-    .shell {
-      width: min(760px, calc(100% - 32px));
-      margin: 0 auto;
-      padding: 24px 0 64px;
-    }
-    .top {
-      min-height: 48px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      border-bottom: 1px solid var(--line);
-      margin-bottom: 46px;
-    }
-    .top a {
-      color: var(--ink);
-      text-decoration: none;
-      font-size: 0.82rem;
-      font-weight: 700;
-    }
-    .mode {
-      color: var(--accent);
-      font-size: 0.72rem;
-      font-weight: 800;
-      letter-spacing: 0.12em;
-    }
-    article { max-width: 68ch; margin: 0 auto; }
-    h1 {
-      margin: 0 0 18px;
-      font-size: clamp(2.1rem, 10vw, 4rem);
-      line-height: 1.08;
-      letter-spacing: -0.04em;
-    }
-    h2 {
-      margin: 46px 0 14px;
-      font-size: 1.2rem;
-      line-height: 1.5;
-    }
-    p { margin: 0 0 1.25em; }
-    .lead {
-      margin-bottom: 34px;
-      color: var(--muted);
-      font-size: 1.05rem;
-    }
-    .reader {
-      margin: -18px 0 40px;
-      padding: 14px 0;
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-    }
-    .reader-row {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-    .reader button,
-    .reader select {
-      min-height: 42px;
-      border: 1px solid var(--line);
-      background: transparent;
-      color: var(--ink);
-      font: inherit;
-    }
-    .reader button {
-      min-width: 48px;
-      padding: 0 12px;
-      cursor: pointer;
-      font-weight: 720;
-    }
-    .reader button:disabled {
-      opacity: 0.35;
-      cursor: default;
-    }
-    .reader select {
-      min-width: 0;
-      max-width: 100%;
-      padding: 0 8px;
-      flex: 1 1 180px;
-    }
-    .reader-speed {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-left: auto;
-      color: var(--muted);
-      font-size: 0.78rem;
-      font-variant-numeric: tabular-nums;
-    }
-    .reader-speed input {
-      width: 110px;
-      accent-color: var(--accent);
-    }
-    .reader-status {
-      margin-top: 8px;
-      color: var(--muted);
-      font-size: 0.78rem;
-    }
-    .speech-active {
-      background: color-mix(in srgb, var(--accent) 12%, transparent);
-      box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 12%, transparent);
-      border-radius: 2px;
-    }
-    .endnote {
-      margin-top: 48px;
-      padding-top: 22px;
-      border-top: 1px solid var(--line);
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-  </style>
+  <link rel="stylesheet" href="./learn.css" />
+  <script src="./learn.js" defer></script>
 </head>
 <body>
   <div class="shell">
@@ -153,7 +17,7 @@
     </header>
 
     <main>
-      <section class="reader" aria-label="読み上げプレイヤー">
+      <section class="reader" id="speech-reader" aria-label="読み上げプレイヤー">
         <div class="reader-row">
           <button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
           <button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
@@ -178,11 +42,11 @@
 
         <h2>ログイン状態をどう扱うか</h2>
         <p>認証した後、その状態を維持する方法の一つがセッションです。毎回最初からログインし直さなくても、ログイン済みの状態を扱えるようにします。</p>
-        <p>APIの呼び出しでは、トークンを使って認証する方法もあります。画面上のログインだけでなく、ソフトウェア同士がやり取りするときにも、誰からの呼び出しかを確認する仕組みが必要になります。</p>
+        <p>エーピーアイの呼び出しでは、アクセストークンを使って、保護された情報へアクセスする権限を示す方法もあります。画面上のログインとは別に、ソフトウェア同士のやり取りでも、許可する操作を確認する仕組みが必要になります。</p>
 
-        <h2>OAuthとAPIキー</h2>
-        <p>オーオース、英字では OAuth は、別のサービスへ限定的な権限を委任するために使われます。ここでも、誰であるかの確認と、どこまでの操作を許すかを混同しないことが大切です。</p>
-        <p>エーピーアイキー、英字では API Key は、呼び出し元の識別に使われることがあります。トークンやAPIキーのような秘密情報は、ソースコードへ直接書かないようにします。</p>
+        <h2>オーオースとエーピーアイキー</h2>
+        <p>オーオースは、別のサービスへ限定したアクセス権を委任する認可の枠組みです。利用者のログイン認証そのものとは分けて考えます。</p>
+        <p>エーピーアイキーは、呼び出し元の識別に使われることがあります。トークンやエーピーアイキーのような秘密情報は、ソースコードへ直接書かないようにします。</p>
 
         <h2>認可と最小権限</h2>
         <p>認可では、ロールやパーミッションを使うことがあります。つまり、利用者やシステムごとに、許される役割や操作を分けて扱います。</p>
@@ -190,204 +54,22 @@
         <p>もう一度整理すると、認証は誰であるかを確認し、認可は何をしてよいかを決めます。認証済みでも、許可されていない操作まで実行できるとは限りません。</p>
 
         <h2>この章で残しておきたいこと</h2>
-        <p>認証と認可は、一続きの処理に見えても役割が違います。ログイン、多要素認証、セッション、トークンなどは認証を考えるうえで登場します。OAuthによる権限委任や、ロール、パーミッション、最小権限は、何を許可するかという認可の考え方と関係します。</p>
+        <p>認証と認可は、一続きの処理に見えても役割が違います。ログイン、多要素認証、セッション、トークンなどは認証を考えるうえで登場します。オーオースによる権限委任や、ロール、パーミッション、最小権限は、何を許可するかという認可の考え方と関係します。</p>
         <p>重要な操作ほど、認証と認可の両方を確認します。まず誰なのかを確認し、そのうえで、その操作をしてよいのかを確認する。この二段階を分けて捉えると、認証と認可の違いが整理しやすくなります。</p>
 
+        <h3>この教材の扱う範囲</h3>
         <p class="endnote">この章は基礎理解用です。具体的な製品仕様、組織固有の工程名、法令上の要件は、この章だけでは確定しません。必要に応じて公式資料や一次資料で確認します。</p>
       </article>
+      <section class="sources" aria-labelledby="sources-title">
+        <h2 id="sources-title">出典</h2>
+        <p><a href="https://www.rfc-editor.org/rfc/rfc6749.html">RFC 6749: The OAuth 2.0 Authorization Framework</a></p>
+        <p><a href="https://www.rfc-editor.org/rfc/rfc9700.html">RFC 9700: Best Current Practice for OAuth 2.0 Security</a></p>
+        <p><a href="https://csrc.nist.gov/pubs/sp/800/63/b/4/final">NIST SP 800-63B-4: Authentication and Authenticator Management</a></p>
+        <p><a href="https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final">NIST SP 800-53 Rev. 5 Update 1</a></p>
+      </section>
     </main>
   </div>
 
-  <script>
-    (() => {
-      const synth = window.speechSynthesis;
-      const article = document.querySelector("#learn-article");
-      const playButton = document.querySelector("#speech-play");
-      const pauseButton = document.querySelector("#speech-pause");
-      const stopButton = document.querySelector("#speech-stop");
-      const voiceSelect = document.querySelector("#speech-voice");
-      const rateInput = document.querySelector("#speech-rate");
-      const rateLabel = document.querySelector("#speech-rate-label");
-      const status = document.querySelector("#speech-status");
-
-      const items = [...article.querySelectorAll("h1, h2, p")]
-        .filter((element) => element.textContent.trim().length > 0);
-
-      let voices = [];
-      let index = 0;
-      let state = "idle";
-      let runId = 0;
-
-      function japaneseVoices() {
-        const ja = voices.filter((voice) => voice.lang?.toLowerCase().startsWith("ja"));
-        return ja.length ? ja : voices;
-      }
-
-      function populateVoices() {
-        voices = synth?.getVoices?.() ?? [];
-        const available = japaneseVoices();
-        voiceSelect.replaceChildren();
-
-        if (!available.length) {
-          const option = document.createElement("option");
-          option.textContent = "端末の標準音声";
-          option.value = "";
-          voiceSelect.append(option);
-          return;
-        }
-
-        available.forEach((voice, i) => {
-          const option = document.createElement("option");
-          option.value = voice.voiceURI;
-          option.textContent = `${voice.name} · ${voice.lang}`;
-          if (i === 0) option.selected = true;
-          voiceSelect.append(option);
-        });
-      }
-
-      function selectedVoice() {
-        return voices.find((voice) => voice.voiceURI === voiceSelect.value) ?? japaneseVoices()[0] ?? null;
-      }
-
-      function clearHighlight() {
-        items.forEach((element) => element.classList.remove("speech-active"));
-      }
-
-      function setActive(nextIndex) {
-        clearHighlight();
-        if (!items[nextIndex]) return;
-        items[nextIndex].classList.add("speech-active");
-        items[nextIndex].scrollIntoView({ block: "center", behavior: "smooth" });
-      }
-
-      function updateControls() {
-        const playing = state === "playing";
-        const paused = state === "paused";
-        playButton.textContent = paused ? "▶" : playing ? "↻" : "▶";
-        playButton.setAttribute("aria-label", paused ? "読み上げを再開" : playing ? "先頭から読み直す" : "読み上げを開始");
-        pauseButton.disabled = !playing;
-        stopButton.disabled = state === "idle";
-      }
-
-      function resetToStart() {
-        runId += 1;
-        synth.cancel();
-        state = "idle";
-        index = 0;
-        clearHighlight();
-        status.textContent = "停止しました";
-        updateControls();
-      }
-
-      function speakCurrent(activeRun) {
-        if (activeRun !== runId || state !== "playing") return;
-
-        if (index >= items.length) {
-          state = "idle";
-          index = 0;
-          clearHighlight();
-          status.textContent = "読み上げが完了しました";
-          updateControls();
-          return;
-        }
-
-        const element = items[index];
-        const utterance = new SpeechSynthesisUtterance(element.textContent.trim());
-        const voice = selectedVoice();
-
-        utterance.lang = voice?.lang || "ja-JP";
-        utterance.voice = voice;
-        utterance.rate = Number(rateInput.value);
-
-        utterance.onstart = () => {
-          if (activeRun !== runId) return;
-          setActive(index);
-          status.textContent = `${index + 1} / ${items.length} を読み上げ中`;
-          updateControls();
-        };
-
-        utterance.onend = () => {
-          if (activeRun !== runId || state !== "playing") return;
-          index += 1;
-          speakCurrent(activeRun);
-        };
-
-        utterance.onerror = (event) => {
-          if (activeRun !== runId) return;
-          if (event.error === "canceled" || event.error === "interrupted") return;
-          state = "idle";
-          clearHighlight();
-          status.textContent = "読み上げを開始できませんでした";
-          updateControls();
-        };
-
-        synth.speak(utterance);
-      }
-
-      function startFromCurrent() {
-        runId += 1;
-        const activeRun = runId;
-        synth.cancel();
-        state = "playing";
-        status.textContent = "読み上げを開始します";
-        updateControls();
-        speakCurrent(activeRun);
-      }
-
-      playButton.addEventListener("click", () => {
-        if (!synth) return;
-
-        if (state === "paused") {
-          state = "playing";
-          synth.resume();
-          status.textContent = `${index + 1} / ${items.length} を読み上げ中`;
-          updateControls();
-          return;
-        }
-
-        if (state === "playing") {
-          index = 0;
-        }
-
-        startFromCurrent();
-      });
-
-      pauseButton.addEventListener("click", () => {
-        if (!synth || state !== "playing") return;
-        synth.pause();
-        state = "paused";
-        status.textContent = "一時停止中";
-        updateControls();
-      });
-
-      stopButton.addEventListener("click", resetToStart);
-
-      rateInput.addEventListener("input", () => {
-        rateLabel.textContent = `${Number(rateInput.value).toFixed(1)}×`;
-      });
-
-      voiceSelect.addEventListener("change", () => {
-        if (state === "playing") startFromCurrent();
-      });
-
-      if (!("speechSynthesis" in window) || !("SpeechSynthesisUtterance" in window)) {
-        playButton.disabled = true;
-        pauseButton.disabled = true;
-        stopButton.disabled = true;
-        voiceSelect.disabled = true;
-        rateInput.disabled = true;
-        status.textContent = "このブラウザはページ内読み上げに対応していません";
-        return;
-      }
-
-      populateVoices();
-      speechSynthesis.addEventListener?.("voiceschanged", populateVoices);
-      setTimeout(populateVoices, 250);
-      status.textContent = "▶で本文を読み上げます";
-      updateControls();
-
-      window.addEventListener("beforeunload", () => synth.cancel());
-    })();
-  </script>
+  
 </body>
 </html>

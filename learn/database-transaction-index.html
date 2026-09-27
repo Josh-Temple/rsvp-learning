@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="データ更新の整合性を守るトランザクションと、検索性能を支えるインデックスの基本を学びます。" />
+  <meta name="theme-color" content="#f2efe8" />
+  <title>トランザクションとインデックス — Learn</title>
+  <link rel="stylesheet" href="./learn.css" />
+  <script src="./learn.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="top">
+      <a href="../index.html">RSVPに戻る</a>
+      <span class="mode">LEARN · データ</span>
+    </header>
+    <main>
+      <section class="reader" id="speech-reader" aria-label="読み上げプレイヤー">
+        <div class="reader-row">
+          <button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+          <button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+          <button id="speech-stop" type="button" aria-label="停止" disabled>■</button>
+          <select id="speech-voice" aria-label="読み上げ音声"></select>
+          <label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+        </div>
+        <div id="speech-status" class="reader-status" role="status">読み上げ準備中</div>
+      </section>
+      <article id="learn-article">
+        <h1>トランザクションとインデックス</h1>
+        <p class="lead">この章では、データ更新の整合性を守るトランザクションと、検索性能を支えるインデックスの基本を学びます。</p>
+        <h2>基本の考え方</h2>
+        <p>まず、トランザクションは、複数の処理を一まとまりとして扱います。途中で失敗した場合、処理を取り消すことがあります。これをrollbackと呼びます。すべて成功したら、変更を確定します。</p>
+        <h2>関係する用語と要素</h2>
+        <p>次に、これをcommitと呼びます。AシーアイDは、トランザクションの代表的な性質を表します。Atomicityは、処理を全部成功か全部失敗にします。</p>
+        <h2>違いと判断の視点</h2>
+        <p>ここで、Consistencyは、整合性を保つことに関係します。Isolationは、同時実行の影響を制御します。Durabilityは、確定した結果を保持する性質です。インデックスは、検索を高速化するための構造です。</p>
+        <h2>利用時に意識する点</h2>
+        <p>最後に、ただし、インデックスにも保存容量と更新コストがあります。すべての列へ付ければ良いわけではありません。整合性と性能は、用途に応じて設計します。</p>
+        <h3>この教材の扱う範囲</h3>
+        <p class="endnote">この章は基礎理解用です。 具体的な製品仕様、組織固有の工程名、法令上の要件は、この章だけで確定しません。 必要に応じて公式資料・一次資料で確認します。</p>
+      </article>
+      
+    </main>
+  </div>
+</body>
+</html>
