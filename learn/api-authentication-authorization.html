@@ -60,6 +60,9 @@
       letter-spacing: 0.12em;
     }
     article { max-width: 68ch; margin: 0 auto; }
+    .sources { max-width: 68ch; margin: 0 auto 2rem; color: var(--muted); font-size: 0.88rem; }
+    .sources h2 { margin: 2rem 0 0.5rem; font-size: 1rem; }
+    .sources a { color: var(--ink); }
     h1 {
       margin: 0 0 18px;
       font-size: clamp(2.1rem, 10vw, 4rem);
@@ -178,11 +181,11 @@
 
         <h2>ログイン状態をどう扱うか</h2>
         <p>認証した後、その状態を維持する方法の一つがセッションです。毎回最初からログインし直さなくても、ログイン済みの状態を扱えるようにします。</p>
-        <p>APIの呼び出しでは、トークンを使って認証する方法もあります。画面上のログインだけでなく、ソフトウェア同士がやり取りするときにも、誰からの呼び出しかを確認する仕組みが必要になります。</p>
+        <p>エーピーアイの呼び出しでは、アクセストークンを使って、保護された情報へアクセスする権限を示す方法もあります。画面上のログインとは別に、ソフトウェア同士のやり取りでも、許可する操作を確認する仕組みが必要になります。</p>
 
-        <h2>OAuthとAPIキー</h2>
-        <p>オーオース、英字では OAuth は、別のサービスへ限定的な権限を委任するために使われます。ここでも、誰であるかの確認と、どこまでの操作を許すかを混同しないことが大切です。</p>
-        <p>エーピーアイキー、英字では API Key は、呼び出し元の識別に使われることがあります。トークンやAPIキーのような秘密情報は、ソースコードへ直接書かないようにします。</p>
+        <h2>オーオースとエーピーアイキー</h2>
+        <p>オーオースは、別のサービスへ限定したアクセス権を委任する認可の枠組みです。利用者のログイン認証そのものとは分けて考えます。</p>
+        <p>エーピーアイキーは、呼び出し元の識別に使われることがあります。トークンやAPIキーのような秘密情報は、ソースコードへ直接書かないようにします。</p>
 
         <h2>認可と最小権限</h2>
         <p>認可では、ロールやパーミッションを使うことがあります。つまり、利用者やシステムごとに、許される役割や操作を分けて扱います。</p>
@@ -190,11 +193,15 @@
         <p>もう一度整理すると、認証は誰であるかを確認し、認可は何をしてよいかを決めます。認証済みでも、許可されていない操作まで実行できるとは限りません。</p>
 
         <h2>この章で残しておきたいこと</h2>
-        <p>認証と認可は、一続きの処理に見えても役割が違います。ログイン、多要素認証、セッション、トークンなどは認証を考えるうえで登場します。OAuthによる権限委任や、ロール、パーミッション、最小権限は、何を許可するかという認可の考え方と関係します。</p>
+        <p>認証と認可は、一続きの処理に見えても役割が違います。ログイン、多要素認証、セッション、トークンなどは認証を考えるうえで登場します。オーオースによる権限委任や、ロール、パーミッション、最小権限は、何を許可するかという認可の考え方と関係します。</p>
         <p>重要な操作ほど、認証と認可の両方を確認します。まず誰なのかを確認し、そのうえで、その操作をしてよいのかを確認する。この二段階を分けて捉えると、認証と認可の違いが整理しやすくなります。</p>
 
         <p class="endnote">この章は基礎理解用です。具体的な製品仕様、組織固有の工程名、法令上の要件は、この章だけでは確定しません。必要に応じて公式資料や一次資料で確認します。</p>
       </article>
+      <section class="sources" aria-labelledby="sources-title">
+        <h2 id="sources-title">出典</h2>
+        <p><a href="https://www.rfc-editor.org/rfc/rfc6749.html">RFC 6749: The OAuth 2.0 Authorization Framework</a></p>
+      </section>
     </main>
   </div>
 
@@ -217,6 +224,7 @@
       let index = 0;
       let state = "idle";
       let runId = 0;
+      let voiceChangedWhilePaused = false;
 
       function japaneseVoices() {
         const ja = voices.filter((voice) => voice.lang?.toLowerCase().startsWith("ja"));
@@ -274,6 +282,7 @@
         synth.cancel();
         state = "idle";
         index = 0;
+        voiceChangedWhilePaused = false;
         clearHighlight();
         status.textContent = "停止しました";
         updateControls();
@@ -285,6 +294,7 @@
         if (index >= items.length) {
           state = "idle";
           index = 0;
+          voiceChangedWhilePaused = false;
           clearHighlight();
           status.textContent = "読み上げが完了しました";
           updateControls();
@@ -338,6 +348,11 @@
         if (!synth) return;
 
         if (state === "paused") {
+          if (voiceChangedWhilePaused) {
+            voiceChangedWhilePaused = false;
+            startFromCurrent();
+            return;
+          }
           state = "playing";
           synth.resume();
           status.textContent = `${index + 1} / ${items.length} を読み上げ中`;
@@ -367,7 +382,12 @@
       });
 
       voiceSelect.addEventListener("change", () => {
-        if (state === "playing") startFromCurrent();
+        if (state === "playing") {
+          startFromCurrent();
+        } else if (state === "paused") {
+          voiceChangedWhilePaused = true;
+          status.textContent = "音声を変更しました。再開時に現在位置から読み直します";
+        }
       });
 
       if (!("speechSynthesis" in window) || !("SpeechSynthesisUtterance" in window)) {
