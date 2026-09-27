@@ -9,59 +9,167 @@
   "sources": [],
   "chunks": [
     {
-      "text": "システム開発は、複数の工程で進みます",
+      "text": "システム開発は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "複数の工程で進みます",
       "duration_multiplier": 1.35
     },
     {
-      "text": "企画では、解くべき課題と投資目的を整理します",
-      "duration_multiplier": 1.1
+      "text": "企画では、",
+      "duration_multiplier": 1
     },
     {
-      "text": "要件定義では、実現すべき条件を決めます",
-      "duration_multiplier": 1.1
+      "text": "解くべき課題と",
+      "duration_multiplier": 1
     },
     {
-      "text": "設計では、要件を実装可能な構造へ落とします",
-      "duration_multiplier": 1.1
+      "text": "投資目的を整理します",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "実装では、コードや設定として形にします",
-      "duration_multiplier": 1.1
+      "text": "要件定義では、",
+      "duration_multiplier": 1
     },
     {
-      "text": "テストでは、期待どおり動くか確認します",
-      "duration_multiplier": 1.1
+      "text": "実現すべき条件を",
+      "duration_multiplier": 1
     },
     {
-      "text": "移行では、旧環境から新環境へ切り替えます",
-      "duration_multiplier": 1.1
+      "text": "決めます",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "リリース後は、運用と保守が始まります",
-      "duration_multiplier": 1.1
+      "text": "設計では、",
+      "duration_multiplier": 1
     },
     {
-      "text": "障害対応だけが、運用ではありません",
-      "duration_multiplier": 1.1
+      "text": "要件を実装可能な",
+      "duration_multiplier": 1
     },
     {
-      "text": "監視、問い合わせ、改善も運用に含まれます",
-      "duration_multiplier": 1.1
+      "text": "構造へ落とします",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "前工程の曖昧さは、後工程で大きな手戻りになり得ます",
-      "duration_multiplier": 1.1
+      "text": "実装では、",
+      "duration_multiplier": 1
     },
     {
-      "text": "一方で、すべてを最初に確定できるとは限りません",
-      "duration_multiplier": 1.1
+      "text": "コードや設定として",
+      "duration_multiplier": 1
     },
     {
-      "text": "工程ごとの目的と成果物を理解することが重要です",
-      "duration_multiplier": 1.1
+      "text": "形にします",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "全体像を持つと、自分の担当の位置づけが見えます",
+      "text": "テストでは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "期待どおり動くか",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "確認します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "移行では、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "旧環境から",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "新環境へ切り替えます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "リリース後は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "運用と保守が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "始まります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "障害対応だけが、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "運用ではありません",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "監視、問い合わせ、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "改善も運用に含まれます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "前工程の曖昧さは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "後工程で",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "大きな手戻りに",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "なり得ます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一方で、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "すべてを最初に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "確定できるとは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "限りません",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "工程ごとの目的と",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "成果物を理解する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ことが重要です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "全体像を持つと、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "自分の担当の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "位置づけが見えます",
       "duration_multiplier": 1.35
     }
   ]
