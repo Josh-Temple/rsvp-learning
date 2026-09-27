@@ -5,17 +5,55 @@ ChatGPT等で調査した内容を、RSVP（Rapid Serial Visual Presentation）�
 ## App
 
 - PWA対応（ホーム画面追加・standalone表示）
-- オフライン時も直近の教材を再生可能
 - ライト / ダークモード
-- 教材選択
+- Course / Chapter 構造
+- Chapter単独再生
+- Course全部通し再生
+- Chapter順のランダム再生
+- 前後Chapter移動
+- 3本バーによる4段階の習熟度（0〜3）
+- 再生回数・完走回数・最終学習日時を端末内に保存
 - RSVP再生 / 一時停止
 - 1チャンク・5チャンク戻る
 - 1チャンク進む
 - 再生速度 0.6〜10.0倍
-- 速度と直近教材を端末に保存
+- 速度・直近教材を端末に保存
 - JSON Schemaによる教材仕様の固定
 
-UIは個人利用を前提に、説明文を画面から外し、教材・本文・進捗・操作だけを残しています。
+UIは個人利用を前提に、Playerは本文・進捗・操作だけに絞り、教材選択と再生モードはLibraryへ分離しています。
+
+## 教材構造
+
+`lessons/index.json` がLessonのメタデータ、`courses/index.json` がCourseとChapter順を管理します。
+
+CourseはLesson IDを並べるだけの薄い構造です。
+
+```json
+{
+  "id": "requirements",
+  "title": "要件定義",
+  "chapters": [
+    "requirements-basics",
+    "as-is-to-be",
+    "business-requirements"
+  ]
+}
+```
+
+ランダム再生はチャンクを崩さず、Chapter順だけを開始時にシャッフルします。
+
+## 学習履歴
+
+学習履歴は教材JSONから分離し、ブラウザの `localStorage` に保存します。
+
+Lessonごとに次を保持します。
+
+- `mastery`: 0〜3
+- `plays`: 再生開始回数
+- `completions`: 最後まで再生した回数
+- `lastPlayedAt`: 最終学習日時
+
+習熟度は自動判定せず、本人が3本バーで設定します。
 
 ## 教材生成フロー
 
@@ -32,17 +70,14 @@ RSVPチャンク化
   ↓
 教材JSON
   ↓
+Courseへ登録
+  ↓
 Webプレイヤー
 ```
 
 教材原稿の生成には `prompts/lesson-draft.md`、レビュー済み原稿のJSON化には `prompts/lesson-generation.md` を使います。
 
 教材JSONの仕様は `schema/lesson.schema.json`、分割ルールは `docs/LESSON_FORMAT.md` を正本とします。
-
-## 教材
-
-- `要件定義の基礎`
-- `RSVP学習の使い方`
 
 ## ローカル実行
 
@@ -51,15 +86,6 @@ python -m http.server 8000
 ```
 
 `http://localhost:8000` を開きます。Service WorkerはHTTPSまたはlocalhostで有効になります。
-
-## 教材の追加
-
-1. `prompts/lesson-draft.md` で教材原稿を作成
-2. 原稿の内容をレビュー
-3. `prompts/lesson-generation.md` で RSVP JSON に変換
-4. `lessons/<topic>/` に原稿とJSONを保存
-5. `lessons/index.json` にJSONを登録
-6. 実際に再生し、チャンク長と `duration_multiplier` を調整
 
 ## 公開について
 

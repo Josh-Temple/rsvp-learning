@@ -1,0 +1,18 @@
+{
+  "courses": [
+    {
+      "id": "requirements",
+      "title": "要件定義",
+      "chapters": [
+        "requirements-basics"
+      ]
+    },
+    {
+      "id": "rsvp",
+      "title": "RSVP",
+      "chapters": [
+        "rsvp-basics"
+      ]
+    }
+  ]
+}
