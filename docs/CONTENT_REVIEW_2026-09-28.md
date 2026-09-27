@@ -18,6 +18,15 @@
 
 いずれも `COMPLETE v0.1` のstatusは維持します。この記録の「拡充済」は正式statusではなく、この作業における編集進捗です。Android実機での読みやすさは未確認です。
 
+## 継続した作業
+
+- 母集団・標本・バイアス: 市民アンケートで回答者の偏りと一般化の限界を示す。AAPORとStatistics Canadaを出典に追加。
+- 推定と信頼区間: 処理時間の区間を仮例として用い、反復抽出での意味と個々の値の区間との違いを示す。
+- 仮説検定・p値・効果量: 受付方法の比較でp値と実務上の差を分ける。ASAの重複出典を一つに整理。
+- 相関・回帰・因果関係: 気温、飲料売上、熱中症搬送の例で第三の要因と予測・因果の区別を示す。
+
+統計コースの5章はすべて拡充済みです。全60章中7章が拡充済み、53章は未着手です。
+
 ## 章ごとの次の作業
 
 | 分野 | lesson id | 進捗 | 補う具体例・判断 |
@@ -67,11 +76,11 @@
 | software-architecture | architecture-modules-interfaces | 未着手 | 受付と通知を分け、境界に渡すデータを示す。 |
 | software-architecture | architecture-state-source-of-truth | 未着手 | 同じ状態が二か所で食い違うときの正本を示す。 |
 | software-architecture | architecture-sync-async-events-queues | 未着手 | 通知処理を同期・非同期で比べ、失敗時を示す。 |
-| statistics-data-analysis | statistics-correlation-regression-causality | 未着手 | 第三の要因がある小さな観測例で区別する。 |
+| statistics-data-analysis | statistics-correlation-regression-causality | 拡充済 | 原稿・JSON・Learnを同期 |
 | statistics-data-analysis | statistics-descriptive-distributions | 拡充済 | 原稿・JSON・Learnを同期 |
-| statistics-data-analysis | statistics-estimation-confidence-intervals | 未着手 | 標本から区間を作る解釈と誤解を数値で示す。 |
-| statistics-data-analysis | statistics-hypothesis-testing-effect-size | 未着手 | p値と効果の大きさが異なる判断を例示する。 |
-| statistics-data-analysis | statistics-population-sample-bias | 未着手 | 回答者だけに偏った調査から一般化する危険を示す。 |
+| statistics-data-analysis | statistics-estimation-confidence-intervals | 拡充済 | 原稿・JSON・Learnを同期 |
+| statistics-data-analysis | statistics-hypothesis-testing-effect-size | 拡充済 | 原稿・JSON・Learnを同期 |
+| statistics-data-analysis | statistics-population-sample-bias | 拡充済 | 原稿・JSON・Learnを同期 |
 | system-development | system-development-design | 未着手 | 一つの要件を画面・データ・異常時の設計へ展開する。 |
 | system-development | system-development-lifecycle | 未着手 | 小さな案件の企画から保守までを追う。 |
 | system-development | system-development-migration-operations | 未着手 | 旧データ移行の失敗と切戻し条件を示す。 |
