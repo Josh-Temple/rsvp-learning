@@ -110,3 +110,51 @@ Lesson内部は `docs/LESSON_FORMAT.md` に従い、4〜14文字程度を中心�
 - ランダム開始しても冒頭だけで主題が分かる
 
 JSON化後はSchema検証を行い、`lessons/index.json` と `courses/index.json` へ登録します。
+
+
+## Chapter 1 JSONパイロット
+
+2026-09-27に `security-fundamentals.json` を作成した。
+
+現時点では `lessons/index.json` とCourseへは未登録である。
+
+目的は、教材原稿からRSVP JSONへの変換品質を先に確認することにある。
+
+### 検証結果
+
+- Schema必須フィールド: PASS
+- `base_duration_ms`: 680
+- chunk数: 165
+- chunk文字数中央値: 7
+- chunk文字数90%点: 10
+- 14文字超: 1 chunk
+- 20文字超: 1 chunk
+- 最長: `Cybersecurity Framework` 23文字
+- `duration_multiplier` 範囲: PASS
+
+最長チャンクは専門用語の固有名称であり、不自然に分割しない方針を優先して維持した。
+
+### 内容保持
+
+パイロットでは次をすべて残した。
+
+- 情報セキュリティの目的
+- 機密性・完全性・可用性
+- CIAが代表的三要素であり全てではない点
+- 複数要素のバランス
+- 情報資産
+- 脅威
+- 脆弱性
+- 発生可能性と影響によるリスク評価
+- 対策コストとのバランス
+- 継続的な管理
+- NIST CSF 2.0の六機能
+- 六機能が一方向の手順ではない点
+
+### 現段階の判断
+
+チャンク粒度は既存の `requirements-basics.json` と整合している。
+
+Chapter 1のJSONは、残り15 Lessonを変換する際の参照例として使用できる。
+
+ただし、Course登録は残りの変換方針が安定してから行う。
