@@ -486,12 +486,8 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "データの出所の真正",
+      "text": "データの出所の真正性と",
       "duration_multiplier": 1
-    },
-    {
-      "text": "性と",
-      "duration_multiplier": 1.1
     },
     {
       "text": "署名後にデータが",
@@ -682,12 +678,8 @@
       "duration_multiplier": 1
     },
     {
-      "text": "サイトでもHTTPS",
+      "text": "サイトでもHTTPSを",
       "duration_multiplier": 1.2
-    },
-    {
-      "text": "を",
-      "duration_multiplier": 0.9
     },
     {
       "text": "利用することはできます",
@@ -1466,11 +1458,7 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "その",
-      "duration_multiplier": 0.9
-    },
-    {
-      "text": "署名を検証することで",
+      "text": "その署名を検証することで",
       "duration_multiplier": 1.1
     },
     {
@@ -1586,12 +1574,8 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "実際のWeb PKI",
+      "text": "実際のWeb PKIでは",
       "duration_multiplier": 1.2
-    },
-    {
-      "text": "では",
-      "duration_multiplier": 1.1
     },
     {
       "text": "一つのCAだけで",
