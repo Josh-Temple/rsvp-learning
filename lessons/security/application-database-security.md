@@ -353,7 +353,7 @@ AIの出力は、誤っている場合があります。
 
 AIが生成したから安全なデータになるわけではありません。
 
-OWASPは、この問題をImproper Output Handlingとして扱っています。
+OWASPの生成AI向けガイダンスでも、AI出力を信頼して後続処理へ渡すことは重要な攻撃面として扱われています。
 
 ## 26. AIへ与える権限を最小化する
 
@@ -373,7 +373,7 @@ AIエージェントが、メール送信、ファイル削除、データ更新
 
 従来の最小権限の原則をAIにも適用します。
 
-OWASPは、過剰な機能、権限、自律性をExcessive Agencyの主要因として整理しています。
+OWASP GenAI LLM Top 10 2026でも、AIへ過剰な機能・権限・自律性を与えることは重要なリスクとして扱われています。
 
 ## 27. データ・モデルのポイズニング
 
@@ -422,5 +422,5 @@ OWASPの生成AI向け資料も、従来のWebアプリケーション向けTop 
   https://csrc.nist.gov/pubs/ai/100/2/e2025/final
 - NIST AI 600-1, Generative Artificial Intelligence Profile
   https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence
-- OWASP Top 10 for LLM and GenAI Applications 2025
-  https://genai.owasp.org/llm-top-10/
+- OWASP GenAI LLM Top 10 2026
+  https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/
