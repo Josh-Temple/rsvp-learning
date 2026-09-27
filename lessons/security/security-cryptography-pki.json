@@ -274,11 +274,11 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "鍵交換やデジタル",
+      "text": "鍵交換や",
       "duration_multiplier": 1
     },
     {
-      "text": "署名などにも",
+      "text": "デジタル署名などにも",
       "duration_multiplier": 1
     },
     {
@@ -414,11 +414,11 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "用途に応じてデジタル",
+      "text": "用途に応じて",
       "duration_multiplier": 1
     },
     {
-      "text": "署名など別の仕組みと",
+      "text": "デジタル署名など別の仕組みと",
       "duration_multiplier": 1
     },
     {
@@ -562,11 +562,7 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "デジタル",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "署名そのものは",
+      "text": "デジタル署名そのものは",
       "duration_multiplier": 1.1
     },
     {
@@ -1442,11 +1438,11 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "認証局のデジタル",
+      "text": "認証局の",
       "duration_multiplier": 1
     },
     {
-      "text": "署名によって",
+      "text": "デジタル署名によって",
       "duration_multiplier": 1
     },
     {
