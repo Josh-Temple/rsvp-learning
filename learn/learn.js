@@ -82,6 +82,47 @@
         updateControls();
       }
 
+      function pronunciationText(text) {
+        const replacements = [
+          [/\bHTTPS\b/g, "エイチティーティーピーエス"],
+          [/\bHTTP\b/g, "エイチティーティーピー"],
+          [/\bSQL\b/g, "エスキューエル"],
+          [/\bSELECT\b/g, "セレクト"],
+          [/\bFROM\b/g, "フロム"],
+          [/\bWHERE\b/g, "ウェア"],
+          [/\bAND\b/g, "アンド"],
+          [/\bOR\b/g, "オア"],
+          [/\bORDER\b/g, "オーダー"],
+          [/\bBY\b/g, "バイ"],
+          [/\bASC\b/g, "エーエスシー"],
+          [/\bDESC\b/g, "デスク"],
+          [/\bDISTINCT\b/g, "ディスティンクト"],
+          [/\bLIMIT\b/g, "リミット"],
+          [/\bJOIN\b/g, "ジョイン"],
+          [/\bINNER\b/g, "インナー"],
+          [/\bLEFT\b/g, "レフト"],
+          [/\bGROUP\b/g, "グループ"],
+          [/\bHAVING\b/g, "ハビング"],
+          [/\bCOUNT\b/g, "カウント"],
+          [/\bSUM\b/g, "サム"],
+          [/\bAVG\b/g, "エーブイジー"],
+          [/\bNULL\b/g, "ナル"],
+          [/\bGET\b/g, "ゲット"],
+          [/\bPOST\b/g, "ポスト"],
+          [/\bPUT\b/g, "プット"],
+          [/\bPATCH\b/g, "パッチ"],
+          [/\bDELETE\b/g, "デリート"],
+          [/\bREST\b/g, "レスト"],
+          [/\bIAM\b/g, "アイアム"],
+          [/\bID\b/g, "アイディー"],
+          [/\bOS\b/g, "オーエス"],
+          [/\bIT\b/g, "アイティー"],
+          [/\bAI\b/g, "エーアイ"],
+          [/\bA\/B\b/g, "エービー"],
+        ];
+        return replacements.reduce((value, [pattern, spoken]) => value.replace(pattern, spoken), text);
+      }
+
       function speakCurrent(activeRun) {
         if (activeRun !== runId || state !== "playing") return;
 
@@ -96,7 +137,7 @@
         }
 
         const element = items[index];
-        const utterance = new SpeechSynthesisUtterance(element.textContent.trim());
+        const utterance = new SpeechSynthesisUtterance(pronunciationText(element.textContent.trim()));
         const voice = selectedVoice();
 
         utterance.lang = voice?.lang || "ja-JP";

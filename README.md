@@ -100,15 +100,15 @@ Lessonごとに次を保持します。
   ↓
 内容レビュー
   ↓
-RSVPチャンク化・JSON同期とvalidation
+RSVPチャンク化
+  ↓
+教材JSONとMarkdownを同期・validation
   ↓
 完成条件を確認して `COMPLETE v0.1` に更新
   ↓
-Learn HTML生成
-  ↓
-教材JSON
-  ↓
 Courseへ登録
+  ↓
+Learn HTML生成
   ↓
 Webプレイヤー
 ```
