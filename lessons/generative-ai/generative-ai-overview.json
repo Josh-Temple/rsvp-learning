@@ -9,51 +9,171 @@
   "sources": [],
   "chunks": [
     {
-      "text": "生成AIアプリでは、モデル単体よりシステム全体を見ます",
+      "text": "生成AIアプリでは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "モデル単体より",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "システム全体を見ます",
       "duration_multiplier": 1.4
     },
     {
-      "text": "LLMは、入力された文脈から次の出力を生成します",
+      "text": "LLMは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "入力された文脈から",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "次の出力を生成します",
       "duration_multiplier": 1.15
     },
     {
-      "text": "コンテキストウィンドウには、処理できる情報量の上限があります",
+      "text": "コンテキストウィンドウには、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "処理できる情報量の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "上限があります",
       "duration_multiplier": 1.15
     },
     {
-      "text": "RAGは、外部情報を検索して文脈へ加える方法です",
+      "text": "RAGは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "外部情報を検索して",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "文脈へ加える方法です",
       "duration_multiplier": 1.15
     },
     {
-      "text": "Embeddingは、意味の近さを数値空間で扱うために使われます",
+      "text": "Embeddingは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "意味の近さを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "数値空間で扱うために",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "使われます",
       "duration_multiplier": 1.15
     },
     {
-      "text": "Tool callingは、モデルから外部機能を呼び出す仕組みです",
+      "text": "Tool callingは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "モデルから",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "外部機能を呼び出す",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "仕組みです",
       "duration_multiplier": 1.15
     },
     {
-      "text": "Agentでは、複数の判断とツール実行を組み合わせます",
+      "text": "Agentでは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "複数の判断と",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ツール実行を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "組み合わせます",
       "duration_multiplier": 1.15
     },
     {
-      "text": "Structured Outputは、出力形式を機械処理しやすくします",
+      "text": "Structured Outputは、",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "出力形式を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "機械処理しやすくします",
       "duration_multiplier": 1.15
     },
     {
-      "text": "Hallucinationは、もっともらしい誤りを生成する問題です",
+      "text": "Hallucinationは、",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "もっともらしい誤りを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "生成する問題です",
       "duration_multiplier": 1.15
     },
     {
-      "text": "Human-in-the-loopは、重要判断を人間へ戻す設計です",
+      "text": "Human-in-the-loopは、",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "重要判断を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "人間へ戻す設計です",
       "duration_multiplier": 1.15
     },
     {
-      "text": "品質だけでなく、コスト、速度、失敗時の復旧も考えます",
+      "text": "品質だけでなく、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "コスト、速度、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "失敗時の復旧も",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "考えます",
       "duration_multiplier": 1.15
     },
     {
-      "text": "まずは、一つのAI機能を評価可能な形で設計することを目標にします",
+      "text": "まずは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "一つのAI機能を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "評価可能な形で",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "設計することを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "目標にします",
       "duration_multiplier": 1.4
     }
   ]
