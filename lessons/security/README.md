@@ -1,6 +1,6 @@
 # 情報セキュリティ教材
 
-Status: Draft v0.7  
+Status: Draft v0.8 / JSON QA complete  
 作成日: 2026-09-27
 
 RSVPで繰り返し読むことを前提にした、情報セキュリティの基礎教材です。
@@ -95,18 +95,28 @@ BEC、標的型攻撃、認証情報攻撃、MITM、DNS攻撃、ゼロデイ、�
 - `lessons/security/CURRICULUM.md`
 - `lessons/security/JSON_PLAN.md`
 
+## 現在の実装状態
+
+16 LessonすべてをRSVP用JSONへ変換し、`lessons/index.json` と `courses/index.json` へ登録しました。
+
+最終のfresh readbackでは、16 LessonすべてでJSON parse、Schema必須項目、Lesson ID、`base_duration_ms`、`sources`、chunk構造、`duration_multiplier` を確認しました。
+
+空chunk、URL・Markdownの本文混入、24文字を超えるchunkは検出されませんでした。chunk文字数の90%点は各Lessonで10〜11文字、最長は23文字でした。
+
+文節分割の目視確認で、次の3箇所を個別修正しました。
+
+- `Man-in-the-Middle / On-Path Attack` のハイフン単独chunk
+- `Cross-Site Request Forgery` のハイフン単独chunk
+- 「技術的に深刻な脆弱性で / も」の助詞単独chunk
+
+Chapter 2・7・11・16を抜き取り確認し、Chapter 16のIPA「情報セキュリティ10大脅威2026」の上位3項目も名称が崩れていないことを確認しました。
+
+最新mainにあった `information-security-overview` は初期SEEDとしてファイルを残しますが、本編完成に伴いCourseとLessonカタログから外しました。
+
 ## 次の作業
 
-原稿レビューは、JSON変換パイロットを始められる段階まで進みました。
+実ブラウザで、8倍前後のRSVP表示、CourseのALL / RND、前後Chapter移動、習熟度表示を確認します。
 
-次はChapter 1「情報セキュリティの基本」を最初のRSVP JSONへ変換します。
+静的なコード・データ対応は確認済みです。Vercelのチェックは現在build rate limitで失敗しているため、実装不良とは切り分けて扱います。
 
-そこで次を確認します。
-
-- 4〜14文字程度を中心にした意味単位が自然か
-- 8倍前後でも専門用語を認識しやすいか
-- 文末や重要概念の `duration_multiplier` が適切か
-- 元のMarkdownから重要条件や例外を落としていないか
-- Schema検証を通るか
-
-パイロットを確認した後、同じ基準で残り15 Lessonへ展開します。
+実表示確認と利用可能なCI確認が終わるまでPR #6はDraftのまま維持します。
