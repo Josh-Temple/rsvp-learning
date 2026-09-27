@@ -9,59 +9,183 @@
   "sources": [],
   "chunks": [
     {
-      "text": "LLMは、与えられた入力から出力を生成します",
+      "text": "LLMは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "与えられた入力から",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "出力を生成します",
       "duration_multiplier": 1.35
     },
     {
-      "text": "モデルが利用できる情報は、入力された文脈に強く依存します",
-      "duration_multiplier": 1.1
+      "text": "モデルが利用できる情報は、",
+      "duration_multiplier": 1
     },
     {
-      "text": "この文脈を、コンテキストとして扱います",
-      "duration_multiplier": 1.1
+      "text": "入力された文脈に",
+      "duration_multiplier": 1
     },
     {
-      "text": "指示だけでなく、資料や会話履歴もコンテキストになります",
-      "duration_multiplier": 1.1
+      "text": "強く依存します",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "必要な情報が入っていなければ、正確に答えられない場合があります",
-      "duration_multiplier": 1.1
+      "text": "この文脈を、",
+      "duration_multiplier": 1
     },
     {
-      "text": "一方で、不要な情報を大量に入れると判断を難しくすることがあります",
-      "duration_multiplier": 1.1
+      "text": "コンテキストとして",
+      "duration_multiplier": 1
     },
     {
-      "text": "コンテキストには、量の上限があります",
-      "duration_multiplier": 1.1
+      "text": "扱います",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "重要な情報を選んで渡す設計が必要です",
-      "duration_multiplier": 1.1
+      "text": "指示だけでなく、",
+      "duration_multiplier": 1
     },
     {
-      "text": "指示と参照資料を区別すると、役割が分かりやすくなります",
-      "duration_multiplier": 1.1
+      "text": "資料や会話履歴も",
+      "duration_multiplier": 1
     },
     {
-      "text": "出力形式も、事前に明確にできます",
-      "duration_multiplier": 1.1
+      "text": "コンテキストになります",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "曖昧な依頼は、曖昧な出力につながりやすくなります",
-      "duration_multiplier": 1.1
+      "text": "必要な情報が",
+      "duration_multiplier": 1
     },
     {
-      "text": "ただし、指示を細かくすれば必ず正しくなるわけではありません",
-      "duration_multiplier": 1.1
+      "text": "入っていなければ、",
+      "duration_multiplier": 1
     },
     {
-      "text": "モデルの能力と情報の質の両方が影響します",
-      "duration_multiplier": 1.1
+      "text": "正確に答えられない",
+      "duration_multiplier": 1
     },
     {
-      "text": "LLM利用では、何をコンテキストへ入れるかが設計の中心です",
+      "text": "場合があります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一方で、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "不要な情報を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "大量に入れると",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "判断を難しくする",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ことがあります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "コンテキストには、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "量の上限があります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "重要な情報を選んで",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "渡す設計が必要です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "指示と参照資料を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "区別すると、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "役割が分かりやすく",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "なります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "出力形式も、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "事前に明確にできます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "曖昧な依頼は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "曖昧な出力に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "つながりやすくなります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ただし、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "指示を細かくすれば",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "必ず正しくなる",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "わけではありません",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "モデルの能力と",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "情報の質の両方が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "影響します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "LLM利用では、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "何をコンテキストへ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "入れるかが",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "設計の中心です",
       "duration_multiplier": 1.35
     }
   ]
