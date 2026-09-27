@@ -9,59 +9,163 @@
   "sources": [],
   "chunks": [
     {
-      "text": "同期処理では、処理結果を待ってから次へ進みます",
+      "text": "同期処理では、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "処理結果を待ってから",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "次へ進みます",
       "duration_multiplier": 1.35
     },
     {
-      "text": "非同期処理では、結果を待たずに別の処理へ進めます",
-      "duration_multiplier": 1.1
+      "text": "非同期処理では、",
+      "duration_multiplier": 1
     },
     {
-      "text": "時間のかかる処理では、非同期が有効な場合があります",
-      "duration_multiplier": 1.1
+      "text": "結果を待たずに",
+      "duration_multiplier": 1
     },
     {
-      "text": "Webhookは、出来事が起きた側から通知する仕組みです",
-      "duration_multiplier": 1.1
+      "text": "別の処理へ進めます",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "例えば、決済完了後に通知を送ることができます",
-      "duration_multiplier": 1.1
+      "text": "時間のかかる処理では、",
+      "duration_multiplier": 1
     },
     {
-      "text": "通知を受けるURLを、事前に登録します",
-      "duration_multiplier": 1.1
+      "text": "非同期が有効な",
+      "duration_multiplier": 1
     },
     {
-      "text": "Webhookは、同じ通知が複数回来る可能性も考えます",
-      "duration_multiplier": 1.1
+      "text": "場合があります",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "そのため、受信側には冪等性が重要です",
-      "duration_multiplier": 1.1
+      "text": "Webhookは、",
+      "duration_multiplier": 1
     },
     {
-      "text": "Queueは、処理要求を一時的にためる仕組みです",
-      "duration_multiplier": 1.1
+      "text": "出来事が起きた側から",
+      "duration_multiplier": 1
     },
     {
-      "text": "送信側と処理側を、時間的に分離できます",
-      "duration_multiplier": 1.1
+      "text": "通知する仕組みです",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "再試行や失敗処理を設計しやすくなります",
-      "duration_multiplier": 1.1
+      "text": "例えば、",
+      "duration_multiplier": 1
     },
     {
-      "text": "一方で、処理状況が見えにくくなることがあります",
-      "duration_multiplier": 1.1
+      "text": "決済完了後に",
+      "duration_multiplier": 1
     },
     {
-      "text": "監視とログが、より重要になります",
-      "duration_multiplier": 1.1
+      "text": "通知を送ることができます",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "非同期化は、複雑性と引き換えに柔軟性を得る設計です",
+      "text": "通知を受けるURLを、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "事前に登録します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Webhookは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "同じ通知が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "複数回来る可能性も",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "考えます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "そのため、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "受信側には",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "冪等性が重要です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Queueは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "処理要求を一時的に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ためる仕組みです",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "送信側と処理側を、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "時間的に分離できます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "再試行や失敗処理を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "設計しやすくなります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一方で、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "処理状況が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "見えにくくなる",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ことがあります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "監視とログが、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "より重要になります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "非同期化は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "複雑性と引き換えに",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "柔軟性を得る設計です",
       "duration_multiplier": 1.35
     }
   ]
