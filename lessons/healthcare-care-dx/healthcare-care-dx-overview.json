@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "id": "healthcare-care-dx-overview",
+  "title": "ヘルスケア・介護DXの入口",
+  "topic": "ヘルスケアDX",
+  "summary": "医療・介護分野のデータ、制度、個人情報、業務システム、AI利用を整理する入口教材です。",
+  "created_at": "2026-09-27",
+  "base_duration_ms": 680,
+  "sources": [],
+  "chunks": [
+    {
+      "text": "ヘルスケアと介護のDXでは、業務改善と安全性を両立させます",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "制度や報酬のルールが、現場業務へ直接影響します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用者情報には、機微な個人情報が含まれます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "データ共有では、目的、権限、保存、追跡可能性を考えます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "標準化は、異なる組織やシステム間の連携に重要です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "現場では、記録、請求、連携、監査など複数の業務がつながっています",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "システム化では、入力負担とデータ品質の両方を見ます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "AI利用では、誤りが利用者へ与える影響を評価します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "高リスク判断では、人間確認を残す設計が重要です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "制度改正に追随できる保守性も必要です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "技術だけでなく、現場で継続利用できる運用を設計します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "まずは、制度、業務、データ、システムの関係を一つの図として説明できることを目標にします",
+      "duration_multiplier": 1.4
+    }
+  ]
+}

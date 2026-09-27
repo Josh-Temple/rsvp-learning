@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "id": "public-dx-govtech-overview",
+  "title": "公共DX・GovTechの入口",
+  "topic": "公共DX",
+  "summary": "行政サービス、調達、標準化、データ連携、クラウド、アクセシビリティなど公共DXをIT側から整理する入口教材です。",
+  "created_at": "2026-09-27",
+  "base_duration_ms": 680,
+  "sources": [],
+  "chunks": [
+    {
+      "text": "公共DXは、行政サービスと行政内部の業務をデジタルで改善する取り組みです",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "目的は、システム導入ではなく住民や職員への価値です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "行政では、法令と制度が業務要件に強く影響します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "調達では、発注者と事業者の役割分担を明確にします",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "標準化は、自治体ごとの過度な個別差を減らす狙いがあります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "データ連携では、形式だけでなく意味の一致が必要です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "クラウド利用では、可用性、セキュリティ、責任分界を考えます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "デジタル化しても、対面や紙が必要な利用者への配慮が必要です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "アクセシビリティは、多様な利用者がサービスを使えるようにする考え方です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "制度改正への追随を、運用とシステムの両面で設計します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "現場運用を理解しないシステム化は、別の負担を生むことがあります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "まずは、行政課題を業務要件とシステム要件へ分けて説明できることを目標にします",
+      "duration_multiplier": 1.4
+    }
+  ]
+}

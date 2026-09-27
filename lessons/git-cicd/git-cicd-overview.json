@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "id": "git-cicd-overview",
+  "title": "Git・GitHub・CI/CDの入口",
+  "topic": "開発運用",
+  "summary": "commit、branch、pull request、CI、CD、deploymentの関係を整理する入口教材です。",
+  "created_at": "2026-09-27",
+  "base_duration_ms": 680,
+  "sources": [],
+  "chunks": [
+    {
+      "text": "Gitは、ファイルの変更履歴を管理する仕組みです",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "commitは、変更を一つの履歴として記録します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "branchは、作業の流れを分けるために使います",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "mergeは、分かれた変更を統合します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "GitHubでは、Pull Requestで変更内容をレビューできます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Issueは、課題や作業を記録するために使えます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "CIは、変更のたびにテストや検査を自動実行する考え方です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "CDは、成果物を継続的に配布またはデプロイする考え方です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "GitHub Actionsは、GitHub上で自動処理を実行できます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "環境ごとに設定や秘密情報を分離します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "デプロイ後には、動作確認とrollback経路を考えます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "まずは、変更が本番へ届くまでの流れを説明できることを目標にします",
+      "duration_multiplier": 1.4
+    }
+  ]
+}

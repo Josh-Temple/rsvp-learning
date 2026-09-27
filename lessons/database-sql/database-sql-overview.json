@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "id": "database-sql-overview",
+  "title": "データベースとSQLの入口",
+  "topic": "データ",
+  "summary": "リレーショナルデータベースとSQLの基本概念をつかむ入口教材です。",
+  "created_at": "2026-09-27",
+  "base_duration_ms": 680,
+  "sources": [],
+  "chunks": [
+    {
+      "text": "データベースは、情報を継続的に管理する仕組みです",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "表形式のデータを扱う代表例が、リレーショナルデータベースです",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "テーブルは、行と列でデータを表します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "主キーは、行を一意に識別します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "外部キーは、テーブル同士の関係を表します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "正規化は、重複や更新時の矛盾を減らす考え方です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "SQLは、データベースへ問い合わせるための言語です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "SELECTで取得し、WHEREで絞り込みます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "JOINで複数のテーブルを結合します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "GROUP BYで集計し、Window関数で行同士を比較できます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "トランザクションは、複数処理の整合性を守ります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "最初は、データ構造を読み、必要なSQLを書けることを目標にします",
+      "duration_multiplier": 1.4
+    }
+  ]
+}

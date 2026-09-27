@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "id": "ai-governance-overview",
+  "title": "AIガバナンスとリスク管理の入口",
+  "topic": "AIガバナンス",
+  "summary": "AIライフサイクル、プライバシー、セキュリティ、バイアス、説明可能性、人間監督、監査可能性の基本をつかむ入口教材です。",
+  "created_at": "2026-09-27",
+  "base_duration_ms": 680,
+  "sources": [],
+  "chunks": [
+    {
+      "text": "AIガバナンスは、AIを安全かつ説明可能に利用するための管理です",
+      "duration_multiplier": 1.4
+    },
+    {
+      "text": "導入時だけでなく、設計、開発、運用、廃止までを考えます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用目的と許容できるリスクを明確にします",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "データには、個人情報や機密情報が含まれる場合があります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "セキュリティでは、モデルだけでなく周辺システムも守ります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "バイアスは、特定の集団や条件で不公平な結果を生む可能性があります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "説明可能性は、判断の根拠をどこまで説明できるかという問題です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Human Oversightは、人間が介入すべき境界を定めます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ログと証拠は、後から判断を検証するために必要です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "責任の所在と承認権限を明確にします",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ルールは、実運用で守れる形に落とす必要があります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "まずは、一つのAI利用について主要リスクと統制を説明できることを目標にします",
+      "duration_multiplier": 1.4
+    }
+  ]
+}
