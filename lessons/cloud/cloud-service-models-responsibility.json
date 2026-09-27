@@ -9,59 +9,187 @@
   "sources": [],
   "chunks": [
     {
-      "text": "クラウドでは、どこまでを自分で管理するかが重要です",
+      "text": "クラウドでは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "どこまでを自分で",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "管理するかが",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "重要です",
       "duration_multiplier": 1.35
     },
     {
-      "text": "IaaSは、仮想マシンやネットワークなど基盤に近い資源を利用します",
-      "duration_multiplier": 1.1
+      "text": "IaaSは、",
+      "duration_multiplier": 1
     },
     {
-      "text": "利用者は、OSやアプリを管理する場面が多くなります",
-      "duration_multiplier": 1.1
+      "text": "仮想マシンや",
+      "duration_multiplier": 1
     },
     {
-      "text": "PaaSは、アプリ実行環境まで提供される形です",
-      "duration_multiplier": 1.1
+      "text": "ネットワークなど",
+      "duration_multiplier": 1
     },
     {
-      "text": "利用者は、基盤管理を減らしてアプリへ集中できます",
-      "duration_multiplier": 1.1
+      "text": "基盤に近い資源を",
+      "duration_multiplier": 1
     },
     {
-      "text": "SaaSは、完成したソフトウェアをサービスとして利用します",
-      "duration_multiplier": 1.1
+      "text": "利用します",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "サービスモデルが変わると、管理責任も変わります",
-      "duration_multiplier": 1.1
+      "text": "利用者は、",
+      "duration_multiplier": 1
     },
     {
-      "text": "クラウド事業者がすべてを守ってくれるわけではありません",
-      "duration_multiplier": 1.1
+      "text": "OSやアプリを",
+      "duration_multiplier": 1
     },
     {
-      "text": "利用者側には、設定や権限管理の責任が残ります",
-      "duration_multiplier": 1.1
+      "text": "管理する場面が",
+      "duration_multiplier": 1
     },
     {
-      "text": "これを、責任共有モデルとして考えます",
-      "duration_multiplier": 1.1
+      "text": "多くなります",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "どの層を誰が管理するかを確認します",
-      "duration_multiplier": 1.1
+      "text": "PaaSは、",
+      "duration_multiplier": 1
     },
     {
-      "text": "障害対応でも、責任分界が重要です",
-      "duration_multiplier": 1.1
+      "text": "アプリ実行環境まで",
+      "duration_multiplier": 1
     },
     {
-      "text": "契約やサービス仕様も、責任範囲へ影響します",
-      "duration_multiplier": 1.1
+      "text": "提供される形です",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "クラウド選定では、便利さだけでなく責任範囲を見ます",
+      "text": "利用者は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "基盤管理を減らして",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "アプリへ集中できます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "SaaSは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "完成したソフトウェアを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "サービスとして",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "利用します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "サービスモデルが",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "変わると、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "管理責任も変わります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "クラウド事業者が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "すべてを守ってくれる",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "わけではありません",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用者側には、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "設定や権限管理の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "責任が残ります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "これを、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "責任共有モデルとして",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "考えます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "どの層を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "誰が管理するかを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "確認します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "障害対応でも、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "責任分界が重要です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "契約やサービス仕様も、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "責任範囲へ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "影響します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "クラウド選定では、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "便利さだけでなく",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "責任範囲を見ます",
       "duration_multiplier": 1.35
     }
   ]

@@ -9,59 +9,191 @@
   "sources": [],
   "chunks": [
     {
-      "text": "クラウドでも、ネットワークの基本は変わりません",
+      "text": "クラウドでも、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ネットワークの基本は",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "変わりません",
       "duration_multiplier": 1.35
     },
     {
-      "text": "システム同士は、ネットワークを通じて通信します",
-      "duration_multiplier": 1.1
+      "text": "システム同士は、",
+      "duration_multiplier": 1
     },
     {
-      "text": "仮想ネットワークは、クラウド上に論理的な通信範囲を作ります",
-      "duration_multiplier": 1.1
+      "text": "ネットワークを通じて",
+      "duration_multiplier": 1
     },
     {
-      "text": "サブネットで、ネットワークを複数の範囲へ分けられます",
-      "duration_multiplier": 1.1
+      "text": "通信します",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "外部公開が必要な部分と、内部だけで使う部分を分けます",
-      "duration_multiplier": 1.1
+      "text": "仮想ネットワークは、",
+      "duration_multiplier": 1
     },
     {
-      "text": "データベースを直接インターネットへ公開しない設計が一般的です",
-      "duration_multiplier": 1.1
+      "text": "クラウド上に",
+      "duration_multiplier": 1
     },
     {
-      "text": "FirewallやSecurity Groupなどで通信を制御します",
-      "duration_multiplier": 1.1
+      "text": "論理的な通信範囲を",
+      "duration_multiplier": 1
     },
     {
-      "text": "必要な宛先とポートだけを許可します",
-      "duration_multiplier": 1.1
+      "text": "作ります",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "DNSは、名前と接続先を対応づけます",
-      "duration_multiplier": 1.1
+      "text": "サブネットで、",
+      "duration_multiplier": 1
     },
     {
-      "text": "Load Balancerは、複数の処理先へ通信を分散します",
-      "duration_multiplier": 1.1
+      "text": "ネットワークを",
+      "duration_multiplier": 1
     },
     {
-      "text": "通信経路を複雑にすると、障害調査も難しくなります",
-      "duration_multiplier": 1.1
+      "text": "複数の範囲へ",
+      "duration_multiplier": 1
     },
     {
-      "text": "ネットワーク設計では、到達性と安全性を両方考えます",
-      "duration_multiplier": 1.1
+      "text": "分けられます",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "通信ログは、問題調査に役立ちます",
-      "duration_multiplier": 1.1
+      "text": "外部公開が必要な部分と、",
+      "duration_multiplier": 1
     },
     {
-      "text": "まずは、利用者からアプリ、データベースまでの経路を説明できるようにします",
+      "text": "内部だけで使う部分を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "分けます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "データベースを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "直接インターネットへ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "公開しない設計が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "一般的です",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Firewallや",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "Security Groupなどで",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "通信を制御します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "必要な宛先と",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ポートだけを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "許可します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "DNSは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "名前と接続先を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "対応づけます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Load Balancerは、",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "複数の処理先へ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "通信を分散します",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "通信経路を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "複雑にすると、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "障害調査も",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "難しくなります",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ネットワーク設計では、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "到達性と安全性を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "両方考えます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "通信ログは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "問題調査に役立ちます",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "まずは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "利用者からアプリ、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "データベースまでの",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "経路を説明できる",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ようにします",
       "duration_multiplier": 1.35
     }
   ]
