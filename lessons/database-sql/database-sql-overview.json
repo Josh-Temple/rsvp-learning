@@ -9,51 +9,159 @@
   "sources": [],
   "chunks": [
     {
-      "text": "データベースは、情報を継続的に管理する仕組みです",
+      "text": "データベースは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "情報を継続的に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "管理する仕組みです",
       "duration_multiplier": 1.4
     },
     {
-      "text": "表形式のデータを扱う代表例が、リレーショナルデータベースです",
+      "text": "表形式のデータを扱う",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "代表例が、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "リレーショナル",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "データベースです",
       "duration_multiplier": 1.15
     },
     {
-      "text": "テーブルは、行と列でデータを表します",
+      "text": "テーブルは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "行と列でデータを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "表します",
       "duration_multiplier": 1.15
     },
     {
-      "text": "主キーは、行を一意に識別します",
+      "text": "主キーは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "行を一意に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "識別します",
       "duration_multiplier": 1.15
     },
     {
-      "text": "外部キーは、テーブル同士の関係を表します",
+      "text": "外部キーは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "テーブル同士の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "関係を表します",
       "duration_multiplier": 1.15
     },
     {
-      "text": "正規化は、重複や更新時の矛盾を減らす考え方です",
+      "text": "正規化は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "重複や更新時の矛盾を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "減らす考え方です",
       "duration_multiplier": 1.15
     },
     {
-      "text": "SQLは、データベースへ問い合わせるための言語です",
+      "text": "SQLは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "データベースへ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "問い合わせるための",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "言語です",
       "duration_multiplier": 1.15
     },
     {
-      "text": "SELECTで取得し、WHEREで絞り込みます",
+      "text": "SELECTで取得し、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "WHEREで絞り込みます",
       "duration_multiplier": 1.15
     },
     {
-      "text": "JOINで複数のテーブルを結合します",
+      "text": "JOINで",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "複数のテーブルを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "結合します",
       "duration_multiplier": 1.15
     },
     {
-      "text": "GROUP BYで集計し、Window関数で行同士を比較できます",
+      "text": "GROUP BYで集計し、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "Window関数で",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "行同士を比較できます",
       "duration_multiplier": 1.15
     },
     {
-      "text": "トランザクションは、複数処理の整合性を守ります",
+      "text": "トランザクションは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "複数処理の整合性を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "守ります",
       "duration_multiplier": 1.15
     },
     {
-      "text": "最初は、データ構造を読み、必要なSQLを書けることを目標にします",
+      "text": "最初は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "データ構造を読み、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "必要なSQLを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "書けることを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "目標にします",
       "duration_multiplier": 1.4
     }
   ]
