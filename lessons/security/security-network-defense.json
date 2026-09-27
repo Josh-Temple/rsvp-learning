@@ -1214,11 +1214,11 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "暗号",
+      "text": "暗号化",
       "duration_multiplier": 0.9
     },
     {
-      "text": "化したりするために",
+      "text": "したりするために",
       "duration_multiplier": 1
     },
     {
@@ -1506,11 +1506,7 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "こうした",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "運用が必要です",
+      "text": "こうした運用が必要です",
       "duration_multiplier": 1.4
     },
     {
@@ -1754,11 +1750,7 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "その上で利用者認証を",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "行い",
+      "text": "その上で利用者認証を行い",
       "duration_multiplier": 1.1
     },
     {
@@ -1846,11 +1838,7 @@
       "duration_multiplier": 1.4
     },
     {
-      "text": "こうした",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "通信を保護できます",
+      "text": "こうした通信を保護できます",
       "duration_multiplier": 1.4
     },
     {
@@ -1898,11 +1886,11 @@
       "duration_multiplier": 1
     },
     {
-      "text": "全体の安全",
+      "text": "全体の安全性を",
       "duration_multiplier": 1
     },
     {
-      "text": "性を自動的に",
+      "text": "自動的に",
       "duration_multiplier": 1
     },
     {
@@ -1926,11 +1914,11 @@
       "duration_multiplier": 1.1
     },
     {
-      "text": "周辺の安全",
+      "text": "周辺の安全性",
       "duration_multiplier": 1
     },
     {
-      "text": "性も必要です",
+      "text": "も必要です",
       "duration_multiplier": 1.4
     }
   ]
