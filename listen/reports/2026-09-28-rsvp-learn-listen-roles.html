@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f2efe8">
+  <meta name="description" content="RSVP・Learn・Listenの役割分担を耳で理解するためのListen版">
+  <title>RSVP・Learn・Listenの役割分担</title>
+  <style>
+    :root{color-scheme:light;--bg:#f2efe8;--ink:#121722;--muted:#73766f;--line:#cbc8bf;--blue:#5d7487}
+    html[data-theme="dark"]{color-scheme:dark;--bg:#11151a;--ink:#edf0eb;--muted:#959b97;--line:#343a3e;--blue:#7892a6}
+    *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Hiragino Sans","Noto Sans JP",sans-serif;line-height:1.9}
+    .shell{width:min(760px,100%);margin:0 auto;padding:max(18px,env(safe-area-inset-top)) 20px max(42px,env(safe-area-inset-bottom))}
+    .topbar{min-height:52px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+    .icon{width:42px;height:42px;display:grid;place-items:center;border:0;background:transparent;color:var(--muted);text-decoration:none;font:inherit}
+    .meta{margin:28px 0 8px;color:var(--muted);font-size:.75rem}
+    h1{font-size:clamp(2rem,8vw,3.4rem);line-height:1.12;letter-spacing:-.04em;margin:.2em 0 .8em} h2{margin:2.2em 0 .6em;font-size:1.2rem}
+    p{margin:0 0 1.25em} article>*{transition:background-color .15s ease}.is-speaking{background:color-mix(in srgb,var(--blue) 16%,transparent)}
+    .player{position:sticky;bottom:0;margin:32px -6px 0;padding:12px 6px;background:color-mix(in srgb,var(--bg) 94%,transparent);border-top:1px solid var(--line);backdrop-filter:blur(8px)}
+    .controls{display:grid;grid-template-columns:48px 48px 48px 1fr;gap:8px;align-items:center}.controls button,.controls select{min-height:42px;border:1px solid var(--line);background:transparent;color:var(--ink)}
+    .speed{display:grid;grid-template-columns:48px 1fr 42px;gap:10px;align-items:center;margin-top:10px;font-size:.78rem;color:var(--muted)} input{width:100%}
+    .sources{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}.sources a{color:var(--ink)}
+  </style>
+</head>
+<body>
+<main class="shell">
+  <header class="topbar">
+    <a class="icon" href="../../index.html?library=listen" aria-label="Listen一覧へ戻る">←</a>
+    <span aria-hidden="true">🎧</span>
+    <button id="theme" class="icon" type="button" aria-label="テーマ切替">☾</button>
+  </header>
+
+  <article id="article">
+    <p class="meta">情報基準日 2026年9月28日</p>
+    <h1>RSVP・Learn・Listenの役割分担</h1>
+    <p>このプロジェクトでは、同じ知識をすべて同じ形式で扱うのではなく、見るためのRSVP、体系的に耳で学ぶLearn、ニュースや調査結果を耳で追うListenの三つに分けています。重要なのは、三つを別々のプロジェクトにすることではありません。同じリポジトリと共通の知識基盤を使いながら、利用場面に合わせて表現方法を変えることです。</p>
+
+    <h2>RSVPは、目で速く追うための形式</h2>
+    <p>RSVPは、短い意味単位を画面中央へ順番に出し、視線移動を減らして高速に読む方式です。このリポジトリでは、CourseとChapterの構造、前後チャプター移動、全部通し再生、ランダム再生、習熟度記録などを持っています。再生速度は0.6倍から10倍まで調整できます。</p>
+    <p>RSVPの強みは、情報の全体像を短時間でなぞりやすいことです。一方で、文章の流れや長い因果関係を耳で追う用途には向きません。そのため、RSVP用の短いチャンクをそのまま読み上げ文章として使わない設計にしています。</p>
+
+    <h2>Learnは、体系的な内容を耳で学ぶための形式</h2>
+    <p>Learnは教材や概念解説を対象にします。内容は、概念、具体例、似た概念との違い、実際の使われ方、といった順序を基本にして、連続再生だけでも理解できるように組み直します。</p>
+    <p>現在の実装では、完成条件を満たした教材だけをLearn化します。教材ごとの静的HTMLに本文を最初から置き、Web Speech APIで見出しと段落を順番に読み上げます。再生、一時停止、停止、日本語音声の選択、0.7倍から4倍までの速度変更、読み上げ位置のハイライトに対応しています。</p>
+    <p>Learnでは、途中で回答を待つクイズや、強制的な停止を標準にしません。耳だけで連続して聞いても意味が通ることを優先しています。</p>
+
+    <h2>Listenは、その時点で把握したい情報を耳で追う形式</h2>
+    <p>Listenはニュース、調査結果、レポート、作業結果などを対象にします。体系的な教材を作ることよりも、今知りたい内容を、画面を見続けずに理解することが目的です。</p>
+    <p>文章は、何が分かったか、背景は何か、どんな意味があるか、条件や限界は何か、という流れを優先します。事実と解釈を分け、調査結果では結論だけでなく根拠や未確認点も残します。Listenも静的HTMLとWeb Speech APIを使い、0.7倍から4倍までの連続読み上げを行います。</p>
+
+    <h2>三つを分ける理由</h2>
+    <p>同じ内容でも、目で速く追う文章と、耳だけで理解する文章では適切な構造が違います。RSVPは短く分割するほど読みやすくなりますが、音声では細切れすぎると文脈を失います。反対に、ListenやLearn向けの長い連続文章をRSVPへそのまま入れると、一度に表示される情報量が多すぎます。</p>
+    <p>そのため、共通の元資料を使いながら、RSVPでは視覚向けに短く分け、Learnでは教材として再構成し、Listenでは調査や報告として再構成します。正本となる知識を共有し、出力形式だけを分ける考え方です。</p>
+
+    <h2>現時点の制約</h2>
+    <p>読み上げはAndroid Chromeの前面利用では実用可能と確認されていますが、画面を消したり別アプリへ移ったりした状態での継続再生は保証していません。Chrome標準のページ読み上げは、ページによって利用可否が変わるため必須経路にせず、ページ内のWeb Speech APIを標準にしています。</p>
+    <p>今後の評価で重要なのは、機能を増やすことより、実際に耳で聞いたときの聞き取りやすさです。一つのListenコンテンツの長さ、章の切り替わり、要約の頻度、出典部分のノイズを実使用で確認し、必要なところだけ調整していきます。</p>
+
+    <h2>最後に残す要点</h2>
+    <p>RSVPは高速な視覚学習、Learnは体系的な耳学習、Listenはニュースや調査結果の連続読み上げです。三つは競合する方式ではなく、同じ知識を利用場面に応じて変換する三つの入口です。まずは現在の簡素な構成で使い、実際の利用感から必要な改善だけを足していく方針です。</p>
+  </article>
+
+  <section class="player" aria-label="読み上げ操作">
+    <div class="controls">
+      <button id="play" type="button" aria-label="再生">▶</button>
+      <button id="pause" type="button" aria-label="一時停止">Ⅱ</button>
+      <button id="stop" type="button" aria-label="停止">■</button>
+      <select id="voice" aria-label="日本語音声"></select>
+    </div>
+    <div class="speed"><span>速度</span><input id="rate" type="range" min="0.7" max="4" step="0.1" value="1"><span id="rateValue">1.0×</span></div>
+  </section>
+
+  <section class="sources" aria-label="出典">
+    <strong>出典</strong>
+    <p><a href="https://github.com/Josh-Temple/rsvp-learning/blob/main/README.md">rsvp-learning README</a></p>
+    <p><a href="https://github.com/Josh-Temple/rsvp-learning/blob/main/docs/LEARN_HTML_FORMAT.md">Learn HTML 生成仕様</a></p>
+    <p><a href="https://github.com/Josh-Temple/rsvp-learning/blob/main/docs/LISTEN_HTML_FORMAT.md">Listen HTML 生成仕様</a></p>
+    <p><a href="https://github.com/Josh-Temple/rsvp-learning/blob/main/docs/LEARN_READALOUD_PILOT_20260927.md">Learn 読み上げパイロット</a></p>
+  </section>
+</main>
+<script>
+(() => {
+  const synth = window.speechSynthesis;
+  const blocks = [...document.querySelectorAll("#article h1,#article h2,#article h3,#article p")];
+  const play = document.querySelector("#play"), pause = document.querySelector("#pause"), stop = document.querySelector("#stop");
+  const voice = document.querySelector("#voice"), rate = document.querySelector("#rate"), rateValue = document.querySelector("#rateValue");
+  const theme = document.querySelector("#theme");
+  let index = 0, playing = false, paused = false, selectedVoice = "";
+
+  function voices() {
+    const previous = selectedVoice || voice.value;
+    const items = synth.getVoices().filter(v => /^ja(?:-|_)/i.test(v.lang));
+    voice.replaceChildren();
+    for (const v of items) {
+      const o = document.createElement("option");
+      o.value = v.voiceURI; o.textContent = v.name; voice.append(o);
+    }
+    if (items.some(v => v.voiceURI === previous)) voice.value = previous;
+    selectedVoice = voice.value;
+  }
+  function clearHighlight(){ blocks.forEach(x => x.classList.remove("is-speaking")); }
+  function speakCurrent() {
+    if (!playing || index >= blocks.length) { playing = false; paused = false; clearHighlight(); return; }
+    clearHighlight(); blocks[index].classList.add("is-speaking"); blocks[index].scrollIntoView({block:"center",behavior:"smooth"});
+    const u = new SpeechSynthesisUtterance(blocks[index].textContent);
+    u.lang = "ja-JP"; u.rate = Number(rate.value);
+    const v = synth.getVoices().find(x => x.voiceURI === voice.value); if (v) u.voice = v;
+    u.onend = () => { if (!playing || paused) return; index += 1; speakCurrent(); };
+    u.onerror = e => { if (e.error !== "canceled" && e.error !== "interrupted") { playing = false; clearHighlight(); } };
+    synth.speak(u);
+  }
+  play.addEventListener("click", () => {
+    if (paused) { paused = false; synth.cancel(); playing = true; speakCurrent(); return; }
+    if (playing) return;
+    if (index >= blocks.length) index = 0;
+    playing = true; speakCurrent();
+  });
+  pause.addEventListener("click", () => {
+    if (!playing) return;
+    synth.pause(); paused = true;
+  });
+  stop.addEventListener("click", () => { synth.cancel(); playing = false; paused = false; index = 0; clearHighlight(); });
+  voice.addEventListener("change", () => { selectedVoice = voice.value; if (playing) { synth.cancel(); paused = false; speakCurrent(); } });
+  rate.addEventListener("input", () => { rateValue.textContent = Number(rate.value).toFixed(1) + "×"; });
+  theme.addEventListener("click", () => {
+    const dark = document.documentElement.dataset.theme === "dark";
+    document.documentElement.dataset.theme = dark ? "light" : "dark";
+    theme.textContent = dark ? "☾" : "☀";
+    localStorage.setItem("rsvp:theme", dark ? "light" : "dark");
+  });
+  document.documentElement.dataset.theme = localStorage.getItem("rsvp:theme") || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  theme.textContent = document.documentElement.dataset.theme === "dark" ? "☀" : "☾";
+  voices(); synth.addEventListener?.("voiceschanged", voices);
+  addEventListener("pagehide", () => synth.cancel());
+})();
+</script>
+</body>
+</html>
