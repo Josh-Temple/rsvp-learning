@@ -3,13 +3,13 @@
   "id": "security-governance-supply-chain",
   "title": "セキュリティガバナンスと供給網",
   "topic": "情報セキュリティ",
-  "summary": "セキュリティを経営と業務の責任として捉え、方針、役割、教育、委託先・ソフトウェア供給網のリスク管理を学びます。",
+  "summary": "方針、責任、例外管理、教育、指標、委託・調達、供給網、終了時の処理まで組織として管理する考え方を学びます。",
   "created_at": "2026-09-28",
   "base_duration_ms": 680,
   "sources": [
     {
       "title": "NIST Cybersecurity Framework (CSF) 2.0",
-      "url": "https://www.nist.gov/publications/nist-cybersecurity-framework-csf-20"
+      "url": "https://www.nist.gov/cyberframework"
     },
     {
       "title": "NIST SP 1305, CSF 2.0 Quick-Start Guide for Cybersecurity Supply Chain Risk Management",
@@ -22,7 +22,7 @@
   ],
   "chunks": [
     {
-      "text": "セキュリティはIT部門だけの仕事でありません。",
+      "text": "セキュリティはIT部門だけの仕事ではありません。",
       "duration_multiplier": 1.15
     },
     {
@@ -30,7 +30,11 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "方針を組織の目的へ結びます。",
+      "text": "組織の目的と方針を結びます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "守る資産と優先順位を決めます。",
       "duration_multiplier": 1.15
     },
     {
@@ -46,11 +50,23 @@
       "duration_multiplier": 1.15
     },
     {
+      "text": "例外には期限を置く場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "ルールは実行可能な形にします。",
       "duration_multiplier": 1.15
     },
     {
       "text": "守れないルールを放置しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "現場の回避策も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "技術と業務を同時に見ます。",
       "duration_multiplier": 1.15
     },
     {
@@ -70,6 +86,22 @@
       "duration_multiplier": 1.15
     },
     {
+      "text": "指標で状態を追います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "件数だけで良否を決めません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "重大度や対応時間も見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "例外件数も改善材料です。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "委託先もリスクへ含めます。",
       "duration_multiplier": 1.15
     },
@@ -78,11 +110,35 @@
       "duration_multiplier": 1.15
     },
     {
+      "text": "扱うデータを確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用する下請先も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "責任分界を明確にします。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "契約中も状態を確認します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "終了時のデータ処理も決めます。",
+      "text": "重大障害時の連絡を決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "報告条件も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "終了時のデータ処理を決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "アカウント停止も確認します。",
       "duration_multiplier": 1.15
     },
     {
@@ -90,7 +146,7 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "部品の供給元も把握します。",
+      "text": "ソフト部品の供給元も見ます。",
       "duration_multiplier": 1.15
     },
     {
@@ -102,15 +158,19 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "必要なセキュリティ要件を伝えます。",
+      "text": "必要な要件を相手へ伝えます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "報告義務も契約で確認します。",
+      "text": "証明書だけで安心しません。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "重大障害時の連絡も決めます。",
+      "text": "監査結果だけでも安心しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "実際の運用も確認します。",
       "duration_multiplier": 1.15
     },
     {
@@ -122,15 +182,11 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "監査結果だけで安心しません。",
+      "text": "重要サービスの終了条件を考えます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "実際の運用も確認します。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "指標で改善状況を追います。",
+      "text": "移行に必要なデータも確認します。",
       "duration_multiplier": 1.15
     },
     {
@@ -143,6 +199,14 @@
     },
     {
       "text": "技術と運用を同じ目的へ合わせます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "責任と権限を対応させます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "供給網の変化も再評価します。",
       "duration_multiplier": 1.15
     },
     {

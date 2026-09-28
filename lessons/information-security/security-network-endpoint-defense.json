@@ -3,7 +3,7 @@
   "id": "security-network-endpoint-defense",
   "title": "ネットワークと端末の防御",
   "topic": "情報セキュリティ",
-  "summary": "境界防御だけに依存せず、分離、通信制御、端末管理、更新、監視を重ねる考え方を学びます。",
+  "summary": "ネットワーク分離、通信制御、端末防御、名前解決、監視、侵入後の封じ込めを多層で組み合わせる考え方を学びます。",
   "created_at": "2026-09-28",
   "base_duration_ms": 680,
   "sources": [
@@ -13,12 +13,12 @@
     },
     {
       "title": "NIST Cybersecurity Framework (CSF) 2.0",
-      "url": "https://www.nist.gov/publications/nist-cybersecurity-framework-csf-20"
+      "url": "https://www.nist.gov/cyberframework"
     }
   ],
   "chunks": [
     {
-      "text": "外部との境界だけを守れば十分でありません。",
+      "text": "外部との境界だけでは守れません。",
       "duration_multiplier": 1.15
     },
     {
@@ -26,7 +26,7 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "侵入後の広がりも考えます。",
+      "text": "侵入後の移動も考えます。",
       "duration_multiplier": 1.15
     },
     {
@@ -46,11 +46,23 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "通信元だけで信用しません。",
+      "text": "送信側の通信も管理します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "分離は被害の広がりを抑えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ただし分離だけでは十分でありません。",
       "duration_multiplier": 1.15
     },
     {
       "text": "利用者と端末も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "接続場所だけで信用しません。",
       "duration_multiplier": 1.15
     },
     {
@@ -62,7 +74,7 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "不要なソフトを減らします。",
+      "text": "不要な機能を減らします。",
       "duration_multiplier": 1.15
     },
     {
@@ -70,11 +82,19 @@
       "duration_multiplier": 1.15
     },
     {
+      "text": "端末の状態を把握します。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "マルウェア対策も一層です。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "単一の製品だけに依存しません。",
+      "text": "単一製品だけに依存しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "検知できない攻撃も考えます。",
       "duration_multiplier": 1.15
     },
     {
@@ -90,6 +110,10 @@
       "duration_multiplier": 1.15
     },
     {
+      "text": "平常時を知らないと比較しにくいです。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "暗号化通信でも安全とは限りません。",
       "duration_multiplier": 1.15
     },
@@ -98,15 +122,11 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "DNSも攻撃対象になり得ます。",
+      "text": "DNSも重要な基盤です。",
       "duration_multiplier": 1.15
     },
     {
       "text": "名前解決の異常も調べます。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "無線LANも管理対象です。",
       "duration_multiplier": 1.15
     },
     {
@@ -118,7 +138,19 @@
       "duration_multiplier": 1.15
     },
     {
+      "text": "保存データも保護します。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "遠隔停止も選択肢です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "無線LANも管理対象です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "来訪者用と業務用を分ける場合があります。",
       "duration_multiplier": 1.15
     },
     {
@@ -126,15 +158,39 @@
       "duration_multiplier": 1.15
     },
     {
+      "text": "管理経路も保護します。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "侵入を前提に被害を抑えます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "境界内なら信頼できるでしょうか。",
+      "text": "一台の侵害を全体へ広げません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "封じ込め手段を用意します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "隔離後の業務継続も考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "境界内なら信頼できますか。",
       "duration_multiplier": 1.15
     },
     {
       "text": "場所だけでは判断できません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "暗号化済みなら安全ですか。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "送信先と挙動も確認します。",
       "duration_multiplier": 1.15
     },
     {
@@ -143,6 +199,14 @@
     },
     {
       "text": "監視と更新を続けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "構成変更なら再評価します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "通信と端末を一緒に見ます。",
       "duration_multiplier": 1.15
     }
   ]
