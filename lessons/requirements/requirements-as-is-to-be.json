@@ -211,6 +211,26 @@
     {
       "text": "減らせる作業と維持すべき判断を分けます。",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "別の窓口では、紙での代理人申請も残ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "オンライン化後も、受付の判断条件は共通にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "窓口別の件数と差戻しを比べます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "転記の削減だけで成功とみなせるでしょうか。",
+      "duration_multiplier": 1.25
+    },
+    {
+      "text": "書類確認の負担が移ったなら再設計が必要です。",
+      "duration_multiplier": 1.15
     }
   ]
 }

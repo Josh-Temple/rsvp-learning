@@ -207,6 +207,26 @@
     {
       "text": "変わるため、状態を更新し続けます。",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "委託先の納品が遅れる可能性を考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "まだ起きていなければ備えを選ぶリスクです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "遅延が確定したら担当と期限を置く課題です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "同じ一覧にあるなら対応も同じですか。",
+      "duration_multiplier": 1.25
+    },
+    {
+      "text": "発生状態によって行動を変えます。",
+      "duration_multiplier": 1.15
     }
   ]
 }

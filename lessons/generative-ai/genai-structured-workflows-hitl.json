@@ -260,6 +260,26 @@
     {
       "text": "どこで誤りを止めるか明確になります。",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "日付の形が正しくても原本と一日違います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "形式検証はその誤りを見つけられません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "原本照合をしてから承認へ進めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "JSONに収まれば確定値ですか。",
+      "duration_multiplier": 1.25
+    },
+    {
+      "text": "内容と責任ある承認を別に見ます。",
+      "duration_multiplier": 1.15
     }
   ]
 }

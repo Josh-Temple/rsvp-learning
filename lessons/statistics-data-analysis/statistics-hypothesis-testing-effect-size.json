@@ -216,6 +216,26 @@
     {
       "text": "比較条件を添えます。",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "五つの指標を比べて一つだけ有意でした。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "後から都合のよい結果を選ぶおそれがあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "何を主に比べるか事前に決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一つの小さなp値だけで採用ですか。",
+      "duration_multiplier": 1.25
+    },
+    {
+      "text": "比較回数と差の大きさも見ます。",
+      "duration_multiplier": 1.15
     }
   ]
 }

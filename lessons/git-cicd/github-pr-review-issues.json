@@ -248,6 +248,26 @@
     {
       "text": "条件と元の完了条件も確かめます。",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "PRの試験は通ったが、元の不具合は残ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "試験条件がIssueの再現条件と違いました。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "二つを対応させて試験を追加します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "CIの緑だけでIssueを閉じられますか。",
+      "duration_multiplier": 1.25
+    },
+    {
+      "text": "完了条件を実際に確かめます。",
+      "duration_multiplier": 1.15
     }
   ]
 }

@@ -215,6 +215,26 @@
     {
       "text": "再試行で同じ通知が増えないよう識別します。",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "通知が失敗しても受付は確定したとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "画面には受付成功と通知待ちを分けて示します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "通知の再試行を受付の再実行と混ぜません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "どちらも一つの成功状態で足りますか。",
+      "duration_multiplier": 1.25
+    },
+    {
+      "text": "別の時点の結果として追います。",
+      "duration_multiplier": 1.15
     }
   ]
 }

@@ -215,6 +215,26 @@
     {
       "text": "権限を持つ人が決定します。",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "利用者と審査担当の意見が割れたとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "会議の多数決だけでは責任が曖昧です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "目的、制約、影響を決裁者へ示します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "意見を集めた担当者が決定してよいですか。",
+      "duration_multiplier": 1.25
+    },
+    {
+      "text": "決定権限と記録を先に定めます。",
+      "duration_multiplier": 1.15
     }
   ]
 }

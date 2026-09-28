@@ -248,6 +248,26 @@
     {
       "text": "見つけた箇所に忠実に答えたかを分けます。",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "正しい規程が検索されたのに期限を誤答します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "この場合、検索だけを直しても改善しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "取得文書と生成文を別々に照合します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "どちらの工程が失敗したと言えますか。",
+      "duration_multiplier": 1.25
+    },
+    {
+      "text": "根拠は届いており、回答生成を調べます。",
+      "duration_multiplier": 1.15
     }
   ]
 }

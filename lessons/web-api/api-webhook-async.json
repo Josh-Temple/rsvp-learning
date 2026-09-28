@@ -228,6 +228,26 @@
     {
       "text": "なった通知を追えるようにします。",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "新しい状態の通知が先に届く場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "後から古い通知で状態を戻すと誤ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "イベントIDと状態の順序を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "受信時刻だけで最新状態を決められますか。",
+      "duration_multiplier": 1.25
+    },
+    {
+      "text": "発生順と遷移の妥当性を見ます。",
+      "duration_multiplier": 1.15
     }
   ]
 }

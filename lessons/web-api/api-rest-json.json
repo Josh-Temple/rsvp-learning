@@ -256,6 +256,26 @@
     {
       "text": "成功と失敗を区別できます。",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "同じJSONを返す二つの要求を考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "取得と作成では方法と応答の意味が違います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "方法、URL、状態コードを一緒に読みます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "JSONの形だけで操作を判断できますか。",
+      "duration_multiplier": 1.25
+    },
+    {
+      "text": "要求の意味はJSONだけでは分かりません。",
+      "duration_multiplier": 1.15
     }
   ]
 }

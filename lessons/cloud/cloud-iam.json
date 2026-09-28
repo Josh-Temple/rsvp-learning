@@ -240,6 +240,26 @@
     {
       "text": "付与方法を整えても最小権限にはなりません。",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "役割を付けたまま部署名だけ変える例を考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "見た目は異動後でも、旧データへ到達できます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "付与された権限の実体を点検します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "役割名が適切なら最小権限でしょうか。",
+      "duration_multiplier": 1.25
+    },
+    {
+      "text": "役割に含む操作と対象も調べます。",
+      "duration_multiplier": 1.15
     }
   ]
 }

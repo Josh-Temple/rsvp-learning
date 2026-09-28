@@ -236,6 +236,26 @@
     {
       "text": "どの段階で止まったか分けて調べます。",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "応答が成功でも、他人の申請が含まれたとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "通信と表示が動くことは、権限の正しさと別です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "サーバーで対象ごとの閲覧権限を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "画面で隠せば情報を守れるでしょうか。",
+      "duration_multiplier": 1.25
+    },
+    {
+      "text": "返すデータ自体を制限します。",
+      "duration_multiplier": 1.15
     }
   ]
 }

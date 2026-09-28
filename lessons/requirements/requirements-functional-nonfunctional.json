@@ -232,6 +232,26 @@
     {
       "text": "復旧などの品質条件を別々に試せる形へします。",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "表示機能が正しくても、更新が遅れているとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用者は古い状態で次の行動を決めてしまいます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "更新までの許容時間と測り方を決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "表示できたという試験だけで十分でしょうか。",
+      "duration_multiplier": 1.25
+    },
+    {
+      "text": "鮮度という品質条件も別に確かめます。",
+      "duration_multiplier": 1.15
     }
   ]
 }

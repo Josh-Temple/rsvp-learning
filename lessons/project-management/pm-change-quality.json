@@ -211,6 +211,26 @@
     {
       "text": "計画の両方を更新して品質を判断します。",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "新しい通知を加えても、旧端末で失敗するとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "追加機能だけの試験では品質を判断できません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "影響する既存操作と運用手順を洗い出します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "予定内に実装できれば受入できますか。",
+      "duration_multiplier": 1.25
+    },
+    {
+      "text": "変更後の完了条件で確かめます。",
+      "duration_multiplier": 1.15
     }
   ]
 }

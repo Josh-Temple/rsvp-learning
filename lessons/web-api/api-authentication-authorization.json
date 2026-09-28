@@ -260,6 +260,26 @@
     {
       "text": "何をできるかを個別に判断することです。",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "本人確認済みのAが、Bの申請IDを指定します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "有効な認証情報があっても閲覧は許されません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "対象の所有者と操作権限を毎回確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ログイン済みなら全件を読めますか。",
+      "duration_multiplier": 1.25
+    },
+    {
+      "text": "認証と対象ごとの認可は別です。",
+      "duration_multiplier": 1.15
     }
   ]
 }

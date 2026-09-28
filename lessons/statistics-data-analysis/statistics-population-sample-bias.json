@@ -216,6 +216,26 @@
     {
       "text": "残る不確実性に合わせます。",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "平日昼だけ窓口で満足度を尋ねました。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "働く人やオンライン利用者が抜けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "対象集団と回答可能な人を比べます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "回答率が高ければ代表的ですか。",
+      "duration_multiplier": 1.25
+    },
+    {
+      "text": "届かなかった人を調べます。",
+      "duration_multiplier": 1.15
     }
   ]
 }

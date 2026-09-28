@@ -260,6 +260,26 @@
     {
       "text": "重複や外部への作用を確認します。",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "検索結果が正しくても、宛先が別部署だとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "通知という外部操作の前に止める必要があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "宛先と対象案件の権限を照合します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "検索が成功すれば送信してよいですか。",
+      "duration_multiplier": 1.25
+    },
+    {
+      "text": "送信の条件を独立に検証します。",
+      "duration_multiplier": 1.15
     }
   ]
 }

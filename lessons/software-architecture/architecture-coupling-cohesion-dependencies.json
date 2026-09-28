@@ -243,6 +243,26 @@
     {
       "text": "失敗時の連携も設計に含めます。",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "文面を変えるたびに受付の試験が失敗します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "通知の詳細へ受付が依存している可能性があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "受付結果を渡す契約へ依存先を絞ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "分割数を増やせば必ず改善ですか。",
+      "duration_multiplier": 1.25
+    },
+    {
+      "text": "境界の複雑さも含めて比べます。",
+      "duration_multiplier": 1.15
     }
   ]
 }

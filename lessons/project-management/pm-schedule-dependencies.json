@@ -203,6 +203,26 @@
     {
       "text": "後続作業の余裕と並行できる範囲を確認します。",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "画面設計は遅れても、説明文の草案は進められます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "前提が必要な作業だけを結びます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "余裕のある経路とない経路を分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "三日の遅れは完了日も三日延ばしますか。",
+      "duration_multiplier": 1.25
+    },
+    {
+      "text": "依存関係と余裕で影響を計算します。",
+      "duration_multiplier": 1.15
     }
   ]
 }

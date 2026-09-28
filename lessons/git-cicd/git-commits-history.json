@@ -236,6 +236,26 @@
     {
       "text": "ひとつの目的として説明し検証できるかで決めます。",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "ひとつの修正が複数ファイルにまたがります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "意味が一つなら、一つのコミットにできます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "変更理由と確認方法を説明できる単位にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ファイルごとに必ず分けますか。",
+      "duration_multiplier": 1.25
+    },
+    {
+      "text": "目的で区切り、行数で決めません。",
+      "duration_multiplier": 1.15
     }
   ]
 }

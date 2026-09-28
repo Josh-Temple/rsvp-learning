@@ -247,6 +247,26 @@
     {
       "text": "差戻しかで有効な対策は変わります。",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "審査待ちが長くても審査能力は余っています。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "受付の不備で再提出を待つ時間が長いとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "滞留を原因別に分けて測ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "待ちが長い部署を増員すれば解決ですか。",
+      "duration_multiplier": 1.25
+    },
+    {
+      "text": "流入、能力、差戻しを先に比べます。",
+      "duration_multiplier": 1.15
     }
   ]
 }

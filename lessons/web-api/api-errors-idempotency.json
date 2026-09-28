@@ -224,6 +224,26 @@
     {
       "text": "再送しても一件の結果へ収束するようにします。",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "同じ識別子で、内容の違う申請を再送します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "同じ結果として扱うと、どちらを受けたか曖昧です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "識別子と要求内容の対応も検査します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "識別子が同じなら無条件に成功を返しますか。",
+      "duration_multiplier": 1.25
+    },
+    {
+      "text": "内容の不一致は別に扱います。",
+      "duration_multiplier": 1.15
     }
   ]
 }

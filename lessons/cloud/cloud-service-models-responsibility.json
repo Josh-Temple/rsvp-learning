@@ -268,6 +268,26 @@
     {
       "text": "責任分界は実際の契約と設定で確かめます。",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "SaaSへ移すと、OS更新は提供者の範囲です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一方、共有設定の誤りは利用者が直します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "契約と設定で担当する層を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "基盤を任せればデータ管理も不要ですか。",
+      "duration_multiplier": 1.25
+    },
+    {
+      "text": "権限と利用方法の管理は残ります。",
+      "duration_multiplier": 1.15
     }
   ]
 }

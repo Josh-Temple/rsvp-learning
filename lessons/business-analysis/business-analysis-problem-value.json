@@ -215,6 +215,26 @@
     {
       "text": "情報を得られず止まったのか確認します。",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "電話が減っても、来庁が増えた例を考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "窓口を移しただけなら困りごとは残ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "目的を達成できた割合と負担を見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "電話件数の減少だけで成功ですか。",
+      "duration_multiplier": 1.25
+    },
+    {
+      "text": "利用者の一連の行動を追います。",
+      "duration_multiplier": 1.15
     }
   ]
 }

@@ -252,6 +252,26 @@
     {
       "text": "なく復元手順の実行で確かめます。",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "バックアップは毎日成功と表示されています。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "復元に必要な鍵が失われていれば使えません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "別環境で復元し、重要な操作まで試します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "保存成功の表示だけで復旧可能ですか。",
+      "duration_multiplier": 1.25
+    },
+    {
+      "text": "復元結果と所要時間で確かめます。",
+      "duration_multiplier": 1.15
     }
   ]
 }

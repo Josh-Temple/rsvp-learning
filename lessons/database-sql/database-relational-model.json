@@ -244,6 +244,26 @@
     {
       "text": "表示するかは別に決めます。",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "顧客を削除した後も注文を残したいとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "参照整合性と保存期間の両方を決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "削除を禁止するか、履歴を別に保つか選びます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "外部キーだけで保存方針は決まりますか。",
+      "duration_multiplier": 1.25
+    },
+    {
+      "text": "業務上の履歴の意味も必要です。",
+      "duration_multiplier": 1.15
     }
   ]
 }

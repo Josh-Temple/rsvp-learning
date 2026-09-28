@@ -219,6 +219,26 @@
     {
       "text": "古い状態を確かな情報として見せかねません。",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "画面は受付済みと示したのに、保存が失敗します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "表示と保存の順序を設計しないと矛盾します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "確定した結果だけを受付済みとして返します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "画面項目を決めれば設計は終わるでしょうか。",
+      "duration_multiplier": 1.25
+    },
+    {
+      "text": "失敗時の状態と権限も必要です。",
+      "duration_multiplier": 1.15
     }
   ]
 }

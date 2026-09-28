@@ -216,6 +216,26 @@
     {
       "text": "異常時に曖昧な判断で変更を重ねずに済みます。",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "資料を旧版へ戻しても誤答が続きます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "検索用の索引に新版が残っているかもしれません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "どの版が取得されるか実際に照会します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ファイルだけ戻せば切戻し完了ですか。",
+      "duration_multiplier": 1.25
+    },
+    {
+      "text": "応答までの参照経路を確かめます。",
+      "duration_multiplier": 1.15
     }
   ]
 }

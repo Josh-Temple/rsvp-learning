@@ -239,6 +239,26 @@
     {
       "text": "根拠がないときの答え方まで設計します。",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "新しい規程の一部だけをAIへ渡すとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "版は正しくても、例外の条項が欠けています。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "質問に必要な範囲まで参照できるか調べます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "新しい資料なら回答も正しいですか。",
+      "duration_multiplier": 1.25
+    },
+    {
+      "text": "適合性と不足の両方を確かめます。",
+      "duration_multiplier": 1.15
     }
   ]
 }

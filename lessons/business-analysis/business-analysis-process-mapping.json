@@ -211,6 +211,26 @@
     {
       "text": "実際に起きる差戻しと待ちも入れます。",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "二つの部署が同じ申請を並行して確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "図を直列にすると、実際の待ちが見えません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "並行作業と合流時の判断を記します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "矢印を一列に並べれば十分ですか。",
+      "duration_multiplier": 1.25
+    },
+    {
+      "text": "実際の受け渡しと待ちを表します。",
+      "duration_multiplier": 1.15
     }
   ]
 }

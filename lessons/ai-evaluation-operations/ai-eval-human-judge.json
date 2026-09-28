@@ -244,6 +244,26 @@
     {
       "text": "基準の妥当性は分かりません。",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "採点者二人が同じ誤答を別の点数にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "基準に期限の扱いが書かれていませんでした。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "基準を補い、同じ事例を再採点します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "モデル採点との一致だけで妥当ですか。",
+      "duration_multiplier": 1.25
+    },
+    {
+      "text": "人の基準の揺れも調べます。",
+      "duration_multiplier": 1.15
     }
   ]
 }

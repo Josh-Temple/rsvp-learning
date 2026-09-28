@@ -30,6 +30,11 @@ Created: 2026-09-27
 19. 識別子の有効期間と異なる内容での再利用も決めます。
 20. 失敗した場所ごとに再試行の可否を分けます。
 21. 同じ識別子で結果を照会・再送できれば、二重登録を避けながら不明な状態を解消できます。
+22. 同じ申請がほぼ同時に二度届いたとします。
+23. 順に調べるだけでは両方が未処理に見えます。
+24. 識別子の確定を一つの処理として行います。
+25. 先に照会すれば重複を防げますか。
+26. 同時到着を含めて試します。
 
 ## 注意
 
@@ -39,3 +44,4 @@ Created: 2026-09-27
 ## 出典
 
 - [RFC 9110: HTTP Semantics](https://www.rfc-editor.org/rfc/rfc9110.html)
+- [AWS Builders' Library: Making retries safe with idempotent APIs](https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/)

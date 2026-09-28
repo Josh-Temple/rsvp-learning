@@ -176,6 +176,26 @@
     {
       "text": "変更をどう取り込むかで進め方を比較します。",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "短い反復で受付画面を先に公開するとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "審査規程が未確定なら、受付可否を決められません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "反復の範囲と確定が必要な条件を分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "反復型なら承認を後回しにできますか。",
+      "duration_multiplier": 1.25
+    },
+    {
+      "text": "規程上の確認は進め方と独立に必要です。",
+      "duration_multiplier": 1.15
     }
   ]
 }

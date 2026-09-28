@@ -252,6 +252,26 @@
     {
       "text": "障害調査と不要な公開の発見に使えます。",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "アプリからDBへつながらなくなったとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "名前解決、通信許可、接続先を順に確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "入口が開くことは内部経路の証明になりません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "画面だけ見てDB停止と断定できますか。",
+      "duration_multiplier": 1.25
+    },
+    {
+      "text": "経路ごとの失敗を切り分けます。",
+      "duration_multiplier": 1.15
     }
   ]
 }

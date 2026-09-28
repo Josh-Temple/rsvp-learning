@@ -219,6 +219,26 @@
     {
       "text": "へ埋もれさせずに済みます。",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "学習用と評価用に同じ質問の言い換えを入れます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "高得点でも未知の質問への強さは測れません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "案件単位で分け、似た事例の混入を調べます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "問題文だけ変えれば独立した評価ですか。",
+      "duration_multiplier": 1.25
+    },
+    {
+      "text": "根拠と事例の重なりも確かめます。",
+      "duration_multiplier": 1.15
     }
   ]
 }

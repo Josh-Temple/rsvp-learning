@@ -10,6 +10,10 @@
     {
       "title": "RFC 9110: HTTP Semantics",
       "url": "https://www.rfc-editor.org/rfc/rfc9110.html"
+    },
+    {
+      "title": "AWS Builders' Library: Making retries safe with idempotent APIs",
+      "url": "https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/"
     }
   ],
   "chunks": [
@@ -240,6 +244,26 @@
     {
       "text": "二重登録を避けながら不明な状態を解消できます。",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "同じ申請がほぼ同時に二度届いたとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "順に調べるだけでは両方が未処理に見えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "識別子の確定を一つの処理として行います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "先に照会すれば重複を防げますか。",
+      "duration_multiplier": 1.25
+    },
+    {
+      "text": "同時到着を含めて試します。",
+      "duration_multiplier": 1.15
     }
   ]
 }

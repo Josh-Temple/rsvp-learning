@@ -200,6 +200,26 @@
     {
       "text": "戻せる期限を越える前に切替可否を決めます。",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "移行後に同じ人が二件に分かれたとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "旧台帳では氏名の表記が揺れていました。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "統合規則を決め、元の記録を残して照合します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "件数が一致すれば重複もないでしょうか。",
+      "duration_multiplier": 1.25
+    },
+    {
+      "text": "重複と誤結合は別に調べます。",
+      "duration_multiplier": 1.15
     }
   ]
 }

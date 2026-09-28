@@ -199,6 +199,26 @@
     {
       "text": "変更時に直す箇所と確認し直す条件が分かります。",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "番号は画面に出たのに、記録されない例を考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "表示だけの試験では、取りこぼしを検出できません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "保存記録まで確認する試験を要件に結びます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "画面が通れば業務目的も達成でしょうか。",
+      "duration_multiplier": 1.25
+    },
+    {
+      "text": "目的に必要な一連の結果を確かめます。",
+      "duration_multiplier": 1.15
     }
   ]
 }

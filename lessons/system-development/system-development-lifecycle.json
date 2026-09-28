@@ -227,6 +227,26 @@
     {
       "text": "公開後も価値を保つためです。",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "公開後、代理人の必要書類が変わったとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "案内文だけ直すと、入力チェックが古いままです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "要件から試験まで変更の影響をたどります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "公開後の変更を単なる文言修正としてよいですか。",
+      "duration_multiplier": 1.25
+    },
+    {
+      "text": "動作と運用への影響も確認します。",
+      "duration_multiplier": 1.15
     }
   ]
 }

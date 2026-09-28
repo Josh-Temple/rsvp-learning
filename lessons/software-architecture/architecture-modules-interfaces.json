@@ -227,6 +227,26 @@
     {
       "text": "二つの部品を安全につなげられます。",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "通知側が宛先の項目名を変えたとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "受付側が古い形で送れば通知は失敗します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "境界のデータ契約と変更時の互換性を試します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "部品を分ければ変更は独立ですか。",
+      "duration_multiplier": 1.25
+    },
+    {
+      "text": "受け渡しの契約は共有して確認します。",
+      "duration_multiplier": 1.15
     }
   ]
 }

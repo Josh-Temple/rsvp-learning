@@ -224,6 +224,26 @@
     {
       "text": "統合した結果が意図した案内になったか見ます。",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "二つのブランチが別の行で期限を変えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "自動統合後も画面と案内の期限が食い違います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "関連する表示をまとめて確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "競合がなければ正しい統合ですか。",
+      "duration_multiplier": 1.25
+    },
+    {
+      "text": "意味の矛盾は人が見つけます。",
+      "duration_multiplier": 1.15
     }
   ]
 }

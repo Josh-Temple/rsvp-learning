@@ -236,6 +236,26 @@
     {
       "text": "欠損の扱いも指定します。",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "金額が未入力の行を調べるとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "金額が二千円未満という条件では選べません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "欠損を探すなら、NULL用の条件を使います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "結果がないことは行がない証拠ですか。",
+      "duration_multiplier": 1.25
+    },
+    {
+      "text": "条件から除かれた行も確認します。",
+      "duration_multiplier": 1.15
     }
   ]
 }

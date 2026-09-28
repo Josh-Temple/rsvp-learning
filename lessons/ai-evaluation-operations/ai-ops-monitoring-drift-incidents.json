@@ -212,6 +212,26 @@
     {
       "text": "停止範囲と訂正対象を決めにくくなります。",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "回答の指摘件数は横ばいだとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "制度変更の質問自体がまだ少ないかもしれません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "改定対象の質問群を別に点検します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "苦情が増えなければ安全でしょうか。",
+      "duration_multiplier": 1.25
+    },
+    {
+      "text": "利用件数と影響範囲も見ます。",
+      "duration_multiplier": 1.15
     }
   ]
 }

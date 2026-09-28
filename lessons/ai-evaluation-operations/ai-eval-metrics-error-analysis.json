@@ -227,6 +227,26 @@
     {
       "text": "安全性を分けて判断できます。",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "導入後、簡単な質問の割合が増えたとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "全体の正答率は上がっても難問は悪化し得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "質問群ごとの分母と誤りを比べます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "全体の率の改善だけで十分ですか。",
+      "duration_multiplier": 1.25
+    },
+    {
+      "text": "構成の変化と群別の結果を見ます。",
+      "duration_multiplier": 1.15
     }
   ]
 }

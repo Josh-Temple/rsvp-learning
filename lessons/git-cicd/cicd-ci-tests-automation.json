@@ -216,6 +216,26 @@
     {
       "text": "通過したという結果だけでは確かめられません。",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "構文検査だけを通った変更を考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "正しい文法でも、入力条件を壊す場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "検査が何を確認したか明示します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "CI成功は全機能の正しさを示しますか。",
+      "duration_multiplier": 1.25
+    },
+    {
+      "text": "範囲外の試験も残ります。",
+      "duration_multiplier": 1.15
     }
   ]
 }
