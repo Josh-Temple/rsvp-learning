@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="データ、モデル、人、制度、利用環境に生じる偏りを分け、公平性を文脈に応じて評価する基本を学びます。" />
+  <meta name="theme-color" content="#f2efe8" />
+  <title>バイアス・公平性・評価 — Learn</title>
+  <link rel="stylesheet" href="./learn.css" />
+  <script src="./learn.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="top">
+      <a href="../index.html">RSVPに戻る</a>
+      <span class="mode">LEARN · AIガバナンス</span>
+    </header>
+    <main>
+      <section class="reader" id="speech-reader" aria-label="読み上げプレイヤー">
+        <div class="reader-row">
+          <button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+          <button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+          <button id="speech-stop" type="button" aria-label="停止" disabled>■</button>
+          <select id="speech-voice" aria-label="読み上げ音声"></select>
+          <label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+        </div>
+        <div id="speech-status" class="reader-status" role="status">読み上げ準備中</div>
+      </section>
+      <article id="learn-article">
+        <h1>バイアス・公平性・評価</h1>
+        <p class="lead">データ、モデル、人、制度、利用環境に生じる偏りを分け、公平性を文脈に応じて評価する基本を学びます。</p>
+        <h2>公平性は用途によって意味が変わる</h2>
+        <p>AIの公平性には、一つの万能な数値があるわけではありません。誰にどのような判断を行い、どの誤りがどの人へ不利益を与えるのかを先に整理します。</p>
+        <p>例えば、誤検知を減らすことと見逃しを減らすことは同時に最大化できない場合があります。公平性の指標を選ぶ前に、用途と影響を定義する必要があります。</p>
+        <h2>偏りはデータだけから生じない</h2>
+        <p>NIST SP 1270は、AIの偏りを統計・計算、人の認知、制度や社会に由来するものまで広く扱っています。悪意がなくても、過去の慣行、ラベル付け、サンプリング、組織の手順から偏りが入り得ます。</p>
+        <p>そのため、学習データを均衡させるだけで公平性の問題が解決するとは限りません。</p>
+        <h2>平均値だけで判断しない</h2>
+        <p>全体の平均精度が高くても、特定の集団や利用環境では性能が低いことがあります。集団別の誤り、データ数、不確実性を確認し、少数事例の結果を過度に断定しないようにします。</p>
+        <p>属性を単純に削除しても、住所や行動履歴などの代理変数から推測される場合があります。</p>
+        <h2>評価条件を固定して比較する</h2>
+        <p>改善前後を比較するときは、評価データ、分割方法、閾値、指標、対象集団を記録します。条件が変わっているのに数値だけを比べると、改善したように見えることがあります。</p>
+        <p>技術指標だけでなく、実際に誰がどのような不利益を受けたかも確認します。</p>
+        <h2>人間レビューも評価対象にする</h2>
+        <p>AIの出力を人が確認すれば公平になるとは限りません。人間にも認知バイアスがあり、AIの判断を過度に信頼する自動化バイアスも起こり得ます。</p>
+        <p>AI単体の精度だけでなく、人とAIを組み合わせた業務全体で結果を評価します。</p>
+        <h2>運用後も変化を追う</h2>
+        <p>利用者構成、データ、業務目的が変わると、公平性の評価も変わります。目的外利用が始まった場合は、当初の評価結果をそのまま使えません。</p>
+        <p>不利益を受けた人が異議を申し立てられる経路を用意し、改善策そのものの副作用も再評価します。</p>
+        <h3>この教材の扱う範囲</h3>
+        <p class="endnote">公平性の定義や適切な指標は用途、集団、法制度、影響の種類によって異なります。この章は特定の公平性指標を万能な基準として推奨しません。</p>
+      </article>
+      <section class="sources" aria-labelledby="sources-title">
+        <h2 id="sources-title">出典</h2>
+        <p><a href="https://www.nist.gov/publications/towards-standard-identifying-and-managing-bias-artificial-intelligence">NIST SP 1270: Towards a Standard for Identifying and Managing Bias in Artificial Intelligence</a></p>
+        <p><a href="https://www.nist.gov/itl/ai-risk-management-framework">NIST AI Risk Management Framework</a></p>
+        <p><a href="https://www.oecd.org/en/topics/ai-principles.html">OECD AI Principles</a></p>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

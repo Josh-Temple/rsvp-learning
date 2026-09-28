@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="AIの版・データ・設定・評価・承認を追跡し、変更管理、監視、インシデント対応、復旧、改善へつなげる基本を学びます。" />
+  <meta name="theme-color" content="#f2efe8" />
+  <title>監査可能性・変更管理・インシデント対応 — Learn</title>
+  <link rel="stylesheet" href="./learn.css" />
+  <script src="./learn.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="top">
+      <a href="../index.html">RSVPに戻る</a>
+      <span class="mode">LEARN · AIガバナンス</span>
+    </header>
+    <main>
+      <section class="reader" id="speech-reader" aria-label="読み上げプレイヤー">
+        <div class="reader-row">
+          <button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+          <button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+          <button id="speech-stop" type="button" aria-label="停止" disabled>■</button>
+          <select id="speech-voice" aria-label="読み上げ音声"></select>
+          <label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+        </div>
+        <div id="speech-status" class="reader-status" role="status">読み上げ準備中</div>
+      </section>
+      <article id="learn-article">
+        <h1>監査可能性・変更管理・インシデント対応</h1>
+        <p class="lead">AIの版・データ・設定・評価・承認を追跡し、変更管理、監視、インシデント対応、復旧、改善へつなげる基本を学びます。</p>
+        <h2>監査可能性は追跡できる証拠から始まる</h2>
+        <p>AIの監査可能性を高めるには、何を、いつ、誰が記録するかを決めます。モデルやサービスの版、データ版、主要設定、評価結果、承認記録を対応付けると、後から当時の状態を確認できます。</p>
+        <p>ログを大量に保存するだけでは不十分です。重要な判断と証拠が検索でき、相互に結び付いていることが重要です。</p>
+        <h2>変更を広く捉える</h2>
+        <p>モデル更新だけが変更ではありません。プロンプト、RAGの検索源、権限、外部API、ベンダー、業務手順、利用者層の変更も挙動や影響を変えることがあります。</p>
+        <p>変更前に予想される影響を評価し、変更後に実際の結果を確認します。</p>
+        <h2>段階導入とロールバックを用意する</h2>
+        <p>大きな変更を一度に全利用者へ反映すると、問題が起きたときの影響範囲も大きくなります。段階導入や限定利用によって影響を抑え、比較できる状態を残します。</p>
+        <p>問題が確認されたときに以前の版へ戻せるよう、ロールバック手順と必要なデータ・設定を準備します。</p>
+        <h2>監視とインシデント対応をつなぐ</h2>
+        <p>監視指標だけでなく、どの値や事象を異常とみなし、誰が何をするかまで決めます。軽微な異常も蓄積すると、重大事故の前兆や共通原因が見える場合があります。</p>
+        <p>重大事象では、まず影響を封じ込め、影響範囲と証拠を確認します。復旧を急ぐあまり、原因調査に必要な情報を消さないようにします。</p>
+        <h2>一時対策と恒久対策を分ける</h2>
+        <p>緊急停止や機能制限は一時対策です。復旧後には、なぜ起きたのか、どの条件なら再発するのかを調べ、恒久対策を設計します。</p>
+        <p>再発防止策を導入しただけで完了にせず、実際に同じ失敗を防げるかを検証します。</p>
+        <h2>継続的改善へつなげる</h2>
+        <p>ISO/IEC 42001は、AIマネジメントシステムを継続的に改善する考え方を示しています。監査は書類の存在確認だけで終えず、記録と実運用が一致しているかを見ます。</p>
+        <p>定期レビューや独立した視点も利用し、事故や変更から得た学びを次の統制へ反映します。廃止もライフサイクルの変更として扱います。</p>
+        <h3>この教材の扱う範囲</h3>
+        <p class="endnote">インシデントの報告義務、保存期間、監査要件などは業界・法令・契約によって異なります。具体的な義務は対象組織の一次資料で確認します。</p>
+      </article>
+      <section class="sources" aria-labelledby="sources-title">
+        <h2 id="sources-title">出典</h2>
+        <p><a href="https://www.iso.org/artificial-intelligence/ai-management-systems">ISO AI management systems: What businesses need to know</a></p>
+        <p><a href="https://airc.nist.gov/airmf-resources/airmf/5-sec-core/">NIST AI RMF Core</a></p>
+        <p><a href="https://www.meti.go.jp/shingikai/mono_info_service/ai_shakai_jisso/20260331_report.html">経済産業省 AI事業者ガイドライン（第1.2版）</a></p>
+        <p><a href="https://www.oecd.org/en/topics/sub-issues/ai-risks-and-incidents.html">OECD AI risks and incidents</a></p>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

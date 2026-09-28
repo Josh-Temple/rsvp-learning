@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Human Oversightを実効的な統制として設計し、開発者・提供者・利用者・承認者の責任分界を整理する基本を学びます。" />
+  <meta name="theme-color" content="#f2efe8" />
+  <title>Human Oversightと責任分界 — Learn</title>
+  <link rel="stylesheet" href="./learn.css" />
+  <script src="./learn.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="top">
+      <a href="../index.html">RSVPに戻る</a>
+      <span class="mode">LEARN · AIガバナンス</span>
+    </header>
+    <main>
+      <section class="reader" id="speech-reader" aria-label="読み上げプレイヤー">
+        <div class="reader-row">
+          <button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+          <button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+          <button id="speech-stop" type="button" aria-label="停止" disabled>■</button>
+          <select id="speech-voice" aria-label="読み上げ音声"></select>
+          <label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+        </div>
+        <div id="speech-status" class="reader-status" role="status">読み上げ準備中</div>
+      </section>
+      <article id="learn-article">
+        <h1>Human Oversightと責任分界</h1>
+        <p class="lead">Human Oversightを実効的な統制として設計し、開発者・提供者・利用者・承認者の責任分界を整理する基本を学びます。</p>
+        <h2>人がいるだけでは監督にならない</h2>
+        <p>Human Oversight、人による監督は、画面の最後に承認ボタンを置くことではありません。人が介入できる権限、判断に必要な情報、確認する時間、AIを止めたり迂回したりする手段が必要です。</p>
+        <p>高影響の判断ほど、どの条件で人へ戻すのか、誰へエスカレーションするのかを具体化します。</p>
+        <h2>役割と責任を分ける</h2>
+        <p>AIには開発者、モデルやサービスの提供者、業務へ組み込む担当者、実際の利用者、承認者など複数の主体が関わります。それぞれが何を制御できるかを明確にします。</p>
+        <p>外部ベンダーを使っていても、組織が自ら行う業務上の意思決定までモデルやベンダーへ移せるわけではありません。</p>
+        <h2>自動化バイアスを前提にする</h2>
+        <p>人はAIの出力を過度に信頼することがあります。これを自動化バイアスと呼びます。形式上は人が承認していても、毎回そのまま通しているなら監督機能は弱くなります。</p>
+        <p>一方で、人間の判断にも偏りや見落としがあります。AIと人のどちらかを万能と考えず、互いの弱点を補う設計にします。</p>
+        <h2>覆せる・止められる・迂回できる</h2>
+        <p>監督者はAIの判断を覆せる必要があります。システム障害や不確実な結果のときに、AIを使わず従来手順へ戻せる経路も重要です。</p>
+        <p>停止条件、例外処理、上位者への報告経路を事前に決めると、事故時に場当たり的な判断を減らせます。</p>
+        <h2>教育と運用負荷も統制の一部</h2>
+        <p>利用者がAIの限界や禁止用途を知らなければ、規程だけでは統制できません。役割ごとに、許可用途、禁止用途、確認方法、相談先を教育します。</p>
+        <p>承認件数が多過ぎて実質的に確認できない場合は、自動化範囲や承認設計そのものを見直します。</p>
+        <h2>重要な判断を記録する</h2>
+        <p>誰がどの情報を見て、AIの出力を採用・修正・却下したのかを必要な範囲で記録します。例外承認や責任分界の変更も残します。</p>
+        <p>重大なシステム変更や事故の後には、役割と権限が現実の運用に合っているかを再確認します。</p>
+        <h3>この教材の扱う範囲</h3>
+        <p class="endnote">Human Oversightの具体的な水準は、用途、影響、法令、組織の責任体制によって変わります。単に『最終判断は人』と記載するだけでは実効性を保証できません。</p>
+      </article>
+      <section class="sources" aria-labelledby="sources-title">
+        <h2 id="sources-title">出典</h2>
+        <p><a href="https://www.oecd.org/en/topics/ai-principles.html">OECD AI Principles</a></p>
+        <p><a href="https://www.meti.go.jp/shingikai/mono_info_service/ai_shakai_jisso/20260331_report.html">経済産業省 AI事業者ガイドライン（第1.2版）</a></p>
+        <p><a href="https://www.nist.gov/itl/ai-risk-management-framework">NIST AI Risk Management Framework</a></p>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

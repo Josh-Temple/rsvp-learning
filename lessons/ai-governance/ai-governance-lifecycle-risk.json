@@ -1,0 +1,185 @@
+{
+  "schema_version": 1,
+  "id": "ai-governance-lifecycle-risk",
+  "title": "AIライフサイクルとリスク管理",
+  "topic": "AIガバナンス",
+  "summary": "AIの目的・利用文脈・関係者を起点に、設計前から廃止までリスクを管理する基本を学びます。",
+  "created_at": "2026-09-29",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "経済産業省 AI事業者ガイドライン（第1.2版）",
+      "url": "https://www.meti.go.jp/shingikai/mono_info_service/ai_shakai_jisso/20260331_report.html"
+    },
+    {
+      "title": "NIST AI Risk Management Framework",
+      "url": "https://www.nist.gov/itl/ai-risk-management-framework"
+    },
+    {
+      "title": "OECD AI Principles",
+      "url": "https://www.oecd.org/en/topics/ai-principles.html"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "AIガバナンスは目的から始めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "何のためのAIかを明確にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "誰が使うかも確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "誰が影響を受けるかも見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "AIのリスクは文脈で変わります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "同じモデルでも用途で変わります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "採用支援と文章要約では違います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "影響が大きいほど統制を厚くします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "モデルだけを見ても足りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "データや画面も構成要素です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "人と業務手順も含めて考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "外部事業者も依存関係になります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "設計前から廃止まで管理します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "導入時だけの審査では足りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "NISTは四つの機能を示します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Governは土台を整えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "役割と方針をここで決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Mapは利用文脈を把握します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "影響と関係者も整理します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Measureは証拠で評価します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "指標一つで安全とは決めません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Manageは優先順位を付けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "対応と残存リスクを決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "リスク許容度も明確にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "停止条件も事前に決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ロールバック条件も決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "判断理由を記録します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "変更でリスクは変わります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "モデル更新も変更です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "データ更新も変更です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "外部API変更も影響します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用者の使い方も変化します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "定期評価だけでは足りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "重大変化時にも再評価します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "廃止時もデータを扱います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "学習資産の扱いも決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "リスクゼロは目標ではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "価値とリスクを両方見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "統制は用途に合わせます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "記録して次の判断へつなげます。",
+      "duration_multiplier": 1.15
+    }
+  ]
+}

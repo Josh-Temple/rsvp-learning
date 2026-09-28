@@ -98,6 +98,62 @@
       "status": "SEED / 概要のみ"
     },
     {
+      "id": "ai-governance-lifecycle-risk",
+      "title": "AIライフサイクルとリスク管理",
+      "topic": "AIガバナンス",
+      "path": "./lessons/ai-governance/ai-governance-lifecycle-risk.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/ai-governance-lifecycle-risk.html"
+    },
+    {
+      "id": "ai-governance-data-privacy",
+      "title": "データ・プライバシー・機密情報",
+      "topic": "AIガバナンス",
+      "path": "./lessons/ai-governance/ai-governance-data-privacy.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/ai-governance-data-privacy.html"
+    },
+    {
+      "id": "ai-governance-security-dependencies",
+      "title": "AIセキュリティと周辺システム",
+      "topic": "AIガバナンス",
+      "path": "./lessons/ai-governance/ai-governance-security-dependencies.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/ai-governance-security-dependencies.html"
+    },
+    {
+      "id": "ai-governance-fairness-evaluation",
+      "title": "バイアス・公平性・評価",
+      "topic": "AIガバナンス",
+      "path": "./lessons/ai-governance/ai-governance-fairness-evaluation.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/ai-governance-fairness-evaluation.html"
+    },
+    {
+      "id": "ai-governance-transparency-documentation",
+      "title": "透明性・説明可能性・記録",
+      "topic": "AIガバナンス",
+      "path": "./lessons/ai-governance/ai-governance-transparency-documentation.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/ai-governance-transparency-documentation.html"
+    },
+    {
+      "id": "ai-governance-human-oversight-accountability",
+      "title": "Human Oversightと責任分界",
+      "topic": "AIガバナンス",
+      "path": "./lessons/ai-governance/ai-governance-human-oversight-accountability.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/ai-governance-human-oversight-accountability.html"
+    },
+    {
+      "id": "ai-governance-audit-change-incidents",
+      "title": "監査可能性・変更管理・インシデント対応",
+      "topic": "AIガバナンス",
+      "path": "./lessons/ai-governance/ai-governance-audit-change-incidents.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/ai-governance-audit-change-incidents.html"
+    },
+    {
       "id": "network-os-infra-overview",
       "title": "ネットワーク・OS・インフラの入口",
       "topic": "IT基盤",

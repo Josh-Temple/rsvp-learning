@@ -1,0 +1,185 @@
+{
+  "schema_version": 1,
+  "id": "ai-governance-fairness-evaluation",
+  "title": "バイアス・公平性・評価",
+  "topic": "AIガバナンス",
+  "summary": "データ、モデル、人、制度、利用環境に生じる偏りを分け、公平性を文脈に応じて評価する基本を学びます。",
+  "created_at": "2026-09-29",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "NIST SP 1270: Towards a Standard for Identifying and Managing Bias in Artificial Intelligence",
+      "url": "https://www.nist.gov/publications/towards-standard-identifying-and-managing-bias-artificial-intelligence"
+    },
+    {
+      "title": "NIST AI Risk Management Framework",
+      "url": "https://www.nist.gov/itl/ai-risk-management-framework"
+    },
+    {
+      "title": "OECD AI Principles",
+      "url": "https://www.oecd.org/en/topics/ai-principles.html"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "公平性は単一の数値ではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "何を公平とするかを定めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "用途と影響から考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "関係者の視点も必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "平均精度だけでは見落とします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "集団別の結果も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "少数事例は不確実性が大きいです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "データ代表性を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "欠測の偏りも見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ラベルの作り方も見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "過去の判断が偏りを含むことがあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "代理変数にも注意します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "属性を消せば解決とは限りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "別変数から推測され得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "NISTは偏りを三つに分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "統計的な偏りがあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "人の認知による偏りもあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "制度や慣行の偏りもあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "悪意がなくても偏りは生じます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "公平指標どうしは競合し得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一つの指標を絶対視しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "閾値変更にも副作用があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "誤検知と見逃しを分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "誰が不利益を受けるかを見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "障害や利用環境も考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "アクセス可能性も公平性に関わります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "評価条件を固定して記録します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "データ分割も記録します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "比較対象も明確にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "改善前後を同じ条件で比べます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "本番でも変化を監視します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用者構成は変わり得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "目的外利用で公平性も崩れます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "異議申立て経路を用意します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "人間レビューも偏り得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "人とAIを合わせて評価します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "技術指標だけで決めません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "影響の実態も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "改善策の副作用も再評価します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "公平性は継続的な管理課題です。",
+      "duration_multiplier": 1.15
+    }
+  ]
+}

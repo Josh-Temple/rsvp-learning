@@ -1,0 +1,185 @@
+{
+  "schema_version": 1,
+  "id": "ai-governance-transparency-documentation",
+  "title": "透明性・説明可能性・記録",
+  "topic": "AIガバナンス",
+  "summary": "透明性・説明可能性・解釈可能性を区別し、AIの目的、限界、評価、変更、判断の証拠を残す方法を学びます。",
+  "created_at": "2026-09-29",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "OECD AI Principles",
+      "url": "https://www.oecd.org/en/topics/ai-principles.html"
+    },
+    {
+      "title": "NIST AI RMF Core",
+      "url": "https://airc.nist.gov/airmf-resources/airmf/5-sec-core/"
+    },
+    {
+      "title": "経済産業省 AI事業者ガイドライン（第1.2版）",
+      "url": "https://www.meti.go.jp/shingikai/mono_info_service/ai_shakai_jisso/20260331_report.html"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "透明性と説明可能性は同じではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "透明性は情報開示に関わります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "説明可能性は理由理解に関わります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "解釈可能性も別の観点です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "必要な説明は相手で変わります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用者には限界を伝えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "管理者には統制情報が必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "監査者には証拠が必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "影響を受ける人にも説明が要ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "AI利用中だと示す場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "目的と利用範囲を記録します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "想定外用途も明記します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "能力だけでなく限界も書きます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "評価条件を残します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "失敗例も残します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "使用データの由来を記録します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "モデル版を記録します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "プロンプトや設定も記録します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "外部ツール版も記録します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "変更理由を記録します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "承認者も記録します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "重要判断の証拠を残します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ログは後追い検証に使います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ただしログにも機密性があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "全情報を公開すればよいとは限りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "セキュリティとの両立が必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "営業秘密との両立も考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "説明は正確である必要があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "分からないことは分けて示します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "推測を事実として書きません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "モデル内部説明だけに頼りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "入出力の経路も説明対象です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "人の判断箇所も明確にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "異議申立て方法も示します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "記録は検索可能にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "記録同士を対応付けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "古い文書を現行扱いしません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "現行版を識別できるようにします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "透明性は信頼の保証ではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "検証できる情報を優先します。",
+      "duration_multiplier": 1.15
+    }
+  ]
+}

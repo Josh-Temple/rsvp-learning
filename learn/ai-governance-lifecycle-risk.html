@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="AIの目的・利用文脈・関係者を起点に、設計前から廃止までリスクを管理する基本を学びます。" />
+  <meta name="theme-color" content="#f2efe8" />
+  <title>AIライフサイクルとリスク管理 — Learn</title>
+  <link rel="stylesheet" href="./learn.css" />
+  <script src="./learn.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="top">
+      <a href="../index.html">RSVPに戻る</a>
+      <span class="mode">LEARN · AIガバナンス</span>
+    </header>
+    <main>
+      <section class="reader" id="speech-reader" aria-label="読み上げプレイヤー">
+        <div class="reader-row">
+          <button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+          <button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+          <button id="speech-stop" type="button" aria-label="停止" disabled>■</button>
+          <select id="speech-voice" aria-label="読み上げ音声"></select>
+          <label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+        </div>
+        <div id="speech-status" class="reader-status" role="status">読み上げ準備中</div>
+      </section>
+      <article id="learn-article">
+        <h1>AIライフサイクルとリスク管理</h1>
+        <p class="lead">AIの目的・利用文脈・関係者を起点に、設計前から廃止までリスクを管理する基本を学びます。</p>
+        <h2>目的と文脈から始める</h2>
+        <p>AIガバナンスでは、最初にモデル名や機能一覧を見るのではなく、何のために使うのかを明確にします。同じAIでも、文章の下書きに使う場合と、人の採用や給付判断を支援する場合では、失敗したときの影響が大きく異なります。</p>
+        <p>利用者だけでなく、AIの出力によって影響を受ける人も確認します。影響が大きい用途ほど、評価、承認、監視、人による介入などの統制を厚くする必要があります。</p>
+        <h2>AIシステム全体を見る</h2>
+        <p>リスクはモデル単体では決まりません。学習・参照データ、入力画面、検索基盤、外部ツール、業務手順、利用者、承認者、外部事業者まで含めて一つのAIシステムとして捉えます。</p>
+        <p>この見方をすると、モデルの精度が十分でも、権限設定、データの扱い、説明不足、業務上の誤用によって問題が起きることが分かります。</p>
+        <h2>ライフサイクルで管理する</h2>
+        <p>AIのリスク管理は導入審査で終わりません。企画、設計、開発、評価、導入、運用、変更、廃止まで続きます。モデル更新、データ更新、外部APIの変更、利用者の使い方の変化も再評価のきっかけになります。</p>
+        <p>廃止時には、保存データ、ログ、学習資産、アクセス権、外部契約などの扱いまで決めます。</p>
+        <h2>Govern・Map・Measure・Manage</h2>
+        <p>NIST AI RMFは、AIリスク管理の中核をGovern、Map、Measure、Manageの四つの機能で整理しています。Governでは方針、役割、責任、リスク許容度などの土台を整えます。</p>
+        <p>Mapでは用途、利用環境、関係者、想定影響を把握します。Measureではテストや観測によって証拠を集めます。Manageでは結果を基に優先順位を付け、低減、受容、停止などの対応を決めます。</p>
+        <h2>残存リスクと変更に備える</h2>
+        <p>評価を通過しても、リスクがゼロになったとは限りません。どのリスクを残すのか、誰が承認したのか、どの条件なら停止やロールバックを行うのかを記録します。</p>
+        <p>定期レビューだけではなく、重大な障害、新しい利用目的、モデルやデータの大きな変更があったときにも再評価します。</p>
+        <h2>価値と統制を両方見る</h2>
+        <p>ガバナンスの目的はAI利用を止めることではありません。期待する価値と許容できるリスクを同時に見て、用途に合った統制を選ぶことです。</p>
+        <p>統制が重過ぎて実運用で守られない状態も問題です。判断理由と証拠を残し、運用から得た知見を次の判断へつなげます。</p>
+        <h3>この教材の扱う範囲</h3>
+        <p class="endnote">この章は一般的なAIリスク管理の枠組みを扱います。NIST AI RMF 1.0は2026年9月時点で改訂中です。実務では現行版、組織の規程、適用される法令や契約条件を確認します。</p>
+      </article>
+      <section class="sources" aria-labelledby="sources-title">
+        <h2 id="sources-title">出典</h2>
+        <p><a href="https://www.meti.go.jp/shingikai/mono_info_service/ai_shakai_jisso/20260331_report.html">経済産業省 AI事業者ガイドライン（第1.2版）</a></p>
+        <p><a href="https://www.nist.gov/itl/ai-risk-management-framework">NIST AI Risk Management Framework</a></p>
+        <p><a href="https://www.oecd.org/en/topics/ai-principles.html">OECD AI Principles</a></p>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
