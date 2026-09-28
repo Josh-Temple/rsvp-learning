@@ -1,0 +1,213 @@
+{
+  "schema_version": 1,
+  "id": "network-http-tls-path",
+  "title": "HTTP・TLSとブラウザからサーバーまで",
+  "topic": "IT基盤",
+  "summary": "DNS、接続、TLS、HTTPの各段階をつなぎ、ブラウザの要求がサーバーへ届き応答が返るまでの流れを学びます。",
+  "created_at": "2026-09-29",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "RFC 9110: HTTP Semantics",
+      "url": "https://www.rfc-editor.org/rfc/rfc9110.html"
+    },
+    {
+      "title": "RFC 8446: The Transport Layer Security (TLS) Protocol Version 1.3",
+      "url": "https://www.rfc-editor.org/rfc/rfc8446.html"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "ブラウザはURLを解釈します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "まず接続先の名前を扱います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "DNSでIPを得る場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "次に通信経路を作ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "HTTP1や2はTCPを使う場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "HTTP3はQUICを使います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "下位方式は一つではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "HTTPSではTLSを使います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "TLSは通信を暗号化します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "改ざん検知にも関わります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "相手の証明書も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "証明書は名前との関係を見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "TLS成功とサイト信頼性は別です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "通信路が保護されたことを示します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "HTTPは要求と応答で動きます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ClientがRequestを送ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ServerがResponseを返します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Methodが操作意図を表します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "GETは取得に使われます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "POSTは処理送信に使われます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Statusは結果の分類を示します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Headerは付加情報を持ちます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Bodyは内容を持てます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "HTTPは基本的にStatelessです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "状態は別仕組みで補う場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Cookieなどが使われます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Proxyが途中に入る場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "CDNが応答する場合もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Load Balancerも構成要素です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "接続先が一台とは限りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "TLS終端位置も構成で変わります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "HTTPエラーと接続失敗は別です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "404はHTTP応答が返っています。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Timeoutは段階を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "DNSで止まる場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "TCPで止まる場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "TLSで止まる場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "HTTP処理で止まる場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "502などは中継側も関係します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ブラウザ画面だけで原因を決めません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "HTTPSなら内容も正しいですか。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "暗号化と正当性は別です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "証明書が有効でもアプリは誤れます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "各層の役割を分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "再利用接続なら一部手順を省けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Cacheでも通信が変わります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "代表的な流れとして理解します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "実際の構成は観測して確かめます。",
+      "duration_multiplier": 1.15
+    }
+  ]
+}

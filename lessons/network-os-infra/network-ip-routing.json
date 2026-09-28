@@ -1,0 +1,209 @@
+{
+  "schema_version": 1,
+  "id": "network-ip-routing",
+  "title": "IPアドレス・パケット・ルーティング",
+  "topic": "IT基盤",
+  "summary": "IPアドレス、ネットワークプレフィックス、パケット、ルータ、経路表、デフォルトゲートウェイをつなぎ、通信が宛先へ届く基本を学びます。",
+  "created_at": "2026-09-29",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "RFC 8200: Internet Protocol, Version 6 (IPv6) Specification",
+      "url": "https://www.rfc-editor.org/rfc/rfc8200.html"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "通信は小さな単位に分けて送ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "IPではパケットとして運びます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "宛先IPを見て転送します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "IPアドレスは配送先の手掛かりです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "人そのものの識別子ではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "同じ端末でも複数IPを持てます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ネットワーク部をプレフィックスで表します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "同じ範囲かを判断できます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "近い宛先なら直接届く場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "遠い宛先ならルータへ渡します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ルータは次の転送先を選びます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "経路表を使って判断します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "より具体的な経路を優先します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "該当経路がない場合もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "デフォルト経路を使う場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "端末ではゲートウェイを使います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "各ルータが次の一歩を決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "最終経路を一台で決めるとは限りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "パケットごとに独立して扱われます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "到着順はIPだけでは保証しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "欠落の回復もIPの役割ではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "上位プロトコルが補う場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "経路は往復で同じとは限りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "片方向だけ届く障害もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "アドレスが正しくても届くとは限りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "経路がなければ転送できません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "経路があっても途中で落ち得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "リンク障害も影響します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "MTUの違いも影響し得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "IPv4とIPv6は表現が違います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ただし配送の基本発想は共通です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "名前とIPは別の概念です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "DNSが名前をIPへ対応づけます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "IPは名前解決後の配送に使われます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ポートもIPとは別です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "IPはホスト側の宛先を表します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ポートはサービス側を区別します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ブラウザ通信もIPの上を通ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "経路を見ると障害箇所を絞れます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "端末自身の設定を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "プレフィックスも確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ゲートウェイも確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "宛先までの途中経路も考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一つの層だけで判断しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "名前解決と経路を分けて診断します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "通信失敗の原因を層ごとに見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "まず配送の仕組みを押さえます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "その上にTCPなどが乗ります。",
+      "duration_multiplier": 1.15
+    }
+  ]
+}

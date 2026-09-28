@@ -1,0 +1,217 @@
+{
+  "schema_version": 1,
+  "id": "os-memory-filesystems",
+  "title": "Memory・Filesystem・Storageの基本",
+  "topic": "IT基盤",
+  "summary": "仮想Memory、Page、RAM、Swap、File、Directory、Mount、Cacheを区別し、実行中のデータと永続データがどう管理されるかを学びます。",
+  "created_at": "2026-09-29",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "Memory Management — Linux Kernel documentation",
+      "url": "https://docs.kernel.org/admin-guide/mm/"
+    },
+    {
+      "title": "The /proc Filesystem — Linux Kernel documentation",
+      "url": "https://docs.kernel.org/filesystems/proc.html"
+    },
+    {
+      "title": "Filesystem Hierarchy Standard 3.0",
+      "url": "https://specifications.freedesktop.org/fhs/latest/"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "Processは仮想Memoryを使います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "各Processに独立した空間を見せます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "物理RAMと同じではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Page単位で管理されます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "必要なPageを割り当てます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "未使用Pageを回収します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "File内容をMemoryへMapできます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "共有するPageもあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "CacheにもRAMを使います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "空きRAMが少ないだけで異常とは限りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "再利用可能なCacheもあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Memory不足時は回収が起きます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Swapを使う構成もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Storageへ一部を退避します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "SwapはRAMと同じ速度ではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "過剰なSwapは遅延を生みます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "不足が深刻なら終了処理もあり得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "FilesystemはFileを整理します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Directoryで名前を階層化します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "名前と実体は同じ概念ではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "権限やMetadataも持ちます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Fileの大きさだけが情報ではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "複数FilesystemをMountできます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一つの木構造へ接続します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "別Deviceでも同じ階層に見えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Mount先の違いを意識します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "空き容量はFilesystemごとに見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一箇所不足でも全体は空いて見えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "File削除と空き容量は直結しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "開いたProcessが保持する場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "書込みはCacheされる場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Application完了と永続化は別です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "同期処理が必要な場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "障害耐性は構成で変わります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Backupとも別の概念です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "正常なFSでもBackupは必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "/procは通常Fileとは性質が違います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Kernel情報を見せる擬似FSです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Process情報も確認できます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Memory使用量も観察できます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Memory不足とDisk不足を分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "症状は似る場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Process停止の原因を分解します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "容量と性能も分けて見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Cacheが性能を助けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ただし整合性との関係もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "永続化の保証範囲を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "資源の層を分けて理解します。",
+      "duration_multiplier": 1.15
+    }
+  ]
+}

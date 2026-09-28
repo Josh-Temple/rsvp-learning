@@ -1,0 +1,217 @@
+{
+  "schema_version": 1,
+  "id": "network-tcp-udp-ports",
+  "title": "TCP・UDP・Portと通信の単位",
+  "topic": "IT基盤",
+  "summary": "TCPとUDPの違い、接続、順序、再送、Port、Socketを区別し、アプリケーション通信の入口を学びます。",
+  "created_at": "2026-09-29",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "RFC 9293: Transmission Control Protocol (TCP)",
+      "url": "https://www.rfc-editor.org/rfc/rfc9293.html"
+    },
+    {
+      "title": "RFC 768: User Datagram Protocol",
+      "url": "https://www.rfc-editor.org/rfc/rfc768.html"
+    },
+    {
+      "title": "IANA Service Name and Transport Protocol Port Number Registry",
+      "url": "https://www.iana.org/assignments/service-names-port-numbers/"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "IPの上でアプリ通信を運びます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "TCPとUDPが代表例です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "TCPは接続を作って通信します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "順序を保つ仕組みがあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "欠落を検知して再送します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "確認応答を使います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "流量も調整します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "混雑も考慮します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "TCPはバイト列を運びます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "メッセージ境界は保持しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "アプリ側で区切りが必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "接続開始には状態があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "終了にも状態があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "接続が残る場合もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "UDPはデータグラムを送ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "接続確立なしで送れます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "順序保証は組み込みません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "再送保証も組み込みません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "必要なら上位で補えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "UDPだから不安定とは限りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "用途に合う設計が重要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Portはサービスを区別します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "同じIPで複数サービスを扱えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "宛先Portで相手側を選びます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "送信元Portも使います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Client側は動的Portを使えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "IANAがPort番号を管理します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "番号だけで安全性は決まりません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Socketは通信端点を表します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "IPとPortを組み合わせます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "TCPでは接続ごとに状態を持ちます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "同じPortでも複数接続できます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "接続成功はアプリ正常を意味しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "待受中でも処理失敗はあり得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Portが閉じていれば接続できません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "途中の制御で遮断もあり得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Timeoutの原因は複数あります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "名前解決とは別に確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "TCP接続とも別に確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "HTTP応答とも別に確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "各段階を分けて診断します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "WebでもTCPとは限りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "HTTP3はQUICを使います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "QUICはUDP上で動きます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "信頼性機能を上位で持ちます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "プロトコル階層を意識します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Portは入口の一部です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "アプリの意味はさらに上位です。",
+      "duration_multiplier": 1.15
+    }
+  ]
+}

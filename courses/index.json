@@ -176,7 +176,14 @@
       "id": "network-os-infra",
       "title": "ネットワーク・OS・インフラ",
       "chapters": [
-        "network-os-infra-overview"
+        "network-os-infra-overview",
+        "network-ip-routing",
+        "network-tcp-udp-ports",
+        "network-dns-name-resolution",
+        "network-http-tls-path",
+        "os-processes-execution",
+        "os-memory-filesystems",
+        "linux-observation-basics"
       ]
     },
     {
