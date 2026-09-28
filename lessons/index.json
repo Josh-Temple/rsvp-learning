@@ -287,6 +287,62 @@
       "status": "SEED / 概要のみ"
     },
     {
+      "id": "public-dx-service-design",
+      "title": "行政サービス設計と利用者中心",
+      "topic": "公共DX",
+      "path": "./lessons/public-dx-govtech/public-dx-service-design.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/public-dx-service-design.html"
+    },
+    {
+      "id": "public-dx-procurement-vendor",
+      "title": "行政IT調達と発注者・事業者の役割",
+      "topic": "公共DX",
+      "path": "./lessons/public-dx-govtech/public-dx-procurement-vendor.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/public-dx-procurement-vendor.html"
+    },
+    {
+      "id": "public-dx-standardization-commonization",
+      "title": "標準化・共通化と個別最適の境界",
+      "topic": "公共DX",
+      "path": "./lessons/public-dx-govtech/public-dx-standardization-commonization.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/public-dx-standardization-commonization.html"
+    },
+    {
+      "id": "public-dx-data-interoperability",
+      "title": "行政データ連携と相互運用性",
+      "topic": "公共DX",
+      "path": "./lessons/public-dx-govtech/public-dx-data-interoperability.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/public-dx-data-interoperability.html"
+    },
+    {
+      "id": "public-dx-cloud-operations",
+      "title": "ガバメントクラウドと責任分界・運用",
+      "topic": "公共DX",
+      "path": "./lessons/public-dx-govtech/public-dx-cloud-operations.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/public-dx-cloud-operations.html"
+    },
+    {
+      "id": "public-dx-accessibility-inclusion",
+      "title": "アクセシビリティとデジタル包摂",
+      "topic": "公共DX",
+      "path": "./lessons/public-dx-govtech/public-dx-accessibility-inclusion.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/public-dx-accessibility-inclusion.html"
+    },
+    {
+      "id": "public-dx-change-operations",
+      "title": "制度・仕様変更と継続運用",
+      "topic": "公共DX",
+      "path": "./lessons/public-dx-govtech/public-dx-change-operations.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/public-dx-change-operations.html"
+    },
+    {
       "id": "healthcare-care-dx-overview",
       "title": "ヘルスケア・介護DXの入口",
       "topic": "ヘルスケアDX",
