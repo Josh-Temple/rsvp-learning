@@ -1,0 +1,185 @@
+{
+  "schema_version": 1,
+  "id": "ai-governance-security-dependencies",
+  "title": "AIセキュリティと周辺システム",
+  "topic": "AIガバナンス",
+  "summary": "モデル、ツール、検索、外部API、供給網、権限、復旧を一体で捉え、AIシステム全体を守る考え方を学びます。",
+  "created_at": "2026-09-29",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "経済産業省 AI事業者ガイドライン（第1.2版）",
+      "url": "https://www.meti.go.jp/shingikai/mono_info_service/ai_shakai_jisso/20260331_report.html"
+    },
+    {
+      "title": "NIST AI RMF Generative AI Profile",
+      "url": "https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence"
+    },
+    {
+      "title": "OECD AI Principles",
+      "url": "https://www.oecd.org/en/topics/ai-principles.html"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "AIの安全はモデルだけでは決まりません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "周辺システムも攻撃対象です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "認証と権限管理が必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "秘密情報を入力に埋めません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ツール権限は最小化します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "読み取りと書き込みを分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "高影響操作は承認を入れます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "入力は信頼済みとは限りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "外部文書も命令源になり得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "検索結果も検証対象です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "RAGの知識源も管理します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "汚染データの混入を考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "出力もそのまま実行しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "コード生成は検証して使います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "外部APIも依存関係です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "モデル提供者も依存先です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "OSSも供給網の一部です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "更新で挙動が変わり得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "版と設定を記録します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "障害時の代替経路を決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "フェイルセーフを設計します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "権限を失敗時に広げません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "監査ログを残します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "重要操作は追跡可能にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "異常な入出力を監視します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "想定外利用も監視します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "セキュリティ試験を行います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "正常系だけでは足りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "誤用や悪用も試します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "境界条件も試します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "第三者部品の障害も想定します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "責任分界を契約で確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "復旧手順を事前に決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "停止できる設計を残します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "安全な初期状態を考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "封じ込め手段も用意します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "セキュリティは継続的に見直します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "新機能で攻撃面も変わります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利便性と権限を混同しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "システム全体で防御します。",
+      "duration_multiplier": 1.15
+    }
+  ]
+}

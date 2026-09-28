@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="AIで扱うデータの目的、出所、権限、外部送信、保存を整理し、プライバシーと機密性を守る考え方を学びます。" />
+  <meta name="theme-color" content="#f2efe8" />
+  <title>データ・プライバシー・機密情報 — Learn</title>
+  <link rel="stylesheet" href="./learn.css" />
+  <script src="./learn.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="top">
+      <a href="../index.html">RSVPに戻る</a>
+      <span class="mode">LEARN · AIガバナンス</span>
+    </header>
+    <main>
+      <section class="reader" id="speech-reader" aria-label="読み上げプレイヤー">
+        <div class="reader-row">
+          <button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+          <button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+          <button id="speech-stop" type="button" aria-label="停止" disabled>■</button>
+          <select id="speech-voice" aria-label="読み上げ音声"></select>
+          <label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+        </div>
+        <div id="speech-status" class="reader-status" role="status">読み上げ準備中</div>
+      </section>
+      <article id="learn-article">
+        <h1>データ・プライバシー・機密情報</h1>
+        <p class="lead">AIで扱うデータの目的、出所、権限、外部送信、保存を整理し、プライバシーと機密性を守る考え方を学びます。</p>
+        <h2>目的と出所を先に確認する</h2>
+        <p>AIにデータを入れる前に、何の目的で必要なのか、どこから取得したのか、どの条件で利用できるのかを整理します。データ品質が高くても、利用条件が不明なデータをそのまま使ってよいとは限りません。</p>
+        <p>学習用、評価用、本番運用用のデータは目的が異なります。混在させると、評価の独立性や保存ルールが崩れることがあります。</p>
+        <h2>個人情報と機密情報を分けて考える</h2>
+        <p>個人情報と組織の機密情報は重なることがありますが、同じ概念ではありません。顧客情報、人事情報、未公開の企画、認証情報など、漏えい時の影響を見て取り扱いを決めます。</p>
+        <p>必要なデータだけを扱うデータ最小化は、漏えい時の影響と管理負荷の両方を減らします。</p>
+        <h2>外部AIサービスへの入力もデータ移転になる</h2>
+        <p>外部の生成AIサービスへプロンプトやファイルを送るときは、送信先、保存期間、再利用や学習利用の条件、管理者設定を確認します。入力欄へ貼り付ける行為も、情報を外部へ渡す経路になり得ます。</p>
+        <p>個人情報保護委員会も、生成AIサービス利用時の個人情報の取扱いについて注意喚起を公開しています。実務では最新の法令、契約、サービス設定を確認します。</p>
+        <h2>ログと出力も管理対象にする</h2>
+        <p>入力データだけを消せば十分とは限りません。監査ログ、会話履歴、キャッシュ、評価データ、生成結果にも機微情報が残る場合があります。</p>
+        <p>また、AIは入力された情報をそのまま再掲するだけでなく、複数の情報から個人や組織に関する情報を推論することがあります。出力側の確認も必要です。</p>
+        <h2>データ系統と変更履歴を残す</h2>
+        <p>どのデータがどこから来て、どの処理を受け、どのモデルや評価に使われたかを追えるようにします。これにより、誤りや削除要求が見つかったときに影響範囲を調べやすくなります。</p>
+        <p>古いデータ、欠測、代表性不足、ラベルの誤りもAIの判断へ影響します。データの利用可否と品質評価は別々に確認します。</p>
+        <h2>新しい用途では再確認する</h2>
+        <p>一度取得したデータでも、新しいAI用途へそのまま転用できるとは限りません。目的、権限、契約、保存期間、地域ごとの法令を再確認します。</p>
+        <p>迷うデータは、投入してから削除するのではなく、投入前に止める仕組みを作る方が安全です。</p>
+        <h3>この教材の扱う範囲</h3>
+        <p class="endnote">個人情報・機密情報の具体的な取扱義務は、データの種類、主体、利用目的、提供先、地域、契約などで変わります。この章だけで法令適合を判断せず、対象となる一次資料と組織ルールを確認します。</p>
+      </article>
+      <section class="sources" aria-labelledby="sources-title">
+        <h2 id="sources-title">出典</h2>
+        <p><a href="https://www.meti.go.jp/shingikai/mono_info_service/ai_shakai_jisso/20260331_report.html">経済産業省 AI事業者ガイドライン（第1.2版）</a></p>
+        <p><a href="https://www.ppc.go.jp/news/careful_information/230602_AI_utilize_alert/">個人情報保護委員会 生成AIサービスの利用に関する注意喚起等について</a></p>
+        <p><a href="https://www.nist.gov/itl/ai-risk-management-framework">NIST AI Risk Management Framework</a></p>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

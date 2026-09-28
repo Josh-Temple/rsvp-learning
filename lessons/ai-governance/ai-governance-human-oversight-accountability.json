@@ -1,0 +1,185 @@
+{
+  "schema_version": 1,
+  "id": "ai-governance-human-oversight-accountability",
+  "title": "Human Oversightと責任分界",
+  "topic": "AIガバナンス",
+  "summary": "Human Oversightを実効的な統制として設計し、開発者・提供者・利用者・承認者の責任分界を整理する基本を学びます。",
+  "created_at": "2026-09-29",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "OECD AI Principles",
+      "url": "https://www.oecd.org/en/topics/ai-principles.html"
+    },
+    {
+      "title": "経済産業省 AI事業者ガイドライン（第1.2版）",
+      "url": "https://www.meti.go.jp/shingikai/mono_info_service/ai_shakai_jisso/20260331_report.html"
+    },
+    {
+      "title": "NIST AI Risk Management Framework",
+      "url": "https://www.nist.gov/itl/ai-risk-management-framework"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "人間を置くだけでは監督になりません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "介入できる権限が必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "判断に必要な情報も要ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "時間的余裕も必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "責任者を明確にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "承認者も明確にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "開発者と利用者を区別します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "提供者の責任範囲も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "人に戻す条件を決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "停止条件も決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "上位者への報告経路を作ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "高影響判断は慎重に扱います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "自動化バイアスに注意します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "AI出力を無条件に信じません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "人間判断も常に正しいとは限りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "二者の弱点を前提にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "人が検証できる粒度にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "根拠情報へアクセスできるようにします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "判断を覆せるようにします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "AIを迂回できる手段も残します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "例外処理を用意します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用者教育も統制の一部です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "禁止用途を具体化します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "許可用途も具体化します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "相談窓口を決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "役割ごとに教育します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "権限と責任を対応させます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "責任だけを現場へ移しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ベンダー任せにもできません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "モデルは責任主体ではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "組織が意思決定を保持します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "重要判断は記録します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "例外承認も記録します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "形だけの承認を避けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "承認件数が多過ぎないか見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "運用負荷も評価します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "監督不能なら自動化範囲を狭めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "重大変更時は役割を見直します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "事故後は責任分界も見直します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "人の介入を設計として扱います。",
+      "duration_multiplier": 1.15
+    }
+  ]
+}

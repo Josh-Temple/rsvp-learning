@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="透明性・説明可能性・解釈可能性を区別し、AIの目的、限界、評価、変更、判断の証拠を残す方法を学びます。" />
+  <meta name="theme-color" content="#f2efe8" />
+  <title>透明性・説明可能性・記録 — Learn</title>
+  <link rel="stylesheet" href="./learn.css" />
+  <script src="./learn.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="top">
+      <a href="../index.html">RSVPに戻る</a>
+      <span class="mode">LEARN · AIガバナンス</span>
+    </header>
+    <main>
+      <section class="reader" id="speech-reader" aria-label="読み上げプレイヤー">
+        <div class="reader-row">
+          <button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+          <button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+          <button id="speech-stop" type="button" aria-label="停止" disabled>■</button>
+          <select id="speech-voice" aria-label="読み上げ音声"></select>
+          <label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+        </div>
+        <div id="speech-status" class="reader-status" role="status">読み上げ準備中</div>
+      </section>
+      <article id="learn-article">
+        <h1>透明性・説明可能性・記録</h1>
+        <p class="lead">透明性・説明可能性・解釈可能性を区別し、AIの目的、限界、評価、変更、判断の証拠を残す方法を学びます。</p>
+        <h2>三つの概念を分ける</h2>
+        <p>透明性、説明可能性、解釈可能性は関連しますが同じではありません。透明性は、AIが使われていることや目的、能力、限界、管理方法などを適切に伝えることに関わります。</p>
+        <p>説明可能性は、出力や判断の理由をどこまで理解できるかという観点です。解釈可能性は、モデルや出力の意味を人が読み取れる性質として扱われます。</p>
+        <h2>相手に合わせて説明する</h2>
+        <p>利用者には、何ができて何ができないか、どのような確認が必要かが重要です。管理者には、責任者、承認条件、監視、変更管理が必要です。監査者には、判断を再現・追跡するための証拠が必要です。</p>
+        <p>AIの影響を受ける人には、AIが関与したことや結果を理解・異議申立てするための情報が必要になる場合があります。</p>
+        <h2>目的・評価・限界を記録する</h2>
+        <p>最低限、利用目的、対象外用途、モデルやサービスの版、主要設定、利用データの由来、評価条件、既知の失敗例を記録します。能力だけを書き、限界を残さない文書は誤用を招きます。</p>
+        <p>変更時には、何を変え、なぜ変え、誰が承認し、どの評価で確認したかを対応付けます。</p>
+        <h2>追跡できる証拠を残す</h2>
+        <p>ログやレビュー記録は、問題が起きた後に原因を調べるための証拠になります。ただし、ログ自体に個人情報や機密情報が含まれる場合があるため、保存範囲と権限管理が必要です。</p>
+        <p>記録同士をIDや版で対応付け、古い文書と現行文書を区別できるようにします。</p>
+        <h2>公開量ではなく検証可能性を見る</h2>
+        <p>透明性は、情報を大量に公開すれば達成できるものではありません。セキュリティ上の秘密、営業秘密、個人情報を無制限に公開すると別のリスクが生じます。</p>
+        <p>重要なのは、必要な相手が必要な情報へ到達し、説明や判断を検証できることです。</p>
+        <h2>分からないことを分けて示す</h2>
+        <p>AIの内部動作や将来の挙動を完全に説明できない場合があります。そのときは、確認済みの事実、観測した結果、推測、未確認事項を分けます。</p>
+        <p>透明性が高いこと自体は、安全、正確、公平であることの保証ではありません。説明と実証を組み合わせます。</p>
+        <h3>この教材の扱う範囲</h3>
+        <p class="endnote">透明性のために公開できる情報と、セキュリティ・個人情報・営業秘密のために限定すべき情報は両立させる必要があります。開示範囲は対象と目的に応じて判断します。</p>
+      </article>
+      <section class="sources" aria-labelledby="sources-title">
+        <h2 id="sources-title">出典</h2>
+        <p><a href="https://www.oecd.org/en/topics/ai-principles.html">OECD AI Principles</a></p>
+        <p><a href="https://airc.nist.gov/airmf-resources/airmf/5-sec-core/">NIST AI RMF Core</a></p>
+        <p><a href="https://www.meti.go.jp/shingikai/mono_info_service/ai_shakai_jisso/20260331_report.html">経済産業省 AI事業者ガイドライン（第1.2版）</a></p>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

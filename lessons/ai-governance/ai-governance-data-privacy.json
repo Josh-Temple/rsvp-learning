@@ -1,0 +1,185 @@
+{
+  "schema_version": 1,
+  "id": "ai-governance-data-privacy",
+  "title": "データ・プライバシー・機密情報",
+  "topic": "AIガバナンス",
+  "summary": "AIで扱うデータの目的、出所、権限、外部送信、保存を整理し、プライバシーと機密性を守る考え方を学びます。",
+  "created_at": "2026-09-29",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "経済産業省 AI事業者ガイドライン（第1.2版）",
+      "url": "https://www.meti.go.jp/shingikai/mono_info_service/ai_shakai_jisso/20260331_report.html"
+    },
+    {
+      "title": "個人情報保護委員会 生成AIサービスの利用に関する注意喚起等について",
+      "url": "https://www.ppc.go.jp/news/careful_information/230602_AI_utilize_alert/"
+    },
+    {
+      "title": "NIST AI Risk Management Framework",
+      "url": "https://www.nist.gov/itl/ai-risk-management-framework"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "データ管理は入力前から始まります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "まず利用目的を明確にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "必要なデータだけを集めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "出所と取得条件を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "学習用と運用用を区別します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "評価用データも別に管理します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "データ品質だけでは足りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用してよいかも確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "個人情報は慎重に扱います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "機密情報も同様です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "プロンプト入力もデータ提供です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "外部サービスなら送信先を見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "保存期間も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "学習利用の条件も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "再利用条件も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "権限を必要最小限にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ログにも機微情報が残り得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "出力にも情報が現れ得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "入力を消せば十分とは限りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "推論で情報が導かれる場合もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "仮名化と匿名化は同じではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "匿名化も万能ではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "データ系統を記録します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "どこから来たかを追えるようにします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "変換履歴も残します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "削除や訂正の流れも考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "古いデータは偏りを残します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "欠損も判断へ影響します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "代表性不足も評価します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "目的外利用を避けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "新用途は再確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "法令要件は地域で異なります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "契約条件も別に確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "海外サービスも同じとは限りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "組織ルールも確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "迷うデータは投入前に止めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "データ最小化を基本にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "必要性を説明できる形にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "保存し続ける理由も見直します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "データはAI統制の土台です。",
+      "duration_multiplier": 1.15
+    }
+  ]
+}

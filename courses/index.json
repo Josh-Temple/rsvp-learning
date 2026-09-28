@@ -162,7 +162,14 @@
       "id": "ai-governance",
       "title": "AIガバナンス・リスク管理",
       "chapters": [
-        "ai-governance-overview"
+        "ai-governance-overview",
+        "ai-governance-lifecycle-risk",
+        "ai-governance-data-privacy",
+        "ai-governance-security-dependencies",
+        "ai-governance-fairness-evaluation",
+        "ai-governance-transparency-documentation",
+        "ai-governance-human-oversight-accountability",
+        "ai-governance-audit-change-incidents"
       ]
     },
     {
