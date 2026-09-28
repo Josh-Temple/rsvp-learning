@@ -80,17 +80,86 @@ jobs:
         if: steps.changed.outputs.changed == 'true' && steps.credentials.outputs.configured == 'true'
         run: npm run check
 
-      - name: Pull Vercel production settings
+      - name: Create Vercel production deployment
         if: steps.changed.outputs.changed == 'true' && steps.credentials.outputs.configured == 'true'
-        run: npx --yes vercel@latest pull --yes --environment=production --scope=josh-temples-projects --project="$VERCEL_PROJECT_ID" --token="$VERCEL_TOKEN"
+        id: vercel_deploy
+        shell: bash
+        run: |
+          node <<'NODE'
+          const fs = require("fs");
+          const body = {
+            name: "rsvp-learning",
+            project: process.env.VERCEL_PROJECT_ID,
+            target: "production",
+            gitSource: {
+              type: "github",
+              org: "Josh-Temple",
+              repo: "rsvp-learning",
+              ref: "main"
+            },
+            gitMetadata: {
+              remoteUrl: "https://github.com/Josh-Temple/rsvp-learning",
+              commitRef: "main",
+              commitSha: process.env.GITHUB_SHA,
+              ci: true,
+              ciType: "github-actions",
+              ciGitRepoVisibility: "private"
+            },
+            withLatestCommit: true
+          };
+          fs.writeFileSync("/tmp/vercel-deploy-request.json", JSON.stringify(body));
+          NODE
+          HTTP_CODE="$(curl -sS -o /tmp/vercel-deploy.json -w "%{http_code}" \
+            -X POST \
+            -H "Authorization: Bearer $VERCEL_TOKEN" \
+            -H "Content-Type: application/json" \
+            --data-binary @/tmp/vercel-deploy-request.json \
+            "https://api.vercel.com/v13/deployments?teamId=$VERCEL_ORG_ID")"
+          echo "Create deployment: HTTP $HTTP_CODE"
+          if [ "$HTTP_CODE" -lt 200 ] || [ "$HTTP_CODE" -ge 300 ]; then
+            node -e 'const fs=require("fs"); const x=JSON.parse(fs.readFileSync("/tmp/vercel-deploy.json","utf8")); console.error(x?.error?.message || JSON.stringify(x));'
+            exit 1
+          fi
+          DEPLOYMENT_ID="$(node -e 'const fs=require("fs"); const x=JSON.parse(fs.readFileSync("/tmp/vercel-deploy.json","utf8")); process.stdout.write(x.id || x.uid || "")')"
+          DEPLOYMENT_URL="$(node -e 'const fs=require("fs"); const x=JSON.parse(fs.readFileSync("/tmp/vercel-deploy.json","utf8")); process.stdout.write(x.url || "")')"
+          if [ -z "$DEPLOYMENT_ID" ]; then
+            echo "Deployment response did not include an ID."
+            cat /tmp/vercel-deploy.json
+            exit 1
+          fi
+          echo "deployment_id=$DEPLOYMENT_ID" >> "$GITHUB_OUTPUT"
+          echo "deployment_url=$DEPLOYMENT_URL" >> "$GITHUB_OUTPUT"
+          echo "Created deployment $DEPLOYMENT_ID"
 
-      - name: Build production artifact
+      - name: Wait for Vercel production deployment
         if: steps.changed.outputs.changed == 'true' && steps.credentials.outputs.configured == 'true'
-        run: npx --yes vercel@latest build --prod --scope=josh-temples-projects --project="$VERCEL_PROJECT_ID" --token="$VERCEL_TOKEN"
-
-      - name: Deploy production artifact
-        if: steps.changed.outputs.changed == 'true' && steps.credentials.outputs.configured == 'true'
-        run: npx --yes vercel@latest deploy --prebuilt --prod --scope=josh-temples-projects --project="$VERCEL_PROJECT_ID" --token="$VERCEL_TOKEN"
+        shell: bash
+        env:
+          DEPLOYMENT_ID: ${{ steps.vercel_deploy.outputs.deployment_id }}
+        run: |
+          for attempt in $(seq 1 60); do
+            HTTP_CODE="$(curl -sS -o /tmp/vercel-status.json -w "%{http_code}" \
+              -H "Authorization: Bearer $VERCEL_TOKEN" \
+              "https://api.vercel.com/v13/deployments/$DEPLOYMENT_ID?teamId=$VERCEL_ORG_ID")"
+            if [ "$HTTP_CODE" != "200" ]; then
+              echo "Deployment status lookup failed: HTTP $HTTP_CODE"
+              exit 1
+            fi
+            READY_STATE="$(node -e 'const fs=require("fs"); const x=JSON.parse(fs.readFileSync("/tmp/vercel-status.json","utf8")); process.stdout.write(x.readyState || x.status || "")')"
+            echo "Vercel deployment state: $READY_STATE"
+            case "$READY_STATE" in
+              READY)
+                exit 0
+                ;;
+              ERROR|CANCELED)
+                node -e 'const fs=require("fs"); const x=JSON.parse(fs.readFileSync("/tmp/vercel-status.json","utf8")); console.error(JSON.stringify({id:x.id,url:x.url,readyState:x.readyState,status:x.status,errorMessage:x.errorMessage},null,2));'
+                exit 1
+                ;;
+            esac
+            sleep 5
+          done
+          echo "Timed out waiting for Vercel deployment."
+          exit 1
 
       - name: Mark deployed commit
         if: steps.changed.outputs.changed == 'true' && steps.credentials.outputs.configured == 'true' && success()
