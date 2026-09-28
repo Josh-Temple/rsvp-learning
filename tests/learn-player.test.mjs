@@ -115,7 +115,7 @@ test("player reads DOM order and pause voice change resumes the same element wit
 
   assert.equal(elements.get("#speech-reader").dataset.state, "idle");
   play.click();
-  await Promise.resolve();
+  await new Promise((resolve) => setImmediate(resolve));
   assert.equal(wakeLockState.request, 1);
   assert.equal(utterances[0].text, "教材タイトル");
   assert.equal(utterances[0].voice.voiceURI, "ja-default");
@@ -149,7 +149,7 @@ test("player reads DOM order and pause voice change resumes the same element wit
   assert.equal(articleItems[1].classList.contains("speech-active"), true);
 
   stop.click();
-  await Promise.resolve();
+  await new Promise((resolve) => setImmediate(resolve));
   assert.equal(wakeLockState.release, 1);
   assert.equal(elements.get("#speech-reader").dataset.state, "idle");
   assert.equal(articleItems[1].classList.contains("speech-active"), false);
