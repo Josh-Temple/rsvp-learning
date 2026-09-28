@@ -1,0 +1,149 @@
+{
+  "schema_version": 1,
+  "id": "security-authentication-access-control",
+  "title": "認証・認可・アクセス制御",
+  "topic": "情報セキュリティ",
+  "summary": "本人確認と権限判断を分け、認証要素、最小権限、アカウントのライフサイクルを学びます。",
+  "created_at": "2026-09-28",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "NIST SP 800-63B-4, Authentication and Authenticator Management",
+      "url": "https://csrc.nist.gov/pubs/sp/800/63/b/4/final"
+    },
+    {
+      "title": "NIST SP 800-207, Zero Trust Architecture",
+      "url": "https://csrc.nist.gov/pubs/sp/800/207/final"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "利用者Aがログインするとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "誰かを確かめるのが認証です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "何を許すか決めるのが認可です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "二つは別の判断です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "認証要素には種類があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "知っている情報があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "持っている物があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "本人の特徴も使われます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "異なる要素を組み合わせます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "多要素認証は認証を強めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ただし権限は別に確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "管理者権限が必要とは限りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "最小権限で必要分だけ許します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "対象ごとに権限を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "操作ごとにも権限を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "画面を隠すだけでは不十分です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "サーバー側でも制御します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "共有アカウントは追跡を難しくします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用者ごとに識別できる形にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "異動時は権限を見直します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "退職時は利用を停止します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一時権限には期限を置きます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "不要な権限を残しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "定期的に実効権限を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "認証情報の漏えいにも備えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "失効できる仕組みを用意します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "強い認証でも全件閲覧は別です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "端末の状態も判断材料になります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ネットワーク内でも無条件に信じません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "毎回必要な条件を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "認証済みなら安全でしょうか。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "対象と操作の認可も必要です。",
+      "duration_multiplier": 1.15
+    }
+  ]
+}

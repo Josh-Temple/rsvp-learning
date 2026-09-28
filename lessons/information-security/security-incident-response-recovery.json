@@ -1,0 +1,149 @@
+{
+  "schema_version": 1,
+  "id": "security-incident-response-recovery",
+  "title": "インシデント対応と復旧",
+  "topic": "情報セキュリティ",
+  "summary": "準備、検知、対応、復旧を平時のリスク管理とつなぎ、証拠保全と再発防止まで含めて学びます。",
+  "created_at": "2026-09-28",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "NIST SP 800-61 Rev. 3, Incident Response Recommendations and Considerations",
+      "url": "https://csrc.nist.gov/pubs/sp/800/61/r3/final"
+    },
+    {
+      "title": "NIST Cybersecurity Framework (CSF) 2.0",
+      "url": "https://www.nist.gov/publications/nist-cybersecurity-framework-csf-20"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "不審な大量通信を検知したとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "まず事実を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "誤検知の可能性もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "影響範囲を調べます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "対象端末を特定します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "対象アカウントも確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "必要なら被害を封じ込めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "通信を止める場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "アカウントを停止する場合もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ただし証拠を失わないようにします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ログを保存します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "時刻をそろえて記録します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "誰が何をしたか残します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "連絡先を平時に決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "意思決定者も決めておきます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "法務や広報も関係する場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "外部連絡の条件を決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "復旧は停止解除だけではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "侵入経路を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "弱点を修正します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "認証情報を更新する場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "安全な状態から再開します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "バックアップも検証します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "復元できるか実際に試します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "復旧後も監視を強めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "再侵入の兆候を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "原因と対応を振り返ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "検知が遅れた理由も調べます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "手順を更新します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "教育や設定も見直します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "対応速度だけで評価しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "被害と再発を減らせたか見ます。",
+      "duration_multiplier": 1.15
+    }
+  ]
+}

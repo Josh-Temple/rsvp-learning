@@ -4,11 +4,12 @@ import test from "node:test";
 
 const root = new URL("../", import.meta.url);
 const catalog = JSON.parse(await fs.readFile(new URL("../lessons/index.json", import.meta.url), "utf8"));
+const completeEntries = catalog.lessons.filter((entry) => entry.status === "COMPLETE v0.1");
 const entries = catalog.lessons.filter((entry) => entry.learn_path);
 const textOf = (html) => html.replace(/<[^>]+>/g, " ").replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/\s+/g, " ").trim();
 
 test("all COMPLETE catalog entries have static Learn HTML independent of RSVP chunk concatenation", async () => {
-  assert.equal(entries.length, 60);
+  assert.equal(entries.length, completeEntries.length, "every COMPLETE lesson must declare a Learn path");
   for (const entry of entries) {
     const html = await fs.readFile(new URL(entry.learn_path.replace(/^\.\//, ""), root), "utf8");
     const article = html.match(/<article\b[^>]*>([\s\S]*?)<\/article>/i)?.[1];

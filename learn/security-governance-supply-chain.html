@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="セキュリティを経営と業務の責任として捉え、方針、役割、教育、委託先・ソフトウェア供給網のリスク管理を学びます。" />
+  <meta name="theme-color" content="#f2efe8" />
+  <title>セキュリティガバナンスと供給網 — Learn</title>
+  <link rel="stylesheet" href="./learn.css" />
+  <script src="./learn.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="top">
+      <a href="../index.html">RSVPに戻る</a>
+      <span class="mode">LEARN · 情報セキュリティ</span>
+    </header>
+    <main>
+      <section class="reader" id="speech-reader" aria-label="読み上げプレイヤー">
+        <div class="reader-row">
+          <button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+          <button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+          <button id="speech-stop" type="button" aria-label="停止" disabled>■</button>
+          <select id="speech-voice" aria-label="読み上げ音声"></select>
+          <label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+        </div>
+        <div id="speech-status" class="reader-status" role="status">読み上げ準備中</div>
+      </section>
+      <article id="learn-article">
+        <h1>セキュリティガバナンスと供給網</h1>
+        <p class="lead">セキュリティを経営と業務の責任として捉え、方針、役割、教育、委託先・ソフトウェア供給網のリスク管理を学びます。</p>
+        <h2>セキュリティを経営リスクとして扱う</h2>
+        <p>セキュリティはIT部門だけへ任せる技術課題ではありません。業務停止、信用低下、情報漏えいなど組織目的へ影響するリスクとして扱い、方針、責任者、判断権限を明確にします。</p>
+        <p>ルールは作ること自体が目的ではありません。現場で実行できる形になっているかを確認し、例外が必要なら承認方法を決めます。</p>
+        <h2>人と運用を管理する</h2>
+        <p>教育は標的型メールだけに限定せず、誤送信、権限管理、端末利用など役割に応じた内容にします。事故や業務変更から、教育内容と手順も更新します。</p>
+        <h2>委託先と供給網を見る</h2>
+        <p>外部サービスやソフトウェア部品を使う場合、リスクは自社の境界で終わりません。契約前に要件を伝え、契約中の状態、重大事故時の連絡、契約終了時のデータ処理まで確認します。</p>
+        <p>一社や一つの部品へ強く依存すると、提供停止や更新終了の影響を受けます。必要に応じて代替手段も考えます。</p>
+        <h2>継続的に改善する</h2>
+        <p>監査を一度通過したことだけで安心せず、実際の運用を確認します。指標や事故記録から改善状況を追い、環境が変われば方針も見直します。ガバナンスは、技術と運用を組織の目的へ合わせ続ける活動です。</p>
+        <h3>この教材の扱う範囲</h3>
+        <p class="endnote">この章は組織的なセキュリティ管理の基礎です。調達・契約・委託先管理の具体要件は、組織の規程、契約条件、法令、対象サービスの特性を確認します。</p>
+      </article>
+      <section class="sources" aria-labelledby="sources-title">
+        <h2 id="sources-title">出典</h2>
+        <p><a href="https://www.nist.gov/publications/nist-cybersecurity-framework-csf-20">NIST Cybersecurity Framework (CSF) 2.0</a></p>
+        <p><a href="https://csrc.nist.gov/pubs/sp/1305/final">NIST SP 1305, CSF 2.0 Quick-Start Guide for Cybersecurity Supply Chain Risk Management</a></p>
+        <p><a href="https://www.ipa.go.jp/shiken/syllabus/gaiyou.html">IPA 試験要綱・シラバスについて</a></p>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
