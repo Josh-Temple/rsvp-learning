@@ -51,9 +51,14 @@ jobs:
             echo "configured=true" >> "$GITHUB_OUTPUT"
           fi
 
+      - uses: actions/setup-node@v4
+        if: steps.changed.outputs.changed == 'true' && steps.credentials.outputs.configured == 'true'
+        with:
+          node-version: 22
+
       - name: Install dependencies
         if: steps.changed.outputs.changed == 'true' && steps.credentials.outputs.configured == 'true'
-        run: npm ci
+        run: npm install --ignore-scripts
 
       - name: Test and validate
         if: steps.changed.outputs.changed == 'true' && steps.credentials.outputs.configured == 'true'
