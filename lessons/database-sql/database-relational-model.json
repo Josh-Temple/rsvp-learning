@@ -264,6 +264,38 @@
     {
       "text": "業務上の履歴の意味も必要です。",
       "duration_multiplier": 1.15
+    },
+    {
+      "text": "主キーは行を一意に識別します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "値が変わる項目は主キーに慎重です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "外部キーは表の関係を支えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ただし業務意味までは決めません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "削除時の扱いも設計します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "履歴を残す条件も必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "NULLの意味も列ごとに決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "制約と業務規則を対応させます。",
+      "duration_multiplier": 1.15
     }
   ]
 }
