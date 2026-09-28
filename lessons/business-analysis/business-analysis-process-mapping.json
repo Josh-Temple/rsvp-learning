@@ -231,6 +231,38 @@
     {
       "text": "実際の受け渡しと待ちを表します。",
       "duration_multiplier": 1.15
+    },
+    {
+      "text": "処理時間と待ち時間を分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "受け渡し点を明示します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "判断条件も流れに含めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "例外経路を省きません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "並行作業も表します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "情報の入力元も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "実態と手順書を突き合わせます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "改善前後を同じ粒度で比べます。",
+      "duration_multiplier": 1.15
     }
   ]
 }

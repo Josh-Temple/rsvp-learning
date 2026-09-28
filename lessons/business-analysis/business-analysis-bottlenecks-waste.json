@@ -267,6 +267,38 @@
     {
       "text": "流入、能力、差戻しを先に比べます。",
       "duration_multiplier": 1.15
+    },
+    {
+      "text": "滞留と処理能力を分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "流入量も同時に見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "再作業は能力を消費します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "繁閑差も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "局所改善が全体改善とは限りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "制約が移ることがあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "改善後に再測定します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "原因別に待ちを分解します。",
+      "duration_multiplier": 1.15
     }
   ]
 }
