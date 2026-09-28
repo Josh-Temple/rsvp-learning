@@ -251,6 +251,38 @@
     {
       "text": "手戻りと待ちも併せて見ます。",
       "duration_multiplier": 1.15
+    },
+    {
+      "text": "KPIは目的から逆算します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "測りやすさだけで選びません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "先行指標と結果指標を分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "自動化前の基準値を残します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "例外率も測ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "手戻り率も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "定着には役割変更も必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "改善後も定期的に見直します。",
+      "duration_multiplier": 1.15
     }
   ]
 }

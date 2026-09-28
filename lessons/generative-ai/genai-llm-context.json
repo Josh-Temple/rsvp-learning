@@ -259,6 +259,38 @@
     {
       "text": "適合性と不足の両方を確かめます。",
       "duration_multiplier": 1.15
+    },
+    {
+      "text": "コンテキスト量には上限があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "長ければ常に良いとは限りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "不要情報は判断を乱すことがあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "指示と資料を区別します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "新しい資料でも誤りはあり得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "関連箇所が欠けていないか見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "会話履歴にも古い情報があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "必要情報を選んで渡します。",
+      "duration_multiplier": 1.15
     }
   ]
 }
