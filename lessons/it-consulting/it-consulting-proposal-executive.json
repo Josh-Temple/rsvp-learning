@@ -1,0 +1,217 @@
+{
+  "schema_version": 1,
+  "id": "it-consulting-proposal-executive",
+  "title": "提案書・経営層説明・意思決定支援",
+  "topic": "コンサルティング",
+  "summary": "結論、根拠、代替案、リスク、意思決定事項を一貫した構造へ整理し、相手に合わせて情報量を調整する提案と説明の方法を学びます。",
+  "created_at": "2026-09-29",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "IIBA — Communicate Business Analysis Information",
+      "url": "https://www.iiba.org/knowledgehub/business-analysis-body-of-knowledge-babok-guide/4-elicitation-and-collaboration/4-4-communicate-business-analysis-information/"
+    },
+    {
+      "title": "HM Treasury — The Green Book (2026)",
+      "url": "https://www.gov.uk/government/publications/the-green-book-appraisal-and-evaluation-in-central-government/the-green-book-2026"
+    },
+    {
+      "title": "IIBA The Business Analysis Standard",
+      "url": "https://www.iiba.org/knowledgehub/the-business-analysis-standard/"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "提案は資料作成が目的ではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "意思決定を助けることが目的です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "最初に求める判断を明確にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "承認か選択か確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "情報共有だけの場合もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "結論を先に示します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ただし根拠を省きません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "課題とのつながりを示します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "推奨案を示します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "代替案も示します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "採らない理由も示します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "費用を示します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "便益を示します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "リスクを示します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "不確実性も示します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "前提を明示します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "未確認事項も明示します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "確定事項と分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "反対意見も論点として残します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "都合の悪い情報を隠しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "経営層には事業影響を示します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "技術詳細は必要量へ絞ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "現場には運用影響を示します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "IT部門には技術条件も示します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "同じ資料を全員へ固定しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "用語を相手に合わせます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "専門語には説明を添えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一枚目で全体像を示します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "詳細は後段に置けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "根拠資料へ追跡できるようにします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "数値の出所を示します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "計算条件も示します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "グラフは比較を助けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "装飾のために使いません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "意思決定点を明記します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "誰がいつ決めるか確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "決定後の次の行動も示します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "実行責任へつなげます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "質問には事実で答えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "分からないことは分けて答えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "その場で推測しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "宿題は記録します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "提案後に理解を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "合意と理解は同じではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "反対があっても論点を整理します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "決定理由を記録します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "変更時に参照できるようにします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "提案は次の行動へつなげます。",
+      "duration_multiplier": 1.15
+    }
+  ]
+}
