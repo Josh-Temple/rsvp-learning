@@ -247,6 +247,38 @@
     {
       "text": "状態の記録と運用が欠ければ達成できません。",
       "duration_multiplier": 1.15
+    },
+    {
+      "text": "業務要件は技術名から書きません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "目的と成果を先に置きます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "システム要件は実現条件へ落とします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "運用で担う条件も分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "手作業を残す判断もあり得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "責任者と更新時点を決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "機能追加だけで解決しない場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "目的から手段を逆算します。",
+      "duration_multiplier": 1.15
     }
   ]
 }
