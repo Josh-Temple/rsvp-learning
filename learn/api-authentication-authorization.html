@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="認証と認可を連続読み上げで学ぶLearn版教材" />
+  <meta name="description" content="申請APIの例で、認証と認可の違い、対象ごとの権限確認、トークンとOAuthの役割を学びます。" />
   <meta name="theme-color" content="#f2efe8" />
   <title>認証と認可 — Learn</title>
   <link rel="stylesheet" href="./learn.css" />
@@ -13,9 +13,8 @@
   <div class="shell">
     <header class="top">
       <a href="../index.html">RSVPに戻る</a>
-      <span class="mode">LEARN · WEB / API</span>
+      <span class="mode">LEARN · Web・API</span>
     </header>
-
     <main>
       <section class="reader" id="speech-reader" aria-label="読み上げプレイヤー">
         <div class="reader-row">
@@ -23,32 +22,26 @@
           <button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
           <button id="speech-stop" type="button" aria-label="停止" disabled>■</button>
           <select id="speech-voice" aria-label="読み上げ音声"></select>
-          <label class="reader-speed">
-            <span id="speech-rate-label">1.0×</span>
-            <input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" />
-          </label>
+          <label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
         </div>
         <div id="speech-status" class="reader-status" role="status">読み上げ準備中</div>
       </section>
-
       <article id="learn-article">
         <h1>認証と認可</h1>
         <p class="lead">申請APIの例で、認証と認可の違い、対象ごとの権限確認、トークンとOAuthの役割を学びます。</p>
-        <h2>ログインできても、他人の申請は読めない</h2>
-        <p>申請を扱うAPIで利用者Aがログインしたとします。Aが本人だと確かめる処理が認証です。Aが自分の申請を読んでよいか決める処理が認可です。ログインに成功しても、別の利用者Bの申請を読めるとは限りません。</p>
-        <p>申請IDを変えてAPIへ直接要求されることも考え、画面のボタンを隠すだけで済ませず、API側で対象申請ごとに権限を確認します。担当職員なら担当案件だけを更新できる、といった対象との関係も判断材料です。</p>
-        <h2>認証状態とアクセストークン</h2>
-        <p>本人確認にはパスワードや多要素認証などを使えます。認証後はセッションなどで状態を維持できます。別の構成では、保護された資源へのアクセスにアクセストークンを用います。</p>
-        <p>APIがトークンを受け取ったら、有効性、想定した用途、許された範囲を確かめます。トークンを持っているというだけで任意の申請を返す設計にはできません。誰が、どの対象へ、何をできるかを個別に判断します。</p>
-        <h2>OAuthとAPIキーの違い</h2>
-        <p>OAuthは、あるアプリに別サービスへの限定したアクセスを委任する枠組みです。例えば予定表アプリに予定の読み取りだけを許す場面です。OAuthのアクセストークンを得たことだけで、利用者が誰であるかの認証まで済んだとは扱いません。</p>
-        <p>APIキーは呼び出し元の識別などに使われますが、キーがあるだけで最終利用者を認証したことにはなりません。秘密情報をソースコードへ埋め込まず、漏えい時の失効も考えます。必要な操作だけを許す最小権限を守り、権限が足りなければ情報を返さずに拒否します。</p>
-        <h2>別の条件で確かめる</h2>
-        <p>本人確認済みのAが、Bの申請IDを指定します。有効な認証情報があっても閲覧は許されません。対象の所有者と操作権限を毎回確認します。</p>
-        <p>ログイン済みなら全件を読めますか。認証と対象ごとの認可は別です。</p>
-
+        <h2>認証と認可を分ける</h2>
+        <p>申請APIへ利用者Aが入る場面を考えます。Aが誰かを確かめるのが認証で、Aがどの申請へ何をできるかを決めるのが認可です。ログイン済みという事実だけでは、別の利用者の申請を読める理由にはなりません。</p>
+        <p>権限は「誰が、どの対象へ、どの操作を行うか」で考えます。画面からボタンを隠しても、直接APIを呼ばれる可能性があるため、API側で対象ごとに認可します。</p>
+        <h2>強い認証と広い権限は別</h2>
+        <p>パスワードや多要素認証は本人確認を強めますが、認可範囲まで自動的に広げるものではありません。MFA済みでも、担当外の案件を読めるとは限りません。最小権限では、必要な対象と操作だけを許します。</p>
+        <h2>トークン、OAuth、APIキー</h2>
+        <p>セッションやアクセストークンは認証後の状態やアクセス権限を扱うために使われます。トークンを受け取ったら、有効性だけでなく用途と権限の範囲、対象資源との関係も確認します。</p>
+        <p>OAuthは、別のアプリへ限定したアクセスを委任するための枠組みです。OAuthのアクセストークンを持つことだけで、最終利用者の本人確認が完了したとは限りません。APIキーも呼び出し元の識別などに使えますが、最終利用者の認証とは分けて考えます。</p>
+        <h2>対象を変えて確かめる</h2>
+        <p>本人確認済みのAがBの申請IDを指定した場合、有効な認証情報があっても、その申請を閲覧する権限がなければ拒否します。所有関係や担当関係と、要求された操作を毎回確認します。</p>
+        <p>MFA済みなら全件を読めるか、という問いには「認証の強さと認可の広さは別なので、それだけでは読めない」と答えられます。秘密情報はコードへ直接埋め込まず、漏えい時に失効できる運用も用意します。</p>
         <h3>この教材の扱う範囲</h3>
-        <p class="endnote">この章は認証と認可の役割の説明です。実装時は利用する規格の現行仕様と対象システムの権限設計を確認します。</p>
+        <p class="endnote">この章は基礎理解用です。具体的な認証方式、トークン形式、権限モデルは利用する仕様とシステム設計を確認します。</p>
       </article>
       <section class="sources" aria-labelledby="sources-title">
         <h2 id="sources-title">出典</h2>
@@ -59,7 +52,5 @@
       </section>
     </main>
   </div>
-
-  
 </body>
 </html>
