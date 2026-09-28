@@ -127,6 +127,7 @@ article.querySelectorAll("h1, h2, h3, p")
 - 読み上げ中の段落ハイライト
 - 利用可能な日本語音声の選択
 - 再生速度 0.7〜4.0倍
+- 読み上げ中のScreen Wake Lockによる自動消灯抑止
 
 再生速度は `SpeechSynthesisUtterance.rate` に設定します。
 
@@ -145,6 +146,10 @@ article.querySelectorAll("h1, h2, h3, p")
 停止時は `speechSynthesis.cancel()` を呼び、先頭へ戻します。
 
 ページ離脱時にも発話をキャンセルします。
+
+再生開始時に対応ブラウザでは Screen Wake Lock API の `screen` ロックを要求し、読み上げ中の自動消灯を抑止します。一時停止中もロックを維持します。停止、読み上げ完了、致命的な読み上げエラー、ページ離脱時には解除します。タブが非表示になってロックが失われた場合は、表示状態へ戻ったときに再取得を試みます。
+
+Wake Lockはbest-effortです。未対応ブラウザやOS側で拒否された場合でも読み上げ自体は継続し、バックグラウンド再生を保証するものではありません。
 
 `canceled` と `interrupted` は通常操作でも発生し得るため、致命的エラーとして扱いません。
 

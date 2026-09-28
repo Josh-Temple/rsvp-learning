@@ -18,6 +18,39 @@
       let state = "idle";
       let runId = 0;
       let voiceChangedWhilePaused = false;
+      let wakeLock = null;
+      let wakeLockWanted = false;
+
+      async function requestWakeLock() {
+        const wakeLockApi = window.navigator?.wakeLock;
+        wakeLockWanted = true;
+        if (!wakeLockApi?.request || wakeLock) return;
+        try {
+          const lock = await wakeLockApi.request("screen");
+          if (!wakeLockWanted) {
+            await lock.release();
+            return;
+          }
+          wakeLock = lock;
+          wakeLock.addEventListener?.("release", () => {
+            wakeLock = null;
+          });
+        } catch {
+          wakeLock = null;
+        }
+      }
+
+      async function releaseWakeLock() {
+        wakeLockWanted = false;
+        const current = wakeLock;
+        wakeLock = null;
+        if (!current) return;
+        try {
+          await current.release();
+        } catch {
+          // Wake Lock is best-effort; speech controls must continue to work.
+        }
+      }
 
       function japaneseVoices() {
         const ja = voices.filter((voice) => voice.lang?.toLowerCase().startsWith("ja"));
@@ -77,6 +110,7 @@
       function resetToStart() {
         runId += 1;
         synth.cancel();
+        void releaseWakeLock();
         state = "idle";
         index = 0;
         voiceChangedWhilePaused = false;
@@ -135,6 +169,7 @@
           voiceChangedWhilePaused = false;
           clearHighlight();
           status.textContent = "読み上げが完了しました";
+          void releaseWakeLock();
           updateControls();
           return;
         }
@@ -166,6 +201,7 @@
           state = "idle";
           clearHighlight();
           status.textContent = "読み上げを開始できませんでした";
+          void releaseWakeLock();
           updateControls();
         };
 
@@ -177,6 +213,7 @@
         const activeRun = runId;
         synth.cancel();
         state = "playing";
+        void requestWakeLock();
         status.textContent = "読み上げを開始します";
         updateControls();
         speakCurrent(activeRun);
@@ -192,6 +229,7 @@
             return;
           }
           state = "playing";
+          void requestWakeLock();
           synth.resume();
           status.textContent = `${index + 1} / ${items.length} を読み上げ中`;
           updateControls();
@@ -244,5 +282,18 @@
       status.textContent = "▶で本文を読み上げます";
       updateControls();
 
-      window.addEventListener("beforeunload", () => synth.cancel());
+      document.addEventListener?.("visibilitychange", () => {
+        if (document.visibilityState === "visible" && (state === "playing" || state === "paused")) {
+          void requestWakeLock();
+        }
+      });
+
+      window.addEventListener("pagehide", () => {
+        synth.cancel();
+        void releaseWakeLock();
+      });
+      window.addEventListener("beforeunload", () => {
+        synth.cancel();
+        void releaseWakeLock();
+      });
     })();

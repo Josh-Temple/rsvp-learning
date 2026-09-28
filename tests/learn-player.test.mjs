@@ -50,6 +50,19 @@ async function setupPlayer() {
   const utterances = [];
   const synthEvents = new Map();
   const calls = { cancel: 0, pause: 0, resume: 0 };
+  const wakeLockState = { request: 0, release: 0 };
+  const wakeLockListeners = new Map();
+  const wakeLock = {
+    addEventListener(name, callback) { wakeLockListeners.set(name, callback); },
+    async release() { wakeLockState.release += 1; wakeLockListeners.get("release")?.(); },
+  };
+  const wakeLockApi = {
+    async request(type) {
+      assert.equal(type, "screen");
+      wakeLockState.request += 1;
+      return wakeLock;
+    },
+  };
   const speechSynthesis = {
     getVoices: () => voices,
     speak(utterance) { utterances.push(utterance); },
@@ -71,6 +84,7 @@ async function setupPlayer() {
     window: {
       speechSynthesis,
       SpeechSynthesisUtterance: MockUtterance,
+      navigator: { wakeLock: wakeLockApi },
       addEventListener(name, callback) { windowEvents.set(name, callback); },
     },
     SpeechSynthesisUtterance: MockUtterance,
@@ -78,7 +92,7 @@ async function setupPlayer() {
   });
   const js = await fs.readFile(new URL("../learn/learn.js", import.meta.url), "utf8");
   new vm.Script(js, { filename: "learn.js" }).runInContext(context);
-  return { elements: selectors, articleItems, utterances, calls, windowEvents, synthEvents };
+  return { elements: selectors, articleItems, utterances, calls, windowEvents, synthEvents, wakeLockState };
 }
 
 test("voice list refresh preserves a selected Japanese voice", async () => {
@@ -92,7 +106,7 @@ test("voice list refresh preserves a selected Japanese voice", async () => {
 });
 
 test("player reads DOM order and pause voice change resumes the same element with the new voice", async () => {
-  const { elements, articleItems, utterances, calls, windowEvents } = await setupPlayer();
+  const { elements, articleItems, utterances, calls, windowEvents, wakeLockState } = await setupPlayer();
   const play = elements.get("#speech-play");
   const pause = elements.get("#speech-pause");
   const stop = elements.get("#speech-stop");
@@ -101,6 +115,8 @@ test("player reads DOM order and pause voice change resumes the same element wit
 
   assert.equal(elements.get("#speech-reader").dataset.state, "idle");
   play.click();
+  await new Promise((resolve) => setImmediate(resolve));
+  assert.equal(wakeLockState.request, 1);
   assert.equal(utterances[0].text, "教材タイトル");
   assert.equal(utterances[0].voice.voiceURI, "ja-default");
   utterances[0].onstart();
@@ -114,6 +130,7 @@ test("player reads DOM order and pause voice change resumes the same element wit
   assert.equal(elements.get("#speech-rate-label").textContent, "4.0×");
 
   pause.click();
+  assert.equal(wakeLockState.release, 0);
   assert.equal(elements.get("#speech-reader").dataset.state, "paused");
   assert.equal(calls.pause, 1);
   const countWhilePaused = utterances.length;
@@ -132,6 +149,8 @@ test("player reads DOM order and pause voice change resumes the same element wit
   assert.equal(articleItems[1].classList.contains("speech-active"), true);
 
   stop.click();
+  await new Promise((resolve) => setImmediate(resolve));
+  assert.equal(wakeLockState.release, 1);
   assert.equal(elements.get("#speech-reader").dataset.state, "idle");
   assert.equal(articleItems[1].classList.contains("speech-active"), false);
   const beforeUnloadCount = calls.cancel;
