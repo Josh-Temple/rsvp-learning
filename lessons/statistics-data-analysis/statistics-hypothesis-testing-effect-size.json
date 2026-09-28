@@ -14,227 +14,139 @@
   ],
   "chunks": [
     {
-      "text": "新しい受付方法で、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "処理時間が短くなったかを",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "調べるとします。",
+      "text": "新しい受付方法を比べるとします。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "帰無仮説は、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "平均処理時間に差がない",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "などの基準です。",
+      "text": "平均処理時間の差を調べます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "検定では、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "帰無仮説と計算の前提を置きます。",
+      "text": "帰無仮説を基準として置きます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "p値は、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "その前提の下で、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "観測結果以上に極端な",
+      "text": "検定には計算上の前提があります。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "結果が出る確率です。",
+      "text": "p値はその前提の下で読みます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "帰無仮説が正しい確率では",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "ありません。",
+      "text": "観測以上に極端な結果の確率です。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "例えば、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "p値が〇点〇四だったとします。",
+      "text": "帰無仮説が正しい確率ではありません。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "〇点〇五より小さいだけで、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "改善が大きいとは",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "言えません。",
+      "text": "小さいp値だけで効果は分かりません。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "一万件なら、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "一件当たりの小さな差も",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "検出され得ます。",
+      "text": "件数が多いと小差も検出されます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "処理時間が平均で",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "〇点一分縮んでも、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "運用価値は別に判断します。",
+      "text": "平均〇点一分の差かもしれません。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "差の大きさを、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "効果量として併記します。",
+      "text": "実務上重要かは別に判断します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "推定した差の信頼区間も、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "どの程度不確かな",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "結果かを示します。",
+      "text": "差の大きさを効果量で見ます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "一方、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "p値が大きいことは、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "差がゼロの証明ではありません。",
+      "text": "信頼区間も不確実性の手掛かりです。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "件数が少なければ、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "重要な差を見逃すこともあります。",
+      "text": "p値が大きくても差ゼロとは限りません。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "後から多くの指標を試し、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "小さいp値だけを",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "選ぶと誤解を招きます。",
+      "text": "件数不足で見逃すことがあります。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "何を比べるかと、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "重要な差の大きさを",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "先に定めます。",
+      "text": "検出したい差と必要件数を考えます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "担当者の熟練度や",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "案件の難しさに偏りがあれば、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "比較も歪みます。",
+      "text": "多くの指標を試すと注意が要ります。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "統計的な有意性だけで、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "導入を決めません。",
+      "text": "偶然の小さいp値を拾いやすくなります。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "費用、負担、公平性なども",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "結果と併せて確認します。",
+      "text": "主な比較を事前に定めます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "結論には、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "差の大きさと不確実性、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "比較条件を添えます。",
-      "duration_multiplier": 1.35
-    },
-    {
-      "text": "五つの指標を比べて一つだけ有意でした。",
+      "text": "結果を見て基準を変えないようにします。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "後から都合のよい結果を選ぶおそれがあります。",
+      "text": "比較条件の偏りにも注意します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "何を主に比べるか事前に決めます。",
+      "text": "担当者の熟練度が違うかもしれません。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "一つの小さなp値だけで採用ですか。",
+      "text": "案件の難しさも違うかもしれません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "観察データでは交絡を検討します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "統計的有意性だけで導入を決めません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "費用や負担も合わせて見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "公平性や副作用も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "結論には差と不確実性を添えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "比較条件も一緒に示します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "五指標で一つだけ有意とします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "後から選んだ結果か確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一つのp値だけで採用でしょうか。",
       "duration_multiplier": 1.25
     },
     {
-      "text": "比較回数と差の大きさも見ます。",
+      "text": "効果量と比較回数も見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "再現するか別データでも確かめます。",
       "duration_multiplier": 1.15
     }
   ]

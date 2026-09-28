@@ -26,260 +26,140 @@
   ],
   "chunks": [
     {
-      "text": "申請を扱うAPIに、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "利用者Aがログインした場面を考えます。",
+      "text": "申請APIへ利用者Aが入るとします。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "本人確認を行うのが",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "認証です。",
+      "text": "本人確認を行うのが認証です。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "Aが自分の申請を読む権限を",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "持つか決めるのが認可です。",
+      "text": "Aが何をできるか決めるのが認可です。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "ログインできても、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "別の利用者Bの申請まで",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "読めるとは限りません。",
+      "text": "認証と認可は別の判断です。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "APIは、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "申請IDが変わっても",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "毎回権限を確かめます。",
+      "text": "ログイン済みでも全件は読めません。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "画面でボタンを隠すだけでは、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "直接のAPI呼び出しを防げません。",
+      "text": "対象ごとに権限を確認します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "本人確認には、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "パスワードや多要素認証などを",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "利用できます。",
+      "text": "誰が何へ何をするかで考えます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "認証後の状態は、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "セッションなどで維持できます。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "アクセストークンは、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "保護された資源へアクセスする",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "認可情報を表します。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "トークンが届いたら、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "有効性と用途、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "権限の範囲を確認します。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "トークンの存在だけで、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "任意の申請へのアクセスを",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "許してはいけません。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "利用者の役割だけでなく、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "対象申請との関係も確認します。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "例えば、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "担当職員は担当案件だけを",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "更新できる設計が考えられます。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "必要な操作だけを許すのが",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "最小権限の考え方です。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "OAuthは、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "別のアプリへ限定したアクセスを",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "委任する枠組みです。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "例えば、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "予定表アプリに読み取りだけを",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "許す場面があります。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "OAuthのアクセストークンを得たことと、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "利用者の本人確認は",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "同じ意味ではありません。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "APIキーは、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "呼び出し元の識別などに",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "使われることがあります。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "APIキーがあるだけで、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "最終利用者まで認証したとは",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "言えません。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "秘密情報をソースコードへ",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "直接埋め込まず、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "漏えい時の失効も考えます。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "権限不足なら、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "情報を返さずに",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "アクセスを拒否します。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "重要なのは、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "誰が、どの対象へ、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "何をできるかを個別に判断することです。",
+      "text": "画面でボタンを隠すだけでは不十分です。",
       "duration_multiplier": 1.35
     },
     {
-      "text": "本人確認済みのAが、Bの申請IDを指定します。",
+      "text": "API側でも必ず認可します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "有効な認証情報があっても閲覧は許されません。",
+      "text": "パスワードは認証手段の一つです。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "対象の所有者と操作権限を毎回確認します。",
+      "text": "多要素認証も認証を強めます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "ログイン済みなら全件を読めますか。",
-      "duration_multiplier": 1.25
+      "text": "ただし認可範囲は別に決めます。",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "認証と対象ごとの認可は別です。",
+      "text": "セッションは認証状態を保てます。",
       "duration_multiplier": 1.15
+    },
+    {
+      "text": "アクセストークンも利用されます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "トークンの有効性を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "用途と権限の範囲も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "トークンがあるだけでは足りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "対象資源との関係も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "担当職員は担当案件だけとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "これは対象単位の認可です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "最小権限では必要な操作だけ許します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "OAuthはアクセス委任の枠組みです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "別アプリへ限定権限を渡せます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "OAuthだけで本人確認とは限りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "APIキーは呼出元識別に使えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "最終利用者の認証とは限りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "秘密情報をコードへ埋め込みません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "漏えい時に失効できる設計にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "AがBの申請IDを指定するとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "認証済みでも閲覧は許されません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "所有関係と操作権限を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "MFA済みなら全件を読めますか。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "強い認証と広い認可は別です。",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "各リクエストで境界を守ります。",
+      "duration_multiplier": 1.35
     }
   ]
 }

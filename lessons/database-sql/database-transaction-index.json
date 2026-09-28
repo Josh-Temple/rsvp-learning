@@ -22,252 +22,140 @@
   ],
   "chunks": [
     {
-      "text": "口座AからBへ送金するとき、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "Aから引いた後で処理が失敗し、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "Bへ足されないままでは困ります。",
+      "text": "口座AからBへ送金するとします。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "二つの更新を一つの取引として扱い、",
-      "duration_multiplier": 1
+      "text": "Aだけ減って処理が止まると困ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "二つの更新を一まとまりにします。",
+      "duration_multiplier": 1.15
     },
     {
       "text": "失敗時はまとめて戻します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "トランザクションは、",
-      "duration_multiplier": 1
+      "text": "成功時はまとめて確定します。",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "複数の処理を",
-      "duration_multiplier": 1
+      "text": "これがトランザクションの基本です。",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "一まとまりとして",
-      "duration_multiplier": 1
+      "text": "Atomicityは処理を不可分にします。",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "扱います",
+      "text": "途中だけ残る状態を避けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Consistencyは整合性に関係します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "制約や処理規則も整合性を支えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Isolationは同時実行を扱います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "互いの途中状態をどう見せるか決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Durabilityは確定結果を保持します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "確定後の結果が失われにくくなります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "同じ口座へ同時入金するとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "双方が古い残高を読むと危険です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一方の更新が消えることがあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "同時更新の扱いを設計します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "隔離の強さには違いがあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "強くすれば常に最良とは限りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "待ち時間や競合も増え得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "次に検索性能を考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "インデックスは検索を助ける構造です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "注文IDの検索などで役立ちます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ただし更新時にも維持が必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "保存領域も追加で使います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "すべての列に付ければよくありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "検索条件と利用頻度を見て決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "索引は整合性を保証しません。",
       "duration_multiplier": 1.35
-    },
-    {
-      "text": "途中で失敗した場合、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "処理を取り消す",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "ことがあります",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "これを",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "rollbackと呼びます",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "すべて成功したら、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "変更を確定します",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "これを",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "commitと呼びます",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "ACIDは、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "トランザクションの",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "代表的な性質を",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "表します",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "Atomicityは、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "処理を全部成功か",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "全部失敗にします",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "Consistencyは、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "整合性を保つことに",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "関係します",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "Isolationは、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "同時実行の影響を",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "制御します",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "Durabilityは、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "確定した結果を",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "保持する性質です",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "送金の二つの更新を一緒に確定すれば、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "途中失敗で片方だけが残る状態を避けられます。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "インデックスは、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "検索を高速化するための",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "構造です",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "ただし、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "インデックスにも",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "保存容量と更新コストが",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "あります",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "すべての列へ",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "付ければ良いわけでは",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "ありません",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "整合性と性能は、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "用途に応じて",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "設計します",
-      "duration_multiplier": 1.35
-    },
-    {
-      "text": "別の例として、注文IDで一件を",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "頻繁に探すなら索引が役立ちます。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "索引は読み取りを助ける一方、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "書込み時の更新と保存領域を要します。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "取引と索引は異なる問題を解きます。",
-      "duration_multiplier": 1.35
-    },
-    {
-      "text": "索引は検索のための仕組みなので、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "送金の整合性を保証する",
-      "duration_multiplier": 1
     },
     {
       "text": "トランザクションとは役割が違います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "索引を増やせば競合を防げますか。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "同時更新の問題は別に扱います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "検索が遅いなら実行計画も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "整合性と性能を分けて診断します。",
       "duration_multiplier": 1.35
-    },
-    {
-      "text": "同じ口座へ二人が同時に入金します。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "双方が古い残高を基に上書きすると一方が消えます。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "同時更新をどう隔離するか決めます。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "索引を増やせばこの問題を防げますか。",
-      "duration_multiplier": 1.25
-    },
-    {
-      "text": "検索性能と更新の整合性は別です。",
-      "duration_multiplier": 1.15
     }
   ]
 }
