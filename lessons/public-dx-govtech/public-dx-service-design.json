@@ -1,0 +1,213 @@
+{
+  "schema_version": 1,
+  "id": "public-dx-service-design",
+  "title": "行政サービス設計と利用者中心",
+  "topic": "公共DX",
+  "summary": "行政手続を単なるオンライン化ではなく、利用者の目的、前後の行動、職員の業務、制度上の制約まで含む一つのサービスとして設計する考え方を学びます。",
+  "created_at": "2026-09-29",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "デジタル庁 — サービスデザイン",
+      "url": "https://www.digital.go.jp/policies/servicedesign"
+    },
+    {
+      "title": "デジタル庁 — デジタル社会の実現に向けた重点計画",
+      "url": "https://www.digital.go.jp/policies/priority-policy-program"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "行政DXは画面変更だけではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用者の目的から考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "申請すること自体が目的ではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "生活上の目的があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "手続前の情報収集も含めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "手続後の通知も含めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "問い合わせも体験の一部です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "職員の裏側業務もつながっています。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "入力項目を減らすだけでは足りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "審査負担が増える場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用者と職員の両方を見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "制度上の制約も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "法令と慣行を分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "慣行は見直せる場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "現状業務を観察します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用者行動も観察します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "困る地点を特定します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "申請放棄も重要な情報です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "来庁前の迷いも見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "複数チャネルを考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Webだけに限定しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "対面支援も残る場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "電話支援も必要な場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "紙が必要な利用者もいます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "デジタル利用を強制しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ただし紙前提も固定しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "本人確認はリスクに合わせます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "必要以上の確認を増やしません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "入力済み情報の再入力を減らします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "組織間の分断も見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用者に内部事情を負わせません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一つの手続を端から端まで見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "局所最適を避けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "成功指標を置きます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "完了率を見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "所要時間も見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "問い合わせも見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用者満足だけに頼りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "職員負担も見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "エラーや手戻りも見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "小さく試す方法もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用者調査で確かめます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "新事実で設計を変えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "サービスは継続的に改善します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "公開後も観測します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "誰一人取り残さない視点を持ちます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "多様な利用状況を前提にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "行政サービス全体を設計します。",
+      "duration_multiplier": 1.15
+    }
+  ]
+}
