@@ -235,6 +235,38 @@
     {
       "text": "別の時点の結果として追います。",
       "duration_multiplier": 1.15
+    },
+    {
+      "text": "同期は結果を待って進みます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "非同期は完了時点が分かれます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "受付成功と後続成功を分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "キューにも滞留があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "重複と順序逆転を想定します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "再試行で負荷が増えることがあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "保留中の状態を利用者へ示します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "最終状態を追えるようにします。",
+      "duration_multiplier": 1.15
     }
   ]
 }
