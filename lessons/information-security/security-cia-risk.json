@@ -3,13 +3,13 @@
   "id": "security-cia-risk",
   "title": "機密性・完全性・可用性とリスク",
   "topic": "情報セキュリティ",
-  "summary": "情報資産、機密性・完全性・可用性、脅威・脆弱性・影響を結び、リスクを考える基礎を学びます。",
+  "summary": "情報資産、機密性・完全性・可用性、脅威・脆弱性・影響を結び、対策後に残るリスクまで考える基礎を学びます。",
   "created_at": "2026-09-28",
   "base_duration_ms": 680,
   "sources": [
     {
       "title": "NIST Cybersecurity Framework (CSF) 2.0",
-      "url": "https://www.nist.gov/publications/nist-cybersecurity-framework-csf-20"
+      "url": "https://www.nist.gov/cyberframework"
     },
     {
       "title": "IPA 試験要綱・シラバスについて",
@@ -18,15 +18,19 @@
   ],
   "chunks": [
     {
-      "text": "顧客名簿を守る場面を考えます。",
+      "text": "守る対象を資産として捉えます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "まず守る情報と業務を特定します。",
+      "text": "情報だけが資産ではありません。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "これを情報資産として捉えます。",
+      "text": "業務やシステムも対象です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "人や設備も依存関係に入ります。",
       "duration_multiplier": 1.15
     },
     {
@@ -38,19 +42,19 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "可用性は利用可能性を守ります。",
+      "text": "可用性は必要時の利用を守ります。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "三つは同時に考える必要があります。",
+      "text": "三つは互いに代替できません。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "暗号化だけで可用性は守れません。",
+      "text": "暗号化だけでは停止を防げません。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "バックアップだけで機密性は守れません。",
+      "text": "バックアップだけでは漏えいを防げません。",
       "duration_multiplier": 1.15
     },
     {
@@ -62,19 +66,23 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "誤操作や災害も原因になります。",
+      "text": "誤操作や故障や災害も含みます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "脆弱性は悪用され得る弱点です。",
+      "text": "脆弱性は利用され得る弱点です。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "古いソフトも弱点になり得ます。",
+      "text": "古いソフトも弱点になります。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "過剰な権限も弱点になり得ます。",
+      "text": "過剰権限も弱点になります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "設定ミスも弱点になります。",
       "duration_multiplier": 1.15
     },
     {
@@ -82,71 +90,127 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "リスクは一要素だけで決めません。",
+      "text": "同じ弱点でも影響は変わります。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "起こりやすさと影響を見ます。",
+      "text": "公開情報と個人情報では違います。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "資産の重要度も判断材料です。",
+      "text": "重要業務の停止なら影響も大きいです。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "同じ脆弱性でも影響は違います。",
+      "text": "起こりやすさも判断材料です。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "公開資料と個人情報では違います。",
+      "text": "一つの数値だけで決めません。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "対策には優先順位が必要です。",
+      "text": "資産と文脈を合わせて見ます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "すべてのリスクをゼロにはできません。",
+      "text": "対策は目的で分けられます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "回避する選択肢があります。",
+      "text": "予防は発生を減らします。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "低減する選択肢があります。",
+      "text": "検知は異常を早く知るためです。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "移転する選択肢もあります。",
+      "text": "復旧は影響を短くします。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "受容する判断もあり得ます。",
+      "text": "一つの対策だけに依存しません。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "判断には責任者が必要です。",
+      "text": "多層で失敗を補い合います。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "残ったリスクも記録します。",
+      "text": "対策後にもリスクは残ります。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "環境変化でリスクは変わります。",
+      "text": "残存リスクを記録します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "定期的に見直す必要があります。",
+      "text": "回避する判断があります。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "対策の有無だけで安心しません。",
+      "text": "低減する判断があります。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "守る対象から考え直します。",
+      "text": "移転する判断もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "受容する判断もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "受容には責任ある判断が要ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "環境変化で前提は変わります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "新しい委託先も変化です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "新しい機能も変化です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "重大変更なら再評価します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "指標で対策の効き目を見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "対策の存在だけでは安心しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "実際の結果を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "顧客名簿を例に考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "漏えい防止だけでは足りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "誤更新と停止も考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "三つの性質を同時に見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "守る対象から判断を始めます。",
       "duration_multiplier": 1.15
     }
   ]

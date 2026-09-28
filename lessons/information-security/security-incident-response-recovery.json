@@ -3,7 +3,7 @@
   "id": "security-incident-response-recovery",
   "title": "インシデント対応と復旧",
   "topic": "情報セキュリティ",
-  "summary": "準備、検知、対応、復旧を平時のリスク管理とつなぎ、証拠保全と再発防止まで含めて学びます。",
+  "summary": "平時の準備、検知、分析、封じ込め、復旧、証拠保全、連絡、演習、再発防止を一連の活動として学びます。",
   "created_at": "2026-09-28",
   "base_duration_ms": 680,
   "sources": [
@@ -13,10 +13,42 @@
     },
     {
       "title": "NIST Cybersecurity Framework (CSF) 2.0",
-      "url": "https://www.nist.gov/publications/nist-cybersecurity-framework-csf-20"
+      "url": "https://www.nist.gov/cyberframework"
     }
   ],
   "chunks": [
+    {
+      "text": "インシデント対応は平時から始まります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "連絡先を事前に決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "意思決定者も決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "代替連絡手段も用意します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "重要資産を把握しておきます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "必要なログを決めておきます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "時刻をそろえて記録します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "演習で手順を確かめます。",
+      "duration_multiplier": 1.15
+    },
     {
       "text": "不審な大量通信を検知したとします。",
       "duration_multiplier": 1.15
@@ -30,6 +62,10 @@
       "duration_multiplier": 1.15
     },
     {
+      "text": "異常の基準を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "影響範囲を調べます。",
       "duration_multiplier": 1.15
     },
@@ -39,6 +75,14 @@
     },
     {
       "text": "対象アカウントも確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "対象データも確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "発生時刻を推定します。",
       "duration_multiplier": 1.15
     },
     {
@@ -58,11 +102,7 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "ログを保存します。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "時刻をそろえて記録します。",
+      "text": "ログや関連記録を保全します。",
       "duration_multiplier": 1.15
     },
     {
@@ -70,11 +110,7 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "連絡先を平時に決めます。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "意思決定者も決めておきます。",
+      "text": "変更操作も記録します。",
       "duration_multiplier": 1.15
     },
     {
@@ -86,7 +122,15 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "復旧は停止解除だけではありません。",
+      "text": "委託先との連絡経路も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用者への説明も検討します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "復旧は再起動だけではありません。",
       "duration_multiplier": 1.15
     },
     {
@@ -106,7 +150,11 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "バックアップも検証します。",
+      "text": "段階的に復旧する場合もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "バックアップを検証します。",
       "duration_multiplier": 1.15
     },
     {
@@ -130,6 +178,10 @@
       "duration_multiplier": 1.15
     },
     {
+      "text": "判断が遅れた理由も調べます。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "手順を更新します。",
       "duration_multiplier": 1.15
     },
@@ -138,11 +190,23 @@
       "duration_multiplier": 1.15
     },
     {
+      "text": "対策の有効性を再確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "対応速度だけで評価しません。",
       "duration_multiplier": 1.15
     },
     {
       "text": "被害と再発を減らせたか見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "演習で改善を確かめます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "次の準備へ学びを戻します。",
       "duration_multiplier": 1.15
     }
   ]
