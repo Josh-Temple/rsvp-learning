@@ -163,6 +163,46 @@
     {
       "text": "価値から考えます",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "窓口への電話が多いという声を聞いて、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "すぐにチャットボットを選ばないとし",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "通話を分類すると、必要書類の確認と",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "審査状況の照会が大半かもしれません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "前者は案内の整理、後者は状況を見",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "られる仕組みが候補になります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "電話件数だけでなく、利用者が目的を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "達成できたかを測ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "困りごと、原因、望む結果を分けます。",
+      "duration_multiplier": 1.35
     }
   ]
 }

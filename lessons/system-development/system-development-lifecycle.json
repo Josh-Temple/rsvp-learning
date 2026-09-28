@@ -171,6 +171,46 @@
     {
       "text": "位置づけが見えます",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "小さな申請システムでも、目的の整理",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "から要件、設計、実装、試験、運用まで",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "続きます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "公開した時点で終わりではなく、制度",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "改正時に案内を直す必要があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "各段階の成果を次の段階へ渡し、利用者",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "の確認を受けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "不具合の報告があれば原因を調べ、修正",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "後に回帰を試験します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "保守の担当と費用を計画に含めます。",
+      "duration_multiplier": 1.35
     }
   ]
 }

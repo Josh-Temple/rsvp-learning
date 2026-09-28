@@ -204,6 +204,46 @@
     {
       "text": "設計します",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "申請書から氏名と期限を抽出し、定型の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "項目へ入れるとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "抽出結果が空欄や不正な日付なら、次の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "処理へ進めません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "形式の検証に通っても、原本と異なる値",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "は人が確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "却下通知や外部送信の前には承認者と",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "記録を定めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "機械が候補を作る工程と、人が責任を持",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "って確定する工程を分けます。",
+      "duration_multiplier": 1.35
     }
   ]
 }

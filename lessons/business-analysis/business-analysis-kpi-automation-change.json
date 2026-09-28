@@ -175,6 +175,46 @@
     {
       "text": "定着までを含みます",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "入力を自動化して一件の作業が10分",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "から5分になったとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "しかし誤入力による手戻りが増えれば、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "全体の負担は減らないかもしれません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "処理時間、手戻り率、利用者の待ち時間",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "を同じ期間と対象で比べます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "繁忙期や案件の難しさが違えば単純な",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "前後比較は避けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "担当者の役割変更と例外処理も確認し",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ます。",
+      "duration_multiplier": 1.35
     }
   ]
 }

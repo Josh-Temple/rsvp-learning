@@ -37,12 +37,15 @@
         <p>ここで、例えば、注文は顧客IDを持つことがあります。顧客情報を毎回注文表へ重複保存する必要はありません。関係を使うことで、データを分けて管理できます。NULLは、値が不明または未設定であることを表し、ゼロや空文字とは別に扱われます。</p>
         <h2>利用時に意識する点</h2>
         <p>最後に、データ型は、列に入る値の種類を定めます。制約は、データの整合性を守るために使われます。良いデータ設計は、業務上の関係を正しく表します。</p>
+        <h2>具体例で確かめる</h2>
+        <p>顧客表に顧客IDと氏名、注文表に注文IDと顧客IDを置きます。顧客IDは顧客表の行を識別する主キーです。注文表の顧客IDは、どの顧客の注文かを示す外部キーです。一人の顧客に注文が二件あれば、注文表には同じ顧客IDが二行現れます。注文IDだけで顧客名を探すには、二つの表の関係をたどります。</p>
+
         <h3>この教材の扱う範囲</h3>
         <p class="endnote">この章は基礎理解用です。 具体的な製品仕様、組織固有の工程名、法令上の要件は、この章だけで確定しません。 必要に応じて公式資料・一次資料で確認します。</p>
       </article>
       <section class="sources" aria-labelledby="sources-title">
         <h2 id="sources-title">出典</h2>
-        <p><a href="https://www.postgresql.org/docs/18/functions-logical.html">PostgreSQL 18 文書: 論理演算子</a></p>
+        <p><a href="https://www.postgresql.org/docs/18/ddl-constraints.html">PostgreSQL 18 文書: 制約</a></p>
       </section>
     </main>
   </div>

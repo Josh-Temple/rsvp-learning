@@ -172,6 +172,42 @@
     {
       "text": "追えることです",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "二人が同じ案内文の一行を別々の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ブランチで直したとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "先に統合された変更の後で、もう一方を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "統合すると競合が起こりえます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "双方の意図を読み、採用する文章を決め",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "てから競合を解消します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "自動的に結合できても内容が矛盾する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ことがあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "統合後に差分とテストを確認します。",
+      "duration_multiplier": 1.35
     }
   ]
 }

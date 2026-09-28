@@ -183,6 +183,46 @@
     {
       "text": "予測しやすくします",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "申請の受付処理が通知メールの文面まで",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "直接組み立てているとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "通知方式を変えるだけで受付のコードに",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "も修正が及びます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "受付結果を通知側へ渡す境界を作れば",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "変更箇所を絞れます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ただし境界を増やすとデータの受渡しと",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "障害時の扱いが必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "変更の理由ごとに責務を分け、依存先を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "確認します。",
+      "duration_multiplier": 1.35
     }
   ]
 }

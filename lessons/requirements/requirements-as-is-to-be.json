@@ -159,6 +159,42 @@
     {
       "text": "つながっています",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "現状は紙の申請を窓口で受け、担当者が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "台帳へ転記するとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "改善後は利用者が入力し、受付番号を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "自動で返す案を考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "転記がなくなっても、書類不足や代理人",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "申請の判断は残ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "現状の待ち時間と誤記の発生場所を調べ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "、改善後の担当と例外処理を描きます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "差分を要件へつなげます。",
+      "duration_multiplier": 1.35
     }
   ]
 }

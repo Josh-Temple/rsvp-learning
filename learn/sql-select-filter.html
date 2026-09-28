@@ -37,9 +37,19 @@
         <p>ここで、ORDER BYで、結果を並べ替えます。ASCは昇順、DESCは降順です。DISTINCTは、重複した結果を除くために使えます。LIMITなどで、取得件数を制限できるDBもあります。</p>
         <h2>利用時に意識する点</h2>
         <p>最後に、条件を書いたら、意図した行だけ取れているか確認します。大量データでは、不要な全件取得を避けます。エスキューエルは、データ構造を理解して書くことが重要です。</p>
+        <h2>具体例で確かめる</h2>
+        <p>注文表に金額1000円と3000円の二行があるとします。WHERE 金額 &gt;= 2000 なら後者だけが残ります。SELECTで表示する列を指定しても、条件に合う行の判断は変わりません。NULLを含む列は通常の等号比較だけでは期待した結果にならないため扱いを確認します。少数の行で結果を予想し、実際のクエリと照らします。</p>
+
         <h3>この教材の扱う範囲</h3>
         <p class="endnote">この章は基礎理解用です。 具体的な製品仕様、組織固有の工程名、法令上の要件は、この章だけで確定しません。 必要に応じて公式資料・一次資料で確認します。</p>
       </article>
+      <section class="sources" aria-labelledby="sources-title">
+        <h2 id="sources-title">出典</h2>
+        <p><a href="https://www.postgresql.org/docs/18/queries.html">PostgreSQL 18: Querying a Table</a></p>
+        <p><a href="https://www.postgresql.org/docs/18/functions-comparison.html">PostgreSQL 18: Comparison Functions and Operators</a></p>
+        <p><a href="https://www.postgresql.org/docs/18/queries-order.html">PostgreSQL 18: Sorting Rows (ORDER BY)</a></p>
+        <p><a href="https://www.postgresql.org/docs/18/queries-limit.html">PostgreSQL 18: LIMIT and OFFSET</a></p>
+      </section>
       
     </main>
   </div>

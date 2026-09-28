@@ -184,6 +184,46 @@
     {
       "text": "なります",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "申請状況を表示する機能を作るとします",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "本人が自分の案件だけを見られることは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "権限の条件です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ピーク時の応答時間や障害時の復旧目標",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "も必要になります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "機能の有無だけを試験しても、遅延や",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "情報漏えいの問題は見つかりません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "条件ごとに測定方法と受入基準を決め",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ます。",
+      "duration_multiplier": 1.35
     }
   ]
 }

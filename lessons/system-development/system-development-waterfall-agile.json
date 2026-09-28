@@ -124,6 +124,50 @@
     {
       "text": "手法を目的化せず、価値を届ける方法として考えます",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "申請制度の確定した要件をまとめて設計",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "し、段階ごとに確認する進め方を考え",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "別の進め方では、受付だけ先に試し、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "利用者の反応を見て改善します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "途中で制度が変われば、どちらも影響",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "範囲と承認を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "短い反復でも法令上の要件を省けません",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "変更の頻度と利用者の関与に合わせて",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "進め方を選びます。",
+      "duration_multiplier": 1.35
     }
   ]
 }

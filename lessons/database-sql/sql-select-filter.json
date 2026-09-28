@@ -180,6 +180,50 @@
     {
       "text": "書くことが重要です",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "注文表に金額1000円と3000円の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "二行があるとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "WHERE 金額 >= 2000 ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "なら後者だけが残ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "SELECTで表示する列を指定しても",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "、条件に合う行の判断は変わりません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "NULLを含む列は通常の等号比較だけ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "では期待した結果にならないため扱いを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "少数の行で結果を予想し、実際のクエリ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "と照らします。",
+      "duration_multiplier": 1.35
     }
   ]
 }

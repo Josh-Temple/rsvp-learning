@@ -188,6 +188,50 @@
     {
       "text": "API仕様の一部です",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "申請一覧を取得する要求を送ると、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "サーバーはJSONで申請IDと状態を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "返すとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "新規作成では必要な項目を送信し、成功",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "時は作られた資源を示します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "見つからないIDと権限のないIDは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "扱いが違います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "HTTPの方法、URL、状態コード、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "応答の形を合わせて確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "JSONの形だけで操作の意味は決まり",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ません。",
+      "duration_multiplier": 1.35
     }
   ]
 }

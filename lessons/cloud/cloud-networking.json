@@ -204,6 +204,54 @@
     {
       "text": "ようにします",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "利用者のブラウザから公開入口へ届いた",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "要求が、アプリを経てデータベースへ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "進むとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "データベースを直接公開する必要は",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "入口からアプリ、アプリから",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "データベースの通信だけを許す設計を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "名前解決、暗号化、通信制御のどこで",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "失敗したかを切り分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "経路を図にして許可元と宛先を点検し",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ます。",
+      "duration_multiplier": 1.35
     }
   ]
 }

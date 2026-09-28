@@ -163,6 +163,46 @@
     {
       "text": "作業です",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "利用者はスマホ通知を求め、担当者は",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "まず受付一覧を整えたいとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "予算と期限に収まる範囲を決めるため、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "誰のどの困りごとを優先するか確認し",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "通知を今回の対象外にするなら、代わり",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "の連絡方法を記します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "対象外を曖昧にすると完成の判断がずれ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "決裁者と利用者へ範囲を共有します。",
+      "duration_multiplier": 1.35
     }
   ]
 }

@@ -12,10 +12,6 @@
       "url": "https://developers.openai.com/api/docs/guides/function-calling"
     },
     {
-      "title": "OpenAI API: Function Calling",
-      "url": "https://platform.openai.com/docs/guides/function-calling"
-    },
-    {
       "title": "OWASP GenAI LLM Top 10 2026",
       "url": "https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/"
     },
@@ -207,6 +203,46 @@
     },
     {
       "text": "設計します",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "AIが申請状況を調べ、必要なら担当者",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "へ通知するとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "検索は読み取りですが、通知は外部へ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "作用する操作です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "AIが選んだ宛先と内容を、送信前に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "権限と対象案件で検査します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "応答が遅くても、同じ通知を無条件に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "再送すると重複するかもしれません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "各呼出しの入力と結果を記録し、失敗",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "後に何を再試行できるか決めます。",
       "duration_multiplier": 1.35
     }
   ]

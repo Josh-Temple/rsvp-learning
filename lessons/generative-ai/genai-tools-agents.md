@@ -23,6 +23,11 @@ LLMが外部ツールを使う仕組みと、複数ステップを進めるAgent
 12. 重要な操作前に、人間承認を置くことがあります
 13. 途中状態と実行履歴を記録すると復旧しやすくなります
 14. Agentは、自律性より制御可能性を含めて設計します
+15. AIが申請状況を調べ、必要なら担当者へ通知するとします。
+16. 検索は読み取りですが、通知は外部へ作用する操作です。
+17. AIが選んだ宛先と内容を、送信前に権限と対象案件で検査します。
+18. 応答が遅くても、同じ通知を無条件に再送すると重複するかもしれません。
+19. 各呼出しの入力と結果を記録し、失敗後に何を再試行できるか決めます。
 
 ## 注意
 
@@ -33,6 +38,5 @@ LLMが外部ツールを使う仕組みと、複数ステップを進めるAgent
 ## 出典
 
 - [OpenAI API: Function Calling](https://developers.openai.com/api/docs/guides/function-calling)
-- [OpenAI API: Function Calling](https://platform.openai.com/docs/guides/function-calling)
 - [OWASP GenAI LLM Top 10 2026](https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/)
 - [NIST SP 800-53 Rev. 5 Update 1](https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final)

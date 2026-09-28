@@ -167,6 +167,46 @@
     {
       "text": "重要です",
       "duration_multiplier": 1.25
+    },
+    {
+      "text": "利用者は入力を短くしたい一方、審査",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "担当は必要な確認項目を残したいとし",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "運用担当には問い合わせ対応の負担も",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "あります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "意見を集めるだけでなく、誰が何を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "決めるかを明確にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "相反する要求は目的、影響、根拠を揃",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "えて決裁者へ示します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "決定後は理由と変更履歴を共有します。",
+      "duration_multiplier": 1.35
     }
   ]
 }

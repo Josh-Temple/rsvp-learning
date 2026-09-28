@@ -37,9 +37,17 @@
         <p>ここで、SUMは、合計を求めます。AVGは、平均を求めます。GROUP BYは、グループ単位で集計します。HAVINGは、集計後の結果を条件で絞ります。</p>
         <h2>利用時に意識する点</h2>
         <p>最後に、集計値だけでなく、分母の定義も確認します。JOINとGROUP BYを組み合わせると、多くの業務集計ができます。結果が正しいか、小さな例で検算する習慣が重要です。</p>
+        <h2>具体例で確かめる</h2>
+        <p>顧客表にAとB、注文表にAの注文二件だけがあるとします。顧客IDでINNER JOINすると、Aの注文二行が得られます。顧客表を左にしたLEFT JOINなら、注文のないBも残ります。結合後の行を数えると顧客数ではなく注文数になる場合があります。何を一件と数えるかを決め、顧客別の合計と注文数を分けて確認します。</p>
+
         <h3>この教材の扱う範囲</h3>
         <p class="endnote">この章は基礎理解用です。 具体的な製品仕様、組織固有の工程名、法令上の要件は、この章だけで確定しません。 必要に応じて公式資料・一次資料で確認します。</p>
       </article>
+      <section class="sources" aria-labelledby="sources-title">
+        <h2 id="sources-title">出典</h2>
+        <p><a href="https://www.postgresql.org/docs/18/tutorial-join.html">PostgreSQL 18 文書: テーブル間の結合</a></p>
+        <p><a href="https://www.postgresql.org/docs/18/tutorial-agg.html">PostgreSQL 18 文書: 集約関数</a></p>
+      </section>
       
     </main>
   </div>

@@ -167,6 +167,46 @@
     {
       "text": "改善します",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "一件の申請が受付で一日、審査待ちで",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "五日、審査で一時間かかるとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "審査作業を半分にしても、全体の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "待ち時間はほとんど変わりません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "工程ごとの到着件数、処理能力、滞留",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "件数を測ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "書類不足による差戻しが待ち列を増やす",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "なら、その発生理由も調べます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "長い工程だけを見ず、流れを制限する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "箇所を特定します。",
+      "duration_multiplier": 1.35
     }
   ]
 }

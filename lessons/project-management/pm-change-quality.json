@@ -155,6 +155,46 @@
     {
       "text": "重要です",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "申請機能の開発途中で、新しい通知方法",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "を追加したいとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "追加すると設計と試験が増え、予定日に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "影響するかもしれません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "変更の価値、必要な作業、既存機能への",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "影響を整理します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "期限を固定するなら他の範囲の調整も",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "検討します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "決めた内容と受入条件を更新し、変更前",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "の計画と混同しないようにします。",
+      "duration_multiplier": 1.35
     }
   ]
 }

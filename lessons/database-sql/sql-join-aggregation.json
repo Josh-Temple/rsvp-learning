@@ -6,7 +6,16 @@
   "summary": "複数テーブルの結合とGROUP BYによる集計の基本を学びます。",
   "created_at": "2026-09-27",
   "base_duration_ms": 680,
-  "sources": [],
+  "sources": [
+    {
+      "title": "PostgreSQL 18 文書: テーブル間の結合",
+      "url": "https://www.postgresql.org/docs/18/tutorial-join.html"
+    },
+    {
+      "title": "PostgreSQL 18 文書: 集約関数",
+      "url": "https://www.postgresql.org/docs/18/tutorial-agg.html"
+    }
+  ],
   "chunks": [
     {
       "text": "JOINは、",
@@ -170,6 +179,46 @@
     },
     {
       "text": "習慣が重要です",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "顧客表にAとB、注文表にAの注文二件",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "だけがあるとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "顧客IDでINNER JOINすると",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "、Aの注文二行が得られます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "顧客表を左にしたLEFT JOIN",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "なら、注文のないBも残ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "結合後の行を数えると顧客数ではなく",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "注文数になる場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "何を一件と数えるかを決め、顧客別の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "合計と注文数を分けて確認します。",
       "duration_multiplier": 1.35
     }
   ]

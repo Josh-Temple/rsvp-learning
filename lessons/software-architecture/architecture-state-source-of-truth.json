@@ -184,6 +184,46 @@
     {
       "text": "復旧しやすくなります",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "申請の状態をデータベースでは承認済み",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "、画面のキャッシュでは審査中と表示",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "したとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "どちらを正本とするか決めていなければ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "、訂正時に混乱します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "更新の権限と順序を定め、表示側は正本",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "から状態を反映します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "反映が遅れる場合は許される時間と利用",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "者への表示を考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "履歴を残して変更理由を追います。",
+      "duration_multiplier": 1.35
     }
   ]
 }
