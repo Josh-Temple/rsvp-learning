@@ -247,6 +247,38 @@
     {
       "text": "受け渡しの契約は共有して確認します。",
       "duration_multiplier": 1.15
+    },
+    {
+      "text": "境界には責任を割り当てます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "入力と出力の契約を明確にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "失敗時の応答も契約に含めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "互換性を壊す変更を区別します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "内部実装は隠せる方が扱いやすいです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "共有データを増やしすぎません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "境界を越える試験を用意します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "分割数より責務の明確さを重視します。",
+      "duration_multiplier": 1.15
     }
   ]
 }

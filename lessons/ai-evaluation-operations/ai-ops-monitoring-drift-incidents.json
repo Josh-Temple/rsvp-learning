@@ -232,6 +232,38 @@
     {
       "text": "利用件数と影響範囲も見ます。",
       "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用量と品質を一緒に見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "全体平均だけで異常を探しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "質問群ごとに変化を見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "制度変更を監視条件に含めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "苦情ゼロでも安全とは限りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "重大事例は個別に追います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "検知後の対応手順を決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "復旧後も原因を振り返ります。",
+      "duration_multiplier": 1.15
     }
   ]
 }
