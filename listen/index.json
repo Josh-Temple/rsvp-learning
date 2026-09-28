@@ -1,4 +1,26 @@
 {
   "schema_version": 1,
-  "items": []
+  "items": [
+    {
+      "id": "2026-09-28-rsvp-learn-listen-roles",
+      "title": "RSVP・Learn・Listenの役割分担",
+      "date": "2026-09-28",
+      "category": "report",
+      "path": "./reports/2026-09-28-rsvp-learn-listen-roles.html"
+    },
+    {
+      "id": "2026-09-28-rsvp-review-current-state",
+      "title": "rsvp-learningレビューから見えた現在地",
+      "date": "2026-09-28",
+      "category": "report",
+      "path": "./reports/2026-09-28-rsvp-review-current-state.html"
+    },
+    {
+      "id": "2026-09-28-vercel-deploy-recovery",
+      "title": "Vercel自動デプロイ障害の原因と復旧",
+      "date": "2026-09-28",
+      "category": "report",
+      "path": "./reports/2026-09-28-vercel-deploy-recovery.html"
+    }
+  ]
 }
