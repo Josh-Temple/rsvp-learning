@@ -9,6 +9,22 @@
   "sources": [],
   "chunks": [
     {
+      "text": "利用者はスマホ通知を求め、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "担当者はまず受付一覧を整えたいとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "予算と期限に収まる範囲を決めるため、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "誰のどの困りごとを優先するか確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "ステークホルダーは、",
       "duration_multiplier": 1
     },
@@ -117,6 +133,14 @@
       "duration_multiplier": 1.15
     },
     {
+      "text": "スマホ通知を後回しにするとしても、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "利用者へ状況を伝える方法は残す必要があります。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "スコープが曖昧だと、",
       "duration_multiplier": 1
     },
@@ -165,22 +189,6 @@
       "duration_multiplier": 1.35
     },
     {
-      "text": "利用者はスマホ通知を求め、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "担当者はまず受付一覧を整えたいとします。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "予算と期限に収まる範囲を決めるため、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "誰のどの困りごとを優先するか確認します。",
-      "duration_multiplier": 1.15
-    },
-    {
       "text": "通知を今回の対象外にするなら、",
       "duration_multiplier": 1
     },
@@ -194,6 +202,14 @@
     },
     {
       "text": "決裁者と利用者へ範囲を共有します。",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "対象外の機能と代替手段を明記すれば、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "関係者の期待を揃えやすくなります。",
       "duration_multiplier": 1.35
     }
   ]

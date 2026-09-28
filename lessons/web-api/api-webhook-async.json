@@ -14,6 +14,22 @@
   ],
   "chunks": [
     {
+      "text": "審査完了時に外部システムへ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "Webhookを送るとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "受信側が一時的に停止していれば、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "後で再送する必要があります。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "同期処理では、",
       "duration_multiplier": 1
     },
@@ -130,6 +146,14 @@
       "duration_multiplier": 1.15
     },
     {
+      "text": "Webhookの送信は",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "相手の処理完了を保証しません。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "再試行や失敗処理を",
       "duration_multiplier": 1
     },
@@ -174,22 +198,6 @@
       "duration_multiplier": 1.35
     },
     {
-      "text": "審査完了時に外部システムへ",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "Webhookを送るとします。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "受信側が一時的に停止していれば、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "後で再送する必要があります。",
-      "duration_multiplier": 1.15
-    },
-    {
       "text": "再送で同じ通知が二度届いても、",
       "duration_multiplier": 1
     },
@@ -207,6 +215,18 @@
     },
     {
       "text": "送信成功と相手の処理完了を同一視しません。",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "イベントIDで重複を見分け、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "届かなかった通知と順序が逆に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "なった通知を追えるようにします。",
       "duration_multiplier": 1.35
     }
   ]

@@ -14,6 +14,18 @@
   ],
   "chunks": [
     {
+      "text": "申請APIへ送信した直後に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "応答がタイムアウトしたとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "サーバー側では作成済みかもしれません。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "API通信は、",
       "duration_multiplier": 1
     },
@@ -122,6 +134,14 @@
       "duration_multiplier": 1.15
     },
     {
+      "text": "タイムアウトは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "申請が作られなかった証拠にはなりません。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "冪等性は、",
       "duration_multiplier": 1
     },
@@ -178,18 +198,6 @@
       "duration_multiplier": 1.35
     },
     {
-      "text": "申請APIへ送信した直後に",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "応答がタイムアウトしたとします。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "サーバー側では作成済みかもしれません。",
-      "duration_multiplier": 1.15
-    },
-    {
       "text": "同じ要求に識別子を付けて再送し、",
       "duration_multiplier": 1
     },
@@ -207,6 +215,14 @@
     },
     {
       "text": "エラー内容と再試行の可否を分けて伝えます。",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "識別子で同じ要求を見分け、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "再送しても一件の結果へ収束するようにします。",
       "duration_multiplier": 1.35
     }
   ]

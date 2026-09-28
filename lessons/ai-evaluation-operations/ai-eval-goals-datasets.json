@@ -9,6 +9,18 @@
   "sources": [],
   "chunks": [
     {
+      "text": "申請回答AIを評価するなら、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "住所変更のような頻出質問だけを並べません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "期限を過ぎた申請や代理人の手続きも含めます。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "AI評価では、",
       "duration_multiplier": 1
     },
@@ -121,6 +133,18 @@
       "duration_multiplier": 1.15
     },
     {
+      "text": "頻出質問だけの平均点が高くても、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "期限や代理人の例外で誤るなら",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "導入目的を満たしません。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "同じ評価データを見ながら",
       "duration_multiplier": 1
     },
@@ -165,18 +189,6 @@
       "duration_multiplier": 1.35
     },
     {
-      "text": "申請回答AIを評価するなら、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "住所変更のような頻出質問だけを並べません。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "期限を過ぎた申請や代理人の手続きも含めます。",
-      "duration_multiplier": 1.15
-    },
-    {
       "text": "各質問について、参照すべき規程と",
       "duration_multiplier": 1
     },
@@ -194,6 +206,18 @@
     },
     {
       "text": "重大な誤案内は件数が少なくても別に数えます。",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "何を重大な失敗とするかを先に定めておくと、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "少数の危険な誤答を全体の点数",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "へ埋もれさせずに済みます。",
       "duration_multiplier": 1.35
     }
   ]

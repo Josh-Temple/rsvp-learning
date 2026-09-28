@@ -22,6 +22,26 @@
   ],
   "chunks": [
     {
+      "text": "口座AからBへ送金するとき、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "Aから引いた後で処理が失敗し、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "Bへ足されないままでは困ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "二つの更新を一つの取引として扱い、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "失敗時はまとめて戻します。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "トランザクションは、",
       "duration_multiplier": 1
     },
@@ -138,6 +158,14 @@
       "duration_multiplier": 1.15
     },
     {
+      "text": "送金の二つの更新を一緒に確定すれば、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "途中失敗で片方だけが残る状態を避けられます。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "インデックスは、",
       "duration_multiplier": 1
     },
@@ -190,26 +218,6 @@
       "duration_multiplier": 1.35
     },
     {
-      "text": "口座AからBへ送金するとき、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "Aから引いた後で処理が失敗し、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "Bへ足されないままでは困ります。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "二つの更新を一つの取引として扱い、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "失敗時はまとめて戻します。",
-      "duration_multiplier": 1.15
-    },
-    {
       "text": "別の例として、注文IDで一件を",
       "duration_multiplier": 1
     },
@@ -227,6 +235,18 @@
     },
     {
       "text": "取引と索引は異なる問題を解きます。",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "索引は検索のための仕組みなので、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "送金の整合性を保証する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "トランザクションとは役割が違います。",
       "duration_multiplier": 1.35
     }
   ]

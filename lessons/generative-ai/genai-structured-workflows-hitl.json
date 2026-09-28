@@ -18,6 +18,22 @@
   ],
   "chunks": [
     {
+      "text": "申請書から氏名と期限を抽出し、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "定型の項目へ入れるとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "抽出結果が空欄や不正な日付なら、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "次の処理へ進めません。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "業務システムでは、",
       "duration_multiplier": 1
     },
@@ -158,6 +174,14 @@
       "duration_multiplier": 1.15
     },
     {
+      "text": "JSONの形を満たす日付でも、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "原本から読み違えた値なら業務上は誤りです。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "これが、",
       "duration_multiplier": 1
     },
@@ -202,22 +226,6 @@
       "duration_multiplier": 1.35
     },
     {
-      "text": "申請書から氏名と期限を抽出し、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "定型の項目へ入れるとします。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "抽出結果が空欄や不正な日付なら、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "次の処理へ進めません。",
-      "duration_multiplier": 1.15
-    },
-    {
       "text": "形式の検証に通っても、",
       "duration_multiplier": 1
     },
@@ -239,6 +247,18 @@
     },
     {
       "text": "人が責任を持って確定する工程を分けます。",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "形式検証、原本との照合、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "承認を別の工程にすると、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "どこで誤りを止めるか明確になります。",
       "duration_multiplier": 1.35
     }
   ]

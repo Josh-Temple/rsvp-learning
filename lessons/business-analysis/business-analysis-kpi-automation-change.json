@@ -9,6 +9,22 @@
   "sources": [],
   "chunks": [
     {
+      "text": "入力を自動化して一件の作業が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "10分から5分になったとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "しかし誤入力による手戻りが増えれば、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "全体の負担は減らないかもしれません。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "業務改革では、",
       "duration_multiplier": 1
     },
@@ -133,6 +149,18 @@
       "duration_multiplier": 1.15
     },
     {
+      "text": "入力作業が短くなった分だけ、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "確認や修正の仕事が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "別の人へ移っている場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "利用者への",
       "duration_multiplier": 1
     },
@@ -177,22 +205,6 @@
       "duration_multiplier": 1.35
     },
     {
-      "text": "入力を自動化して一件の作業が",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "10分から5分になったとします。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "しかし誤入力による手戻りが増えれば、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "全体の負担は減らないかもしれません。",
-      "duration_multiplier": 1.15
-    },
-    {
       "text": "処理時間、手戻り率、",
       "duration_multiplier": 1
     },
@@ -210,6 +222,14 @@
     },
     {
       "text": "担当者の役割変更と例外処理も確認します。",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "一人の処理時間だけでなく、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "申請完了までの時間と手戻りを同じ案件で追います。",
       "duration_multiplier": 1.35
     }
   ]

@@ -14,17 +14,25 @@
     {
       "title": "PostgreSQL 18: Comparison Functions and Operators",
       "url": "https://www.postgresql.org/docs/18/functions-comparison.html"
-    },
-    {
-      "title": "PostgreSQL 18: Sorting Rows (ORDER BY)",
-      "url": "https://www.postgresql.org/docs/18/queries-order.html"
-    },
-    {
-      "title": "PostgreSQL 18: LIMIT and OFFSET",
-      "url": "https://www.postgresql.org/docs/18/queries-limit.html"
     }
   ],
   "chunks": [
+    {
+      "text": "注文表に金額1000円と",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "3000円の二行があるとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "WHERE 金額 >= 2000 なら",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "後者だけが残ります。",
+      "duration_multiplier": 1.15
+    },
     {
       "text": "SELECTは、",
       "duration_multiplier": 1
@@ -130,6 +138,18 @@
       "duration_multiplier": 1.15
     },
     {
+      "text": "WHEREは条件に合う行を選び、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "SELECTは表示する列を決めるため、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "二つの役割を分けて読めます。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "LIMITなどで、",
       "duration_multiplier": 1
     },
@@ -182,22 +202,6 @@
       "duration_multiplier": 1.35
     },
     {
-      "text": "注文表に金額1000円と",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "3000円の二行があるとします。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "WHERE 金額 >= 2000 なら",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "後者だけが残ります。",
-      "duration_multiplier": 1.15
-    },
-    {
       "text": "SELECTで表示する列を指定しても、",
       "duration_multiplier": 1
     },
@@ -219,6 +223,18 @@
     },
     {
       "text": "実際のクエリと照らします。",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "条件にNULLが含まれると単純",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "な大小比較だけでは選ばれないため、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "欠損の扱いも指定します。",
       "duration_multiplier": 1.35
     }
   ]

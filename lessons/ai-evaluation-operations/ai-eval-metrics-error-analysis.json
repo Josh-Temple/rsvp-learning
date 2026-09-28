@@ -9,6 +9,30 @@
   "sources": [],
   "chunks": [
     {
+      "text": "二つの案内AIがそれぞれ100問",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "中90問に正解したとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一方の10件は",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "必要書類の一部を落とし、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "もう一方には申請期限の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "誤案内が含まれます。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "評価指標は、",
       "duration_multiplier": 1
     },
@@ -133,6 +157,14 @@
       "duration_multiplier": 1.15
     },
     {
+      "text": "正答率の分母が同じでも、誤りが利用",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "者へ与える影響は同じとは限りません。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "失敗を種類ごとに分類します",
       "duration_multiplier": 1.1
     },
@@ -165,30 +197,6 @@
       "duration_multiplier": 1.35
     },
     {
-      "text": "二つの案内AIがそれぞれ100問",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "中90問に正解したとします。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "一方の10件は",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "必要書類の一部を落とし、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "もう一方には申請期限の",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "誤案内が含まれます。",
-      "duration_multiplier": 1.15
-    },
-    {
       "text": "正答率だけでは後者の危険を見落とします。",
       "duration_multiplier": 1.15
     },
@@ -206,6 +214,18 @@
     },
     {
       "text": "なく新しい事例で再評価します。",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "重大な誤案内を独立して数えれば、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "全体指標の改善と実務上の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "安全性を分けて判断できます。",
       "duration_multiplier": 1.35
     }
   ]

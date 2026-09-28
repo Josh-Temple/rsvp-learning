@@ -14,6 +14,22 @@
   ],
   "chunks": [
     {
+      "text": "申請画面の入力チェックを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "直した変更をPRへ出すとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "CIで構文検査と自動テストが動き、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "誤った入力を通す回帰が見つかれば失敗します。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "CIは、",
       "duration_multiplier": 1
     },
@@ -126,6 +142,14 @@
       "duration_multiplier": 1.15
     },
     {
+      "text": "PRのテストが失敗したときは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "変更がどの条件を壊したかを再現できます。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "不安定なテストは、",
       "duration_multiplier": 1
     },
@@ -166,22 +190,6 @@
       "duration_multiplier": 1.35
     },
     {
-      "text": "申請画面の入力チェックを",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "直した変更をPRへ出すとします。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "CIで構文検査と自動テストが動き、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "誤った入力を通す回帰が見つかれば失敗します。",
-      "duration_multiplier": 1.15
-    },
-    {
       "text": "修正を追加した後、",
       "duration_multiplier": 1
     },
@@ -199,6 +207,14 @@
     },
     {
       "text": "人のレビューと必要な環境での確認も残します。",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "自動検査に含まれない操作や端末の見え方は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "通過したという結果だけでは確かめられません。",
       "duration_multiplier": 1.35
     }
   ]

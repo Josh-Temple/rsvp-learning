@@ -9,6 +9,22 @@
   "sources": [],
   "chunks": [
     {
+      "text": "申請者が自分の処理状況を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "見られるという要件を設計へ落とします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "画面には状態と更新時刻を表示し、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "データには申請者IDと状態履歴を持たせます。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "設計は、",
       "duration_multiplier": 1
     },
@@ -125,6 +141,14 @@
       "duration_multiplier": 1.15
     },
     {
+      "text": "状態表示という要件から、画面の項目、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "保存する履歴、閲覧権限が決まります。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "運用時に必要な",
       "duration_multiplier": 1
     },
@@ -169,22 +193,6 @@
       "duration_multiplier": 1.35
     },
     {
-      "text": "申請者が自分の処理状況を",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "見られるという要件を設計へ落とします。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "画面には状態と更新時刻を表示し、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "データには申請者IDと状態履歴を持たせます。",
-      "duration_multiplier": 1.15
-    },
-    {
       "text": "他人の申請IDを指定しても",
       "duration_multiplier": 1
     },
@@ -202,6 +210,14 @@
     },
     {
       "text": "設計が受入条件を満たすか追います。",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "取得に失敗した場合も設計しなければ、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "古い状態を確かな情報として見せかねません。",
       "duration_multiplier": 1.35
     }
   ]

@@ -9,6 +9,22 @@
   "sources": [],
   "chunks": [
     {
+      "text": "受付機能が申請を保存し、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "通知機能が受付番号を送るとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "二つを分けるなら、通知へ渡す受付番号、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "宛先、時刻を決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "大きなシステムは、",
       "duration_multiplier": 1
     },
@@ -137,6 +153,18 @@
       "duration_multiplier": 1.15
     },
     {
+      "text": "受付を保存する責務と、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "通知を届ける責務を分けても、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "受付番号の受け渡しは残ります。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "共通処理を分ける場合も、",
       "duration_multiplier": 1
     },
@@ -177,22 +205,6 @@
       "duration_multiplier": 1.35
     },
     {
-      "text": "受付機能が申請を保存し、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "通知機能が受付番号を送るとします。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "二つを分けるなら、通知へ渡す受付番号、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "宛先、時刻を決めます。",
-      "duration_multiplier": 1.15
-    },
-    {
       "text": "通知が失敗しても申請自体を消すのか、",
       "duration_multiplier": 1
     },
@@ -206,6 +218,14 @@
     },
     {
       "text": "独立した部品でも全体の動きを試験します。",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "境界で渡す値と失敗時の扱いを決めて初めて、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "二つの部品を安全につなげられます。",
       "duration_multiplier": 1.35
     }
   ]

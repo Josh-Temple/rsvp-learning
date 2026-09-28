@@ -14,6 +14,22 @@
   ],
   "chunks": [
     {
+      "text": "利用者が送信ボタンを押した後、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "応答だけが途切れたとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "処理が成功したか不明なまま再送すると",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "二件登録されるおそれがあります。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "外部通信を含む処理は、",
       "duration_multiplier": 1
     },
@@ -146,6 +162,14 @@
       "duration_multiplier": 1.15
     },
     {
+      "text": "応答が途切れたことと申請が保存され",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "なかったことは同じではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "すべてを",
       "duration_multiplier": 1
     },
@@ -190,22 +214,6 @@
       "duration_multiplier": 1.35
     },
     {
-      "text": "利用者が送信ボタンを押した後、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "応答だけが途切れたとします。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "処理が成功したか不明なまま再送すると",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "二件登録されるおそれがあります。",
-      "duration_multiplier": 1.15
-    },
-    {
       "text": "申請ごとに同じ識別子を使い、",
       "duration_multiplier": 1
     },
@@ -223,6 +231,14 @@
     },
     {
       "text": "失敗した場所ごとに再試行の可否を分けます。",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "同じ識別子で結果を照会・再送できれば、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "二重登録を避けながら不明な状態を解消できます。",
       "duration_multiplier": 1.35
     }
   ]

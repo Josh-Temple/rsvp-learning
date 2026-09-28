@@ -18,6 +18,22 @@
   ],
   "chunks": [
     {
+      "text": "長い資料を毎回AIへ渡すと、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "入力が増え、費用と応答時間に影響します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "資料の一部を検索して渡す場合も、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "検索時間と検索の誤りが加わります。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "生成AIアプリでは、",
       "duration_multiplier": 1
     },
@@ -126,6 +142,18 @@
       "duration_multiplier": 1.15
     },
     {
+      "text": "入力資料を短くすると費用",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "や時間を減らせる場合がありますが、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "必要な根拠まで落とせば回答品質が下がります。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "失敗時に、",
       "duration_multiplier": 1
     },
@@ -174,22 +202,6 @@
       "duration_multiplier": 1.35
     },
     {
-      "text": "長い資料を毎回AIへ渡すと、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "入力が増え、費用と応答時間に影響します。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "資料の一部を検索して渡す場合も、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "検索時間と検索の誤りが加わります。",
-      "duration_multiplier": 1.15
-    },
-    {
       "text": "機密の申請情報を含むなら、",
       "duration_multiplier": 1
     },
@@ -207,6 +219,14 @@
     },
     {
       "text": "品質、費用、待ち時間を同じ条件で比較します。",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "送信する情報と障害時の動作も含め、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "一件の要求を最後まで追って比較します。",
       "duration_multiplier": 1.35
     }
   ]

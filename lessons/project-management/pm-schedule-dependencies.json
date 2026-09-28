@@ -9,6 +9,26 @@
   "sources": [],
   "chunks": [
     {
+      "text": "申請項目が確定しないと画面設計を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "終えられず、画面設計が終わらないと",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "試験ケースも固まりません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "項目確定が三日遅れた場合、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "後続の余裕が一日なら予定全体に影響します。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "スケジュールは、",
       "duration_multiplier": 1
     },
@@ -113,6 +133,14 @@
       "duration_multiplier": 1.15
     },
     {
+      "text": "申請項目の確定が遅れると、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "後続の画面設計と試験の開始条件が揃いません。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "重要な依存関係は、",
       "duration_multiplier": 1
     },
@@ -153,26 +181,6 @@
       "duration_multiplier": 1.35
     },
     {
-      "text": "申請項目が確定しないと画面設計を",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "終えられず、画面設計が終わらないと",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "試験ケースも固まりません。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "項目確定が三日遅れた場合、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "後続の余裕が一日なら予定全体に影響します。",
-      "duration_multiplier": 1.15
-    },
-    {
       "text": "作業の所要時間だけでなく、",
       "duration_multiplier": 1
     },
@@ -186,6 +194,14 @@
     },
     {
       "text": "遅れを発見したら完了予定を更新します。",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "遅れの日数をそのまま足す前に、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "後続作業の余裕と並行できる範囲を確認します。",
       "duration_multiplier": 1.35
     }
   ]

@@ -8,11 +8,27 @@
   "base_duration_ms": 680,
   "sources": [
     {
+      "title": "GitHub Docs: About issues",
+      "url": "https://docs.github.com/en/issues/tracking-your-work-with-issues/learning-about-issues/about-issues"
+    },
+    {
       "title": "GitHub Docs: About pull request reviews",
       "url": "https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/about-pull-request-reviews"
     }
   ],
   "chunks": [
+    {
+      "text": "申請画面の不具合をIssueに記録し、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "再現手順と期待する動作を書きます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "修正ブランチのPRで差分とテスト結果を示します。",
+      "duration_multiplier": 1.15
+    },
     {
       "text": "Pull Requestは、",
       "duration_multiplier": 1
@@ -134,6 +150,14 @@
       "duration_multiplier": 1.15
     },
     {
+      "text": "Issueの再現条件からPRの試験",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "へつなぐと、何を直したか追えます。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "大きな変更は、",
       "duration_multiplier": 1
     },
@@ -186,18 +210,6 @@
       "duration_multiplier": 1.35
     },
     {
-      "text": "申請画面の不具合をIssueに記録し、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "再現手順と期待する動作を書きます。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "修正ブランチのPRで差分とテスト結果を示します。",
-      "duration_multiplier": 1.15
-    },
-    {
       "text": "レビューで別の入力条件を指摘さ",
       "duration_multiplier": 1
     },
@@ -223,6 +235,18 @@
     },
     {
       "text": "リンクを残します。",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "テスト通過だけで完了にせず、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "レビューで見つかった別",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "条件と元の完了条件も確かめます。",
       "duration_multiplier": 1.35
     }
   ]

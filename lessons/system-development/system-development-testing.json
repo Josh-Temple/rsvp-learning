@@ -14,6 +14,22 @@
   ],
   "chunks": [
     {
+      "text": "申請期限の計算を単体テストで確かめ、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "画面とAPIの接続を結合テストで確かめます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "受入テストでは利用者が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "一件の申請を完了できるか見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "テストは、",
       "duration_multiplier": 1
     },
@@ -122,6 +138,14 @@
       "duration_multiplier": 1.15
     },
     {
+      "text": "期限計算の単体試験だけでは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "画面から申請が完了するか分かりません。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "非機能要件には、",
       "duration_multiplier": 1
     },
@@ -170,22 +194,6 @@
       "duration_multiplier": 1.35
     },
     {
-      "text": "申請期限の計算を単体テストで確かめ、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "画面とAPIの接続を結合テストで確かめます。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "受入テストでは利用者が",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "一件の申請を完了できるか見ます。",
-      "duration_multiplier": 1.15
-    },
-    {
       "text": "各試験で見つかる不具合は異なるため、",
       "duration_multiplier": 1
     },
@@ -203,6 +211,14 @@
     },
     {
       "text": "期待結果を要件に結びます。",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "連携と受入の試験を要件につなぎ、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "どの段階でどの問題を見つけるか整理します。",
       "duration_multiplier": 1.35
     }
   ]

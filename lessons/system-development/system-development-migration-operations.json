@@ -14,6 +14,18 @@
   ],
   "chunks": [
     {
+      "text": "紙台帳の申請を新システムへ移すとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "氏名だけでは同姓同名を区別できず、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "件数一致だけでは正しい移行とは言えません。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "システムは、",
       "duration_multiplier": 1
     },
@@ -114,6 +126,14 @@
       "duration_multiplier": 1.15
     },
     {
+      "text": "移行前後で件数が一致しても、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "別人の申請へ情報を結びつければ失敗です。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "バックアップと",
       "duration_multiplier": 1
     },
@@ -154,18 +174,6 @@
       "duration_multiplier": 1.35
     },
     {
-      "text": "紙台帳の申請を新システムへ移すとします。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "氏名だけでは同姓同名を区別できず、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "件数一致だけでは正しい移行とは言えません。",
-      "duration_multiplier": 1.15
-    },
-    {
       "text": "移行前後の識別子、",
       "duration_multiplier": 1
     },
@@ -183,6 +191,14 @@
     },
     {
       "text": "障害対応の担当も用意します。",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "識別子と重要項目を照合し、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "戻せる期限を越える前に切替可否を決めます。",
       "duration_multiplier": 1.35
     }
   ]

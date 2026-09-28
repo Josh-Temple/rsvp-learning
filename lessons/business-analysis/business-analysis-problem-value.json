@@ -9,6 +9,22 @@
   "sources": [],
   "chunks": [
     {
+      "text": "窓口への電話が多いという声を聞いて、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "すぐにチャットボットを選ばないとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "通話を分類すると、必要書類の確認と",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "審査状況の照会が大半かもしれません。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "業務改革では、",
       "duration_multiplier": 1
     },
@@ -121,6 +137,14 @@
       "duration_multiplier": 1.15
     },
     {
+      "text": "電話の内容を分けると、同じ『問い合わせ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "』でも必要な解決策が違うと分かります。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "仮説を置いて、",
       "duration_multiplier": 1
     },
@@ -165,22 +189,6 @@
       "duration_multiplier": 1.35
     },
     {
-      "text": "窓口への電話が多いという声を聞いて、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "すぐにチャットボットを選ばないとします。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "通話を分類すると、必要書類の確認と",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "審査状況の照会が大半かもしれません。",
-      "duration_multiplier": 1.15
-    },
-    {
       "text": "前者は案内の整理、後者は状況を",
       "duration_multiplier": 1
     },
@@ -198,6 +206,14 @@
     },
     {
       "text": "困りごと、原因、望む結果を分けます。",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "新しい窓口を増やす前に、利用者がどの",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "情報を得られず止まったのか確認します。",
       "duration_multiplier": 1.35
     }
   ]

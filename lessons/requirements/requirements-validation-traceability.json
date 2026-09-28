@@ -9,6 +9,22 @@
   "sources": [],
   "chunks": [
     {
+      "text": "業務目的を申請の取りこぼしを減らすこととします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "受付番号を発行する要件を作り、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "申請直後に番号が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "表示され記録される試験へ結びます。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "要件は、",
       "duration_multiplier": 1
     },
@@ -105,6 +121,18 @@
       "duration_multiplier": 1.15
     },
     {
+      "text": "受付番号の表示試験が失敗したとき、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "申請の取りこぼし防止という",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "目的まで影響をたどれます。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "業務目的から、",
       "duration_multiplier": 1
     },
@@ -149,22 +177,6 @@
       "duration_multiplier": 1.35
     },
     {
-      "text": "業務目的を申請の取りこぼしを減らすこととします。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "受付番号を発行する要件を作り、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "申請直後に番号が",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "表示され記録される試験へ結びます。",
-      "duration_multiplier": 1.15
-    },
-    {
       "text": "試験が失敗したら、",
       "duration_multiplier": 1
     },
@@ -178,6 +190,14 @@
     },
     {
       "text": "変更時には対応する試験も更新します。",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "目的から試験まで対応を残すと、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "変更時に直す箇所と確認し直す条件が分かります。",
       "duration_multiplier": 1.35
     }
   ]

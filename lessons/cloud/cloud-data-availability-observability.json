@@ -10,9 +10,29 @@
     {
       "title": "NIST SP 800-34 Rev. 1 Update 1: Contingency Planning Guide",
       "url": "https://csrc.nist.gov/pubs/sp/800/34/r1/upd1/final"
+    },
+    {
+      "title": "Google SRE Book: Monitoring Distributed Systems",
+      "url": "https://sre.google/sre-book/monitoring-distributed-systems/"
     }
   ],
   "chunks": [
+    {
+      "text": "申請APIが止まってもデータが",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "無事なら十分とは限りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "復旧まで許される時間と、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "失ってよいデータの範囲を先に決めます。",
+      "duration_multiplier": 1.15
+    },
     {
       "text": "クラウドでは、",
       "duration_multiplier": 1
@@ -146,6 +166,14 @@
       "duration_multiplier": 1.15
     },
     {
+      "text": "画面が開くだけの監視では、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "申請を保存できない障害を見逃す場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "監視では、",
       "duration_multiplier": 1
     },
@@ -194,22 +222,6 @@
       "duration_multiplier": 1.35
     },
     {
-      "text": "申請APIが止まってもデータが",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "無事なら十分とは限りません。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "復旧まで許される時間と、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "失ってよいデータの範囲を先に決めます。",
-      "duration_multiplier": 1.15
-    },
-    {
       "text": "稼働監視では画面が開くかだけでなく、",
       "duration_multiplier": 1
     },
@@ -227,6 +239,18 @@
     },
     {
       "text": "バックアップから戻せることも実際に試します。",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "復旧目標を満たせるかは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "バックアップの存在だけで",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "なく復元手順の実行で確かめます。",
       "duration_multiplier": 1.35
     }
   ]

@@ -8,11 +8,31 @@
   "base_duration_ms": 680,
   "sources": [
     {
-      "title": "Pro Git: Git Internals — Git Objects",
-      "url": "https://git-scm.com/book/en/v2/Git-Internals-Git-Objects"
+      "title": "Pro Git: Recording Changes to the Repository",
+      "url": "https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository"
+    },
+    {
+      "title": "Pro Git: Viewing the Commit History",
+      "url": "https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History"
     }
   ],
   "chunks": [
+    {
+      "text": "申請画面の文言修正と計算処理の変更を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "一つのコミットに混ぜたとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "不具合が出た際に、どの変更を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "戻すべきか判断しづらくなります。",
+      "duration_multiplier": 1.15
+    },
     {
       "text": "Gitは、",
       "duration_multiplier": 1
@@ -142,6 +162,14 @@
       "duration_multiplier": 1.15
     },
     {
+      "text": "文言修正と計算変更を分ければ、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "問題の原因と戻す対象を追いやすくなります。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "過去の状態を",
       "duration_multiplier": 1
     },
@@ -182,22 +210,6 @@
       "duration_multiplier": 1.35
     },
     {
-      "text": "申請画面の文言修正と計算処理の変更を",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "一つのコミットに混ぜたとします。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "不具合が出た際に、どの変更を",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "戻すべきか判断しづらくなります。",
-      "duration_multiplier": 1.15
-    },
-    {
       "text": "目的ごとに小さくコミットし、",
       "duration_multiplier": 1
     },
@@ -215,6 +227,14 @@
     },
     {
       "text": "一つの意味のある変更として確かめます。",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "コミットの単位は行数ではなく、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ひとつの目的として説明し検証できるかで決めます。",
       "duration_multiplier": 1.35
     }
   ]
