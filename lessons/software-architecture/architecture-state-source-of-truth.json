@@ -251,6 +251,38 @@
     {
       "text": "決めた正本で訂正します。",
       "duration_multiplier": 1.15
+    },
+    {
+      "text": "正本は情報の種類ごとに決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "すべてを一か所へ集める意味ではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "派生値には生成元を残します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "更新責任者を明確にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "反映遅延を監視します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "履歴と現在値を分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "訂正手順も決めておきます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "復旧時は正本から再構築します。",
+      "duration_multiplier": 1.15
     }
   ]
 }

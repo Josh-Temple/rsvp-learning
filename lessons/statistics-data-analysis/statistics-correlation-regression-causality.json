@@ -248,6 +248,38 @@
     {
       "text": "観察だけでは原因を確定できません。",
       "duration_multiplier": 1.15
+    },
+    {
+      "text": "相関の強さだけで因果を決めません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "時系列の順序も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "第三の要因を検討します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "選択の偏りもあり得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "回帰は条件付き関係を表せます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "モデル前提を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "予測精度と因果解釈を分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "因果には追加の設計が必要です。",
+      "duration_multiplier": 1.15
     }
   ]
 }

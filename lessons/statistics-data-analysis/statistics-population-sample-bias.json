@@ -236,6 +236,38 @@
     {
       "text": "届かなかった人を調べます。",
       "duration_multiplier": 1.15
+    },
+    {
+      "text": "標本数と代表性は別です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "抽出方法を記録します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "無回答の偏りを確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "測定方法の偏りもあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "対象外になった人を調べます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "群ごとの構成を母集団と比べます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "重み付けにも前提があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一般化できる範囲を明示します。",
+      "duration_multiplier": 1.15
     }
   ]
 }
