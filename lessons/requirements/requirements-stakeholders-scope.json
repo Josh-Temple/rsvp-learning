@@ -231,6 +231,38 @@
     {
       "text": "利用者への連絡方法は残して定めます。",
       "duration_multiplier": 1.15
+    },
+    {
+      "text": "要求の強さと優先度は同じでありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "意思決定者も明確にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "対象外にも理由を残します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "依存関係で順序が変わります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "追加要求は影響を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "期限と費用への影響も見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "代替手段が必要な場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "合意内容を後から追えるようにします。",
+      "duration_multiplier": 1.15
     }
   ]
 }

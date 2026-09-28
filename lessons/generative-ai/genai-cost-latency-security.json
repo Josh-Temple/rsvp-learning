@@ -248,6 +248,38 @@
     {
       "text": "遅い例と重大な誤答も確認します。",
       "duration_multiplier": 1.15
+    },
+    {
+      "text": "平均値だけで性能を見ません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "遅い側の分布も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "入力長と出力長を分けて測ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "再試行も費用に含めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "キャッシュには鮮度条件が要ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "機密情報の送信範囲を絞ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "品質低下との交換条件を見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "同じ評価集合で比較します。",
+      "duration_multiplier": 1.15
     }
   ]
 }

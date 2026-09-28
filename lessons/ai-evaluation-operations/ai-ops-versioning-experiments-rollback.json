@@ -236,6 +236,38 @@
     {
       "text": "応答までの参照経路を確かめます。",
       "duration_multiplier": 1.15
+    },
+    {
+      "text": "版はモデルだけではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "プロンプトと検索設定も版管理します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "評価集合も対応づけます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "実験では同時変更を減らします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "切戻し対象を事前に列挙します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "データ互換性も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "参照経路を実際に試します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "復旧完了は応答で確かめます。",
+      "duration_multiplier": 1.15
     }
   ]
 }

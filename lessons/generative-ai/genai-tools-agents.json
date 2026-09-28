@@ -280,6 +280,38 @@
     {
       "text": "送信の条件を独立に検証します。",
       "duration_multiplier": 1.15
+    },
+    {
+      "text": "読取りと書込みを分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "外部作用には追加確認を置きます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ツール引数も検証します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "権限はツール側でも確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "成功応答だけで結果を信じません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "実行結果を読み戻します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "連鎖実行には上限を置きます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "停止条件を明確にします。",
+      "duration_multiplier": 1.15
     }
   ]
 }

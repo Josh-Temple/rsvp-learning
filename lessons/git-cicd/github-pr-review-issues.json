@@ -268,6 +268,38 @@
     {
       "text": "完了条件を実際に確かめます。",
       "duration_multiplier": 1.15
+    },
+    {
+      "text": "Issueは問題と完了条件を残します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "PRは変更と根拠を示します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "レビュー範囲を明確にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "大きすぎる差分は分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "CI結果と人の確認を分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "未解決コメントを確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "完了条件を読み戻します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "マージ後の結果も確かめます。",
+      "duration_multiplier": 1.15
     }
   ]
 }

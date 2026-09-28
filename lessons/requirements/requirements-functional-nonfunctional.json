@@ -252,6 +252,38 @@
     {
       "text": "鮮度という品質条件も別に確かめます。",
       "duration_multiplier": 1.15
+    },
+    {
+      "text": "非機能要件にも測定条件が要ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "平均だけで性能を決めません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "混雑時の条件も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "可用性は復旧方法とも関係します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "安全性は権限設計ともつながります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "品質条件同士が競合することがあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "速度と監査性を両方見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "合否条件を個別に置きます。",
+      "duration_multiplier": 1.15
     }
   ]
 }

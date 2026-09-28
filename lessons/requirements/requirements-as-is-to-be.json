@@ -231,6 +231,38 @@
     {
       "text": "書類確認の負担が移ったなら再設計が必要です。",
       "duration_multiplier": 1.15
+    },
+    {
+      "text": "現状把握では件数も記録します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "待ち時間と手戻りも測ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "担当ごとの差も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "To-Beは手段から決めません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "先に改善したい結果を決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "例外処理も新しい流れへ残します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "移行途中の二重運用も考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "改善後も指標を再測定します。",
+      "duration_multiplier": 1.15
     }
   ]
 }

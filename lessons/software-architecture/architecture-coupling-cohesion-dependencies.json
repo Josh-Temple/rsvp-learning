@@ -263,6 +263,38 @@
     {
       "text": "境界の複雑さも含めて比べます。",
       "duration_multiplier": 1.15
+    },
+    {
+      "text": "依存方向も設計対象です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "詳細へ直接依存しすぎないようにします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "同じ理由で変わる処理をまとめます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "別理由で変わる処理は分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "共有部品にも変更コストがあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "循環依存を避けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "境界増加の運用負担も見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "変更影響で設計を評価します。",
+      "duration_multiplier": 1.15
     }
   ]
 }

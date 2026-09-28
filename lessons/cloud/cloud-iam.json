@@ -260,6 +260,38 @@
     {
       "text": "役割に含む操作と対象も調べます。",
       "duration_multiplier": 1.15
+    },
+    {
+      "text": "権限は付与時だけでなく見直します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "異動と退職で剥奪します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一時権限には期限を置きます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "共有アカウントは避けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "人とサービスのIDを分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "強い権限は利用条件を厳しくします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用記録を監査します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "実効権限を定期的に確認します。",
+      "duration_multiplier": 1.15
     }
   ]
 }

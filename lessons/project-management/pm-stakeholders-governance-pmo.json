@@ -235,6 +235,38 @@
     {
       "text": "決定権限と記録を先に定めます。",
       "duration_multiplier": 1.15
+    },
+    {
+      "text": "関係者ごとに必要情報は違います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "決定権と助言役を分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "エスカレーション条件を決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "決定理由を記録します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "反対意見も論点として残します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "会議回数だけで統治を測りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "PMOの支援範囲を明確にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "責任の所在を曖昧にしません。",
+      "duration_multiplier": 1.15
     }
   ]
 }

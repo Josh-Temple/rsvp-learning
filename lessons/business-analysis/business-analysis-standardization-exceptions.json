@@ -231,6 +231,38 @@
     {
       "text": "記録に応じて手順を見直します。",
       "duration_multiplier": 1.15
+    },
+    {
+      "text": "標準化は判断を消すことではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "標準手順の適用条件を決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "例外の理由を記録します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "頻度を定期的に集計します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "例外が多ければ標準を見直します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "希少例外は専用経路にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "承認条件を明確にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "標準と例外を一緒に改善します。",
+      "duration_multiplier": 1.15
     }
   ]
 }

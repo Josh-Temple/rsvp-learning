@@ -236,6 +236,38 @@
     {
       "text": "範囲外の試験も残ります。",
       "duration_multiplier": 1.15
+    },
+    {
+      "text": "CIは検査の実行基盤です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "何を検査するかは別に設計します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "高速な検査と重い検査を分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "不安定な試験を放置しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "失敗理由を再現できるようにします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "依存関係の変更も検査します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "CI環境との差を把握します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "緑の範囲を明示します。",
+      "duration_multiplier": 1.15
     }
   ]
 }

@@ -272,6 +272,38 @@
     {
       "text": "経路ごとの失敗を切り分けます。",
       "duration_multiplier": 1.15
+    },
+    {
+      "text": "名前解決と通信許可を分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "経路と宛先も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "入口と内部通信は別です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "送信側の制限も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "TLS失敗も通信障害に見えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "タイムアウト位置を切り分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "公開範囲は最小限にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "依存経路を図で追えるようにします。",
+      "duration_multiplier": 1.15
     }
   ]
 }

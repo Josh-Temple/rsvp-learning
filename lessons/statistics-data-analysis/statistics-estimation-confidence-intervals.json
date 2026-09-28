@@ -248,6 +248,38 @@
     {
       "text": "不確実性の計算と代表性は別です。",
       "duration_multiplier": 1.15
+    },
+    {
+      "text": "区間の幅は標本量にも影響されます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ばらつきが大きいと幅も広がります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "信頼水準を変えると幅も変わります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "区間は個人値の範囲ではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "偏った標本は区間でも直りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "測定誤差も別に考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "実務上重要な幅か確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "推定条件を結果と一緒に示します。",
+      "duration_multiplier": 1.15
     }
   ]
 }

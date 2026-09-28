@@ -288,6 +288,38 @@
     {
       "text": "権限と利用方法の管理は残ります。",
       "duration_multiplier": 1.15
+    },
+    {
+      "text": "責任分界はサービスごとに確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "同じ分類でも提供範囲は違います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "設定責任は利用者側に残ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "データ分類も利用者が行います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "契約と技術設定を両方見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "委託しても説明責任は残ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "障害時の連絡経路も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "責任の空白を作らないようにします。",
+      "duration_multiplier": 1.15
     }
   ]
 }

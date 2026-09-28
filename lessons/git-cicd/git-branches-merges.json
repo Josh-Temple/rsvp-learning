@@ -244,6 +244,38 @@
     {
       "text": "意味の矛盾は人が見つけます。",
       "duration_multiplier": 1.15
+    },
+    {
+      "text": "競合解消は文法修正だけではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "両変更の意図を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "長期ブランチは差分が大きくなります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "小さく統合すると衝突を減らせます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "マージ後に試験します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "自動統合でも意味は確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "履歴方式の違いも理解します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "mainの現在状態を基準にします。",
+      "duration_multiplier": 1.15
     }
   ]
 }

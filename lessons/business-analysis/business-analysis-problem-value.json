@@ -235,6 +235,38 @@
     {
       "text": "利用者の一連の行動を追います。",
       "duration_multiplier": 1.15
+    },
+    {
+      "text": "症状と原因を分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "要求と課題も同じではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用者行動を観察します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "件数だけで価値を決めません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "誰の負担が減るか確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "副作用も測ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "仮説を小さく試します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "価値は改善後に検証します。",
+      "duration_multiplier": 1.15
     }
   ]
 }

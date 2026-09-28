@@ -256,6 +256,38 @@
     {
       "text": "目的で区切り、行数で決めません。",
       "duration_multiplier": 1.15
+    },
+    {
+      "text": "コミットは変更理由の単位でもあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一つの目的にまとめます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "無関係な整形を混ぜません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "メッセージに理由を残します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "戻しやすさも考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "小さすぎる分割も避けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "履歴は調査にも使います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "機密情報を履歴へ入れません。",
+      "duration_multiplier": 1.15
     }
   ]
 }

@@ -223,6 +223,38 @@
     {
       "text": "依存関係と余裕で影響を計算します。",
       "duration_multiplier": 1.15
+    },
+    {
+      "text": "見積りには不確実性があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一点だけで予定を信じません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "依存関係の種類を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "余裕時間も把握します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "重要経路の遅れを優先して見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "節目で前提を見直します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "遅れを後工程へ押し付けません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "変更時は全体を再計算します。",
+      "duration_multiplier": 1.15
     }
   ]
 }

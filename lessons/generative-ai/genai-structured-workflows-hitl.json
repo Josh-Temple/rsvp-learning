@@ -280,6 +280,38 @@
     {
       "text": "内容と責任ある承認を別に見ます。",
       "duration_multiplier": 1.15
+    },
+    {
+      "text": "形式が正しくても内容は誤り得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "スキーマ検証と事実確認を分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "工程ごとに失敗理由を残します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "人手確認の対象を明確にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "高リスク操作は承認後に進めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "差戻し理由を次の改善に使います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "自動化率だけを成果にしません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "責任の所在を残します。",
+      "duration_multiplier": 1.15
     }
   ]
 }

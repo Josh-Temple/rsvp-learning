@@ -240,6 +240,38 @@
     {
       "text": "異なる失敗を拾うため、段階を分けます。",
       "duration_multiplier": 1.15
+    },
+    {
+      "text": "正常系だけでは十分でありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "境界値と異常系も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "再現条件を記録します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "期待結果を先に定めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "自動化しにくい試験もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "自動試験だけで品質を保証しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "本番に近い条件も必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "欠陥の傾向を次の設計へ戻します。",
+      "duration_multiplier": 1.15
     }
   ]
 }

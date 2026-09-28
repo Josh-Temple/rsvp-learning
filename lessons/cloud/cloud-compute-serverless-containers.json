@@ -267,6 +267,38 @@
     {
       "text": "料金体系と実測を比べて判断します。",
       "duration_multiplier": 1.15
+    },
+    {
+      "text": "方式は負荷の形で比べます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "常時稼働か断続的かを見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "状態をどこへ持つかも重要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "起動遅延も測定します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "自動拡張の上限を決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "障害時の再起動方法も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "費用は実測で比較します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "運用責任も選定条件に含めます。",
+      "duration_multiplier": 1.15
     }
   ]
 }
