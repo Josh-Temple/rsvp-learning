@@ -296,6 +296,38 @@
     {
       "text": "データを使う操作まで確かめます。",
       "duration_multiplier": 1.15
+    },
+    {
+      "text": "環境差を小さく保ちます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "本番固有設定は別に管理します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "段階的な公開も選択肢です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "異常指標を事前に決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "データ変更は切戻しを難しくします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "前後版の互換性を考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "切戻し手順を実際に試します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "復旧後の整合性も確認します。",
+      "duration_multiplier": 1.15
     }
   ]
 }
