@@ -256,6 +256,38 @@
     {
       "text": "条件から除かれた行も確認します。",
       "duration_multiplier": 1.15
+    },
+    {
+      "text": "WHEREは行を絞ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "SELECTは返す列を選びます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "処理順と記述順は同じでありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "NULLは通常の値と同じでありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "NULLとの比較は注意します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "条件の組合せでは優先順位を見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "括弧で意図を明確にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "取得件数も妥当か確認します。",
+      "duration_multiplier": 1.15
     }
   ]
 }

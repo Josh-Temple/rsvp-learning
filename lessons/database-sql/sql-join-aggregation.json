@@ -268,6 +268,38 @@
     {
       "text": "数える単位を先に決めます。",
       "duration_multiplier": 1.15
+    },
+    {
+      "text": "JOINでは一対多で行が増えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "集計前に数える単位を決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "COUNTの対象で結果が変わります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "NULLの扱いも確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "LEFT JOIN後の条件に注意します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "WHEREで右表を絞ると結果が変わります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "重複除去は原因を隠すことがあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "結合条件を先に検証します。",
+      "duration_multiplier": 1.15
     }
   ]
 }
