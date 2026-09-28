@@ -239,6 +239,38 @@
     {
       "text": "根拠と事例の重なりも確かめます。",
       "duration_multiplier": 1.15
+    },
+    {
+      "text": "評価目的ごとに指標を変えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "頻出例だけで集合を作りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "重大だが稀な例も含めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "訓練との重なりを疑います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "同一案件を分割しないようにします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "時間による変化も考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "本番分布との差を記録します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "評価集合自体を版管理します。",
+      "duration_multiplier": 1.15
     }
   ]
 }

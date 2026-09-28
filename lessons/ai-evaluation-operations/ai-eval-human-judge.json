@@ -264,6 +264,38 @@
     {
       "text": "人の基準の揺れも調べます。",
       "duration_multiplier": 1.15
+    },
+    {
+      "text": "評価基準を具体例で校正します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "評価者間のずれを測ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "不一致の理由を分類します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "難例は複数人で確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "LLM評価にも偏りがあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "モデルと人を同じ基準で比べます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "評価順による影響も疑います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "基準変更時は再評価します。",
+      "duration_multiplier": 1.15
     }
   ]
 }

@@ -247,6 +247,38 @@
     {
       "text": "構成の変化と群別の結果を見ます。",
       "duration_multiplier": 1.15
+    },
+    {
+      "text": "平均指標だけで判断しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "重大度別に誤りを分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "群別の分母を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "少数群の率はぶれやすいです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "閾値変更の影響を見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "誤り同士の共通原因を探します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "改善前後で同じ集合を使います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "新しい失敗型も記録します。",
+      "duration_multiplier": 1.15
     }
   ]
 }
