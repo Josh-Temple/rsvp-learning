@@ -1,0 +1,217 @@
+{
+  "schema_version": 1,
+  "id": "public-dx-change-operations",
+  "title": "制度・仕様変更と継続運用",
+  "topic": "公共DX",
+  "summary": "法令・制度・標準仕様の変更を、適用時点、業務影響、要件差分、システム改修、データ移行、周知、研修、監視まで分解して安全に反映する方法を学びます。",
+  "created_at": "2026-09-29",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "デジタル庁 — デジタル社会推進標準ガイドライン",
+      "url": "https://www.digital.go.jp/resources/standard_guidelines"
+    },
+    {
+      "title": "デジタル庁 — 地方公共団体の基幹業務システムの統一・標準化",
+      "url": "https://www.digital.go.jp/policies/local_governments"
+    },
+    {
+      "title": "デジタル庁 — 地方公共団体の基幹業務等システムの統一・標準化に関する関係省庁会議（第6回）",
+      "url": "https://www.digital.go.jp/councils/local-governments/94205823-8f13-4a9a-b6c8-7c19b27d8eb4"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "制度改正は改修依頼だけではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "まず変更の正本を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "法令を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "通知も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "標準仕様も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "版と日付を記録します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "公布日と施行日を分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "経過措置も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "適用対象を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "旧制度が残る期間もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "差分を一覧化します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "変わらない部分も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "業務影響を整理します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "受付条件が変わる場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "審査条件も変わり得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "帳票も影響します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Data項目も影響します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Interfaceも影響し得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "権限変更もあり得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "運用手順も更新します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "System要件へ落とします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "要件ごとに根拠を結びます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "推測で仕様を作りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "不明点は照会します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "影響範囲を過小評価しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "周辺Systemも確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "委託先へ変更を伝えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "役割と期限を決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "改修版を管理します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Test条件を作ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "新旧ケースを試します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "境界日付も試します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "経過措置も試します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "例外ケースも確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Data移行を設計します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "変換規則を記録します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Rollbackも考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "切替手順を作ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用者へ周知します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "職員研修も行います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Manualも更新します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "FAQも更新します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "施行後を監視します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Error増加を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "問い合わせも見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "想定外は修正します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "変更履歴を次回へ残します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "改正対応を継続能力にします。",
+      "duration_multiplier": 1.15
+    }
+  ]
+}
