@@ -188,6 +188,42 @@
     {
       "text": "分けて確認します",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "利用者が必要書類を尋ねたら、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "まず関連する手引きの箇所を検索します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "見つけた文書が別の申請種別なら、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "もっともらしい回答でも誤りです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "検索結果の適合性、版、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "日付を確認してから回答を作ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "根拠が不足すれば人へ引き継ぐ設計にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "誤答が出たときは検索、選択、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "生成のどこで失敗したか分けて調べます。",
+      "duration_multiplier": 1.35
     }
   ]
 }

@@ -23,6 +23,11 @@ Created: 2026-09-27
 12. 不具合は、再現条件を明確にして管理します
 13. 要件からテストまで追えることが重要です
 14. テストは、品質を作る最後の工程ではなく、品質を確認する工程です
+15. 申請期限の計算を単体テストで確かめ、画面とAPIの接続を結合テストで確かめます。
+16. 受入テストでは利用者が一件の申請を完了できるか見ます。
+17. 各試験で見つかる不具合は異なるため、一つが通っても他を省けません。
+18. 通常の入力に加え、期限ぎりぎりと書類不足も試します。
+19. 期待結果を要件に結びます。
 
 ## 次に確認したいこと
 
@@ -32,4 +37,4 @@ Created: 2026-09-27
 
 ## 出典
 
-- [NIST SP 800-115: Technical Guide to Information Security Testing and Assessment](https://csrc.nist.gov/pubs/sp/800/115/final)
+- [ISTQB Certified Tester Foundation Level Syllabus v4.0.1](https://istqb.org/wp-content/uploads/2024/11/ISTQB_CTFL_Syllabus_v4.0.1.pdf)

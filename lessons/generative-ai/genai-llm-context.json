@@ -187,6 +187,42 @@
     {
       "text": "設計の中心です",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "同じ申請期限を尋ねても、古い手引きを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "渡せば古い期限を答える可能性があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "新しい規程を渡しても、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "関係のない箇所を読ませれば",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "正しく答えられるとは限りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "モデルが参照できる範囲と、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "質問に必要な資料を分けて考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "回答には確認した資料と適用時点を示します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "資料に答えがなければ断定を避けます。",
+      "duration_multiplier": 1.35
     }
   ]
 }

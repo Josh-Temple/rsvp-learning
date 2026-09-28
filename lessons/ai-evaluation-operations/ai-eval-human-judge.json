@@ -188,6 +188,42 @@
     {
       "text": "補助として使います",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "同じ申請案内を二人が採点し、一人は正しい、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "もう一人は不十分と判断したとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "結論だけ比べず、期限と必要",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "書類のどちらを見たかを記録します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "採点基準を具体化した後に再採点し、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "不一致が残る事例を専門家へ回します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "モデルによる採点は大量の候補を絞れますが、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "人の判断とのずれを確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "採点者同士の一致率も併せて見ます。",
+      "duration_multiplier": 1.35
     }
   ]
 }

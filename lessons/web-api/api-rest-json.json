@@ -10,6 +10,10 @@
     {
       "title": "Roy T. Fielding: REST Architectural Style",
       "url": "https://ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm"
+    },
+    {
+      "title": "RFC 8259: The JavaScript Object Notation (JSON) Data Interchange Format",
+      "url": "https://www.rfc-editor.org/info/rfc8259"
     }
   ],
   "chunks": [
@@ -187,6 +191,46 @@
     },
     {
       "text": "API仕様の一部です",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "申請一覧を取得する要求を送ると、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "サーバーはJSONで",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "申請IDと状態を返すとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "新規作成では必要な項目を送信し、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "成功時は作られた資源を示します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "見つからないIDと権限のないIDは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "扱いが違います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "HTTPの方法、URL、状態コード、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "応答の形を合わせて確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "JSONの形だけで操作の意味は決まりません。",
       "duration_multiplier": 1.35
     }
   ]

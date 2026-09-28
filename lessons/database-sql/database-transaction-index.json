@@ -188,6 +188,46 @@
     {
       "text": "設計します",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "口座AからBへ送金するとき、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "Aから引いた後で処理が失敗し、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "Bへ足されないままでは困ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "二つの更新を一つの取引として扱い、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "失敗時はまとめて戻します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "別の例として、注文IDで一件を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "頻繁に探すなら索引が役立ちます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "索引は読み取りを助ける一方、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "書込み時の更新と保存領域を要します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "取引と索引は異なる問題を解きます。",
+      "duration_multiplier": 1.35
     }
   ]
 }

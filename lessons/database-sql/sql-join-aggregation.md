@@ -23,9 +23,19 @@ Created: 2026-09-27
 12. 集計値だけでなく、分母の定義も確認します
 13. JOINとGROUP BYを組み合わせると、多くの業務集計ができます
 14. 結果が正しいか、小さな例で検算する習慣が重要です
+15. 顧客表にAとB、注文表にAの注文二件だけがあるとします。
+16. 顧客IDでINNER JOINすると、Aの注文二行が得られます。
+17. 顧客表を左にしたLEFT JOINなら、Aの二行と注文のないBの一行で計三行です。
+18. この結果のCOUNT(*)は三、COUNT(注文ID)は二です。
+19. 顧客IDでGROUP BYし、注文IDを数えると、Aは二件、Bは零件になります。
 
 ## 次に確認したいこと
 
 この章は基礎理解用です。
 具体的な製品仕様、組織固有の工程名、法令上の要件は、この章だけで確定しません。
 必要に応じて公式資料・一次資料で確認します。
+
+## 出典
+
+- [PostgreSQL 18 文書: テーブル間の結合](https://www.postgresql.org/docs/18/tutorial-join.html)
+- [PostgreSQL 18 文書: 集約関数](https://www.postgresql.org/docs/18/functions-aggregate.html)

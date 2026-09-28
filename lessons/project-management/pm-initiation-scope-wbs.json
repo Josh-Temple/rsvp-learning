@@ -167,6 +167,42 @@
     {
       "text": "重要です",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "申請受付を電子化する案件で、成果物を画面、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "入力規則、運用手順に分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "画面だけ完成しても担当者の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "確認手順がなければ運用できません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "各成果物に設計、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "実装、試験の作業を割り当てます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "分解した作業に担当と完了条件を付け、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "漏れや重複を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "対象外の帳票も明記します。",
+      "duration_multiplier": 1.35
     }
   ]
 }

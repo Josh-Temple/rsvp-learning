@@ -180,6 +180,42 @@
     {
       "text": "記録として使います",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "申請画面の文言修正と計算処理の変更を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "一つのコミットに混ぜたとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "不具合が出た際に、どの変更を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "戻すべきか判断しづらくなります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "目的ごとに小さくコミットし、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "理由が分かるメッセージを付けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "履歴を見れば変更の順序と意図を追えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "小ささ自体が目的ではなく、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "一つの意味のある変更として確かめます。",
+      "duration_multiplier": 1.35
     }
   ]
 }

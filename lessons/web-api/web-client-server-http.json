@@ -176,6 +176,46 @@
     {
       "text": "持つことがあります",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "ブラウザで申請一覧を開くと、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "クライアントがサーバーへHTTP要求を送ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "サーバーは認証と権限を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "確認してからデータを返します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "画面に表示される情報は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "送られた応答をブラウザが処理した結果です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "通信に失敗した場合と、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "サーバーがエラーを返した場合を分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "URLを知っているだけで他人の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "データを見られない設計にします。",
+      "duration_multiplier": 1.35
     }
   ]
 }

@@ -3,161 +3,218 @@
   "id": "statistics-population-sample-bias",
   "title": "母集団・標本・バイアス",
   "topic": "データ分析",
-  "summary": "観測した一部のデータから全体を考えるときの標本設計とバイアスを学びます。",
+  "summary": "市民アンケートの例で、母集団と標本、回答者の偏り、結果を一般化できる範囲を学びます。",
   "created_at": "2026-09-27",
   "base_duration_ms": 680,
-  "sources": [],
+  "sources": [
+    {
+      "title": "AAPOR: Best Practices for Survey Research",
+      "url": "https://aapor.org/standards-and-ethics/best-practices/"
+    },
+    {
+      "title": "Statistics Canada: Questions to ask about surveys",
+      "url": "https://www.statcan.gc.ca/en/customized-products-services/custom-surveys/questions-to-ask"
+    }
+  ],
   "chunks": [
     {
-      "text": "母集団は、",
+      "text": "市民全体の満足度を知りたいなら、",
       "duration_multiplier": 1
     },
     {
-      "text": "知りたい対象全体です",
-      "duration_multiplier": 1.35
-    },
-    {
-      "text": "標本は、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "実際に観測した一部です",
+      "text": "母集団は対象の市民全体です。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "標本から、",
+      "text": "実際に回答した人は、",
       "duration_multiplier": 1
     },
     {
-      "text": "母集団の特徴を",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "推定します",
+      "text": "観測された標本です。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "標本が偏っていると、",
+      "text": "一万人へ案内し、",
       "duration_multiplier": 1
     },
     {
-      "text": "推定も偏ります",
+      "text": "千人が回答したとします。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "これを、",
+      "text": "千人という件数だけでは、",
       "duration_multiplier": 1
     },
     {
-      "text": "選択バイアスとして",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "考えることがあります",
+      "text": "全体を代表するとは言えません。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "回答した人だけを見ると、",
+      "text": "オンラインだけで募集すると、",
       "duration_multiplier": 1
     },
     {
-      "text": "回答者の特徴が",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "影響する場合があります",
+      "text": "使わない人が入りにくくなります。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "測定方法そのものが、",
+      "text": "不満の強い人ほど",
       "duration_multiplier": 1
     },
     {
-      "text": "結果へ影響する",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "こともあります",
+      "text": "答えやすい場合もあります。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "データが多ければ、",
+      "text": "回答者と非回答者で",
       "duration_multiplier": 1
     },
     {
-      "text": "偏りが自動で消える",
+      "text": "関心が違えば、",
       "duration_multiplier": 1
     },
     {
-      "text": "わけではありません",
+      "text": "回答の割合は偏り得ます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "誰がデータに",
+      "text": "誰を対象に含めたかと、",
       "duration_multiplier": 1
     },
     {
-      "text": "含まれているか",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "確認します",
+      "text": "誰が回答したかを分けて確認します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "誰が含まれて",
+      "text": "対象名簿から無作為に選んでも、",
       "duration_multiplier": 1
     },
     {
-      "text": "いないかも",
+      "text": "非回答があれば",
       "duration_multiplier": 1
     },
     {
-      "text": "確認します",
+      "text": "偏りは残り得ます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "観測期間も",
+      "text": "標本を増やすと、",
       "duration_multiplier": 1
     },
     {
-      "text": "重要です",
+      "text": "偶然による揺れは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "小さくなりやすくなります。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "特定時期だけでは、",
+      "text": "しかし、",
       "duration_multiplier": 1
     },
     {
-      "text": "季節性を誤解する",
+      "text": "同じ方法で偏った人だけを増やしても、",
       "duration_multiplier": 1
     },
     {
-      "text": "ことがあります",
+      "text": "偏りは自動で消えません。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "対象範囲を明示して",
+      "text": "調査方法も、",
       "duration_multiplier": 1
     },
     {
-      "text": "結論を書きます",
+      "text": "答えやすさや回答内容へ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "影響することがあります。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "標本の限界を",
+      "text": "質問に誘導的な表現がないかを",
       "duration_multiplier": 1
     },
     {
-      "text": "説明することが、",
+      "text": "確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "平日の昼だけ調べると、",
       "duration_multiplier": 1
     },
     {
-      "text": "分析の信頼性に",
+      "text": "別の時間帯の利用者を",
       "duration_multiplier": 1
     },
     {
-      "text": "つながります",
+      "text": "見落とすかもしれません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "時期や場所が偏れば、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "結論を広げられる範囲も限られます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "既知の人口構成と比べて、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "回答者の偏りを調べる方法があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "重み付けで調整しても、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "観測できない違いまで",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "必ず消せるわけではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "結果には、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "対象、募集方法、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "回答者数を添えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "回答者の割合を、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "市民全体の割合と",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "断定しないようにします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "結論は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "実際に観測できた範囲と",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "残る不確実性に合わせます。",
       "duration_multiplier": 1.35
     }
   ]

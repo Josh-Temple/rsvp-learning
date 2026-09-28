@@ -163,6 +163,38 @@
     {
       "text": "行うことが重要です",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "申請回答AIを評価するなら、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "住所変更のような頻出質問だけを並べません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "期限を過ぎた申請や代理人の手続きも含めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "各質問について、参照すべき規程と",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "許容できる答えを先に決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "似た質問を学習用と評価用の双方に入れると、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "未知の事例への強さを測りにくくなります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "重大な誤案内は件数が少なくても別に数えます。",
+      "duration_multiplier": 1.35
     }
   ]
 }

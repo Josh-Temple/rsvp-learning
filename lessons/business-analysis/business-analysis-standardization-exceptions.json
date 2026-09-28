@@ -159,6 +159,42 @@
     {
       "text": "ありません",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "通常の申請は本人が提出し、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "必要書類が揃えば受付できるとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "代理人申請や書類の代替が必要な",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "場合まで同じ処理にすると誤ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "標準手順には判断条件、証跡、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "例外を相談する先を明記します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "例外の件数と理由を記録し、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "頻繁なら手順の見直しを検討します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "自動化する範囲は条件が明確な処理から決めます。",
+      "duration_multiplier": 1.35
     }
   ]
 }

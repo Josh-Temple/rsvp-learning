@@ -8,8 +8,8 @@
   "base_duration_ms": 680,
   "sources": [
     {
-      "title": "PostgreSQL 18 文書: 論理演算子",
-      "url": "https://www.postgresql.org/docs/18/functions-logical.html"
+      "title": "PostgreSQL 18 文書: 制約",
+      "url": "https://www.postgresql.org/docs/18/ddl-constraints.html"
     }
   ],
   "chunks": [
@@ -183,6 +183,46 @@
     },
     {
       "text": "正しく表します",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "顧客表に顧客IDと氏名、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "注文表に注文IDと顧客IDを置きます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "顧客IDは顧客表の行を識別する主キーです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "注文表の顧客IDを、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "顧客表を参照する外部キーとして",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "設定します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一人の顧客に注文が二件あれば、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "注文表には同じ顧客IDが二行現れます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "注文IDだけで顧客名を探すには、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "二つの表の関係をたどります。",
       "duration_multiplier": 1.35
     }
   ]

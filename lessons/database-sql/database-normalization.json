@@ -3,7 +3,7 @@
   "id": "database-normalization",
   "title": "正規化の基本",
   "topic": "データ",
-  "summary": "データの重複や更新時の矛盾を減らすための正規化の考え方を学びます。",
+  "summary": "注文と顧客の例から、更新時の矛盾、第一〜第三正規形、意図的な重複の扱いを学びます。",
   "created_at": "2026-09-27",
   "base_duration_ms": 680,
   "sources": [
@@ -14,171 +14,163 @@
   ],
   "chunks": [
     {
-      "text": "正規化は、",
+      "text": "注文表に、",
       "duration_multiplier": 1
     },
     {
-      "text": "データ構造を",
+      "text": "注文IDと顧客ID、",
       "duration_multiplier": 1
     },
     {
-      "text": "整理する考え方です",
-      "duration_multiplier": 1.35
-    },
-    {
-      "text": "目的の一つは、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "不要な重複を",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "減らすことです",
+      "text": "顧客名と住所を保存するとします。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "同じ情報を",
+      "text": "同じ顧客が五回注文すると、",
       "duration_multiplier": 1
     },
     {
-      "text": "何度も保存すると、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "更新漏れが",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "起きやすくなります",
+      "text": "名前と住所も五回記録されます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "一部だけ更新されると、",
+      "text": "引っ越し後に一行だけ直すと、",
       "duration_multiplier": 1
     },
     {
-      "text": "矛盾したデータが",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "残ります",
+      "text": "同じ顧客に二つの住所が残ります。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "これを、",
+      "text": "これは、",
       "duration_multiplier": 1
     },
     {
-      "text": "更新異常と呼ぶ",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "ことがあります",
+      "text": "更新時に生じる矛盾の例です。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "第一正規形では、",
+      "text": "顧客IDと名前、住所は",
       "duration_multiplier": 1
     },
     {
-      "text": "各列に一つの値を",
+      "text": "顧客表へまとめます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "注文表には、",
       "duration_multiplier": 1
     },
     {
-      "text": "持たせ、",
+      "text": "注文IDと顧客ID、",
       "duration_multiplier": 1
     },
     {
-      "text": "同じ行へ繰り返し項目を",
+      "text": "注文日を残します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "顧客の住所は一か所で管理し、",
       "duration_multiplier": 1
     },
     {
-      "text": "詰め込みません",
+      "text": "必要なときに二つの表を結びます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "このように、",
       "duration_multiplier": 1
     },
     {
-      "text": "第二正規形では、",
+      "text": "事実を適切な表へ分ける考え方が",
       "duration_multiplier": 1
+    },
+    {
+      "text": "正規化です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "第一正規形は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "一つの欄に複数の値や",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "繰り返し項目を詰め込まない形です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "注文表の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "商品一、商品二という列より、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "注文明細を行で持ちます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "注文明細のキーを、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "注文IDと商品IDの組とします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "商品名が商品IDだけで決まるなら、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "組全体へ依存していません。",
+      "duration_multiplier": 1.15
     },
     {
       "text": "第一正規形を満たし、",
       "duration_multiplier": 1
     },
     {
-      "text": "複数列の主キーの",
+      "text": "こうした部分的な依存を分けるのが",
       "duration_multiplier": 1
     },
     {
-      "text": "一部だけで決まる",
+      "text": "第二正規形です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "商品名は商品表へ移し、",
       "duration_multiplier": 1
     },
     {
-      "text": "属性を分けます",
-      "duration_multiplier": 1
+      "text": "明細には商品IDと数量を置けます。",
+      "duration_multiplier": 1.15
     },
     {
       "text": "第三正規形では、",
       "duration_multiplier": 1
     },
     {
-      "text": "非キー属性が",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "別の非キー属性に",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "依存しないよう",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "整理します",
-      "duration_multiplier": 1.25
-    },
-    {
-      "text": "厳密な定義は、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "後で段階的に",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "学べば十分です",
+      "text": "非キー項目を経由する依存も整理します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "最初は、",
+      "text": "注文IDから顧客IDが決まり、",
       "duration_multiplier": 1
     },
     {
-      "text": "何の事実を",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "どのテーブルが持つかを",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "考えます",
+      "text": "顧客IDから顧客名が決まる例です。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "一つの事実を、",
+      "text": "顧客名は注文表で繰り返さず、",
       "duration_multiplier": 1
     },
     {
-      "text": "複数箇所で",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "重複管理しないように",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "します",
+      "text": "顧客表に置きます。",
       "duration_multiplier": 1.15
     },
     {
@@ -186,27 +178,43 @@
       "duration_multiplier": 1
     },
     {
-      "text": "性能や分析目的で",
+      "text": "注文時に確定した配送先や単価は、",
       "duration_multiplier": 1
     },
     {
-      "text": "意図的に重複させる",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "場合もあります",
+      "text": "後日の変更と区別が必要です。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "これを",
+      "text": "現在の顧客住所を参照するのか、",
       "duration_multiplier": 1
     },
     {
-      "text": "非正規化と呼ぶ",
+      "text": "当時の配送先を保存するのかを",
       "duration_multiplier": 1
     },
     {
-      "text": "ことがあります",
+      "text": "業務要件で決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "分割すれば必ず速くなるわけではなく、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "結合や運用の負担も増えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "性能のため意図的に重複させる場合は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "どちらを正本とし、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "どう同期するかを決めます。",
       "duration_multiplier": 1.15
     },
     {
@@ -214,11 +222,11 @@
       "duration_multiplier": 1
     },
     {
-      "text": "目的ではなく",
+      "text": "重複を一律に消すことではなく、",
       "duration_multiplier": 1
     },
     {
-      "text": "整合性を保つ手段です",
+      "text": "事実の意味と更新規則を揃える手段です。",
       "duration_multiplier": 1.35
     }
   ]

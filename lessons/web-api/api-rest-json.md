@@ -23,6 +23,11 @@ REST APIの基本的な考え方と、データ交換形式JSONの読み方を�
 12. 文字列、数値、真偽値、nullなどを扱えます
 13. API仕様では、入力と出力の形を明確にします
 14. エラー時の応答も、API仕様の一部です
+15. 申請一覧を取得する要求を送ると、サーバーはJSONで申請IDと状態を返すとします。
+16. 新規作成では必要な項目を送信し、成功時は作られた資源を示します。
+17. 見つからないIDと権限のないIDは扱いが違います。
+18. HTTPの方法、URL、状態コード、応答の形を合わせて確認します。
+19. JSONの形だけで操作の意味は決まりません。
 
 ## 次に確認したいこと
 
@@ -33,3 +38,4 @@ REST APIの基本的な考え方と、データ交換形式JSONの読み方を�
 ## 出典
 
 - [Roy T. Fielding: REST Architectural Style](https://ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm)
+- [RFC 8259: The JavaScript Object Notation (JSON) Data Interchange Format](https://www.rfc-editor.org/info/rfc8259)

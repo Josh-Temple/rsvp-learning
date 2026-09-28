@@ -23,6 +23,11 @@ Created: 2026-09-27
 12. 実行時間が長すぎると、開発速度へ影響します
 13. 重要な検査から自動化します
 14. CIは、問題を早い段階で発見する仕組みです
+15. 申請画面の入力チェックを直した変更をPRへ出すとします。
+16. CIで構文検査と自動テストが動き、誤った入力を通す回帰が見つかれば失敗します。
+17. 修正を追加した後、同じ検査が通ったか確認します。
+18. テスト成功は実機での見やすさや仕様の妥当性まで保証しません。
+19. 人のレビューと必要な環境での確認も残します。
 
 ## 注意
 
@@ -31,4 +36,4 @@ Created: 2026-09-27
 
 ## 出典
 
-- [NIST SP 800-53 Rev. 5 Update 1](https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final)
+- [GitHub Docs: Continuous integration](https://docs.github.com/en/actions/get-started/continuous-integration)

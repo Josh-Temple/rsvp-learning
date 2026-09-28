@@ -159,6 +159,38 @@
     {
       "text": "表面化させます",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "外部の審査基準が改定されるかもしれない段階では、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "影響を見積もるリスクです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "改定が公表され、設計を直す必要が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "生じたら発生済みの課題になります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "リスクには起こる条件と備え、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "課題には担当者と解決期限を記します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "両者を同じ一覧に載せても状態は分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "判断に必要な情報を定期的に更新します。",
+      "duration_multiplier": 1.35
     }
   ]
 }

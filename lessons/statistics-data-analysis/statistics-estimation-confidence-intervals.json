@@ -3,7 +3,7 @@
   "id": "statistics-estimation-confidence-intervals",
   "title": "推定と信頼区間",
   "topic": "データ分析",
-  "summary": "標本から母集団を推定するときの不確実性と信頼区間の基本を学びます。",
+  "summary": "処理時間の仮例から、点推定と信頼区間の意味、反復抽出での解釈と前提を学びます。",
   "created_at": "2026-09-27",
   "base_duration_ms": 680,
   "sources": [
@@ -18,79 +18,131 @@
   ],
   "chunks": [
     {
-      "text": "標本から得た値には、",
+      "text": "百人の申請処理時間から、",
       "duration_multiplier": 1
     },
     {
-      "text": "不確実性があります",
-      "duration_multiplier": 1.35
-    },
-    {
-      "text": "別の標本を取れば、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "結果は少し変わります",
+      "text": "全体の平均を推定するとします。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "点推定は、",
+      "text": "百人の標本を得ても、",
       "duration_multiplier": 1
     },
     {
-      "text": "一つの値で",
+      "text": "別の百人を選べば",
       "duration_multiplier": 1
     },
     {
-      "text": "母集団の特徴を",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "推定します",
+      "text": "値は変わり得ます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "平均値の推定は、",
+      "text": "一つの値で示すのが",
       "duration_multiplier": 1
     },
     {
-      "text": "その代表例です",
+      "text": "点推定です。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "信頼区間は、",
+      "text": "推定の揺れを、",
       "duration_multiplier": 1
     },
     {
-      "text": "推定値の不確実性を",
+      "text": "区間で示す方法が",
       "duration_multiplier": 1
     },
     {
-      "text": "区間で示します",
-      "duration_multiplier": 1.25
-    },
-    {
-      "text": "区間が狭いほど、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "推定が精密である",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "場合があります",
+      "text": "信頼区間です。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "標本数が増えると、",
+      "text": "例えば、",
       "duration_multiplier": 1
     },
     {
-      "text": "一般に推定精度は",
+      "text": "ある手順で求めた",
       "duration_multiplier": 1
     },
     {
-      "text": "上がります",
+      "text": "九五パーセント信頼区間が、",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "八分から十二分だったとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "これは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "今回の真の平均が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "九五パーセントの確率で、",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "その区間にあるという意味では",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "同じ手順を何度も繰り返すと、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "作られる区間の約九五パーセントが、",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "真の平均を含むように設計された",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "方法という意味です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一つの標本から得た区間は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "真の値を含むか含まないかの",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "どちらかです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "区間の幅には、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "標本数とデータのばらつきが",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "影響します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "標本が多いほど、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "他の条件が同じなら",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "狭くなりやすくなります。",
       "duration_multiplier": 1.15
     },
     {
@@ -98,91 +150,83 @@
       "duration_multiplier": 1
     },
     {
-      "text": "バイアスのある標本を",
+      "text": "偏った人だけを集めても、",
       "duration_multiplier": 1
     },
     {
-      "text": "増やしても",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "問題は残ります",
+      "text": "偏りは解消しません。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "信頼区間の解釈には、",
+      "text": "標準的な計算には、",
       "duration_multiplier": 1
     },
     {
-      "text": "統計的な前提があります",
+      "text": "無作為抽出などの",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "前提が必要です。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "同じ手順で",
+      "text": "実際には、",
       "duration_multiplier": 1
     },
     {
-      "text": "区間を作り直すと、",
+      "text": "対象をどう選んだかを",
       "duration_multiplier": 1
     },
     {
-      "text": "指定した割合の区間が",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "真の値を含む",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "という意味です",
-      "duration_multiplier": 1.25
-    },
-    {
-      "text": "実務では、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "点の差だけでなく",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "幅も確認します",
+      "text": "先に確認します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "小さな差が、",
+      "text": "八分と十二分では、",
       "duration_multiplier": 1
     },
     {
-      "text": "実質的に重要かも",
+      "text": "運用上の判断が変わるかも",
       "duration_multiplier": 1
     },
     {
-      "text": "考えます",
+      "text": "考えます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "統計的不確実性と",
+      "text": "区間が狭くても、",
       "duration_multiplier": 1
     },
     {
-      "text": "業務上の重要性を",
+      "text": "測定方法が不適切なら",
       "duration_multiplier": 1
     },
     {
-      "text": "分けます",
+      "text": "結論は危うくなります。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "推定値には、",
+      "text": "信頼区間は、",
       "duration_multiplier": 1
     },
     {
-      "text": "どの程度の不確実性が",
+      "text": "個々の申請時間の大半が",
       "duration_multiplier": 1
     },
     {
-      "text": "あるかを添えます",
+      "text": "入る区間でもありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "何の平均を、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "どの標本から、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "どの方法で推定したかを示します。",
       "duration_multiplier": 1.35
     }
   ]

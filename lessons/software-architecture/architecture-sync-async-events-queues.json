@@ -163,6 +163,42 @@
     {
       "text": "使われます",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "申請受付と同時に通知を送る設計では、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "通知先が遅いと画面の応答も遅くなります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "受付を先に確定し、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "通知をキューへ渡すと画面は早く返せます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ただし通知は後で失敗し、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "重複して届く可能性があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "受付番号で同じ通知を識別し、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "再試行と失敗時の調査方法を決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "受付成功と通知成功を別の状態として扱います。",
+      "duration_multiplier": 1.35
     }
   ]
 }
