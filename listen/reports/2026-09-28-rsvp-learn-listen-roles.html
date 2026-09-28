@@ -86,6 +86,36 @@
   const voice = document.querySelector("#voice"), rate = document.querySelector("#rate"), rateValue = document.querySelector("#rateValue");
   const theme = document.querySelector("#theme");
   let index = 0, playing = false, paused = false, selectedVoice = "";
+  let wakeLock = null, wakeLockWanted = false;
+
+  async function requestWakeLock() {
+    const wakeLockApi = window.navigator?.wakeLock;
+    wakeLockWanted = true;
+    if (!wakeLockApi?.request || wakeLock) return;
+    try {
+      const lock = await wakeLockApi.request("screen");
+      if (!wakeLockWanted) {
+        await lock.release();
+        return;
+      }
+      wakeLock = lock;
+      wakeLock.addEventListener?.("release", () => { wakeLock = null; });
+    } catch {
+      wakeLock = null;
+    }
+  }
+
+  async function releaseWakeLock() {
+    wakeLockWanted = false;
+    const current = wakeLock;
+    wakeLock = null;
+    if (!current) return;
+    try {
+      await current.release();
+    } catch {
+      // Wake Lock is best-effort; speech playback must continue to work.
+    }
+  }
 
   function voices() {
     const previous = selectedVoice || voice.value;
@@ -98,40 +128,79 @@
     if (items.some(v => v.voiceURI === previous)) voice.value = previous;
     selectedVoice = voice.value;
   }
+
   function clearHighlight(){ blocks.forEach(x => x.classList.remove("is-speaking")); }
+
   function speakCurrent() {
-    if (!playing || index >= blocks.length) { playing = false; paused = false; clearHighlight(); return; }
-    clearHighlight(); blocks[index].classList.add("is-speaking"); blocks[index].scrollIntoView({block:"center",behavior:"smooth"});
+    if (!playing || index >= blocks.length) {
+      playing = false; paused = false; clearHighlight(); void releaseWakeLock(); return;
+    }
+    clearHighlight();
+    blocks[index].classList.add("is-speaking");
+    blocks[index].scrollIntoView({block:"center",behavior:"smooth"});
     const u = new SpeechSynthesisUtterance(blocks[index].textContent);
     u.lang = "ja-JP"; u.rate = Number(rate.value);
-    const v = synth.getVoices().find(x => x.voiceURI === voice.value); if (v) u.voice = v;
+    const v = synth.getVoices().find(x => x.voiceURI === voice.value);
+    if (v) u.voice = v;
     u.onend = () => { if (!playing || paused) return; index += 1; speakCurrent(); };
-    u.onerror = e => { if (e.error !== "canceled" && e.error !== "interrupted") { playing = false; clearHighlight(); } };
+    u.onerror = e => {
+      if (e.error !== "canceled" && e.error !== "interrupted") {
+        playing = false; clearHighlight(); void releaseWakeLock();
+      }
+    };
     synth.speak(u);
   }
+
   play.addEventListener("click", () => {
-    if (paused) { paused = false; synth.cancel(); playing = true; speakCurrent(); return; }
+    if (paused) {
+      paused = false; synth.cancel(); playing = true; void requestWakeLock(); speakCurrent(); return;
+    }
     if (playing) return;
     if (index >= blocks.length) index = 0;
-    playing = true; speakCurrent();
+    playing = true; void requestWakeLock(); speakCurrent();
   });
+
   pause.addEventListener("click", () => {
     if (!playing) return;
     synth.pause(); paused = true;
   });
-  stop.addEventListener("click", () => { synth.cancel(); playing = false; paused = false; index = 0; clearHighlight(); });
-  voice.addEventListener("change", () => { selectedVoice = voice.value; if (playing) { synth.cancel(); paused = false; speakCurrent(); } });
-  rate.addEventListener("input", () => { rateValue.textContent = Number(rate.value).toFixed(1) + "×"; });
+
+  stop.addEventListener("click", () => {
+    synth.cancel(); playing = false; paused = false; index = 0; clearHighlight(); void releaseWakeLock();
+  });
+
+  voice.addEventListener("change", () => {
+    selectedVoice = voice.value;
+    if (playing) { synth.cancel(); paused = false; speakCurrent(); }
+  });
+
+  rate.addEventListener("input", () => {
+    rateValue.textContent = Number(rate.value).toFixed(1) + "×";
+  });
+
   theme.addEventListener("click", () => {
     const dark = document.documentElement.dataset.theme === "dark";
     document.documentElement.dataset.theme = dark ? "light" : "dark";
     theme.textContent = dark ? "☾" : "☀";
     localStorage.setItem("rsvp:theme", dark ? "light" : "dark");
   });
-  document.documentElement.dataset.theme = localStorage.getItem("rsvp:theme") || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+
+  document.documentElement.dataset.theme =
+    localStorage.getItem("rsvp:theme") ||
+    (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
   theme.textContent = document.documentElement.dataset.theme === "dark" ? "☀" : "☾";
-  voices(); synth.addEventListener?.("voiceschanged", voices);
-  addEventListener("pagehide", () => synth.cancel());
+
+  voices();
+  synth.addEventListener?.("voiceschanged", voices);
+  document.addEventListener?.("visibilitychange", () => {
+    if (document.visibilityState === "visible" && (playing || paused)) {
+      void requestWakeLock();
+    }
+  });
+  addEventListener("pagehide", () => {
+    synth.cancel();
+    void releaseWakeLock();
+  });
 })();
 </script>
 </body>
