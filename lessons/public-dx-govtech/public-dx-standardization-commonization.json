@@ -1,0 +1,213 @@
+{
+  "schema_version": 1,
+  "id": "public-dx-standardization-commonization",
+  "title": "標準化・共通化と個別最適の境界",
+  "topic": "公共DX",
+  "summary": "自治体システム標準化を例に、共通仕様の意義、標準仕様とローカル運用の違い、例外管理、バージョン変更への追随を学びます。",
+  "created_at": "2026-09-29",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "デジタル庁 — 地方公共団体の基幹業務システムの統一・標準化",
+      "url": "https://www.digital.go.jp/policies/local_governments"
+    },
+    {
+      "title": "デジタル庁 — デジタル社会推進標準ガイドライン",
+      "url": "https://www.digital.go.jp/resources/standard_guidelines"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "標準化は同じ画面にすることではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "共通要件をそろえる取組です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "機能要件を共通化します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "データ要件も共通化します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "連携要件もそろえます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "非機能要件も対象になり得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "共通機能もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "目的は再利用性を高めることです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "過度な個別差を減らします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "保守負担も減らしやすくします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Vendorごとの差を小さくします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ただし差分を完全に消すとは限りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "地域固有業務もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "制度外業務もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "独自サービスもあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "標準と独自を分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "標準範囲を勝手に拡張しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "独自差分の理由を記録します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "例外は無制限に認めません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用者価値と制度根拠を見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "標準準拠と使いやすさは別です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "標準でもUI改善は必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "共通化と画一化を混同しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "データの意味もそろえます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "コード体系も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "文字仕様も影響します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "外字は連携を難しくします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "共通文字へ寄せる取組があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "移行時は変換が必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "データ品質も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "標準仕様には版があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "仕様は改定されます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "変更履歴を追います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "適用時点を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "新旧差分を管理します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "制度改正も仕様へ影響します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Vendorだけに追随を任せません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "発注者も変更内容を理解します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "運用手順も更新します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Manualも更新します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "研修も必要になる場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "標準化後も改善は続きます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "コストだけで評価しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "運用負担も見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "相互運用性も見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "移行しやすさも見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "標準化は共通基盤を作ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "差分は説明可能に管理します。",
+      "duration_multiplier": 1.15
+    }
+  ]
+}
