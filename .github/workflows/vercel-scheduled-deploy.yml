@@ -4,9 +4,6 @@ on:
   schedule:
     - cron: "0 0,12 * * *"
   workflow_dispatch:
-  push:
-    paths:
-      - ".github/workflows/vercel-scheduled-deploy.yml"
 
 permissions:
   contents: write
@@ -16,27 +13,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  config-check:
-    if: github.event_name == 'push'
-    runs-on: ubuntu-latest
-    env:
-      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-      VERCEL_ORG_ID: team_imvRFeaSa1LmNpMJkFiMwNmB
-      VERCEL_PROJECT_ID: prj_7yYGl5D3Q7UwQgQuXaGmOYLkTzbu
-    steps:
-      - name: Verify Vercel project access
-        shell: bash
-        run: |
-          HTTP_CODE="$(curl -sS -o /tmp/vercel-project.json -w "%{http_code}"             -H "Authorization: Bearer $VERCEL_TOKEN"             "https://api.vercel.com/v9/projects/$VERCEL_PROJECT_ID?teamId=$VERCEL_ORG_ID")"
-          echo "HTTP_CODE=$HTTP_CODE"
-          if [ "$HTTP_CODE" != "200" ]; then
-            node -e 'const fs=require("fs"); const x=JSON.parse(fs.readFileSync("/tmp/vercel-project.json","utf8")); console.error(x?.error?.message || JSON.stringify(x));'
-            exit 1
-          fi
-          node -e 'const fs=require("fs"); const x=JSON.parse(fs.readFileSync("/tmp/vercel-project.json","utf8")); console.log("PROJECT_ACCESS_OK name="+x.name+" id="+x.id+" accountId="+x.accountId);'
-
   deploy:
-    if: github.event_name != 'push'
     runs-on: ubuntu-latest
     env:
       VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
@@ -78,6 +55,19 @@ jobs:
         if: steps.changed.outputs.changed == 'true' && steps.credentials.outputs.configured == 'true'
         with:
           node-version: 22
+
+      - name: Verify Vercel project access
+        if: steps.changed.outputs.changed == 'true' && steps.credentials.outputs.configured == 'true'
+        shell: bash
+        run: |
+          HTTP_CODE="$(curl -sS -o /tmp/vercel-project.json -w "%{http_code}" \
+            -H "Authorization: Bearer $VERCEL_TOKEN" \
+            "https://api.vercel.com/v9/projects/$VERCEL_PROJECT_ID?teamId=$VERCEL_ORG_ID")"
+          echo "Vercel project access: HTTP $HTTP_CODE"
+          if [ "$HTTP_CODE" != "200" ]; then
+            node -e 'const fs=require("fs"); const x=JSON.parse(fs.readFileSync("/tmp/vercel-project.json","utf8")); console.error(x?.error?.message || JSON.stringify(x));'
+            exit 1
+          fi
 
       - name: Install dependencies
         if: steps.changed.outputs.changed == 'true' && steps.credentials.outputs.configured == 'true'
