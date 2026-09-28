@@ -104,8 +104,7 @@ jobs:
               ci: true,
               ciType: "github-actions",
               ciGitRepoVisibility: "private"
-            },
-            withLatestCommit: true
+            }
           };
           fs.writeFileSync("/tmp/vercel-deploy-request.json", JSON.stringify(body));
           NODE
