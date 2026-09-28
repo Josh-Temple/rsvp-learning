@@ -1,0 +1,213 @@
+{
+  "schema_version": 1,
+  "id": "os-processes-execution",
+  "title": "OS・Process・Threadとプログラム実行",
+  "topic": "IT基盤",
+  "summary": "OSがCPUやメモリなどの資源を管理し、プログラムがProcessとして実行され、ThreadやFile Descriptorを通じて外部資源を使う基本を学びます。",
+  "created_at": "2026-09-29",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "The /proc Filesystem — Linux Kernel documentation",
+      "url": "https://docs.kernel.org/filesystems/proc.html"
+    },
+    {
+      "title": "Memory Management — Linux Kernel documentation",
+      "url": "https://docs.kernel.org/admin-guide/mm/"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "OSはハードウェア資源を管理します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "CPUやMemoryを割り当てます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "DeviceやFileも管理します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "アプリへ共通の仕組みを提供します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Programは保存された命令です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Processは実行中の状態です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "同じProgramを複数実行できます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ProcessごとにPIDがあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "実行状態もProcessごとです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "仮想Address空間を持ちます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "開いているFileも管理されます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "File Descriptorで参照します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "SocketもFDとして扱えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "環境変数もProcessへ渡せます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Current Directoryも状態です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "権限情報も実行へ影響します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ThreadはProcess内で実行します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "複数Threadを持てます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "同じ資源を共有する部分があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "共有には競合も生じます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "OSはCPU時間を割り当てます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "すべてが同時実行とは限りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "待ち状態になる場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "入出力待ちもあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "CPU使用率だけで判断しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Memory待ちやIOも見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "親Processから子が生まれます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Linuxではforkが使われます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "execで別Programを読み込めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "二つは別の操作です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ShellもProcessを起動します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Command実行後に待つ場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Background実行もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Processは終了Statusを返せます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "成功と失敗の判断に使えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "異常終了もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Signalで通知を受ける場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "停止と強制終了は同じではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ServiceもProcessとして動きます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "監督機構が再起動する場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Processがあるだけで正常とは限りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "応答できるかも確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "PIDが変わる場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "再起動なら別Processです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "状態を名前だけで追いません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ログや資源使用量も見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "OSは隔離と共有を両立します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Process単位で実行を捉えます。",
+      "duration_multiplier": 1.15
+    }
+  ]
+}
