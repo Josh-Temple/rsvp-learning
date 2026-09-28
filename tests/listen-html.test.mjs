@@ -17,6 +17,10 @@ test("registered Listen pages satisfy the minimum read-aloud contract", async ()
     assert.match(html, /<p[ >]/i, `${item.id}: paragraph text`);
     assert.match(html, /speechSynthesis/, `${item.id}: Web Speech API`);
     assert.match(html, /SpeechSynthesisUtterance/, `${item.id}: utterance`);
+    assert.match(html, /wakeLock/, `${item.id}: Screen Wake Lock API`);
+    assert.match(html, /request\("screen"\)/, `${item.id}: screen wake lock request`);
+    assert.match(html, /releaseWakeLock/, `${item.id}: wake lock release`);
+    assert.match(html, /visibilitychange/, `${item.id}: wake lock reacquire lifecycle`);
     assert.match(html, /min="0\.7"/, `${item.id}: minimum rate`);
     assert.match(html, /max="4"/, `${item.id}: maximum rate`);
     assert.match(html, /index\.html\?library=listen/, `${item.id}: shared library return`);
