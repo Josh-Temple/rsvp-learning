@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f2efe8">
+  <meta name="description" content="2026年9月28日時点のrsvp-learningレビュー結果を耳で把握するListen版">
+  <title>rsvp-learningレビューから見えた現在地</title>
+  <style>
+    :root{color-scheme:light;--bg:#f2efe8;--ink:#121722;--muted:#73766f;--line:#cbc8bf;--blue:#5d7487}
+    html[data-theme="dark"]{color-scheme:dark;--bg:#11151a;--ink:#edf0eb;--muted:#959b97;--line:#343a3e;--blue:#7892a6}
+    *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Hiragino Sans","Noto Sans JP",sans-serif;line-height:1.9}
+    .shell{width:min(760px,100%);margin:0 auto;padding:max(18px,env(safe-area-inset-top)) 20px max(42px,env(safe-area-inset-bottom))}
+    .topbar{min-height:52px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+    .icon{width:42px;height:42px;display:grid;place-items:center;border:0;background:transparent;color:var(--muted);text-decoration:none;font:inherit}
+    .meta{margin:28px 0 8px;color:var(--muted);font-size:.75rem}
+    h1{font-size:clamp(2rem,8vw,3.4rem);line-height:1.12;letter-spacing:-.04em;margin:.2em 0 .8em} h2{margin:2.2em 0 .6em;font-size:1.2rem}
+    p{margin:0 0 1.25em} article>*{transition:background-color .15s ease}.is-speaking{background:color-mix(in srgb,var(--blue) 16%,transparent)}
+    .player{position:sticky;bottom:0;margin:32px -6px 0;padding:12px 6px;background:color-mix(in srgb,var(--bg) 94%,transparent);border-top:1px solid var(--line);backdrop-filter:blur(8px)}
+    .controls{display:grid;grid-template-columns:48px 48px 48px 1fr;gap:8px;align-items:center}.controls button,.controls select{min-height:42px;border:1px solid var(--line);background:transparent;color:var(--ink)}
+    .speed{display:grid;grid-template-columns:48px 1fr 42px;gap:10px;align-items:center;margin-top:10px;font-size:.78rem;color:var(--muted)} input{width:100%}
+    .sources{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}.sources a{color:var(--ink)}
+  </style>
+</head>
+<body>
+<main class="shell">
+  <header class="topbar">
+    <a class="icon" href="../../index.html?library=listen" aria-label="Listen一覧へ戻る">←</a>
+    <span aria-hidden="true">🎧</span>
+    <button id="theme" class="icon" type="button" aria-label="テーマ切替">☾</button>
+  </header>
+
+  <article id="article">
+    <p class="meta">情報基準日 2026年9月28日</p>
+    <h1>rsvp-learningレビューから見えた現在地</h1>
+    <p>このListenでは、rsvp-learningのレビュー記録から、現在どこまで整っていて、何がまだ人手確認として残っているのかを整理します。数字だけを見るのではなく、構造上の改善と、まだ保証できない部分を分けて確認します。</p>
+
+    <h2>教材基盤はかなり整理された</h2>
+    <p>2026年9月28日のレビュー記録では、Lessonは79件、Courseは19件です。そのうち60件がCOMPLETE v0.1、17件がSEED、2件はstatus不明のまま残されています。完成扱いにした60教材にはLearn HTMLが用意され、RSVP版とLearn版の両方を使える状態になりました。</p>
+    <p>COMPLETEへ進める条件は、教材タイトルと本文の整合、重大な説明飛躍や内部矛盾がないこと、Markdown本文とRSVP JSONの同期、出典の同期、空チャンクや長すぎるチャンクが残っていないことなどです。完成statusは単なる見た目のラベルではなく、RSVPとLearnを生成してよい範囲を決める役割を持っています。</p>
+
+    <h2>RSVPの分割品質は改善した</h2>
+    <p>初期レビューでは、24文字を超えるチャンクが多数あり、高速再生時には一度に表示される情報量が多すぎる問題がありました。その後、教材を意味単位で再分割し、2026年9月28日の再点検では、24文字を超えるチャンクはゼロになっています。</p>
+    <p>ここで重要なのは、文字数だけを機械的に短くしたわけではないことです。助詞だけを切り出さず、固有名詞や専門用語は不自然に分けず、分割前後で本文の内容が一致することを確認する運用へ変えています。</p>
+
+    <h2>再生状態のバグも修正された</h2>
+    <p>レビューでは、複数の章を素早く選んだとき、古い取得結果が後から到着して新しい教材を上書きする競合が見つかりました。また、ライブラリ一覧を開いている間も再生が進み続ける問題もありました。</p>
+    <p>これらは、取得要求ごとに識別子を持たせて古い結果を破棄する方法と、ライブラリを開いた時点で再生を止める方法で修正されています。さらに、その挙動をNodeの回帰テストへ追加し、将来の変更で戻りにくくしています。</p>
+
+    <h2>Learnは60教材まで広がった</h2>
+    <p>Learnは最初、認証と認可の1教材だけを使ったパイロットでした。その後、完成条件を定義し、COMPLETE v0.1の60教材にLearn HTMLを用意しました。本文はRSVPの短いチャンクを単純に連結せず、耳で理解できる連続文章へ組み直しています。</p>
+    <p>共通プレイヤーでは、Web Speech APIを使って再生、一時停止、停止、速度変更、日本語音声の選択、現在位置のハイライトを行います。一時停止中に音声を変更した場合、再開時に新しい音声へ切り替わるよう修正も入っています。</p>
+
+    <h2>自動検査と内容確認は別物</h2>
+    <p>現在は、教材JSONのschema、LessonとCourseの参照、status同期、Learn HTMLの構造、プレイヤー状態などを自動検査できます。これは運用上かなり大きな改善です。</p>
+    <p>ただし、自動検査に通ったことは、教材の事実関係が完全に正しいことや、Androidで聞きやすいことを意味しません。レビュー記録でも、構造検査の成功と、内容の独立検証、Android実機での利用確認を分けて扱っています。</p>
+
+    <h2>残っている確認</h2>
+    <p>大きく残っているのは実機確認です。RSVPでは通常速度と8倍前後での視認性、ライブラリ表示中の停止、素早い章選択時の挙動が確認対象です。Learnでは、音声選択、一時停止と再開、0.7倍と4倍での聞き取りやすさ、ページを離れた場合の停止挙動が対象です。</p>
+    <p>また、教材ごとの事実確認と出典の到達性も、機械検査だけでは完了しません。特に現在性のある仕様、セキュリティ上の推奨、制度や研究結果などは、一次資料との対応を個別に確認する必要があります。</p>
+
+    <h2>最後に残す要点</h2>
+    <p>rsvp-learningは、単に再生できる試作品から、教材status、RSVP分割、Learn生成、自動検査を持つ運用可能な基盤へ進んでいます。一方で、実機での使いやすさと内容の独立確認は別の課題として残っています。今後は大規模な作り直しより、実際に使いながら品質を確認し、必要な箇所を個別に改善する段階です。</p>
+  </article>
+
+  <section class="player" aria-label="読み上げ操作">
+    <div class="controls">
+      <button id="play" type="button" aria-label="再生">▶</button>
+      <button id="pause" type="button" aria-label="一時停止">Ⅱ</button>
+      <button id="stop" type="button" aria-label="停止">■</button>
+      <select id="voice" aria-label="日本語音声"></select>
+    </div>
+    <div class="speed"><span>速度</span><input id="rate" type="range" min="0.7" max="4" step="0.1" value="1"><span id="rateValue">1.0×</span></div>
+  </section>
+
+  <section class="sources" aria-label="出典">
+    <strong>出典</strong>
+    <p><a href="https://github.com/Josh-Temple/rsvp-learning/blob/main/docs/REVIEW_2026-09-27.md">RSVPリポジトリレビューと作業一覧</a></p>
+    <p><a href="https://github.com/Josh-Temple/rsvp-learning/blob/main/docs/LESSON_FORMAT.md">教材フォーマットと完成条件</a></p>
+    <p><a href="https://github.com/Josh-Temple/rsvp-learning/blob/main/docs/LEARN_READALOUD_PILOT_20260927.md">Learn 読み上げパイロット</a></p>
+  </section>
+</main>
+<script>
+(() => {
+  const synth = window.speechSynthesis;
+  const blocks = [...document.querySelectorAll("#article h1,#article h2,#article h3,#article p")];
+  const play = document.querySelector("#play"), pause = document.querySelector("#pause"), stop = document.querySelector("#stop");
+  const voice = document.querySelector("#voice"), rate = document.querySelector("#rate"), rateValue = document.querySelector("#rateValue");
+  const theme = document.querySelector("#theme");
+  let index = 0, playing = false, paused = false, selectedVoice = "";
+  function voices(){const previous=selectedVoice||voice.value;const items=synth.getVoices().filter(v=>/^ja(?:-|_)/i.test(v.lang));voice.replaceChildren();for(const v of items){const o=document.createElement("option");o.value=v.voiceURI;o.textContent=v.name;voice.append(o)}if(items.some(v=>v.voiceURI===previous))voice.value=previous;selectedVoice=voice.value}
+  function clearHighlight(){blocks.forEach(x=>x.classList.remove("is-speaking"))}
+  function speakCurrent(){if(!playing||index>=blocks.length){playing=false;paused=false;clearHighlight();return}clearHighlight();blocks[index].classList.add("is-speaking");blocks[index].scrollIntoView({block:"center",behavior:"smooth"});const u=new SpeechSynthesisUtterance(blocks[index].textContent);u.lang="ja-JP";u.rate=Number(rate.value);const v=synth.getVoices().find(x=>x.voiceURI===voice.value);if(v)u.voice=v;u.onend=()=>{if(!playing||paused)return;index+=1;speakCurrent()};u.onerror=e=>{if(e.error!=="canceled"&&e.error!=="interrupted"){playing=false;clearHighlight()}};synth.speak(u)}
+  play.addEventListener("click",()=>{if(paused){paused=false;synth.cancel();playing=true;speakCurrent();return}if(playing)return;if(index>=blocks.length)index=0;playing=true;speakCurrent()});
+  pause.addEventListener("click",()=>{if(!playing)return;synth.pause();paused=true});
+  stop.addEventListener("click",()=>{synth.cancel();playing=false;paused=false;index=0;clearHighlight()});
+  voice.addEventListener("change",()=>{selectedVoice=voice.value;if(playing){synth.cancel();paused=false;speakCurrent()}});
+  rate.addEventListener("input",()=>{rateValue.textContent=Number(rate.value).toFixed(1)+"×"});
+  theme.addEventListener("click",()=>{const dark=document.documentElement.dataset.theme==="dark";document.documentElement.dataset.theme=dark?"light":"dark";theme.textContent=dark?"☾":"☀";localStorage.setItem("rsvp:theme",dark?"light":"dark")});
+  document.documentElement.dataset.theme=localStorage.getItem("rsvp:theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");theme.textContent=document.documentElement.dataset.theme==="dark"?"☀":"☾";
+  voices();synth.addEventListener?.("voiceschanged",voices);addEventListener("pagehide",()=>synth.cancel());
+})();
+</script>
+</body>
+</html>
