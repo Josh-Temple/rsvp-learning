@@ -1,0 +1,217 @@
+{
+  "schema_version": 1,
+  "id": "it-consulting-evidence-analysis",
+  "title": "事実・解釈・証拠の組み立て",
+  "topic": "コンサルティング",
+  "summary": "データ、文書、インタビュー、観察を組み合わせ、事実・解釈・仮定を分け、基準値と反対証拠を含む分析を組み立てる方法を学びます。",
+  "created_at": "2026-09-29",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "GOV.UK Service Manual — Plan user research for your service",
+      "url": "https://www.gov.uk/service-manual/user-research/plan-user-research-for-your-service"
+    },
+    {
+      "title": "GOV.UK Service Manual — Measuring the benefits of your service",
+      "url": "https://www.gov.uk/service-manual/measuring-success/measuring-service-benefits"
+    },
+    {
+      "title": "IIBA The Business Analysis Standard — Business Analysis Tasks",
+      "url": "https://www.iiba.org/knowledgehub/business-analysis-standard/4-tasks-and-knowledge-areas/introducing-business-analysis-tasks/"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "分析では情報源を一つに寄せません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "定量データを使います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "文書も使います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "インタビューも使います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "現場観察も使えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "それぞれ見えるものが違います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "事実と解釈を分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "観測値は事実になり得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "原因説明は解釈かもしれません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "将来予測は仮定を含みます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "同じ表に混ぜないようにします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "出所を追えるようにします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "取得時点も残します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "対象範囲も残します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "集計条件も残します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "基準値を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "改善前の状態が必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "比較条件をそろえます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "繁忙期と閑散期を混同しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "母集団とSampleを区別します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "代表性を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "欠測の偏りも見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "平均値だけに頼りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "分布や例外も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "極端値には理由があるかもしれません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "インタビューは経験を得られます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ただし頻度の推定には注意します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "発言と実際の行動が違う場合もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "観察で補います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "複数の証拠を突き合わせます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一致点を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "不一致も重要な情報です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "反対証拠を探します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "都合の悪い事例も残します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "相関だけで原因を決めません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "別要因を考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "調査設計を問いに合わせます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "必要以上のデータを集めません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "判断に効く証拠を優先します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "証拠の強さを区別します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一次情報を優先する場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "古い情報は現在性を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "推測は推測と表示します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "未確認事項も残します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "結論には根拠を対応づけます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "再検証できる形にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "証拠は結論を飾るものではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "結論を変える材料として使います。",
+      "duration_multiplier": 1.15
+    }
+  ]
+}

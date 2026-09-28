@@ -1,0 +1,217 @@
+{
+  "schema_version": 1,
+  "id": "it-consulting-options-decision",
+  "title": "施策比較と意思決定",
+  "topic": "コンサルティング",
+  "summary": "複数の施策を同じ基準で比較し、効果、費用、リスク、実現可能性、非金銭価値、不確実性を合わせて意思決定を支える方法を学びます。",
+  "created_at": "2026-09-29",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "IIBA — Define Design Options",
+      "url": "https://www.iiba.org/knowledgehub/business-analysis-body-of-knowledge-babok-guide/7-requirements-analysis-and-design-definition/7-5-define-design-options/"
+    },
+    {
+      "title": "IIBA — Analyze Potential Value and Recommend Solution",
+      "url": "https://www.iiba.org/knowledgehub/business-analysis-body-of-knowledge-babok-guide/7-requirements-analysis-and-design-definition/7-6-analyze-potential-value-and-recommend-solution/"
+    },
+    {
+      "title": "HM Treasury — The Green Book (2026)",
+      "url": "https://www.gov.uk/government/publications/the-green-book-appraisal-and-evaluation-in-central-government/the-green-book-2026"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "施策は一案だけ作りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "現状維持も比較対象になります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "最小変更案も考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "段階導入案もあり得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "全面刷新案も候補になり得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "まず目的を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "目的を満たさない案は外します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "評価基準を先に決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "効果を見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "費用を見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "リスクを見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "実現可能性も見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "期間も比較します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "運用負担も見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用者影響も見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "評価軸を増やしすぎません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "重要な軸へ絞ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "同じ基準で全案を見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "都合の良い軸を後付けしません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "金銭換算できない価値もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "安全性や公平性もあり得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "定量化できないから無視しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "仮定を明示します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "費用見積もりにも幅があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "効果見積もりにも幅があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一点予測だけに頼りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "感度を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "主要前提を変えて比べます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "順位が変わる条件を見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "不確実性が大きいなら試します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "PoCが有効な場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ただしPoC自体を目的にしません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "何を学ぶか決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "撤退条件も決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "推奨案だけを書きません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "代替案も示します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "採らない理由も示します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "リスクの残り方も示します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "意思決定者が比較できる形にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "点数は判断を補助します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "点数だけで決めません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "重みの根拠を説明します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利害関係者の違いも見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "局所利益だけで決めません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "組織全体への影響を見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "選択は証拠に合わせます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "新事実で見直せます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "推奨は条件付きで表現できます。",
+      "duration_multiplier": 1.15
+    }
+  ]
+}

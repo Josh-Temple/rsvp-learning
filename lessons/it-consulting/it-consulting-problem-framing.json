@@ -1,0 +1,213 @@
+{
+  "schema_version": 1,
+  "id": "it-consulting-problem-framing",
+  "title": "課題設定とコンサルティングの問い",
+  "topic": "コンサルティング",
+  "summary": "依頼された解決策をそのまま前提にせず、目的、意思決定、対象範囲、制約、成功条件へ分解して課題を定義する方法を学びます。",
+  "created_at": "2026-09-29",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "GOV.UK Service Manual — How the discovery phase works",
+      "url": "https://www.gov.uk/service-manual/agile-delivery/how-the-discovery-phase-works"
+    },
+    {
+      "title": "IIBA The Business Analysis Standard — Strategy Analysis",
+      "url": "https://www.iiba.org/knowledgehub/the-business-analysis-standard/5-applying-business-analysis-tasks/5-3-business-analysis-knowledge-areas/strategy-analysis/"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "相談は解決策の形で来ることがあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "AIを導入したいとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "それだけでは課題は分かりません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "まず達成したい結果を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "誰の何を変えたいかを確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "意思決定者も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用者も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "影響を受ける人も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "症状と原因を分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "問い合わせ増加は症状かもしれません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "原因は複数あり得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "解決策を先に固定しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "問題を問いへ言い換えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "何を決めるための調査か明確にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "意思決定に必要な情報を考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "スコープを定めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "対象業務を明確にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "対象外も明確にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "期間も条件になります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "予算も制約になります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "法令や契約も制約になり得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "既存システムも制約になります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "制約と前提を分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "前提は検証可能にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "成功条件を置きます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "成果物完成だけで判断しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "業務結果の変化を見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "現状値を基準として残します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "定量指標だけに寄せません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "定性情報も判断材料です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用者の困りごとも見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "組織の目的ともつなげます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "局所最適を避けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一部門の改善が他部門を悪化させ得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "課題文は短く書きます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "対象と結果を含めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "解決策名を入れすぎません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "問いは途中で更新できます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "新しい事実で見直します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "調査開始時の仮置きでも構いません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ただし変更理由を残します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "誰が合意したかも残します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "課題設定は提案の土台です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "曖昧な問いは分析を広げます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "狭すぎる問いは原因を見落とします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "適切な射程を探ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "最初に決めるのは製品ではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "まず解くべき問いを決めます。",
+      "duration_multiplier": 1.15
+    }
+  ]
+}

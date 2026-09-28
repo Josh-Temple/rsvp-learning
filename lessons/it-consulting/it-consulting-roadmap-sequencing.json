@@ -1,0 +1,217 @@
+{
+  "schema_version": 1,
+  "id": "it-consulting-roadmap-sequencing",
+  "title": "ロードマップ・優先順位・実行順序",
+  "topic": "コンサルティング",
+  "summary": "目的から逆算して施策の優先順位、依存関係、段階導入、学習ポイントを整理し、変化に合わせて更新できるロードマップを作る考え方を学びます。",
+  "created_at": "2026-09-29",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "GOV.UK Service Manual — Developing a roadmap",
+      "url": "https://www.gov.uk/service-manual/agile-delivery/developing-a-roadmap"
+    },
+    {
+      "title": "GOV.UK Service Manual — Planning in agile",
+      "url": "https://www.gov.uk/service-manual/agile-delivery/planning-agile"
+    },
+    {
+      "title": "GOV.UK Service Manual — Deciding on priorities",
+      "url": "https://www.gov.uk/service-manual/agile-delivery/deciding-on-priorities"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "ロードマップは日程表だけではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "目標へ進む順序を示します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "最初にVisionを確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "達成したいOutcomeを置きます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "施策はOutcomeへ結びます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "機能一覧だけにしません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "優先順位を明確にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "依存関係を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "先に必要な基盤があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "後でよい機能もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "法令期限も制約になります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "契約期限も制約になります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "人員や予算も制約です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "価値の大きさを見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "緊急性も見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "実現難易度も見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "リスク低減効果も見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "複数軸で優先します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "声の大きさだけで決めません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Quick Winだけを並べません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "基盤整備も必要な場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "短期成果と将来能力を両立します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "段階導入を考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "小さく価値を出す方法を探します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ただし分割不能な依存もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "学習ポイントを置きます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "仮説を検証する段階があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "判断ゲートを設ける場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "結果で次段階を変えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "遠い将来ほど不確実です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "近い作業は具体化します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "遠い作業は粗く置きます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "計画を固定しすぎません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "新事実で更新します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Roadmap Ownerを決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "更新頻度も決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "変更理由を残します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Stakeholderへ共有します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "対象外も示します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "やらないことも意思決定です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "複数Teamの依存を見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "外部Vendorも依存先です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "移行期間も考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "旧新併存も負担になります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Trainingも順序に入ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "運用準備も忘れません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "成果物ではなく価値を追います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ロードマップは学習で育てます。",
+      "duration_multiplier": 1.15
+    }
+  ]
+}

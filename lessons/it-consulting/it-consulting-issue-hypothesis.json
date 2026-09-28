@@ -1,0 +1,213 @@
+{
+  "schema_version": 1,
+  "id": "it-consulting-issue-hypothesis",
+  "title": "論点整理と仮説思考",
+  "topic": "コンサルティング",
+  "summary": "大きな問いを検証可能な論点へ分け、仮説を暫定的な答えとして置き、反証も含めて効率よく調査する方法を学びます。",
+  "created_at": "2026-09-29",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "IIBA The Business Analysis Standard — Strategy Analysis",
+      "url": "https://www.iiba.org/knowledgehub/the-business-analysis-standard/5-applying-business-analysis-tasks/5-3-business-analysis-knowledge-areas/strategy-analysis/"
+    },
+    {
+      "title": "GOV.UK Service Manual — Plan user research for your service",
+      "url": "https://www.gov.uk/service-manual/user-research/plan-user-research-for-your-service"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "大きな問いはそのまま調べません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "答えるべき論点へ分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "論点は質問の形にできます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "原因に関する論点があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "影響に関する論点があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "実現可能性も論点になります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "費用やリスクも論点になります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "分解の軸をそろえます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "重複を減らします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "抜けも確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "分類の美しさを目的にしません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "重要事項を漏らさないことが先です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "論点には優先順位を付けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "意思決定への影響で見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "不確実性の大きさも見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "調べる費用も考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "仮説は暫定的な答えです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "事実ではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "例えば原因を仮置きします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "その仮説なら何が観測されるか考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "必要な証拠を先に決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "反証できる条件も決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "都合の良い証拠だけ集めません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "反対の証拠も探します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一つの仮説に固執しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "代替仮説を持ちます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "仮説ごとに識別点を探します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "同じ結果を説明する仮説もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "追加調査で切り分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "重要論点から検証します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "低影響論点へ時間を使いすぎません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "検証順序も設計します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "早く否定できる仮説から試す場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "依存する論点を先に見る場合もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "仮説が外れるのは失敗ではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "学習として更新します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "不明は不明のまま残せます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "推測で穴を埋めません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "確度を分けて伝えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "事実と仮説を表示上も分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "会議では結論だけ示しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "根拠と未確認点も示します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "論点一覧は更新します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "新事実で優先度も変わります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "不要な論点は閉じます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "未解決論点は責任者を決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "仮説は調査を絞るために使います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "答えを先に決めるためではありません。",
+      "duration_multiplier": 1.15
+    }
+  ]
+}

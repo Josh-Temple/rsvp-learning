@@ -190,7 +190,14 @@
       "id": "it-consulting",
       "title": "ITコンサルティング",
       "chapters": [
-        "it-consulting-overview"
+        "it-consulting-overview",
+        "it-consulting-problem-framing",
+        "it-consulting-issue-hypothesis",
+        "it-consulting-evidence-analysis",
+        "it-consulting-options-decision",
+        "it-consulting-business-case-value",
+        "it-consulting-roadmap-sequencing",
+        "it-consulting-proposal-executive"
       ]
     },
     {
