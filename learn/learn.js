@@ -19,12 +19,19 @@
       let runId = 0;
       let voiceChangedWhilePaused = false;
       let wakeLock = null;
+      let wakeLockWanted = false;
 
       async function requestWakeLock() {
         const wakeLockApi = window.navigator?.wakeLock;
+        wakeLockWanted = true;
         if (!wakeLockApi?.request || wakeLock) return;
         try {
-          wakeLock = await wakeLockApi.request("screen");
+          const lock = await wakeLockApi.request("screen");
+          if (!wakeLockWanted) {
+            await lock.release();
+            return;
+          }
+          wakeLock = lock;
           wakeLock.addEventListener?.("release", () => {
             wakeLock = null;
           });
@@ -34,6 +41,7 @@
       }
 
       async function releaseWakeLock() {
+        wakeLockWanted = false;
         const current = wakeLock;
         wakeLock = null;
         if (!current) return;
