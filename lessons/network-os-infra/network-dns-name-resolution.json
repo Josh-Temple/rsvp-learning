@@ -1,0 +1,213 @@
+{
+  "schema_version": 1,
+  "id": "network-dns-name-resolution",
+  "title": "DNSと名前解決",
+  "topic": "IT基盤",
+  "summary": "DNSの階層構造、再帰リゾルバ、権威サーバー、キャッシュ、主要レコードをつなぎ、名前から接続先を得る流れを学びます。",
+  "created_at": "2026-09-29",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "RFC 1034: Domain Names - Concepts and Facilities",
+      "url": "https://www.rfc-editor.org/rfc/rfc1034.html"
+    },
+    {
+      "title": "RFC 1035: Domain Names - Implementation and Specification",
+      "url": "https://www.rfc-editor.org/rfc/rfc1035.html"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "人は名前でサービスを扱います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ネットワークはIPを使います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "DNSは両者を対応づけます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一つの中央名簿ではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "階層的に名前を管理します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ルートから委任をたどります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "各領域に権威があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "権威サーバーが正式情報を持ちます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用者は通常リゾルバへ尋ねます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "再帰リゾルバが問い合わせを進めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "結果をキャッシュします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "毎回最初から尋ねるとは限りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "TTLはキャッシュ時間の手掛かりです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "変更は即時反映とは限りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "古いキャッシュが残る場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "AはIPv4を表します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "AAAAはIPv6を表します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "CNAMEは別名を示します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "レコードごとに役割が違います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "名前が引けても通信は別です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "IPへ到達できない場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Portが閉じている場合もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "TLSで失敗する場合もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "DNS失敗も複数段階があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "端末側の設定を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "リゾルバ応答を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "権威側の情報も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "委任の誤りもあり得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "キャッシュの影響も考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "存在しない結果も保持され得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "名前の末尾は階層を表します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ドメインとホストは同義ではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "同じ名前でも複数IPを返せます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "接続先分散に使われる場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "IPが変わっても名前を保てます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ただし依存関係は増えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "DNS障害でサービスが見えなくなります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "サーバー自体は動いている場合もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "IP直指定で切り分ける場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ただし本番操作には注意します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "HTTPSでは名前が重要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "証明書確認にも名前を使います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "DNSだけ直せば十分とは限りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "下位と上位を分けて確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "名前解決を独立した層として見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "キャッシュ前提で変更を計画します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "権威と再帰を区別します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "最終的にIPを得て通信へ進みます。",
+      "duration_multiplier": 1.15
+    }
+  ]
+}
