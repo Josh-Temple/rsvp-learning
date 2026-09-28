@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f2efe8">
+  <meta name="description" content="Vercel自動デプロイ障害の原因と復旧経緯を耳で確認するListen版">
+  <title>Vercel自動デプロイ障害の原因と復旧</title>
+  <style>
+    :root{color-scheme:light;--bg:#f2efe8;--ink:#121722;--muted:#73766f;--line:#cbc8bf;--blue:#5d7487}
+    html[data-theme="dark"]{color-scheme:dark;--bg:#11151a;--ink:#edf0eb;--muted:#959b97;--line:#343a3e;--blue:#7892a6}
+    *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Hiragino Sans","Noto Sans JP",sans-serif;line-height:1.9}
+    .shell{width:min(760px,100%);margin:0 auto;padding:max(18px,env(safe-area-inset-top)) 20px max(42px,env(safe-area-inset-bottom))}
+    .topbar{min-height:52px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+    .icon{width:42px;height:42px;display:grid;place-items:center;border:0;background:transparent;color:var(--muted);text-decoration:none;font:inherit}
+    .meta{margin:28px 0 8px;color:var(--muted);font-size:.75rem}
+    h1{font-size:clamp(2rem,8vw,3.4rem);line-height:1.12;letter-spacing:-.04em;margin:.2em 0 .8em} h2{margin:2.2em 0 .6em;font-size:1.2rem}
+    p{margin:0 0 1.25em} article>*{transition:background-color .15s ease}.is-speaking{background:color-mix(in srgb,var(--blue) 16%,transparent)}
+    .player{position:sticky;bottom:0;margin:32px -6px 0;padding:12px 6px;background:color-mix(in srgb,var(--bg) 94%,transparent);border-top:1px solid var(--line);backdrop-filter:blur(8px)}
+    .controls{display:grid;grid-template-columns:48px 48px 48px 1fr;gap:8px;align-items:center}.controls button,.controls select{min-height:42px;border:1px solid var(--line);background:transparent;color:var(--ink)}
+    .speed{display:grid;grid-template-columns:48px 1fr 42px;gap:10px;align-items:center;margin-top:10px;font-size:.78rem;color:var(--muted)} input{width:100%}
+    .sources{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}.sources a{color:var(--ink)}
+  </style>
+</head>
+<body>
+<main class="shell">
+  <header class="topbar">
+    <a class="icon" href="../../index.html?library=listen" aria-label="Listen一覧へ戻る">←</a>
+    <span aria-hidden="true">🎧</span>
+    <button id="theme" class="icon" type="button" aria-label="テーマ切替">☾</button>
+  </header>
+
+  <article id="article">
+    <p class="meta">情報基準日 2026年9月28日</p>
+    <h1>Vercel自動デプロイ障害の原因と復旧</h1>
+    <p>このListenでは、rsvp-learningのProductionデプロイが自動化後に一度も成功していなかった原因と、最終的にどの経路で復旧したかを整理します。今回のポイントは、失敗が一つの原因ではなく、段階ごとに別の問題が隠れていたことです。</p>
+
+    <h2>最初の失敗は依存関係のインストール</h2>
+    <p>定期デプロイの初期workflowでは、依存関係のインストールに npm ci を使っていました。しかし、このリポジトリには package-lock.json がありません。そのため、npm ci は開始直後に終了し、Vercelへ到達する前にデプロイ全体が失敗していました。</p>
+    <p>通常のテストworkflowは npm install --ignore-scripts を使って正常に動いていました。そこで定期デプロイ側も同じ方式へ揃えました。これにより、依存関係のインストールと npm run check までは通るようになりました。</p>
+
+    <h2>次に止まったのはVercel CLI</h2>
+    <p>依存関係の問題を直した後、今度は vercel pull で Project Settings を取得できないエラーが発生しました。GitHub Actionsには VERCEL_TOKEN が設定されており、対象Project IDとTeam IDも正しい値でした。</p>
+    <p>そこでGitHub ActionsからVercelのREST APIへ直接問い合わせ、このtokenで対象プロジェクトを読めるかを確認しました。結果はHTTP 200で、rsvp-learningのプロジェクト情報を取得できました。つまり、tokenそのものやProject IDが間違っていたわけではありません。</p>
+
+    <h2>scopeを明示してもCLIでは解決しなかった</h2>
+    <p>次に、Vercel CLIへteam scopeとproject IDを明示しました。しかし、CLIは User not found、404という別のエラーで止まりました。REST APIでは正常にアクセスできるのに、CLI経由だけが失敗する状態です。</p>
+    <p>ここで、CLIの設定解決をさらに追い続けるより、すでに正常に認証できているREST APIをデプロイ経路として使う方針へ切り替えました。</p>
+
+    <h2>REST APIへ切り替えてProductionまで到達</h2>
+    <p>VercelのDeployment APIへ、GitHubのmainブランチをgit sourceとして渡し、targetをproductionに指定して新しいdeploymentを作成する方式へ変更しました。</p>
+    <p>最初のAPIリクエストでは、withLatestCommitという項目を不適切に含めていたためHTTP 400になりました。エラーメッセージに従ってその項目を外し、再実行したところ、deploymentの作成に成功しました。その後、READYになるまで状態を確認し、Production deploymentが正常に完了しました。</p>
+
+    <h2>現在の自動化</h2>
+    <p>現在のworkflowは、mainに前回Productionへ出したcommitから変更があるかを最初に確認します。変更がなければ何もしません。変更がある場合だけ、Vercel projectへのアクセス確認、依存関係のインストール、テスト、Production deploymentの作成を行います。</p>
+    <p>デプロイがREADYになったら、そのcommitへ vercel-production タグを付けます。次回以降はこのタグとmainを比較して、不要な再デプロイを避けます。</p>
+    <p>定期実行は6時間ごとです。日本時間では、おおむね午前3時、午前9時、午後3時、午後9時の4回です。これはGitHub ActionsのcronがUTC基準で動くことによるものです。</p>
+
+    <h2>今回の意味</h2>
+    <p>今回の障害では、最初に見えていた npm ci の失敗だけ直しても、まだデプロイは成功しませんでした。次にVercel CLIの問題が現れ、さらにREST APIへ移した後もリクエスト形式の修正が必要でした。</p>
+    <p>この経緯から分かるのは、CIやデプロイの障害では、最初のエラーだけを原因と決めつけず、修正後に次の失敗点まで進んだかを確認する必要があるということです。今回は、依存関係、認証、CLI、APIリクエストの各段階を分けて確認したことで、最終的にProductionまで通る経路を確立できました。</p>
+
+    <h2>最後に残す要点</h2>
+    <p>自動デプロイが失敗していた主な原因は、最初は package-lock.json がないのに npm ci を使っていたこと、その次はVercel CLIでプロジェクト文脈を正しく解決できなかったことです。tokenやProject IDは正常でした。現在はCLIを使わず、Vercel REST APIからProduction deploymentを直接作成する方式に変更し、実際にREADYまで成功しています。</p>
+  </article>
+
+  <section class="player" aria-label="読み上げ操作">
+    <div class="controls">
+      <button id="play" type="button" aria-label="再生">▶</button>
+      <button id="pause" type="button" aria-label="一時停止">Ⅱ</button>
+      <button id="stop" type="button" aria-label="停止">■</button>
+      <select id="voice" aria-label="日本語音声"></select>
+    </div>
+    <div class="speed"><span>速度</span><input id="rate" type="range" min="0.7" max="4" step="0.1" value="1"><span id="rateValue">1.0×</span></div>
+  </section>
+
+  <section class="sources" aria-label="出典">
+    <strong>出典</strong>
+    <p><a href="https://github.com/Josh-Temple/rsvp-learning/blob/main/.github/workflows/vercel-scheduled-deploy.yml">Scheduled Vercel production deploy workflow</a></p>
+    <p><a href="https://github.com/Josh-Temple/rsvp-learning/actions/runs/36425285602">Production deploy成功run</a></p>
+    <p><a href="https://github.com/Josh-Temple/rsvp-learning/actions/runs/36424949352">Vercel CLI失敗run</a></p>
+    <p><a href="https://github.com/Josh-Temple/rsvp-learning/actions/runs/36403710099">npm ci失敗run</a></p>
+  </section>
+</main>
+<script>
+(() => {
+  const synth=window.speechSynthesis;
+  const blocks=[...document.querySelectorAll("#article h1,#article h2,#article h3,#article p")];
+  const play=document.querySelector("#play"),pause=document.querySelector("#pause"),stop=document.querySelector("#stop");
+  const voice=document.querySelector("#voice"),rate=document.querySelector("#rate"),rateValue=document.querySelector("#rateValue"),theme=document.querySelector("#theme");
+  let index=0,playing=false,paused=false,selectedVoice="";
+  function voices(){const previous=selectedVoice||voice.value;const items=synth.getVoices().filter(v=>/^ja(?:-|_)/i.test(v.lang));voice.replaceChildren();for(const v of items){const o=document.createElement("option");o.value=v.voiceURI;o.textContent=v.name;voice.append(o)}if(items.some(v=>v.voiceURI===previous))voice.value=previous;selectedVoice=voice.value}
+  function clearHighlight(){blocks.forEach(x=>x.classList.remove("is-speaking"))}
+  function speakCurrent(){if(!playing||index>=blocks.length){playing=false;paused=false;clearHighlight();return}clearHighlight();blocks[index].classList.add("is-speaking");blocks[index].scrollIntoView({block:"center",behavior:"smooth"});const u=new SpeechSynthesisUtterance(blocks[index].textContent);u.lang="ja-JP";u.rate=Number(rate.value);const v=synth.getVoices().find(x=>x.voiceURI===voice.value);if(v)u.voice=v;u.onend=()=>{if(!playing||paused)return;index+=1;speakCurrent()};u.onerror=e=>{if(e.error!=="canceled"&&e.error!=="interrupted"){playing=false;clearHighlight()}};synth.speak(u)}
+  play.addEventListener("click",()=>{if(paused){paused=false;synth.cancel();playing=true;speakCurrent();return}if(playing)return;if(index>=blocks.length)index=0;playing=true;speakCurrent()});
+  pause.addEventListener("click",()=>{if(!playing)return;synth.pause();paused=true});
+  stop.addEventListener("click",()=>{synth.cancel();playing=false;paused=false;index=0;clearHighlight()});
+  voice.addEventListener("change",()=>{selectedVoice=voice.value;if(playing){synth.cancel();paused=false;speakCurrent()}});
+  rate.addEventListener("input",()=>{rateValue.textContent=Number(rate.value).toFixed(1)+"×"});
+  theme.addEventListener("click",()=>{const dark=document.documentElement.dataset.theme==="dark";document.documentElement.dataset.theme=dark?"light":"dark";theme.textContent=dark?"☾":"☀";localStorage.setItem("rsvp:theme",dark?"light":"dark")});
+  document.documentElement.dataset.theme=localStorage.getItem("rsvp:theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");theme.textContent=document.documentElement.dataset.theme==="dark"?"☀":"☾";
+  voices();synth.addEventListener?.("voiceschanged",voices);addEventListener("pagehide",()=>synth.cancel());
+})();
+</script>
+</body>
+</html>
