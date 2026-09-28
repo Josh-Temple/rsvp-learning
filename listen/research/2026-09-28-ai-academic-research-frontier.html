@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f2efe8">
+  <meta name="description" content="2025年から2026年にかけて、学術研究でAIがどこまで実際の発見や検証に関わり始めたかを整理したListen版">
+  <title>研究のやり方を変え始めたAI――2025〜2026年の学術研究最前線</title>
+  <style>
+    :root{color-scheme:light;--bg:#f2efe8;--ink:#121722;--muted:#73766f;--line:#cbc8bf;--blue:#5d7487}
+    html[data-theme="dark"]{color-scheme:dark;--bg:#11151a;--ink:#edf0eb;--muted:#959b97;--line:#343a3e;--blue:#7892a6}
+    *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Hiragino Sans","Noto Sans JP",sans-serif;line-height:1.9}
+    .shell{width:min(760px,100%);margin:0 auto;padding:max(18px,env(safe-area-inset-top)) 20px max(42px,env(safe-area-inset-bottom))}
+    .topbar{min-height:52px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+    .icon{width:42px;height:42px;display:grid;place-items:center;border:0;background:transparent;color:var(--muted);text-decoration:none;font:inherit}
+    .meta{margin:28px 0 8px;color:var(--muted);font-size:.75rem}
+    h1{font-size:clamp(2rem,8vw,3.4rem);line-height:1.12;letter-spacing:-.04em;margin:.2em 0 .8em} h2{margin:2.2em 0 .6em;font-size:1.2rem}
+    p{margin:0 0 1.25em} article>*{transition:background-color .15s ease}.is-speaking{background:color-mix(in srgb,var(--blue) 16%,transparent)}
+    .player{position:sticky;bottom:0;margin:32px -6px 0;padding:12px 6px;background:color-mix(in srgb,var(--bg) 94%,transparent);border-top:1px solid var(--line);backdrop-filter:blur(8px)}
+    .controls{display:grid;grid-template-columns:48px 48px 48px 1fr;gap:8px;align-items:center}.controls button,.controls select{min-height:42px;border:1px solid var(--line);background:transparent;color:var(--ink)}
+    .speed{display:grid;grid-template-columns:48px 1fr 42px;gap:10px;align-items:center;margin-top:10px;font-size:.78rem;color:var(--muted)} input{width:100%}
+    .sources{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}.sources a{color:var(--ink)}
+  </style>
+</head>
+<body>
+<main class="shell">
+  <header class="topbar">
+    <a class="icon" href="../../index.html?library=listen" aria-label="Listen一覧へ戻る">←</a>
+    <span aria-hidden="true">🎧</span>
+    <button id="theme" class="icon" type="button" aria-label="テーマ切替">☾</button>
+  </header>
+
+  <article id="article">
+    <p class="meta">情報基準日 2026年9月28日</p>
+    <h1>研究のやり方を変え始めたAI――2025〜2026年の学術研究最前線</h1>
+
+    <p>最近の学術研究で、AIはどこまで実際に役立っているのでしょうか。2025年から2026年の研究を見ると、変化は単に論文検索や文章作成が速くなったという段階にとどまりません。数学では新しいアルゴリズムを探索し、生物医学では仮説を作って実験候補を絞り、材料科学では条件に合う結晶構造を設計し、実験科学ではデータを読んで次の仮説へつなぐシステムが現れています。</p>
+    <p>ただし、ここで重要なのは「AIが科学者になった」とまとめないことです。強い成果が出ている場面には共通点があります。候補を大量に生成できること。そして、数式、コード、シミュレーション、実験などによって結果を外部から検証できることです。今回は、この二つを軸に最近の代表例を見ていきます。</p>
+
+    <h2>数学では、答えを出すAIから検証可能な探索へ</h2>
+    <p>まず数学です。2025年、Google DeepMindのGemini Deep Thinkは国際数学オリンピックで金メダル相当の成績を出しました。これは学術研究そのものではありませんが、自然言語で書かれた難しい問題から、採点可能な証明を直接作れる水準まで推論能力が上がったことを示す出来事でした。</p>
+    <p>研究により近い例がAlphaEvolveです。AlphaEvolveは、大規模言語モデルがコードで候補を作り、その候補を自動評価し、良いものを残して改良を繰り返す仕組みです。Google DeepMindは2025年、行列積の新しいアルゴリズムや数学の未解決問題への改善を報告しました。4行4列の複素行列の積では、従来知られていた方法より少ないスカラー乗算で計算する方法を発見したとしています。また、50を超える公開問題への適用では、多くの問題で既知の最良結果を再発見し、一部では改善したと報告しています。</p>
+    <p>この例で注目すべきなのは、AIが何でも自由に考えたから成功した、というより、候補を機械的に採点できる問題だったことです。コードが正しく動くか。計算量が小さくなったか。幾何学的な配置が条件を満たすか。こうした客観的な評価関数があると、AIは大量の案を試しながら探索を続けられます。</p>
+    <p>一方で、AlphaEvolveの主要な成果説明は開発元による報告です。個々の数学的結果は検証可能でも、システム全体の一般性や、どの程度まで人間の問題設定に依存するかは別に評価する必要があります。</p>
+
+    <h2>生物医学では、AIが仮説を作り、実験へ渡すところまで来た</h2>
+    <p>次に、生物医学です。2026年5月、NatureにGoogleなどの研究チームによるCo-Scientistの論文が掲載されました。これは一つのチャットボットではなく、複数のAIエージェントが仮説を生成し、批判し、比較し、改良するシステムです。科学者が研究目標を与えると、文献を調べながら仮説と実験案を作ります。</p>
+    <p>重要なのは、文章の質だけで評価して終わらなかったことです。研究では、急性骨髄性白血病の薬剤転用、肝線維症の新しい標的、抗菌薬耐性に関係する遺伝子移動機構という三つの生物医学課題で検証が行われました。急性骨髄性白血病では、AIが提案した候補や併用療法が試験管内の実験で検証されました。肝線維症では、提案した標的がヒト肝オルガノイドで評価されました。抗菌薬耐性の課題では、研究グループがまだ公表していなかった発見と近い機構をAIが独立に提案したと報告されています。</p>
+    <p>ここには明確な限界もあります。論文自身が、すべての実験検証に専門家が関与したと説明しています。研究者が目標を決め、制約を与え、どの候補を実験するかを選んでいます。また、専門家による評価の一部は小規模で、主観的評価を含みます。つまり、完全自律の科学者が登場したのではなく、専門家が指揮する仮説探索エンジンが、実験可能な案まで踏み込んだと考える方が正確です。</p>
+
+    <h2>Robinは、文献、実験、データ解析を一つの循環につないだ</h2>
+    <p>同じ2026年5月のNatureには、Robinという別のマルチエージェントシステムも掲載されました。こちらの特徴は、文献を調べて候補を提案するだけでなく、実験で得られたデータを解析し、その結果を次の仮説生成へ戻す循環を作ったことです。</p>
+    <p>研究では、乾性加齢黄斑変性に対する治療候補を探しました。Robinは文献を調べ、病気の仕組みについて仮説を作り、薬剤候補を提案しました。その後、実験データを解析し、さらに候補を更新しました。論文では、Robinのワークフローが551本の論文を30分で解析したと報告しています。人間が同じ作業をする場合との比較から、研究全体の所要時間を大幅に減らせる可能性も示しています。</p>
+    <p>ただし、この数字は実際に人間とAIを同じ条件で競わせた全面的な実験ではなく、公開調査などを使った時間推定を含みます。また、上位候補は人間の研究者が確認し、実験プロトコルにも人間が関与しました。さらに論文中では、文献検索機能を弱めると誤った参考文献が大きく増えることも確認されています。AIエージェントは、検索や根拠確認の仕組みが外れると、依然としてもっともらしい誤りを生みます。</p>
+
+    <h2>ゲノムでは、一つのモデルが長いDNA配列を細かく読む</h2>
+    <p>生物学では、仮説生成エージェントとは別に、特定の科学データを読む基盤モデルも進んでいます。2026年1月にNatureで発表されたAlphaGenomeは、最大100万塩基対のDNA配列を入力し、遺伝子発現、転写開始、クロマチンの状態、転写因子結合、スプライシングなど、多数の機能的な特徴を塩基単位に近い細かさで予測します。</p>
+    <p>意味するところは、ゲノム上の変異がどの調節機構を通じて影響を与えそうかを、一つのモデルで広く調べられることです。従来は、長い配列を扱うことと細かい解像度を保つことの間に難しい交換条件がありました。AlphaGenomeは、この二つをかなり高い水準で両立させることを狙っています。</p>
+    <p>ただし、予測と因果関係は同じではありません。ある変異がモデル上で強い影響を示しても、それだけで病気の原因だと証明されたことにはなりません。ゲノムAIは、実験する候補を絞り、どこを見るべきかを示す道具として強力ですが、最終的な生物学的解釈には実験や臨床データが必要です。</p>
+
+    <h2>材料科学では、「探す」だけでなく「条件から作る」方向へ進んだ</h2>
+    <p>材料科学でも、AIの役割が変わっています。2025年にNatureで発表されたMatterGenは、既存の材料一覧から良いものを探すだけでなく、求める性質を条件として新しい無機材料の構造を生成するモデルです。化学組成、対称性、機械的性質、電子的性質、磁気的性質などを条件にできます。</p>
+    <p>この研究では、計算上の候補を出すだけでなく、実際の合成まで進めています。数千の候補を生成し、安定性などで段階的に絞り込み、専門家が四つを選んで合成を試みました。そのうち一つの材料が合成され、測定された性質は目標値の20パーセント以内でした。</p>
+    <p>この結果は、生成AIが物質設計に使えることを示す一方で、現実の実験が依然として大きな関門であることも示しています。AIが候補を大量に出せても、安定性、合成可能性、測定方法、コスト、安全性などを通過しなければ実用的な材料にはなりません。デジタル空間での生成能力と、物理世界での成功率は分けて見る必要があります。</p>
+
+    <h2>物理学と実験室では、AIが実験そのものを設計し始めている</h2>
+    <p>2026年9月のNatureのレビューでは、AIによる物理実験設計が、単なるパラメータ調整から、新しい実験配置そのものを提案する段階へ進んでいると整理されています。人間の直感では選びにくい構成を探索し、既存設計と同等か、それ以上の性能を出す例も報告されています。</p>
+    <p>ただし、物理実験では何を最適化するかが極めて重要です。シミュレーターが現実を十分に表しているか。目的関数が本当に科学的価値を表しているか。装置として実現できるか。結果を再現できるか。AIが探索を高速化しても、この前提が間違っていれば、間違った方向を高速に探索するだけです。</p>
+    <p>同じ問題は、自動実験室、いわゆるセルフドライビング・ラボにもあります。2026年のNature Reviews Chemistryは、この分野が限定的な自動化から、AIが実験を提案し、実行し、結果を解釈する多目的な発見基盤へ進んできたと整理しています。一方で、次の段階に必要なのは、処理量を増やせること、別の研究室や分野へ方法を移せること、そして実験の全履歴を追跡できることだとしています。</p>
+    <p>つまり、自律性を高めるほど、記録と再現性の重要性も高くなります。どの試薬を使い、どの装置設定で、どのモデルが何を提案し、どのデータを見て次の判断をしたのか。この履歴が残らなければ、結果だけが良くても科学として検証しにくくなります。</p>
+
+    <h2>2026年には、論文そのものをAIが使える道具に変える研究も出てきた</h2>
+    <p>さらに最近の動きとして、2026年9月にNatureでPaper2Agentという研究が発表されました。これは科学論文に書かれた方法やデータへのアクセスを、AIエージェントが直接利用できる形式へ変換する試みです。人間が論文を読んで手順を再実装するのではなく、論文の方法やデータを呼び出せる研究資源として扱います。</p>
+    <p>論文では、注意欠如・多動症に関するゲノムデータとAlphaGenomeを組み合わせ、候補変異を絞り、分子機構の仮説を生成する例が示されています。ただし、その仮説はまだ実験で検証されていません。ここでも、AIが新しい仮説を作ることと、その仮説が正しいことは別です。</p>
+    <p>それでも、この方向は重要です。研究論文が人間向けの文章だけではなく、AIが方法、データ、解析手順を再利用できる実行可能な知識へ変われば、研究の再現や組み合わせの速度は大きく変わる可能性があります。</p>
+
+    <h2>最近の成果から見える共通点</h2>
+    <p>ここまでの事例を並べると、一つの共通点が見えてきます。AIの強みは、正解を一発で言い当てることより、候補を大量に出し、外部の評価手段でふるいにかけ、改善を繰り返すところで大きくなっています。</p>
+    <p>数学では証明や計算が評価器になります。アルゴリズムでは実行結果や速度が評価器になります。材料科学ではシミュレーションと実験があります。生物医学では培養細胞、オルガノイド、実験データがあります。自動実験室では測定装置そのものがフィードバックを返します。</p>
+    <p>逆に、正しさをすぐ外部検証できない問題では、生成能力だけを高めても科学的信頼性は保証されません。もっともらしい仮説、存在しない引用、過剰な一般化は今も起こり得ます。最近の優れた研究ほど、AI単体の能力より、検索、評価器、実験、専門家レビュー、履歴管理を組み合わせています。</p>
+
+    <h2>人間の研究者の役割は、消えるより場所が変わりつつある</h2>
+    <p>現時点の証拠からは、人間が研究から外れるというより、人間が担当する判断の位置が変わっていると見る方が妥当です。何を研究する価値があると考えるか。どの制約を置くか。どの候補を実験するか。予想外の結果をどう解釈するか。安全性や倫理をどう扱うか。こうした判断は、紹介したシステムでも人間が担っています。</p>
+    <p>一方で、文献を数百本読む、候補を何千個も試す、解析コードを何度も修正する、既知の方法を大量に比較するといった探索作業は、AIへ移り始めています。研究者一人が扱える探索空間が大きくなることは、すでに現実的な変化です。</p>
+
+    <h2>最後に残す要点</h2>
+    <p>2025年から2026年の学術研究で重要なのは、AIが文章生成から研究の反復過程へ入り始めたことです。数学ではアルゴリズムを探索し、生物医学では仮説を実験へ渡し、ゲノムでは長いDNA配列を高解像度で予測し、材料科学では目標特性から候補を生成し、実験科学では結果を次の仮説へ戻す仕組みが現れています。</p>
+    <p>ただし、最も信頼できる成果は、AIの出力をそのまま真実として扱ったものではありません。計算、検索、シミュレーション、実験、専門家レビューによって外部検証する仕組みを持っています。今後の学術AIを見るときは、モデルがどれほど賢そうかより、生成した仮説をどう検証し、失敗をどう記録し、どこまで再現できるかを見ることが重要です。</p>
+  </article>
+
+  <section class="player" aria-label="読み上げ操作">
+    <div class="controls">
+      <button id="play" type="button" aria-label="再生">▶</button>
+      <button id="pause" type="button" aria-label="一時停止">Ⅱ</button>
+      <button id="stop" type="button" aria-label="停止">■</button>
+      <select id="voice" aria-label="日本語音声"></select>
+    </div>
+    <div class="speed"><span>速度</span><input id="rate" type="range" min="0.7" max="4" step="0.1" value="1"><span id="rateValue">1.0×</span></div>
+  </section>
+
+  <section class="sources" aria-label="出典">
+    <strong>出典</strong>
+    <p><a href="https://www.nature.com/articles/s41586-026-10644-y">Nature — Accelerating scientific discovery with Co-Scientist</a></p>
+    <p><a href="https://www.nature.com/articles/s41586-026-10652-y">Nature — A multi-agent system for automating scientific discovery</a></p>
+    <p><a href="https://www.nature.com/articles/s41586-025-10014-0">Nature — Advancing regulatory variant effect prediction with AlphaGenome</a></p>
+    <p><a href="https://www.nature.com/articles/s41586-025-08628-5">Nature — A generative model for inorganic materials design</a></p>
+    <p><a href="https://deepmind.google/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/">Google DeepMind — AlphaEvolve</a></p>
+    <p><a href="https://deepmind.google/blog/accelerating-mathematical-and-scientific-discovery-with-gemini-deep-think/">Google DeepMind — Gemini Deep Think and scientific research</a></p>
+    <p><a href="https://www.nature.com/articles/s41586-026-10898-6">Nature — Designing physics experiments with artificial intelligence</a></p>
+    <p><a href="https://www.nature.com/articles/s41570-026-00847-2">Nature Reviews Chemistry — The past, present and future of self-driving laboratories</a></p>
+    <p><a href="https://www.nature.com/articles/s41586-026-11044-y">Nature — Reimagining research papers as interactive and reliable AI agents</a></p>
+    <p><a href="https://www.nature.com/articles/d41586-026-02931-5">Nature — AI co-scientists are revolutionizing how research is done</a></p>
+  </section>
+</main>
+<script>
+(() => {
+  const synth = window.speechSynthesis;
+  const blocks = [...document.querySelectorAll("#article h1,#article h2,#article h3,#article p")];
+  const play = document.querySelector("#play"), pause = document.querySelector("#pause"), stop = document.querySelector("#stop");
+  const voice = document.querySelector("#voice"), rate = document.querySelector("#rate"), rateValue = document.querySelector("#rateValue");
+  const theme = document.querySelector("#theme");
+  let index = 0, playing = false, paused = false, selectedVoice = "";
+
+  function voices() {
+    const previous = selectedVoice || voice.value;
+    const items = synth.getVoices().filter(v => /^ja(?:-|_)/i.test(v.lang));
+    voice.replaceChildren();
+    for (const v of items) {
+      const o = document.createElement("option");
+      o.value = v.voiceURI; o.textContent = v.name; voice.append(o);
+    }
+    if (items.some(v => v.voiceURI === previous)) voice.value = previous;
+    selectedVoice = voice.value;
+  }
+  function clearHighlight(){ blocks.forEach(x => x.classList.remove("is-speaking")); }
+  function speakCurrent() {
+    if (!playing || index >= blocks.length) { playing = false; paused = false; clearHighlight(); return; }
+    clearHighlight(); blocks[index].classList.add("is-speaking"); blocks[index].scrollIntoView({block:"center",behavior:"smooth"});
+    const u = new SpeechSynthesisUtterance(blocks[index].textContent);
+    u.lang = "ja-JP"; u.rate = Number(rate.value);
+    const v = synth.getVoices().find(x => x.voiceURI === voice.value); if (v) u.voice = v;
+    u.onend = () => { if (!playing || paused) return; index += 1; speakCurrent(); };
+    u.onerror = e => { if (e.error !== "canceled" && e.error !== "interrupted") { playing = false; clearHighlight(); } };
+    synth.speak(u);
+  }
+  play.addEventListener("click", () => {
+    if (paused) { paused = false; synth.cancel(); playing = true; speakCurrent(); return; }
+    if (playing) return;
+    if (index >= blocks.length) index = 0;
+    playing = true; speakCurrent();
+  });
+  pause.addEventListener("click", () => {
+    if (!playing) return;
+    synth.pause(); paused = true;
+  });
+  stop.addEventListener("click", () => { synth.cancel(); playing = false; paused = false; index = 0; clearHighlight(); });
+  voice.addEventListener("change", () => { selectedVoice = voice.value; if (playing) { synth.cancel(); paused = false; speakCurrent(); } });
+  rate.addEventListener("input", () => { rateValue.textContent = Number(rate.value).toFixed(1) + "×"; });
+  theme.addEventListener("click", () => {
+    const dark = document.documentElement.dataset.theme === "dark";
+    document.documentElement.dataset.theme = dark ? "light" : "dark";
+    theme.textContent = dark ? "☾" : "☀";
+    localStorage.setItem("rsvp:theme", dark ? "light" : "dark");
+  });
+  document.documentElement.dataset.theme = localStorage.getItem("rsvp:theme") || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  theme.textContent = document.documentElement.dataset.theme === "dark" ? "☀" : "☾";
+  voices(); synth.addEventListener?.("voiceschanged", voices);
+  addEventListener("pagehide", () => synth.cancel());
+})();
+</script>
+</body>
+</html>
