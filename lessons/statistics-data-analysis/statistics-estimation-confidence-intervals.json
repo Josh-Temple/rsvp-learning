@@ -228,6 +228,26 @@
     {
       "text": "どの方法で推定したかを示します。",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "標本数を増やし区間が狭くなったとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "集め方に偏りがあれば、推定はなおずれます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "標本の選び方と測定を点検します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "狭い区間なら全体に当てはまりますか。",
+      "duration_multiplier": 1.25
+    },
+    {
+      "text": "不確実性の計算と代表性は別です。",
+      "duration_multiplier": 1.15
     }
   ]
 }

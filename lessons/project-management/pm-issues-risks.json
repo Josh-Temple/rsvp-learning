@@ -9,6 +9,22 @@
   "sources": [],
   "chunks": [
     {
+      "text": "外部の審査基準が改定されるかもしれない段階では、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "影響を見積もるリスクです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "改定が公表され、設計を直す必要が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "生じたら発生済みの課題になります。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "課題とリスクは、",
       "duration_multiplier": 1
     },
@@ -117,6 +133,14 @@
       "duration_multiplier": 1.15
     },
     {
+      "text": "改定が起きる前は備えを選び、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "起きた後は設計変更の担当と期限を決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "一覧を作るだけでは、",
       "duration_multiplier": 1
     },
@@ -161,22 +185,6 @@
       "duration_multiplier": 1.35
     },
     {
-      "text": "外部の審査基準が改定されるかもしれない段階では、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "影響を見積もるリスクです。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "改定が公表され、設計を直す必要が",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "生じたら発生済みの課題になります。",
-      "duration_multiplier": 1.15
-    },
-    {
       "text": "リスクには起こる条件と備え、",
       "duration_multiplier": 1
     },
@@ -191,6 +199,34 @@
     {
       "text": "判断に必要な情報を定期的に更新します。",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "同じ出来事でも発生前後で必要な行動が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "変わるため、状態を更新し続けます。",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "委託先の納品が遅れる可能性を考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "まだ起きていなければ備えを選ぶリスクです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "遅延が確定したら担当と期限を置く課題です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "同じ一覧にあるなら対応も同じですか。",
+      "duration_multiplier": 1.25
+    },
+    {
+      "text": "発生状態によって行動を変えます。",
+      "duration_multiplier": 1.15
     }
   ]
 }

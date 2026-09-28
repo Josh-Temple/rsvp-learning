@@ -9,6 +9,22 @@
   "sources": [],
   "chunks": [
     {
+      "text": "業務の目的を申請の処理状況を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "利用者へ知らせることとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "そのために必要なのは、状態の記録、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "閲覧権限、通知のタイミングです。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "業務要件は、",
       "duration_multiplier": 1
     },
@@ -133,6 +149,14 @@
       "duration_multiplier": 1.15
     },
     {
+      "text": "処理状況を知らせるという業務目的から、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "状態の更新者と閲覧できる人を決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "業務目的との",
       "duration_multiplier": 1
     },
@@ -181,22 +205,6 @@
       "duration_multiplier": 1.35
     },
     {
-      "text": "業務の目的を申請の処理状況を",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "利用者へ知らせることとします。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "そのために必要なのは、状態の記録、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "閲覧権限、通知のタイミングです。",
-      "duration_multiplier": 1.15
-    },
-    {
       "text": "単に画面を一枚作るだけでは、",
       "duration_multiplier": 1
     },
@@ -211,6 +219,34 @@
     {
       "text": "通知失敗時の再試行や問い合わせ先も定めます。",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "画面、記録、通知は目的を支える手段なので、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "それぞれ必要な条件へ落とします。",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "通知を増やすだけでは解決しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "担当者が更新しなければ通知も古いままです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "まず業務上の更新責任と時点を定めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "画面の追加だけで目的は達成できますか。",
+      "duration_multiplier": 1.25
+    },
+    {
+      "text": "状態の記録と運用が欠ければ達成できません。",
+      "duration_multiplier": 1.15
     }
   ]
 }

@@ -22,6 +22,22 @@
   ],
   "chunks": [
     {
+      "text": "新しい版を検証環境で試し、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "本番へ反映した直後に申請失敗が増えたとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "事前に決めた指標と閾値で異常を検知し、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "影響を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "CDは、",
       "duration_multiplier": 1
     },
@@ -154,6 +170,18 @@
       "duration_multiplier": 1.15
     },
     {
+      "text": "旧アプリへ戻す操作が成功しても、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "新しい形式へ変えた",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "データと両立しない場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "リリース後には、",
       "duration_multiplier": 1
     },
@@ -222,22 +250,6 @@
       "duration_multiplier": 1.35
     },
     {
-      "text": "新しい版を検証環境で試し、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "本番へ反映した直後に申請失敗が増えたとします。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "事前に決めた指標と閾値で異常を検知し、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "影響を確認します。",
-      "duration_multiplier": 1.15
-    },
-    {
       "text": "アプリだけを旧版へ戻しても、",
       "duration_multiplier": 1
     },
@@ -256,6 +268,34 @@
     {
       "text": "回復したか確かめます。",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "切戻し可能性はアプリとデータを合わせて試し、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "戻した後の利用者操作まで確かめます。",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "新版が書くデータを旧版も読むとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "旧版が新しい項目を扱えなければ戻せません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "両版が動く期間の互換性を試します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "切戻しボタンの試験だけで足りますか。",
+      "duration_multiplier": 1.25
+    },
+    {
+      "text": "データを使う操作まで確かめます。",
+      "duration_multiplier": 1.15
     }
   ]
 }

@@ -14,6 +14,22 @@
   ],
   "chunks": [
     {
+      "text": "案内AIの新しい版を試すときは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "旧版と同じ質問集合で比較します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "回答の正確さだけでなく、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "待ち時間と重大な誤案内も測ります。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "AIシステムでは、",
       "duration_multiplier": 1
     },
@@ -130,6 +146,14 @@
       "duration_multiplier": 1.15
     },
     {
+      "text": "回答が変わった原因はモデルだけとは限らず、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "指示文や検索資料の変更にもあります。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "これが、Rollbackです",
       "duration_multiplier": 1.1
     },
@@ -166,22 +190,6 @@
       "duration_multiplier": 1.35
     },
     {
-      "text": "案内AIの新しい版を試すときは、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "旧版と同じ質問集合で比較します。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "回答の正確さだけでなく、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "待ち時間と重大な誤案内も測ります。",
-      "duration_multiplier": 1.15
-    },
-    {
       "text": "少数の利用者から始め、",
       "duration_multiplier": 1
     },
@@ -200,6 +208,34 @@
     {
       "text": "戻した後にどの版が実際に応答したか確認します。",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "戻す条件と戻す対象を事前に決めておけば、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "異常時に曖昧な判断で変更を重ねずに済みます。",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "資料を旧版へ戻しても誤答が続きます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "検索用の索引に新版が残っているかもしれません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "どの版が取得されるか実際に照会します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ファイルだけ戻せば切戻し完了ですか。",
+      "duration_multiplier": 1.25
+    },
+    {
+      "text": "応答までの参照経路を確かめます。",
+      "duration_multiplier": 1.15
     }
   ]
 }

@@ -9,6 +9,26 @@
   "sources": [],
   "chunks": [
     {
+      "text": "申請書は受付、入力、審査、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "決裁の順に進むとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "受付時に不足書類が分かる場合と、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "審査で初めて分かる場合では",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "差戻しの負担が違います。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "業務フローは、",
       "duration_multiplier": 1
     },
@@ -109,6 +129,14 @@
       "duration_multiplier": 1.15
     },
     {
+      "text": "不足書類が審査まで分からない場合、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "受付と審査の間の受け渡しが改善点になります。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "As-Isでは、",
       "duration_multiplier": 1
     },
@@ -157,26 +185,6 @@
       "duration_multiplier": 1.35
     },
     {
-      "text": "申請書は受付、入力、審査、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "決裁の順に進むとします。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "受付時に不足書類が分かる場合と、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "審査で初めて分かる場合では",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "差戻しの負担が違います。",
-      "duration_multiplier": 1.15
-    },
-    {
       "text": "一件を追って、誰が何を受け取り、",
       "duration_multiplier": 1
     },
@@ -195,6 +203,34 @@
     {
       "text": "照らして流れを確かめます。",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "図には規程上の流れだけでなく、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "実際に起きる差戻しと待ちも入れます。",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "二つの部署が同じ申請を並行して確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "図を直列にすると、実際の待ちが見えません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "並行作業と合流時の判断を記します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "矢印を一列に並べれば十分ですか。",
+      "duration_multiplier": 1.25
+    },
+    {
+      "text": "実際の受け渡しと待ちを表します。",
+      "duration_multiplier": 1.15
     }
   ]
 }

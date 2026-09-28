@@ -9,6 +9,22 @@
   "sources": [],
   "chunks": [
     {
+      "text": "申請機能の開発途中で、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "新しい通知方法を追加したいとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "追加すると設計と試験が増え、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "予定日に影響するかもしれません。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "プロジェクトでは、",
       "duration_multiplier": 1
     },
@@ -121,6 +137,18 @@
       "duration_multiplier": 1.15
     },
     {
+      "text": "通知方法を追加すると、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "新しい画面や処理だけでなく既存の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "試験や運用手順にも影響します。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "不具合の件数だけが、",
       "duration_multiplier": 1
     },
@@ -157,22 +185,6 @@
       "duration_multiplier": 1.35
     },
     {
-      "text": "申請機能の開発途中で、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "新しい通知方法を追加したいとします。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "追加すると設計と試験が増え、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "予定日に影響するかもしれません。",
-      "duration_multiplier": 1.15
-    },
-    {
       "text": "変更の価値、必要な作業、",
       "duration_multiplier": 1
     },
@@ -191,6 +203,34 @@
     {
       "text": "変更前の計画と混同しないようにします。",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "変更を受け入れるなら、完了条件と",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "計画の両方を更新して品質を判断します。",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "新しい通知を加えても、旧端末で失敗するとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "追加機能だけの試験では品質を判断できません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "影響する既存操作と運用手順を洗い出します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "予定内に実装できれば受入できますか。",
+      "duration_multiplier": 1.25
+    },
+    {
+      "text": "変更後の完了条件で確かめます。",
+      "duration_multiplier": 1.15
     }
   ]
 }

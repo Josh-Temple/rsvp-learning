@@ -9,6 +9,22 @@
   "sources": [],
   "chunks": [
     {
+      "text": "小さな申請APIを仮想マシンで動かすなら、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "OS更新とサーバー監視を担います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "コンテナでは実行環境をまとめられますが、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "配置先や運用の設計は残ります。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "クラウドでは、",
       "duration_multiplier": 1
     },
@@ -145,6 +161,14 @@
       "duration_multiplier": 1.15
     },
     {
+      "text": "同じAPIでも、OSを管理する範囲と",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "処理が起動する条件は方式で違います。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "どの方式にも、",
       "duration_multiplier": 1
     },
@@ -189,22 +213,6 @@
       "duration_multiplier": 1.35
     },
     {
-      "text": "小さな申請APIを仮想マシンで動かすなら、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "OS更新とサーバー監視を担います。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "コンテナでは実行環境をまとめられますが、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "配置先や運用の設計は残ります。",
-      "duration_multiplier": 1.15
-    },
-    {
       "text": "サーバーレスでは呼出しに",
       "duration_multiplier": 1
     },
@@ -227,6 +235,38 @@
     {
       "text": "方式名だけで費用は決められません。",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "費用や速度は実際の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "負荷とサービス設定に依存するため、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "方式名だけで優劣を決めません。",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "夜だけ申請が集中するサービスを考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "負荷の波は方式選択の材料になります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "起動時間、上限、運用負担も測ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "断続的な負荷なら必ず安いでしょうか。",
+      "duration_multiplier": 1.25
+    },
+    {
+      "text": "料金体系と実測を比べて判断します。",
+      "duration_multiplier": 1.15
     }
   ]
 }

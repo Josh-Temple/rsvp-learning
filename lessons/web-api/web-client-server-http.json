@@ -14,6 +14,22 @@
   ],
   "chunks": [
     {
+      "text": "ブラウザで申請一覧を開くと、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "クライアントがサーバーへHTTP要求を送ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "サーバーは認証と権限を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "確認してからデータを返します。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "Webシステムでは、",
       "duration_multiplier": 1
     },
@@ -130,6 +146,18 @@
       "duration_multiplier": 1.15
     },
     {
+      "text": "ブラウザがURLを開くと、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "サーバーへの要求と返さ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "れた応答が画面表示につながります。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "DELETEは、",
       "duration_multiplier": 1
     },
@@ -178,22 +206,6 @@
       "duration_multiplier": 1.35
     },
     {
-      "text": "ブラウザで申請一覧を開くと、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "クライアントがサーバーへHTTP要求を送ります。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "サーバーは認証と権限を",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "確認してからデータを返します。",
-      "duration_multiplier": 1.15
-    },
-    {
       "text": "画面に表示される情報は、",
       "duration_multiplier": 1
     },
@@ -216,6 +228,34 @@
     {
       "text": "データを見られない設計にします。",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "通信失敗と権限による拒否は原因が違うため、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "どの段階で止まったか分けて調べます。",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "応答が成功でも、他人の申請が含まれたとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "通信と表示が動くことは、権限の正しさと別です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "サーバーで対象ごとの閲覧権限を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "画面で隠せば情報を守れるでしょうか。",
+      "duration_multiplier": 1.25
+    },
+    {
+      "text": "返すデータ自体を制限します。",
+      "duration_multiplier": 1.15
     }
   ]
 }

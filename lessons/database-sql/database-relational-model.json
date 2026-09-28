@@ -14,6 +14,18 @@
   ],
   "chunks": [
     {
+      "text": "顧客表に顧客IDと氏名、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "注文表に注文IDと顧客IDを置きます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "顧客IDは顧客表の行を識別する主キーです。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "リレーショナル",
       "duration_multiplier": 1
     },
@@ -130,6 +142,14 @@
       "duration_multiplier": 1.15
     },
     {
+      "text": "注文表に顧客名を毎回書かずに済むのは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "顧客IDで顧客表の行をたどれるからです。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "NULLは、",
       "duration_multiplier": 1
     },
@@ -186,18 +206,6 @@
       "duration_multiplier": 1.35
     },
     {
-      "text": "顧客表に顧客IDと氏名、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "注文表に注文IDと顧客IDを置きます。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "顧客IDは顧客表の行を識別する主キーです。",
-      "duration_multiplier": 1.15
-    },
-    {
       "text": "注文表の顧客IDを、",
       "duration_multiplier": 1
     },
@@ -224,6 +232,38 @@
     {
       "text": "二つの表の関係をたどります。",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "外部キー制約を設定しても、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "顧客名や住所をどの時点の情報として",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "表示するかは別に決めます。",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "顧客を削除した後も注文を残したいとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "参照整合性と保存期間の両方を決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "削除を禁止するか、履歴を別に保つか選びます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "外部キーだけで保存方針は決まりますか。",
+      "duration_multiplier": 1.25
+    },
+    {
+      "text": "業務上の履歴の意味も必要です。",
+      "duration_multiplier": 1.15
     }
   ]
 }

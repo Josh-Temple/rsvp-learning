@@ -18,6 +18,18 @@
   ],
   "chunks": [
     {
+      "text": "利用者のブラウザから公開入口へ届いた要求が、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "アプリを経てデータベースへ進むとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "データベースを直接公開する必要はありません。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "クラウドでも、",
       "duration_multiplier": 1
     },
@@ -150,6 +162,14 @@
       "duration_multiplier": 1.15
     },
     {
+      "text": "公開入口とデータベースを同じ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "到達範囲に置く必要はありません。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "通信経路を",
       "duration_multiplier": 1
     },
@@ -206,18 +226,6 @@
       "duration_multiplier": 1.35
     },
     {
-      "text": "利用者のブラウザから公開入口へ届いた要求が、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "アプリを経てデータベースへ進むとします。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "データベースを直接公開する必要はありません。",
-      "duration_multiplier": 1.15
-    },
-    {
       "text": "入口からアプリ、アプリからデータベースの",
       "duration_multiplier": 1
     },
@@ -236,6 +244,34 @@
     {
       "text": "経路を図にして許可元と宛先を点検します。",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "通信を許す理由を経路ごとに記せば、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "障害調査と不要な公開の発見に使えます。",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "アプリからDBへつながらなくなったとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "名前解決、通信許可、接続先を順に確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "入口が開くことは内部経路の証明になりません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "画面だけ見てDB停止と断定できますか。",
+      "duration_multiplier": 1.25
+    },
+    {
+      "text": "経路ごとの失敗を切り分けます。",
+      "duration_multiplier": 1.15
     }
   ]
 }

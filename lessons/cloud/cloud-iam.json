@@ -22,6 +22,18 @@
   ],
   "chunks": [
     {
+      "text": "担当者が審査部署から異動したとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "旧部署の申請データを読める権限は外し、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "新部署に必要な権限だけ付けます。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "IAMは、",
       "duration_multiplier": 1
     },
@@ -146,6 +158,14 @@
       "duration_multiplier": 1.15
     },
     {
+      "text": "部署の役割に権限を対応させると、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "異動時に外すべき権限を見つけやすくなります。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "秘密情報は、",
       "duration_multiplier": 1
     },
@@ -190,18 +210,6 @@
       "duration_multiplier": 1.35
     },
     {
-      "text": "担当者が審査部署から異動したとします。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "旧部署の申請データを読める権限は外し、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "新部署に必要な権限だけ付けます。",
-      "duration_multiplier": 1.15
-    },
-    {
       "text": "個人に直接権限を積み重ねると",
       "duration_multiplier": 1
     },
@@ -224,6 +232,34 @@
     {
       "text": "変更したかを追えるようにします。",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "ただし役割の中身が広すぎれば、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "付与方法を整えても最小権限にはなりません。",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "役割を付けたまま部署名だけ変える例を考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "見た目は異動後でも、旧データへ到達できます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "付与された権限の実体を点検します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "役割名が適切なら最小権限でしょうか。",
+      "duration_multiplier": 1.25
+    },
+    {
+      "text": "役割に含む操作と対象も調べます。",
+      "duration_multiplier": 1.15
     }
   ]
 }

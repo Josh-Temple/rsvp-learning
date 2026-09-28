@@ -228,6 +228,26 @@
     {
       "text": "原因を検証したのかを分けます。",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "広告を増やした週に売上も増えました。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "同じ週に休日が重なったとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "広告以外の要因と比較条件を調べます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一緒に増えれば広告の効果ですか。",
+      "duration_multiplier": 1.25
+    },
+    {
+      "text": "観察だけでは原因を確定できません。",
+      "duration_multiplier": 1.15
     }
   ]
 }

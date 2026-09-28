@@ -22,6 +22,22 @@
   ],
   "chunks": [
     {
+      "text": "AIが申請状況を調べ、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "必要なら担当者へ通知するとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "検索は読み取りですが、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "通知は外部へ作用する操作です。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "LLMは、",
       "duration_multiplier": 1
     },
@@ -162,6 +178,14 @@
       "duration_multiplier": 1.15
     },
     {
+      "text": "通知の前に検索結果を読めても、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "その情報を誰へ送ってよいかは別の判断です。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "権限を必要最小限にします",
       "duration_multiplier": 1.1
     },
@@ -206,22 +230,6 @@
       "duration_multiplier": 1.35
     },
     {
-      "text": "AIが申請状況を調べ、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "必要なら担当者へ通知するとします。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "検索は読み取りですが、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "通知は外部へ作用する操作です。",
-      "duration_multiplier": 1.15
-    },
-    {
       "text": "AIが選んだ宛先と内容を、",
       "duration_multiplier": 1
     },
@@ -244,6 +252,34 @@
     {
       "text": "失敗後に何を再試行できるか決めます。",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "再試行では検索と通知を同じように扱わず、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "重複や外部への作用を確認します。",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "検索結果が正しくても、宛先が別部署だとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "通知という外部操作の前に止める必要があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "宛先と対象案件の権限を照合します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "検索が成功すれば送信してよいですか。",
+      "duration_multiplier": 1.25
+    },
+    {
+      "text": "送信の条件を独立に検証します。",
+      "duration_multiplier": 1.15
     }
   ]
 }

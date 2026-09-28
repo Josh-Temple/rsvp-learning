@@ -9,6 +9,18 @@
   "sources": [],
   "chunks": [
     {
+      "text": "利用者は入力を短くしたい一方、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "審査担当は必要な確認項目を残したいとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "運用担当には問い合わせ対応の負担もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "プロジェクトには、",
       "duration_multiplier": 1
     },
@@ -125,6 +137,14 @@
       "duration_multiplier": 1.15
     },
     {
+      "text": "入力項目を減らすと利用者は楽になりますが、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "審査で必要な情報が足りなくなるかもしれません。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "進捗や課題の",
       "duration_multiplier": 1
     },
@@ -169,18 +189,6 @@
       "duration_multiplier": 1.25
     },
     {
-      "text": "利用者は入力を短くしたい一方、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "審査担当は必要な確認項目を残したいとします。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "運用担当には問い合わせ対応の負担もあります。",
-      "duration_multiplier": 1.15
-    },
-    {
       "text": "意見を集めるだけでなく、",
       "duration_multiplier": 1
     },
@@ -199,6 +207,34 @@
     {
       "text": "決定後は理由と変更履歴を共有します。",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "意見の数で決めず、目的と影響を揃え、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "権限を持つ人が決定します。",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "利用者と審査担当の意見が割れたとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "会議の多数決だけでは責任が曖昧です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "目的、制約、影響を決裁者へ示します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "意見を集めた担当者が決定してよいですか。",
+      "duration_multiplier": 1.25
+    },
+    {
+      "text": "決定権限と記録を先に定めます。",
+      "duration_multiplier": 1.15
     }
   ]
 }

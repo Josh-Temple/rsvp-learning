@@ -18,6 +18,22 @@
   ],
   "chunks": [
     {
+      "text": "顧客表にAとB、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "注文表にAの注文二件だけがあるとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "顧客IDでINNER JOINすると、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "Aの注文二行が得られます。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "JOINは、",
       "duration_multiplier": 1
     },
@@ -130,6 +146,14 @@
       "duration_multiplier": 1.15
     },
     {
+      "text": "左結合でBの注文欄が空の行も残るため、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "結果の行数と注文の件数は一致しません。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "HAVINGは、",
       "duration_multiplier": 1
     },
@@ -182,22 +206,6 @@
       "duration_multiplier": 1.35
     },
     {
-      "text": "顧客表にAとB、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "注文表にAの注文二件だけがあるとします。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "顧客IDでINNER JOINすると、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "Aの注文二行が得られます。",
-      "duration_multiplier": 1.15
-    },
-    {
       "text": "顧客表を左にしたLEFT JOINなら、",
       "duration_multiplier": 1
     },
@@ -228,6 +236,38 @@
     {
       "text": "Aは二件、Bは零件になります。",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "集計前に行の粒度と",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "NULLを数えるかを決めないと、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "正しい構文でも答えを誤ります。",
+      "duration_multiplier": 1.35
+    },
+    {
+      "text": "注文に明細が二行ある例を加えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "顧客から注文、明細へ結ぶと行が増えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "注文件数なら重複を避けて注文IDを数えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "結合後の行数を注文数としてよいですか。",
+      "duration_multiplier": 1.25
+    },
+    {
+      "text": "数える単位を先に決めます。",
+      "duration_multiplier": 1.15
     }
   ]
 }

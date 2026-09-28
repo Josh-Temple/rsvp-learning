@@ -228,6 +228,26 @@
     {
       "text": "事実の意味と更新規則を揃える手段です。",
       "duration_multiplier": 1.35
+    },
+    {
+      "text": "商品価格が変更された後の注文を考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "現在価格だけでは過去の金額が変わります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "注文時の単価は取引の事実として残します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "すべての重複を消せば正しいでしょうか。",
+      "duration_multiplier": 1.25
+    },
+    {
+      "text": "時点の異なる事実は区別して保存します。",
+      "duration_multiplier": 1.15
     }
   ]
 }
