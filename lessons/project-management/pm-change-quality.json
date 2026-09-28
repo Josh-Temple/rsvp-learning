@@ -231,6 +231,38 @@
     {
       "text": "変更後の完了条件で確かめます。",
       "duration_multiplier": 1.15
+    },
+    {
+      "text": "変更前の基準を明確にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "変更理由と期待効果を残します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "範囲と日程への影響を見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "費用とリスクも確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "既存機能への回帰影響を調べます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "品質基準を変更後も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "承認者を明確にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "実施後に効果を確かめます。",
+      "duration_multiplier": 1.15
     }
   ]
 }

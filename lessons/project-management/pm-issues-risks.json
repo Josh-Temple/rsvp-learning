@@ -227,6 +227,38 @@
     {
       "text": "発生状態によって行動を変えます。",
       "duration_multiplier": 1.15
+    },
+    {
+      "text": "リスクには発生条件を置きます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "影響と起こりやすさを分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "対応責任者を決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "予防策と発生後対応を分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "兆候を定期的に確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "課題には期限と担当を置きます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "原因と症状を分けて調べます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "不要になったリスクは閉じます。",
+      "duration_multiplier": 1.15
     }
   ]
 }
