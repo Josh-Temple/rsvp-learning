@@ -25,9 +25,9 @@ Created: 2026-09-27
 14. 結果が正しいか、小さな例で検算する習慣が重要です
 15. 顧客表にAとB、注文表にAの注文二件だけがあるとします。
 16. 顧客IDでINNER JOINすると、Aの注文二行が得られます。
-17. 顧客表を左にしたLEFT JOINなら、注文のないBも残ります。
-18. 結合後の行を数えると顧客数ではなく注文数になる場合があります。
-19. 何を一件と数えるかを決め、顧客別の合計と注文数を分けて確認します。
+17. 顧客表を左にしたLEFT JOINなら、Aの二行と注文のないBの一行で計三行です。
+18. この結果のCOUNT(*)は三、COUNT(注文ID)は二です。
+19. 顧客IDでGROUP BYし、注文IDを数えると、Aは二件、Bは零件になります。
 
 ## 次に確認したいこと
 
@@ -38,4 +38,4 @@ Created: 2026-09-27
 ## 出典
 
 - [PostgreSQL 18 文書: テーブル間の結合](https://www.postgresql.org/docs/18/tutorial-join.html)
-- [PostgreSQL 18 文書: 集約関数](https://www.postgresql.org/docs/18/tutorial-agg.html)
+- [PostgreSQL 18 文書: 集約関数](https://www.postgresql.org/docs/18/functions-aggregate.html)

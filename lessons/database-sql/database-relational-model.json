@@ -186,43 +186,43 @@
       "duration_multiplier": 1.35
     },
     {
-      "text": "顧客表に顧客IDと氏名、注文表に注文",
+      "text": "顧客表に顧客IDと氏名、",
       "duration_multiplier": 1
     },
     {
-      "text": "IDと顧客IDを置きます。",
+      "text": "注文表に注文IDと顧客IDを置きます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "顧客IDは顧客表の行を識別する主キー",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "です。",
+      "text": "顧客IDは顧客表の行を識別する主キーです。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "注文表の顧客IDは、どの顧客の注文か",
+      "text": "注文表の顧客IDを、",
       "duration_multiplier": 1
     },
     {
-      "text": "を示す外部キーです。",
+      "text": "顧客表を参照する外部キーとして",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "設定します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "一人の顧客に注文が二件あれば、注文表",
+      "text": "一人の顧客に注文が二件あれば、",
       "duration_multiplier": 1
     },
     {
-      "text": "には同じ顧客IDが二行現れます。",
+      "text": "注文表には同じ顧客IDが二行現れます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "注文IDだけで顧客名を探すには、二つ",
+      "text": "注文IDだけで顧客名を探すには、",
       "duration_multiplier": 1
     },
     {
-      "text": "の表の関係をたどります。",
+      "text": "二つの表の関係をたどります。",
       "duration_multiplier": 1.35
     }
   ]

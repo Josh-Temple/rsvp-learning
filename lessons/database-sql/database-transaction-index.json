@@ -190,15 +190,15 @@
       "duration_multiplier": 1.35
     },
     {
-      "text": "口座AからBへ送金するとき、Aから引",
+      "text": "口座AからBへ送金するとき、",
       "duration_multiplier": 1
     },
     {
-      "text": "いた後で処理が失敗し、Bへ足されな",
+      "text": "Aから引いた後で処理が失敗し、",
       "duration_multiplier": 1
     },
     {
-      "text": "いままでは困ります。",
+      "text": "Bへ足されないままでは困ります。",
       "duration_multiplier": 1.15
     },
     {
@@ -210,19 +210,19 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "別の例として、注文IDで一件を頻繁に",
+      "text": "別の例として、注文IDで一件を",
       "duration_multiplier": 1
     },
     {
-      "text": "探すなら索引が役立ちます。",
+      "text": "頻繁に探すなら索引が役立ちます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "索引は読み取りを助ける一方、書込み時",
+      "text": "索引は読み取りを助ける一方、",
       "duration_multiplier": 1
     },
     {
-      "text": "の更新と保存領域を要します。",
+      "text": "書込み時の更新と保存領域を要します。",
       "duration_multiplier": 1.15
     },
     {

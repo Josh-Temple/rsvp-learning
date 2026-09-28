@@ -182,39 +182,31 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "受信側が一時的に停止していれば、後で",
+      "text": "受信側が一時的に停止していれば、",
       "duration_multiplier": 1
     },
     {
-      "text": "再送する必要があります。",
+      "text": "後で再送する必要があります。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "再送で同じ通知が二度届いても、受付",
+      "text": "再送で同じ通知が二度届いても、",
       "duration_multiplier": 1
     },
     {
-      "text": "番号とイベントIDで重複を判定します",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "。",
+      "text": "受付番号とイベントIDで重複を判定します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "順番が入れ替わる場合は時刻だけでなく",
+      "text": "順番が入れ替わる場合は時刻だけで",
       "duration_multiplier": 1
     },
     {
-      "text": "状態の遷移を確認します。",
+      "text": "なく状態の遷移を確認します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "送信成功と相手の処理完了を同一視しま",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "せん。",
+      "text": "送信成功と相手の処理完了を同一視しません。",
       "duration_multiplier": 1.35
     }
   ]

@@ -206,27 +206,27 @@
       "duration_multiplier": 1.35
     },
     {
-      "text": "AIが申請状況を調べ、必要なら担当者",
+      "text": "AIが申請状況を調べ、",
       "duration_multiplier": 1
     },
     {
-      "text": "へ通知するとします。",
+      "text": "必要なら担当者へ通知するとします。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "検索は読み取りですが、通知は外部へ",
+      "text": "検索は読み取りですが、",
       "duration_multiplier": 1
     },
     {
-      "text": "作用する操作です。",
+      "text": "通知は外部へ作用する操作です。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "AIが選んだ宛先と内容を、送信前に",
+      "text": "AIが選んだ宛先と内容を、",
       "duration_multiplier": 1
     },
     {
-      "text": "権限と対象案件で検査します。",
+      "text": "送信前に権限と対象案件で検査します。",
       "duration_multiplier": 1.15
     },
     {
@@ -238,11 +238,11 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "各呼出しの入力と結果を記録し、失敗",
+      "text": "各呼出しの入力と結果を記録し、",
       "duration_multiplier": 1
     },
     {
-      "text": "後に何を再試行できるか決めます。",
+      "text": "失敗後に何を再試行できるか決めます。",
       "duration_multiplier": 1.35
     }
   ]

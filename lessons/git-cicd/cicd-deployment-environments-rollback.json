@@ -222,47 +222,39 @@
       "duration_multiplier": 1.35
     },
     {
-      "text": "新しい版を検証環境で試し、本番へ反映",
+      "text": "新しい版を検証環境で試し、",
       "duration_multiplier": 1
     },
     {
-      "text": "した直後に申請失敗が増えたとします。",
+      "text": "本番へ反映した直後に申請失敗が増えたとします。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "事前に決めた指標と閾値で異常を検知し",
+      "text": "事前に決めた指標と閾値で異常を検知し、",
       "duration_multiplier": 1
     },
     {
-      "text": "、影響を確認します。",
+      "text": "影響を確認します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "アプリだけを旧版へ戻しても、変更済み",
+      "text": "アプリだけを旧版へ戻しても、",
       "duration_multiplier": 1
     },
     {
-      "text": "のデータ形式と合わない場合があります",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "。",
+      "text": "変更済みのデータ形式と合わない場合があります。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "反映前にデータ変更と切戻し手順を準備",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "します。",
+      "text": "反映前にデータ変更と切戻し手順を準備します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "旧版へ戻した後も利用者の操作が回復",
+      "text": "旧版へ戻した後も利用者の操作が",
       "duration_multiplier": 1
     },
     {
-      "text": "したか確かめます。",
+      "text": "回復したか確かめます。",
       "duration_multiplier": 1.35
     }
   ]

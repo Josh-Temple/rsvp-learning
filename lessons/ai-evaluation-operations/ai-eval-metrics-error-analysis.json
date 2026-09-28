@@ -165,47 +165,47 @@
       "duration_multiplier": 1.35
     },
     {
-      "text": "二つの案内AIがそれぞれ100問中",
+      "text": "二つの案内AIがそれぞれ100問",
       "duration_multiplier": 1
     },
     {
-      "text": "90問に正解したとします。",
+      "text": "中90問に正解したとします。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "一方の10件は表現の軽微な違い、もう",
+      "text": "一方の10件は",
       "duration_multiplier": 1
     },
     {
-      "text": "一方には申請期限の誤案内が含まれます",
+      "text": "必要書類の一部を落とし、",
       "duration_multiplier": 1
     },
     {
-      "text": "。",
+      "text": "もう一方には申請期限の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "誤案内が含まれます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "正答率だけでは後者の危険を見落とし",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "ます。",
+      "text": "正答率だけでは後者の危険を見落とします。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "誤答を期限、対象者、必要書類などに",
+      "text": "誤答を期限、対象者、必要書類などに分け、",
       "duration_multiplier": 1
     },
     {
-      "text": "分け、重大度と頻度を調べます。",
+      "text": "重大度と頻度を調べます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "改善後も同じ事例だけでなく新しい事例",
+      "text": "改善後も同じ事例だけで",
       "duration_multiplier": 1
     },
     {
-      "text": "で再評価します。",
+      "text": "なく新しい事例で再評価します。",
       "duration_multiplier": 1.35
     }
   ]

@@ -33,7 +33,3 @@ Created: 2026-09-27
 
 この章は基礎理解用です。
 実務で判断するときは、対象システムの仕様、組織ルール、データの前提を別途確認します。
-
-## 出典
-
-- [NIST SP 800-53 Rev. 5 Update 1](https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final)

@@ -161,35 +161,35 @@
       "duration_multiplier": 1.35
     },
     {
-      "text": "現状は紙の申請を窓口で受け、担当者が",
+      "text": "現状は紙の申請を窓口で受け、",
       "duration_multiplier": 1
     },
     {
-      "text": "台帳へ転記するとします。",
+      "text": "担当者が台帳へ転記するとします。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "改善後は利用者が入力し、受付番号を",
+      "text": "改善後は利用者が入力し、",
       "duration_multiplier": 1
     },
     {
-      "text": "自動で返す案を考えます。",
+      "text": "受付番号を自動で返す案を考えます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "転記がなくなっても、書類不足や代理人",
+      "text": "転記がなくなっても、",
       "duration_multiplier": 1
     },
     {
-      "text": "申請の判断は残ります。",
+      "text": "書類不足や代理人申請の判断は残ります。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "現状の待ち時間と誤記の発生場所を調べ",
+      "text": "現状の待ち時間と誤記の発生場所を調べ、",
       "duration_multiplier": 1
     },
     {
-      "text": "、改善後の担当と例外処理を描きます。",
+      "text": "改善後の担当と例外処理を描きます。",
       "duration_multiplier": 1.15
     },
     {

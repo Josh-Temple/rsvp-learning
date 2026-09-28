@@ -178,47 +178,35 @@
       "duration_multiplier": 1.35
     },
     {
-      "text": "申請APIへ送信した直後に応答が",
+      "text": "申請APIへ送信した直後に",
       "duration_multiplier": 1
     },
     {
-      "text": "タイムアウトしたとします。",
+      "text": "応答がタイムアウトしたとします。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "サーバー側では作成済みかもしれません",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "。",
+      "text": "サーバー側では作成済みかもしれません。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "同じ要求に識別子を付けて再送し、作成",
+      "text": "同じ要求に識別子を付けて再送し、",
       "duration_multiplier": 1
     },
     {
-      "text": "済みなら元の結果を返す設計にします。",
+      "text": "作成済みなら元の結果を返す設計にします。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "入力不備、権限不足、サーバー障害では",
+      "text": "入力不備、権限不足、サーバー障害では、",
       "duration_multiplier": 1
     },
     {
-      "text": "、利用者や呼出し側の対応が異なります",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "。",
+      "text": "利用者や呼出し側の対応が異なります。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "エラー内容と再試行の可否を分けて伝え",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "ます。",
+      "text": "エラー内容と再試行の可否を分けて伝えます。",
       "duration_multiplier": 1.35
     }
   ]

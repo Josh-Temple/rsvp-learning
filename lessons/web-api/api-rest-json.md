@@ -38,3 +38,4 @@ REST APIの基本的な考え方と、データ交換形式JSONの読み方を�
 ## 出典
 
 - [Roy T. Fielding: REST Architectural Style](https://ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm)
+- [RFC 8259: The JavaScript Object Notation (JSON) Data Interchange Format](https://www.rfc-editor.org/info/rfc8259)

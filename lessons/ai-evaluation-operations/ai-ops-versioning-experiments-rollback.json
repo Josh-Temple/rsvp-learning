@@ -166,27 +166,27 @@
       "duration_multiplier": 1.35
     },
     {
-      "text": "案内AIの新しい版を試すときは、旧版",
+      "text": "案内AIの新しい版を試すときは、",
       "duration_multiplier": 1
     },
     {
-      "text": "と同じ質問集合で比較します。",
+      "text": "旧版と同じ質問集合で比較します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "回答の正確さだけでなく、待ち時間と",
+      "text": "回答の正確さだけでなく、",
       "duration_multiplier": 1
     },
     {
-      "text": "重大な誤案内も測ります。",
+      "text": "待ち時間と重大な誤案内も測ります。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "少数の利用者から始め、決めた閾値を超",
+      "text": "少数の利用者から始め、",
       "duration_multiplier": 1
     },
     {
-      "text": "えたら旧版へ戻します。",
+      "text": "決めた閾値を超えたら旧版へ戻します。",
       "duration_multiplier": 1.15
     },
     {
@@ -198,11 +198,7 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "戻した後にどの版が実際に応答したか",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "確認します。",
+      "text": "戻した後にどの版が実際に応答したか確認します。",
       "duration_multiplier": 1.35
     }
   ]

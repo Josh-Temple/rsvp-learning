@@ -36,4 +36,4 @@ Created: 2026-09-27
 
 ## 出典
 
-- [NIST SP 800-53 Rev. 5 Update 1](https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final)
+- [GitHub Docs: Continuous integration](https://docs.github.com/en/actions/get-started/continuous-integration)

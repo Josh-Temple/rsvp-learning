@@ -13,7 +13,7 @@
     },
     {
       "title": "PostgreSQL 18 文書: 集約関数",
-      "url": "https://www.postgresql.org/docs/18/tutorial-agg.html"
+      "url": "https://www.postgresql.org/docs/18/functions-aggregate.html"
     }
   ],
   "chunks": [
@@ -182,43 +182,51 @@
       "duration_multiplier": 1.35
     },
     {
-      "text": "顧客表にAとB、注文表にAの注文二件",
+      "text": "顧客表にAとB、",
       "duration_multiplier": 1
     },
     {
-      "text": "だけがあるとします。",
+      "text": "注文表にAの注文二件だけがあるとします。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "顧客IDでINNER JOINすると",
+      "text": "顧客IDでINNER JOINすると、",
       "duration_multiplier": 1
     },
     {
-      "text": "、Aの注文二行が得られます。",
+      "text": "Aの注文二行が得られます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "顧客表を左にしたLEFT JOIN",
+      "text": "顧客表を左にしたLEFT JOINなら、",
       "duration_multiplier": 1
     },
     {
-      "text": "なら、注文のないBも残ります。",
+      "text": "Aの二行と注文のないBの一行で",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "計三行です。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "結合後の行を数えると顧客数ではなく",
+      "text": "この結果のCOUNT(*)は三、",
       "duration_multiplier": 1
     },
     {
-      "text": "注文数になる場合があります。",
+      "text": "COUNT(注文ID)は二です。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "何を一件と数えるかを決め、顧客別の",
+      "text": "顧客IDでGROUP BYし、",
       "duration_multiplier": 1
     },
     {
-      "text": "合計と注文数を分けて確認します。",
+      "text": "注文IDを数えると、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "Aは二件、Bは零件になります。",
       "duration_multiplier": 1.35
     }
   ]

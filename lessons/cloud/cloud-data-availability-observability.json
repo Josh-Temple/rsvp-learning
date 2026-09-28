@@ -194,19 +194,19 @@
       "duration_multiplier": 1.35
     },
     {
-      "text": "申請APIが止まってもデータが無事",
+      "text": "申請APIが止まってもデータが",
       "duration_multiplier": 1
     },
     {
-      "text": "なら十分とは限りません。",
+      "text": "無事なら十分とは限りません。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "復旧まで許される時間と、失ってよい",
+      "text": "復旧まで許される時間と、",
       "duration_multiplier": 1
     },
     {
-      "text": "データの範囲を先に決めます。",
+      "text": "失ってよいデータの範囲を先に決めます。",
       "duration_multiplier": 1.15
     },
     {
@@ -218,19 +218,15 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "遅延、エラー、依存先の異常を時刻",
+      "text": "遅延、エラー、依存先の異常を",
       "duration_multiplier": 1
     },
     {
-      "text": "とともに記録します。",
+      "text": "時刻とともに記録します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "バックアップから戻せることも実際に",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "試します。",
+      "text": "バックアップから戻せることも実際に試します。",
       "duration_multiplier": 1.35
     }
   ]

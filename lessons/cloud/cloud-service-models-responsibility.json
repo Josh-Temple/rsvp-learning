@@ -202,47 +202,55 @@
       "duration_multiplier": 1.35
     },
     {
-      "text": "申請管理をSaaSで使う場合、利用者",
+      "text": "申請管理をSaaSで使う場合、",
       "duration_multiplier": 1
     },
     {
-      "text": "はアカウントと共有設定を管理します。",
+      "text": "利用者はアカウントや共有設定を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "管理します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "仮想マシンを借りて自作する場合は、",
+      "text": "PaaSで自作アプリを動かす場合は、",
       "duration_multiplier": 1
     },
     {
-      "text": "OS更新やアプリの保守も担当範囲に",
+      "text": "アプリとデータを管理し、",
       "duration_multiplier": 1
     },
     {
-      "text": "入ります。",
+      "text": "実行基盤の管理範囲を確認します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "提供者が基盤を守っていても、誤った",
+      "text": "IaaSの仮想マシンで動かす場合は、",
       "duration_multiplier": 1
     },
     {
-      "text": "公開設定は利用者側の問題になりえます",
+      "text": "OS更新やアプリ保守も",
       "duration_multiplier": 1
     },
     {
-      "text": "。",
+      "text": "担当範囲に入ります。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "契約、サービス構成、データの扱いを",
+      "text": "いずれも権限設定は",
       "duration_multiplier": 1
     },
     {
-      "text": "確認し、誰が何を更新し監視するか表",
+      "text": "利用者側の課題であり、",
       "duration_multiplier": 1
     },
     {
-      "text": "にします。",
+      "text": "契約と構成に沿って責任分界を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "確認します。",
       "duration_multiplier": 1.35
     }
   ]

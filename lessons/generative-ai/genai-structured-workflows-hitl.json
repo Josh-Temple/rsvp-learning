@@ -162,12 +162,8 @@
       "duration_multiplier": 1
     },
     {
-      "text": "Human-in-the-loop",
+      "text": "Human-in-the-loopです",
       "duration_multiplier": 1.35
-    },
-    {
-      "text": "です",
-      "duration_multiplier": 1.15
     },
     {
       "text": "高リスクな処理ほど、",
@@ -206,27 +202,27 @@
       "duration_multiplier": 1.35
     },
     {
-      "text": "申請書から氏名と期限を抽出し、定型の",
+      "text": "申請書から氏名と期限を抽出し、",
       "duration_multiplier": 1
     },
     {
-      "text": "項目へ入れるとします。",
+      "text": "定型の項目へ入れるとします。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "抽出結果が空欄や不正な日付なら、次の",
+      "text": "抽出結果が空欄や不正な日付なら、",
       "duration_multiplier": 1
     },
     {
-      "text": "処理へ進めません。",
+      "text": "次の処理へ進めません。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "形式の検証に通っても、原本と異なる値",
+      "text": "形式の検証に通っても、",
       "duration_multiplier": 1
     },
     {
-      "text": "は人が確認します。",
+      "text": "原本と異なる値は人が確認します。",
       "duration_multiplier": 1.15
     },
     {
@@ -238,11 +234,11 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "機械が候補を作る工程と、人が責任を持",
+      "text": "機械が候補を作る工程と、",
       "duration_multiplier": 1
     },
     {
-      "text": "って確定する工程を分けます。",
+      "text": "人が責任を持って確定する工程を分けます。",
       "duration_multiplier": 1.35
     }
   ]

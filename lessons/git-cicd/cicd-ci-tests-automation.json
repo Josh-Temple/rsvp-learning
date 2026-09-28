@@ -8,8 +8,8 @@
   "base_duration_ms": 680,
   "sources": [
     {
-      "title": "NIST SP 800-53 Rev. 5 Update 1",
-      "url": "https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final"
+      "title": "GitHub Docs: Continuous integration",
+      "url": "https://docs.github.com/en/actions/get-started/continuous-integration"
     }
   ],
   "chunks": [
@@ -166,47 +166,39 @@
       "duration_multiplier": 1.35
     },
     {
-      "text": "申請画面の入力チェックを直した変更を",
+      "text": "申請画面の入力チェックを",
       "duration_multiplier": 1
     },
     {
-      "text": "PRへ出すとします。",
+      "text": "直した変更をPRへ出すとします。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "CIで構文検査と自動テストが動き、誤",
+      "text": "CIで構文検査と自動テストが動き、",
       "duration_multiplier": 1
     },
     {
-      "text": "った入力を通す回帰が見つかれば失敗し",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "ます。",
+      "text": "誤った入力を通す回帰が見つかれば失敗します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "修正を追加した後、同じ検査が通ったか",
+      "text": "修正を追加した後、",
       "duration_multiplier": 1
     },
     {
-      "text": "確認します。",
+      "text": "同じ検査が通ったか確認します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "テスト成功は実機での見やすさや仕様の",
+      "text": "テスト成功は実機での見やすさや",
       "duration_multiplier": 1
     },
     {
-      "text": "妥当性まで保証しません。",
+      "text": "仕様の妥当性まで保証しません。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "人のレビューと必要な環境での確認も残",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "します。",
+      "text": "人のレビューと必要な環境での確認も残します。",
       "duration_multiplier": 1.35
     }
   ]

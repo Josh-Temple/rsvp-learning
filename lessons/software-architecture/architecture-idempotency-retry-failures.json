@@ -190,11 +190,11 @@
       "duration_multiplier": 1.35
     },
     {
-      "text": "利用者が送信ボタンを押した後、応答",
+      "text": "利用者が送信ボタンを押した後、",
       "duration_multiplier": 1
     },
     {
-      "text": "だけが途切れたとします。",
+      "text": "応答だけが途切れたとします。",
       "duration_multiplier": 1.15
     },
     {
@@ -206,27 +206,23 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "申請ごとに同じ識別子を使い、既に処理",
+      "text": "申請ごとに同じ識別子を使い、",
       "duration_multiplier": 1
     },
     {
-      "text": "済みなら同じ結果を返す設計にします。",
+      "text": "既に処理済みなら同じ結果を返す設計にします。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "識別子の有効期間と異なる内容での再",
+      "text": "識別子の有効期間と",
       "duration_multiplier": 1
     },
     {
-      "text": "利用も決めます。",
+      "text": "異なる内容での再利用も決めます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "失敗した場所ごとに再試行の可否を分け",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "ます。",
+      "text": "失敗した場所ごとに再試行の可否を分けます。",
       "duration_multiplier": 1.35
     }
   ]

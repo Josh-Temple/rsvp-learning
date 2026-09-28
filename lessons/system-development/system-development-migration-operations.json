@@ -154,11 +154,7 @@
       "duration_multiplier": 1.35
     },
     {
-      "text": "紙台帳の申請を新システムへ移すとし",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "ます。",
+      "text": "紙台帳の申請を新システムへ移すとします。",
       "duration_multiplier": 1.15
     },
     {
@@ -166,27 +162,19 @@
       "duration_multiplier": 1
     },
     {
-      "text": "件数一致だけでは正しい移行とは言えま",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "せん。",
+      "text": "件数一致だけでは正しい移行とは言えません。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "移行前後の識別子、重要項目、件数を",
+      "text": "移行前後の識別子、",
       "duration_multiplier": 1
     },
     {
-      "text": "照合します。",
+      "text": "重要項目、件数を照合します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "失敗した場合に旧台帳へ戻す期限と手順",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "を決めます。",
+      "text": "失敗した場合に旧台帳へ戻す期限と手順を決めます。",
       "duration_multiplier": 1.15
     },
     {

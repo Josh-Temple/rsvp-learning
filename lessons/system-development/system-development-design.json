@@ -6,12 +6,7 @@
   "summary": "要件を実装できる形へ変換する設計工程の役割を学びます。",
   "created_at": "2026-09-27",
   "base_duration_ms": 680,
-  "sources": [
-    {
-      "title": "NIST SP 800-53 Rev. 5 Update 1",
-      "url": "https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final"
-    }
-  ],
+  "sources": [],
   "chunks": [
     {
       "text": "設計は、",
@@ -174,11 +169,11 @@
       "duration_multiplier": 1.35
     },
     {
-      "text": "申請者が自分の処理状況を見られる",
+      "text": "申請者が自分の処理状況を",
       "duration_multiplier": 1
     },
     {
-      "text": "という要件を設計へ落とします。",
+      "text": "見られるという要件を設計へ落とします。",
       "duration_multiplier": 1.15
     },
     {
@@ -186,27 +181,23 @@
       "duration_multiplier": 1
     },
     {
-      "text": "データには申請者IDと状態履歴を持た",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "せます。",
+      "text": "データには申請者IDと状態履歴を持たせます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "他人の申請IDを指定しても閲覧でき",
+      "text": "他人の申請IDを指定しても",
       "duration_multiplier": 1
     },
     {
-      "text": "ないようにします。",
+      "text": "閲覧できないようにします。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "状態の取得に失敗したときは古い情報を",
+      "text": "状態の取得に失敗したときは古い",
       "duration_multiplier": 1
     },
     {
-      "text": "確定情報として見せません。",
+      "text": "情報を確定情報として見せません。",
       "duration_multiplier": 1.15
     },
     {

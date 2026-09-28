@@ -190,43 +190,39 @@
       "duration_multiplier": 1.35
     },
     {
-      "text": "担当者が審査部署から異動したとします",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "。",
+      "text": "担当者が審査部署から異動したとします。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "旧部署の申請データを読める権限は外し",
+      "text": "旧部署の申請データを読める権限は外し、",
       "duration_multiplier": 1
     },
     {
-      "text": "、新部署に必要な権限だけ付けます。",
+      "text": "新部署に必要な権限だけ付けます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "個人に直接権限を積み重ねると異動時に",
+      "text": "個人に直接権限を積み重ねると",
       "duration_multiplier": 1
     },
     {
-      "text": "見落としやすくなります。",
+      "text": "異動時に見落としやすくなります。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "役割ごとの権限と例外を管理し、定期的",
+      "text": "役割ごとの権限と例外を管理し、",
       "duration_multiplier": 1
     },
     {
-      "text": "に見直します。",
+      "text": "定期的に見直します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "操作履歴から誰がどの権限で変更したか",
+      "text": "操作履歴から誰がどの権限で",
       "duration_multiplier": 1
     },
     {
-      "text": "を追えるようにします。",
+      "text": "変更したかを追えるようにします。",
       "duration_multiplier": 1.35
     }
   ]

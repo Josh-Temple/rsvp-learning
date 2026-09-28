@@ -181,11 +181,11 @@
       "duration_multiplier": 1.35
     },
     {
-      "text": "業務の目的を申請の処理状況を利用者へ",
+      "text": "業務の目的を申請の処理状況を",
       "duration_multiplier": 1
     },
     {
-      "text": "知らせることとします。",
+      "text": "利用者へ知らせることとします。",
       "duration_multiplier": 1.15
     },
     {
@@ -197,27 +197,19 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "単に画面を一枚作るだけでは、誰が状態",
+      "text": "単に画面を一枚作るだけでは、",
       "duration_multiplier": 1
     },
     {
-      "text": "を更新するか決まりません。",
+      "text": "誰が状態を更新するか決まりません。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "業務上の決定とシステムの動作を対応さ",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "せます。",
+      "text": "業務上の決定とシステムの動作を対応させます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "通知失敗時の再試行や問い合わせ先も",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "定めます。",
+      "text": "通知失敗時の再試行や問い合わせ先も定めます。",
       "duration_multiplier": 1.35
     }
   ]

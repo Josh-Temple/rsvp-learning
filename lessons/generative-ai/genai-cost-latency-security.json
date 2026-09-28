@@ -174,43 +174,39 @@
       "duration_multiplier": 1.35
     },
     {
-      "text": "長い資料を毎回AIへ渡すと、入力が",
+      "text": "長い資料を毎回AIへ渡すと、",
       "duration_multiplier": 1
     },
     {
-      "text": "増え、費用と応答時間に影響します。",
+      "text": "入力が増え、費用と応答時間に影響します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "資料の一部を検索して渡す場合も、検索",
+      "text": "資料の一部を検索して渡す場合も、",
       "duration_multiplier": 1
     },
     {
-      "text": "時間と検索の誤りが加わります。",
+      "text": "検索時間と検索の誤りが加わります。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "機密の申請情報を含むなら、送信先と",
+      "text": "機密の申請情報を含むなら、",
       "duration_multiplier": 1
     },
     {
-      "text": "保存の扱いを先に確認します。",
+      "text": "送信先と保存の扱いを先に確認します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "短い質問と長い質問を分けて測り、平均",
+      "text": "短い質問と長い質問を分けて測り、",
       "duration_multiplier": 1
     },
     {
-      "text": "だけでなく遅い応答も見ます。",
+      "text": "平均だけでなく遅い応答も見ます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "品質、費用、待ち時間を同じ条件で比較",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "します。",
+      "text": "品質、費用、待ち時間を同じ条件で比較します。",
       "duration_multiplier": 1.35
     }
   ]

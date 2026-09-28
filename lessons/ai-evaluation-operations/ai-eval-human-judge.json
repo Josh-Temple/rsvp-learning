@@ -190,23 +190,19 @@
       "duration_multiplier": 1.35
     },
     {
-      "text": "同じ申請案内を二人が採点し、一人は",
+      "text": "同じ申請案内を二人が採点し、一人は正しい、",
       "duration_multiplier": 1
     },
     {
-      "text": "正しい、もう一人は不十分と判断したと",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "します。",
+      "text": "もう一人は不十分と判断したとします。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "結論だけ比べず、期限と必要書類の",
+      "text": "結論だけ比べず、期限と必要",
       "duration_multiplier": 1
     },
     {
-      "text": "どちらを見たかを記録します。",
+      "text": "書類のどちらを見たかを記録します。",
       "duration_multiplier": 1.15
     },
     {
@@ -218,15 +214,11 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "モデルによる採点は大量の候補を絞れ",
+      "text": "モデルによる採点は大量の候補を絞れますが、",
       "duration_multiplier": 1
     },
     {
-      "text": "ますが、人の判断とのずれを確認します",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "。",
+      "text": "人の判断とのずれを確認します。",
       "duration_multiplier": 1.15
     },
     {

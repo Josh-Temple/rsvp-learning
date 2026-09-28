@@ -8,8 +8,8 @@
   "base_duration_ms": 680,
   "sources": [
     {
-      "title": "NIST SP 800-115: Technical Guide to Information Security Testing and Assessment",
-      "url": "https://csrc.nist.gov/pubs/sp/800/115/final"
+      "title": "ISTQB Certified Tester Foundation Level Syllabus v4.0.1",
+      "url": "https://istqb.org/wp-content/uploads/2024/11/ISTQB_CTFL_Syllabus_v4.0.1.pdf"
     }
   ],
   "chunks": [
@@ -174,19 +174,15 @@
       "duration_multiplier": 1
     },
     {
-      "text": "画面とAPIの接続を結合テストで確か",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "めます。",
+      "text": "画面とAPIの接続を結合テストで確かめます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "受入テストでは利用者が一件の申請を",
+      "text": "受入テストでは利用者が",
       "duration_multiplier": 1
     },
     {
-      "text": "完了できるか見ます。",
+      "text": "一件の申請を完了できるか見ます。",
       "duration_multiplier": 1.15
     },
     {
@@ -198,11 +194,11 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "通常の入力に加え、期限ぎりぎりと書類",
+      "text": "通常の入力に加え、",
       "duration_multiplier": 1
     },
     {
-      "text": "不足も試します。",
+      "text": "期限ぎりぎりと書類不足も試します。",
       "duration_multiplier": 1.15
     },
     {

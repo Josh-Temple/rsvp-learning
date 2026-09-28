@@ -189,43 +189,39 @@
       "duration_multiplier": 1.35
     },
     {
-      "text": "小さな申請APIを仮想マシンで動かす",
+      "text": "小さな申請APIを仮想マシンで動かすなら、",
       "duration_multiplier": 1
     },
     {
-      "text": "なら、OS更新とサーバー監視を担い",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "ます。",
+      "text": "OS更新とサーバー監視を担います。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "コンテナでは実行環境をまとめられます",
+      "text": "コンテナでは実行環境をまとめられますが、",
       "duration_multiplier": 1
     },
     {
-      "text": "が、配置先や運用の設計は残ります。",
+      "text": "配置先や運用の設計は残ります。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "サーバーレスでは呼出しに応じた実行を",
+      "text": "サーバーレスでは呼出しに",
       "duration_multiplier": 1
     },
     {
-      "text": "利用できますが、起動時間や実行制限を",
+      "text": "応じた実行を利用できますが、",
       "duration_multiplier": 1
     },
     {
-      "text": "確認します。",
+      "text": "起動時間や実行制限を確認します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "負荷の波、常時稼働、運用体制を同じ",
+      "text": "負荷の波、常時稼働、",
       "duration_multiplier": 1
     },
     {
-      "text": "条件で比べます。",
+      "text": "運用体制を同じ条件で比べます。",
       "duration_multiplier": 1.15
     },
     {

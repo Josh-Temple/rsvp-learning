@@ -193,35 +193,35 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "通知方式を変えるだけで受付のコードに",
+      "text": "通知方式を変えるだけで",
       "duration_multiplier": 1
     },
     {
-      "text": "も修正が及びます。",
+      "text": "受付のコードにも修正が及びます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "受付結果を通知側へ渡す境界を作れば",
+      "text": "受付結果を通知側へ渡す境界を",
       "duration_multiplier": 1
     },
     {
-      "text": "変更箇所を絞れます。",
+      "text": "作れば変更箇所を絞れます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "ただし境界を増やすとデータの受渡しと",
+      "text": "ただし境界を増やすとデータの",
       "duration_multiplier": 1
     },
     {
-      "text": "障害時の扱いが必要です。",
+      "text": "受渡しと障害時の扱いが必要です。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "変更の理由ごとに責務を分け、依存先を",
+      "text": "変更の理由ごとに責務を分け、",
       "duration_multiplier": 1
     },
     {
-      "text": "確認します。",
+      "text": "依存先を確認します。",
       "duration_multiplier": 1.35
     }
   ]

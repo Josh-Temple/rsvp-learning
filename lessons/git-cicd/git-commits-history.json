@@ -190,35 +190,31 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "不具合が出た際に、どの変更を戻すべき",
+      "text": "不具合が出た際に、どの変更を",
       "duration_multiplier": 1
     },
     {
-      "text": "か判断しづらくなります。",
+      "text": "戻すべきか判断しづらくなります。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "目的ごとに小さくコミットし、理由が",
+      "text": "目的ごとに小さくコミットし、",
       "duration_multiplier": 1
     },
     {
-      "text": "分かるメッセージを付けます。",
+      "text": "理由が分かるメッセージを付けます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "履歴を見れば変更の順序と意図を追え",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "ます。",
+      "text": "履歴を見れば変更の順序と意図を追えます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "小ささ自体が目的ではなく、一つの意味",
+      "text": "小ささ自体が目的ではなく、",
       "duration_multiplier": 1
     },
     {
-      "text": "のある変更として確かめます。",
+      "text": "一つの意味のある変更として確かめます。",
       "duration_multiplier": 1.35
     }
   ]

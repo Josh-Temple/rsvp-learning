@@ -186,35 +186,35 @@
       "duration_multiplier": 1.35
     },
     {
-      "text": "申請画面の不具合をIssueに記録し",
+      "text": "申請画面の不具合をIssueに記録し、",
       "duration_multiplier": 1
     },
     {
-      "text": "、再現手順と期待する動作を書きます。",
+      "text": "再現手順と期待する動作を書きます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "修正ブランチのPRで差分とテスト結果",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "を示します。",
+      "text": "修正ブランチのPRで差分とテスト結果を示します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "レビューで別の入力条件を指摘されたら",
+      "text": "レビューで別の入力条件を指摘さ",
       "duration_multiplier": 1
     },
     {
-      "text": "修正し、再度確認を受けます。",
+      "text": "れたら修正し、再度確認を受けます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "PRを閉じる前に、Issueの条件を",
+      "text": "PRをマージする前に、",
       "duration_multiplier": 1
     },
     {
-      "text": "満たしたか確かめます。",
+      "text": "Issueの完了条件を満たしたか",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "確かめます。",
       "duration_multiplier": 1.15
     },
     {

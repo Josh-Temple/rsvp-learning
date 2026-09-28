@@ -169,11 +169,7 @@
       "duration_multiplier": 1
     },
     {
-      "text": "すぐにチャットボットを選ばないとし",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "ます。",
+      "text": "すぐにチャットボットを選ばないとします。",
       "duration_multiplier": 1.15
     },
     {
@@ -185,19 +181,19 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "前者は案内の整理、後者は状況を見",
+      "text": "前者は案内の整理、後者は状況を",
       "duration_multiplier": 1
     },
     {
-      "text": "られる仕組みが候補になります。",
+      "text": "見られる仕組みが候補になります。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "電話件数だけでなく、利用者が目的を",
+      "text": "電話件数だけでなく、",
       "duration_multiplier": 1
     },
     {
-      "text": "達成できたかを測ります。",
+      "text": "利用者が目的を達成できたかを測ります。",
       "duration_multiplier": 1.15
     },
     {

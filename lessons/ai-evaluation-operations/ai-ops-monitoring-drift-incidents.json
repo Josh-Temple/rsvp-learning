@@ -166,47 +166,35 @@
       "duration_multiplier": 1.35
     },
     {
-      "text": "導入後に申請制度が変わり、以前は正",
+      "text": "導入後に申請制度が変わり、",
       "duration_multiplier": 1
     },
     {
-      "text": "しかった回答が誤りになったとします。",
+      "text": "以前は正しかった回答が誤りになったとします。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "回答数と利用者の指摘件数を追い、特定",
+      "text": "回答数と利用者の指摘件数を追い、",
       "duration_multiplier": 1
     },
     {
-      "text": "の質問群で誤案内が増えたか調べます。",
+      "text": "特定の質問群で誤案内が増えたか調べます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "ログに個人情報を残す範囲は必要最小限",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "にします。",
+      "text": "ログに個人情報を残す範囲は必要最小限にします。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "重大な誤案内なら影響を受けた回答を",
+      "text": "重大な誤案内なら影響を受けた回答を特定し、",
       "duration_multiplier": 1
     },
     {
-      "text": "特定し、案内停止や人手への切替を判断",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "します。",
+      "text": "案内停止や人手への切替を判断します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "資料更新後に再評価してから復旧します",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "。",
+      "text": "資料更新後に再評価してから復旧します。",
       "duration_multiplier": 1.35
     }
   ]

@@ -153,47 +153,39 @@
       "duration_multiplier": 1.35
     },
     {
-      "text": "申請項目が確定しないと画面設計を終え",
+      "text": "申請項目が確定しないと画面設計を",
       "duration_multiplier": 1
     },
     {
-      "text": "られず、画面設計が終わらないと試験",
+      "text": "終えられず、画面設計が終わらないと",
       "duration_multiplier": 1
     },
     {
-      "text": "ケースも固まりません。",
+      "text": "試験ケースも固まりません。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "項目確定が三日遅れた場合、後続の余裕",
+      "text": "項目確定が三日遅れた場合、",
       "duration_multiplier": 1
     },
     {
-      "text": "が一日なら予定全体に影響します。",
+      "text": "後続の余裕が一日なら予定全体に影響します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "作業の所要時間だけでなく、前後関係と",
+      "text": "作業の所要時間だけでなく、",
       "duration_multiplier": 1
     },
     {
-      "text": "余裕を確認します。",
+      "text": "前後関係と余裕を確認します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "並行できる仕事と依存する仕事を分け",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "ます。",
+      "text": "並行できる仕事と依存する仕事を分けます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "遅れを発見したら完了予定を更新します",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "。",
+      "text": "遅れを発見したら完了予定を更新します。",
       "duration_multiplier": 1.35
     }
   ]
