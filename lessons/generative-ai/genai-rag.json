@@ -22,252 +22,152 @@
   ],
   "chunks": [
     {
-      "text": "利用者が必要書類を尋ねたら、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "まず関連する手引きの箇所を検索します。",
+      "text": "必要書類を尋ねられたとします。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "見つけた文書が別の申請種別なら、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "もっともらしい回答でも誤りです。",
+      "text": "まず関連する手引きを検索します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "RAGは、",
-      "duration_multiplier": 1
+      "text": "別制度の文書なら根拠として誤りです。",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "外部情報を検索して",
-      "duration_multiplier": 1
+      "text": "RAGは検索結果を生成へ使います。",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "生成へ利用する方法です",
+      "text": "外部知識をその場で参照できます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "最初に参照文書を準備します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "文書の版や日付も管理します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "検索しやすい単位へ分割します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "分割しすぎると文脈を失います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "大きすぎると検索が粗くなります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "質問に関係する候補を探します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "意味検索を使うことがあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "キーワード検索も利用できます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "両方を組み合わせる方法もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "候補を並べ直す処理もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "取得文書をLLMへ渡します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "LLMは根拠を使って回答します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "検索失敗と生成失敗を分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "必要箇所が取れたか確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "回答が根拠に忠実か確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "出典を返す設計も有効です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ただし出典表示だけでは十分でありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "引用先と回答内容を照合します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "古い版が取れれば回答も古くなります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "権限のない文書を検索させません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "取得文書を命令として盲信しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "根拠不足なら無理に答えません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "人へ引き継ぐ設計も考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "正しい規程を取れたとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "それでも期限を誤答しました。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "この場合は生成側も調べます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "検索だけ直しても改善しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "別の例で検索結果が空だとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "生成だけで補えば危険です。",
       "duration_multiplier": 1.35
     },
     {
-      "text": "Retrieval ",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "Augmented Generation",
-      "duration_multiplier": 1.25
-    },
-    {
-      "text": "の略です",
+      "text": "根拠不足を明示する方が安全です。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "最初に、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "参照対象となる文書を",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "準備します",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "文書を",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "検索しやすい単位へ",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "分割します",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "検索では、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "質問に関係する部分を",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "探します",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "Embeddingを使った",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "意味検索が",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "使われることがあります",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "キーワード検索と",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "組み合わせる方法も",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "あります",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "取得した文章を、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "LLMのコンテキストへ",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "渡します",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "LLMは、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "その情報を使って",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "回答を生成します",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "検索に失敗すれば、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "生成も正確に",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "なりにくくなります",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "検索結果が別の申請種別なら、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "生成前に誤った根拠が入っています。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "RAGは、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "モデルへ知識を",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "完全に覚えさせる",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "方法ではありません",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "権限のない文書を",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "検索対象へ",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "入れないことが",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "重要です",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "引用や出典を返す",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "設計も有効です",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "RAGでは、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "検索品質と生成品質を",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "分けて確認します",
+      "text": "RAGは正答を保証する仕組みではありません。",
       "duration_multiplier": 1.35
     },
     {
-      "text": "検索結果の適合性、版、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "日付を確認してから回答を作ります。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "根拠が不足すれば人へ引き継ぐ設計にします。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "誤答が出たときは検索、選択、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "生成のどこで失敗したか分けて調べます。",
+      "text": "検索と生成を別々に評価します。",
       "duration_multiplier": 1.35
-    },
-    {
-      "text": "回答を評価するときは、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "検索で必要な箇所が見つかったかと、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "見つけた箇所に忠実に答えたかを分けます。",
-      "duration_multiplier": 1.35
-    },
-    {
-      "text": "正しい規程が検索されたのに期限を誤答します。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "この場合、検索だけを直しても改善しません。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "取得文書と生成文を別々に照合します。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "どちらの工程が失敗したと言えますか。",
-      "duration_multiplier": 1.25
-    },
-    {
-      "text": "根拠は届いており、回答生成を調べます。",
-      "duration_multiplier": 1.15
     }
   ]
 }
