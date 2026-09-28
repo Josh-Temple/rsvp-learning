@@ -272,6 +272,38 @@
     {
       "text": "復元結果と所要時間で確かめます。",
       "duration_multiplier": 1.15
+    },
+    {
+      "text": "冗長化とバックアップは別です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "障害と誤削除では対策が違います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "復旧目標を先に決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "依存サービスも復旧対象です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "監視は利用者影響も見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ログだけでなく指標も使います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "警報には対応手順を結びます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "復旧訓練で実効性を確かめます。",
+      "duration_multiplier": 1.15
     }
   ]
 }

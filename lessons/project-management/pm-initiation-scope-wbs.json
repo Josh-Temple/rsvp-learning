@@ -239,6 +239,38 @@
     {
       "text": "導入と引継ぎの作業も確認します。",
       "duration_multiplier": 1.15
+    },
+    {
+      "text": "成果物と成果を分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "画面完成だけでは目的達成と限りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "成功条件を先に定めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "前提と制約も記録します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "WBSは漏れ確認にも使います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "作業粒度を細かくしすぎません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "導入と引継ぎも範囲に含めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "完了条件を成果物ごとに置きます。",
+      "duration_multiplier": 1.15
     }
   ]
 }
