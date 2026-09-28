@@ -1,0 +1,229 @@
+{
+  "schema_version": 1,
+  "id": "linux-observation-basics",
+  "title": "Linuxの基本操作とシステム観察",
+  "topic": "IT基盤",
+  "summary": "Shell、Command、Path、Permission、Process、/proc、Disk、Networkを横断し、Linux上で何が動き、どこで詰まっているかを観察する基本を学びます。",
+  "created_at": "2026-09-29",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "GNU Bash Reference Manual",
+      "url": "https://www.gnu.org/software/bash/manual/bash.html"
+    },
+    {
+      "title": "GNU Coreutils Manual",
+      "url": "https://www.gnu.org/software/coreutils/manual/coreutils.html"
+    },
+    {
+      "title": "The /proc Filesystem — Linux Kernel documentation",
+      "url": "https://docs.kernel.org/filesystems/proc.html"
+    },
+    {
+      "title": "Filesystem Hierarchy Standard 3.0",
+      "url": "https://specifications.freedesktop.org/fhs/latest/"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "ShellはCommandを解釈します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Bashは代表的なShellです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ShellとTerminalは別物です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Terminalは入出力の窓口です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "CommandはProgramの場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Shell組込みの場合もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Current Directoryを意識します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "pwdで場所を確認できます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "cdで移動します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "lsで一覧を確認できます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "絶対Pathと相対Pathがあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "相対Pathは現在地に依存します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "PATHはCommand探索に使われます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "同名Commandでも場所を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "File内容はcatなどで見られます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "長文はlessが便利です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "grepで文字列を探せます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Pipeで出力を次へ渡せます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "標準入力をつなげます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "標準出力をRedirectできます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "標準Errorは別経路です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Exit Statusで結果を判断できます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "表示がなくても成功とは限りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ScriptではStatusを確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Permissionは読書実行を制御します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "所有者やGroupも関係します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Root権限は影響が大きいです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "必要以上に昇格しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "psでProcessを見られます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "PIDとCommandを対応づけます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "/procでもProcessを観察できます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Memory情報も確認できます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "dfでFilesystem容量を見られます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "duで使用量を調べられます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "両者は見る対象が違います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Network状態も観察します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用可能なToolは環境で違います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ssなどでSocketを見られます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "名前解決も別に確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Logの場所も環境で違います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "systemdではjournalも使います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一つのCommandだけで断定しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "時刻と対象をそろえて観察します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "変更前に状態を記録します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "変更後に差を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "読み取りから調査を始めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "破壊的Commandを急いで使いません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "観察結果を層ごとに整理します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ProcessとNetworkをつなげて見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "基盤全体を小さく切り分けます。",
+      "duration_multiplier": 1.15
+    }
+  ]
+}
