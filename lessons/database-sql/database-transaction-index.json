@@ -46,7 +46,7 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "Atomicityは全体性を守ります。",
+      "text": "Atomicityは処理を不可分にします。",
       "duration_multiplier": 1.15
     },
     {
