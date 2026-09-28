@@ -9,215 +9,139 @@
   "sources": [],
   "chunks": [
     {
-      "text": "業務目的を申請の取りこぼしを減らすこととします。",
+      "text": "申請の取りこぼしを減らすとします。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "受付番号を発行する要件を作り、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "申請直後に番号が",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "表示され記録される試験へ結びます。",
+      "text": "受付番号の発行を要件にします。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "要件は、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "書けば完成ではありません",
+      "text": "ただし表示だけでは不十分です。",
       "duration_multiplier": 1.35
     },
     {
-      "text": "曖昧さがないか",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "確認します",
+      "text": "保存まで確認できる形にします。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "実現可能か",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "確認します",
+      "text": "要件は書けば完成ではありません。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "他の要件と",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "矛盾していないか",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "確認します",
+      "text": "曖昧さと矛盾を確認します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "テストで確認できる",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "表現か確認します",
+      "text": "実現可能性も確認します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "使いやすいシステム、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "だけでは",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "検証しにくい要件です",
+      "text": "試験できる表現にします。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "測定条件を加えると、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "確認しやすくなります",
+      "text": "「使いやすい」だけでは曖昧です。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "要件には、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "優先順位も必要です",
+      "text": "誰が何をできるか具体化します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "すべてを",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "同じ重要度にすると",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "判断できません",
+      "text": "受入条件は合否の条件を示します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "トレーサビリティは、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "要件のつながりを",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "追える性質です",
+      "text": "条件は観測できる形にします。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "受付番号の表示試験が失敗したとき、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "申請の取りこぼし防止という",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "目的まで影響をたどれます。",
+      "text": "優先順位も明確にします。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "業務目的から、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "業務要件へつなげます",
+      "text": "すべてを最優先にはできません。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "業務要件から、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "システム要件へ",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "つなげます",
+      "text": "トレーサビリティはつながりを追います。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "システム要件から、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "設計やテストへ",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "つなげます",
+      "text": "業務目的から業務要件へつなぎます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "変更時に",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "影響範囲を確認できる",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "ことが重要です",
-      "duration_multiplier": 1.35
-    },
-    {
-      "text": "試験が失敗したら、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "どの要件と目的に影響するかたどれます。",
+      "text": "業務要件からシステム要件へ進みます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "逆に目的につながらない機能は必要性を確認します。",
+      "text": "要件から設計と試験へつなぎます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "変更時には対応する試験も更新します。",
-      "duration_multiplier": 1.35
-    },
-    {
-      "text": "目的から試験まで対応を残すと、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "変更時に直す箇所と確認し直す条件が分かります。",
-      "duration_multiplier": 1.35
-    },
-    {
-      "text": "番号は画面に出たのに、記録されない例を考えます。",
+      "text": "逆向きにも理由をたどります。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "表示だけの試験では、取りこぼしを検出できません。",
+      "text": "目的につながらない機能を見直します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "保存記録まで確認する試験を要件に結びます。",
+      "text": "変更時は影響範囲を追います。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "画面が通れば業務目的も達成でしょうか。",
+      "text": "要件を変えたら試験も見直します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "試験失敗から関連要件をたどります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "関連要件から業務目的を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "番号が表示されても保存されないとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "表示だけの試験では見逃します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "保存記録まで確認する必要があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "次に通知機能を追加するとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "目的が同じか別かを確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "別目的なら対応関係を分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一つの試験で全部を証明しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "目的ごとに必要な結果を確かめます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "画面が通れば十分でしょうか。",
       "duration_multiplier": 1.25
     },
     {
-      "text": "目的に必要な一連の結果を確かめます。",
+      "text": "業務目的まで届く結果を確認します。",
       "duration_multiplier": 1.15
     }
   ]
