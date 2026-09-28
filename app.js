@@ -24,6 +24,8 @@ const state = {
   playCounted: false,
   completionCounted: false,
   loadRequestId: 0,
+  listenItems: [],
+  libraryView: "rsvp",
 };
 
 const els = {
@@ -31,6 +33,8 @@ const els = {
   libraryClose: document.querySelector("#library-close"),
   libraryOverlay: document.querySelector("#library-overlay"),
   libraryContent: document.querySelector("#library-content"),
+  libraryRsvpMode: document.querySelector("#library-rsvp-mode"),
+  libraryListenMode: document.querySelector("#library-listen-mode"),
   currentLesson: document.querySelector("#current-lesson"),
   learnLink: document.querySelector("#learn-link"),
   themeToggle: document.querySelector("#theme-toggle"),
@@ -416,10 +420,83 @@ function courseMastery(course) {
   return Math.round(total / course.chapters.length);
 }
 
-function renderLibrary() {
-  if (!els.libraryContent) return;
-  els.libraryContent.replaceChildren();
+function listenIcon(category) {
+  const span = document.createElement("span");
+  span.className = "listen-kind";
+  const paths = {
+    news: '<path d="M5 5h14v14H5z"/><path d="M8 9h8M8 12h8M8 15h5"/>',
+    research: '<path d="M9 3h6M10 3v6l-5 9h14l-5-9V3"/><path d="M8 14h8"/>',
+    report: '<path d="M6 3h9l3 3v15H6z"/><path d="M15 3v4h4M9 11h6M9 15h6"/>',
+    note: '<path d="M6 4h12v16H6z"/><path d="M9 8h6M9 12h6M9 16h4"/>',
+  };
+  span.innerHTML = `<svg viewBox="0 0 24 24" fill="none" aria-hidden="true">${paths[category] ?? paths.note}</svg>`;
+  return span;
+}
 
+function formatListenDate(value) {
+  const date = new Date(`${value}T00:00:00`);
+  if (Number.isNaN(date.getTime())) return value;
+  return new Intl.DateTimeFormat("ja-JP", {
+    month: "numeric",
+    day: "numeric",
+    weekday: "short",
+  }).format(date);
+}
+
+function listenHref(path) {
+  return `./listen/${String(path).replace(/^\.\//, "")}`;
+}
+
+function renderListenLibrary() {
+  const items = [...state.listenItems].sort((a, b) => b.date.localeCompare(a.date));
+
+  if (!items.length) {
+    const empty = document.createElement("div");
+    empty.className = "library-empty";
+    empty.textContent = "まだありません";
+    els.libraryContent.append(empty);
+    return;
+  }
+
+  const groups = new Map();
+  for (const item of items) {
+    if (!groups.has(item.date)) groups.set(item.date, []);
+    groups.get(item.date).push(item);
+  }
+
+  for (const [date, entries] of groups) {
+    const section = document.createElement("section");
+    section.className = "listen-day";
+
+    const heading = document.createElement("h2");
+    heading.className = "listen-day-label";
+    heading.textContent = formatListenDate(date);
+    section.append(heading);
+
+    for (const item of entries) {
+      const row = document.createElement("a");
+      row.className = "library-listen-row";
+      row.href = listenHref(item.path);
+      row.setAttribute("aria-label", item.title);
+
+      const title = document.createElement("span");
+      title.className = "library-listen-title";
+      title.textContent = item.title;
+
+      const arrow = document.createElement("span");
+      arrow.className = "library-listen-arrow";
+      arrow.setAttribute("aria-hidden", "true");
+      arrow.textContent = "›";
+
+      row.append(listenIcon(item.category), title, arrow);
+      section.append(row);
+    }
+
+    els.libraryContent.append(section);
+  }
+}
+
+function renderRsvpLibrary() {
   for (const course of state.courses) {
     const block = document.createElement("section");
     block.className = "course-block";
@@ -485,6 +562,28 @@ function renderLibrary() {
   }
 }
 
+function renderLibrary() {
+  if (!els.libraryContent) return;
+  els.libraryContent.replaceChildren();
+
+  const listen = state.libraryView === "listen";
+  els.libraryRsvpMode?.classList.toggle("is-active", !listen);
+  els.libraryListenMode?.classList.toggle("is-active", listen);
+  els.libraryRsvpMode?.setAttribute("aria-pressed", String(!listen));
+  els.libraryListenMode?.setAttribute("aria-pressed", String(listen));
+
+  if (listen) {
+    renderListenLibrary();
+  } else {
+    renderRsvpLibrary();
+  }
+}
+
+function setLibraryView(view) {
+  state.libraryView = view === "listen" ? "listen" : "rsvp";
+  renderLibrary();
+}
+
 function openLibrary() {
   state.loadRequestId += 1;
   stopPlayback();
@@ -500,9 +599,10 @@ function closeLibrary() {
 }
 
 async function loadCatalogs() {
-  const [lessonResponse, courseResponse] = await Promise.all([
+  const [lessonResponse, courseResponse, listenResponse] = await Promise.all([
     fetch("./lessons/index.json"),
     fetch("./courses/index.json"),
+    fetch("./listen/index.json", { cache: "no-store" }),
   ]);
 
   if (!lessonResponse.ok) {
@@ -511,12 +611,19 @@ async function loadCatalogs() {
   if (!courseResponse.ok) {
     throw new Error(`コース一覧の取得に失敗しました: ${courseResponse.status}`);
   }
+  if (!listenResponse.ok) {
+    throw new Error(`Listen一覧の取得に失敗しました: ${listenResponse.status}`);
+  }
 
   const lessonCatalog = await lessonResponse.json();
   const courseCatalog = await courseResponse.json();
+  const listenCatalog = await listenResponse.json();
 
   state.catalog = lessonCatalog.lessons ?? [];
   state.courses = courseCatalog.courses ?? [];
+  state.listenItems = (listenCatalog.items ?? []).filter(
+    (item) => item && item.title && item.date && item.path,
+  );
   state.lessonMap = new Map(state.catalog.map((item) => [item.id, item]));
 
   renderLibrary();
@@ -548,6 +655,8 @@ function handleError(error) {
 els.libraryOpen.addEventListener("click", openLibrary);
 els.currentLesson.addEventListener("click", openLibrary);
 els.libraryClose.addEventListener("click", closeLibrary);
+els.libraryRsvpMode.addEventListener("click", () => setLibraryView("rsvp"));
+els.libraryListenMode.addEventListener("click", () => setLibraryView("listen"));
 els.libraryOverlay.addEventListener("click", (event) => {
   if (event.target === els.libraryOverlay) closeLibrary();
 });
@@ -621,7 +730,15 @@ colorScheme.addEventListener?.("change", (event) => {
 applyTheme(currentTheme(), false);
 updatePlayButton();
 
-loadCatalogs().catch(handleError);
+loadCatalogs()
+  .then(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("library") === "listen") {
+      setLibraryView("listen");
+      openLibrary();
+    }
+  })
+  .catch(handleError);
 
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
