@@ -224,6 +224,62 @@
       "status": "SEED / 概要のみ"
     },
     {
+      "id": "it-consulting-problem-framing",
+      "title": "課題設定とコンサルティングの問い",
+      "topic": "コンサルティング",
+      "path": "./lessons/it-consulting/it-consulting-problem-framing.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/it-consulting-problem-framing.html"
+    },
+    {
+      "id": "it-consulting-issue-hypothesis",
+      "title": "論点整理と仮説思考",
+      "topic": "コンサルティング",
+      "path": "./lessons/it-consulting/it-consulting-issue-hypothesis.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/it-consulting-issue-hypothesis.html"
+    },
+    {
+      "id": "it-consulting-evidence-analysis",
+      "title": "事実・解釈・証拠の組み立て",
+      "topic": "コンサルティング",
+      "path": "./lessons/it-consulting/it-consulting-evidence-analysis.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/it-consulting-evidence-analysis.html"
+    },
+    {
+      "id": "it-consulting-options-decision",
+      "title": "施策比較と意思決定",
+      "topic": "コンサルティング",
+      "path": "./lessons/it-consulting/it-consulting-options-decision.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/it-consulting-options-decision.html"
+    },
+    {
+      "id": "it-consulting-business-case-value",
+      "title": "Business Case・ROI・価値実現",
+      "topic": "コンサルティング",
+      "path": "./lessons/it-consulting/it-consulting-business-case-value.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/it-consulting-business-case-value.html"
+    },
+    {
+      "id": "it-consulting-roadmap-sequencing",
+      "title": "ロードマップ・優先順位・実行順序",
+      "topic": "コンサルティング",
+      "path": "./lessons/it-consulting/it-consulting-roadmap-sequencing.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/it-consulting-roadmap-sequencing.html"
+    },
+    {
+      "id": "it-consulting-proposal-executive",
+      "title": "提案書・経営層説明・意思決定支援",
+      "topic": "コンサルティング",
+      "path": "./lessons/it-consulting/it-consulting-proposal-executive.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/it-consulting-proposal-executive.html"
+    },
+    {
       "id": "public-dx-govtech-overview",
       "title": "公共DX・GovTechの入口",
       "topic": "公共DX",
