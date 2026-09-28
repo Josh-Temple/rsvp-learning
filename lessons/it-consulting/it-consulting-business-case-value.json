@@ -1,0 +1,217 @@
+{
+  "schema_version": 1,
+  "id": "it-consulting-business-case-value",
+  "title": "Business Case・ROI・価値実現",
+  "topic": "コンサルティング",
+  "summary": "施策の費用と便益を整理し、ROI、総保有コスト、基準値、Benefits Ownerを通じて、導入後まで価値を追う考え方を学びます。",
+  "created_at": "2026-09-29",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "PMI — Benefits Realization Management Framework",
+      "url": "https://www.pmi.org/learning/thought-leadership/series/benefits-realization/benefits-realization-management-framework"
+    },
+    {
+      "title": "GOV.UK Service Manual — Measuring the benefits of your service",
+      "url": "https://www.gov.uk/service-manual/measuring-success/measuring-service-benefits"
+    },
+    {
+      "title": "HM Treasury — The Green Book (2026)",
+      "url": "https://www.gov.uk/government/publications/the-green-book-appraisal-and-evaluation-in-central-government/the-green-book-2026"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "Business Caseは投資判断を支えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "導入理由だけを書くものではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "目的とのつながりを示します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "現状の基準値を置きます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "何が変われば価値かを決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "便益を具体化します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "金銭便益があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "時間削減も便益になり得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "品質改善も便益になり得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "安全性向上も価値になり得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "非金銭価値も残します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "費用は初期費だけではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "導入費を見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "運用費を見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "保守費を見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "教育費も見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "移行費も見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "停止や廃止の費用も考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "総保有コストで全体を見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "隠れた手作業も費用です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ROIは投資効率を見る指標です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一般に利益と投資額を比べます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "計算条件を明示します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "期間を明示します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "含む費用を明示します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "含む便益も明示します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "高ROIだけで決めません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "不確実性を考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "便益の実現時期も見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "導入直後に出ない便益もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "前提を感度分析します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用率が低い場合も試します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "費用超過時も試します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "便益Ownerを決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "誰が成果を追うか明確にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "システム完成で追跡を終えません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "運用後に実績を測ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "基準値と比較します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "便益未達なら原因を見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用不足かもしれません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "業務変更不足かもしれません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "追加費用が出たかもしれません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "価値の定義も見直します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "想定外の副作用も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "便益を二重計上しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "他施策の効果と分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Business Caseは更新できます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "投資判断と運用をつなげます。",
+      "duration_multiplier": 1.15
+    }
+  ]
+}
