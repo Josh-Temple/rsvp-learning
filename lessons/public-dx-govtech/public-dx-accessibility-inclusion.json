@@ -1,0 +1,213 @@
+{
+  "schema_version": 1,
+  "id": "public-dx-accessibility-inclusion",
+  "title": "アクセシビリティとデジタル包摂",
+  "topic": "公共DX",
+  "summary": "ウェブアクセシビリティを後付けの配慮ではなく、障害、年齢、端末、通信環境、デジタル技能など多様な利用条件を前提に行政サービスを設計する考え方として学びます。",
+  "created_at": "2026-09-29",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "デジタル庁 — ウェブアクセシビリティ導入ガイドブック",
+      "url": "https://www.digital.go.jp/resources/introduction-to-web-accessibility-guidebook"
+    },
+    {
+      "title": "デジタル庁 — サービスデザイン",
+      "url": "https://www.digital.go.jp/policies/servicedesign"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "アクセシビリティは後付けではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "品質要件として扱います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "障害の有無だけで考えません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "高齢者も利用します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一時的なけがもあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "騒音環境も影響します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "小さい画面も条件になります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "低速回線もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Keyboardだけの利用もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Screen Readerも使われます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "見出し構造を正しく作ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "見た目だけで見出しにしません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "画像に代替情報を付けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "装飾画像は扱いを分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "色だけで意味を伝えません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Contrastも確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Focus位置を見失わせません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "操作順も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Form Labelを明確にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Error内容を具体化します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "修正方法も伝えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "入力時間制限も考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "動画には代替手段を考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "音声だけにも注意します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "PDFも利用対象です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Text抽出可能か確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "見出しTagも重要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "読み上げ順を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "スマホでも試します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "拡大表示も試します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "自動Toolを使えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ただし自動検査だけでは足りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Keyboardで確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Screen Readerでも確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "実利用者調査も有効です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "調達時に要件化します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "納品時にも確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "運用更新でも崩れ得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "CMS変更も影響します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "職員教育も必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "文書作成も対象です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "分かりやすい言葉も重要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "専門語を必要以上に使いません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "デジタル以外の支援も考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "電話や対面も役割があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用不能を本人責任にしません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "多様な条件を前提に設計します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用者が目的を達成できるか見ます。",
+      "duration_multiplier": 1.15
+    }
+  ]
+}

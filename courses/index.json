@@ -204,7 +204,14 @@
       "id": "public-dx-govtech",
       "title": "公共DX・GovTech",
       "chapters": [
-        "public-dx-govtech-overview"
+        "public-dx-govtech-overview",
+        "public-dx-service-design",
+        "public-dx-procurement-vendor",
+        "public-dx-standardization-commonization",
+        "public-dx-data-interoperability",
+        "public-dx-cloud-operations",
+        "public-dx-accessibility-inclusion",
+        "public-dx-change-operations"
       ]
     },
     {

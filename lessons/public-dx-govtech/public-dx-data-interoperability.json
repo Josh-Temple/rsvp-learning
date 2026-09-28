@@ -1,0 +1,213 @@
+{
+  "schema_version": 1,
+  "id": "public-dx-data-interoperability",
+  "title": "行政データ連携と相互運用性",
+  "topic": "公共DX",
+  "summary": "項目名やCSV形式を合わせるだけでなく、意味、識別子、コード、文字、更新責任、API契約まで含めて行政データの相互運用性を考える方法を学びます。",
+  "created_at": "2026-09-29",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "デジタル庁 — 政府相互運用性フレームワーク（GIF）",
+      "url": "https://www.digital.go.jp/policies/data_strategy_government_interoperability_framework"
+    },
+    {
+      "title": "デジタル庁 — 地方公共団体情報システムにおける文字の標準化",
+      "url": "https://www.digital.go.jp/policies/local_governments/character-specification"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "データ連携は形式一致だけではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "意味の一致が必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "氏名という項目名だけでは足りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "表記ルールも確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "住所の粒度も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "日付形式も合わせます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "単位もそろえます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "コード体系も重要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "同じ01でも意味が違う場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "識別子も設計します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "人と世帯を混同しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "組織IDも一貫させます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "参照モデルを使う方法があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "GIFはデータモデルの雛形を提供します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "共通部品を再利用できます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "独自項目は理由を明確にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "拡張方法も決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "文字も相互運用へ影響します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "外字は移行を難しくします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "標準文字への対応があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "データ品質も重要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "欠損を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "重複も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "古い値も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "正本を明確にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "どのシステムが更新元か決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "更新責任者も決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "同期頻度も設計します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "即時連携が必要とは限りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Batchで十分な場合もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "APIも契約として扱います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Request形式を定めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Response形式も定めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Error形式も必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Version管理も行います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "互換性を意識します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "変更通知も必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "障害時の再送も考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "重複処理にも備えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "監査Logも必要な場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "データ最小化も考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "必要以上に連携しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用目的を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "権限も制御します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "連携できることと使ってよいことは別です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "技術可能性と法的可否を分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "相互運用性は運用も含みます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "意味と責任をそろえて連携します。",
+      "duration_multiplier": 1.15
+    }
+  ]
+}

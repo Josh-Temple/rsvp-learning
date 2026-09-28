@@ -1,0 +1,217 @@
+{
+  "schema_version": 1,
+  "id": "public-dx-procurement-vendor",
+  "title": "行政IT調達と発注者・事業者の役割",
+  "topic": "公共DX",
+  "summary": "行政IT調達を仕様書作成だけで捉えず、目的、要件、評価、契約、役割分担、変更管理、移行・引継ぎまで一連のマネジメントとして学びます。",
+  "created_at": "2026-09-29",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "デジタル庁 — 調達手続マニュアル・雛形等",
+      "url": "https://www.digital.go.jp/procurement/manual"
+    },
+    {
+      "title": "デジタル庁 — デジタルマーケットプレイス（DMP）",
+      "url": "https://www.digital.go.jp/policies/dmp"
+    },
+    {
+      "title": "デジタル庁 — デジタル社会推進標準ガイドライン",
+      "url": "https://www.digital.go.jp/resources/standard_guidelines"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "調達は契約締結だけではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "課題設定から始まります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "目的と成果を明確にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "手段を先に固定しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "発注者は業務責任を持ちます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "事業者任せにしすぎません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "業務要件を自ら説明します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "必要な品質も定めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "非機能要件も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "運用要件も含めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "保守要件と分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "移行要件も考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "教育や引継ぎも要件です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "成果物だけでなく完了条件を置きます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "評価基準を先に定めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "価格だけで決めない場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "品質と実現性も見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "公平性を守ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "透明性も必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "競争性も考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "仕様を特定製品へ寄せすぎません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "必要なら標準や互換性を使います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "質問への回答を公平に扱います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "提案内容を比較可能にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "契約後も管理が続きます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "役割分担を明確にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "承認権限も決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "変更手順を定めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "追加要望を無制限に入れません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "影響を確認して変更します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "検収条件を具体化します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "動けば完成とは限りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "業務で使えるか確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "運用移行も検証します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "データ移行も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "責任分界を記録します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "障害時の連絡も決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "SLAが必要な場合もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "契約終了も設計します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "データ返却を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "削除方法も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "アカウント停止も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "次事業者への引継ぎも考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Vendor Lock-inも評価します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ただし独自化をゼロにしません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "必要な差分を説明できるようにします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "調達は発注後も続く管理です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "最終的に公共価値へつなげます。",
+      "duration_multiplier": 1.15
+    }
+  ]
+}
