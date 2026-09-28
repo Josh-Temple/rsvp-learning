@@ -1,0 +1,153 @@
+{
+  "schema_version": 1,
+  "id": "security-cia-risk",
+  "title": "機密性・完全性・可用性とリスク",
+  "topic": "情報セキュリティ",
+  "summary": "情報資産、機密性・完全性・可用性、脅威・脆弱性・影響を結び、リスクを考える基礎を学びます。",
+  "created_at": "2026-09-28",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "NIST Cybersecurity Framework (CSF) 2.0",
+      "url": "https://www.nist.gov/publications/nist-cybersecurity-framework-csf-20"
+    },
+    {
+      "title": "IPA 試験要綱・シラバスについて",
+      "url": "https://www.ipa.go.jp/shiken/syllabus/gaiyou.html"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "顧客名簿を守る場面を考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "まず守る情報と業務を特定します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "これを情報資産として捉えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "機密性は閲覧範囲を守ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "完全性は正しさを守ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "可用性は利用可能性を守ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "三つは同時に考える必要があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "暗号化だけで可用性は守れません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "バックアップだけで機密性は守れません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "脅威は損害の原因になり得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "攻撃者だけが脅威ではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "誤操作や災害も原因になります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "脆弱性は悪用され得る弱点です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "古いソフトも弱点になり得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "過剰な権限も弱点になり得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "影響は起きた損害の大きさです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "リスクは一要素だけで決めません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "起こりやすさと影響を見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "資産の重要度も判断材料です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "同じ脆弱性でも影響は違います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "公開資料と個人情報では違います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "対策には優先順位が必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "すべてのリスクをゼロにはできません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "回避する選択肢があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "低減する選択肢があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "移転する選択肢もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "受容する判断もあり得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "判断には責任者が必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "残ったリスクも記録します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "環境変化でリスクは変わります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "定期的に見直す必要があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "対策の有無だけで安心しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "守る対象から考え直します。",
+      "duration_multiplier": 1.15
+    }
+  ]
+}

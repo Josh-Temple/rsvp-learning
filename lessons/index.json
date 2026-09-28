@@ -610,6 +610,62 @@
       "path": "./lessons/statistics-data-analysis/statistics-correlation-regression-causality.json",
       "status": "COMPLETE v0.1",
       "learn_path": "./learn/statistics-correlation-regression-causality.html"
+    },
+    {
+      "id": "security-cia-risk",
+      "title": "機密性・完全性・可用性とリスク",
+      "topic": "情報セキュリティ",
+      "path": "./lessons/information-security/security-cia-risk.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/security-cia-risk.html"
+    },
+    {
+      "id": "security-cryptography-hash-signature",
+      "title": "暗号・ハッシュ・デジタル署名",
+      "topic": "情報セキュリティ",
+      "path": "./lessons/information-security/security-cryptography-hash-signature.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/security-cryptography-hash-signature.html"
+    },
+    {
+      "id": "security-authentication-access-control",
+      "title": "認証・認可・アクセス制御",
+      "topic": "情報セキュリティ",
+      "path": "./lessons/information-security/security-authentication-access-control.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/security-authentication-access-control.html"
+    },
+    {
+      "id": "security-network-endpoint-defense",
+      "title": "ネットワークと端末の防御",
+      "topic": "情報セキュリティ",
+      "path": "./lessons/information-security/security-network-endpoint-defense.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/security-network-endpoint-defense.html"
+    },
+    {
+      "id": "security-vulnerability-secure-development",
+      "title": "脆弱性と安全なソフトウェア開発",
+      "topic": "情報セキュリティ",
+      "path": "./lessons/information-security/security-vulnerability-secure-development.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/security-vulnerability-secure-development.html"
+    },
+    {
+      "id": "security-incident-response-recovery",
+      "title": "インシデント対応と復旧",
+      "topic": "情報セキュリティ",
+      "path": "./lessons/information-security/security-incident-response-recovery.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/security-incident-response-recovery.html"
+    },
+    {
+      "id": "security-governance-supply-chain",
+      "title": "セキュリティガバナンスと供給網",
+      "topic": "情報セキュリティ",
+      "path": "./lessons/information-security/security-governance-supply-chain.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/security-governance-supply-chain.html"
     }
   ]
 }

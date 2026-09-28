@@ -1,0 +1,153 @@
+{
+  "schema_version": 1,
+  "id": "security-governance-supply-chain",
+  "title": "セキュリティガバナンスと供給網",
+  "topic": "情報セキュリティ",
+  "summary": "セキュリティを経営と業務の責任として捉え、方針、役割、教育、委託先・ソフトウェア供給網のリスク管理を学びます。",
+  "created_at": "2026-09-28",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "NIST Cybersecurity Framework (CSF) 2.0",
+      "url": "https://www.nist.gov/publications/nist-cybersecurity-framework-csf-20"
+    },
+    {
+      "title": "NIST SP 1305, CSF 2.0 Quick-Start Guide for Cybersecurity Supply Chain Risk Management",
+      "url": "https://csrc.nist.gov/pubs/sp/1305/final"
+    },
+    {
+      "title": "IPA 試験要綱・シラバスについて",
+      "url": "https://www.ipa.go.jp/shiken/syllabus/gaiyou.html"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "セキュリティはIT部門だけの仕事でありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "経営上のリスクとして扱います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "方針を組織の目的へ結びます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "責任者を明確にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "判断権限も明確にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "例外承認の方法を決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ルールは実行可能な形にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "守れないルールを放置しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "教育を定期的に行います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "役割ごとに内容を変えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "標的型メールだけを教えません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "誤送信や権限管理も扱います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "委託先もリスクへ含めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "契約前に要件を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "契約中も状態を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "終了時のデータ処理も決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "外部サービスの依存を把握します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "部品の供給元も把握します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "更新停止のリスクもあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "供給網は自社だけで完結しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "必要なセキュリティ要件を伝えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "報告義務も契約で確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "重大障害時の連絡も決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一社への集中もリスクです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "代替手段を検討します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "監査結果だけで安心しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "実際の運用も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "指標で改善状況を追います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "事故や変更から方針を見直します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "統治は一度作って終わりません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "技術と運用を同じ目的へ合わせます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "組織全体で継続的に改善します。",
+      "duration_multiplier": 1.15
+    }
+  ]
+}

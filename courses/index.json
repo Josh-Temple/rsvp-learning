@@ -52,7 +52,14 @@
       "id": "information-security",
       "title": "情報セキュリティ",
       "chapters": [
-        "information-security-overview"
+        "information-security-overview",
+        "security-cia-risk",
+        "security-cryptography-hash-signature",
+        "security-authentication-access-control",
+        "security-network-endpoint-defense",
+        "security-vulnerability-secure-development",
+        "security-incident-response-recovery",
+        "security-governance-supply-chain"
       ]
     },
     {

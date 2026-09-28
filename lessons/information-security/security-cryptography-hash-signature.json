@@ -1,0 +1,157 @@
+{
+  "schema_version": 1,
+  "id": "security-cryptography-hash-signature",
+  "title": "暗号・ハッシュ・デジタル署名",
+  "topic": "情報セキュリティ",
+  "summary": "暗号化、ハッシュ、デジタル署名の役割を分け、鍵管理を含めて何を守れるのかを学びます。",
+  "created_at": "2026-09-28",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "NIST Updates FIPS 197, Advanced Encryption Standard (AES)",
+      "url": "https://csrc.nist.gov/news/2023/nist-updates-fips-197-advanced-encryption-standard"
+    },
+    {
+      "title": "FIPS 180-4, Secure Hash Standard (SHS)",
+      "url": "https://csrc.nist.gov/pubs/fips/180-4/upd1/final"
+    },
+    {
+      "title": "FIPS 186-5, Digital Signature Standard (DSS)",
+      "url": "https://csrc.nist.gov/pubs/fips/186-5/final"
+    },
+    {
+      "title": "NIST SP 800-57 Part 1 Rev. 5, Recommendation for Key Management",
+      "url": "https://csrc.nist.gov/pubs/sp/800/57/pt1/r5/final"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "暗号化は内容を読みにくくします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "復号には対応する鍵を使います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "共通鍵方式では鍵を共有します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "公開鍵方式は鍵の役割を分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "方式ごとに用途が異なります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "暗号化は改ざん検知と同じでありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ハッシュは要約値を作ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "元データが変わると値も変わります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "改ざん検知に利用できます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ハッシュは暗号化とは違います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "通常は元へ戻す目的で使いません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "パスワード保存にも利用されます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "その場合は専用設計が必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "単純なハッシュだけでは不十分です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "デジタル署名は署名者を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "データの変更検知にも使えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "暗号化と署名は目的が違います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "秘密にしたいなら暗号化を考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "改ざんを見たいなら整合性を考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "署名者を見たいなら署名を考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "鍵が漏れると仕組みが崩れます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "強い方式でも鍵管理が弱いと危険です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "鍵の生成も管理対象です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "保存場所も管理対象です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "配布方法も管理対象です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "更新と失効も管理します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "バックアップも慎重に扱います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "鍵ごとに利用目的を分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "暗号方式を自作しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "標準的な方式を適切に使います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "暗号化済みなら安全でしょうか。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "鍵と利用方法まで確認します。",
+      "duration_multiplier": 1.15
+    }
+  ]
+}

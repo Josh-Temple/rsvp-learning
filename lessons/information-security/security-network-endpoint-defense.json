@@ -1,0 +1,149 @@
+{
+  "schema_version": 1,
+  "id": "security-network-endpoint-defense",
+  "title": "ネットワークと端末の防御",
+  "topic": "情報セキュリティ",
+  "summary": "境界防御だけに依存せず、分離、通信制御、端末管理、更新、監視を重ねる考え方を学びます。",
+  "created_at": "2026-09-28",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "NIST SP 800-207, Zero Trust Architecture",
+      "url": "https://csrc.nist.gov/pubs/sp/800/207/final"
+    },
+    {
+      "title": "NIST Cybersecurity Framework (CSF) 2.0",
+      "url": "https://www.nist.gov/publications/nist-cybersecurity-framework-csf-20"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "外部との境界だけを守れば十分でありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "内部からの攻撃も考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "侵入後の広がりも考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ネットワークを分ける方法があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "重要資源への経路を絞ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "必要な通信だけを許します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "不要なポートを公開しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "通信元だけで信用しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用者と端末も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "端末の更新を続けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "古いソフトを放置しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "不要なソフトを減らします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "管理者権限を常用しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "マルウェア対策も一層です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "単一の製品だけに依存しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ログを残して異常を見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "通信量の変化も手掛かりです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "不審な接続先も調べます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "暗号化通信でも安全とは限りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "中身が悪意ある場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "DNSも攻撃対象になり得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "名前解決の異常も調べます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "無線LANも管理対象です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "持出し端末も管理対象です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "紛失時の対策を用意します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "遠隔停止も選択肢です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "重要資源はさらに分離します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "侵入を前提に被害を抑えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "境界内なら信頼できるでしょうか。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "場所だけでは判断できません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "多層の防御で補い合います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "監視と更新を続けます。",
+      "duration_multiplier": 1.15
+    }
+  ]
+}
