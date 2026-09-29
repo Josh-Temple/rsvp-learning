@@ -950,6 +950,62 @@
       "path": "./lessons/information-security/security-governance-supply-chain.json",
       "status": "COMPLETE v0.1",
       "learn_path": "./learn/security-governance-supply-chain.html"
+    },
+    {
+      "id": "integrated-case-problem-framing",
+      "title": "統合ケース1: 課題設定とAs-Is",
+      "topic": "統合ケース",
+      "path": "./lessons/integrated-case/integrated-case-problem-framing.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/integrated-case-problem-framing.html"
+    },
+    {
+      "id": "integrated-case-requirements-scope",
+      "title": "統合ケース2: To-Be・要件・スコープ",
+      "topic": "統合ケース",
+      "path": "./lessons/integrated-case/integrated-case-requirements-scope.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/integrated-case-requirements-scope.html"
+    },
+    {
+      "id": "integrated-case-data-api-architecture",
+      "title": "統合ケース3: データ・API・アーキテクチャ",
+      "topic": "統合ケース",
+      "path": "./lessons/integrated-case/integrated-case-data-api-architecture.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/integrated-case-data-api-architecture.html"
+    },
+    {
+      "id": "integrated-case-security-cloud",
+      "title": "統合ケース4: Security・Cloud・復旧",
+      "topic": "統合ケース",
+      "path": "./lessons/integrated-case/integrated-case-security-cloud.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/integrated-case-security-cloud.html"
+    },
+    {
+      "id": "integrated-case-ai-governance",
+      "title": "統合ケース5: 生成AIを入れるか",
+      "topic": "統合ケース",
+      "path": "./lessons/integrated-case/integrated-case-ai-governance.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/integrated-case-ai-governance.html"
+    },
+    {
+      "id": "integrated-case-delivery-change",
+      "title": "統合ケース6: Delivery・CI/CD・移行",
+      "topic": "統合ケース",
+      "path": "./lessons/integrated-case/integrated-case-delivery-change.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/integrated-case-delivery-change.html"
+    },
+    {
+      "id": "integrated-case-outcomes-operations",
+      "title": "統合ケース7: 効果測定・運用・改善",
+      "topic": "統合ケース",
+      "path": "./lessons/integrated-case/integrated-case-outcomes-operations.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/integrated-case-outcomes-operations.html"
     }
   ]
 }
