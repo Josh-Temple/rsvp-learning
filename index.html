@@ -34,7 +34,7 @@
 
       <div class="top-actions">
         <button id="current-lesson" class="current-lesson" type="button" aria-label="教材を選択">…</button>
-        <a id="learn-link" class="mode-link icon-mode-link" href="./" aria-label="Learn版で開く" title="Learn" hidden>
+        <a id="learn-link" class="mode-link icon-mode-link" href="./index.html?library=learn" aria-label="Learn教材一覧を開く" title="Learn">
           <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <path d="M4 5.5c2.6-.8 5.3-.4 8 1.2v12c-2.7-1.6-5.4-2-8-1.2v-12Z" />
             <path d="M20 5.5c-2.6-.8-5.3-.4-8 1.2v12c2.7-1.6 5.4-2 8-1.2v-12Z" />
@@ -100,6 +100,12 @@
         <div class="library-switch" role="group" aria-label="ライブラリモード">
           <button id="library-rsvp-mode" class="library-switch-button is-active" type="button" aria-label="RSVP教材" aria-pressed="true" title="RSVP">
             <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+          </button>
+          <button id="library-learn-mode" class="library-switch-button" type="button" aria-label="Learn教材" aria-pressed="false" title="Learn">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 5.5c2.6-.8 5.3-.4 8 1.2v12c-2.7-1.6-5.4-2-8-1.2v-12Z" />
+              <path d="M20 5.5c-2.6-.8-5.3-.4-8 1.2v12c2.7-1.6 5.4-2 8-1.2v-12Z" />
+            </svg>
           </button>
           <button id="library-listen-mode" class="library-switch-button" type="button" aria-label="Listenコンテンツ" aria-pressed="false" title="Listen">
             <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
