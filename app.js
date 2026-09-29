@@ -34,6 +34,7 @@ const els = {
   libraryOverlay: document.querySelector("#library-overlay"),
   libraryContent: document.querySelector("#library-content"),
   libraryRsvpMode: document.querySelector("#library-rsvp-mode"),
+  libraryLearnMode: document.querySelector("#library-learn-mode"),
   libraryListenMode: document.querySelector("#library-listen-mode"),
   currentLesson: document.querySelector("#current-lesson"),
   learnLink: document.querySelector("#learn-link"),
@@ -196,9 +197,13 @@ function render() {
 
   els.currentLesson.textContent = state.lesson.title;
   const lessonMeta = state.lessonMap.get(state.lessonId);
-  els.learnLink.hidden = !lessonMeta?.learn_path;
-  if (lessonMeta?.learn_path) els.learnLink.href = lessonMeta.learn_path;
-  els.learnLink.setAttribute("aria-label", `${state.lesson.title}をLearn版で開く`);
+  const learnPath = lessonMeta?.learn_path;
+  els.learnLink.hidden = false;
+  els.learnLink.href = learnPath ?? "./index.html?library=learn";
+  els.learnLink.setAttribute(
+    "aria-label",
+    learnPath ? `${state.lesson.title}をLearn版で開く` : "Learn教材一覧を開く",
+  );
   els.chunkText.textContent = chunk?.text ?? "完了";
   els.progressText.textContent = total ? `${current}·${total}` : "0·0";
   els.progressBar.style.width = total ? `${(current / total) * 100}%` : "0%";
@@ -447,6 +452,60 @@ function listenHref(path) {
   return `./listen/${String(path).replace(/^\.\//, "")}`;
 }
 
+function renderLearnLibrary() {
+  const items = state.catalog.filter((item) => item?.learn_path);
+
+  if (!items.length) {
+    const empty = document.createElement("div");
+    empty.className = "library-empty";
+    empty.textContent = "まだありません";
+    els.libraryContent.append(empty);
+    return;
+  }
+
+  const groups = new Map();
+  for (const item of items) {
+    const topic = item.topic || "その他";
+    if (!groups.has(topic)) groups.set(topic, []);
+    groups.get(topic).push(item);
+  }
+
+  for (const [topic, entries] of groups) {
+    const section = document.createElement("section");
+    section.className = "learn-topic";
+
+    const heading = document.createElement("h2");
+    heading.className = "learn-topic-label";
+    heading.textContent = topic;
+    section.append(heading);
+
+    for (const item of entries) {
+      const row = document.createElement("a");
+      row.className = "library-learn-row";
+      row.href = item.learn_path;
+      row.setAttribute("aria-label", `${item.title}をLearnで開く`);
+
+      const kind = document.createElement("span");
+      kind.className = "learn-kind";
+      kind.innerHTML = '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 5.5c2.6-.8 5.3-.4 8 1.2v12c-2.7-1.6-5.4-2-8-1.2v-12Z"/><path d="M20 5.5c-2.6-.8-5.3-.4-8 1.2v12c2.7-1.6 5.4-2 8-1.2v-12Z"/></svg>';
+
+      const title = document.createElement("span");
+      title.className = "library-learn-title";
+      title.textContent = item.title;
+
+      const arrow = document.createElement("span");
+      arrow.className = "library-learn-arrow";
+      arrow.setAttribute("aria-hidden", "true");
+      arrow.textContent = "›";
+
+      row.append(kind, title, arrow);
+      section.append(row);
+    }
+
+    els.libraryContent.append(section);
+  }
+}
+
 function renderListenLibrary() {
   const items = [...state.listenItems].sort((a, b) => b.date.localeCompare(a.date));
 
@@ -566,13 +625,20 @@ function renderLibrary() {
   if (!els.libraryContent) return;
   els.libraryContent.replaceChildren();
 
+  const learn = state.libraryView === "learn";
   const listen = state.libraryView === "listen";
-  els.libraryRsvpMode?.classList.toggle("is-active", !listen);
+  const rsvp = !learn && !listen;
+
+  els.libraryRsvpMode?.classList.toggle("is-active", rsvp);
+  els.libraryLearnMode?.classList.toggle("is-active", learn);
   els.libraryListenMode?.classList.toggle("is-active", listen);
-  els.libraryRsvpMode?.setAttribute("aria-pressed", String(!listen));
+  els.libraryRsvpMode?.setAttribute("aria-pressed", String(rsvp));
+  els.libraryLearnMode?.setAttribute("aria-pressed", String(learn));
   els.libraryListenMode?.setAttribute("aria-pressed", String(listen));
 
-  if (listen) {
+  if (learn) {
+    renderLearnLibrary();
+  } else if (listen) {
     renderListenLibrary();
   } else {
     renderRsvpLibrary();
@@ -580,7 +646,7 @@ function renderLibrary() {
 }
 
 function setLibraryView(view) {
-  state.libraryView = view === "listen" ? "listen" : "rsvp";
+  state.libraryView = view === "listen" || view === "learn" ? view : "rsvp";
   renderLibrary();
 }
 
@@ -656,6 +722,7 @@ els.libraryOpen.addEventListener("click", openLibrary);
 els.currentLesson.addEventListener("click", openLibrary);
 els.libraryClose.addEventListener("click", closeLibrary);
 els.libraryRsvpMode.addEventListener("click", () => setLibraryView("rsvp"));
+els.libraryLearnMode.addEventListener("click", () => setLibraryView("learn"));
 els.libraryListenMode.addEventListener("click", () => setLibraryView("listen"));
 els.libraryOverlay.addEventListener("click", (event) => {
   if (event.target === els.libraryOverlay) closeLibrary();
@@ -733,8 +800,9 @@ updatePlayButton();
 loadCatalogs()
   .then(() => {
     const params = new URLSearchParams(window.location.search);
-    if (params.get("library") === "listen") {
-      setLibraryView("listen");
+    const library = params.get("library");
+    if (library === "listen" || library === "learn") {
+      setLibraryView(library);
       openLibrary();
     }
   })
