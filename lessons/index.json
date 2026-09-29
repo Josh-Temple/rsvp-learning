@@ -350,6 +350,62 @@
       "status": "SEED / 概要のみ"
     },
     {
+      "id": "healthcare-care-workflow-continuity",
+      "title": "介護業務フローと記録・連携・請求",
+      "topic": "ヘルスケアDX",
+      "path": "./lessons/healthcare-care-dx/healthcare-care-workflow-continuity.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/healthcare-care-workflow-continuity.html"
+    },
+    {
+      "id": "healthcare-care-data-sharing",
+      "title": "医療・介護データ連携と介護情報基盤",
+      "topic": "ヘルスケアDX",
+      "path": "./lessons/healthcare-care-dx/healthcare-care-data-sharing.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/healthcare-care-data-sharing.html"
+    },
+    {
+      "id": "healthcare-care-privacy-security",
+      "title": "医療・介護データの個人情報と安全管理",
+      "topic": "ヘルスケアDX",
+      "path": "./lessons/healthcare-care-dx/healthcare-care-privacy-security.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/healthcare-care-privacy-security.html"
+    },
+    {
+      "id": "healthcare-care-technology-adoption",
+      "title": "介護テクノロジー導入と現場定着",
+      "topic": "ヘルスケアDX",
+      "path": "./lessons/healthcare-care-dx/healthcare-care-technology-adoption.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/healthcare-care-technology-adoption.html"
+    },
+    {
+      "id": "healthcare-care-ai-oversight",
+      "title": "介護現場のAI支援とHuman Oversight",
+      "topic": "ヘルスケアDX",
+      "path": "./lessons/healthcare-care-dx/healthcare-care-ai-oversight.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/healthcare-care-ai-oversight.html"
+    },
+    {
+      "id": "healthcare-care-productivity-quality",
+      "title": "生産性向上とケア品質の同時評価",
+      "topic": "ヘルスケアDX",
+      "path": "./lessons/healthcare-care-dx/healthcare-care-productivity-quality.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/healthcare-care-productivity-quality.html"
+    },
+    {
+      "id": "healthcare-care-policy-fee-change",
+      "title": "制度・介護報酬改定とシステム変更",
+      "topic": "ヘルスケアDX",
+      "path": "./lessons/healthcare-care-dx/healthcare-care-policy-fee-change.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/healthcare-care-policy-fee-change.html"
+    },
+    {
       "id": "rsvp-basics",
       "title": "RSVP学習の使い方",
       "topic": "使い方",
