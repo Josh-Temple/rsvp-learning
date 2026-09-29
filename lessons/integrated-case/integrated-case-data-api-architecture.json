@@ -1,0 +1,204 @@
+{
+  "schema_version": 1,
+  "id": "integrated-case-data-api-architecture",
+  "title": "統合ケース3: データ・API・アーキテクチャ",
+  "topic": "統合ケース",
+  "summary": "申請・審査サービスのデータ、正本、API、同期・非同期処理、冪等性、履歴を設計し、画面の裏側で情報がどう流れるかを統合して考えます。",
+  "created_at": "2026-09-29",
+  "base_duration_ms": 680,
+  "sources": [],
+  "chunks": [
+    {
+      "text": "申請を一つの塊にしません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "申請者を分けて考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "申請本体も分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "添付情報もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "審査状態も持ちます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "担当情報も必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "関係を明確にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "重複Dataを減らします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "どれが正本か決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "派生情報と分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "状態変更を履歴に残します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "現在値だけでは足りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "誰が変えたか残します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "いつ変えたかも残します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "過去時点を再現できるようにします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "監査にもつながります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "APIは画面の裏の契約です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Requestを定めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Responseも定めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Errorも定めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Versionを意識します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用側を突然壊しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "認証と認可も必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "対象単位で権限を見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "即時処理が必要か考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "受付番号は即時に返します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "重い集計は後でもよいです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "通知も非同期にできます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "完了前の状態を持ちます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Queue遅延も想定します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "順序逆転もあり得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "完了条件を明確にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "通信失敗では結果が不明です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "安全に再試行できるようにします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Idempotencyを使えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "処理IDを持たせます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "重複登録を防ぎます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "同じ依頼を識別します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "失敗を成功扱いしません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "結果確認経路を用意します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "DB成功と通知失敗を分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "途中成功を想定します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "補償処理も考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一貫性が遅れる場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "画面へ状態を示します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "観測用Logを残します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "障害を追跡できるようにします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "状態の確定点を説明します。",
+      "duration_multiplier": 1.15
+    }
+  ]
+}
