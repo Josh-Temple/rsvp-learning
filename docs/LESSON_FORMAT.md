@@ -14,7 +14,7 @@
 
 ## 教材statusと完成条件
 
-`lessons/index.json` の `status` と、対応するMarkdown原稿の `Status:` を同じ値にします。RSVP JSON自体にはstatusを重複させません。status一覧は次の3つです。
+`lessons/index.json` の全Lessonに `status` を必須で持たせ、対応するMarkdown原稿の `Status:` と同じ値にします。RSVP JSON自体にはstatusを重複させません。status一覧は次の3つです。
 
 | status | 意味 |
 |---|---|
