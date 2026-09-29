@@ -4,7 +4,9 @@
       "id": "requirements-basics",
       "title": "要件定義の基礎",
       "topic": "システム開発",
-      "path": "./lessons/requirements/requirements-basics.json"
+      "path": "./lessons/requirements/requirements-basics.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/requirements-basics.html"
     },
     {
       "id": "system-development-overview",
@@ -409,7 +411,9 @@
       "id": "rsvp-basics",
       "title": "RSVP学習の使い方",
       "topic": "使い方",
-      "path": "./lessons/examples/rsvp-basics.json"
+      "path": "./lessons/examples/rsvp-basics.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/rsvp-basics.html"
     },
     {
       "id": "requirements-as-is-to-be",
