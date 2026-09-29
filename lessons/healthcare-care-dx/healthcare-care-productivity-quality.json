@@ -1,0 +1,217 @@
+{
+  "schema_version": 1,
+  "id": "healthcare-care-productivity-quality",
+  "title": "生産性向上とケア品質の同時評価",
+  "topic": "ヘルスケアDX",
+  "summary": "介護現場の生産性向上を時間短縮だけで測らず、職員負担、ケア品質、安全性、利用者体験、手戻りを同時に観測する方法を学びます。",
+  "created_at": "2026-09-29",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "厚生労働省 — 介護分野における生産性向上の取組のお知らせ",
+      "url": "https://www.mhlw.go.jp/stf/kaigo-seisansei_information.html"
+    },
+    {
+      "title": "厚生労働省 — 介護分野における生産性向上の取組の普及・啓発",
+      "url": "https://www.mhlw.go.jp/stf/kaigo-seisansei_forum.html"
+    },
+    {
+      "title": "厚生労働省 — 令和8年度 介護テクノロジー等による生産性向上の取組に関する調査及び効果測定",
+      "url": "https://www.mhlw.go.jp/stf/newpage_73323.html"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "生産性向上は速度だけではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "職員負担を減らします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ケア品質も守ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用者価値も見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "安全性も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "改善前にBaselineを取ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "対象期間をそろえます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "対象職員を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用者条件も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "繁忙差も考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "記録時間を測れます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "移動時間も測れます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "検索時間も測れます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "待ち時間も測れます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "中断回数も負担です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "残業も指標になり得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ただし時間だけに寄せません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "事故件数も見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ヒヤリハットも見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "手戻りも確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "記録漏れも確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用者の待ちも見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "職員の主観負担も見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "心理的負担もあり得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "夜勤への影響も分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "職種ごとの差も見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "平均だけにしません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "分布も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一部の負担増を隠さないようにします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "業務移管にも注意します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "A職種の削減がB職種を増やし得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "外部委託への転嫁も見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "質の代理指標を決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "必要なら利用者調査も行います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "家族意見も参考になります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "定性情報も残します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "改善策を小さく試します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "同じ条件で再測定します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "効果差を見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "副作用も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "効果が続くか確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "初月だけ良い場合もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "習熟で改善する場合もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "疲弊で悪化する場合もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "指標を定期的に見直します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "数字達成を目的化しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "現場改善へ戻します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "質と負担を同時に評価します。",
+      "duration_multiplier": 1.15
+    }
+  ]
+}
