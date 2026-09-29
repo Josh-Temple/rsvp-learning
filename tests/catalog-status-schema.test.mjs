@@ -9,8 +9,9 @@ const ajv = new Ajv2020({ allErrors: true, strict: false });
 const validate = ajv.compile(schema);
 const meta = { id: "sample", title: "教材", topic: "基礎", path: "./lessons/sample.json" };
 
-test("lesson catalog accepts current synchronized statuses", () => {
+test("lesson catalog requires and accepts current synchronized statuses", () => {
   assert.equal(validate(catalog), true, ajv.errorsText(validate.errors));
+  assert.equal(validate({ lessons: [meta] }), false);
   assert.equal(validate({ lessons: [{ ...meta, status: "SEED / 概要のみ" }] }), true);
   assert.equal(validate({ lessons: [{ ...meta, status: "DRAFT v0.1" }] }), true);
   assert.equal(validate({ lessons: [{ ...meta, status: "COMPLETE v0.1", learn_path: "./learn/sample.html" }] }), true);
