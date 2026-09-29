@@ -70,3 +70,25 @@ test("shared Learn player exposes Web Speech API and preserves paused voice-chan
   assert.match(js, /index\.html\?library=learn/);
   assert.match(js, /index\.html\?library=listen/);
 });
+
+
+test("Learn library exposes course-level continuous playback without replacing single-chapter links", async () => {
+  const index = await fs.readFile(new URL("../index.html", import.meta.url), "utf8");
+  const app = await fs.readFile(new URL("../app.js", import.meta.url), "utf8");
+  const player = await fs.readFile(new URL("../learn/course-player.js", import.meta.url), "utf8");
+
+  assert.match(index, /id="learn-course-player"/);
+  assert.match(index, /learn\/course-player\.js/);
+  assert.match(app, /className = "learn-course-play"/);
+  assert.match(app, /dataset\.courseId = course\.id/);
+  assert.match(app, /row\.href = item\.learn_path/);
+
+  assert.match(player, /courses\/index\.json/);
+  assert.match(player, /lessons\/index\.json/);
+  assert.match(player, /course\.chapters\.filter/);
+  assert.match(player, /fetch\(meta\.learn_path\)/);
+  assert.match(player, /article\.querySelectorAll\("h1, h2, h3, p"\)/);
+  assert.match(player, /loadChapter\(chapterIndex \+ 1, activeRun\)/);
+  assert.match(player, /SpeechSynthesisUtterance/);
+  assert.match(player, /navigator\?\.wakeLock/);
+});

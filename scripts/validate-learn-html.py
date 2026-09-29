@@ -107,8 +107,8 @@ for file in html_files:
     if "<script>" in source or "<style>" in source:
         fail(f"{file}: inline script/style remains")
 
-player = ROOT / "learn/learn.js"
-result = subprocess.run(["node", "--check", str(player)], cwd=ROOT, capture_output=True, text=True)
-if result.returncode:
-    fail(f"learn.js syntax error: {result.stderr.strip()}")
+for player in [ROOT / "learn/learn.js", ROOT / "learn/course-player.js"]:
+    result = subprocess.run(["node", "--check", str(player)], cwd=ROOT, capture_output=True, text=True)
+    if result.returncode:
+        fail(f"{player.name} syntax error: {result.stderr.strip()}")
 print(f"Learn HTML validation: PASS ({len(html_files)} pages; static DOM and balanced tags)")
