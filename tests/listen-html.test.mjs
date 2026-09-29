@@ -17,6 +17,13 @@ test("registered Listen pages satisfy the minimum read-aloud contract", async ()
     assert.match(html, /<p[ >]/i, `${item.id}: paragraph text`);
     assert.match(html, /speechSynthesis/, `${item.id}: Web Speech API`);
     assert.match(html, /SpeechSynthesisUtterance/, `${item.id}: utterance`);
+    assert.match(html, /id="prev-block"/, `${item.id}: previous reading unit control`);
+    assert.match(html, /id="next-block"/, `${item.id}: next reading unit control`);
+    assert.match(html, /id="prev-section"/, `${item.id}: previous section control`);
+    assert.match(html, /id="next-section"/, `${item.id}: next section control`);
+    assert.match(html, /function jumpSection\(/, `${item.id}: section jump logic`);
+    assert.match(html, /index\.html\?library=learn/, `${item.id}: Learn navigation`);
+    assert.match(html, /index\.html" aria-label="RSVPへ移動"/, `${item.id}: RSVP navigation`);
     assert.match(html, /wakeLock/, `${item.id}: Screen Wake Lock API`);
     assert.match(html, /request\("screen"\)/, `${item.id}: screen wake lock request`);
     assert.match(html, /releaseWakeLock/, `${item.id}: wake lock release`);
