@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="RSVPプレイヤーの基本操作と、速度より理解を優先する使い方を確認する短いガイドです。" />
+  <meta name="theme-color" content="#f2efe8" />
+  <title>RSVP学習の使い方 — Learn</title>
+  <link rel="stylesheet" href="./learn.css" />
+  <script src="./learn.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="top">
+      <a href="../index.html">RSVPに戻る</a>
+      <span class="mode">LEARN · 使い方</span>
+    </header>
+    <main>
+      <section class="reader" id="speech-reader" aria-label="読み上げプレイヤー">
+        <div class="reader-row">
+          <button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+          <button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+          <button id="speech-stop" type="button" aria-label="停止" disabled>■</button>
+          <select id="speech-voice" aria-label="読み上げ音声"></select>
+          <label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+        </div>
+        <div id="speech-status" class="reader-status" role="status">読み上げ準備中</div>
+      </section>
+      <article id="learn-article">
+        <h1>RSVP学習の使い方</h1>
+        <p class="lead">RSVPは、短い意味単位を同じ位置へ順に表示して読む方式です。速度よりも、内容を理解できることを優先して使います。</p>
+
+        <h2>同じ位置へ短い単位を表示する</h2>
+        <p>この画面では、短い意味のまとまりを一つずつ同じ位置に表示します。視線を大きく動かさずに文章を追えます。</p>
+
+        <h2>理解が追いつかなければ調整する</h2>
+        <p>理解が追いつかない時は速度を下げます。重要な部分では一時停止したり、少し戻ったりできます。速度を上げ続ける必要はありません。</p>
+
+        <h2>速さより理解を優先する</h2>
+        <p>速さだけではなく、内容を理解できたかを重視してください。読み終えた後に要点を思い出せないなら、速度を落としたり別の形式で確認したりします。</p>
+
+        <h2>学習目的に応じて形式を使い分ける</h2>
+        <p>RSVPは短時間で文章を追うのに向く一方、前後を見比べたい内容や、耳で連続して聞きたい内容ではLearnなど別の形式が使いやすい場合があります。目的に合わせて使い分けます。</p>
+
+        <h3>この教材の扱う範囲</h3>
+        <p class="endnote">RSVPは学習手段の一つです。すべての文章や目的に最適とは限らないため、理解や復習の必要に応じてLearnなど別の形式も使います。</p>
+      </article>
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="要件定義の目的、業務要件とシステム要件、機能・非機能、関係者、スコープ、検証可能性を一つの流れで整理する入口教材です。" />
+  <meta name="theme-color" content="#f2efe8" />
+  <title>要件定義の基礎 — Learn</title>
+  <link rel="stylesheet" href="./learn.css" />
+  <script src="./learn.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="top">
+      <a href="../index.html">RSVPに戻る</a>
+      <span class="mode">LEARN · システム開発</span>
+    </header>
+    <main>
+      <section class="reader" id="speech-reader" aria-label="読み上げプレイヤー">
+        <div class="reader-row">
+          <button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+          <button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+          <button id="speech-stop" type="button" aria-label="停止" disabled>■</button>
+          <select id="speech-voice" aria-label="読み上げ音声"></select>
+          <label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+        </div>
+        <div id="speech-status" class="reader-status" role="status">読み上げ準備中</div>
+      </section>
+      <article id="learn-article">
+        <h1>要件定義の基礎</h1>
+        <p class="lead">要件定義は、業務目的を実装可能で検証可能な条件へ変換し、関係者と認識を合わせる作業です。</p>
+
+        <h2>目的から始める</h2>
+        <p>要件定義は実装前の整理です。何を実現するかを明確にします。最初に業務目的を確認します。技術名から始めません。現状業務を理解します。誰が何をするかを見ます。どこで困っているかを見ます。改善後の結果を考えます。</p>
+
+        <h2>業務要件とSystem要件を分ける</h2>
+        <p>業務要件を整理します。業務要件は達成したい結果です。次にSystem要件へ落とします。System要件は実現条件です。機能要件があります。何をするかを表します。非機能要件もあります。どの品質で動くかを表します。</p>
+        <p>性能も非機能要件です。可用性も含まれます。Securityも含まれます。運用性も確認します。機能が正しくても、必要な性能や安全性、運用性がなければ業務目的を満たせない場合があります。</p>
+
+        <h2>関係者の要望を整理する</h2>
+        <p>利用者だけが関係者ではありません。現場職員も関係します。管理者も関係します。保守担当も関係します。外部事業者も関係します。要望と要件を分けます。要望をそのまま採用しません。目的との関係を確認します。</p>
+
+        <h2>Scopeと優先順位を決める</h2>
+        <p>何を作らないかも決めます。Scopeを明確にします。対象外も明確にします。優先順位を決めます。すべてを一度に作りません。限られた時間や予算の中で、目的に必要な範囲を選びます。</p>
+
+        <h2>検証できる条件へ変える</h2>
+        <p>曖昧な表現を減らします。確認可能な条件へ変えます。使いやすいだけでは曖昧です。観測できる条件へ具体化します。要件同士の矛盾を確認します。実現可能性も確認します。</p>
+
+        <h2>設計・Test・変更管理へつなぐ</h2>
+        <p>根拠を追えるようにします。業務目的へ戻れるようにします。設計へつなげます。Testへもつなげます。変更時の影響も追います。要件は書けば終わりではありません。関係者と認識を合わせます。変更理由も記録します。目的から条件へ変換します。</p>
+
+        <h3>この教材の扱う範囲</h3>
+        <p class="endnote">この章は要件定義コースの入口です。現状・改善後業務、機能・非機能、関係者、検証、トレーサビリティは後続章で詳しく扱います。</p>
+      </article>
+    </main>
+  </div>
+</body>
+</html>
