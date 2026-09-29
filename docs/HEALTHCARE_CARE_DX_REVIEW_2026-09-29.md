@@ -69,13 +69,13 @@
 
 ## 同期検証
 
-- `healthcare-care-workflow-continuity`: Learn 1054字 / RSVP 48 chunks / max 20文字
+- `healthcare-care-workflow-continuity`: Learn 1050字 / RSVP 48 chunks / max 20文字
 - `healthcare-care-data-sharing`: Learn 1024字 / RSVP 48 chunks / max 20文字
 - `healthcare-care-privacy-security`: Learn 1066字 / RSVP 48 chunks / max 18文字
 - `healthcare-care-technology-adoption`: Learn 1087字 / RSVP 48 chunks / max 17文字
 - `healthcare-care-ai-oversight`: Learn 1035字 / RSVP 48 chunks / max 24文字
 - `healthcare-care-productivity-quality`: Learn 973字 / RSVP 48 chunks / max 18文字
-- `healthcare-care-policy-fee-change`: Learn 1027字 / RSVP 48 chunks / max 18文字
+- `healthcare-care-policy-fee-change`: Learn 995字 / RSVP 48 chunks / max 18文字
 
 生成時に全7章で次を確認した。
 
