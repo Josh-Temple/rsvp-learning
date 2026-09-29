@@ -1,0 +1,204 @@
+{
+  "schema_version": 1,
+  "id": "integrated-case-security-cloud",
+  "title": "統合ケース4: Security・Cloud・復旧",
+  "topic": "統合ケース",
+  "summary": "同じサービスをCloudへ載せる前提で、CIA、認証・認可、IAM、責任分界、Network、Backup、RTO/RPO、監視を一つの運用設計として考えます。",
+  "created_at": "2026-09-29",
+  "base_duration_ms": 680,
+  "sources": [],
+  "chunks": [
+    {
+      "text": "まず守る情報を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "申請Dataがあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "本人情報も含みます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "完全性も重要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "可用性も必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "脅威と弱点を考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "影響の大きさも見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Riskに応じて対策します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "本人確認と権限は別です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Login成功だけでは不足です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "申請者は自分の情報だけ見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "審査者には別権限があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "管理者権限を絞ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "最小権限を使います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "異動時に権限を見直します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "共用IDを避けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Cloud事業者にも責任があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用組織の責任も残ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "設定責任を曖昧にしません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "App事業者も関係します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "運用事業者も関係します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "障害切分けを決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "契約終了も想定します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Data返却も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "通信を暗号化します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "秘密情報をCodeへ埋めません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "秘密の保管先を決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Network経路を把握します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "公開範囲を絞ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "不要Portを開けません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "証明書期限も監視します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "設定変更を記録します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Backupを取ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "復元試験も行います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "RTOを業務から決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "RPOも業務から決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "障害種類を分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "単一障害だけを考えません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "依存Serviceも確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "代替手順も準備します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "異常を監視します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "失敗率を見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "権限異常も見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "不審Accessも確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Incident時は封じ込めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "影響範囲を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "復旧後に原因を見直します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "再発防止へつなげます。",
+      "duration_multiplier": 1.15
+    }
+  ]
+}

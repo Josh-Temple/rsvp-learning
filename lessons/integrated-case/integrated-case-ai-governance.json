@@ -1,0 +1,204 @@
+{
+  "schema_version": 1,
+  "id": "integrated-case-ai-governance",
+  "title": "統合ケース5: 生成AIを入れるか",
+  "topic": "統合ケース",
+  "summary": "申請・審査サービスへ生成AIを追加する案を、目的、RAG、権限、評価、Human Oversight、Privacy、停止条件から比較し、導入しない選択も含めて判断します。",
+  "created_at": "2026-09-29",
+  "base_duration_ms": 680,
+  "sources": [],
+  "chunks": [
+    {
+      "text": "AI導入を目的にしません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "まず困りごとへ戻ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "問い合わせ対応が候補です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "職員向け検索も候補です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "審査判断は影響が大きいです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "用途ごとにRiskを分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "既存検索で足りるか比べます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "導入しない案も残します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "文章草案は低Risk寄りです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "記録要約も確認が必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "FAQ候補生成も考えられます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "最終回答は人が確認できます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "資格判断は別に扱います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "自動否認は避けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "外部作用も制限します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Tool権限を最小化します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "根拠文書を選びます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "最新版を識別します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "古い資料を除外します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "検索失敗を分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "生成失敗も分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "引用元へ戻れるようにします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "根拠不足なら回答を控えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "不明を埋めさせません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "申請Dataを無断投入しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "機密情報を分類します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "外部送信条件を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "保存設定も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用者権限を継承します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "検索先でも認可します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "管理者権限を絞ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "操作Logを残します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "評価Caseを先に作ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "通常Caseだけにしません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "誤案内も測ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "見逃しも測ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "重大事例を独立に見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "人の確認点を決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Override可能にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "判断責任をAIへ移しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "性能低下を監視します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "文書更新でも再評価します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Model変更でも再評価します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "重大事故なら停止します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "従来手順へ戻せるようにします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "効果が薄ければ撤退します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "AIは手段の一つです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "価値とRiskで判断します。",
+      "duration_multiplier": 1.15
+    }
+  ]
+}

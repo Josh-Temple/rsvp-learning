@@ -1,0 +1,204 @@
+{
+  "schema_version": 1,
+  "id": "integrated-case-requirements-scope",
+  "title": "統合ケース2: To-Be・要件・スコープ",
+  "topic": "統合ケース",
+  "summary": "同じ架空ケースで、To-Be業務、業務要件、システム要件、機能・非機能、例外、受入条件をつなぎ、何を作るかと作らないかを決めます。",
+  "created_at": "2026-09-29",
+  "base_duration_ms": 680,
+  "sources": [],
+  "chunks": [
+    {
+      "text": "To-Beは画面から決めません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "まず改善したい結果を置きます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "再入力を減らしたいとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "差戻しも減らしたいとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "処理状況も見えるようにします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "職員の確認責任は残ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "不要工程は削除を検討します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "必要な判断は残します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "業務要件を先に書きます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "結果と責任を表します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "次にSystem要件へ落とします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Online受付は手段です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "入力Checkも手段です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "状態記録も必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "通知も条件になり得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "業務目的との対応を残します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "機能要件を整理します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "登録や更新があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "検索や通知もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "非機能要件も整理します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "応答時間を考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "可用性も考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Securityも必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "監査Logも要件になり得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "通常Caseだけでは足りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "代理申請もあるとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "書類不足もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "期限後申請もあり得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "標準手順と例外を分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "例外の責任者を決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "自動化しない判断も残します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "例外を裏運用にしません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "全要望を同時に入れません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Mustを決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Shouldも分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "後回しも明示します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "対象外を明記します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "変更要求の手順も決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "目的に効かない機能を削ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Scopeを守ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "受入条件を具体化します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "画面が動くだけでは不足です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "業務結果も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "権限別の動作を試します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "例外Caseも試します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "通知失敗も試します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "要件からTestへ追跡します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "目的から合否を判断します。",
+      "duration_multiplier": 1.15
+    }
+  ]
+}

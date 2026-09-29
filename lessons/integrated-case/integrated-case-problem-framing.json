@@ -1,0 +1,204 @@
+{
+  "schema_version": 1,
+  "id": "integrated-case-problem-framing",
+  "title": "統合ケース1: 課題設定とAs-Is",
+  "topic": "統合ケース",
+  "summary": "申請・審査サービス刷新の架空ケースを使い、症状と原因、利用者、現状業務、Baseline、制約を整理して、解くべき問いを定めます。",
+  "created_at": "2026-09-29",
+  "base_duration_ms": 680,
+  "sources": [],
+  "chunks": [
+    {
+      "text": "相談はSystem刷新から始まりました。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "しかし製品はまだ決めません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "申請処理が遅いことが症状です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "入力誤りも多いとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "問い合わせも増えています。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "まず利用者の目的を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "申請自体が目的ではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "必要な結果を得ることが目的です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "職員側の業務も観察します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "受付から審査まで追います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "紙の確認があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "メール添付もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "表計算へ転記しています。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "担当間の申し送りもあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "差戻しも発生します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "例外処理も記録します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "遅さの原因を一つに決めません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "入力不足かもしれません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "確認待ちかもしれません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "転記が原因かもしれません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "承認待ちも考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "症状と原因を分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "原因は仮説として置きます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "反対の証拠も探します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "現状の処理時間を測ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "平均だけで判断しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "中央値や分布も見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "差戻し率も記録します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "問い合わせ件数も見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "職員の中断も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "改善前をBaselineにします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "成功条件を先に置きます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "法令や契約は制約になり得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "予算も制約になります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "既存Systemも制約です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "期限も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "制約と前提を分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "前提は検証可能にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "紙が必須とは限りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "慣行を法令と混同しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "解くべき問いを短くします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "対象業務を明確にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "対象外も明確にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "誰が決めるか確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "新事実で問いは更新できます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "変更理由を残します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "刷新そのものを成功にしません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用者と業務の結果で見ます。",
+      "duration_multiplier": 1.15
+    }
+  ]
+}
