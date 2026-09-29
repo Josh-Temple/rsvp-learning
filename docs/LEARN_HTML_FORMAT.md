@@ -184,6 +184,8 @@ Learnは文章が主役です。
 
 既存サイトのBaukasten系の見た目と整合させます。
 
+Learnページ上部にはRSVP、Learn、Listenのモード導線を共通コードから表示します。Learnは現在モードとして示し、Learn教材一覧は共通Libraryの `?library=learn` で開きます。RSVP教材と対応するLearnがある場合はRSVP画面の本アイコンから直接そのLearnページへ移動し、対応Learnがない場合も本アイコン自体は隠さずLearn教材一覧への入口として残します。
+
 ## ファイル配置
 
 Learn HTMLは `COMPLETE v0.1` の教材だけに生成し、カタログの `learn_path` と対応させます。静的な教材HTMLは `learn/` 以下、共通コードは同じディレクトリに置きます。
