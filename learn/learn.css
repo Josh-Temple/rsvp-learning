@@ -44,6 +44,24 @@
       font-size: 0.82rem;
       font-weight: 700;
     }
+    .mode-nav {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .mode-nav a {
+      color: var(--muted);
+      font-size: 0.68rem;
+      font-weight: 760;
+      letter-spacing: 0.08em;
+    }
+    .mode-nav a.is-active {
+      color: var(--ink);
+    }
+    .mode-nav a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+    }
     .mode {
       color: var(--accent);
       font-size: 0.72rem;

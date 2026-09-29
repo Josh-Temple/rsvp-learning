@@ -20,13 +20,45 @@
     .controls{display:grid;grid-template-columns:48px 48px 48px 1fr;gap:8px;align-items:center}.controls button,.controls select{min-height:42px;border:1px solid var(--line);background:transparent;color:var(--ink)}
     .speed{display:grid;grid-template-columns:48px 1fr 42px;gap:10px;align-items:center;margin-top:10px;font-size:.78rem;color:var(--muted)} input{width:100%}
     .sources{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}.sources a{color:var(--ink)}
+  
+    .topbar{display:flex;align-items:center;justify-content:space-between}
+    .mode-nav{display:inline-flex;align-items:center;gap:4px}
+    .mode-icon{width:42px;height:42px;display:grid;place-items:center;color:var(--muted);text-decoration:none;opacity:.5}
+    .mode-icon.is-active{color:var(--ink);opacity:1}
+    .mode-icon svg{width:20px;height:20px;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+    .brand-mark{width:22px;height:14px;display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+    .brand-mark i{display:block}.brand-mark i:nth-child(1){background:#a85248}.brand-mark i:nth-child(2){background:#5d7487}.brand-mark i:nth-child(3){background:#c2a653}
+    .transport{display:grid;grid-template-columns:repeat(5,48px);justify-content:center;gap:8px}
+    .transport button,.section-nav button,.voice-row select{min-height:42px;border:1px solid var(--line);background:transparent;color:var(--ink);font:inherit}
+    .transport button{width:48px}
+    .section-nav{display:grid;grid-template-columns:48px 1fr 48px;align-items:center;gap:8px;margin-top:10px}
+    .section-nav button:disabled{opacity:.25}
+    #section-label{min-width:0;overflow:hidden;color:var(--muted);font-size:.78rem;text-align:center;white-space:nowrap;text-overflow:ellipsis}
+    .voice-row{margin-top:10px}.voice-row select{width:100%;padding:0 8px}
+    .mode-icon:focus-visible,.transport button:focus-visible,.section-nav button:focus-visible,.voice-row select:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+
   </style>
 </head>
 <body>
 <main class="shell">
   <header class="topbar">
-    <a class="icon" href="../../index.html?library=listen" aria-label="Listen一覧へ戻る">←</a>
-    <span aria-hidden="true">🎧</span>
+    <nav class="mode-nav" aria-label="モード切替">
+      <a class="mode-icon" href="../../index.html" aria-label="RSVPへ移動" title="RSVP">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      </a>
+      <a class="mode-icon" href="../../index.html?library=learn" aria-label="Learnへ移動" title="Learn">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 5.5c2.6-.8 5.3-.4 8 1.2v12c-2.7-1.6-5.4-2-8-1.2v-12Z" />
+          <path d="M20 5.5c-2.6-.8-5.3-.4-8 1.2v12c2.7-1.6 5.4-2 8-1.2v-12Z" />
+        </svg>
+      </a>
+      <a class="mode-icon is-active" href="../../index.html?library=listen" aria-label="Listen一覧へ移動" aria-current="page" title="Listen">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 13v-1a8 8 0 0 1 16 0v1" />
+          <path d="M4 13h3v7H5a1 1 0 0 1-1-1v-6Zm16 0h-3v7h2a1 1 0 0 0 1-1v-6Z" />
+        </svg>
+      </a>
+    </nav>
     <button id="theme" class="icon" type="button" aria-label="テーマ切替">☾</button>
   </header>
 
@@ -89,10 +121,19 @@
   </article>
 
   <section class="player" aria-label="読み上げ操作">
-    <div class="controls">
+    <div class="transport">
+      <button id="prev-block" type="button" aria-label="前の読み上げ単位へ">←</button>
       <button id="play" type="button" aria-label="再生">▶</button>
       <button id="pause" type="button" aria-label="一時停止">Ⅱ</button>
       <button id="stop" type="button" aria-label="停止">■</button>
+      <button id="next-block" type="button" aria-label="次の読み上げ単位へ">→</button>
+    </div>
+    <div class="section-nav" aria-label="章移動">
+      <button id="prev-section" type="button" aria-label="前の章へ">‹</button>
+      <span id="section-label">導入</span>
+      <button id="next-section" type="button" aria-label="次の章へ">›</button>
+    </div>
+    <div class="voice-row">
       <select id="voice" aria-label="日本語音声"></select>
     </div>
     <div class="speed"><span>速度</span><input id="rate" type="range" min="0.7" max="4" step="0.1" value="1"><span id="rateValue">1.0×</span></div>
@@ -116,10 +157,20 @@
 (() => {
   const synth = window.speechSynthesis;
   const blocks = [...document.querySelectorAll("#article h1,#article h2,#article h3,#article p")];
-  const play = document.querySelector("#play"), pause = document.querySelector("#pause"), stop = document.querySelector("#stop");
-  const voice = document.querySelector("#voice"), rate = document.querySelector("#rate"), rateValue = document.querySelector("#rateValue");
+  const sectionStarts = [...new Set([0, ...blocks.map((node, i) => node.tagName === "H2" ? i : -1).filter(i => i >= 0)])];
+  const play = document.querySelector("#play");
+  const pause = document.querySelector("#pause");
+  const stop = document.querySelector("#stop");
+  const prevBlock = document.querySelector("#prev-block");
+  const nextBlock = document.querySelector("#next-block");
+  const prevSection = document.querySelector("#prev-section");
+  const nextSection = document.querySelector("#next-section");
+  const sectionLabel = document.querySelector("#section-label");
+  const voice = document.querySelector("#voice");
+  const rate = document.querySelector("#rate");
+  const rateValue = document.querySelector("#rateValue");
   const theme = document.querySelector("#theme");
-  let index = 0, playing = false, paused = false, selectedVoice = "";
+  let index = 0, playing = false, paused = false, selectedVoice = "", generation = 0;
   let wakeLock = null, wakeLockWanted = false;
 
   async function requestWakeLock() {
@@ -157,55 +208,173 @@
     voice.replaceChildren();
     for (const v of items) {
       const o = document.createElement("option");
-      o.value = v.voiceURI; o.textContent = v.name; voice.append(o);
+      o.value = v.voiceURI;
+      o.textContent = v.name;
+      voice.append(o);
     }
     if (items.some(v => v.voiceURI === previous)) voice.value = previous;
     selectedVoice = voice.value;
   }
 
-  function clearHighlight(){ blocks.forEach(x => x.classList.remove("is-speaking")); }
+  function clearHighlight() {
+    blocks.forEach(node => node.classList.remove("is-speaking"));
+  }
+
+  function sectionPosition() {
+    let pos = 0;
+    for (let i = 0; i < sectionStarts.length; i += 1) {
+      if (sectionStarts[i] <= index) pos = i;
+      else break;
+    }
+    return pos;
+  }
+
+  function updateNavigation() {
+    prevBlock.disabled = index <= 0;
+    nextBlock.disabled = index >= blocks.length - 1;
+
+    const pos = sectionPosition();
+    const start = sectionStarts[pos] ?? 0;
+    const previousTargetExists = index > start || pos > 0;
+    prevSection.disabled = !previousTargetExists;
+    nextSection.disabled = pos >= sectionStarts.length - 1;
+
+    const startNode = blocks[start];
+    sectionLabel.textContent = startNode?.tagName === "H2" ? startNode.textContent : "導入";
+  }
+
+  function showCurrent() {
+    clearHighlight();
+    const current = blocks[index];
+    if (!current) return;
+    current.classList.add("is-speaking");
+    current.scrollIntoView({ block: "center", behavior: "smooth" });
+    updateNavigation();
+  }
 
   function speakCurrent() {
-    if (!playing || index >= blocks.length) {
-      playing = false; paused = false; clearHighlight(); void releaseWakeLock(); return;
+    if (!playing || paused || index >= blocks.length) {
+      if (index >= blocks.length) {
+        playing = false;
+        paused = false;
+        clearHighlight();
+        void releaseWakeLock();
+      }
+      updateNavigation();
+      return;
     }
-    clearHighlight();
-    blocks[index].classList.add("is-speaking");
-    blocks[index].scrollIntoView({block:"center",behavior:"smooth"});
-    const u = new SpeechSynthesisUtterance(blocks[index].textContent);
-    u.lang = "ja-JP"; u.rate = Number(rate.value);
-    const v = synth.getVoices().find(x => x.voiceURI === voice.value);
-    if (v) u.voice = v;
-    u.onend = () => { if (!playing || paused) return; index += 1; speakCurrent(); };
-    u.onerror = e => {
-      if (e.error !== "canceled" && e.error !== "interrupted") {
-        playing = false; clearHighlight(); void releaseWakeLock();
+
+    showCurrent();
+    const localGeneration = ++generation;
+    const utterance = new SpeechSynthesisUtterance(blocks[index].textContent);
+    utterance.lang = "ja-JP";
+    utterance.rate = Number(rate.value);
+    const selected = synth.getVoices().find(item => item.voiceURI === voice.value);
+    if (selected) utterance.voice = selected;
+
+    utterance.onend = () => {
+      if (localGeneration !== generation || !playing || paused) return;
+      index += 1;
+      speakCurrent();
+    };
+
+    utterance.onerror = event => {
+      if (localGeneration !== generation) return;
+      if (event.error !== "canceled" && event.error !== "interrupted") {
+        playing = false;
+        paused = false;
+        clearHighlight();
+        void releaseWakeLock();
+        updateNavigation();
       }
     };
-    synth.speak(u);
+
+    synth.speak(utterance);
+  }
+
+  function jumpTo(target) {
+    const next = Math.max(0, Math.min(blocks.length - 1, target));
+    const resume = playing && !paused;
+    const keepPaused = paused;
+
+    generation += 1;
+    synth.resume?.();
+    synth.cancel();
+    index = next;
+
+    if (resume) {
+      playing = true;
+      paused = false;
+      void requestWakeLock();
+      speakCurrent();
+      return;
+    }
+
+    playing = keepPaused;
+    paused = keepPaused;
+    showCurrent();
+    if (keepPaused) void requestWakeLock();
+  }
+
+  function jumpSection(delta) {
+    const pos = sectionPosition();
+    let targetPos;
+
+    if (delta < 0 && index > sectionStarts[pos]) targetPos = pos;
+    else targetPos = pos + delta;
+
+    if (targetPos < 0 || targetPos >= sectionStarts.length) return;
+    jumpTo(sectionStarts[targetPos]);
   }
 
   play.addEventListener("click", () => {
     if (paused) {
-      paused = false; synth.cancel(); playing = true; void requestWakeLock(); speakCurrent(); return;
+      generation += 1;
+      synth.resume?.();
+      synth.cancel();
+      paused = false;
+      playing = true;
+      void requestWakeLock();
+      speakCurrent();
+      return;
     }
     if (playing) return;
     if (index >= blocks.length) index = 0;
-    playing = true; void requestWakeLock(); speakCurrent();
+    playing = true;
+    void requestWakeLock();
+    speakCurrent();
   });
 
   pause.addEventListener("click", () => {
-    if (!playing) return;
-    synth.pause(); paused = true;
+    if (!playing || paused) return;
+    synth.pause();
+    paused = true;
   });
 
   stop.addEventListener("click", () => {
-    synth.cancel(); playing = false; paused = false; index = 0; clearHighlight(); void releaseWakeLock();
+    generation += 1;
+    synth.resume?.();
+    synth.cancel();
+    playing = false;
+    paused = false;
+    index = 0;
+    clearHighlight();
+    updateNavigation();
+    void releaseWakeLock();
   });
+
+  prevBlock.addEventListener("click", () => jumpTo(index - 1));
+  nextBlock.addEventListener("click", () => jumpTo(index + 1));
+  prevSection.addEventListener("click", () => jumpSection(-1));
+  nextSection.addEventListener("click", () => jumpSection(1));
 
   voice.addEventListener("change", () => {
     selectedVoice = voice.value;
-    if (playing) { synth.cancel(); paused = false; speakCurrent(); }
+    if (playing && !paused) {
+      generation += 1;
+      synth.cancel();
+      speakCurrent();
+    }
   });
 
   rate.addEventListener("input", () => {
@@ -226,12 +395,16 @@
 
   voices();
   synth.addEventListener?.("voiceschanged", voices);
+  updateNavigation();
+
   document.addEventListener?.("visibilitychange", () => {
     if (document.visibilityState === "visible" && (playing || paused)) {
       void requestWakeLock();
     }
   });
+
   addEventListener("pagehide", () => {
+    generation += 1;
     synth.cancel();
     void releaseWakeLock();
   });

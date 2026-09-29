@@ -66,4 +66,7 @@ test("shared Learn player exposes Web Speech API and preserves paused voice-chan
   assert.match(js, /beforeunload/);
   assert.match(js, /scrollIntoView/);
   assert.match(js, /speech-active/);
+  assert.match(js, /mode-nav/);
+  assert.match(js, /index\.html\?library=learn/);
+  assert.match(js, /index\.html\?library=listen/);
 });

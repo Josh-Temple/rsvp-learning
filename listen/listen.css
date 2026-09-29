@@ -47,10 +47,34 @@ button { font: inherit; color: inherit; }
 
 .topbar {
   min-height: 52px;
-  display: grid;
-  grid-template-columns: 42px 1fr 42px;
+  display: flex;
   align-items: center;
+  justify-content: space-between;
   border-bottom: 1px solid var(--line);
+}
+
+.mode-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.mode-icon svg {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.mode-nav .icon-link {
+  opacity: 0.5;
+}
+
+.mode-nav .icon-link.is-active {
+  color: var(--ink);
+  opacity: 1;
 }
 
 .icon-link,
