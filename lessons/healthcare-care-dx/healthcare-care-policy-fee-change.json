@@ -1,0 +1,213 @@
+{
+  "schema_version": 1,
+  "id": "healthcare-care-policy-fee-change",
+  "title": "制度・介護報酬改定とシステム変更",
+  "topic": "ヘルスケアDX",
+  "summary": "介護報酬改定や通知・Q&Aの変更を、根拠文書、適用時点、対象サービス、業務影響、請求ロジック、様式、研修、監視へ分解して安全に反映する方法を学びます。",
+  "created_at": "2026-09-29",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "厚生労働省 — 令和8年度介護報酬改定について",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000188411_00073.html"
+    },
+    {
+      "title": "厚生労働省 — 介護情報基盤について",
+      "url": "https://www.mhlw.go.jp/stf/newpage_59231.html"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "制度改定は一文書だけではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "告示を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "通知も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Q&Aも確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "様式も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "正誤や差替えも追います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "版と公開日を記録します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "施行日を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "適用月も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "経過措置も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "対象Serviceを特定します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "対象加算も特定します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "変わらない部分も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "差分一覧を作ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "業務影響へ変換します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "受付条件が変わる場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "記録要件も変わり得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "届出も影響します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "請求Codeも確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "計算Logicも確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "算定開始月を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "月跨ぎCaseを試します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "過去請求への影響も見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "返戻条件も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "様式変更を反映します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "帳票印字も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "System要件へ落とします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "根拠文書へ紐付けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "推測で実装しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "不明点は照会します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Vendorへ変更を伝えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "対応版を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Release時期を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "TestCaseを作ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "通常Caseを試します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "境界Caseも試します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "例外Caseも試します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "旧新併存も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Data移行が必要な場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "職員Manualを更新します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "研修も行います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用者説明も更新します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "届出期限を管理します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "施行後の返戻を監視します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "問い合わせも確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Q&A追加で再変更もあり得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "変更履歴を残します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "次回改定へ再利用します。",
+      "duration_multiplier": 1.15
+    }
+  ]
+}
