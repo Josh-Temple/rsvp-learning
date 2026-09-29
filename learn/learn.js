@@ -1,6 +1,6 @@
 (() => {
       const top = document.querySelector(".top");
-      if (top) {
+      if (top?.querySelector && top?.prepend) {
         const oldBack = top.querySelector("a");
         oldBack?.remove();
 
