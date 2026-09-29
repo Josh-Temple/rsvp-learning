@@ -3,6 +3,7 @@ name: Scheduled Vercel production deploy
 on:
   schedule:
     - cron: "17 */6 * * *"
+  # Updating this workflow on main also provides an intentional immediate-deploy path.
   push:
     branches: [main]
     paths:
