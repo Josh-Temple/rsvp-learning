@@ -1,0 +1,213 @@
+{
+  "schema_version": 1,
+  "id": "healthcare-care-workflow-continuity",
+  "title": "介護業務フローと記録・連携・請求",
+  "topic": "ヘルスケアDX",
+  "summary": "介護現場の記録、申し送り、計画、サービス提供、請求を別々の作業として見ず、一つの情報連鎖として捉えて改善する方法を学びます。",
+  "created_at": "2026-09-29",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "厚生労働省 — 介護サービス事業における生産性向上に資するガイドライン",
+      "url": "https://www.mhlw.go.jp/stf/kaigo-seisansei_information.html"
+    },
+    {
+      "title": "厚生労働省 — 介護情報基盤について",
+      "url": "https://www.mhlw.go.jp/stf/newpage_59231.html"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "介護業務は一つの流れとして見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "サービス提供だけを見ません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "事前確認も業務です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "記録も業務です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "申し送りも業務です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "計画作成もつながっています。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "請求も後段の業務です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "監査対応も情報を使います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "同じ情報が何度も現れます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "重複入力を探します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "転記も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "紙からSystemへの転記もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "口頭伝達にも欠落が起きます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "誰が最初に情報を持つか見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "誰が次に使うかも見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "情報の正本を決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一度入力した情報を再利用します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ただし目的外利用は分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用者ごとの例外もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "標準手順だけでは足りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "例外の頻度を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "例外理由も記録します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "待ち時間を見つけます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "承認待ちもあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "確認待ちもあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "入力待ちもあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "作業時間だけで測りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "中断回数も負担になります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "夜勤への負担も見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "職種間の引継ぎも見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "同じ情報を別形式にしません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "可能なら構造化します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "自由記述が必要な場面もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "定型化しすぎないようにします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用者状態の変化を残します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ケアの文脈も残します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "業務改善は記録削減だけではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "必要情報を取りやすくします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "後から探せることも重要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "請求に必要な根拠を追えるようにします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "変更履歴も残します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "業務変更前にBaselineを取ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "改善後も同じ条件で比べます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "負担軽減を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ケアの質も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Errorや手戻りも見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "現場と一緒に流れを直します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "情報連鎖として改善します。",
+      "duration_multiplier": 1.15
+    }
+  ]
+}

@@ -1,0 +1,217 @@
+{
+  "schema_version": 1,
+  "id": "healthcare-care-technology-adoption",
+  "title": "介護テクノロジー導入と現場定着",
+  "topic": "ヘルスケアDX",
+  "summary": "見守り、移乗、排泄、業務支援などの介護テクノロジーを、機器導入ではなく課題設定、現場検証、業務変更、教育、効果測定まで含む定着プロセスとして学びます。",
+  "created_at": "2026-09-29",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "厚生労働省 — 介護テクノロジーの利用促進",
+      "url": "https://www.mhlw.go.jp/stf/kaigo-ict.html"
+    },
+    {
+      "title": "厚生労働省 — 介護テクノロジー利用の重点分野について",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000209634_00013.html"
+    },
+    {
+      "title": "厚生労働省 — 令和8年度 介護テクノロジー等による生産性向上の取組に関する調査及び効果測定",
+      "url": "https://www.mhlw.go.jp/stf/newpage_73323.html"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "製品から導入を始めません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "まず現場課題を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "誰の負担を減らすか決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用者への価値も考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "自立支援も目的になり得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "安全性も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "見守り機器があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "移乗支援もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "排泄支援もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "介護業務支援もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "機能訓練支援もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "食事・栄養支援もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "認知症支援もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "製品ごとに対象が違います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "すべての現場に合うとは限りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "既存業務を先に観察します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "機器導入後の業務を描きます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Alarm対応者を決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "故障時の代替手順も決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "充電や保守も業務です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Network依存も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "停電時も考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "誤検知も起こり得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "見逃しも起こり得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "人の確認を残す場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用者への説明も必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "拒否や不快感も考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Privacyも確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "職員教育を行います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一度の研修で終えません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "夜勤者も対象にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "新任者にも引き継ぎます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "小さく試す方法があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "対象Unitを限定できます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Baselineを取ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "導入後に同じ指標で測ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "作業時間を見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "中断回数も見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "事故やヒヤリも見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ケアの質も見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用者の反応も見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "職員負担も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "効果がなければ見直します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "設定変更で改善する場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "業務手順変更も必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "機器撤去も選択肢です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "導入台数を成果にしません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "現場定着と結果で評価します。",
+      "duration_multiplier": 1.15
+    }
+  ]
+}

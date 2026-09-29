@@ -218,7 +218,14 @@
       "id": "healthcare-care-dx",
       "title": "ヘルスケア・介護DX",
       "chapters": [
-        "healthcare-care-dx-overview"
+        "healthcare-care-dx-overview",
+        "healthcare-care-workflow-continuity",
+        "healthcare-care-data-sharing",
+        "healthcare-care-privacy-security",
+        "healthcare-care-technology-adoption",
+        "healthcare-care-ai-oversight",
+        "healthcare-care-productivity-quality",
+        "healthcare-care-policy-fee-change"
       ]
     },
     {

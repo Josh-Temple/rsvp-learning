@@ -1,0 +1,213 @@
+{
+  "schema_version": 1,
+  "id": "healthcare-care-data-sharing",
+  "title": "医療・介護データ連携と介護情報基盤",
+  "topic": "ヘルスケアDX",
+  "summary": "介護情報基盤を含む医療・介護データ連携を、単なるAPI接続ではなく、共有対象、利用目的、標準仕様、正本、更新責任、移行を含む運用として学びます。",
+  "created_at": "2026-09-29",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "厚生労働省 — 介護情報基盤について",
+      "url": "https://www.mhlw.go.jp/stf/newpage_59231.html"
+    },
+    {
+      "title": "厚生労働省 — 介護テクノロジーの利用促進",
+      "url": "https://www.mhlw.go.jp/stf/kaigo-ict.html"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "データ連携は接続だけではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "共有目的を先に決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "誰が見るかを決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "何を共有するかを決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "必要最小限にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "同じ項目名でも意味を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "コード体系も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "識別子も重要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用者を誤って結び付けません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "正本を決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "更新元も決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "反映順序も考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "古い値の扱いも決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "介護情報基盤があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "自治体とも関係します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "介護事業所も関係します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "医療機関も関係します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "情報共有を電子化します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "標準仕様で接続します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Interface仕様があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "API仕様も更新されます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Versionを管理します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "接続先のVersionも確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "変更通知を追います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "暫定仕様と正式仕様を分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "移行時期を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "自治体ごとに開始時期が違い得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "旧連携との併存も考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Data移行を設計します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "変換規則を記録します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "欠損も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "重複も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "再送も考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "重複登録に備えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Error処理を決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "誰が再処理するか決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "監査Logも残します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "閲覧履歴も必要な場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "System間連携と人の確認を分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "自動反映しない情報もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "臨床判断と介護判断を混同しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "共有できることと使ってよいことは別です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用目的を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "権限を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "標準化だけで品質は上がりません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "入力品質も必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "連携後の業務を設計します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "情報が届いた後まで考えます。",
+      "duration_multiplier": 1.15
+    }
+  ]
+}

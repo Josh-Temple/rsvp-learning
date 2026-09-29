@@ -1,0 +1,217 @@
+{
+  "schema_version": 1,
+  "id": "healthcare-care-privacy-security",
+  "title": "医療・介護データの個人情報と安全管理",
+  "topic": "ヘルスケアDX",
+  "summary": "医療・介護データを要配慮個人情報として扱い、利用目的、権限、端末、委託、持出し、ログ、事故対応まで含む安全管理の考え方を学びます。",
+  "created_at": "2026-09-29",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "個人情報保護委員会・厚生労働省 — 医療・介護関係事業者における個人情報の適切な取扱いのためのガイダンス",
+      "url": "https://www.ppc.go.jp/personalinfo/legal/iryoukaigo_guidance/"
+    },
+    {
+      "title": "厚生労働省 — 医療情報システムの安全管理に関するガイドライン 第7.0版",
+      "url": "https://www.mhlw.go.jp/stf/shingi/0000516275_00006.html"
+    },
+    {
+      "title": "厚生労働省 — 介護情報基盤について",
+      "url": "https://www.mhlw.go.jp/stf/newpage_59231.html"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "医療・介護情報は機微性が高いです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "要配慮個人情報を含み得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用目的を明確にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "必要な範囲だけ扱います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "便利だから共有とはしません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "閲覧権限を絞ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "職種ごとに必要範囲を考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "管理者権限を常用しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "共用IDを避けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用者ごとに識別します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ログイン状態を放置しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "画面の覗き見にも注意します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "端末紛失も想定します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "持出し条件を決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "保存場所を管理します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "私物端末利用は規程を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "USB等の媒体も管理します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "印刷物も対象です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "廃棄方法も決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "通信も保護します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "外部送信先を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "誤送信対策も必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "委託先も安全管理の対象です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "契約で責任分界を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "再委託も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "障害時の連絡先を決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "アクセスLogを残します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "異常閲覧を調べられるようにします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "権限変更履歴も残します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "退職時に権限を止めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "異動時も見直します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Backupも保護します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "復元できるか確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Ransomwareも想定します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "事故時は封じ込めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "影響範囲を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "証拠を残します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "報告要件を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "本人への連絡が必要な場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "委員会報告も要件次第です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "事故後に手順を見直します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "安全管理は現場も担います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "現場職員の運用も重要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "教育を繰り返します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "新System導入時に再評価します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "連携先追加でも再評価します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利便性と保護を両立します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "目的と責任から設計します。",
+      "duration_multiplier": 1.15
+    }
+  ]
+}

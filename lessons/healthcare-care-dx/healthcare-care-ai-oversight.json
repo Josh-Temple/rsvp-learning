@@ -1,0 +1,217 @@
+{
+  "schema_version": 1,
+  "id": "healthcare-care-ai-oversight",
+  "title": "介護現場のAI支援とHuman Oversight",
+  "topic": "ヘルスケアDX",
+  "summary": "記録支援、要約、予測、検索などでAIを使う際に、用途ごとの誤りの影響、入力データ、検証、人間確認、記録、停止条件を設計する方法を学びます。",
+  "created_at": "2026-09-29",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "総務省・経済産業省 — AI事業者ガイドライン 第1.2版",
+      "url": "https://www.meti.go.jp/shingikai/mono_info_service/ai_shakai_jisso/20260331_report.html"
+    },
+    {
+      "title": "厚生労働省 — 介護テクノロジーの利用促進",
+      "url": "https://www.mhlw.go.jp/stf/kaigo-ict.html"
+    },
+    {
+      "title": "個人情報保護委員会・厚生労働省 — 医療・介護関係事業者における個人情報の適切な取扱いのためのガイダンス",
+      "url": "https://www.ppc.go.jp/personalinfo/legal/iryoukaigo_guidance/"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "AIは用途ごとにRiskを見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "記録要約に使う場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "検索支援にも使えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "文章草案にも使えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "予測支援にも使われ得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "用途ごとに影響が違います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "誤字修正と判断支援は別です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "高影響用途ほど確認を強めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "AI出力を事実とみなしません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "根拠を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "元記録へ戻れるようにします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "引用箇所も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用者を取り違えないようにします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "入力Dataを確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "欠測を把握します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "偏りも考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "古い情報にも注意します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "機密情報の入力先を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "外部AIへ無断投入しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "契約と利用規約を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "保存設定も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "学習利用条件も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "権限を絞ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "AI提案を人が確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "誰が確認するか決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "確認内容も決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "高Riskなら二重確認も考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "AIを無視できる設計も必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Overrideを記録できます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "AI出力も必要に応じ記録します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Model Versionを残す場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Prompt変更も影響します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "評価用Caseを作ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "通常Caseだけで試しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "例外Caseも試します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "誤りの種類を分類します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "見逃しも測ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "誤警報も測ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用者群ごとの差も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "性能低下を監視します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "制度変更でも性能が変わり得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "入力様式変更も影響します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "停止条件を決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "事故時は利用を止められるようにします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "代替業務を残します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "責任主体を明確にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "AIへ責任を移しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "支援として安全に使います。",
+      "duration_multiplier": 1.15
+    }
+  ]
+}
