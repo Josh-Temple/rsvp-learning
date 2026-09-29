@@ -15,7 +15,8 @@
           "id",
           "title",
           "topic",
-          "path"
+          "path",
+          "status"
         ],
         "additionalProperties": false,
         "properties": {
