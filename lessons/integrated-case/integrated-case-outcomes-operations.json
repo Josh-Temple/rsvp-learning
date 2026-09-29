@@ -1,0 +1,204 @@
+{
+  "schema_version": 1,
+  "id": "integrated-case-outcomes-operations",
+  "title": "統合ケース7: 効果測定・運用・改善",
+  "topic": "統合ケース",
+  "summary": "サービス公開後に、処理時間、差戻し、利用率、品質、Incident、費用をBaselineと比較し、因果を過剰に断定せず、運用データから次の改善へつなげます。",
+  "created_at": "2026-09-29",
+  "base_duration_ms": 680,
+  "sources": [],
+  "chunks": [
+    {
+      "text": "Releaseは成果ではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用者結果を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "職員負担も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "処理時間を再測定します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "差戻し率も見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "問い合わせも見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "System利用率も見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "目的へ戻って評価します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Baselineと条件をそろえます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "同じ期間幅で比べます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "繁忙期差を考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "案件構成も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "平均だけに頼りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "中央値も見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "分布も見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "例外群も分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "速度だけで判断しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Errorも確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "手戻りも見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用者離脱も見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "職員の中断も見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "運用Costも確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Security事故も見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一部だけ悪化していないか見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "改善後に数字が良くても慎重です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "他の施策もあり得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "制度変更も影響します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "季節性も考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用者構成も変わり得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "相関だけで原因を決めません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "比較条件を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "不確実性を残します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Incidentを記録します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "原因だけで終えません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "検知の遅れも見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "復旧の詰まりも見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "変更履歴と結びます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "再発防止を入れます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "運用手順を更新します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "評価Dataへも反映します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "改善候補を並べます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "価値とRiskで優先します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "小さく試す案もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "効果を再測定します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "学びでRoadmapを変えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "不要機能は減らせます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "次の問いを更新します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "運用を改善循環にします。",
+      "duration_multiplier": 1.15
+    }
+  ]
+}

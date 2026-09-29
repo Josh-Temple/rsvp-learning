@@ -234,6 +234,19 @@
       "chapters": [
         "rsvp-basics"
       ]
+    },
+    {
+      "id": "integrated-case",
+      "title": "統合ケース: 申請・審査サービス刷新",
+      "chapters": [
+        "integrated-case-problem-framing",
+        "integrated-case-requirements-scope",
+        "integrated-case-data-api-architecture",
+        "integrated-case-security-cloud",
+        "integrated-case-ai-governance",
+        "integrated-case-delivery-change",
+        "integrated-case-outcomes-operations"
+      ]
     }
   ]
 }
