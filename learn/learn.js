@@ -1,4 +1,34 @@
 (() => {
+      const top = document.querySelector(".top");
+      if (top) {
+        const oldBack = top.querySelector("a");
+        oldBack?.remove();
+
+        const nav = document.createElement("nav");
+        nav.className = "mode-nav";
+        nav.setAttribute("aria-label", "モード切替");
+
+        const links = [
+          ["RSVP", "../index.html", "RSVPへ移動"],
+          ["LEARN", "../index.html?library=learn", "Learn教材一覧へ移動"],
+          ["LISTEN", "../index.html?library=listen", "Listenへ移動"],
+        ];
+
+        for (const [label, href, aria] of links) {
+          const link = document.createElement("a");
+          link.href = href;
+          link.textContent = label;
+          link.setAttribute("aria-label", aria);
+          if (label === "LEARN") {
+            link.className = "is-active";
+            link.setAttribute("aria-current", "page");
+          }
+          nav.append(link);
+        }
+
+        top.prepend(nav);
+      }
+
       const synth = window.speechSynthesis;
       const article = document.querySelector("#learn-article");
       const playButton = document.querySelector("#speech-play");
