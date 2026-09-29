@@ -120,6 +120,39 @@
     </div>
   </section>
 
+
+  <section id="learn-course-player" class="learn-course-player" aria-label="Learnコース連続再生" hidden>
+    <div class="learn-course-shell">
+      <header class="learn-course-player-header">
+        <button id="learn-course-back" type="button" aria-label="Learn教材一覧へ戻る">‹</button>
+        <div class="learn-course-player-heading">
+          <span>LEARN · COURSE</span>
+          <strong id="learn-course-title">コース</strong>
+        </div>
+        <span id="learn-course-position">01 / 01</span>
+      </header>
+
+      <section id="learn-course-reader" class="learn-course-reader" aria-label="コース読み上げプレイヤー">
+        <div class="learn-course-reader-row">
+          <button id="learn-course-prev" type="button" aria-label="前の章">‹</button>
+          <button id="learn-course-play" type="button" aria-label="読み上げを開始">▶</button>
+          <button id="learn-course-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+          <button id="learn-course-stop" type="button" aria-label="停止" disabled>■</button>
+          <button id="learn-course-next" type="button" aria-label="次の章">›</button>
+          <select id="learn-course-voice" aria-label="読み上げ音声"></select>
+          <label class="learn-course-speed">
+            <span id="learn-course-rate-label">1.0×</span>
+            <input id="learn-course-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" />
+          </label>
+        </div>
+        <div id="learn-course-status" class="learn-course-status" role="status" aria-live="polite">コースを選択してください</div>
+      </section>
+
+      <article id="learn-course-article" class="learn-course-article" aria-live="off"></article>
+    </div>
+  </section>
+
+  <script src="./learn/course-player.js" defer></script>
   <script src="./app.js" type="module"></script>
 </body>
 </html>

@@ -453,9 +453,16 @@ function listenHref(path) {
 }
 
 function renderLearnLibrary() {
-  const items = state.catalog.filter((item) => item?.learn_path);
+  const playableCourses = state.courses
+    .map((course) => ({
+      course,
+      entries: course.chapters
+        .map((lessonId) => state.lessonMap.get(lessonId))
+        .filter((item) => item?.learn_path),
+    }))
+    .filter(({ entries }) => entries.length > 0);
 
-  if (!items.length) {
+  if (!playableCourses.length) {
     const empty = document.createElement("div");
     empty.className = "library-empty";
     empty.textContent = "まだありません";
@@ -463,49 +470,63 @@ function renderLearnLibrary() {
     return;
   }
 
-  const groups = new Map();
-  for (const item of items) {
-    const topic = item.topic || "その他";
-    if (!groups.has(topic)) groups.set(topic, []);
-    groups.get(topic).push(item);
-  }
-
-  for (const [topic, entries] of groups) {
+  for (const { course, entries } of playableCourses) {
     const section = document.createElement("section");
-    section.className = "learn-topic";
+    section.className = "learn-course-block";
 
-    const heading = document.createElement("h2");
-    heading.className = "learn-topic-label";
-    heading.textContent = topic;
-    section.append(heading);
+    const head = document.createElement("div");
+    head.className = "learn-course-head";
 
-    for (const item of entries) {
+    const titleWrap = document.createElement("div");
+    const title = document.createElement("h2");
+    title.className = "learn-course-title";
+    title.textContent = course.title;
+
+    const meta = document.createElement("span");
+    meta.className = "learn-course-meta";
+    meta.textContent = String(entries.length) + "章";
+
+    titleWrap.append(title, meta);
+
+    const play = document.createElement("button");
+    play.type = "button";
+    play.className = "learn-course-play";
+    play.dataset.courseId = course.id;
+    play.textContent = "▶ コース再生";
+    play.setAttribute("aria-label", course.title + "を連続再生");
+
+    head.append(titleWrap, play);
+
+    const list = document.createElement("div");
+    list.className = "learn-course-list";
+
+    entries.forEach((item, index) => {
       const row = document.createElement("a");
       row.className = "library-learn-row";
       row.href = item.learn_path;
-      row.setAttribute("aria-label", `${item.title}をLearnで開く`);
+      row.setAttribute("aria-label", item.title + "をLearnで開く");
 
-      const kind = document.createElement("span");
-      kind.className = "learn-kind";
-      kind.innerHTML = '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 5.5c2.6-.8 5.3-.4 8 1.2v12c-2.7-1.6-5.4-2-8-1.2v-12Z"/><path d="M20 5.5c-2.6-.8-5.3-.4-8 1.2v12c2.7-1.6 5.4-2 8-1.2v-12Z"/></svg>';
+      const number = document.createElement("span");
+      number.className = "library-learn-number";
+      number.textContent = String(index + 1).padStart(2, "0");
 
-      const title = document.createElement("span");
-      title.className = "library-learn-title";
-      title.textContent = item.title;
+      const titleText = document.createElement("span");
+      titleText.className = "library-learn-title";
+      titleText.textContent = item.title;
 
       const arrow = document.createElement("span");
       arrow.className = "library-learn-arrow";
       arrow.setAttribute("aria-hidden", "true");
       arrow.textContent = "›";
 
-      row.append(kind, title, arrow);
-      section.append(row);
-    }
+      row.append(number, titleText, arrow);
+      list.append(row);
+    });
 
+    section.append(head, list);
     els.libraryContent.append(section);
   }
 }
-
 function renderListenLibrary() {
   const items = [...state.listenItems].sort((a, b) => b.date.localeCompare(a.date));
 
