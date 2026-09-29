@@ -270,7 +270,7 @@ test("opening the library invalidates an in-flight autoplay chapter load", async
 });
 
 
-test("Learn link follows the selected lesson catalog entry", async () => {
+test("Learn link stays available and follows the selected lesson when possible", async () => {
   const { api, elements } = await loadApp(async () => okResponse({}));
   api.state.lessonMap = new Map([
     ["complete", { id: "complete", learn_path: "./learn/complete.html" }],
@@ -286,5 +286,6 @@ test("Learn link follows the selected lesson catalog entry", async () => {
   api.state.lessonId = "seed";
   api.state.lesson = lesson("seed");
   api.render();
-  assert.equal(elements.get("#learn-link").hidden, true);
+  assert.equal(elements.get("#learn-link").hidden, false);
+  assert.equal(elements.get("#learn-link").href, "./index.html?library=learn");
 });
