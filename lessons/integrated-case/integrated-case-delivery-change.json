@@ -1,0 +1,204 @@
+{
+  "schema_version": 1,
+  "id": "integrated-case-delivery-change",
+  "title": "統合ケース6: Delivery・CI/CD・移行",
+  "topic": "統合ケース",
+  "summary": "設計済みのサービスを安全に届けるため、WBS、依存関係、Branch・PR・CI、環境分離、データ移行、Rollback、運用引継ぎを一つのDelivery計画へまとめます。",
+  "created_at": "2026-09-29",
+  "base_duration_ms": 680,
+  "sources": [],
+  "chunks": [
+    {
+      "text": "実装を一つの作業にしません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "成果物へ分解します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "要件確定があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Designがあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "実装があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Testがあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "移行があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "運用準備もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "依存関係を整理します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Data設計が先の場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "API契約も先に必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "外部事業者も依存先です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "期限Riskを記録します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "技術Riskも記録します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "担当者を決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "対応期限も決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "変更はBranchで分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Commitを意味単位にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "PRでReviewします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "CIで自動検査します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Test失敗を見逃しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "自動検査の限界も知ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "人のReviewも必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Merge条件を明確にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "開発環境を分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Test環境も用意します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "本番設定を直書きしません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Secretも分離します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "環境差を減らします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "設定Versionを管理します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Release候補を識別します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "変更内容を追えるようにします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "既存Dataを調べます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "欠損を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "重複も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "変換規則を決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "試行移行を行います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "件数を突合します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "切替手順を作ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "停止時間も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Rollback条件を決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Codeだけ戻せない場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "DB変更も考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "切戻し不能変更を識別します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "運用手順を引き継ぎます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "監視方法も引き継ぎます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "障害連絡先も共有します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Release後までDeliveryです。",
+      "duration_multiplier": 1.15
+    }
+  ]
+}
