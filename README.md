@@ -51,6 +51,9 @@ RSVP画面のヘッドホンアイコンから `listen/` の一覧へ移動し�
 
 - 実装仕様: `docs/LISTEN_HTML_FORMAT.md`
 - 生成プロンプト: `prompts/listen-generation.md`
+- 日次論文ワークフロー: `docs/DAILY_PAPER_LISTEN_WORKFLOW.md`
+- 日次論文実行プロンプト: `prompts/daily-paper-listen.md`
+- Huxe Project Instructions例: `prompts/huxe-project-instructions.md`
 - 一覧: `listen/index.json`
 - 入口: `listen/index.html`
 
