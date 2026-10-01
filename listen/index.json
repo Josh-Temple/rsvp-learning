@@ -2,6 +2,13 @@
   "schema_version": 1,
   "items": [
     {
+      "id": "2026-10-01-research-mesh-current-state",
+      "title": "Research Meshはいま何を調べているか――自己最適化から外部価値の研究へ",
+      "date": "2026-10-01",
+      "category": "research",
+      "path": "./research/2026-10-01-research-mesh-current-state.html"
+    },
+    {
       "id": "2026-10-01-strategic-project-review",
       "title": "今の自分が知っておくべきこと――作る段階から価値を証明する段階へ",
       "date": "2026-10-01",
