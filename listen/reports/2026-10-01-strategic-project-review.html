@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f2efe8">
+  <meta name="description" content="複数の個人プロジェクトを横断して、今どこに価値があり、次に何を証明すべきかを整理するListen版">
+  <title>今の自分が知っておくべきこと――作る段階から価値を証明する段階へ</title>
+  <style>
+    :root{color-scheme:light;--bg:#f2efe8;--ink:#121722;--muted:#73766f;--line:#cbc8bf;--blue:#5d7487}
+    html[data-theme="dark"]{color-scheme:dark;--bg:#11151a;--ink:#edf0eb;--muted:#959b97;--line:#343a3e;--blue:#7892a6}
+    *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Hiragino Sans","Noto Sans JP",sans-serif;line-height:1.9}
+    .shell{width:min(760px,100%);margin:0 auto;padding:max(18px,env(safe-area-inset-top)) 20px max(42px,env(safe-area-inset-bottom))}
+    .topbar{min-height:52px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+    .icon{width:42px;height:42px;display:grid;place-items:center;border:0;background:transparent;color:var(--muted);text-decoration:none;font:inherit}
+    .meta{margin:28px 0 8px;color:var(--muted);font-size:.75rem}
+    h1{font-size:clamp(2rem,8vw,3.4rem);line-height:1.12;letter-spacing:-.04em;margin:.2em 0 .8em}
+    p{margin:0 0 1.25em} article>*{transition:background-color .15s ease}.is-speaking{background:color-mix(in srgb,var(--blue) 16%,transparent)}
+    .player{position:sticky;bottom:0;margin:32px -6px 0;padding:12px 6px;background:color-mix(in srgb,var(--bg) 94%,transparent);border-top:1px solid var(--line);backdrop-filter:blur(8px)}
+    .speed{display:grid;grid-template-columns:48px 1fr 42px;gap:10px;align-items:center;margin-top:10px;font-size:.78rem;color:var(--muted)} input{width:100%}
+    .note{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}
+    .mode-nav{display:inline-flex;align-items:center;gap:4px}
+    .mode-icon{width:42px;height:42px;display:grid;place-items:center;color:var(--muted);text-decoration:none;opacity:.5}
+    .mode-icon.is-active{color:var(--ink);opacity:1}
+    .mode-icon svg{width:20px;height:20px;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+    .brand-mark{width:22px;height:14px;display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+    .brand-mark i{display:block}.brand-mark i:nth-child(1){background:#a85248}.brand-mark i:nth-child(2){background:#5d7487}.brand-mark i:nth-child(3){background:#c2a653}
+    .transport{display:grid;grid-template-columns:repeat(5,48px);justify-content:center;gap:8px}
+    .transport button,.section-nav button,.voice-row select{min-height:42px;border:1px solid var(--line);background:transparent;color:var(--ink);font:inherit}
+    .transport button{width:48px}
+    .section-nav{display:grid;grid-template-columns:48px 1fr 48px;align-items:center;gap:8px;margin-top:10px}
+    .section-nav button:disabled{opacity:.25}
+    #section-label{min-width:0;overflow:hidden;color:var(--muted);font-size:.78rem;text-align:center;white-space:nowrap;text-overflow:ellipsis}
+    .voice-row{margin-top:10px}.voice-row select{width:100%;padding:0 8px}
+    .mode-icon:focus-visible,.transport button:focus-visible,.section-nav button:focus-visible,.voice-row select:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+  </style>
+</head>
+<body>
+<main class="shell">
+  <header class="topbar">
+    <nav class="mode-nav" aria-label="モード切替">
+      <a class="mode-icon" href="../../index.html" aria-label="RSVPへ移動" title="RSVP">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      </a>
+      <a class="mode-icon" href="../../index.html?library=learn" aria-label="Learnへ移動" title="Learn">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 5.5c2.6-.8 5.3-.4 8 1.2v12c-2.7-1.6-5.4-2-8-1.2v-12Z" />
+          <path d="M20 5.5c-2.6-.8-5.3-.4-8 1.2v12c2.7-1.6 5.4-2 8-1.2v-12Z" />
+        </svg>
+      </a>
+      <a class="mode-icon is-active" href="../../index.html?library=listen" aria-label="Listen一覧へ移動" aria-current="page" title="Listen">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 13v-1a8 8 0 0 1 16 0v1" />
+          <path d="M4 13h3v7H5a1 1 0 0 1-1-1v-6Zm16 0h-3v7h2a1 1 0 0 0 1-1v-6Z" />
+        </svg>
+      </a>
+    </nav>
+    <button id="theme" class="icon" type="button" aria-label="テーマ切替">☾</button>
+  </header>
+
+  <article id="article">
+    <p class="meta">情報基準日 2026年10月1日</p>
+    <h1>今の自分が知っておくべきこと――作る段階から価値を証明する段階へ</h1>
+
+    <p>この音声では、いま動いている複数のプロジェクトを一つずつ進捗確認するのではなく、少し距離を取って、全体として何が起きているのかを整理する。最初に重要な注意を置く。この内容は、2026年10月1日までの会話、作業記録、直近の成果報告を横断して考えた戦略的な俯瞰であり、すべてのGitHubリポジトリやGoogle Driveの正本を個別に再監査した結果ではない。したがって、細かな進捗状態や現在のコミット、タスクの完了状態を判断するときは、それぞれの正本を改めて確認する必要がある。</p>
+
+    <p>それでも、今の段階でかなりはっきり見えていることがある。これまでの中心課題は、作れるかどうかだった。AIを使って調査できるか。一次資料を集められるか。GitHubに知識を構造化できるか。Webサイトとして見せられるか。複数のエージェントや作業セッションを連携させられるか。検証を自動化できるか。こうした問いに対しては、すでに相当量の実物ができている。</p>
+
+    <p>だから、次の問いは変わっている。もっと作れるかではない。作ったものを使うことで、本当に結果が良くなるのか。この問いに答える段階へ移っている。速くなるのか。正確になるのか。根拠にたどり着きやすくなるのか。再現性が上がるのか。失敗を早く止められるのか。そして、第三者が見たときに、その改善を確認できるのか。これが今の中心課題だと考えた方がよい。</p>
+
+    <p>この変化は、自治体AI調達のプロジェクトを見ると分かりやすい。ここでは、単に自治体の生成AI導入事例を集めるのではなく、仕様書、質問回答、評価基準、訂正、契約関連情報などを、適用範囲や変更履歴も含めて比較できるようにしてきた。重要なのは、情報があることではなく、その情報を使って実務上の問いに答えられることだった。</p>
+
+    <p>そして今は、その価値を測るためのベンチマークまで進んでいる。直近の作業では、複数案件を対象に、単純な事実確認だけではなく、必須か任意か、質問回答で何が変わったか、どの条件に適用されるか、公開資料だけでどこまで確定できるかといった実務的な問いを含む評価設計が作られている。これは大きい。なぜなら、ここから先は、Repositoryを使う条件と通常のWeb検索だけの条件を比べることで、知識基盤の価値を直接測れるからだ。</p>
+
+    <p>このプロジェクトで今いちばん情報価値が高いのは、新しい自治体案件を十件増やすことではない可能性が高い。すでにある知識基盤を使ったとき、回答時間、正確さ、根拠の質、条件の見落としがどう変わるかを測ることだ。ここで結果が良ければ、このRepositoryは単なる資料集ではなくなる。実務判断を支える知識基盤として、効果を示せるようになる。</p>
+
+    <p>逆に、結果があまり良くなかったとしても価値はある。検索時間は短くならないかもしれない。回答精度は変わらないかもしれない。Repository-firstにすると、古い情報を強く信じすぎる問題が出るかもしれない。そうした結果が出れば、次に改善すべき場所が分かる。検証とは、成功を証明するためだけにやるものではない。どこまで効き、どこから効かないかを決めるためにやる。</p>
+
+    <p>knowledge-indexも同じ段階に入っている。ここで目指しているのは、GitHubを人間とAIが共有できる長期的な知識基盤として使うことだ。複数のRepositoryがあるとき、どの領域を見ればよいか、どの正本を優先すべきか、どの範囲まで読めばよいかを、小さな入口から案内する。その設計自体はかなり具体化している。</p>
+
+    <p>ただし、正しくルーティングできることと、良い回答が作れることは別である。AIが正しいRepositoryを選べても、そこにある知識を実際に再利用できなければ価値は限定的だ。逆に、毎回外部Web検索をやり直しているなら、知識基盤を作った意味が薄くなる。だから、今進めているクロスリポジトリの再利用評価は重要になる。既存の知識を発見し、必要な部分だけ読み、現在性が必要なところだけ外部確認を追加し、最終回答に再利用できるか。ここが成立すると、構想が実験結果を持つようになる。</p>
+
+    <p>この点は、今後のAI利用全体にもつながる。AIの検索能力が高くても、毎回ゼロから調べると、以前に確認したこと、判断したこと、出典の強さ、反証された仮説が十分に蓄積されない。人間側も同じで、過去に何を調べたかを忘れる。GitHubを知識基盤として使う発想の本質は、AIにすべてを覚えさせることではない。何を正本として残し、何を再利用し、何を再確認すべきかを明示できることにある。</p>
+
+    <p>Research Meshについても、似た転換が起きている。これまでは、複数の役割を分け、研究実行、批判、独立検証、統合をどう回すかという内部構造そのものが主要な研究対象だった。そこで、部分成功を成功扱いしてしまう危険や、projectionの状態と実際の成果がずれる問題、書き込み失敗後も古い認識で進んでしまう問題などが見えてきた。独立Verifierが誤進行を止める例も出ている。</p>
+
+    <p>この時点で気をつけたいのは、Research Meshを改善する研究が自己目的化することだ。役割を一つ増やす。Journalを一つ増やす。状態を一つ増やす。安全ゲートを一つ増やす。こうした改善は、それぞれ合理的に見える。しかし、内部構造の改善だけを続けると、複雑さそのものが新しい失敗源になる。</p>
+
+    <p>今後のResearch Meshの価値は、Research Mesh自体をさらに洗練させることだけではなく、外の問題に適用したときに研究品質が上がるかを見ることにある。たとえば、自治体AI調達の比較研究、AI導入の失敗分析、システマティックトレーディングの仮説検証などで、通常の一回のAI回答と比べて、反証の扱い、再現性、独立検証、失敗時の停止がどう変わるかを見る。この方が、内部研究をもう一周回すよりも情報量が大きい可能性がある。</p>
+
+    <p>Kaigo Rulesも、収録量を増やす段階から利用価値を確認する段階へ近づいている。介護制度のような領域では、条文をたくさん持っているだけでは不十分だ。利用者が実務上の疑問を持ったときに、検索から入り、FAQや説明を経由し、根拠条文や通知へ進み、最後に公式一次資料の該当箇所まで確認できる必要がある。</p>
+
+    <p>ここで測るべきなのは、データ件数だけではない。正しい根拠へ到達できるか。別サービスの規定を誤って参照しないか。準用関係を正しく追えるか。古い改正前資料と現行資料を混同しないか。検索結果から公式資料まで迷わず進めるか。こうした利用導線が成立すれば、単なる制度データベースとは違う価値が出る。</p>
+
+    <p>逆に、ここでも注意すべきことがある。Work Control、Structure Queue、GitHub実装、Libraryの成果物など、複数の状態管理が存在する。ある作業セッションで完了と報告されていても、それが現在の公開サイトやmainブランチに反映されているとは限らない。だから、変動する状態については、過去の会話やメモリを現在状態の根拠にしないという運用が重要になる。この原則は、Kaigo Rulesだけでなく、今のすべてのプロジェクトに共通する。</p>
+
+    <p>ここまでを見ると、複数のプロジェクトに共通する流れが見える。一次情報を探す。必要なものを選ぶ。構造化する。人間とAIの両方が再利用できる場所に置く。適用範囲や現在性を分ける。独立した確認を入れる。そして、実際に使ったときに役立つかを測る。この流れは、自治体AI調達でも、Kaigo Rulesでも、knowledge-indexでも、Research Meshでも繰り返されている。</p>
+
+    <p>この共通性は、転職という観点でも重要になる。個別のサイト名や技術名だけを見ると、介護、自治体調達、AI研究、学習ツール、トレーディング研究と、テーマが散らばっているように見える。しかし、実際にやっている作業の型はかなり一貫している。曖昧な問題を定義し、一次情報を集め、比較できる形にし、業務として使える導線を設計し、AIを使って実装し、検証し、失敗を記録し、改善する。これは単にWebサイトを作ったという話とは違う。</p>
+
+    <p>だから、転職用のポートフォリオでも、作品数を増やすことが最優先ではない。五つのサイトを浅く見せるより、二つか三つのケースについて、なぜその問題を選んだのか、情報がどこに分散していたのか、どのように構造化したのか、AIに何を任せ何を任せなかったのか、どのように品質を検証したのか、実際に何が改善したのかを説明できる方が強い。</p>
+
+    <p>特に、今の経歴との接続を考えると、自治体AI調達とKaigo Rulesは説明しやすい。自治体実務を知っていること、制度や公式資料を読むこと、業務の流れを設計すること、委託や仕様を考えること、現場の負担を減らすこと、そしてAIや自動化を使って実装することが、一つのストーリーとしてつながりやすい。</p>
+
+    <p>一方で、転職市場から得られる情報も無視しない方がよい。ポートフォリオを改善し続けるだけでは、企業がその能力をどう評価するかは分からない。実際のスカウト、具体求人、推薦可否、面談での反応は、外部から得られる観測データになる。今後は、サイトを一つ増やした効果よりも、具体的な企業やエージェントが現在の経験をどの役割として評価するかを確認する方が、意思決定に役立つ場面が増える。</p>
+
+    <p>ここで、今いちばん避けたい失敗について考える。それは、改善できるものを見つけるたびに改善し続けることだ。AIを使うと、改善案を出すコストが非常に低い。新しいschemaを作る。新しいagentを足す。新しい自動化を作る。新しいRepositoryを始める。新しい評価軸を追加する。どれも短時間で着手できる。そのため、作業している感覚は強い。</p>
+
+    <p>しかし、改善可能であることと、今改善すべきであることは同じではない。すでに十分に動くシステムについては、追加改善の価値が急速に小さくなる。一方で、実際の利用者で試す、比較実験をする、第三者レビューを受ける、市場から反応を取るといった作業は、不確実性が高く、結果もコントロールできない。だから心理的には、内部改善の方へ戻りやすい。</p>
+
+    <p>今はむしろ、その不確実な側へ進む時期だと考えた方がよい。自治体AI調達なら、Web-onlyとRepository-firstを本当に比較する。knowledge-indexなら、正しいルーティングだけでなく、実回答で知識再利用が起きるかを見る。Kaigo Rulesなら、検索から一次資料までの導線を実際に使う。転職なら、具体求人に対して現在の経歴が推薦可能なのかを確認する。Research Meshなら、外部の研究課題で品質差が出るかを見る。</p>
+
+    <p>これらに共通するのは、自分が作った仕組みの中だけでは答えが出ないことだ。外部との接触が必要になる。比較対象が必要になる。失敗する可能性がある。そのため、内部開発よりも情報価値が高い。</p>
+
+    <p>もう一つ、今後重要になりそうなのがMCPである。ChatGPTから外部のシステムやサービスを操作する経路として、MCPはかなり相性がよい。これまで別々に存在していたGitHub、Google Drive、GAS、Webアプリ、研究システムなどを、ChatGPTから明示的なツールとして呼び出せるようにすれば、作業の入口を一つにまとめられる可能性がある。</p>
+
+    <p>ただし、ここでは二つの話を混ぜないことが重要だ。ChatGPTがMCPを通じて外部システムを呼ぶことと、自作WebサイトからChatGPT Plusの利用枠を無料のAPIのように呼ぶことは別である。MCPは、ChatGPT側から外部の能力へアクセスする接続方式として考える方がよい。自作サービス側からモデルを自動実行したい場合は、別の実行基盤やAPI、あるいは人間がChatGPTを操作する経路が必要になる。</p>
+
+    <p>この違いを理解しておくと、将来のOrchestrator構想を考えるときに無駄が減る。すべてを自律的に二十四時間動かす必要はないかもしれない。人間がChatGPTを開いたときに、MCP経由で現在状態を読み、必要な処理を実行し、正本へ結果を書き戻せるだけでも、かなり強い運用になる。常時自律実行は、その後に本当に必要な部分だけへ限定できる。</p>
+
+    <p>RSVPとListenそのものについても、今の流れから一つ重要な使い方が見える。これまでは、学習教材や調査結果を読むための仕組みとして作ってきた。しかしListenは、自分自身のプロジェクトを俯瞰するためにも使える。細かなタスク管理ではなく、今どこにいるのか、何を増やしすぎているのか、何をまだ検証していないのかを、移動中や家事中に聞き直すことができる。</p>
+
+    <p>これは意外に重要だ。複数のプロジェクトを並行して進めていると、個々のチャットでは局所的な最適化が進む。それぞれの会話では、次の改善案が合理的に見える。しかし、全体を一度に見ると、すでに十分なものへさらに手を入れている一方で、価値検証が後回しになっていることがある。Listenは、その偏りを定期的に見直すための場所として使える。</p>
+
+    <p>今後、この種類の音声を定期的に作るなら、毎回プロジェクトの全進捗を読み上げる必要はない。重要なのは、状況変化によって意思決定が変わるところだけを拾うことだ。何が新しく分かったか。以前の前提が崩れたか。次に試すべきことが変わったか。止めた方がよい作業が出たか。外部から新しい反応が得られたか。そうした点だけをまとめれば、Listenは単なる日報ではなく、意思決定を整えるための入力になる。</p>
+
+    <p>ここで、今の優先順位を言葉にしておく。第一に、作った知識基盤の価値を比較実験で測る。第二に、複数Repositoryに蓄積した知識が実回答で本当に再利用できるかを測る。第三に、Kaigo Rulesのような実務サイトで、利用者が正しい根拠まで到達できるかを確認する。第四に、その結果を、転職で説明できる少数の強いケースへ変換する。第五に、MCPなどの新しい技術は、これらの既存目的を明確に改善できる場合に使う。</p>
+
+    <p>この順序には一つ理由がある。どれも、今持っていない情報を増やすからだ。比較実験をすれば、Repositoryが本当に効くか分かる。再利用評価をすれば、knowledge-indexが単なる案内板なのか、知識基盤の入口なのか分かる。利用導線を試せば、Kaigo Rulesがデータ集なのか実務ツールなのか分かる。市場の反応を取れば、ポートフォリオが採用側にどう見えるか分かる。</p>
+
+    <p>それに対して、新しい機能を一つ追加しても、分かることは少ない場合がある。実装可能だということは、すでに何度も示しているからだ。今後は、作業量ではなく、不確実性をどれだけ減らしたかで次の作業を選ぶ方がよい。</p>
+
+    <p>新しいプロジェクトを始めるときも、基準を厳しくしてよい。今あるプロジェクトでは示せない能力や知識を証明できるのか。既存の成果を再利用できるのか。外部の需要や具体的な利用者があるのか。一定期間で検証可能なのか。これらに明確な答えがない場合は、新規着手より、既存プロジェクトの価値検証の方が優先度は高い。</p>
+
+    <p>一方で、今までの作業を過小評価する必要もない。複数の領域で、一次情報から構造化、AI利用、実装、検証までを一人で回していること自体は、すでにかなり特徴的な実績になっている。ただし、その価値は、Repositoryの数やコミット数では伝わりにくい。何を解決し、どの判断をし、何を測り、何が失敗し、どう修正したかという形で初めて伝わる。</p>
+
+    <p>したがって、これからの記録では、成果物だけでなく判断理由を残すことが重要になる。なぜこの設計を選んだのか。なぜ別案を捨てたのか。どの一次資料を正本としたのか。どの時点では確定できなかったのか。どの検証で仮説が崩れたのか。こうした情報は、人間にとってもAIにとっても再利用価値が高い。</p>
+
+    <p>これは、GitHubを知識基盤として使う考え方とも一致する。完成した結論だけを保存するのではなく、その結論がどの範囲で成立し、何を根拠にし、どの条件では再確認が必要かを残す。そうすれば、将来別のAIが読んでも、過去の答えをそのままコピーするのではなく、適切な範囲で再利用できる。</p>
+
+    <p>今の状況を一言でまとめるなら、能力の証明方法が変わる時期に来ている。これまでは、動くものを作ることが証明だった。これからは、動くものを使って、実際の結果が変わることを示すのが証明になる。</p>
+
+    <p>そのため、次に何か新しいものを作りたくなったときは、一度だけ問い直すとよい。これは新しい不確実性を減らすのか。それとも、すでに分かっている自分の能力をもう一度証明するだけなのか。後者なら、いったん止めて、外部評価、比較実験、利用検証のどれかへ進む方が、今は得られるものが大きい可能性が高い。</p>
+
+    <p>最後に残しておきたいのは、今の複数プロジェクトを別々の趣味として見る必要はないということだ。テーマは違っていても、やっていることには一貫性がある。複雑で散らばった情報を扱い、正本を決め、AIが扱える形へ変え、実務で使える導線を作り、検証し、失敗から修正する。その能力を、これからは内部の完成度ではなく、外部で確認できる結果へ変えていく。今の最優先は、そこにある。</p>
+  </article>
+
+  <section class="player" aria-label="読み上げ操作">
+    <div class="transport">
+      <button id="prev-block" type="button" aria-label="前の読み上げ単位へ">←</button>
+      <button id="play" type="button" aria-label="再生">▶</button>
+      <button id="pause" type="button" aria-label="一時停止">Ⅱ</button>
+      <button id="stop" type="button" aria-label="停止">■</button>
+      <button id="next-block" type="button" aria-label="次の読み上げ単位へ">→</button>
+    </div>
+    <div class="section-nav" aria-label="章移動">
+      <button id="prev-section" type="button" aria-label="前の章へ">‹</button>
+      <span id="section-label">連続原稿</span>
+      <button id="next-section" type="button" aria-label="次の章へ">›</button>
+    </div>
+    <div class="voice-row">
+      <select id="voice" aria-label="日本語音声"></select>
+    </div>
+    <div class="speed"><span>速度</span><input id="rate" type="range" min="0.7" max="4" step="0.1" value="1"><span id="rateValue">1.0×</span></div>
+  </section>
+
+  <section class="note" aria-label="出典">
+    <strong>出典・注記</strong>
+    <p>本Listenは2026年10月1日までの会話・作業記録を横断した戦略的な俯瞰です。個別プロジェクトの現在状態を判断するときは、各Repositoryや正本をfresh readしてください。</p>
+  </section>
+</main>
+<script>
+(() => {
+  const synth = window.speechSynthesis;
+  const blocks = [...document.querySelectorAll("#article h1,#article h2,#article h3,#article p")];
+  const sectionStarts = [...new Set([0, ...blocks.map((node, i) => node.tagName === "H2" ? i : -1).filter(i => i >= 0)])];
+  const play = document.querySelector("#play");
+  const pause = document.querySelector("#pause");
+  const stop = document.querySelector("#stop");
+  const prevBlock = document.querySelector("#prev-block");
+  const nextBlock = document.querySelector("#next-block");
+  const prevSection = document.querySelector("#prev-section");
+  const nextSection = document.querySelector("#next-section");
+  const sectionLabel = document.querySelector("#section-label");
+  const voice = document.querySelector("#voice");
+  const rate = document.querySelector("#rate");
+  const rateValue = document.querySelector("#rateValue");
+  const theme = document.querySelector("#theme");
+  let index = 0, playing = false, paused = false, selectedVoice = "", generation = 0;
+  let wakeLock = null, wakeLockWanted = false;
+
+  async function requestWakeLock() {
+    const wakeLockApi = window.navigator?.wakeLock;
+    wakeLockWanted = true;
+    if (!wakeLockApi?.request || wakeLock) return;
+    try {
+      const lock = await wakeLockApi.request("screen");
+      if (!wakeLockWanted) {
+        await lock.release();
+        return;
+      }
+      wakeLock = lock;
+      wakeLock.addEventListener?.("release", () => { wakeLock = null; });
+    } catch {
+      wakeLock = null;
+    }
+  }
+
+  async function releaseWakeLock() {
+    wakeLockWanted = false;
+    const current = wakeLock;
+    wakeLock = null;
+    if (!current) return;
+    try {
+      await current.release();
+    } catch {
+    }
+  }
+
+  function voices() {
+    const previous = selectedVoice || voice.value;
+    const items = synth.getVoices().filter(v => /^ja(?:-|_)/i.test(v.lang));
+    voice.replaceChildren();
+    for (const v of items) {
+      const o = document.createElement("option");
+      o.value = v.voiceURI;
+      o.textContent = v.name;
+      voice.append(o);
+    }
+    if (items.some(v => v.voiceURI === previous)) voice.value = previous;
+    selectedVoice = voice.value;
+  }
+
+  function clearHighlight() {
+    blocks.forEach(node => node.classList.remove("is-speaking"));
+  }
+
+  function sectionPosition() {
+    let pos = 0;
+    for (let i = 0; i < sectionStarts.length; i += 1) {
+      if (sectionStarts[i] <= index) pos = i;
+      else break;
+    }
+    return pos;
+  }
+
+  function updateNavigation() {
+    prevBlock.disabled = index <= 0;
+    nextBlock.disabled = index >= blocks.length - 1;
+    const pos = sectionPosition();
+    const start = sectionStarts[pos] ?? 0;
+    const previousTargetExists = index > start || pos > 0;
+    prevSection.disabled = !previousTargetExists;
+    nextSection.disabled = pos >= sectionStarts.length - 1;
+    const startNode = blocks[start];
+    sectionLabel.textContent = startNode?.tagName === "H2" ? startNode.textContent : "連続原稿";
+  }
+
+  function showCurrent() {
+    clearHighlight();
+    const current = blocks[index];
+    if (!current) return;
+    current.classList.add("is-speaking");
+    current.scrollIntoView({ block: "center", behavior: "smooth" });
+    updateNavigation();
+  }
+
+  function speakCurrent() {
+    if (!playing || paused || index >= blocks.length) {
+      if (index >= blocks.length) {
+        playing = false;
+        paused = false;
+        clearHighlight();
+        void releaseWakeLock();
+      }
+      updateNavigation();
+      return;
+    }
+
+    showCurrent();
+    const localGeneration = ++generation;
+    const utterance = new SpeechSynthesisUtterance(blocks[index].textContent);
+    utterance.lang = "ja-JP";
+    utterance.rate = Number(rate.value);
+    const selected = synth.getVoices().find(item => item.voiceURI === voice.value);
+    if (selected) utterance.voice = selected;
+
+    utterance.onend = () => {
+      if (localGeneration !== generation || !playing || paused) return;
+      index += 1;
+      speakCurrent();
+    };
+
+    utterance.onerror = event => {
+      if (localGeneration !== generation) return;
+      if (event.error !== "canceled" && event.error !== "interrupted") {
+        playing = false;
+        paused = false;
+        clearHighlight();
+        void releaseWakeLock();
+        updateNavigation();
+      }
+    };
+
+    synth.speak(utterance);
+  }
+
+  function jumpTo(target) {
+    const next = Math.max(0, Math.min(blocks.length - 1, target));
+    const resume = playing && !paused;
+    const keepPaused = paused;
+    generation += 1;
+    synth.resume?.();
+    synth.cancel();
+    index = next;
+
+    if (resume) {
+      playing = true;
+      paused = false;
+      void requestWakeLock();
+      speakCurrent();
+      return;
+    }
+
+    playing = keepPaused;
+    paused = keepPaused;
+    showCurrent();
+    if (keepPaused) void requestWakeLock();
+  }
+
+  function jumpSection(delta) {
+    const pos = sectionPosition();
+    let targetPos;
+    if (delta < 0 && index > sectionStarts[pos]) targetPos = pos;
+    else targetPos = pos + delta;
+    if (targetPos < 0 || targetPos >= sectionStarts.length) return;
+    jumpTo(sectionStarts[targetPos]);
+  }
+
+  play.addEventListener("click", () => {
+    if (paused) {
+      generation += 1;
+      synth.resume?.();
+      synth.cancel();
+      paused = false;
+      playing = true;
+      void requestWakeLock();
+      speakCurrent();
+      return;
+    }
+    if (playing) return;
+    if (index >= blocks.length) index = 0;
+    playing = true;
+    void requestWakeLock();
+    speakCurrent();
+  });
+
+  pause.addEventListener("click", () => {
+    if (!playing || paused) return;
+    synth.pause();
+    paused = true;
+  });
+
+  stop.addEventListener("click", () => {
+    generation += 1;
+    synth.resume?.();
+    synth.cancel();
+    playing = false;
+    paused = false;
+    index = 0;
+    clearHighlight();
+    updateNavigation();
+    void releaseWakeLock();
+  });
+
+  prevBlock.addEventListener("click", () => jumpTo(index - 1));
+  nextBlock.addEventListener("click", () => jumpTo(index + 1));
+  prevSection.addEventListener("click", () => jumpSection(-1));
+  nextSection.addEventListener("click", () => jumpSection(1));
+
+  voice.addEventListener("change", () => {
+    selectedVoice = voice.value;
+    if (playing && !paused) {
+      generation += 1;
+      synth.cancel();
+      speakCurrent();
+    }
+  });
+
+  rate.addEventListener("input", () => {
+    rateValue.textContent = Number(rate.value).toFixed(1) + "×";
+  });
+
+  theme.addEventListener("click", () => {
+    const dark = document.documentElement.dataset.theme === "dark";
+    document.documentElement.dataset.theme = dark ? "light" : "dark";
+    theme.textContent = dark ? "☾" : "☀";
+    localStorage.setItem("rsvp:theme", dark ? "light" : "dark");
+  });
+
+  document.documentElement.dataset.theme =
+    localStorage.getItem("rsvp:theme") ||
+    (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  theme.textContent = document.documentElement.dataset.theme === "dark" ? "☀" : "☾";
+
+  voices();
+  synth.addEventListener?.("voiceschanged", voices);
+  updateNavigation();
+
+  document.addEventListener?.("visibilitychange", () => {
+    if (document.visibilityState === "visible" && (playing || paused)) {
+      void requestWakeLock();
+    }
+  });
+
+  addEventListener("pagehide", () => {
+    generation += 1;
+    synth.cancel();
+    void releaseWakeLock();
+  });
+})();
+</script>
+</body>
+</html>
