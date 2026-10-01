@@ -2,6 +2,13 @@
   "schema_version": 1,
   "items": [
     {
+      "id": "2026-10-01-strategic-project-review",
+      "title": "今の自分が知っておくべきこと――作る段階から価値を証明する段階へ",
+      "date": "2026-10-01",
+      "category": "report",
+      "path": "./reports/2026-10-01-strategic-project-review.html"
+    },
+    {
       "id": "2026-09-28-ai-academic-research-frontier",
       "title": "研究のやり方を変え始めたAI――2025〜2026年の学術研究最前線",
       "date": "2026-09-28",
