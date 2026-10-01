@@ -3,7 +3,7 @@ name: Scheduled Vercel production deploy
 on:
   schedule:
     - cron: "17 */6 * * *"
-  # Updating this workflow on main also provides an intentional immediate-deploy path. Trigger: Research Mesh Listen 2026-10-01.
+  # Updating this workflow on main also provides an intentional immediate-deploy path. Trigger: Daily Paper Listen 2026-10-01.
   push:
     branches: [main]
     paths:
