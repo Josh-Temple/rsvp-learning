@@ -2,6 +2,13 @@
   "schema_version": 1,
   "items": [
     {
+      "id": "2026-10-01-agents-design-libraries-for-agents",
+      "title": "AIエージェントは、別のAIが使いやすいライブラリを設計できるか",
+      "date": "2026-10-01",
+      "category": "research",
+      "path": "./research/2026-10-01-agents-design-libraries-for-agents.html"
+    },
+    {
       "id": "2026-10-01-research-mesh-current-state",
       "title": "Research Meshはいま何を調べているか――自己最適化から外部価値の研究へ",
       "date": "2026-10-01",
