@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f2efe8">
+  <meta name="description" content="2026年9月30日公開のGraphForge論文を、実ファイル、evidence graph、検証rubric、訓練結果、限界、実務への意味まで長めに解説するDaily Paper Listen。">
+  <title>仕事をするAIは、どうすれば「根拠付きで検証可能な仕事」を学べるのか――GraphForge</title>
+  <style>
+    :root{color-scheme:light;--bg:#f2efe8;--ink:#121722;--muted:#73766f;--line:#cbc8bf;--blue:#5d7487}
+    html[data-theme="dark"]{color-scheme:dark;--bg:#11151a;--ink:#edf0eb;--muted:#959b97;--line:#343a3e;--blue:#7892a6}
+    *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Hiragino Sans","Noto Sans JP",sans-serif;line-height:1.9}
+    .shell{width:min(760px,100%);margin:0 auto;padding:max(18px,env(safe-area-inset-top)) 20px max(42px,env(safe-area-inset-bottom))}
+    .topbar{min-height:52px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+    .icon{width:42px;height:42px;display:grid;place-items:center;border:0;background:transparent;color:var(--muted);text-decoration:none;font:inherit}
+    .meta{margin:28px 0 8px;color:var(--muted);font-size:.75rem}
+    h1{font-size:clamp(2rem,8vw,3.4rem);line-height:1.12;letter-spacing:-.04em;margin:.2em 0 .8em} h2{margin:2.2em 0 .6em;font-size:1.2rem}
+    p{margin:0 0 1.25em} article>*{transition:background-color .15s ease}.is-speaking{background:color-mix(in srgb,var(--blue) 16%,transparent)}
+    .player{position:sticky;bottom:0;margin:32px -6px 0;padding:12px 6px;background:color-mix(in srgb,var(--bg) 94%,transparent);border-top:1px solid var(--line);backdrop-filter:blur(8px)}
+    .controls{display:grid;grid-template-columns:48px 48px 48px 1fr;gap:8px;align-items:center}.controls button,.controls select{min-height:42px;border:1px solid var(--line);background:transparent;color:var(--ink)}
+    .speed{display:grid;grid-template-columns:48px 1fr 42px;gap:10px;align-items:center;margin-top:10px;font-size:.78rem;color:var(--muted)} input{width:100%}
+    .sources{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}.sources a{color:var(--ink)}
+  
+    .topbar{display:flex;align-items:center;justify-content:space-between}
+    .mode-nav{display:inline-flex;align-items:center;gap:4px}
+    .mode-icon{width:42px;height:42px;display:grid;place-items:center;color:var(--muted);text-decoration:none;opacity:.5}
+    .mode-icon.is-active{color:var(--ink);opacity:1}
+    .mode-icon svg{width:20px;height:20px;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+    .brand-mark{width:22px;height:14px;display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+    .brand-mark i{display:block}.brand-mark i:nth-child(1){background:#a85248}.brand-mark i:nth-child(2){background:#5d7487}.brand-mark i:nth-child(3){background:#c2a653}
+    .transport{display:grid;grid-template-columns:repeat(5,48px);justify-content:center;gap:8px}
+    .transport button,.section-nav button,.voice-row select{min-height:42px;border:1px solid var(--line);background:transparent;color:var(--ink);font:inherit}
+    .transport button{width:48px}
+    .section-nav{display:grid;grid-template-columns:48px 1fr 48px;align-items:center;gap:8px;margin-top:10px}
+    .section-nav button:disabled{opacity:.25}
+    #section-label{min-width:0;overflow:hidden;color:var(--muted);font-size:.78rem;text-align:center;white-space:nowrap;text-overflow:ellipsis}
+    .voice-row{margin-top:10px}.voice-row select{width:100%;padding:0 8px}
+    .mode-icon:focus-visible,.transport button:focus-visible,.section-nav button:focus-visible,.voice-row select:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+
+  </style>
+</head>
+<body>
+<main class="shell">
+  <header class="topbar">
+    <nav class="mode-nav" aria-label="モード切替">
+      <a class="mode-icon" href="../../index.html" aria-label="RSVPへ移動" title="RSVP">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      </a>
+      <a class="mode-icon" href="../../index.html?library=learn" aria-label="Learnへ移動" title="Learn">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 5.5c2.6-.8 5.3-.4 8 1.2v12c-2.7-1.6-5.4-2-8-1.2v-12Z" />
+          <path d="M20 5.5c-2.6-.8-5.3-.4-8 1.2v12c2.7-1.6 5.4-2 8-1.2v-12Z" />
+        </svg>
+      </a>
+      <a class="mode-icon is-active" href="../../index.html?library=listen" aria-label="Listen一覧へ移動" aria-current="page" title="Listen">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 13v-1a8 8 0 0 1 16 0v1" />
+          <path d="M4 13h3v7H5a1 1 0 0 1-1-1v-6Zm16 0h-3v7h2a1 1 0 0 0 1-1v-6Z" />
+        </svg>
+      </a>
+    </nav>
+    <button id="theme" class="icon" type="button" aria-label="テーマ切替">☾</button>
+  </header>
+
+
+
+  <article id="article">
+    <p class="meta">情報基準日 2026年10月2日</p>
+    <h1>仕事をするAIは、どうすれば「根拠付きで検証可能な仕事」を学べるのか――GraphForge</h1>
+
+    <p>今日取り上げるのは、2026年9月30日にarXivへ公開された「GraphForge: Training Working Agents with Graph-Anchored Workspace Synthesis」です。テーマは、会話だけをするAIではなく、実際のファイルを読み、複数の資料をつなぎ、スプレッドシートや文書などの成果物を作る「working agent」を、どう訓練すればよいかという問題です。</p>
+    <p>この研究が聞く価値を持つ理由は、単に新しいエージェントモデルを提案したからではありません。むしろ中心にあるのは、訓練データの作り方です。AIに仕事を教えるには、現実に近い資料が必要です。同時に、その仕事が本当に正しくできたかを判定する仕組みも必要です。GraphForgeは、この二つを別々に作るのではなく、同じ根拠資料から「仕事の依頼」と「採点基準」を生成しようとします。</p>
+    <p>この発想は地味に見えますが、業務AIではかなり重要です。エージェントがそれらしい報告書を作れても、どの資料のどの事実を使うべきだったのか、計算が正しかったのか、別の似た資料を誤って使っていないかを確認できなければ、訓練にも評価にも使いにくいからです。GraphForgeは、この「仕事を作ること」と「その仕事を検証できること」を一つの設計問題として扱います。</p>
+
+    <h2>まず、なぜ業務エージェントの訓練データ作りが難しいのか</h2>
+    <p>コード生成や数学のように、正解をプログラムで比較しやすいタスクでは、訓練用の問題を大量に作りやすくなっています。コードならテストを通るかを見られます。数学なら最終回答や証明検証器を使える場合があります。しかし、実務ではそう簡単ではありません。</p>
+    <p>たとえば、複数のPDFとExcelを読み、条件に合う案件だけを抽出し、別の資料に書かれたルールを適用して、最終的な比較表と説明文を作る仕事を考えます。この場合、最終成果物は一つの文字列ではありません。数値、引用、除外理由、表構造、ファイル形式、計算式など、多くの条件を同時に満たす必要があります。</p>
+    <p>しかも、現実のワークスペースには「正解に必要な資料」だけがきれいに置かれているとは限りません。関連しそうで実は適用対象ではない古い資料、似た名称の別案件、補助的な背景情報、直接は使わないファイルも混じります。単純な検索問題ではなく、どの資料を根拠として採用し、どの資料を捨てるかまで含めて仕事になります。</p>
+    <p>著者たちは、既存の訓練データ生成法には二つの典型的な弱点があると整理しています。一つは、ワークスペース内のファイル自体をモデルに生成させる方法です。これは大量生成しやすい一方、現実のファイルが持つ複雑さや不揃いさが弱くなりやすい。もう一つは、実在するファイルを使うものの、そのタスク専用のrubric、つまり採点基準や検証器が十分に用意されていない方法です。こちらは現実味があっても、成果物が本当に正しいかを系統的に判定しにくくなります。</p>
+
+    <h2>GraphForgeの中心は「根拠から仕事と採点基準を一緒に作る」こと</h2>
+    <p>GraphForgeは、この問題をevidence graph、つまり根拠関係のグラフを中心に解こうとします。ここでのグラフは、一般的な知識グラフのように世界知識を網羅するものではありません。特定の仕事に必要なファイルの中で、「このファイルのこの事実が、別のファイルのこの情報とどう関係するか」を整理する中間表現です。</p>
+    <p>重要なのは、このevidence graphから二つのものを作る点です。一つは、エージェントへ渡す自然言語の仕事の依頼です。もう一つは、完成した成果物を評価するrubricです。つまり、「何をしてほしいか」と「できたかどうかを何で判定するか」が、同じ根拠から派生します。</p>
+    <p>これにより、依頼文だけがもっともらしく生成され、実際のファイルでは答えられないという問題を減らせます。また、採点基準が抽象的な一般論になるのではなく、「この条件はこのファイルを確認する」「この数値はこの資料と成果物を突き合わせる」という形で、検証対象を具体的に持てます。</p>
+    <p>ただし著者たち自身も、evidence graphを絶対的なground truthとは呼んでいません。グラフは中間表現であり、その中の主張は元ファイルへ戻って確認できなければならない、としています。この位置づけは重要です。グラフを作ったAIが誤れば、その誤りをそのまま真実として固定してはいけません。</p>
+
+    <h2>仕事の種類は、自由生成ではなくO*NETから始める</h2>
+    <p>GraphForgeは、最初からモデルに「何か実務っぽい仕事を考えてください」とは頼みません。著者たちは、自由生成だけに任せると、よく出てくる職業や一般的な分析タスクへ偏りやすいと考えました。そこで、米国の職業情報データベースであるO*NETを出発点に使います。</p>
+    <p>O*NETには職業、具体的な作業内容、Detailed Work Activitiesと呼ばれる詳細な活動分類があります。研究では、その中からデジタル環境で実行可能と判断された仕事を残し、職業と活動の組み合わせを作ります。フィルタ後には、二百四十六の職業、十六のセクター、四十三のサブセクター、八百九十一種類の活動、三千四百十九の有効な職業と活動の組み合わせが残りました。</p>
+    <p>さらに、仕事の実行パターンも十六種類に分類します。たとえば、定量分析、照合、調査と情報統合、方針設計、成果物の修正といった方向です。これに入力ファイルの種類なども組み合わせ、同じタイプの仕事ばかりが増えないようにカバレッジを見ながらseedを選びます。</p>
+    <p>ここでseedが決めるのは、「誰が、どんな種類の仕事を、どんな実行パターンで行うか」という方向だけです。特定の会社名や案件、結果はまだ決めません。現実のケースと実ファイルは、その後に検索エージェントが探します。</p>
+
+    <h2>ワークスペースには、正解資料だけでなく紛らわしい資料も入れる</h2>
+    <p>次に検索エージェントが、seedに合う公開ケースを探し、実際のファイルを集めます。ファイルは可能な限り元の形式で取得され、形式ごとのツールで解析されます。完全な重複や壊れたファイルは除外されます。</p>
+    <p>面白いのは、残ったファイルにhidden role、つまり作業エージェントには見せない役割を付ける点です。役割は大きく四つあります。仕事の中心となるcore、ルールや背景を与えるsupporting、もっともらしいが適用すべきではないconfuser、そして現実の雑多さを加えるambientです。</p>
+    <p>たとえば同じ業界の似た報告書でも、年度が違うため今回の計算には使えない資料はconfuserになり得ます。こうしたファイルがあることで、エージェントは「情報を見つけたか」だけでなく、「この仕事に使うべき情報を選べたか」を問われます。</p>
+    <p>さらに、複数の組織にまたがる資料を一つのワークスペースに含める場合もあります。ただし仕事として一貫しており、答えられる範囲に保つという条件があります。これは、現実の業務で一つのフォルダだけを読めば済むとは限らない状況に近づけるためです。</p>
+
+    <h2>evidence graphは、ファイル間の依存関係を明示する</h2>
+    <p>ワークスペースができると、各ファイルの中から仕事に必要な事実や項目を取り出し、evidence graphを作ります。ノードには、どのファイルから得た情報か、その情報が何を意味するか、仕事の中でどの役割を持つかが記録されます。</p>
+    <p>エッジは、ファイルをまたいだ依存関係を表します。ある数値を別資料の基準と比較する、二つの資料を照合する、一方の条件を使って他方から対象を絞る、といった関係です。つまり「このPDFを読んだ」「このExcelを読んだ」というファイル単位ではなく、「この結論を出すには、Aの条件とBの数値をつなぐ必要がある」という構造を持たせます。</p>
+    <p>そこからtask specificationを作ります。task specificationには、自然言語の依頼文、必要な成果物、満たすべき正の評価基準、そして具体的に避けるべき誤りを示す負の基準が含まれます。</p>
+    <p>一つ一つの正の評価基準には、期待される値や計算、重み、確認すべき根拠ファイル、検証方法が結びつきます。負の基準も、「なんとなく質が悪い」と判定するのではなく、確認できる具体的な違反があったときだけ減点する設計です。</p>
+
+    <h2>仕事をするエージェントと、採点するエージェントには見える情報を分ける</h2>
+    <p>ここはGraphForgeの設計で特に重要な部分です。実際に仕事をするエージェントには、依頼文とワークスペースだけを渡します。evidence graphのノード番号や、どのファイルがcoreでどのファイルがconfuserかというhidden roleは見せません。</p>
+    <p>一方、採点する側には、どの基準をどのファイルで確認するかというevidence anchorと検証手順を渡します。つまり、作業者には答えの場所を直接教えず、評価者には検証に必要な根拠だけを与えます。</p>
+    <p>この分離によって、評価のために作った正解情報が作業エージェントへ漏れるのを避けつつ、評価者が広大なワークスペースを毎回ゼロから探索する必要も減らします。研究上の狙いは、実行と検証を分離しながら、両方を同じ根拠へ結び付けることです。</p>
+
+    <h2>一度実行してから、タスクそのものを修理する</h2>
+    <p>静的に依頼文とrubricを見ただけでは、長い業務タスクの曖昧さを完全には見つけられません。そこでGraphForgeは、最初に強いteacher modelへ一度その仕事を実行させます。</p>
+    <p>その実行結果、元ファイル、evidence graph、依頼文、rubricを別のrevision agentへ渡し、「この仕事は自然か」「本当に実行可能か」「要求した数値は根拠資料から出せるか」「rubricは正しいファイルへ紐づいているか」「成果物を検査する手順は十分か」を見直させます。</p>
+    <p>修正が必要なら、変更すべき部分だけを更新します。依頼文そのものが変わらなければ、最初の実行結果を再利用し、修正版rubricで採点することもあります。毎回全部を作り直すのではなく、実行から得た問題点を使ってタスク設計を一度補正する仕組みです。</p>
+    <p>この工程が示しているのは、「問題を生成したら完成」ではないということです。実際に解かせたときに初めて見える矛盾や不足を、訓練データへ入れる前に修正しています。</p>
+
+    <h2>成果物が存在するだけでは、訓練データとして採用しない</h2>
+    <p>最終的なtrajectory、つまりエージェントの作業履歴を訓練データへ入れる前にもフィルタがあります。まず、要求した成果物が実際に生成されていることを確認します。ファイル名、読める形式かどうか、必要なシートや数式があるか、タスク固有の構造条件を満たすかなど、機械的に確認できるものは決定的なチェックで検証します。</p>
+    <p>そのうえで、agent judgeが一つ一つのrubricを、指定された根拠ファイルと成果物の両方を見ながら採点します。さらに、同じツール呼び出しを不自然に繰り返す、ツール利用が極端に多い、失敗率が高い、出力が何度も途中で切れているといった、質の低いtrajectoryも除外します。</p>
+    <p>最終的な教師あり学習用データには、三千六百三十八のmaterialized taskから、評価値が〇・九を超えた二千百六十九trajectoryが採用されました。つまり、生成できたタスクをそのまま全部使っているわけではありません。</p>
+
+    <h2>作られた訓練データは、かなり長い仕事だった</h2>
+    <p>採用された二千百六十九trajectoryは、四百六十六種類のO*NET task type、十六セクターのうち十五、そして十六種類すべてのexecution patternをカバーしました。セクターと実行パターンの組み合わせでは、二百五十六通りのうち百六十四通りが実現しています。</p>
+    <p>分布は均等ではありません。データ分析と報告が約十四パーセント、調査と情報統合が約十三パーセントを占めます。一方で、その他の実行パターンは一つも一割を超えていません。完全に均一な人工データではなく、実際に素材を集め、フィルタした結果として偏りも残っています。</p>
+    <p>ファイル形式を見ると、PDFが約九十七パーセントのtrajectoryに含まれていました。多くのタスクは複数種類のファイルを使います。これは現実的である一方、GraphForgeが特に文書中心の業務を強く表現していることも示します。</p>
+    <p>作業の長さもかなりあります。一つのtrajectoryには平均五十のassistant stepがあり、中央値は四十八です。トークン数は平均約十六万二千、中央値約十五万八千です。上位五パーセントでは二十二万トークンを超え、約一パーセントは二十六万二千トークンの訓練上限に達しました。単発の質問応答ではなく、長いファイル作業を本当に対象にしています。</p>
+
+    <h2>訓練すると、三つの外部ベンチマークで改善した</h2>
+    <p>研究チームは、GraphForgeで作ったtrajectoryを使い、Qwen3.6の二十七Bモデルと三十五B-A3Bモデルを訓練しました。まずsupervised fine-tuning、つまり良質なteacher trajectoryを模倣させる教師あり学習を行います。</p>
+    <p>二十七Bモデルでは、GDPValの二百二十タスクからなるgold subsetの評価値が千四百四十五点七まで上がり、ベースラインから六十五点七改善しました。Workspace-Bench-Liteでは六十三点七で七点七の改善、SpreadsheetBench IIでは二十四点〇で十三点七の改善でした。</p>
+    <p>ここで数値の読み方には注意が必要です。GDPValとWorkspace-Bench、SpreadsheetBenchは同じ尺度ではありません。GDPValは経済価値の高い実務タスクを扱い、Workspace-Benchは多数ファイルにまたがる依存関係、SpreadsheetBenchは表計算の業務フローを評価します。したがって、「六十三点七の方が二十四点より優れている」という比較はできません。重要なのは、それぞれの公式評価条件で、元モデルから改善したことです。</p>
+    <p>さらに、同じGraphForgeデータで三十五B-A3Bモデルも改善しました。著者たちは、特定のベースモデル一つにだけ効くデータではない可能性を示す結果として扱っています。ただし、二つのQwen系モデルでの確認なので、あらゆるモデル系列へ一般化できるとまでは言えません。</p>
+
+    <h2>rubricは、訓練データを選ぶ信号としても使えた</h2>
+    <p>研究は教師あり学習だけで終わりません。次に、教師あり学習後のモデル自身へ新しい仕事を解かせ、複数の自己生成trajectoryを作ります。そして、evidence anchor付きrubricで良いtrajectoryを選び、rejection fine-tuningを行います。</p>
+    <p>この追加学習でも三つのベンチマークすべてでさらに改善しました。著者たちは、evidence-anchored rubricが、単に成果物を採点するだけでなく、「どの自己生成経験を学習に使うか」を選ぶ信号としても役立ったと解釈しています。</p>
+    <p>これはGraphForgeの中でも意味の大きい部分です。もしrubricが単なる報告用のスコアではなく、良い経験と悪い経験を分ける信号として使えるなら、エージェントが自分で仕事をして、その結果から学ぶ循環にも接続できます。</p>
+    <p>ただし、ここで得られたのはrubric-guided selectionが有効だったという結果です。「この方法だけで継続的な自己改善が安全に成立する」と示されたわけではありません。自己生成データを繰り返し使うときの分布変化や誤りの蓄積は、別の問題として残ります。</p>
+
+    <h2>この研究をどこまで信頼できるか</h2>
+    <p>まず強みから見ると、GraphForgeは「現実的なファイルを使う」と「正解を検証できる」を同時に扱おうとしています。しかも評価はGraphForge内部のタスクだけではなく、GDPVal、Workspace-Bench-Lite、SpreadsheetBench IIという外部ベンチマークで行われています。訓練データの良し悪しを、そのデータ自身の採点だけで証明しようとしていない点は重要です。</p>
+    <p>また、訓練タスクを作る段階で、実行可能性の確認、rubric修正、成果物レベルの検査、trajectoryの品質除外を重ねています。データ生成数だけを増やすのではなく、かなり強い選別をしています。</p>
+    <p>一方で、2026年10月2日時点ではarXivのpreprintです。査読を経た確定版ではありません。結果や方法の細部は今後修正される可能性があります。</p>
+    <p>さらに、訓練データは公開ファイルから作られています。企業内部の独自データ、権限管理されたシステム、継続的に更新されるデータベース、対人調整が必要な業務などが同じように再現されているわけではありません。したがって、「現実の仕事全般」をそのまま代表するとは考えない方がよいです。</p>
+
+    <h2>外部から見たもう一つの注意点は、生成側と評価側の相関</h2>
+    <p>ここからは論文の結果そのものではなく、方法を読んだうえでの追加の注意点です。GraphForgeでは、ワークスペース構築、evidence graph生成、task specification作成、revision、teacher rollout、evidence-anchored judgeまで、パイプラインの主要部分にGLM-5.2を使っています。</p>
+    <p>これは一貫した強いモデルを使える利点がありますが、同じモデル系列の癖が複数段階へ共有される可能性があります。たとえば、ある種類の誤解をtask generatorとjudgeが同じように持っていれば、内部評価では問題が見えにくくなるかもしれません。</p>
+    <p>もちろん、最終的な性能を外部ベンチマークで測っているため、内部judgeだけで成果を主張しているわけではありません。それでも、将来この手法を業務システムへ応用するなら、タスク生成者、実行者、検証者をどこまで独立させるべきかは重要な設計課題になります。</p>
+
+    <h2>もう一つの限界は、evidence graph自体もAIが作ること</h2>
+    <p>GraphForgeの強みは、すべてを根拠へ結び付けることです。しかし、その根拠関係を整理するevidence graph自体もモデルが生成します。著者たちが「graphはground truthではない」と明記しているのは、この点と関係します。</p>
+    <p>元ファイルに事実が存在していても、モデルが関係を取り違えれば、誤った依頼やrubricが作られる可能性があります。そのためGraphForgeは、evidence anchorを元ファイルへ戻れる形にし、initial rolloutとrevisionを挟み、最終的に高得点のtrajectoryだけを採用しています。</p>
+    <p>それでも、完全な保証ではありません。特に、曖昧な規則、例外の多い制度、時間によって有効性が変わる資料では、「ファイルに書いてある」と「現在その条件を適用すべきである」の間に追加の検証が必要です。この研究は、その問題を完全に解いたというより、検証可能性を高める構造を示したと見る方が妥当です。</p>
+
+    <h2>実務で重要なのは、AIに渡す知識を「検索しやすくする」だけではない</h2>
+    <p>ここからは実務への含意です。GraphForgeから読み取れる一つの大きな示唆は、AIに仕事をさせるための情報整備は、検索精度だけの問題ではないということです。</p>
+    <p>必要な資料を見つけられることはもちろん重要です。しかし、その先に、「どの資料同士を結び付けるのか」「どの主張をどの証拠で検証するのか」「何を成果物として要求するのか」「どの誤りを明示的に禁止するのか」という構造があります。</p>
+    <p>つまり、AIが読みやすい業務基盤を作るなら、文書をベクトル検索できるようにするだけでは足りません。重要な主張と出典の対応、資料間の依存関係、適用条件、成果物の検証方法まで、再利用可能な形で持つ方が強い可能性があります。</p>
+    <p>GraphForgeは訓練データ生成の研究なので、そのまま企業の知識管理設計書ではありません。それでも、「仕事の指示」と「検証可能な根拠」を同じsource of truthから作るという発想は、実務エージェントの運用にもかなり直接的に応用できます。</p>
+
+    <h2>AIエージェントを評価するときも、最終回答だけでは足りない</h2>
+    <p>もう一つの示唆は、エージェント評価の粒度です。通常のQAなら、最終回答が合っているかだけで十分な場合があります。しかし、複数ファイルを扱う仕事では、偶然正しい数値に到達することと、正しい資料を正しい条件で使ったことは同じではありません。</p>
+    <p>GraphForgeのrubricは、成果物の各要件を根拠ファイルへ結び付けます。さらにnegative criteriaを持ち、確認できる具体的な違反を減点します。これにより、「結果だけ見る」評価から、「必要な条件を満たし、禁止された誤りを避け、根拠と成果物が整合しているか」を見る評価へ近づきます。</p>
+    <p>業務でAIを使うとき、こうした評価は特に重要です。最終的な報告書の文章が流暢でも、適用年度を間違えた、旧版の資料を使った、対象外のケースを混ぜた、計算元のセルを取り違えた、といった失敗は起こり得ます。こうした失敗を捕まえるには、完成文の印象評価より、根拠付きの細かなcriterionが向いています。</p>
+
+    <h2>ただし、評価設計が細かいほどよいとは限らない</h2>
+    <p>一方で、rubricを細かくすれば自動的に信頼性が上がるわけでもありません。間違ったcriterionを精密に採点すれば、間違いを高精度で強化することになります。GraphForgeが元ファイルへのanchorを持ち、実行後にrevisionを行うのは、この問題を抑えるためです。</p>
+    <p>実務では、どのcriterionを機械的に検証できるのか、どこは人間の判断が必要なのかを分ける必要があります。ファイル名、数式、シート構造、数値一致は比較的自動化しやすい。一方、政策上の妥当性、説明責任、例外規定の解釈、優先順位の判断などは、単純な自動judgeだけでは危険な場合があります。</p>
+    <p>したがって、GraphForgeから得られる教訓は「人間レビューをなくせる」ではありません。むしろ、どの判断をどの証拠で自動検証できるかを細かく分解することで、人間が本当に見るべき箇所を明確にできる、という方向にあります。</p>
+
+    <h2>最後に残す要点</h2>
+    <p>GraphForgeが扱っている本当の問題は、AIエージェントの賢さそのものより、学習可能で検証可能な「仕事」をどう作るかです。</p>
+    <p>まずO*NETから仕事の方向を選びます。次に公開された実ファイルを集め、必要資料だけでなく紛らわしい資料も混ぜます。そのファイル群からevidence graphを作り、同じ根拠から依頼文とrubricを生成します。作業エージェントには答えの場所を見せず、評価者には検証用のanchorを渡します。さらに一度実行して曖昧さを修正し、成果物と作業履歴を検査して、高品質なtrajectoryだけを訓練へ回します。</p>
+    <p>その結果、二千百六十九の長い業務trajectoryで訓練したQwen3.6モデルは、GDPVal、Workspace-Bench-Lite、SpreadsheetBench IIの三つで改善しました。rubricを自己生成trajectoryの選別に使う追加学習でも、さらに改善が確認されました。</p>
+    <p>ただし、これはpreprintであり、公開ファイル中心の仕事に限定され、データ生成と評価の多くを同じ強いモデルが担っています。evidence graph自体も絶対的な正解ではありません。</p>
+    <p>それでも、この研究の設計思想には残るものがあります。AIに仕事をさせるには、情報を渡すだけではなく、「何を根拠として、何を作り、どう正しさを確認するか」を一体として設計する必要があります。AIエージェントが実務へ入るほど、価値のあるデータは単なる文書の集合ではなく、仕事と検証を結び付けられる根拠構造になっていく可能性があります。</p>
+  </article>
+
+  <section class="player" aria-label="読み上げ操作">
+    <div class="transport">
+      <button id="prev-block" type="button" aria-label="前の読み上げ単位へ">←</button>
+      <button id="play" type="button" aria-label="再生">▶</button>
+      <button id="pause" type="button" aria-label="一時停止">Ⅱ</button>
+      <button id="stop" type="button" aria-label="停止">■</button>
+      <button id="next-block" type="button" aria-label="次の読み上げ単位へ">→</button>
+    </div>
+    <div class="section-nav" aria-label="章移動">
+      <button id="prev-section" type="button" aria-label="前の章へ">‹</button>
+      <span id="section-label">導入</span>
+      <button id="next-section" type="button" aria-label="次の章へ">›</button>
+    </div>
+    <div class="voice-row">
+      <select id="voice" aria-label="日本語音声"></select>
+    </div>
+    <div class="speed"><span>速度</span><input id="rate" type="range" min="0.7" max="4" step="0.1" value="1"><span id="rateValue">1.0×</span></div>
+  </section>
+
+
+
+  <section class="sources" aria-label="出典">
+    <strong>出典</strong>
+    <p><a href="https://arxiv.org/abs/2609.38923">arXiv — GraphForge: Training Working Agents with Graph-Anchored Workspace Synthesis</a></p>
+    <p><a href="https://huggingface.co/papers/2609.38923">Hugging Face Papers — GraphForge</a></p>
+    <p><a href="https://huggingface.co/randomsubmit/GraphForge-Qwen3.6-27B-SFT">Hugging Face — GraphForge Qwen3.6-27B SFT model</a></p>
+    <p><a href="https://huggingface.co/randomsubmit/GraphForge-Qwen3.6-35B-A3B-SFT">Hugging Face — GraphForge Qwen3.6-35B-A3B SFT model</a></p>
+  </section>
+</main>
+<script>
+(() => {
+  const synth = window.speechSynthesis;
+  const blocks = [...document.querySelectorAll("#article h1,#article h2,#article h3,#article p")];
+  const sectionStarts = [...new Set([0, ...blocks.map((node, i) => node.tagName === "H2" ? i : -1).filter(i => i >= 0)])];
+  const play = document.querySelector("#play");
+  const pause = document.querySelector("#pause");
+  const stop = document.querySelector("#stop");
+  const prevBlock = document.querySelector("#prev-block");
+  const nextBlock = document.querySelector("#next-block");
+  const prevSection = document.querySelector("#prev-section");
+  const nextSection = document.querySelector("#next-section");
+  const sectionLabel = document.querySelector("#section-label");
+  const voice = document.querySelector("#voice");
+  const rate = document.querySelector("#rate");
+  const rateValue = document.querySelector("#rateValue");
+  const theme = document.querySelector("#theme");
+  let index = 0, playing = false, paused = false, selectedVoice = "", generation = 0;
+  let wakeLock = null, wakeLockWanted = false;
+
+  async function requestWakeLock() {
+    const wakeLockApi = window.navigator?.wakeLock;
+    wakeLockWanted = true;
+    if (!wakeLockApi?.request || wakeLock) return;
+    try {
+      const lock = await wakeLockApi.request("screen");
+      if (!wakeLockWanted) {
+        await lock.release();
+        return;
+      }
+      wakeLock = lock;
+      wakeLock.addEventListener?.("release", () => { wakeLock = null; });
+    } catch {
+      wakeLock = null;
+    }
+  }
+
+  async function releaseWakeLock() {
+    wakeLockWanted = false;
+    const current = wakeLock;
+    wakeLock = null;
+    if (!current) return;
+    try {
+      await current.release();
+    } catch {
+      // Wake Lock is best-effort; speech playback must continue to work.
+    }
+  }
+
+  function voices() {
+    const previous = selectedVoice || voice.value;
+    const items = synth.getVoices().filter(v => /^ja(?:-|_)/i.test(v.lang));
+    voice.replaceChildren();
+    for (const v of items) {
+      const o = document.createElement("option");
+      o.value = v.voiceURI;
+      o.textContent = v.name;
+      voice.append(o);
+    }
+    if (items.some(v => v.voiceURI === previous)) voice.value = previous;
+    selectedVoice = voice.value;
+  }
+
+  function clearHighlight() {
+    blocks.forEach(node => node.classList.remove("is-speaking"));
+  }
+
+  function sectionPosition() {
+    let pos = 0;
+    for (let i = 0; i < sectionStarts.length; i += 1) {
+      if (sectionStarts[i] <= index) pos = i;
+      else break;
+    }
+    return pos;
+  }
+
+  function updateNavigation() {
+    prevBlock.disabled = index <= 0;
+    nextBlock.disabled = index >= blocks.length - 1;
+
+    const pos = sectionPosition();
+    const start = sectionStarts[pos] ?? 0;
+    const previousTargetExists = index > start || pos > 0;
+    prevSection.disabled = !previousTargetExists;
+    nextSection.disabled = pos >= sectionStarts.length - 1;
+
+    const startNode = blocks[start];
+    sectionLabel.textContent = startNode?.tagName === "H2" ? startNode.textContent : "導入";
+  }
+
+  function showCurrent() {
+    clearHighlight();
+    const current = blocks[index];
+    if (!current) return;
+    current.classList.add("is-speaking");
+    current.scrollIntoView({ block: "center", behavior: "smooth" });
+    updateNavigation();
+  }
+
+  function speakCurrent() {
+    if (!playing || paused || index >= blocks.length) {
+      if (index >= blocks.length) {
+        playing = false;
+        paused = false;
+        clearHighlight();
+        void releaseWakeLock();
+      }
+      updateNavigation();
+      return;
+    }
+
+    showCurrent();
+    const localGeneration = ++generation;
+    const utterance = new SpeechSynthesisUtterance(blocks[index].textContent);
+    utterance.lang = "ja-JP";
+    utterance.rate = Number(rate.value);
+    const selected = synth.getVoices().find(item => item.voiceURI === voice.value);
+    if (selected) utterance.voice = selected;
+
+    utterance.onend = () => {
+      if (localGeneration !== generation || !playing || paused) return;
+      index += 1;
+      speakCurrent();
+    };
+
+    utterance.onerror = event => {
+      if (localGeneration !== generation) return;
+      if (event.error !== "canceled" && event.error !== "interrupted") {
+        playing = false;
+        paused = false;
+        clearHighlight();
+        void releaseWakeLock();
+        updateNavigation();
+      }
+    };
+
+    synth.speak(utterance);
+  }
+
+  function jumpTo(target) {
+    const next = Math.max(0, Math.min(blocks.length - 1, target));
+    const resume = playing && !paused;
+    const keepPaused = paused;
+
+    generation += 1;
+    synth.resume?.();
+    synth.cancel();
+    index = next;
+
+    if (resume) {
+      playing = true;
+      paused = false;
+      void requestWakeLock();
+      speakCurrent();
+      return;
+    }
+
+    playing = keepPaused;
+    paused = keepPaused;
+    showCurrent();
+    if (keepPaused) void requestWakeLock();
+  }
+
+  function jumpSection(delta) {
+    const pos = sectionPosition();
+    let targetPos;
+
+    if (delta < 0 && index > sectionStarts[pos]) targetPos = pos;
+    else targetPos = pos + delta;
+
+    if (targetPos < 0 || targetPos >= sectionStarts.length) return;
+    jumpTo(sectionStarts[targetPos]);
+  }
+
+  play.addEventListener("click", () => {
+    if (paused) {
+      generation += 1;
+      synth.resume?.();
+      synth.cancel();
+      paused = false;
+      playing = true;
+      void requestWakeLock();
+      speakCurrent();
+      return;
+    }
+    if (playing) return;
+    if (index >= blocks.length) index = 0;
+    playing = true;
+    void requestWakeLock();
+    speakCurrent();
+  });
+
+  pause.addEventListener("click", () => {
+    if (!playing || paused) return;
+    synth.pause();
+    paused = true;
+  });
+
+  stop.addEventListener("click", () => {
+    generation += 1;
+    synth.resume?.();
+    synth.cancel();
+    playing = false;
+    paused = false;
+    index = 0;
+    clearHighlight();
+    updateNavigation();
+    void releaseWakeLock();
+  });
+
+  prevBlock.addEventListener("click", () => jumpTo(index - 1));
+  nextBlock.addEventListener("click", () => jumpTo(index + 1));
+  prevSection.addEventListener("click", () => jumpSection(-1));
+  nextSection.addEventListener("click", () => jumpSection(1));
+
+  voice.addEventListener("change", () => {
+    selectedVoice = voice.value;
+    if (playing && !paused) {
+      generation += 1;
+      synth.cancel();
+      speakCurrent();
+    }
+  });
+
+  rate.addEventListener("input", () => {
+    rateValue.textContent = Number(rate.value).toFixed(1) + "×";
+  });
+
+  theme.addEventListener("click", () => {
+    const dark = document.documentElement.dataset.theme === "dark";
+    document.documentElement.dataset.theme = dark ? "light" : "dark";
+    theme.textContent = dark ? "☾" : "☀";
+    localStorage.setItem("rsvp:theme", dark ? "light" : "dark");
+  });
+
+  document.documentElement.dataset.theme =
+    localStorage.getItem("rsvp:theme") ||
+    (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  theme.textContent = document.documentElement.dataset.theme === "dark" ? "☀" : "☾";
+
+  voices();
+  synth.addEventListener?.("voiceschanged", voices);
+  updateNavigation();
+
+  document.addEventListener?.("visibilitychange", () => {
+    if (document.visibilityState === "visible" && (playing || paused)) {
+      void requestWakeLock();
+    }
+  });
+
+  addEventListener("pagehide", () => {
+    generation += 1;
+    synth.cancel();
+    void releaseWakeLock();
+  });
+})();
+</script>
+</body>
+</html>

@@ -2,6 +2,13 @@
   "schema_version": 1,
   "items": [
     {
+      "id": "2026-10-02-graphforge-verifiable-working-agents",
+      "title": "仕事をするAIは、どうすれば「根拠付きで検証可能な仕事」を学べるのか――GraphForge",
+      "date": "2026-10-02",
+      "category": "research",
+      "path": "./research/2026-10-02-graphforge-verifiable-working-agents.html"
+    },
+    {
       "id": "2026-10-01-agents-design-libraries-for-agents",
       "title": "AIエージェントは、別のAIが使いやすいライブラリを設計できるか",
       "date": "2026-10-01",
