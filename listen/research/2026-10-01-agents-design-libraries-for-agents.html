@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f2efe8">
+  <meta name="description" content="2026年9月29日公開のLibraryDesignBench論文を、方法・結果・限界・実務上の意味まで音声で追えるDaily Paper Listen。">
+  <title>AIエージェントは、別のAIが使いやすいライブラリを設計できるか</title>
+  <style>
+    :root{color-scheme:light;--bg:#f2efe8;--ink:#121722;--muted:#73766f;--line:#cbc8bf;--blue:#5d7487}
+    html[data-theme="dark"]{color-scheme:dark;--bg:#11151a;--ink:#edf0eb;--muted:#959b97;--line:#343a3e;--blue:#7892a6}
+    *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Hiragino Sans","Noto Sans JP",sans-serif;line-height:1.9}
+    .shell{width:min(760px,100%);margin:0 auto;padding:max(18px,env(safe-area-inset-top)) 20px max(42px,env(safe-area-inset-bottom))}
+    .topbar{min-height:52px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+    .icon{width:42px;height:42px;display:grid;place-items:center;border:0;background:transparent;color:var(--muted);text-decoration:none;font:inherit}
+    .meta{margin:28px 0 8px;color:var(--muted);font-size:.75rem}
+    h1{font-size:clamp(2rem,8vw,3.4rem);line-height:1.12;letter-spacing:-.04em;margin:.2em 0 .8em} h2{margin:2.2em 0 .6em;font-size:1.2rem}
+    p{margin:0 0 1.25em} article>*{transition:background-color .15s ease}.is-speaking{background:color-mix(in srgb,var(--blue) 16%,transparent)}
+    .player{position:sticky;bottom:0;margin:32px -6px 0;padding:12px 6px;background:color-mix(in srgb,var(--bg) 94%,transparent);border-top:1px solid var(--line);backdrop-filter:blur(8px)}
+    .controls{display:grid;grid-template-columns:48px 48px 48px 1fr;gap:8px;align-items:center}.controls button,.controls select{min-height:42px;border:1px solid var(--line);background:transparent;color:var(--ink)}
+    .speed{display:grid;grid-template-columns:48px 1fr 42px;gap:10px;align-items:center;margin-top:10px;font-size:.78rem;color:var(--muted)} input{width:100%}
+    .sources{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}.sources a{color:var(--ink)}
+  
+    .topbar{display:flex;align-items:center;justify-content:space-between}
+    .mode-nav{display:inline-flex;align-items:center;gap:4px}
+    .mode-icon{width:42px;height:42px;display:grid;place-items:center;color:var(--muted);text-decoration:none;opacity:.5}
+    .mode-icon.is-active{color:var(--ink);opacity:1}
+    .mode-icon svg{width:20px;height:20px;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+    .brand-mark{width:22px;height:14px;display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+    .brand-mark i{display:block}.brand-mark i:nth-child(1){background:#a85248}.brand-mark i:nth-child(2){background:#5d7487}.brand-mark i:nth-child(3){background:#c2a653}
+    .transport{display:grid;grid-template-columns:repeat(5,48px);justify-content:center;gap:8px}
+    .transport button,.section-nav button,.voice-row select{min-height:42px;border:1px solid var(--line);background:transparent;color:var(--ink);font:inherit}
+    .transport button{width:48px}
+    .section-nav{display:grid;grid-template-columns:48px 1fr 48px;align-items:center;gap:8px;margin-top:10px}
+    .section-nav button:disabled{opacity:.25}
+    #section-label{min-width:0;overflow:hidden;color:var(--muted);font-size:.78rem;text-align:center;white-space:nowrap;text-overflow:ellipsis}
+    .voice-row{margin-top:10px}.voice-row select{width:100%;padding:0 8px}
+    .mode-icon:focus-visible,.transport button:focus-visible,.section-nav button:focus-visible,.voice-row select:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+
+  </style>
+</head>
+<body>
+<main class="shell">
+  <header class="topbar">
+    <nav class="mode-nav" aria-label="モード切替">
+      <a class="mode-icon" href="../../index.html" aria-label="RSVPへ移動" title="RSVP">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      </a>
+      <a class="mode-icon" href="../../index.html?library=learn" aria-label="Learnへ移動" title="Learn">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 5.5c2.6-.8 5.3-.4 8 1.2v12c-2.7-1.6-5.4-2-8-1.2v-12Z" />
+          <path d="M20 5.5c-2.6-.8-5.3-.4-8 1.2v12c2.7-1.6 5.4-2 8-1.2v-12Z" />
+        </svg>
+      </a>
+      <a class="mode-icon is-active" href="../../index.html?library=listen" aria-label="Listen一覧へ移動" aria-current="page" title="Listen">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 13v-1a8 8 0 0 1 16 0v1" />
+          <path d="M4 13h3v7H5a1 1 0 0 1-1-1v-6Zm16 0h-3v7h2a1 1 0 0 0 1-1v-6Z" />
+        </svg>
+      </a>
+    </nav>
+    <button id="theme" class="icon" type="button" aria-label="テーマ切替">☾</button>
+  </header>
+
+
+  <article id="article">
+    <p class="meta">情報基準日 2026年10月1日</p>
+    <h1>AIエージェントは、別のAIが使いやすいライブラリを設計できるか</h1>
+
+    <p>今日取り上げるのは、2026年9月29日にarXivへ公開された「Can Agents Design Libraries for Agents?」です。テーマは、AIエージェントが別のAIエージェントのために、使いやすいソフトウェアライブラリを設計できるのか、という問いです。</p>
+    <p>この研究が面白いのは、AIにコードを書かせて、そのコードがテストを通るかだけを見ていない点です。あるエージェントが作ったライブラリを、別のエージェントに実際に使わせます。そして、後続エージェントが正しいプログラムを、どれだけ少ない追加コードで書けたかを評価します。つまり、設計物そのものではなく、次の作業者がどれだけ楽になったかで品質を測っています。</p>
+
+    <h2>問題は、エージェントがコードを再利用しないこと</h2>
+    <p>背景には、長時間のソフトウェア開発をAIエージェントへ任せるほど、エージェントが別のエージェントの書いたコードを引き継ぐ場面が増えるという問題があります。論文の著者たちは、後続エージェントが既存機能を十分に再利用せず、すでにある処理を作り直してしまうと指摘します。</p>
+    <p>この問題は、最初の一回だけを見れば小さく見えます。しかし、再実装が積み重なるとコードベースは大きくなり、後から読む範囲も、壊れる場所も、修正対象も増えます。人間向けのソフトウェア設計では、ライブラリやフレームワークによって共通処理を抽象化してきました。では、主な利用者がAIになった場合にも、同じ設計でよいのでしょうか。これが研究の出発点です。</p>
+
+    <h2>二段階で、設計するAIと使うAIを分けた</h2>
+    <p>研究チームは、LibraryDesignBenchというベンチマークを作りました。評価は二段階です。最初の設計段階では、エージェントに必要な機能と利用例を示しますが、APIの形やクラス構造までは指定しません。エージェント自身が、どの抽象化を用意し、どのようなインターフェースにするかを決めます。</p>
+    <p>次の評価段階では、別の三種類のエージェントが、そのライブラリを使って実際のプログラミング問題を解きます。ベンチマーク全体は、十五のライブラリ設計課題、四つのプログラミング言語、二百四十二の専門家確認済み問題で構成されています。問題はライブラリがなくても解けるように作られており、ライブラリを使うことでどれだけ実装を薄くできるかを見る設計です。</p>
+    <p>各設計条件は一回だけではなく、各課題について三回独立にライブラリを生成します。論文では、設計モデル一条件あたり、三つの利用エージェントを組み合わせて二千百七十八の下流評価を行っています。エージェント評価のばらつきを無視しないための設計です。</p>
+
+    <h2>正しさだけでは、良いライブラリを見分けにくかった</h2>
+    <p>評価は、下流プログラムの正しさと簡潔さを組み合わせます。正しさはテスト通過率で測ります。簡潔さは、人間が実運用している既存ライブラリを使った参照実装と比べ、ソースコード行数、分岐の複雑さ、認知的複雑さ、演算子やオペランドの量という四種類の静的指標から測ります。</p>
+    <p>ここで重要な結果が出ました。設計モデルごとの平均テスト通過率は、おおむね八十四パーセントから八十七パーセントの狭い範囲に集まりました。ライブラリを与えない条件でも八十六パーセント台です。つまり、この実験では「最終的に正しいコードを書けたか」だけでは、良いライブラリ設計と悪いライブラリ設計をあまり区別できませんでした。</p>
+    <p>差が大きく出たのは、後続エージェントがどれだけ余計なコードを書かずに済んだかです。ライブラリの価値は、機能が存在することだけではなく、その機能を次のエージェントが自然に見つけ、組み合わせ、使えることに現れました。</p>
+
+    <h2>エージェントは人間の抽象化をかなり再現した</h2>
+    <p>十五課題のうち十一課題では、エージェント設計者が、人間が作った本番ライブラリと似た主要な抽象化を再現しました。少なくともこの範囲では、エージェントがライブラリ設計の基本構造をまったく理解できない、という結果ではありません。</p>
+    <p>総合スコアでは、最も高かった設計条件が四十八点九で、人間の本番ライブラリを使う条件の四十六点六を二点三上回りました。ただし、これは「AIが人間より優れたライブラリ設計者になった」という一般的な結論ではありません。このスコアは、十五の課題、指定された利用エージェント、静的な簡潔さ指標、固定された実行条件に依存するベンチマーク上の結果です。</p>
+    <p>実際、モデルや実行ハーネスによって結果はかなり変わります。同じモデルでも、どのエージェント実行環境で設計させるかによって下流の使いやすさが変わりました。設計能力をモデル名だけで説明できないことも、この研究の重要な点です。</p>
+
+    <h2>最大の失敗は、機能不足より使いにくさだった</h2>
+    <p>研究チームは、後続エージェントが参照実装より余分なコードを書いたケースを手作業でも分析しました。論文の要約では、サンプルした余剰コードの六十四パーセントを、硬直している、または使いにくいインターフェースに分類しています。一方、必要な機能そのものが欠けていたケースは十四パーセントでした。</p>
+    <p>つまり、多くの場合、ライブラリには必要な能力がありました。それでも利用者側のエージェントは、その能力をうまく使えず、自分で処理を書き足していました。これは、AI向けの設計でも、機能一覧を満たすことと、再利用しやすいことは別だという結果です。</p>
+    <p>さらに、人間が作った本番ライブラリでも、後続エージェントは十分に使いこなしていませんでした。本番ライブラリを固定した実験でも、エージェントが書くコードは専門家の参照実装より長くなります。問題はAI製ライブラリだけではなく、現在のエージェント自身にも「既存の抽象化を発見して最大限利用する」弱さがあると考えられます。</p>
+
+    <h2>利用者を先に想定すると改善した</h2>
+    <p>著者たちは次に、設計エージェントへ、より明示的なエージェント向け設計の指示を与えました。具体的には、利用側のコードを先にスケッチすること、実行可能な使用例を用意すること、サブエージェントに実際にライブラリを使わせて試すことを組み合わせました。</p>
+    <p>この条件では、ある設計モデルの総合スコアが四十四点一から四十六点四へ上がりました。改善は主に、後続エージェントが書くコードが短くなったことから生じています。一方で、人間の本番ライブラリ条件の四十六点六にはわずかに届きませんでした。また、この介入は複数の工夫をまとめて導入しているため、どの要素が効いたかはこの実験だけでは分かりません。</p>
+    <p>設計時のコストも増えています。したがって、サブエージェントによる利用テストを増やせば常に得になる、とまでは言えません。上流の設計コストと、下流で何度も再利用されるときの削減効果を分けて考える必要があります。</p>
+
+    <h2>どこまで信頼できるか</h2>
+    <p>この研究は、単発のデモではなく、複数のモデル、複数の利用エージェント、二百四十二問題で下流利用を直接測っている点が強みです。また、同じ設計条件を三回繰り返し、ばらつきも報告しています。単に「それらしいAPIができた」と評価していないのは重要です。</p>
+    <p>一方で限界も明確です。第一に、十五のライブラリ設計課題と四言語での結果なので、ソフトウェア設計全般へそのまま一般化はできません。第二に、簡潔さは静的なコード指標で測られており、実行速度、セキュリティ、障害時の回復性、長期保守性までは直接評価していません。</p>
+    <p>第三に、利用エージェントには、ドキュメントを読み、ライブラリ上の薄いアダプターを書くよう明示的に促しています。現実の自律エージェントが、もっと曖昧な状況で同じ程度に再利用するとは限りません。第四に、各課題の独立生成は三回です。著者自身も、報告した信頼区間は近似であり、名目上のカバレッジが保証されないとしています。</p>
+    <p>そして、2026年10月1日時点では、この論文はarXivのプレプリントです。査読済み論文として確定した結果ではありません。</p>
+
+    <h2>この研究から実務へ持ち帰れること</h2>
+    <p>ここからは論文の結果を踏まえた分析です。AIエージェント中心の開発では、コード資産の品質を「その部品が正しく動くか」だけで測るのは不十分になりそうです。次のエージェントが既存機能を発見し、余計な再実装をせず、小さな変更で目的を達成できるかも、品質指標になります。</p>
+    <p>実務上は、APIや共通ツールを作った時点で終わらせず、別のエージェントに実際の下流タスクを解かせる評価が有効です。そこで重複コードが増えるなら、利用者の推論能力だけを疑うのではなく、インターフェースが硬すぎないか、必要な機能が一段深い場所に隠れていないか、具体的な使用例が不足していないかを見る余地があります。</p>
+    <p>もう一つ重要なのは、エージェント向けの設計が、人間向け設計と完全に同じとは限らないことです。論文の介入では、利用例を先に作り、サブエージェントで試すことで改善しました。将来、AIが主なコード利用者になる領域では、人間のAPIレビューに加えて、実際のエージェント利用を通した設計検証が標準になる可能性があります。ただし、この研究だけで最適な設計原則が確立したわけではありません。</p>
+
+    <h2>最後に残す要点</h2>
+    <p>この論文の中心的な発見は、AIエージェントがライブラリの抽象化を作れないことではありません。むしろ、かなりの課題で人間の本番ライブラリに似た抽象化を再現できました。それでも後続エージェントは機能を十分に再利用せず、余計なコードを書きます。</p>
+    <p>失敗分析では、その主因は機能不足より、硬直して使いにくいインターフェースでした。そして、利用者を先に想定したAPI設計、実行可能な例、サブエージェントによる利用テストを組み合わせると、下流コードは簡潔になりました。</p>
+    <p>したがって、AIエージェント時代のソフトウェア設計で注目すべきなのは、「エージェントが何を作れるか」だけではありません。「次のエージェントが、それをどれだけ自然に再利用できるか」です。この研究は、その違いを測定可能な問題として切り出した点に価値があります。</p>
+  </article>
+
+  <section class="player" aria-label="読み上げ操作">
+    <div class="transport">
+      <button id="prev-block" type="button" aria-label="前の読み上げ単位へ">←</button>
+      <button id="play" type="button" aria-label="再生">▶</button>
+      <button id="pause" type="button" aria-label="一時停止">Ⅱ</button>
+      <button id="stop" type="button" aria-label="停止">■</button>
+      <button id="next-block" type="button" aria-label="次の読み上げ単位へ">→</button>
+    </div>
+    <div class="section-nav" aria-label="章移動">
+      <button id="prev-section" type="button" aria-label="前の章へ">‹</button>
+      <span id="section-label">導入</span>
+      <button id="next-section" type="button" aria-label="次の章へ">›</button>
+    </div>
+    <div class="voice-row">
+      <select id="voice" aria-label="日本語音声"></select>
+    </div>
+    <div class="speed"><span>速度</span><input id="rate" type="range" min="0.7" max="4" step="0.1" value="1"><span id="rateValue">1.0×</span></div>
+  </section>
+
+
+  <section class="sources" aria-label="出典">
+    <strong>出典</strong>
+    <p><a href="https://arxiv.org/abs/2609.36730">arXiv — Can Agents Design Libraries for Agents?</a></p>
+    <p><a href="https://github.com/SprocketLab/librarydesignbench">LibraryDesignBench — Code and data</a></p>
+    <p><a href="https://huggingface.co/papers/2609.36730">Hugging Face Papers — Can Agents Design Libraries for Agents?</a></p>
+  </section>
+</main>
+<script>
+(() => {
+  const synth = window.speechSynthesis;
+  const blocks = [...document.querySelectorAll("#article h1,#article h2,#article h3,#article p")];
+  const sectionStarts = [...new Set([0, ...blocks.map((node, i) => node.tagName === "H2" ? i : -1).filter(i => i >= 0)])];
+  const play = document.querySelector("#play");
+  const pause = document.querySelector("#pause");
+  const stop = document.querySelector("#stop");
+  const prevBlock = document.querySelector("#prev-block");
+  const nextBlock = document.querySelector("#next-block");
+  const prevSection = document.querySelector("#prev-section");
+  const nextSection = document.querySelector("#next-section");
+  const sectionLabel = document.querySelector("#section-label");
+  const voice = document.querySelector("#voice");
+  const rate = document.querySelector("#rate");
+  const rateValue = document.querySelector("#rateValue");
+  const theme = document.querySelector("#theme");
+  let index = 0, playing = false, paused = false, selectedVoice = "", generation = 0;
+  let wakeLock = null, wakeLockWanted = false;
+
+  async function requestWakeLock() {
+    const wakeLockApi = window.navigator?.wakeLock;
+    wakeLockWanted = true;
+    if (!wakeLockApi?.request || wakeLock) return;
+    try {
+      const lock = await wakeLockApi.request("screen");
+      if (!wakeLockWanted) {
+        await lock.release();
+        return;
+      }
+      wakeLock = lock;
+      wakeLock.addEventListener?.("release", () => { wakeLock = null; });
+    } catch {
+      wakeLock = null;
+    }
+  }
+
+  async function releaseWakeLock() {
+    wakeLockWanted = false;
+    const current = wakeLock;
+    wakeLock = null;
+    if (!current) return;
+    try {
+      await current.release();
+    } catch {
+      // Wake Lock is best-effort; speech playback must continue to work.
+    }
+  }
+
+  function voices() {
+    const previous = selectedVoice || voice.value;
+    const items = synth.getVoices().filter(v => /^ja(?:-|_)/i.test(v.lang));
+    voice.replaceChildren();
+    for (const v of items) {
+      const o = document.createElement("option");
+      o.value = v.voiceURI;
+      o.textContent = v.name;
+      voice.append(o);
+    }
+    if (items.some(v => v.voiceURI === previous)) voice.value = previous;
+    selectedVoice = voice.value;
+  }
+
+  function clearHighlight() {
+    blocks.forEach(node => node.classList.remove("is-speaking"));
+  }
+
+  function sectionPosition() {
+    let pos = 0;
+    for (let i = 0; i < sectionStarts.length; i += 1) {
+      if (sectionStarts[i] <= index) pos = i;
+      else break;
+    }
+    return pos;
+  }
+
+  function updateNavigation() {
+    prevBlock.disabled = index <= 0;
+    nextBlock.disabled = index >= blocks.length - 1;
+
+    const pos = sectionPosition();
+    const start = sectionStarts[pos] ?? 0;
+    const previousTargetExists = index > start || pos > 0;
+    prevSection.disabled = !previousTargetExists;
+    nextSection.disabled = pos >= sectionStarts.length - 1;
+
+    const startNode = blocks[start];
+    sectionLabel.textContent = startNode?.tagName === "H2" ? startNode.textContent : "導入";
+  }
+
+  function showCurrent() {
+    clearHighlight();
+    const current = blocks[index];
+    if (!current) return;
+    current.classList.add("is-speaking");
+    current.scrollIntoView({ block: "center", behavior: "smooth" });
+    updateNavigation();
+  }
+
+  function speakCurrent() {
+    if (!playing || paused || index >= blocks.length) {
+      if (index >= blocks.length) {
+        playing = false;
+        paused = false;
+        clearHighlight();
+        void releaseWakeLock();
+      }
+      updateNavigation();
+      return;
+    }
+
+    showCurrent();
+    const localGeneration = ++generation;
+    const utterance = new SpeechSynthesisUtterance(blocks[index].textContent);
+    utterance.lang = "ja-JP";
+    utterance.rate = Number(rate.value);
+    const selected = synth.getVoices().find(item => item.voiceURI === voice.value);
+    if (selected) utterance.voice = selected;
+
+    utterance.onend = () => {
+      if (localGeneration !== generation || !playing || paused) return;
+      index += 1;
+      speakCurrent();
+    };
+
+    utterance.onerror = event => {
+      if (localGeneration !== generation) return;
+      if (event.error !== "canceled" && event.error !== "interrupted") {
+        playing = false;
+        paused = false;
+        clearHighlight();
+        void releaseWakeLock();
+        updateNavigation();
+      }
+    };
+
+    synth.speak(utterance);
+  }
+
+  function jumpTo(target) {
+    const next = Math.max(0, Math.min(blocks.length - 1, target));
+    const resume = playing && !paused;
+    const keepPaused = paused;
+
+    generation += 1;
+    synth.resume?.();
+    synth.cancel();
+    index = next;
+
+    if (resume) {
+      playing = true;
+      paused = false;
+      void requestWakeLock();
+      speakCurrent();
+      return;
+    }
+
+    playing = keepPaused;
+    paused = keepPaused;
+    showCurrent();
+    if (keepPaused) void requestWakeLock();
+  }
+
+  function jumpSection(delta) {
+    const pos = sectionPosition();
+    let targetPos;
+
+    if (delta < 0 && index > sectionStarts[pos]) targetPos = pos;
+    else targetPos = pos + delta;
+
+    if (targetPos < 0 || targetPos >= sectionStarts.length) return;
+    jumpTo(sectionStarts[targetPos]);
+  }
+
+  play.addEventListener("click", () => {
+    if (paused) {
+      generation += 1;
+      synth.resume?.();
+      synth.cancel();
+      paused = false;
+      playing = true;
+      void requestWakeLock();
+      speakCurrent();
+      return;
+    }
+    if (playing) return;
+    if (index >= blocks.length) index = 0;
+    playing = true;
+    void requestWakeLock();
+    speakCurrent();
+  });
+
+  pause.addEventListener("click", () => {
+    if (!playing || paused) return;
+    synth.pause();
+    paused = true;
+  });
+
+  stop.addEventListener("click", () => {
+    generation += 1;
+    synth.resume?.();
+    synth.cancel();
+    playing = false;
+    paused = false;
+    index = 0;
+    clearHighlight();
+    updateNavigation();
+    void releaseWakeLock();
+  });
+
+  prevBlock.addEventListener("click", () => jumpTo(index - 1));
+  nextBlock.addEventListener("click", () => jumpTo(index + 1));
+  prevSection.addEventListener("click", () => jumpSection(-1));
+  nextSection.addEventListener("click", () => jumpSection(1));
+
+  voice.addEventListener("change", () => {
+    selectedVoice = voice.value;
+    if (playing && !paused) {
+      generation += 1;
+      synth.cancel();
+      speakCurrent();
+    }
+  });
+
+  rate.addEventListener("input", () => {
+    rateValue.textContent = Number(rate.value).toFixed(1) + "×";
+  });
+
+  theme.addEventListener("click", () => {
+    const dark = document.documentElement.dataset.theme === "dark";
+    document.documentElement.dataset.theme = dark ? "light" : "dark";
+    theme.textContent = dark ? "☾" : "☀";
+    localStorage.setItem("rsvp:theme", dark ? "light" : "dark");
+  });
+
+  document.documentElement.dataset.theme =
+    localStorage.getItem("rsvp:theme") ||
+    (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  theme.textContent = document.documentElement.dataset.theme === "dark" ? "☀" : "☾";
+
+  voices();
+  synth.addEventListener?.("voiceschanged", voices);
+  updateNavigation();
+
+  document.addEventListener?.("visibilitychange", () => {
+    if (document.visibilityState === "visible" && (playing || paused)) {
+      void requestWakeLock();
+    }
+  });
+
+  addEventListener("pagehide", () => {
+    generation += 1;
+    synth.cancel();
+    void releaseWakeLock();
+  });
+})();
+</script>
+</body>
+</html>
