@@ -2,6 +2,13 @@
   "schema_version": 1,
   "items": [
     {
+      "id": "2026-10-02-consulting-ai-disruption",
+      "title": "「コンサル不要論」を検証する――AIで消える価値と、むしろ残る仕事",
+      "date": "2026-10-02",
+      "category": "research",
+      "path": "./research/2026-10-02-consulting-ai-disruption.html"
+    },
+    {
       "id": "2026-10-02-argo-bench-enterprise-data-agents",
       "title": "SQLが書けるだけでは足りない――企業データを読み、判断し、行動するAIを測るArgo-Bench",
       "date": "2026-10-02",

@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f2efe8">
+  <meta name="description" content="AI時代の「コンサル不要論」を、知識労働のフィールド実験、日本の市場予測、主要ファームの実績、専門サービスの顧客期待から検証するListen。">
+  <title>「コンサル不要論」を検証する――AIで消える価値と、むしろ残る仕事</title>
+  <style>
+    :root{color-scheme:light;--bg:#f2efe8;--ink:#121722;--muted:#73766f;--line:#cbc8bf;--blue:#5d7487}
+    html[data-theme="dark"]{color-scheme:dark;--bg:#11151a;--ink:#edf0eb;--muted:#959b97;--line:#343a3e;--blue:#7892a6}
+    *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Hiragino Sans","Noto Sans JP",sans-serif;line-height:1.9}
+    .shell{width:min(760px,100%);margin:0 auto;padding:max(18px,env(safe-area-inset-top)) 20px max(42px,env(safe-area-inset-bottom))}
+    .topbar{min-height:52px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+    .icon{width:42px;height:42px;display:grid;place-items:center;border:0;background:transparent;color:var(--muted);text-decoration:none;font:inherit}
+    .meta{margin:28px 0 8px;color:var(--muted);font-size:.75rem}
+    h1{font-size:clamp(2rem,8vw,3.4rem);line-height:1.12;letter-spacing:-.04em;margin:.2em 0 .8em} h2{margin:2.2em 0 .6em;font-size:1.2rem}
+    p{margin:0 0 1.25em} article>*{transition:background-color .15s ease}.is-speaking{background:color-mix(in srgb,var(--blue) 16%,transparent)}
+    .player{position:sticky;bottom:0;margin:32px -6px 0;padding:12px 6px;background:color-mix(in srgb,var(--bg) 94%,transparent);border-top:1px solid var(--line);backdrop-filter:blur(8px)}
+    .controls{display:grid;grid-template-columns:48px 48px 48px 1fr;gap:8px;align-items:center}.controls button,.controls select{min-height:42px;border:1px solid var(--line);background:transparent;color:var(--ink)}
+    .speed{display:grid;grid-template-columns:48px 1fr 42px;gap:10px;align-items:center;margin-top:10px;font-size:.78rem;color:var(--muted)} input{width:100%}
+    .sources{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}.sources a{color:var(--ink)}
+  
+    .topbar{display:flex;align-items:center;justify-content:space-between}
+    .mode-nav{display:inline-flex;align-items:center;gap:4px}
+    .mode-icon{width:42px;height:42px;display:grid;place-items:center;color:var(--muted);text-decoration:none;opacity:.5}
+    .mode-icon.is-active{color:var(--ink);opacity:1}
+    .mode-icon svg{width:20px;height:20px;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+    .brand-mark{width:22px;height:14px;display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+    .brand-mark i{display:block}.brand-mark i:nth-child(1){background:#a85248}.brand-mark i:nth-child(2){background:#5d7487}.brand-mark i:nth-child(3){background:#c2a653}
+    .transport{display:grid;grid-template-columns:repeat(5,48px);justify-content:center;gap:8px}
+    .transport button,.section-nav button,.voice-row select{min-height:42px;border:1px solid var(--line);background:transparent;color:var(--ink);font:inherit}
+    .transport button{width:48px}
+    .section-nav{display:grid;grid-template-columns:48px 1fr 48px;align-items:center;gap:8px;margin-top:10px}
+    .section-nav button:disabled{opacity:.25}
+    #section-label{min-width:0;overflow:hidden;color:var(--muted);font-size:.78rem;text-align:center;white-space:nowrap;text-overflow:ellipsis}
+    .voice-row{margin-top:10px}.voice-row select{width:100%;padding:0 8px}
+    .mode-icon:focus-visible,.transport button:focus-visible,.section-nav button:focus-visible,.voice-row select:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+
+  </style>
+</head>
+<body>
+<main class="shell">
+  <header class="topbar">
+    <nav class="mode-nav" aria-label="モード切替">
+      <a class="mode-icon" href="../../index.html" aria-label="RSVPへ移動" title="RSVP">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      </a>
+      <a class="mode-icon" href="../../index.html?library=learn" aria-label="Learnへ移動" title="Learn">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 5.5c2.6-.8 5.3-.4 8 1.2v12c-2.7-1.6-5.4-2-8-1.2v-12Z" />
+          <path d="M20 5.5c-2.6-.8-5.3-.4-8 1.2v12c2.7-1.6 5.4-2 8-1.2v-12Z" />
+        </svg>
+      </a>
+      <a class="mode-icon is-active" href="../../index.html?library=listen" aria-label="Listen一覧へ移動" aria-current="page" title="Listen">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 13v-1a8 8 0 0 1 16 0v1" />
+          <path d="M4 13h3v7H5a1 1 0 0 1-1-1v-6Zm16 0h-3v7h2a1 1 0 0 0 1-1v-6Z" />
+        </svg>
+      </a>
+    </nav>
+    <button id="theme" class="icon" type="button" aria-label="テーマ切替">☾</button>
+  </header>
+
+
+
+
+  <article id="article">
+    <p class="meta">情報基準日 2026年10月2日</p>
+    <h1>「コンサル不要論」を検証する――AIで消える価値と、むしろ残る仕事</h1>
+
+    <p>生成AIが企業の調査、分析、資料作成までこなすようになり、「もうコンサルタントはいらないのではないか」という議論が強くなっています。確かに、以前なら外部の専門家へ依頼していた仕事の一部は、社内の少人数チームとAIで処理できるようになっています。</p>
+    <p>ただし、ここで「コンサル不要」という言葉を一つの命題として扱うと、現状を見誤ります。少なくとも三つの話が混ざっているからです。一つ目は、企業が外部コンサルティングを買わなくなるのか。二つ目は、同じ案件をこなすために必要なコンサルタントの人数や時間が減るのか。三つ目は、情報収集や定型分析を中心にした従来型のコンサルティングの価値が下がるのか、という問題です。</p>
+    <p>2026年10月時点で確認できる研究と市場データを合わせると、最も根拠が強いのは三つ目、そして一部では二つ目です。コンサルティング市場そのものが消えるという証拠は弱い。一方で、情報を集め、整理し、分析し、資料にすることを大量の人月で提供するモデルには、かなり強い圧力がかかっています。</p>
+
+    <h2>まず、AIはコンサルタントの仕事をどこまで代替できるのか</h2>
+    <p>この問いに直接近い実験があります。2026年3月にOrganization Scienceで正式掲載された「Navigating the Jagged Technological Frontier」です。研究チームはボストン・コンサルティング・グループ、BCGのコンサルタント758人を対象に、現実的な経営コンサルティング課題で生成AIの効果を無作為化実験しました。</p>
+    <p>AIの能力範囲内とされた18の課題では、GPT-4を使った参加者は、AIを使わない参加者より12.2パーセント多くの課題を完了し、平均25.1パーセント速く、成果物の品質も有意に高くなりました。つまり、少なくとも調査時点のAIが得意な課題では、熟練した知識労働者に対しても、速度、量、品質を同時に改善できました。</p>
+    <p>これは「AIが初心者を助けるだけ」という結果ではありません。対象はBCGのコンサルタントです。すでに高い選抜を通過し、日常的に知識労働を行っている人たちでも、AIによる大きな生産性向上が観測されました。</p>
+    <p>コンサル不要論にとって重要なのは、この結果が何を意味するかです。従来、外部コンサルタントの価値の一部は、短期間に大量の情報を集め、構造化し、仮説を作り、分析し、経営者が読める形にまとめる能力にありました。その工程の多くで、一人の人間が処理できる量が増えるなら、同じ成果物に必要な人員は減り得ます。少なくとも「人を多く投入した分だけ価値が増える」という前提は弱くなります。</p>
+
+    <h2>しかし同じ実験は、AIに任せる危険も示した</h2>
+    <p>この研究が面白いのは、AI礼賛で終わっていないことです。AIの能力範囲外に置かれた複雑な経営課題では、AIを使った参加者は、使わなかった参加者より正解を出す確率が19パーセント低くなりました。</p>
+    <p>研究者たちは、AIの得意不得意の境界が滑らかではなく、ぎざぎざしていることを「ジャグド・テクノロジカル・フロンティア」と表現しています。見た目には似た仕事でも、AIが大きく助ける課題と、かえって人間を誤らせる課題が隣り合っているという意味です。</p>
+    <p>この点は、コンサルティングの価値を考えるうえで重要です。AIが分析や文章生成を高速化するほど、見栄えのよい誤答も高速に作れるようになります。したがって「AIが資料を作れる」という事実だけから、「外部の専門家が不要になる」とは言えません。むしろ、どの問題をAIへ任せてよいのか、何を検証しなければならないのかを判断する能力の価値が上がります。</p>
+    <p>さらに、この実験で使われたAIはGPT-4で、実験時点は2023年です。2026年の最先端モデルの能力を直接測った研究ではありません。現在のモデルは多くの課題で強くなっている可能性がありますが、同時に能力の境界そのものも移動します。この研究から読み取るべきなのは固定された代替率ではなく、「AIは知識労働を一様に代替するのではなく、課題ごとに効果が大きく変わる」という構造です。</p>
+
+    <h2>AIは、外部専門家だけでなく「もう一人の人間」の一部も代替する</h2>
+    <p>もう一つ重要なのが、2026年6月にOrganization Scienceへ掲載された「The Cybernetic Teammate」です。こちらはプロクター・アンド・ギャンブル、P&amp;Gの専門職791人を対象にした事前登録済みのフィールド実験です。参加者は実際の新商品開発課題に取り組み、一人で作業するか二人チームで作業するか、AIを使うか使わないかに無作為に分けられました。</p>
+    <p>結果は、コンサル不要論を別の角度から考えさせます。AIを使った個人は、AIを使わない二人チームと同程度の成果を出しました。また、研究開発職は技術寄り、営業・商業系の職種は市場寄りの案を出しやすいという機能別の偏りが、AI利用によって縮まりました。AIが、別分野の視点を取り込む役割の一部を担ったと解釈できます。</p>
+    <p>これはコンサル会社を対象にした実験ではありません。P&amp;Gの一日の商品開発ワークショップで得られた結果であり、「AIが外部コンサルタントを置き換えた」と直接言うことはできません。それでも、社内の専門職がAIを使うことで、自分の専門外の視点を補い、チームを追加したときに得られる利益の一部を獲得できることは確認されました。</p>
+    <p>ここから推測できるのは、外部コンサルタントへ依頼する理由のうち、「自社にはない知識を短時間で補う」という部分の一部は、AIによって内製化しやすくなるということです。以前なら市場調査、他業界の事例整理、論点の洗い出しのために外部チームを呼んだ場面でも、社内担当者がAIと作業すれば、最初の仮説形成まではかなり進められる可能性があります。</p>
+
+    <h2>では、実際にコンサル市場は縮んでいるのか</h2>
+    <p>ここで研究室を離れ、2026年の市場データを見ます。少なくとも日本では、「AIの普及でビジネスコンサルティング市場が縮小する」という姿にはなっていません。</p>
+    <p>IDCは2026年6月、国内ビジネスコンサルティング市場の支出額について、2025年の約8,822億円から2030年には約1兆4,064億円へ拡大し、年平均成長率は9.8パーセントになると予測しました。しかも成長の最大の要因として挙げているのは、AIを核にした全社変革です。</p>
+    <p>IDCによれば、生成AIやAIエージェントの利用が実証実験から業務変革へ移り、業務プロセス、データ基盤、組織体制をまとめて変える案件が増えています。AIがコンサルティング需要を消しているのではなく、少なくとも現時点では、AI導入そのものが大規模な変革需要を生み出しているわけです。</p>
+    <p>個別企業の実績も、この方向と矛盾しません。BCGは2025年の世界売上高が前年比7パーセント増の144億ドルだったと2026年4月に公表しました。AIとテクノロジー関連サービスは売上高の40パーセント超を占め、AIサービスは前年比25パーセント成長したとしています。PwCも2025年度のAdvisory売上高が243億8,600万ドルで、為替一定ベースで4.5パーセント増えたと公表しています。</p>
+    <p>もちろん、これらはコンサル会社自身の公表値であり、個々の案件の採算性や職位別の雇用を示すものではありません。またIDCの数値は予測であって、2030年の実績ではありません。それでも「AIが普及した結果、企業がコンサルティングを買わなくなっている」という単純な説明には合いません。</p>
+
+    <h2>市場が伸びることと、従来型コンサルが安泰であることは別の話</h2>
+    <p>ここが今回の核心です。IDCは市場拡大を予測する一方で、成長と人員数の関係が変わり始めているとも指摘しています。AIによる生産性向上、ツールやテンプレートなどの資産化、グローバルなデリバリー、成果連動型の契約、マネージドサービスなどによって、売上成長が必ずしも同じ割合の人員増を必要としなくなっているという見立てです。</p>
+    <p>つまり、AI時代には「コンサル市場は成長するが、一案件あたりに必要な人月は減る」という二つの動きが同時に起こり得ます。これは矛盾ではありません。AI変革という新しい需要が増える一方で、一件の案件をこなすための調査、分析、資料作成は効率化されるからです。</p>
+    <p>この構造になると、最も圧力を受けるのは、成果ではなく投入時間で価値を説明してきた仕事です。大量のジュニア人材が調査し、中間層が分析し、上位者が統合して最終資料にするというピラミッド型の生産モデルは、AIによって同じ形のまま維持する理由が薄くなります。</p>
+    <p>ここで「不要になる」のは、必ずしもコンサルタントという職業そのものではありません。より正確には、情報収集、定型的なベンチマーク、初期の論点整理、標準的な分析、初稿作成、資料化といった工程を、人間の作業時間として大量に販売することが難しくなる、と考える方が現在の証拠に合っています。</p>
+
+    <h2>買い手側の期待も、「AIを使って安く」だけではない</h2>
+    <p>隣接するプロフェッショナルサービスの調査も参考になります。トムソン・ロイターが2026年に法律、税務、監査、会計、コンプライアンスなど1,816人を対象に行った調査では、企業顧客の78パーセントが、取引先からAIによる品質向上を得ることを「非常に重要」または「不可欠」と回答しました。しかし、ほとんどまたはすべての提供会社がそれを実現していると答えた顧客は6パーセントでした。</p>
+    <p>さらに、AI活用で遅れている提供会社との関係をすでに見直した、または今後12か月で見直す予定だという顧客は32パーセントでした。この調査は経営コンサルティングだけを対象にしたものではないため、そのままコンサル市場へ移すことはできません。それでも、専門サービスの買い手が「AIを使うかどうか」ではなく、「AIで品質や速度を実際に改善できているか」を評価し始めていることは示しています。</p>
+    <p>これは重要な変化です。AIを使えること自体は差別化になりにくくなります。顧客から見れば、自分でも使える汎用AIを外部会社が使っているだけなら、高い料金を払う理由にはなりません。外部専門家には、AIを使ったうえで、内部チームだけでは作りにくい追加価値を示すことが求められます。</p>
+
+    <h2>AIが生産性を上げるほど、需要が減るとは限らない</h2>
+    <p>もう一つ、不要論では見落とされやすい点があります。生産性向上は、必ずしも市場規模の縮小に直結しません。以前は費用や時間のために実行できなかった分析や変革が、AIで安く速くできるようになると、企業はむしろ取り組むテーマを増やすことがあります。</p>
+    <p>たとえば、全社の業務を一つずつ見直し、どこへAIエージェントを組み込み、どのデータを整理し、どの権限を与え、どの指標で安全性を確認するかを設計する仕事は、AIの登場によって新たに生まれた需要です。モデルが強くなるほど、「使える場所を探す仕事」と「実装する仕事」が増える可能性があります。</p>
+    <p>このため、AIが一人のコンサルタントの生産性を二割、三割と上げたとしても、そのまま業界全体の人数が二割、三割減るとは限りません。単価、案件数、案件規模、内製化率、必要人員が同時に動くからです。現時点では、タスク単位の生産性向上を雇用の将来予測へ直結させる根拠は不足しています。</p>
+    <p>一方で、生産性が上がっても「同じ作業を同じ人数で請求する」ことは難しくなります。市場が伸びるとしても、顧客が買うものは、作業時間より成果へ移っていく。ここが、業界の成長予測とコンサル不要論を同時に理解する鍵です。</p>
+
+    <h2>成果物が作れることと、変革が進むことは違う</h2>
+    <p>生成AIは、外から見て分かりやすいコンサル成果物を急速に作れるようになりました。市場の整理、競合比較、論点ツリー、選択肢の比較、会議用の文章、経営向けの説明資料。これらはコンサルティングの象徴に見えやすいため、AIが同じような出力を返すと「仕事全体が代替された」ように感じます。</p>
+    <p>しかし、企業変革で時間がかかるのは、資料を作った後であることが少なくありません。既存システムの制約を確認し、データの定義を合わせ、部門ごとのKPIを調整し、現場の手順を変え、責任者を決め、例外処理を設計し、実際に運用して問題を潰す。ここでは、正しい文章を生成するだけでは完了しません。</p>
+    <p>だから今後は、外部コンサルタントが「何を考えたか」を説明するだけでは弱くなります。「何が実装され、何が変わり、どの状態を検証できるようになったか」まで示せることが、より重要になります。これはAIに対抗するというより、AIによって下がった情報生成コストを前提に、価値の置き場所を変えるという話です。</p>
+
+    <h2>それでも残りやすい価値は何か</h2>
+    <p>ここからは、研究と市場資料を踏まえた分析です。最も残りやすいのは、「答えを知っていること」より、「組織を実際に変えること」に結びついた価値です。</p>
+    <p>第一は、問題設定です。AIは与えられた問いへの回答を作る能力を急速に高めています。しかし、企業の現場では、何が本当の問題なのかが決まっていないことがあります。売上が落ちている原因が商品、営業、価格、供給、組織設計のどこにあるのか。AI導入が進まない原因がモデル性能なのか、データ品質なのか、権限設計なのか、業務プロセスなのか。問いそのものを切り分ける仕事は、依然として現場へのアクセスと経営判断に結び付いています。</p>
+    <p>第二は、複数部門をまたぐ実装です。AI変革では、単にモデルを導入すれば終わりません。業務手順、データ、システム、権限、評価指標、人材育成、リスク管理を同時に変える必要があります。IDCがAIを核にした全社変革や組織変革を成長要因として挙げているのは、この実装部分の複雑さが大きいからです。</p>
+    <p>第三は、検証と責任です。ジャグド・フロンティアの実験が示したように、AIは得意な問題では強力ですが、境界を越えると人間を誤らせることがあります。重要な経営判断ほど、出力がもっともらしいかではなく、根拠が追跡できるか、別の方法で再確認できるか、誤った場合の責任分界が明確かが重要になります。</p>
+    <p>第四は、変革を進めるための組織的な力です。部署間で利害が衝突する案件、既存の役割が変わる案件、経営層が意思決定を先延ばしにしている案件では、分析の正しさだけで変化は起きません。誰が決めるのか、何を止めるのか、どこまで試すのかを合意し、実行を追う必要があります。この部分はAIで支援できますが、組織の正式な権限や人間関係までAIが自動的に引き受けるわけではありません。</p>
+
+    <h2>逆に、コンサルを使わない方が合理的な場面は増える</h2>
+    <p>一方で、外部コンサルタントへ依頼しなくてもよい仕事は確実に増えます。ここも曖昧にしない方がよいでしょう。</p>
+    <p>課題が明確で、必要な社内データにアクセスでき、意思決定者も決まっており、実装範囲も限定されているなら、まず社内チームとAIで進める方が合理的なケースは増えます。市場調査の初期整理、選択肢の比較、既存資料の要約、仮説リストの作成、会議資料のたたき台などは、外部チームを立ち上げる前にかなり進められます。</p>
+    <p>特に、依頼内容が「調べて、一般論を整理して、経営向けにきれいな資料にしてほしい」だけなら、以前ほど高い外部料金を正当化しにくくなります。AIによって、情報へのアクセスと構造化のコストが急激に下がったからです。</p>
+    <p>この意味では、「コンサル不要論」は完全な誤りではありません。むしろ、企業側がコンサルを使う前に自分でできる範囲が広がり、外部へ依頼するときの最低要求水準が上がった、と表現する方が正確です。</p>
+
+    <h2>それでも外部支援を買う合理性が残る場面</h2>
+    <p>反対に、問題が複数部門にまたがり、社内だけでは利害調整が進まない場合。短期間だけ大量の専門人材が必要な場合。特定業界や技術について内部に経験がなく、失敗コストが高い場合。大規模システムや業務再設計を同時に進める場合。独立した第三者による検証が必要な場合。このような案件では、外部支援の合理性が残ります。</p>
+    <p>ただし、ここでも価値の出し方は変わります。顧客は「何人投入したか」より、「どの意思決定を速くしたか」「何を実装したか」「どの成果を出したか」「どのリスクを下げたか」を求めやすくなります。AIで作業時間が短くなるほど、時間単価を積み上げる契約より、成果や継続運用に結びつく契約の方が説明しやすくなります。</p>
+    <p>IDCが、従来の人月依存から、AIや知的資産を使ったサービス、成果ベースの契約、マネージドサービス、内製化支援などへ重心が移るとみているのは、この変化と整合します。</p>
+
+    <h2>ジュニアコンサルタントの仕事はどうなるのか</h2>
+    <p>コンサル不要論で最も現実的な問題の一つが、若手の仕事です。従来のジュニア人材は、調査、データ整理、分析、資料作成を大量にこなしながら、先輩のレビューを受けて判断力を身につけてきました。ところがAIは、まさにこの入り口の作業を得意とします。</p>
+    <p>ここには二つの可能性があります。一つは、同じ案件をより少ない若手で回す方向です。もう一つは、若手に早い段階から顧客との対話、問題設定、検証、実装へ踏み込ませる方向です。どちらが支配的になるかを、現時点の研究だけから断定することはできません。</p>
+    <p>ただし、単純に若手を減らせばよいわけでもありません。定型作業をAIへ移した結果、将来のマネージャーやパートナーが判断力を身につける訓練機会まで失えば、組織としては別の問題を抱えます。AI時代のコンサル会社には、生産性向上と人材育成を別々に設計する必要があります。</p>
+
+    <h2>「コンサル不要論」を、企業側の意思決定に翻訳すると</h2>
+    <p>企業が考えるべき問いは、「コンサルタントが必要か、不要か」ではありません。「この問題で、外部の人間にしか提供できない価値は何か」です。</p>
+    <p>まず社内で、AIを使って情報収集、仮説形成、選択肢の整理まで進める。そのうえで、残った難しさが、専門知識なのか、データなのか、実装能力なのか、組織調整なのか、独立検証なのかを特定する。外部支援を使うなら、その不足部分に契約を絞る。こうすると、コンサル会社へ「全部考えてもらう」より、買う価値が明確になります。</p>
+    <p>コンサル会社側から見ると逆です。汎用AIでも作れる情報整理や資料作成を主な価値として売り続けるのは難しくなります。自社固有のデータ、専門家ネットワーク、業界知識、実装資産、システム連携、検証能力、変革推進力など、AI単体では手に入りにくいものへ価値を移す必要があります。</p>
+
+    <h2>ここまでの証拠で、まだ言えないこと</h2>
+    <p>今回確認した研究から、「2030年までにコンサルタントが何割減る」といった数字は出せません。BCGの実験はタスクレベルの生産性を測ったもので、雇用人数を測ったものではありません。P&amp;Gの実験も、外部コンサルティングの購買を測った研究ではありません。</p>
+    <p>市場規模が伸びるというIDCの予測も、人員が同じ割合で増えることを意味しません。逆に、人員効率が上がることが、雇用の純減を意味するとも限りません。需要が十分大きく増えれば、生産性が上がっても総雇用が増える可能性があります。</p>
+    <p>また、2026年はAI変革そのものに大きな需要がある時期です。この需要が数年後に恒常的なコンサル需要として残るのか、企業が能力を内製化した後に縮小するのかはまだ分かりません。現在の市場成長を、そのまま長期的な安泰と読むのも危険です。</p>
+    <p>したがって、現時点で最も安全な結論は、「コンサルは不要になる」でも「AIでもコンサルは安泰」でもありません。AIはコンサルティングの生産工程と価格の根拠を変えています。その変化はすでに研究と市場の双方に現れていますが、最終的な雇用構造や業界規模の行き先はまだ確定していません。</p>
+
+    <h2>最後に残す要点</h2>
+    <p>第一に、AIはコンサルタントの一部の仕事を明確に高速化し、品質も上げます。BCGの758人を対象にした実験では、AIの能力範囲内の課題で、完了量、速度、品質が改善しました。情報収集、分析、初稿作成といった作業を人月で販売する価値は下がりやすいと考えられます。</p>
+    <p>第二に、AIは万能ではありません。同じ実験では、能力範囲外の複雑な課題で、AI利用者の正答率が悪化しました。重要なのは、AIを使うことではなく、AIがどこで信頼でき、どこから検証が必要かを判断できることです。</p>
+    <p>第三に、企業側の内製能力は上がります。P&amp;Gの実験では、AIを使った個人がAIなしの二人チームに匹敵し、職能間の知識の偏りも縮まりました。外部専門家に頼る前に、社内チームが自力で到達できる地点は前へ進んでいます。</p>
+    <p>第四に、それでも市場そのものが消えているわけではありません。IDCは日本のビジネスコンサルティング市場が2030年まで年平均9.8パーセントで拡大すると予測し、AIを核とした全社変革を主要因に挙げています。BCGやPwCの直近実績も、AI時代にアドバイザリー需要が消滅した姿ではありません。</p>
+    <p>最後に、最も本質的な変化は、コンサルティングの価値が「知っていること」から「変えられること」へ移ることです。汎用的な情報、分析、資料は安くなります。一方で、問題設定、実装、組織変革、検証、責任を伴う判断は残ります。</p>
+    <p>だから、「コンサル不要論」をそのまま受け入れるより、「どのコンサル価値が不要になるのか」と問い直す方が有益です。2026年10月時点の証拠が示しているのは、コンサルタントの消滅ではなく、従来の人月中心モデルの再設計が始まっている、という姿です。</p>
+  </article>
+
+  <section class="player" aria-label="読み上げ操作">
+    <div class="transport">
+      <button id="prev-block" type="button" aria-label="前の読み上げ単位へ">←</button>
+      <button id="play" type="button" aria-label="再生">▶</button>
+      <button id="pause" type="button" aria-label="一時停止">Ⅱ</button>
+      <button id="stop" type="button" aria-label="停止">■</button>
+      <button id="next-block" type="button" aria-label="次の読み上げ単位へ">→</button>
+    </div>
+    <div class="section-nav" aria-label="章移動">
+      <button id="prev-section" type="button" aria-label="前の章へ">‹</button>
+      <span id="section-label">導入</span>
+      <button id="next-section" type="button" aria-label="次の章へ">›</button>
+    </div>
+    <div class="voice-row">
+      <select id="voice" aria-label="日本語音声"></select>
+    </div>
+    <div class="speed"><span>速度</span><input id="rate" type="range" min="0.7" max="4" step="0.1" value="1"><span id="rateValue">1.0×</span></div>
+  </section>
+
+
+
+
+  <section class="sources" aria-label="出典">
+    <strong>出典</strong>
+    <p><a href="https://doi.org/10.1287/orsc.2025.21838">Organization Science — Navigating the Jagged Technological Frontier</a></p>
+    <p><a href="https://doi.org/10.1287/orsc.2025.20702">Organization Science — The Cybernetic Teammate</a></p>
+    <p><a href="https://www.idc.com/resource-center/blog/japan-business-consulting-market-ai-growth-2030/">IDC — 2030年に1兆4,000億円超へ：AIが変える国内ビジネスコンサルティング市場の成長構造</a></p>
+    <p><a href="https://www.bcg.com/ja-jp/press/23april2026-bcg-revenue-22nd-consecutive-year-growth">BCG — 2025年売上高とAIサービスの成長</a></p>
+    <p><a href="https://www.pwc.com/gx/en/about/global-annual-review/financial-performance.html">PwC — 2025 Global Annual Review: Financial performance</a></p>
+    <p><a href="https://www.thomsonreuters.com/en/institute/future-of-professionals-2026/report">Thomson Reuters — Future of Professionals Report 2026</a></p>
+  </section>
+</main>
+<script>
+(() => {
+  const synth = window.speechSynthesis;
+  const blocks = [...document.querySelectorAll("#article h1,#article h2,#article h3,#article p")];
+  const sectionStarts = [...new Set([0, ...blocks.map((node, i) => node.tagName === "H2" ? i : -1).filter(i => i >= 0)])];
+  const play = document.querySelector("#play");
+  const pause = document.querySelector("#pause");
+  const stop = document.querySelector("#stop");
+  const prevBlock = document.querySelector("#prev-block");
+  const nextBlock = document.querySelector("#next-block");
+  const prevSection = document.querySelector("#prev-section");
+  const nextSection = document.querySelector("#next-section");
+  const sectionLabel = document.querySelector("#section-label");
+  const voice = document.querySelector("#voice");
+  const rate = document.querySelector("#rate");
+  const rateValue = document.querySelector("#rateValue");
+  const theme = document.querySelector("#theme");
+  let index = 0, playing = false, paused = false, selectedVoice = "", generation = 0;
+  let wakeLock = null, wakeLockWanted = false;
+
+  async function requestWakeLock() {
+    const wakeLockApi = window.navigator?.wakeLock;
+    wakeLockWanted = true;
+    if (!wakeLockApi?.request || wakeLock) return;
+    try {
+      const lock = await wakeLockApi.request("screen");
+      if (!wakeLockWanted) {
+        await lock.release();
+        return;
+      }
+      wakeLock = lock;
+      wakeLock.addEventListener?.("release", () => { wakeLock = null; });
+    } catch {
+      wakeLock = null;
+    }
+  }
+
+  async function releaseWakeLock() {
+    wakeLockWanted = false;
+    const current = wakeLock;
+    wakeLock = null;
+    if (!current) return;
+    try {
+      await current.release();
+    } catch {
+      // Wake Lock is best-effort; speech playback must continue to work.
+    }
+  }
+
+  function voices() {
+    const previous = selectedVoice || voice.value;
+    const items = synth.getVoices().filter(v => /^ja(?:-|_)/i.test(v.lang));
+    voice.replaceChildren();
+    for (const v of items) {
+      const o = document.createElement("option");
+      o.value = v.voiceURI;
+      o.textContent = v.name;
+      voice.append(o);
+    }
+    if (items.some(v => v.voiceURI === previous)) voice.value = previous;
+    selectedVoice = voice.value;
+  }
+
+  function clearHighlight() {
+    blocks.forEach(node => node.classList.remove("is-speaking"));
+  }
+
+  function sectionPosition() {
+    let pos = 0;
+    for (let i = 0; i < sectionStarts.length; i += 1) {
+      if (sectionStarts[i] <= index) pos = i;
+      else break;
+    }
+    return pos;
+  }
+
+  function updateNavigation() {
+    prevBlock.disabled = index <= 0;
+    nextBlock.disabled = index >= blocks.length - 1;
+
+    const pos = sectionPosition();
+    const start = sectionStarts[pos] ?? 0;
+    const previousTargetExists = index > start || pos > 0;
+    prevSection.disabled = !previousTargetExists;
+    nextSection.disabled = pos >= sectionStarts.length - 1;
+
+    const startNode = blocks[start];
+    sectionLabel.textContent = startNode?.tagName === "H2" ? startNode.textContent : "導入";
+  }
+
+  function showCurrent() {
+    clearHighlight();
+    const current = blocks[index];
+    if (!current) return;
+    current.classList.add("is-speaking");
+    current.scrollIntoView({ block: "center", behavior: "smooth" });
+    updateNavigation();
+  }
+
+  function speakCurrent() {
+    if (!playing || paused || index >= blocks.length) {
+      if (index >= blocks.length) {
+        playing = false;
+        paused = false;
+        clearHighlight();
+        void releaseWakeLock();
+      }
+      updateNavigation();
+      return;
+    }
+
+    showCurrent();
+    const localGeneration = ++generation;
+    const utterance = new SpeechSynthesisUtterance(blocks[index].textContent);
+    utterance.lang = "ja-JP";
+    utterance.rate = Number(rate.value);
+    const selected = synth.getVoices().find(item => item.voiceURI === voice.value);
+    if (selected) utterance.voice = selected;
+
+    utterance.onend = () => {
+      if (localGeneration !== generation || !playing || paused) return;
+      index += 1;
+      speakCurrent();
+    };
+
+    utterance.onerror = event => {
+      if (localGeneration !== generation) return;
+      if (event.error !== "canceled" && event.error !== "interrupted") {
+        playing = false;
+        paused = false;
+        clearHighlight();
+        void releaseWakeLock();
+        updateNavigation();
+      }
+    };
+
+    synth.speak(utterance);
+  }
+
+  function jumpTo(target) {
+    const next = Math.max(0, Math.min(blocks.length - 1, target));
+    const resume = playing && !paused;
+    const keepPaused = paused;
+
+    generation += 1;
+    synth.resume?.();
+    synth.cancel();
+    index = next;
+
+    if (resume) {
+      playing = true;
+      paused = false;
+      void requestWakeLock();
+      speakCurrent();
+      return;
+    }
+
+    playing = keepPaused;
+    paused = keepPaused;
+    showCurrent();
+    if (keepPaused) void requestWakeLock();
+  }
+
+  function jumpSection(delta) {
+    const pos = sectionPosition();
+    let targetPos;
+
+    if (delta < 0 && index > sectionStarts[pos]) targetPos = pos;
+    else targetPos = pos + delta;
+
+    if (targetPos < 0 || targetPos >= sectionStarts.length) return;
+    jumpTo(sectionStarts[targetPos]);
+  }
+
+  play.addEventListener("click", () => {
+    if (paused) {
+      generation += 1;
+      synth.resume?.();
+      synth.cancel();
+      paused = false;
+      playing = true;
+      void requestWakeLock();
+      speakCurrent();
+      return;
+    }
+    if (playing) return;
+    if (index >= blocks.length) index = 0;
+    playing = true;
+    void requestWakeLock();
+    speakCurrent();
+  });
+
+  pause.addEventListener("click", () => {
+    if (!playing || paused) return;
+    synth.pause();
+    paused = true;
+  });
+
+  stop.addEventListener("click", () => {
+    generation += 1;
+    synth.resume?.();
+    synth.cancel();
+    playing = false;
+    paused = false;
+    index = 0;
+    clearHighlight();
+    updateNavigation();
+    void releaseWakeLock();
+  });
+
+  prevBlock.addEventListener("click", () => jumpTo(index - 1));
+  nextBlock.addEventListener("click", () => jumpTo(index + 1));
+  prevSection.addEventListener("click", () => jumpSection(-1));
+  nextSection.addEventListener("click", () => jumpSection(1));
+
+  voice.addEventListener("change", () => {
+    selectedVoice = voice.value;
+    if (playing && !paused) {
+      generation += 1;
+      synth.cancel();
+      speakCurrent();
+    }
+  });
+
+  rate.addEventListener("input", () => {
+    rateValue.textContent = Number(rate.value).toFixed(1) + "×";
+  });
+
+  theme.addEventListener("click", () => {
+    const dark = document.documentElement.dataset.theme === "dark";
+    document.documentElement.dataset.theme = dark ? "light" : "dark";
+    theme.textContent = dark ? "☾" : "☀";
+    localStorage.setItem("rsvp:theme", dark ? "light" : "dark");
+  });
+
+  document.documentElement.dataset.theme =
+    localStorage.getItem("rsvp:theme") ||
+    (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  theme.textContent = document.documentElement.dataset.theme === "dark" ? "☀" : "☾";
+
+  voices();
+  synth.addEventListener?.("voiceschanged", voices);
+  updateNavigation();
+
+  document.addEventListener?.("visibilitychange", () => {
+    if (document.visibilityState === "visible" && (playing || paused)) {
+      void requestWakeLock();
+    }
+  });
+
+  addEventListener("pagehide", () => {
+    generation += 1;
+    synth.cancel();
+    void releaseWakeLock();
+  });
+})();
+</script>
+</body>
+</html>
