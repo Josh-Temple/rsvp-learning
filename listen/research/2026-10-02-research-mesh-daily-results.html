@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f2efe8">
+  <meta name="description" content="2026年10月2日のResearch Mesh研究実績。Q029からQ032までの成果、限界、次の研究課題をListen向けに整理。">
+  <title>今日のResearch Mesh――四つの問いから見えた、AI導入を判断するための境界</title>
+  <style>
+    :root{color-scheme:light;--bg:#f2efe8;--ink:#121722;--muted:#73766f;--line:#cbc8bf;--blue:#5d7487}
+    html[data-theme="dark"]{color-scheme:dark;--bg:#11151a;--ink:#edf0eb;--muted:#959b97;--line:#343a3e;--blue:#7892a6}
+    *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Hiragino Sans","Noto Sans JP",sans-serif;line-height:1.9}
+    .shell{width:min(760px,100%);margin:0 auto;padding:max(18px,env(safe-area-inset-top)) 20px max(42px,env(safe-area-inset-bottom))}
+    .topbar{min-height:52px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+    .icon{width:42px;height:42px;display:grid;place-items:center;border:0;background:transparent;color:var(--muted);text-decoration:none;font:inherit}
+    .meta{margin:28px 0 8px;color:var(--muted);font-size:.75rem}
+    h1{font-size:clamp(2rem,8vw,3.4rem);line-height:1.12;letter-spacing:-.04em;margin:.2em 0 .8em}
+    p{margin:0 0 1.25em} article>*{transition:background-color .15s ease}.is-speaking{background:color-mix(in srgb,var(--blue) 16%,transparent)}
+    .player{position:sticky;bottom:0;margin:32px -6px 0;padding:12px 6px;background:color-mix(in srgb,var(--bg) 94%,transparent);border-top:1px solid var(--line);backdrop-filter:blur(8px)}
+    .speed{display:grid;grid-template-columns:48px 1fr 42px;gap:10px;align-items:center;margin-top:10px;font-size:.78rem;color:var(--muted)} input{width:100%}
+    .note{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}
+    .mode-nav{display:inline-flex;align-items:center;gap:4px}
+    .mode-icon{width:42px;height:42px;display:grid;place-items:center;color:var(--muted);text-decoration:none;opacity:.5}
+    .mode-icon.is-active{color:var(--ink);opacity:1}
+    .mode-icon svg{width:20px;height:20px;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+    .brand-mark{width:22px;height:14px;display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+    .brand-mark i{display:block}.brand-mark i:nth-child(1){background:#a85248}.brand-mark i:nth-child(2){background:#5d7487}.brand-mark i:nth-child(3){background:#c2a653}
+    .transport{display:grid;grid-template-columns:repeat(5,48px);justify-content:center;gap:8px}
+    .transport button,.section-nav button,.voice-row select{min-height:42px;border:1px solid var(--line);background:transparent;color:var(--ink);font:inherit}
+    .transport button{width:48px}
+    .section-nav{display:grid;grid-template-columns:48px 1fr 48px;align-items:center;gap:8px;margin-top:10px}
+    .section-nav button:disabled{opacity:.25}
+    #section-label{min-width:0;overflow:hidden;color:var(--muted);font-size:.78rem;text-align:center;white-space:nowrap;text-overflow:ellipsis}
+    .voice-row{margin-top:10px}.voice-row select{width:100%;padding:0 8px}
+    .mode-icon:focus-visible,.transport button:focus-visible,.section-nav button:focus-visible,.voice-row select:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+  </style>
+</head>
+<body>
+<main class="shell">
+  <header class="topbar">
+    <nav class="mode-nav" aria-label="モード切替">
+      <a class="mode-icon" href="../../index.html" aria-label="RSVPへ移動" title="RSVP">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      </a>
+      <a class="mode-icon" href="../../index.html?library=learn" aria-label="Learnへ移動" title="Learn">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 5.5c2.6-.8 5.3-.4 8 1.2v12c-2.7-1.6-5.4-2-8-1.2v-12Z" />
+          <path d="M20 5.5c-2.6-.8-5.3-.4-8 1.2v12c2.7-1.6 5.4-2 8-1.2v-12Z" />
+        </svg>
+      </a>
+      <a class="mode-icon is-active" href="../../index.html?library=listen" aria-label="Listen一覧へ移動" aria-current="page" title="Listen">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 13v-1a8 8 0 0 1 16 0v1" />
+          <path d="M4 13h3v7H5a1 1 0 0 1-1-1v-6Zm16 0h-3v7h2a1 1 0 0 0 1-1v-6Z" />
+        </svg>
+      </a>
+    </nav>
+    <button id="theme" class="icon" type="button" aria-label="テーマ切替">☾</button>
+  </header>
+
+  <article id="article">
+    <p class="meta">情報基準時点 2026年10月2日 21時23分 JST</p>
+    <h1>今日のResearch Mesh――四つの問いから見えた、AI導入を判断するための境界</h1>
+
+    <p>このListenでは、2026年10月2日にResearch Meshで進んだ研究を、一日の成果としてまとめる。細かなrun logではなく、今日どの問いが前進し、何が分かり、何をまだ言ってはいけないのかを中心に整理する。</p>
+
+    <p>今日の流れは四つある。第一に、PoCで得た局所的な生産性向上を、組織全体の価値へどうつなげるか。第二に、AIを使うことで人間の技能が弱まるのか、それとも使い方次第で両立できるのか。第三に、AIシステムの評価でsynthetic dataとreal dataをどう使い分けるか。第四に、本番導入後の監視から、変更、停止、rollbackへどう判断をつなぐかである。</p>
+
+    <h2>Q029――PoCの改善を、そのまま組織価値へ読み替えない</h2>
+
+    <p>Q029では、短期PoCや個人タスクで生成AIの効果が出たとき、それが組織全体のサービス、コスト、人員、収益、働き方へどこまで移るのかを調べた。</p>
+
+    <p>今日の重要な成果は、局所的な改善と組織成果を分けて考える枠組みが残ったことだ。taskとpopulationが本番とずれていないか。通常業務で実際に使われるか。速度だけでなく品質やサービス成果も改善するか。reviewやcoordinationの負担が増えないか。節約された時間や能力を、組織が実際に再配分できるか。そして、成果が現れるまでに必要な時間を十分に観測しているか。こうした条件を分けて見る必要がある。</p>
+
+    <p>ただし、さらに一歩踏み込んだvalue captureの研究枝はINCONCLUSIVEで閉じた。価値を回収できた候補は見つかったが、同じ条件で局所効果が確認され、その後の組織成果が明確に弱まった、というきれいな反対例を十分に確保できなかった。そのため、task-levelの時間短縮を組織価値へ変換する因果ルールや、ROIの数値閾値は作っていない。</p>
+
+    <p>今日ここから残った実務上の教訓は単純である。PoCで二割速くなったとしても、その二割をそのまま組織ROIへ掛け算してはいけない。価値へ移る経路を別に確認する必要がある。</p>
+
+    <h2>Q030――AI利用と技能維持は、まだ単純な一般則にできない</h2>
+
+    <p>Q030では、生成AIを知識労働へ導入したとき、短期的な生産性と、人間の技能習得や技能維持をどう両立するかを調べた。</p>
+
+    <p>研究では、完成回答をAIへ大きく委ねる使い方と、人間が考えながら説明や部分支援を受ける使い方を区別しようとした。評価でも、AIを使っている最中の成果と、AIを外した後に自力でどこまでできるかを分けた。</p>
+
+    <p>しかし、職場や専門業務で、この二つの利用モードを直接比較し、支援中の成果と後続の自力遂行能力を同時に測った強い因果Evidenceは不足していた。AIありとAIなしの比較はあっても、それだけでは委任型と認知的に関与する型の違いまでは分からない。教育分野の研究は参考になるが、職場へそのまま移すこともできない。</p>
+
+    <p>そのため、今日の結論はBOUNDED INCONCLUSIVEである。AIを使えば必ずdeskillingする、とも言えない。scaffoldingを入れれば技能が守られる、とも言えない。AIへの安全な委任率や、普遍的なtask-allocation ruleも作っていない。</p>
+
+    <p>一方で、評価設計として価値のある区別は残った。AI-assisted performanceと、later unaided capabilityを別のoutcomeとして測ること。これは今後のAI研修や業務導入を考えるときに、そのまま使える視点である。</p>
+
+    <h2>Q031――syntheticかrealかではなく、何を推定したいかでEvidenceを選ぶ</h2>
+
+    <p>今日もっとも明確な成果の一つがQ031である。この問いは、AIシステムを導入前や変更後に評価するとき、実データが必要なのはどんな場合で、synthetic dataやgenerated test casesで代替できるのはどんな場合か、というものだった。</p>
+
+    <p>この研究は限定的にVERIFIEDまで進んだ。結論は、real dataとsynthetic dataを一律に順位付けしないこと。先に、何を確認したいのかを決め、その性質に合うEvidenceを選ぶ、という原則である。</p>
+
+    <p>たとえば、決められた仕様どおりに処理できるか。既知のfailureを識別できるか。自然にはほとんど出ないrare caseを確実に試せるか。こうした目的では、構成したsynthetic caseをprimary evidenceにできる場合がある。</p>
+
+    <p>一方で、実際の利用者や対象母集団へgeneralizeできるか。ある失敗がどれくらいの頻度で起きるか。時間経過によるdriftがあるか。人間やworkflowとの相互作用で何が起きるか。本番性能が維持されるか。こうした主張には、representativeでcurrentなreal operational evidenceやuser evidenceが必要になる。</p>
+
+    <p>ここで重要なのは、real dataであること自体はEvidence qualityを保証しないという点だ。古い実データ、偏った実データ、対象populationとずれた実データでは、知りたいことを支えられない。逆にsynthetic caseでrare failureを作れても、そのfailureが現場で何パーセント起きるかは分からない。</p>
+
+    <p>この結果は、AIのPoC、benchmark、回帰試験の設計へかなり直接使える。realかsyntheticかを先に決めるのではなく、claimを先に固定し、そのclaimに必要なdistribution、時間軸、人間、workflowのcontextを逆算する。</p>
+
+    <h2>Q032――本番監視は、dashboardからrollbackへ直結させない</h2>
+
+    <p>午後からは、新しい問いとしてQ032が始まった。テーマは、生成AIを本番導入した後に、何を監視し、どのsignalを調査や変更へつなげ、どの条件で停止やrollbackを判断するかである。</p>
+
+    <p>最初の批判段階では、単純なmetric dashboardと固定thresholdだけでは弱いという方向が見えた。監視signalは、利用者のoverride、incident、drift、unexpected behavior、品質、業務影響など複数必要になり得る。しかし、signalが動いたことと、原因がmodelにあることは別である。重大incidentなら原因確定前に一時的containmentが必要な場合もある一方、noiseの多いsignalを直接rollbackへ結びつければ過剰反応になる。</p>
+
+    <p>そこでprotocol v1では、単純なthreshold-to-action方式と、検知、調査、containmentや変更、rollbackやrecoveryを段階的につなぐ方式を比較する設計にした。</p>
+
+    <p>ただし、21時23分の独立Scout/Critic reviewで、このprotocolはHOLDになった。Evidence executionはまだ認められていない。</p>
+
+    <p>止まった理由は、かなり重要である。まず、一つのincidentを複数の必須Evidence slotへ重複計上できる余地があった。次に、対象システムの範囲が広すぎて、従来型機械学習、一般公開チャットボットの専門利用、組織が運用する生成AIシステムを同じ直接Evidenceとして扱える余地があった。</p>
+
+    <p>さらに、平均値では見えなかった重大事故を示すF1という枠では、過去のaggregate metricが実際に正常だったことを資料が明示していなくても、単なる記載欠落をblind spotとして誤認できる余地があった。過剰反応を扱うF2でも、単に原因が不明だったという事実と、signalからactionへ直結したことで実際に過剰反応が起きたことを区別し切れていなかった。</p>
+
+    <p>もう一つはEvidence選択そのものだ。検索順や候補選択を十分に固定しないと、欲しい比較結果を満たすincidentだけを後から選べる。Research Meshはここで、結果を取りに行くのではなく、protocolを止めた。</p>
+
+    <p>次はprotocol v2で、eventごとの一意なID、direct evidenceとtransfer-limited evidenceの区別、external detectionとinternal monitoringの区別、F1とF2の明示的なadmission test、candidate ledgerとrejection reasonを先に固定する。その後、改めて独立reviewを受ける。</p>
+
+    <p>したがって、今日のQ032からは、万能な監視metric、監視頻度、停止threshold、rollback ruleはまだ一つも成立していない。むしろ成果は、そうした単純なルールを作る前に、Evidence設計の穴を見つけて止めたことにある。</p>
+
+    <h2>Research Mesh自体にも小さな運用改善が入った</h2>
+
+    <p>今日の研究と並行して、Research Meshの運用にも限定的な改善を入れた。大きな構造変更ではない。五つの役割、独立Verifier、Policy v004、Library-first、fail-closedは維持している。</p>
+
+    <p>主な変更は、substantive resultを保存する直前に最新lineageを再確認すること。単なるdependency waitやno-opの記録を短くすること。そして、広い問いがTESTINGでも、現在の枝が終了している場合は、その停止と再開条件をBoard上で明確にすることである。</p>
+
+    <p>これは研究内容そのものを変える改善ではなく、古いprojectionや待機記録によって、すでに閉じた枝を再実行する危険を減らすためのものだ。</p>
+
+    <h2>今日一日を通して残ったもの</h2>
+
+    <p>今日のResearch Meshで最も大きかったのは、三つの実務的な境界がはっきりしたことだ。</p>
+
+    <p>一つ目は、PoCのtask-level gainと組織価値を分けること。二つ目は、AI利用中の成果と、AIを外した後の人間の能力を分けること。三つ目は、syntheticかrealかを先に決めず、何を推定したいかからEvidenceを選ぶことだ。</p>
+
+    <p>そしてQ032では、監視signalとactionを分ける必要性が見え始めた。ただし、これはまだ研究中であり、今日の成果として一般則にはしていない。</p>
+
+    <p>Research Meshは、きれいな結論を早く出すよりも、どこまでなら言えるかを固定する方向へかなり定着してきた。Q029では因果的なvalue-capture ruleを作らなかった。Q030ではdeskillingの一般則を作らなかった。Q031では限定された範囲だけVERIFIEDにした。Q032ではprotocolの穴が見つかった時点でEvidence executionを止めた。</p>
+
+    <p>今日の研究実績を一言でまとめるなら、生成AI導入の判断を、速度や精度の単一指標から、価値移転、人間の技能、Evidenceの適合性、本番監視という複数の境界へ広げた一日だった。</p>
+  </article>
+
+  <section class="player" aria-label="読み上げ操作">
+    <div class="transport">
+      <button id="prev-block" type="button" aria-label="前の読み上げ単位へ">←</button>
+      <button id="play" type="button" aria-label="再生">▶</button>
+      <button id="pause" type="button" aria-label="一時停止">Ⅱ</button>
+      <button id="stop" type="button" aria-label="停止">■</button>
+      <button id="next-block" type="button" aria-label="次の読み上げ単位へ">→</button>
+    </div>
+    <div class="section-nav" aria-label="章移動">
+      <button id="prev-section" type="button" aria-label="前の章へ">‹</button>
+      <span id="section-label">連続原稿</span>
+      <button id="next-section" type="button" aria-label="次の章へ">›</button>
+    </div>
+    <div class="voice-row">
+      <select id="voice" aria-label="日本語音声"></select>
+    </div>
+    <div class="speed"><span>速度</span><input id="rate" type="range" min="0.7" max="4" step="0.1" value="1"><span id="rateValue">1.0×</span></div>
+  </section>
+
+  <section class="note" aria-label="出典">
+    <strong>出典・注記</strong>
+    <p>本Listenは、2026年10月2日22時23分JST時点で確認できたResearch Meshのdurable receiptを基準に、同日21時23分JSTまでの最新substantive研究状態を再構成したものです。</p>
+    <p><a href="https://github.com/Josh-Temple/ai-business-transformation/blob/main/docs/RESEARCH_MESH_APPLICATION_2026-10-02.md">Research Mesh transferable findings — 2026-10-02</a></p>
+    <p><a href="https://www.nist.gov/publications/challenges-monitoring-deployed-ai-systems-center-ai-standards-and-innovation">NIST AI 800-4: Challenges to the Monitoring of Deployed AI Systems</a></p>
+    <p><a href="https://airc.nist.gov/airmf-resources/playbook/manage/">NIST AI RMF Playbook — MANAGE</a></p>
+    <p>Q029〜Q032の個別結論は、Research Mesh LibraryのRun Journal / Verification Journalに保存されたimmutable receiptを正本とします。</p>
+  </section>
+</main>
+<script>
+(() => {
+  const synth = window.speechSynthesis;
+  const blocks = [...document.querySelectorAll("#article h1,#article h2,#article h3,#article p")];
+  const sectionStarts = [...new Set([0, ...blocks.map((node, i) => node.tagName === "H2" ? i : -1).filter(i => i >= 0)])];
+  const play = document.querySelector("#play");
+  const pause = document.querySelector("#pause");
+  const stop = document.querySelector("#stop");
+  const prevBlock = document.querySelector("#prev-block");
+  const nextBlock = document.querySelector("#next-block");
+  const prevSection = document.querySelector("#prev-section");
+  const nextSection = document.querySelector("#next-section");
+  const sectionLabel = document.querySelector("#section-label");
+  const voice = document.querySelector("#voice");
+  const rate = document.querySelector("#rate");
+  const rateValue = document.querySelector("#rateValue");
+  const theme = document.querySelector("#theme");
+  let index = 0, playing = false, paused = false, selectedVoice = "", generation = 0;
+  let wakeLock = null, wakeLockWanted = false;
+
+  async function requestWakeLock() {
+    const wakeLockApi = window.navigator?.wakeLock;
+    wakeLockWanted = true;
+    if (!wakeLockApi?.request || wakeLock) return;
+    try {
+      const lock = await wakeLockApi.request("screen");
+      if (!wakeLockWanted) {
+        await lock.release();
+        return;
+      }
+      wakeLock = lock;
+      wakeLock.addEventListener?.("release", () => { wakeLock = null; });
+    } catch {
+      wakeLock = null;
+    }
+  }
+
+  async function releaseWakeLock() {
+    wakeLockWanted = false;
+    const current = wakeLock;
+    wakeLock = null;
+    if (!current) return;
+    try {
+      await current.release();
+    } catch {
+    }
+  }
+
+  function voices() {
+    const previous = selectedVoice || voice.value;
+    const items = synth.getVoices().filter(v => /^ja(?:-|_)/i.test(v.lang));
+    voice.replaceChildren();
+    for (const v of items) {
+      const o = document.createElement("option");
+      o.value = v.voiceURI;
+      o.textContent = v.name;
+      voice.append(o);
+    }
+    if (items.some(v => v.voiceURI === previous)) voice.value = previous;
+    selectedVoice = voice.value;
+  }
+
+  function clearHighlight() {
+    blocks.forEach(node => node.classList.remove("is-speaking"));
+  }
+
+  function sectionPosition() {
+    let pos = 0;
+    for (let i = 0; i < sectionStarts.length; i += 1) {
+      if (sectionStarts[i] <= index) pos = i;
+      else break;
+    }
+    return pos;
+  }
+
+  function updateNavigation() {
+    prevBlock.disabled = index <= 0;
+    nextBlock.disabled = index >= blocks.length - 1;
+    const pos = sectionPosition();
+    const start = sectionStarts[pos] ?? 0;
+    const previousTargetExists = index > start || pos > 0;
+    prevSection.disabled = !previousTargetExists;
+    nextSection.disabled = pos >= sectionStarts.length - 1;
+    const startNode = blocks[start];
+    sectionLabel.textContent = startNode?.tagName === "H2" ? startNode.textContent : "連続原稿";
+  }
+
+  function showCurrent() {
+    clearHighlight();
+    const current = blocks[index];
+    if (!current) return;
+    current.classList.add("is-speaking");
+    current.scrollIntoView({ block: "center", behavior: "smooth" });
+    updateNavigation();
+  }
+
+  function speakCurrent() {
+    if (!playing || paused || index >= blocks.length) {
+      if (index >= blocks.length) {
+        playing = false;
+        paused = false;
+        clearHighlight();
+        void releaseWakeLock();
+      }
+      updateNavigation();
+      return;
+    }
+
+    showCurrent();
+    const localGeneration = ++generation;
+    const utterance = new SpeechSynthesisUtterance(blocks[index].textContent);
+    utterance.lang = "ja-JP";
+    utterance.rate = Number(rate.value);
+    const selected = synth.getVoices().find(item => item.voiceURI === voice.value);
+    if (selected) utterance.voice = selected;
+
+    utterance.onend = () => {
+      if (localGeneration !== generation || !playing || paused) return;
+      index += 1;
+      speakCurrent();
+    };
+
+    utterance.onerror = event => {
+      if (localGeneration !== generation) return;
+      if (event.error !== "canceled" && event.error !== "interrupted") {
+        playing = false;
+        paused = false;
+        clearHighlight();
+        void releaseWakeLock();
+        updateNavigation();
+      }
+    };
+
+    synth.speak(utterance);
+  }
+
+  function jumpTo(target) {
+    const next = Math.max(0, Math.min(blocks.length - 1, target));
+    const resume = playing && !paused;
+    const keepPaused = paused;
+    generation += 1;
+    synth.resume?.();
+    synth.cancel();
+    index = next;
+
+    if (resume) {
+      playing = true;
+      paused = false;
+      void requestWakeLock();
+      speakCurrent();
+      return;
+    }
+
+    playing = keepPaused;
+    paused = keepPaused;
+    showCurrent();
+    if (keepPaused) void requestWakeLock();
+  }
+
+  function jumpSection(delta) {
+    const pos = sectionPosition();
+    let targetPos;
+    if (delta < 0 && index > sectionStarts[pos]) targetPos = pos;
+    else targetPos = pos + delta;
+    if (targetPos < 0 || targetPos >= sectionStarts.length) return;
+    jumpTo(sectionStarts[targetPos]);
+  }
+
+  play.addEventListener("click", () => {
+    if (paused) {
+      generation += 1;
+      synth.resume?.();
+      synth.cancel();
+      paused = false;
+      playing = true;
+      void requestWakeLock();
+      speakCurrent();
+      return;
+    }
+    if (playing) return;
+    if (index >= blocks.length) index = 0;
+    playing = true;
+    void requestWakeLock();
+    speakCurrent();
+  });
+
+  pause.addEventListener("click", () => {
+    if (!playing || paused) return;
+    synth.pause();
+    paused = true;
+  });
+
+  stop.addEventListener("click", () => {
+    generation += 1;
+    synth.resume?.();
+    synth.cancel();
+    playing = false;
+    paused = false;
+    index = 0;
+    clearHighlight();
+    updateNavigation();
+    void releaseWakeLock();
+  });
+
+  prevBlock.addEventListener("click", () => jumpTo(index - 1));
+  nextBlock.addEventListener("click", () => jumpTo(index + 1));
+  prevSection.addEventListener("click", () => jumpSection(-1));
+  nextSection.addEventListener("click", () => jumpSection(1));
+
+  voice.addEventListener("change", () => {
+    selectedVoice = voice.value;
+    if (playing && !paused) {
+      generation += 1;
+      synth.cancel();
+      speakCurrent();
+    }
+  });
+
+  rate.addEventListener("input", () => {
+    rateValue.textContent = Number(rate.value).toFixed(1) + "×";
+  });
+
+  theme.addEventListener("click", () => {
+    const dark = document.documentElement.dataset.theme === "dark";
+    document.documentElement.dataset.theme = dark ? "light" : "dark";
+    theme.textContent = dark ? "☾" : "☀";
+    localStorage.setItem("rsvp:theme", dark ? "light" : "dark");
+  });
+
+  document.documentElement.dataset.theme =
+    localStorage.getItem("rsvp:theme") ||
+    (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  theme.textContent = document.documentElement.dataset.theme === "dark" ? "☀" : "☾";
+
+  voices();
+  synth.addEventListener?.("voiceschanged", voices);
+  updateNavigation();
+
+  document.addEventListener?.("visibilitychange", () => {
+    if (document.visibilityState === "visible" && (playing || paused)) {
+      void requestWakeLock();
+    }
+  });
+
+  addEventListener("pagehide", () => {
+    generation += 1;
+    synth.cancel();
+    void releaseWakeLock();
+  });
+})();
+</script>
+</body>
+</html>

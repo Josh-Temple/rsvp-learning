@@ -23,6 +23,13 @@
       "path": "./research/2026-10-02-graphforge-verifiable-working-agents.html"
     },
     {
+      "id": "2026-10-02-research-mesh-daily-results",
+      "title": "今日のResearch Mesh――四つの問いから見えた、AI導入を判断するための境界",
+      "date": "2026-10-02",
+      "category": "research",
+      "path": "./research/2026-10-02-research-mesh-daily-results.html"
+    },
+    {
       "id": "2026-10-01-agents-design-libraries-for-agents",
       "title": "AIエージェントは、別のAIが使いやすいライブラリを設計できるか",
       "date": "2026-10-01",
