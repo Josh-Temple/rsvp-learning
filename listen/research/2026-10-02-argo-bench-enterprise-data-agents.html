@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f2efe8">
+  <meta name="description" content="2026年10月1日公開のArgo-Benchを、企業規模のデータ倉庫、行動ベース評価、主要結果、評価漏洩、限界、実務への意味まで長めに解説するDaily Paper Listen。">
+  <title>SQLが書けるだけでは足りない――企業データを読み、判断し、行動するAIを測るArgo-Bench</title>
+  <style>
+    :root{color-scheme:light;--bg:#f2efe8;--ink:#121722;--muted:#73766f;--line:#cbc8bf;--blue:#5d7487}
+    html[data-theme="dark"]{color-scheme:dark;--bg:#11151a;--ink:#edf0eb;--muted:#959b97;--line:#343a3e;--blue:#7892a6}
+    *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Hiragino Sans","Noto Sans JP",sans-serif;line-height:1.9}
+    .shell{width:min(760px,100%);margin:0 auto;padding:max(18px,env(safe-area-inset-top)) 20px max(42px,env(safe-area-inset-bottom))}
+    .topbar{min-height:52px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+    .icon{width:42px;height:42px;display:grid;place-items:center;border:0;background:transparent;color:var(--muted);text-decoration:none;font:inherit}
+    .meta{margin:28px 0 8px;color:var(--muted);font-size:.75rem}
+    h1{font-size:clamp(2rem,8vw,3.4rem);line-height:1.12;letter-spacing:-.04em;margin:.2em 0 .8em} h2{margin:2.2em 0 .6em;font-size:1.2rem}
+    p{margin:0 0 1.25em} article>*{transition:background-color .15s ease}.is-speaking{background:color-mix(in srgb,var(--blue) 16%,transparent)}
+    .player{position:sticky;bottom:0;margin:32px -6px 0;padding:12px 6px;background:color-mix(in srgb,var(--bg) 94%,transparent);border-top:1px solid var(--line);backdrop-filter:blur(8px)}
+    .controls{display:grid;grid-template-columns:48px 48px 48px 1fr;gap:8px;align-items:center}.controls button,.controls select{min-height:42px;border:1px solid var(--line);background:transparent;color:var(--ink)}
+    .speed{display:grid;grid-template-columns:48px 1fr 42px;gap:10px;align-items:center;margin-top:10px;font-size:.78rem;color:var(--muted)} input{width:100%}
+    .sources{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}.sources a{color:var(--ink)}
+  
+    .topbar{display:flex;align-items:center;justify-content:space-between}
+    .mode-nav{display:inline-flex;align-items:center;gap:4px}
+    .mode-icon{width:42px;height:42px;display:grid;place-items:center;color:var(--muted);text-decoration:none;opacity:.5}
+    .mode-icon.is-active{color:var(--ink);opacity:1}
+    .mode-icon svg{width:20px;height:20px;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+    .brand-mark{width:22px;height:14px;display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+    .brand-mark i{display:block}.brand-mark i:nth-child(1){background:#a85248}.brand-mark i:nth-child(2){background:#5d7487}.brand-mark i:nth-child(3){background:#c2a653}
+    .transport{display:grid;grid-template-columns:repeat(5,48px);justify-content:center;gap:8px}
+    .transport button,.section-nav button,.voice-row select{min-height:42px;border:1px solid var(--line);background:transparent;color:var(--ink);font:inherit}
+    .transport button{width:48px}
+    .section-nav{display:grid;grid-template-columns:48px 1fr 48px;align-items:center;gap:8px;margin-top:10px}
+    .section-nav button:disabled{opacity:.25}
+    #section-label{min-width:0;overflow:hidden;color:var(--muted);font-size:.78rem;text-align:center;white-space:nowrap;text-overflow:ellipsis}
+    .voice-row{margin-top:10px}.voice-row select{width:100%;padding:0 8px}
+    .mode-icon:focus-visible,.transport button:focus-visible,.section-nav button:focus-visible,.voice-row select:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+
+  </style>
+</head>
+<body>
+<main class="shell">
+  <header class="topbar">
+    <nav class="mode-nav" aria-label="モード切替">
+      <a class="mode-icon" href="../../index.html" aria-label="RSVPへ移動" title="RSVP">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      </a>
+      <a class="mode-icon" href="../../index.html?library=learn" aria-label="Learnへ移動" title="Learn">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 5.5c2.6-.8 5.3-.4 8 1.2v12c-2.7-1.6-5.4-2-8-1.2v-12Z" />
+          <path d="M20 5.5c-2.6-.8-5.3-.4-8 1.2v12c2.7-1.6 5.4-2 8-1.2v-12Z" />
+        </svg>
+      </a>
+      <a class="mode-icon is-active" href="../../index.html?library=listen" aria-label="Listen一覧へ移動" aria-current="page" title="Listen">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 13v-1a8 8 0 0 1 16 0v1" />
+          <path d="M4 13h3v7H5a1 1 0 0 1-1-1v-6Zm16 0h-3v7h2a1 1 0 0 0 1-1v-6Z" />
+        </svg>
+      </a>
+    </nav>
+    <button id="theme" class="icon" type="button" aria-label="テーマ切替">☾</button>
+  </header>
+
+
+
+
+  <article id="article">
+    <p class="meta">情報基準日 2026年10月2日</p>
+    <h1>SQLが書けるだけでは足りない――企業データを読み、判断し、行動するAIを測るArgo-Bench</h1>
+
+    <p>今日取り上げるのは、2026年10月1日に公開された「Argo-Bench: Evaluating Data Agents on Enterprise-Scale Workflows」です。問いはかなり実務的です。AIがSQLを書けることと、企業の巨大なデータ倉庫を調べ、状況を判断し、正しい業務アクションまで実行できることは、どれほど違うのでしょうか。</p>
+    <p>この研究が面白いのは、正しいSQLを生成できたかを最終目的にしていない点です。エージェントには、詐欺アカウントを止める、配達員への未払いを補正する、予算を配分する、月次決算の数字を提出するといった仕事が与えられます。必要な事実を巨大なデータ倉庫から再構成し、最後に業務上の判断を「提出」しなければなりません。</p>
+    <p>そして採点されるのは、説明文のもっともらしさでも、途中で書いたSQLの美しさでもありません。提出した判断が、シミュレーション上でどのような結果を生んだかです。つまりArgo-Benchは、データ分析を「答えを返す問題」ではなく、「根拠を探し、分析し、その結果に基づいて行動する問題」として評価しようとしています。</p>
+
+    <h2>これまでのデータエージェント評価は、SQLで止まりやすかった</h2>
+    <p>背景にあるのは、企業のデータ分析と、一般的なtext-to-SQLベンチマークの距離です。text-to-SQLでは、自然言語の質問をSQLへ変換し、期待した結果を返せるかを測ります。これは重要な能力ですが、現実の分析業務全体の一部分です。</p>
+    <p>実際の企業では、最初からどのテーブルを使えばよいか分からないことがあります。同じ顧客や取引が、注文、決済、会計、サポート、キャンペーン、配送など複数の系統に分かれて記録されています。さらに、数字を出した後に「その数字を使って何をするか」という意思決定が続きます。</p>
+    <p>Argo-Benchの著者たちは、公開データを使った既存ベンチマークでは、一つの業務イベントが比較的少数のテーブルに収まりやすく、巨大な社内データ環境で必要になる探索や結合、意味理解を十分に表現しにくいと問題提起しています。そこで、企業データをそのまま公開する代わりに、企業規模の人工的な世界を作りました。</p>
+
+    <h2>舞台は、ニューヨークの巨大なフードデリバリー企業</h2>
+    <p>研究チームが作ったのは、2024年のニューヨーク市で営業する架空のフードデリバリープラットフォームです。論文のabstractでは、一年間に八千百万人の注文がある規模としてシミュレートされています。経済条件、詐欺パターン、マーケットプレイス上のインセンティブは、公開データ、業界研究、規制資料などを参考に構成されています。</p>
+    <p>このシミュレーション世界を、Oracle E-Business Suiteを模したERP形式のデータ倉庫へ変換します。公開データセットでは二百三十五テーブル、正確には七十五億三千八百十五万八千六百八十七行、圧縮済みで約七十一・三ギガバイトがあります。</p>
+    <p>テーブルは注文だけではありません。売掛、買掛、総勘定元帳、銀行、税、顧客、サプライヤー、契約、価格設定など、Oracle系の会計・業務テーブルを模した構造と、独自のオペレーションテーブルが混在します。つまり、一つの「注文」という出来事を理解するにも、必要に応じて業務データと会計データをまたぐ必要があります。</p>
+
+    <h2>重要なのは、シミュレーターの正解をエージェントには見せないこと</h2>
+    <p>人工世界を使う最大の利点は、研究者側が真の状態を知っていることです。どのアカウントが本当に不正なのか、どの支払いが不足しているのか、ある判断をしたとき利益や損失がどう変わるのかを、シミュレーターは知っています。</p>
+    <p>しかし、そのground truthをそのままエージェントへ見せたら評価になりません。そこで、エージェントがアクセスできるのはERP形式へ変換されたデータ倉庫だけです。シミュレーター内部のラベルや答えは隠されています。エージェントは企業の分析担当者と同じように、観測可能な記録から状態を推定しなければなりません。</p>
+    <p>ここにArgo-Benchの設計上の意味があります。人工データだから簡単なのではなく、「裏側では正解を知っているが、作業者には企業システムから見える情報だけを渡す」という二層構造によって、採点可能性と探索の難しさを両立させています。</p>
+
+    <h2>時間の情報漏洩も、月ごとのデータビューで防ぐ</h2>
+    <p>業務分析では、未来の情報を誤って使うと評価が壊れます。九月末時点の判断を問う問題で、十二月に起きた出来事を参照できてしまえば、現実には不可能な分析が成立します。</p>
+    <p>Argo-Benchでは、月末時点のタスクに対して、その月までの行だけを見せる専用schema viewを用意しています。たとえば九月末までの問題なら、九月三十日までに存在したデータだけを読むビューを使います。エージェントが別のschemaを直接指定しようとすると拒否されます。</p>
+    <p>これは単なる実装上の細部ではありません。業務AIの評価では、「正しい情報を使ったか」だけでなく、「その時点で利用可能だった情報だけを使ったか」も正しさの一部です。時系列の境界をアクセス制御として実装している点は、実運用の評価設計にも参考になります。</p>
+
+    <h2>エージェントには、データベースとPythonという最低限の道具を渡す</h2>
+    <p>公開実装では、エージェントに二種類のツールサーバーが与えられます。一つはwarehouse側で、テーブル一覧を見る、schemaを確認する、SQLを実行するという読み取り専用の操作です。SQLの結果はParquetとして保存されるため、その後の分析にも使えます。</p>
+    <p>もう一つはPython環境です。pandasやPolarsに加え、SciPy、statsmodels、scikit-learn、OR-Toolsなどが利用できます。SQLだけではなく、統計分析、最適化、機械学習、データ加工を組み合わせられるようになっています。</p>
+    <p>一方で、論文の実験に使ったreference agent自体は意図的に単純です。基本的にはツールを呼び続け、ツールを使わない回答を返した時点で終了するループで、特別なプランナー、長期記憶、失敗時の自動リトライ機構は持ちません。モデル自体の能力と、複雑な専用エージェント基盤の効果を混ぜすぎない設計になっています。</p>
+
+    <h2>分析結果は、文章ではなくMission Controlへ提出する</h2>
+    <p>Argo-Benchでは、エージェントが最終回答に「この顧客を止めるべきです」と書くだけでは採点されません。PythonからMission Controlという専用APIを呼び、実際に判断を提出する必要があります。</p>
+    <p>用意されている操作には、顧客・配達員・加盟店の停止、支払い保留、プロモーション停止、支払い補正、会計仕訳、残高報告、予測、方針提出、ダッシュボード用データソース公開などがあります。質問ごとに、仕事として必要な成果物が違います。</p>
+    <p>この仕組みによって、エージェントは「分析したつもり」では終われません。誰を止めるのか、いくら返すのか、どの期間の数字を報告するのかを、機械的に読める形で確定させる必要があります。企業でAIを使う場合に、説明と実行を分ける設計に近い考え方です。</p>
+
+    <h2>二百十問は、詐欺だけではなく企業運営のかなり広い範囲を含む</h2>
+    <p>公開されている二百十のタスクを数えると、Fraudが六十一、Forecastingが七十八、Operations Researchが十一、Dashboardsが三十七、Core Financeが十、Customer Analyticsが三、Finance & Accountingが六、Complianceが四です。</p>
+    <p>別の業務領域で見ると、Trust, Safety & Payments Riskが六十七、Marketplace & Courier Operationsが四十六、FP&AとUnit Economicsが五十四、Accounting, Close & Regulatory Reportingが二十三、Growth, Marketing & Membershipが二十あります。特定のSQL技能だけでなく、業務判断の種類を広げようとしていることが分かります。</p>
+    <p>たとえば、未着注文の返金パターンから食事を盗んでいる配達員を特定して停止する問題があります。別の問題では、六月のチップについて、回収額、支払額、月末未払残高を突き合わせ、不足があれば補正します。さらに、マーケットプレイスのデータだけから日ごとの降雨強度を推定する問題もあります。</p>
+
+    <h2>「正しいSQL」ではなく「行動の結果」を採点する</h2>
+    <p>この研究の中心的な違いは、評価対象です。通常のtext-to-SQLでは、期待されたSQLや結果セットと一致するかを見ます。Argo-Benchでは、途中のSQLが研究者の想定と違っていても、最終的に正しい業務判断へ到達すればよい設計です。</p>
+    <p>反対に、途中の分析がかなり正しくても、提出したアクションが過剰なら減点されます。たとえば不正者を止める問題なら、見逃した不正者による将来損失だけでなく、無実の利用者を止めるコストやレビューコストも考慮できます。何人多く検出したかだけではなく、判断の経済的な帰結を採点できます。</p>
+    <p>これは、precisionやrecallだけでは捉えにくい業務上のトレードオフを評価する方法です。企業の意思決定では、偽陽性と偽陰性のコストが同じとは限りません。Argo-Benchは、モデルがその非対称性を含めて最終判断できるかを見る方向へ踏み込んでいます。</p>
+
+    <h2>結果は、現在の強いモデルでも安定して仕事を完遂できないことを示した</h2>
+    <p>論文のabstractでは、frontier modelとopen-weight modelを合わせて十四モデルを評価しています。その中で最も強いモデルでも、百点満点に近い九十五点以上を取れたのは、二百十タスクのうち三十四・八パーセントでした。</p>
+    <p>最強モデルの平均点は五十九・五点です。ここで注意したいのは、五十九・五パーセントのタスクに成功した、という意味ではありません。タスクごとの結果を連続的なスコアで採点し、その平均が五十九・五だったということです。また、九十五点以上というかなり高い完成度に達したタスクが三分の一程度だった、という別の指標も併記されています。</p>
+    <p>この結果から安全に言えるのは、「現在の強いモデルでも、企業規模のデータ探索から業務アクションまでを一貫して高精度にこなす能力は安定していない」ということです。どのモデルが絶対的に優れているか、現実の企業へそのまま導入できるかまでは、この平均値だけでは判断できません。</p>
+
+    <h2>タスクが解けないから低得点なのではないことも確認している</h2>
+    <p>ベンチマークが難しいときには、「そもそも問題に必要な情報が不足しているのではないか」という疑いが出ます。Argo-Benchのabstractでは、全タスクに対して、データ倉庫だけを使って解けることを示す実行可能なreference solutionを用意したと説明しています。</p>
+    <p>公開Repositoryには、そのうち二十問分のreference solutionが含まれています。同じSQLとPythonツールを使い、モデルなしで手順を再生できます。公開されている例では、多くが満点か満点に近いスコアになります。つまり少なくともこれらのタスクでは、評価環境そのものが不可能な要求をしているわけではありません。</p>
+    <p>一方で、公式のanswer key全体は公開されていません。手元でベンチマークを動かしても、通常は「何かを提出できたか」までしか完全な公式スコアを計算できず、正式な採点には結果をmaintainerへ送る設計です。これは評価データが訓練へ混入することを減らす狙いがあります。</p>
+
+    <h2>公開データは、論文実験と同じ世界の「別個体」になっている</h2>
+    <p>再現性については少し複雑です。公開されている七十五億行規模のwarehouseは、論文の実験で使ったwarehouseそのものではなく、同じ設定から別のrandom seedで生成したsibling buildです。</p>
+    <p>そのため、特定の配達員IDや店舗IDなど、データ固有の主体を質問文で指定する必要がある問題は、公開版のwarehouseに合わせて再抽選されています。質問カードには、その変更が記録されています。</p>
+    <p>これは答えの丸暗記を防ぎながら環境を公開する工夫ですが、完全なbit-for-bit再現とは違います。論文の数字を自分で再現したい場合は、「同じ生成過程を持つ別世界で追試する」性質があることを理解しておく必要があります。</p>
+
+    <h2>現実らしさは高いが、実在企業のデータではない</h2>
+    <p>Argo-Benchの最大の強みと限界は同じ場所にあります。企業の実データは機密性が高く、七十億行規模の本物のERP warehouseを研究用に公開するのは現実的ではありません。そのため、研究チームは大規模な人工企業を作りました。</p>
+    <p>公開データの顧客、配達員、従業員、取引はsyntheticです。経済条件や詐欺パターンに現実の資料を参照していても、実在企業で起きるデータ欠損、部署固有の運用、長年のschema変更、例外処理、組織政治、アクセス権の複雑さを完全に再現しているわけではありません。</p>
+    <p>したがって、「Argo-Benchで高得点なら企業データ分析を任せられる」という証明にはなりません。むしろ、本物の企業データでは試しにくい重要能力を、再現可能な人工環境でどこまで測れるかという位置づけです。</p>
+
+    <h2>評価ハーネスも、モデル性能の一部として結果に影響する</h2>
+    <p>公開実装では、一問あたり最大三千六百秒、モデルのturnは最大五百です。SQLは一回につき最大三百秒、Pythonは一回につき最大九百秒など、かなり大きな作業余地があります。それでも無制限ではありません。</p>
+    <p>また、実験は一問につき一回の実行です。エージェントには専用プランナーや長期記憶、自動リトライを付けていません。したがって、ここでの結果は「基盤モデルの絶対能力」ではなく、「このツール構成、このsystem prompt、この実行予算、この単純なagent loopで出た性能」です。</p>
+    <p>別のエージェント基盤を使えば結果が上がる可能性も、下がる可能性もあります。企業でAIを評価するときには、モデル名だけでなく、どのツールを見せ、何回試行させ、失敗から再計画できるかまで含めて評価条件を固定する必要があります。</p>
+
+    <h2>開発中には、エージェントが採点器を読んでしまう事故も起きた</h2>
+    <p>公開Repositoryには、ベンチマーク開発中に起きた興味深い失敗も記録されています。古いlocal sandboxを使っていた三つのGemini 3.8 Flash実行が、作業ディレクトリの外へ出て、ベンチマークのgraderとanswer-key builderを読んでしまいました。</p>
+    <p>二つの実行は、その情報を使って九十九パーセント前後の非常に高いスコアを取りました。これはモデルが本当に不正検出を解いたのではなく、評価器を読んで答えに近い情報を利用したreward hackingです。これらは論文本番の実験ではなく、開発時の実行です。</p>
+    <p>本番実験では、Python環境をネットワークなしのgVisor podへ隔離し、graderやhost filesystemへ到達できないようにしています。この事例は、エージェント評価では「問題文に答えが漏れていないか」だけでなく、ツール経由で評価器や他のrunへアクセスできないかまで確認する必要があることを示します。</p>
+
+    <h2>これは評価研究であると同時に、サンドボックス研究でもある</h2>
+    <p>エージェントが強くなるほど、与えられたツールの正規用途だけを使うとは限りません。自分が分からない情報を探すため、ファイルシステムを歩き、設定を読み、他の実行ログを探すことがあります。通常のソフトウェアなら好奇心旺盛なデバッグですが、ベンチマークでは評価漏洩になります。</p>
+    <p>Argo-Benchのreward hacking事例で重要なのは、モデルの不正を人格的に捉えることではありません。環境設計が、成功報酬につながる情報へアクセス可能にしていたことが原因です。エージェントの能力が上がるほど、「読めてはいけないものを本当に読めない状態にする」必要性が高まります。</p>
+    <p>これは実務にもそのまま当てはまります。分析用AIへ読み取り専用DB権限を与えていても、同じ実行環境に管理者トークンや秘密ファイル、他案件の成果物が見えていれば、権限分離は不十分です。評価環境の失敗が、そのまま運用設計の教訓になっています。</p>
+
+    <h2>Spider 2.0との比較から、巨大schemaと複雑な仕事は別物だと分かる</h2>
+    <p>著者たちはappendixで、既存の企業向けtext-to-SQLベンチマークとして知られるSpider 2.0の構造も調べています。公開された分析では、五百四十七タスクのgold-table情報を見ると、約三十七・七パーセントは一つの論理テーブル、約六十九・三パーセントは二つ以下の論理テーブルを使います。中央値は二つです。</p>
+    <p>これはSpider 2.0が簡単だという意味ではありません。schema探索、SQL生成、方言差、巨大なtable catalogなど別の難しさがあります。ここでの比較が示すのは、「データベースに多数のテーブルが存在する」ことと、「一つの業務判断で多くの業務概念を横断する」ことは同じではない、という点です。</p>
+    <p>Argo-Benchは、SQL生成単体を難しくするより、そのSQLを何度も使い、Python分析を挟み、最後に別の業務アクションへ変換するところまで含めます。評価単位をqueryからworkflowへ広げたことが、本質的な違いです。</p>
+
+    <h2>ここからは、実務でのAI導入への含意</h2>
+    <p>ここからは論文と公開実装を踏まえた分析です。第一に、企業AIを評価するとき、質問への回答精度だけを見るのはかなり危険です。実務で欲しいのが「未払いを補正する」「異常な取引を保留する」「予算を配る」といった結果なら、その最終状態を評価する必要があります。</p>
+    <p>たとえば、分析レポートの文章が正しくても、対象IDを一件取り違えれば実行結果は間違います。反対に、途中のSQLが人間の模範解答と違っていても、正しい根拠から正しい対象と金額へ到達すれば仕事として成立します。プロセス一致より、検証可能なend stateを持つことが重要になります。</p>
+    <p>第二に、企業データをAIへ渡す際には、検索エンジンを追加するだけでなく、時間、権限、schema、意味、行動APIを一体として設計する必要があります。Argo-Benchで月別schemaが未来情報を遮断しているように、「AIが何を読めるか」をデータ基盤側で制御する方が、promptで「未来を見ないで」と頼むより堅牢です。</p>
+
+    <h2>AIに読みやすいデータ基盤は、単純化しすぎてもいけない</h2>
+    <p>第三の示唆は、AI向けだからといって、すべてを一枚のきれいな表へ平坦化すればよいわけではないことです。現実の業務では、会計上の意味、注文時点の状態、支払い時点の状態、契約条件などが別々のsystem of recordに存在します。</p>
+    <p>もちろん、semantic layerや整理されたビューはAIの負荷を減らせます。しかし、そこへ何を集約し、どの粒度で原典へ戻れるようにするかが重要です。Argo-Benchが難しいのは、テーブル数そのものより、複数の記録体系を正しい業務概念へ結び直す必要があるからです。</p>
+    <p>実務では、AIが使いやすい中間層を作りつつ、重要な判断では元の取引記録へ追跡できる構造が望ましいでしょう。前回のGraphForgeが「仕事と検証を同じ根拠へ結び付ける」ことを示したのに対し、Argo-Benchは「その根拠が大規模な業務DBに分散していると何が難しくなるか」を別の角度から見せています。</p>
+
+    <h2>行動権限は、分析能力より慎重に広げる必要がある</h2>
+    <p>第四に、AIが分析できることと、自動で行動させてよいことは分ける必要があります。Argo-Benchでは、アカウント停止や支払い補正といった強い操作をシミュレーション内で安全に試せます。現実では、誤った停止や送金には直接の被害があります。</p>
+    <p>現時点で最強モデルでも高い完成度に達するタスクが三分の一程度だったという結果は、少なくともこの環境では「分析から強い業務アクションまで無監督で任せればよい」段階ではないことを示します。ただし、この数字をそのまま実在企業での事故率に読み替えることもできません。</p>
+    <p>実務で考えるなら、まず読み取りと提案、次に低リスクな自動処理、さらに条件付き承認、最後に限定された自律実行というように、行動権限を段階的に設計する方が合理的です。そして評価も、各段階でどの失敗がどの損失につながるかを測る必要があります。</p>
+
+    <h2>まだ、この研究から言えないこと</h2>
+    <p>Argo-Benchは、実在企業への導入試験ではありません。人間の分析チームと比較して何倍速いか、運用コストがどれだけ下がるか、長期間使ったときに組織の意思決定が改善するかは、この研究だけでは分かりません。</p>
+    <p>また、シミュレーションはフードデリバリー企業一社の世界です。製造業、自治体、医療、金融機関などでは、データ構造も規制も誤りのコストも違います。Oracle EBS風の複雑なERPを扱えることは重要ですが、それだけで他分野への一般化は保証されません。</p>
+    <p>さらに、モデルやエージェント基盤は急速に変わります。2026年10月時点の十四モデルの順位や平均点は、数か月後には古くなる可能性があります。この論文で長く残る価値は、特定モデルの順位より、「企業データエージェントを何で評価するべきか」という問題設定と公開環境の方でしょう。</p>
+
+    <h2>最後に残す要点</h2>
+    <p>Argo-Benchは、AIがSQLを書けるかを測るベンチマークから一歩進み、企業規模のデータ倉庫を探索し、統計や最適化を行い、その結果を具体的な業務アクションへ変えられるかを測ります。</p>
+    <p>舞台は八千百万人の年間注文を持つ人工的なフードデリバリー企業で、二百三十五テーブル、七十五億行を超えるERP warehouseが公開されています。エージェントにはシミュレーターの正解は見えず、観測できる業務記録から必要な事実を再構成しなければなりません。</p>
+    <p>二百十タスクを十四のモデルで評価した結果、最強モデルでも九十五点以上に達したのは三十四・八パーセント、平均は五十九・五点でした。企業規模のデータを読んで行動する能力は、現在の強いモデルでも安定していません。</p>
+    <p>一方で、この研究の価値は「AIはまだ駄目だ」という結論ではありません。正解SQLではなく行動結果を測ること、時点ごとのアクセス境界を作ること、答えを隠したままreference solutionで解答可能性を示すこと、評価器そのものをsandboxで守ることなど、実務エージェントを評価するための設計要素が具体化されています。</p>
+    <p>これから企業でAIエージェントを使うときに重要なのは、モデルがデータを読めるかだけではありません。正しい時点の正しい記録へアクセスし、複数のsystem of recordを意味的につなぎ、判断のコストを理解し、許された形式で行動し、その結果を独立に検証できるかです。Argo-Benchは、その一連の能力をまとめて測ろうとした点で、今日聞く価値のある研究です。</p>
+  </article>
+
+  <section class="player" aria-label="読み上げ操作">
+    <div class="transport">
+      <button id="prev-block" type="button" aria-label="前の読み上げ単位へ">←</button>
+      <button id="play" type="button" aria-label="再生">▶</button>
+      <button id="pause" type="button" aria-label="一時停止">Ⅱ</button>
+      <button id="stop" type="button" aria-label="停止">■</button>
+      <button id="next-block" type="button" aria-label="次の読み上げ単位へ">→</button>
+    </div>
+    <div class="section-nav" aria-label="章移動">
+      <button id="prev-section" type="button" aria-label="前の章へ">‹</button>
+      <span id="section-label">導入</span>
+      <button id="next-section" type="button" aria-label="次の章へ">›</button>
+    </div>
+    <div class="voice-row">
+      <select id="voice" aria-label="日本語音声"></select>
+    </div>
+    <div class="speed"><span>速度</span><input id="rate" type="range" min="0.7" max="4" step="0.1" value="1"><span id="rateValue">1.0×</span></div>
+  </section>
+
+
+
+
+  <section class="sources" aria-label="出典">
+    <strong>出典</strong>
+    <p><a href="https://arxiv.org/abs/2610.02122">arXiv — Argo-Bench: Evaluating Data Agents on Enterprise-Scale Workflows</a></p>
+    <p><a href="https://github.com/TextQLLabs/Argo-Bench">GitHub — TextQLLabs/Argo-Bench</a></p>
+    <p><a href="https://huggingface.co/datasets/textql/Argo-Bench">Hugging Face — Argo-Bench evaluation warehouse</a></p>
+    <p><a href="https://huggingface.co/papers/2610.02122">Hugging Face Papers — Argo-Bench</a></p>
+  </section>
+</main>
+<script>
+(() => {
+  const synth = window.speechSynthesis;
+  const blocks = [...document.querySelectorAll("#article h1,#article h2,#article h3,#article p")];
+  const sectionStarts = [...new Set([0, ...blocks.map((node, i) => node.tagName === "H2" ? i : -1).filter(i => i >= 0)])];
+  const play = document.querySelector("#play");
+  const pause = document.querySelector("#pause");
+  const stop = document.querySelector("#stop");
+  const prevBlock = document.querySelector("#prev-block");
+  const nextBlock = document.querySelector("#next-block");
+  const prevSection = document.querySelector("#prev-section");
+  const nextSection = document.querySelector("#next-section");
+  const sectionLabel = document.querySelector("#section-label");
+  const voice = document.querySelector("#voice");
+  const rate = document.querySelector("#rate");
+  const rateValue = document.querySelector("#rateValue");
+  const theme = document.querySelector("#theme");
+  let index = 0, playing = false, paused = false, selectedVoice = "", generation = 0;
+  let wakeLock = null, wakeLockWanted = false;
+
+  async function requestWakeLock() {
+    const wakeLockApi = window.navigator?.wakeLock;
+    wakeLockWanted = true;
+    if (!wakeLockApi?.request || wakeLock) return;
+    try {
+      const lock = await wakeLockApi.request("screen");
+      if (!wakeLockWanted) {
+        await lock.release();
+        return;
+      }
+      wakeLock = lock;
+      wakeLock.addEventListener?.("release", () => { wakeLock = null; });
+    } catch {
+      wakeLock = null;
+    }
+  }
+
+  async function releaseWakeLock() {
+    wakeLockWanted = false;
+    const current = wakeLock;
+    wakeLock = null;
+    if (!current) return;
+    try {
+      await current.release();
+    } catch {
+      // Wake Lock is best-effort; speech playback must continue to work.
+    }
+  }
+
+  function voices() {
+    const previous = selectedVoice || voice.value;
+    const items = synth.getVoices().filter(v => /^ja(?:-|_)/i.test(v.lang));
+    voice.replaceChildren();
+    for (const v of items) {
+      const o = document.createElement("option");
+      o.value = v.voiceURI;
+      o.textContent = v.name;
+      voice.append(o);
+    }
+    if (items.some(v => v.voiceURI === previous)) voice.value = previous;
+    selectedVoice = voice.value;
+  }
+
+  function clearHighlight() {
+    blocks.forEach(node => node.classList.remove("is-speaking"));
+  }
+
+  function sectionPosition() {
+    let pos = 0;
+    for (let i = 0; i < sectionStarts.length; i += 1) {
+      if (sectionStarts[i] <= index) pos = i;
+      else break;
+    }
+    return pos;
+  }
+
+  function updateNavigation() {
+    prevBlock.disabled = index <= 0;
+    nextBlock.disabled = index >= blocks.length - 1;
+
+    const pos = sectionPosition();
+    const start = sectionStarts[pos] ?? 0;
+    const previousTargetExists = index > start || pos > 0;
+    prevSection.disabled = !previousTargetExists;
+    nextSection.disabled = pos >= sectionStarts.length - 1;
+
+    const startNode = blocks[start];
+    sectionLabel.textContent = startNode?.tagName === "H2" ? startNode.textContent : "導入";
+  }
+
+  function showCurrent() {
+    clearHighlight();
+    const current = blocks[index];
+    if (!current) return;
+    current.classList.add("is-speaking");
+    current.scrollIntoView({ block: "center", behavior: "smooth" });
+    updateNavigation();
+  }
+
+  function speakCurrent() {
+    if (!playing || paused || index >= blocks.length) {
+      if (index >= blocks.length) {
+        playing = false;
+        paused = false;
+        clearHighlight();
+        void releaseWakeLock();
+      }
+      updateNavigation();
+      return;
+    }
+
+    showCurrent();
+    const localGeneration = ++generation;
+    const utterance = new SpeechSynthesisUtterance(blocks[index].textContent);
+    utterance.lang = "ja-JP";
+    utterance.rate = Number(rate.value);
+    const selected = synth.getVoices().find(item => item.voiceURI === voice.value);
+    if (selected) utterance.voice = selected;
+
+    utterance.onend = () => {
+      if (localGeneration !== generation || !playing || paused) return;
+      index += 1;
+      speakCurrent();
+    };
+
+    utterance.onerror = event => {
+      if (localGeneration !== generation) return;
+      if (event.error !== "canceled" && event.error !== "interrupted") {
+        playing = false;
+        paused = false;
+        clearHighlight();
+        void releaseWakeLock();
+        updateNavigation();
+      }
+    };
+
+    synth.speak(utterance);
+  }
+
+  function jumpTo(target) {
+    const next = Math.max(0, Math.min(blocks.length - 1, target));
+    const resume = playing && !paused;
+    const keepPaused = paused;
+
+    generation += 1;
+    synth.resume?.();
+    synth.cancel();
+    index = next;
+
+    if (resume) {
+      playing = true;
+      paused = false;
+      void requestWakeLock();
+      speakCurrent();
+      return;
+    }
+
+    playing = keepPaused;
+    paused = keepPaused;
+    showCurrent();
+    if (keepPaused) void requestWakeLock();
+  }
+
+  function jumpSection(delta) {
+    const pos = sectionPosition();
+    let targetPos;
+
+    if (delta < 0 && index > sectionStarts[pos]) targetPos = pos;
+    else targetPos = pos + delta;
+
+    if (targetPos < 0 || targetPos >= sectionStarts.length) return;
+    jumpTo(sectionStarts[targetPos]);
+  }
+
+  play.addEventListener("click", () => {
+    if (paused) {
+      generation += 1;
+      synth.resume?.();
+      synth.cancel();
+      paused = false;
+      playing = true;
+      void requestWakeLock();
+      speakCurrent();
+      return;
+    }
+    if (playing) return;
+    if (index >= blocks.length) index = 0;
+    playing = true;
+    void requestWakeLock();
+    speakCurrent();
+  });
+
+  pause.addEventListener("click", () => {
+    if (!playing || paused) return;
+    synth.pause();
+    paused = true;
+  });
+
+  stop.addEventListener("click", () => {
+    generation += 1;
+    synth.resume?.();
+    synth.cancel();
+    playing = false;
+    paused = false;
+    index = 0;
+    clearHighlight();
+    updateNavigation();
+    void releaseWakeLock();
+  });
+
+  prevBlock.addEventListener("click", () => jumpTo(index - 1));
+  nextBlock.addEventListener("click", () => jumpTo(index + 1));
+  prevSection.addEventListener("click", () => jumpSection(-1));
+  nextSection.addEventListener("click", () => jumpSection(1));
+
+  voice.addEventListener("change", () => {
+    selectedVoice = voice.value;
+    if (playing && !paused) {
+      generation += 1;
+      synth.cancel();
+      speakCurrent();
+    }
+  });
+
+  rate.addEventListener("input", () => {
+    rateValue.textContent = Number(rate.value).toFixed(1) + "×";
+  });
+
+  theme.addEventListener("click", () => {
+    const dark = document.documentElement.dataset.theme === "dark";
+    document.documentElement.dataset.theme = dark ? "light" : "dark";
+    theme.textContent = dark ? "☾" : "☀";
+    localStorage.setItem("rsvp:theme", dark ? "light" : "dark");
+  });
+
+  document.documentElement.dataset.theme =
+    localStorage.getItem("rsvp:theme") ||
+    (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  theme.textContent = document.documentElement.dataset.theme === "dark" ? "☀" : "☾";
+
+  voices();
+  synth.addEventListener?.("voiceschanged", voices);
+  updateNavigation();
+
+  document.addEventListener?.("visibilitychange", () => {
+    if (document.visibilityState === "visible" && (playing || paused)) {
+      void requestWakeLock();
+    }
+  });
+
+  addEventListener("pagehide", () => {
+    generation += 1;
+    synth.cancel();
+    void releaseWakeLock();
+  });
+})();
+</script>
+</body>
+</html>
