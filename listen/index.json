@@ -2,6 +2,13 @@
   "schema_version": 1,
   "items": [
     {
+      "id": "2026-10-02-seabench-self-evolving-agent-safety",
+      "title": "自己改善するAIは、便利になるほど安全境界を壊すのか――SEABench",
+      "date": "2026-10-02",
+      "category": "research",
+      "path": "./research/2026-10-02-seabench-self-evolving-agent-safety.html"
+    },
+    {
       "id": "2026-10-02-consulting-ai-disruption",
       "title": "「コンサル不要論」を検証する――AIで消える価値と、むしろ残る仕事",
       "date": "2026-10-02",
