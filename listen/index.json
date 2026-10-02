@@ -2,6 +2,13 @@
   "schema_version": 1,
   "items": [
     {
+      "id": "2026-10-02-research-mesh-daily-results",
+      "title": "今日のResearch Mesh――四つの問いから見えた、AI導入を判断するための境界",
+      "date": "2026-10-02",
+      "category": "research",
+      "path": "./research/2026-10-02-research-mesh-daily-results.html"
+    },
+    {
       "id": "2026-10-02-argo-bench-enterprise-data-agents",
       "title": "SQLが書けるだけでは足りない――企業データを読み、判断し、行動するAIを測るArgo-Bench",
       "date": "2026-10-02",
