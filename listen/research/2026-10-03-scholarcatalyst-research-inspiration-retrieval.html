@@ -1,0 +1,508 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f2efe8">
+  <meta name="description" content="研究者本人が『研究を前進させた先行研究』を注釈したScholarCatalystを、ベンチマーク設計、検索結果、失敗分析、限界、研究支援AIへの意味まで長めに解説するDaily Paper Listen。">
+  <title>研究の「次の一手」を見つけるAIはまだ弱い――ScholarCatalyst</title>
+  <style>
+    :root{color-scheme:light;--bg:#f2efe8;--ink:#121722;--muted:#73766f;--line:#cbc8bf;--blue:#5d7487}
+    html[data-theme="dark"]{color-scheme:dark;--bg:#11151a;--ink:#edf0eb;--muted:#959b97;--line:#343a3e;--blue:#7892a6}
+    *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Hiragino Sans","Noto Sans JP",sans-serif;line-height:1.9}
+    .shell{width:min(760px,100%);margin:0 auto;padding:max(18px,env(safe-area-inset-top)) 20px max(42px,env(safe-area-inset-bottom))}
+    .topbar{min-height:52px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+    .icon{width:42px;height:42px;display:grid;place-items:center;border:0;background:transparent;color:var(--muted);text-decoration:none;font:inherit}
+    .meta{margin:28px 0 8px;color:var(--muted);font-size:.75rem}
+    h1{font-size:clamp(2rem,8vw,3.4rem);line-height:1.12;letter-spacing:-.04em;margin:.2em 0 .8em} h2{margin:2.2em 0 .6em;font-size:1.2rem}
+    p{margin:0 0 1.25em} article>*{transition:background-color .15s ease}.is-speaking{background:color-mix(in srgb,var(--blue) 16%,transparent)}
+    .player{position:sticky;bottom:0;margin:32px -6px 0;padding:12px 6px;background:color-mix(in srgb,var(--bg) 94%,transparent);border-top:1px solid var(--line);backdrop-filter:blur(8px)}
+    .controls{display:grid;grid-template-columns:48px 48px 48px 1fr;gap:8px;align-items:center}.controls button,.controls select{min-height:42px;border:1px solid var(--line);background:transparent;color:var(--ink)}
+    .speed{display:grid;grid-template-columns:48px 1fr 42px;gap:10px;align-items:center;margin-top:10px;font-size:.78rem;color:var(--muted)} input{width:100%}
+    .sources{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}.sources a{color:var(--ink)}
+  
+    .topbar{display:flex;align-items:center;justify-content:space-between}
+    .mode-nav{display:inline-flex;align-items:center;gap:4px}
+    .mode-icon{width:42px;height:42px;display:grid;place-items:center;color:var(--muted);text-decoration:none;opacity:.5}
+    .mode-icon.is-active{color:var(--ink);opacity:1}
+    .mode-icon svg{width:20px;height:20px;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+    .brand-mark{width:22px;height:14px;display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+    .brand-mark i{display:block}.brand-mark i:nth-child(1){background:#a85248}.brand-mark i:nth-child(2){background:#5d7487}.brand-mark i:nth-child(3){background:#c2a653}
+    .transport{display:grid;grid-template-columns:repeat(5,48px);justify-content:center;gap:8px}
+    .transport button,.section-nav button,.voice-row select{min-height:42px;border:1px solid var(--line);background:transparent;color:var(--ink);font:inherit}
+    .transport button{width:48px}
+    .section-nav{display:grid;grid-template-columns:48px 1fr 48px;align-items:center;gap:8px;margin-top:10px}
+    .section-nav button:disabled{opacity:.25}
+    #section-label{min-width:0;overflow:hidden;color:var(--muted);font-size:.78rem;text-align:center;white-space:nowrap;text-overflow:ellipsis}
+    .voice-row{margin-top:10px}.voice-row select{width:100%;padding:0 8px}
+    .mode-icon:focus-visible,.transport button:focus-visible,.section-nav button:focus-visible,.voice-row select:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+
+  </style>
+</head>
+<body>
+<main class="shell">
+  <header class="topbar">
+    <nav class="mode-nav" aria-label="モード切替">
+      <a class="mode-icon" href="../../index.html" aria-label="RSVPへ移動" title="RSVP">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      </a>
+      <a class="mode-icon" href="../../index.html?library=learn" aria-label="Learnへ移動" title="Learn">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 5.5c2.6-.8 5.3-.4 8 1.2v12c-2.7-1.6-5.4-2-8-1.2v-12Z" />
+          <path d="M20 5.5c-2.6-.8-5.3-.4-8 1.2v12c2.7-1.6 5.4-2 8-1.2v-12Z" />
+        </svg>
+      </a>
+      <a class="mode-icon is-active" href="../../index.html?library=listen" aria-label="Listen一覧へ移動" aria-current="page" title="Listen">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 13v-1a8 8 0 0 1 16 0v1" />
+          <path d="M4 13h3v7H5a1 1 0 0 1-1-1v-6Zm16 0h-3v7h2a1 1 0 0 0 1-1v-6Z" />
+        </svg>
+      </a>
+    </nav>
+    <button id="theme" class="icon" type="button" aria-label="テーマ切替">☾</button>
+  </header>
+
+
+
+
+
+
+  <article id="article">
+    <p class="meta">情報基準日 2026年10月3日</p>
+    <h1>研究の「次の一手」を見つけるAIはまだ弱い――ScholarCatalyst</h1>
+
+    <p>今日取り上げるのは、2026年10月1日にarXivへ公開された「ScholarCatalyst: A Benchmark for Retrieving Papers That Inspire New Research」です。テーマは、研究者が新しい問題に取り組み始めたとき、単に関連する論文ではなく、その研究を実際に前へ進めるアイデアを含む論文を、AIが見つけられるかという問題です。</p>
+    <p>この研究が面白いのは、文献検索の評価目標を少し変えた点です。普通の検索なら、問い合わせと意味的に似ている論文や、完成した論文で引用された先行研究を見つければ高得点になりやすい。しかし研究の初期段階で本当に欲しいのは、「この発想を持ち込めば問題の見方が変わる」「この方法を別分野から借りられる」「この限界を見れば新しい方向が生まれる」といった、研究を動かす論文かもしれません。</p>
+    <p>ScholarCatalystは、その違いを測ろうとします。しかも正解ラベルを引用関係から機械的に作るのではなく、完成した研究の著者本人へ戻り、「当時この論文のアイデアが研究を前進させた、または知っていれば前進させ得たか」を確認しています。</p>
+    <p>結果はかなり示唆的です。現在の強いembedding検索は一定の論文を見つけますが、agentic searchを重ねても明確には上回りません。論文の主張では、主なボトルネックは「見つけた候補を理解できないこと」よりも、「そもそも重要な論文を候補集合へ入れられないこと」にあります。</p>
+
+    <h2>研究検索で、本当に欲しいものは「似た論文」なのか</h2>
+    <p>研究者が文献を探す場面を考えると、少なくとも二種類の検索があります。一つは、すでに問いがかなり明確で、「この主張を裏付ける論文」「この手法の代表研究」「このデータセットを使った先行研究」を探す検索です。こちらは検索対象の特徴を比較的言葉にしやすい。</p>
+    <p>もう一つは、研究の初期段階です。まだ解き方が決まっておらず、問題設定そのものも揺れています。このとき必要なのは、同じ単語を使う論文とは限りません。別分野の方法、別の問題で見つかった現象、既存研究の失敗、評価設計の考え方などが、突然その研究を前へ進めることがあります。</p>
+    <p>論文では、こうした先行研究をcatalyst paperと呼びます。ここでいうcatalystは、完成した研究と話題が近いだけではなく、その研究の考え方や進め方に意味のある変化を与えた、または与え得た論文です。</p>
+    <p>この能力は、いわゆるresearch tasteの一部として語られることがあります。ただしScholarCatalystは、研究センス全体を測ろうとはしていません。もっと限定して、「初期の研究質問から、研究を前進させる先行論文を検索する」という一つの能力へ切り出しています。</p>
+
+    <h2>正解を作るため、完成した研究の著者本人に聞いた</h2>
+    <p>この種のベンチマークで難しいのは、正解が公開記録に残りにくいことです。論文の参考文献一覧には、多くの引用が並びます。しかし、どの論文が研究の核心を変えたのか、どの論文は単なる背景説明だったのかは、参考文献だけでは分かりません。</p>
+    <p>さらに、実際には引用しなかった論文から重要な着想を得る場合もあります。逆に、関連研究として引用していても、研究の発想にはほとんど影響していない場合があります。</p>
+    <p>そこで研究チームは、2025年から2026年に発表されたコンピュータ科学・AI分野の二百七プロジェクトについて、百八十四人の研究者から直接注釈を集めました。対象には主要AI会議のoral、spotlight、award論文が多く含まれ、二百七本のうち百本以上がその種の区分に入っています。</p>
+    <p>参加者は、自分が第一著者、共同第一著者、または責任著者として深く関わった研究について、研究開始時の問いを確認・修正し、どの先行研究が本当に役立ったかを判断し、その理由を書きます。</p>
+
+    <h2>完成後の答えを検索クエリへ漏らさない</h2>
+    <p>研究が完成した後なら、「結局この方法を使った」という情報が分かっています。しかし、それを検索クエリへ入れてしまえば、本来の問題よりかなり簡単になります。</p>
+    <p>ScholarCatalystでは、queryを研究の初期状態へ戻します。各プロジェクトに一つのCore Research Query、つまり研究全体の中心的な問いを置き、さらに複数のSubfield-specific Queryを作ります。SubQは、同じ研究課題を特定の研究分野や方法論の方向から見た問いです。</p>
+    <p>最終的なデータセットは、CoreQが二百七、SubQが六百八十七、合計八百九十四queryです。CoreQには平均約三・二本のpositive paper、SubQには平均約六・一本のpositive paperがあります。</p>
+    <p>ここでpositiveとは、著者が「この論文のアイデアは研究を進めるうえで意味があった、またはあり得た」と判断した論文です。同時に、話題としては近いが、研究を前進させるアイデアとしては不十分だった論文をhard negativeとして残します。</p>
+
+    <h2>検索対象には、当時存在した論文だけを残す</h2>
+    <p>時間の漏洩も抑えています。検索対象は十九万八百九十六本の論文からなるローカルコーパスですが、各queryについて、元の研究が完成した時点より後に出た論文は検索対象から除外します。</p>
+    <p>検索時点の中央値では、約十九万五百七十四本の論文が候補に残ります。現実のarXiv全体よりはかなり小さいため、著者たちはこの課題を、研究者が実際に直面する検索よりむしろ簡単な版だと位置づけています。</p>
+    <p>また主要評価ではWeb検索を禁止し、agentの基盤モデルも、評価対象となるsource paperより前にknowledge cutoffがあるモデルを使います。完成した研究や後続解説を学習済みのモデルが、記憶から答えを出すことを減らすためです。</p>
+
+    <h2>データ作成も、最初から人手だけでは行っていない</h2>
+    <p>二百七本の研究について、一からすべて人手で質問と候補論文を作るのはかなり重い作業です。そこでScholarCatalystは、自動生成と著者確認を組み合わせています。</p>
+    <p>まずsource paperの全文と参考文献を解析し、Gemini 3.1 Proが、研究開始時の中心質問、複数のSubQ、引用論文がどのように関係したかという下書きを作ります。</p>
+    <p>引用されていない候補については、BM25とQwen3-Embedding-8Bで検索し、候補をまとめ、Gemini 3.6 Flashで科学的な関連性をrerankします。著者が確認できる作業量に抑えるため、各queryについて上位十候補を中心に提示します。</p>
+    <p>ただし著者は自動生成された内容をそのまま承認するだけではありません。研究質問を書き直し、候補を評価し、自動候補にない重要な先行研究を追加することもできます。参加者募集ページでも「見落とした重要なinspirationを追加する」ことが明示されています。</p>
+
+    <h2>自動生成した初期質問は、かなりの割合で著者に受け入れられた</h2>
+    <p>自動パイプラインの品質も確認されています。CoreQについて、著者が「正確またはほぼ正確」と評価した割合は九十八・一パーセントで、そのうち完全に正確とされたものは六十・九パーセントでした。</p>
+    <p>SubQでは、「正確またはほぼ正確」が九十五・九パーセント、完全に正確が六十四・九パーセントです。</p>
+    <p>さらに最終化された八百九十四queryを研究チームが確認し、七百六十四、八十五・五パーセントは変更なしで通過しました。残りは、完成後の答えを暗示する表現や、研究がすでに終わっているような書き方を修正しています。</p>
+    <p>これは、自動生成だけでground truthを作っているわけではないことを示します。一方で、研究者の回顧的な記憶が正解ラベルの基礎であることは、後で触れる重要な限界でもあります。</p>
+
+    <h2>評価したのは、普通の検索器だけではない</h2>
+    <p>比較対象はかなり幅があります。古典的なBM25、multi-vectorのLateOn、SPECTER2やOpenScholarのような科学文書向けretriever、Qwen3 EmbeddingやGemini Embedding 2のような汎用dense retriever、さらにreasoning-intensive retrieval向けに訓練された複数モデルを比較しています。</p>
+    <p>そのうえで三種類のagentic searchも評価します。一つはgrepでtitleとabstractを直接探す軽量agent。二つ目は検索ツールを呼びながら最大五roundで候補を集め、各候補を評価するtool-calling agent。三つ目はqueryを最大六つのsubquestionへ分け、最大二十回の検索と十回のreadを使い、途中でreflectionしながら候補を統合するdeep research agentです。</p>
+    <p>主要評価のagent backboneにはGPT-4.1とo3を使います。いずれもsource paperより前のknowledge cutoffを持つため、完成した研究を知っている可能性を抑えた比較です。</p>
+
+    <h2>強いembedding検索でも、上位二十件で半分ほどしか拾えない</h2>
+    <p>結果を見ると、現在のretrieverはcatalyst paperの多くを見逃します。一般-purposeのdense retrieverが最も強い傾向ですが、CoreQでは上位二十件に入るpositive paperがおよそ四割、SubQではおよそ五割です。</p>
+    <p>具体的には、Qwen3-Embedding-8BのRecall@20はCoreQで〇・三七、SubQで〇・五一。Gemini Embedding 2はCoreQ〇・三八、SubQ〇・四六です。</p>
+    <p>論文全体をまとめた説明では、強いembedding retrievalが上位二十件で約四十八パーセントを回収するのに対し、agentic searchは約四十二パーセントでした。検索agentが何段階も推論しても、単純に強いretrieverを一回使う方法を安定して超えられていません。</p>
+
+    <h2>科学論文専用retrieverだから有利、とはならなかった</h2>
+    <p>興味深いのは、科学文書用に訓練されたretrieverが特に強くなかったことです。SPECTER2やOpenScholarは、CoreQのRecall@20で最良の汎用dense retrieverより少なくとも十六ポイント、SubQでは二十七ポイント以上低い結果でした。</p>
+    <p>reasoning-intensive retrieval向けのモデルも、最強の汎用embeddingを上回りませんでした。</p>
+    <p>ここから言えるのは、引用関係や通常のsemantic relevanceに強いことと、「このアイデアを別の研究へ持ち込むと前進する」と判断できることは同じではない、ということです。専門文書向け学習だけで自動的にresearch tasteが得られるわけではありません。</p>
+
+    <h2>なぜagentが強いretrieverを超えられないのか</h2>
+    <p>論文の中心的な分析は、candidate coverageです。agentがどれだけ賢く考えても、最終的に重要論文が一度も検索結果へ出てこなければ、それを選ぶことはできません。</p>
+    <p>GPT-4.1を使うgrep agentは、gold paperのうち検索途中で見つけられた割合が八パーセントしかありませんでした。tool-calling agentは四十六パーセントまで見つけますが、その後最終上位二十件へ残るのは四十一パーセントです。</p>
+    <p>つまり二種類の失敗があります。一つは検索段階で候補を一度も見ないcoverage failure。もう一つは、候補には入ったのに重要性を正しく判断できず、最終rankingから落とすrecognition failureです。</p>
+    <p>論文の事例では、retrieverがgold paperを一位と五位に置いたのに、tool-calling agentは一つしか残さず、deep research agentは両方落としたケースがあります。逆に、追跡検索によって、元retrieverでは百位より下だったgold paperを見つけた成功例もあります。</p>
+
+    <h2>deep researchが逆にqueryを狭めすぎる場合もある</h2>
+    <p>agentic searchなら、最初のqueryを分解し、関連分野を広く探索できそうに見えます。しかし実際には、follow-up queryが特定のsubtopicへ寄りすぎることがあります。</p>
+    <p>論文のquery drift事例では、元のretrieverの上位三十件には四本中三本のgold paperが入っていました。それにもかかわらず、agentは途中の検索で狭い方向へ進み、その三本を十分に活用できませんでした。deep research agentは、実際に見つけたgold paperまで最終rankingから外しています。</p>
+    <p>探索を増やすことが必ずしもcoverageを広げるわけではありません。初期の表現から一つの解釈へ早く収束すると、むしろ別方向のinspirationを失う可能性があります。</p>
+
+    <h2>一度重要論文を見せれば、AIはかなり理由を説明できる</h2>
+    <p>ここがこの研究で特に重要な点です。tool-calling agentが上位二十件へ入れたCoreQのgold paperについて、GPT-4.1に「なぜこの論文が研究を進め得るか」を説明させ、著者のrationaleと比較しています。</p>
+    <p>比較可能だった二百十九組のうち、七十六パーセントで、AIの説明は著者と同じinspiration relationを述べていました。それ以外の多くも、著者とは異なるが妥当な関係を説明しています。</p>
+    <p>同じGPT-4.1が説明と判定の両方へ関与しているため、この一致率は上限寄りの推定だと論文も注意しています。それでも、重要論文を候補として渡された後の理解より、重要論文を巨大なコーパスから発見する前段階の方が大きな障害だという仮説を支持します。</p>
+
+    <h2>「似ている論文」と「役立つ論文」は、実際にずれていた</h2>
+    <p>著者がpositiveとした論文と、話題は近いがinspirationではないhard negativeを比べると、語彙的similarityでもembedding similarityでも、positiveの方が高いとは限りませんでした。</p>
+    <p>CoreQでは、Qwen3-Embedding-8Bのsemantic similarityはpositiveが六十四・五、hard negativeが六十六・二で、むしろnegativeの方が高い値です。SubQではpositive六十五・一、negative六十四・二で差は小さい。</p>
+    <p>これは、「意味が近いものを並べる」というretrieval objectiveだけでは不足する理由を示しています。研究を進める論文は、同じ話題を説明する論文ではなく、方法や考え方を別方向から持ち込む論文かもしれません。</p>
+
+    <h2>研究を動かす関係は一種類ではない</h2>
+    <p>研究チームは、著者が書いた六百六十三のkey-inspiration rationaleを九種類の関係へ分類しています。</p>
+    <p>最も多いのはmethodで四十・三パーセントです。既存の手法を借りたり変更したりしたケースです。次がevidenceで三十九・一パーセント、ある方向を試す根拠となる実験結果です。generalizationは三十一・五パーセントで、別の設定へアイデアを広げたケース。limitationは二十一・七パーセントで、既存研究の限界が新しい方法を動機づけています。</p>
+    <p>一つの論文が複数の役割を持つことも多く、五十五・八パーセントのrationaleには二種類以上の関係が付いています。平均は一・六九ラベルです。</p>
+    <p>つまり、「この論文は同じ問題を扱っているから重要」という一対一の関係ではありません。一つの論文から方法を借り、同時にその限界を見て、新しい設定へ一般化するといった複合的な使われ方があります。</p>
+
+    <h2>引用されているかどうかも、inspirationの十分な手掛かりではない</h2>
+    <p>SubQのpositive paperのうち、四十三・六パーセントは完成したsource paperで引用されていませんでした。そのうち六十七・八パーセントは、source paperと共通の参考文献さえ持っていません。</p>
+    <p>反対に、引用されていても研究を動かしたとは限りません。引用目的を分類した既存ラベルで「uses」または「extends」に当たるものは、CoreQ positiveの四十六・二パーセント、SubQ positiveの三十四パーセントだけでした。</p>
+    <p>したがって、完成論文のcitation graphだけを使って「何が研究を生んだか」を復元するのは難しい。参考文献一覧は研究成果の説明には有用ですが、研究者の思考経路そのものではありません。</p>
+
+    <h2>queryを書き換えても、問題は簡単には解けなかった</h2>
+    <p>検索が弱いなら、LLMにqueryをうまく書き換えさせればよいとも考えられます。研究チームはGPT-4.1を使い、単一query expansion、複数query生成、さらに「役立ちそうな架空の論文abstract」を生成して検索するHyDEを試しました。</p>
+    <p>しかし改善は安定しません。百queryの分析では、CoreQで単一query expansionが〇・四〇から〇・四四へ少し上がる一方、SubQは〇・四二から〇・三七へ下がりました。複数query生成もほぼ改善せず、HyDEはCoreQ、SubQとも大きく悪化しました。</p>
+    <p>著者たちは、単なる言い換え不足ではなく、現在のembedding空間そのものが、inspiration relationを近くに配置していない可能性を指摘しています。</p>
+
+    <h2>論文全文をたくさん読ませれば解決する、わけでもなかった</h2>
+    <p>別の可能性は、abstractだけでは重要性が分からないというものです。しかし、一部のqueryでagentがabstractより先まで読めるようにしても、Recall@20の変化は最大でも〇・〇四程度でした。</p>
+    <p>もちろん、これは「論文全文を読む価値がない」という意味ではありません。今回の検索失敗の大きな部分が、読む前のcandidate generationにあるため、読解能力を増やしても見えていない論文には届かない、ということです。</p>
+    <p>検索と理解を一つの「賢さ」にまとめず、候補生成、候補認識、詳細読解を分けて評価する必要性が見えます。</p>
+
+    <h2>新しいfrontier modelを使っても、上限はまだ高くなかった</h2>
+    <p>主要評価ではknowledge leakageを避けるため古いcutoffのモデルを使いますが、比較としてClaude Fable 5.1も試しています。このモデルのknowledge cutoffは2026年6月で、多くのsource paperを学習中に見ている可能性があります。</p>
+    <p>それでもabstractの要約では、上位二十件のRecallは約〇・五一に留まります。CoreQではagent方式によって〇・五一から〇・五三、SubQでは〇・四八から〇・五〇程度です。</p>
+    <p>ただし、この行をcleanな主要結果として扱ってはいけません。完成論文や二次情報を学習済みである可能性があるためです。論文自身もpost-cutoff comparisonとして別扱いにしています。</p>
+
+    <h2>人間の「正解」も完全に一意ではない</h2>
+    <p>このベンチマークには、もっと根本的な難しさがあります。ある研究を前進させる論文が何かは、人によって完全には一致しない可能性があります。</p>
+    <p>著者たちは、performance ceilingがまだ分からないと明記しています。一つのsource paperについて三人の共著者を比較した予備調査では、別の共著者が一threadあたり約七本のpositiveを選んだ場合、第一著者のラベルに対するrecallは四十三から六十パーセント、precisionは八十四から八十八パーセントでした。</p>
+    <p>つまり、専門家同士でも「どの論文が本当にinspirationか」は完全一致しません。検索システムが百パーセントへ近づけばよいという単純な問題ではなく、ラベルそのものに研究者固有の視点が含まれます。</p>
+
+    <h2>この研究の限界は、かなり明確にしておく必要がある</h2>
+    <p>第一に、対象は2025年から2026年のコンピュータ科学、とくにmachine learning、computer vision、language、AI、robotics周辺へ偏っています。物理、化学、生物、社会科学などへ同じ結果が広がるとはまだ言えません。</p>
+    <p>第二に、正解は研究者による回顧的な判断です。完成後に結果を知った状態で「当時これが役立った」と振り返るため、hindsight biasを完全には避けられません。</p>
+    <p>第三に、source paperの募集は主要AI会議の目立つ論文や、参加意思のある著者に偏っています。研究コミュニティ全体を無作為に抽出したデータではありません。</p>
+    <p>第四に、検索コーパスは約十九万本で、現実の科学文献全体より小さいです。著者自身、この設定は実際の文献探索より容易だと述べています。</p>
+    <p>第五に、annotation候補の生成にも既存retrieverを使っています。著者は見落とされた論文を追加できますが、人間がゼロから全世界の文献を列挙したわけではありません。候補生成パイプラインの偏りが完全に消えたとは言えません。</p>
+    <p>そして2026年10月3日時点ではarXivのpreprintです。査読を通過した確定版ではありません。</p>
+
+    <h2>ここからは、研究支援AIへの含意</h2>
+    <p>ここからは論文の結果を踏まえた分析です。第一の含意は、研究エージェントを強くするには、推論モデルを大きくするだけでは足りない可能性が高いということです。</p>
+    <p>agentが重要論文を見た後には、かなりの割合で著者と近い理由を説明できています。ところが検索器がその論文を候補へ出せない。この構図では、backbone modelをさらに強くしても、入力候補が変わらなければ改善には上限があります。</p>
+    <p>研究支援システムでは、retrievalを単なる前処理として扱わず、研究能力の中心部として設計する必要があります。「何を読むか」を決める部分が、その後の推論能力と同じくらい重要です。</p>
+
+    <h2>検索は「同じ話題」ではなく「移植可能なアイデア」を学ぶ必要がある</h2>
+    <p>第二の含意は、学習目標です。現在のembeddingは、意味が似ている文書を近づけることには強い。しかしScholarCatalystが欲しいのは、語彙や研究対象が違っても、方法、失敗、評価原理、経験則を移植できる論文です。</p>
+    <p>たとえば、ある分野で使われた探索戦略が別分野の最適化に役立つ、ある評価の失敗が別のAIシステム設計へ使える、といった関係です。これは「semantic similarity」より「scientific utility」や「transferable relation」に近い。</p>
+    <p>将来のretrieverは、paperとqueryを一つのベクトル距離で近づけるだけでなく、「この論文のどのアイデアが、この問題のどの障害を解くか」を中間表現として持つ必要があるかもしれません。</p>
+
+    <h2>research tasteを学習するには、完成論文だけでは足りない</h2>
+    <p>第三の含意は訓練データです。公開された論文には、最終的な方法と結果は書かれています。しかし、途中でどの論文を見て考えが変わったのか、どのアイデアを捨てたのか、何が突破口だったのかはかなり失われます。</p>
+    <p>ScholarCatalystの価値は、研究者の頭の中にしか残っていなかったこの情報を、少しだけデータ化したことにあります。著者rationaleには、「このmethodを転用した」「このevidenceで方向性に自信を持った」「このlimitationが新しい問いを作った」といった関係が含まれます。</p>
+    <p>研究エージェントを本当に研究支援へ近づけるなら、論文本文だけでなく、研究過程のdecision trace、失敗、仮説変更、文献から得た着想といった記録が訓練信号として重要になる可能性があります。</p>
+
+    <h2>Deep Researchの次の課題は「検索回数」ではないかもしれない</h2>
+    <p>第四の含意は、deep research型エージェントの設計です。検索回数を増やし、subquestionへ分解し、reflectionを挟めば、通常の情報収集では大きな効果があります。</p>
+    <p>しかしScholarCatalystでは、検索回数が多いdeep research agentが、単純なretrieverより良くなるとは限りませんでした。場合によってはquery driftを起こし、最初に見えていた重要候補まで失います。</p>
+    <p>これは、deep researchを「検索を長くする仕組み」としてだけ設計する限界を示しています。重要なのは、探索の多様性をどう保つか、異なる仮説空間を並列に維持するか、候補を早く捨てすぎないか、そして検索器自身が異分野のinspirationをどう拾うかです。</p>
+
+    <h2>最後に残す要点</h2>
+    <p>ScholarCatalystは、文献検索を「関連する論文を探す」問題から、「研究を前へ進めるアイデアを持つ論文を探す」問題へ少し広げたベンチマークです。</p>
+    <p>百八十四人の研究者が、自分たちの二百七プロジェクトについて、八百九十四の初期研究質問を確認し、どの先行研究が本当に有用だったかを理由付きで注釈しました。検索対象は約十九万本で、各研究が完成する前に存在した論文だけへ時間制限されています。</p>
+    <p>現在の強いembedding retrievalでも、上位二十件で拾えるcatalyst paperは半分前後です。agentic searchやdeep researchを重ねても安定して改善せず、query rewritingや全文読解を追加しても大きくは変わりませんでした。</p>
+    <p>一方、重要論文をいったん候補として渡すと、AIは著者と近い理由でその価値を説明できる場合が多い。したがって大きな課題は、「考えられないこと」だけでなく、「考えるべき論文を検索空間から取り出せないこと」にあります。</p>
+    <p>この研究はresearch taste全体を測るものではなく、正解ラベルにも回顧バイアスや専門家間の不一致があります。それでも、科学AIの能力評価を、問題を解くところから「どの知識を持ち込めば問題が解ける形になるか」へ一段手前に移した点には意味があります。</p>
+    <p>研究エージェントが本当に研究者を補助するなら、最終回答をうまく書くだけでは足りません。まだ形の定まらない問いを見て、遠い分野を含む巨大な文献空間から、「このアイデアを試す価値がある」と気づける必要があります。ScholarCatalystは、その能力が現在どこまで不足しているかを測るための、かなり直接的な試みです。</p>
+  </article>
+
+  <section class="player" aria-label="読み上げ操作">
+    <div class="transport">
+      <button id="prev-block" type="button" aria-label="前の読み上げ単位へ">←</button>
+      <button id="play" type="button" aria-label="再生">▶</button>
+      <button id="pause" type="button" aria-label="一時停止">Ⅱ</button>
+      <button id="stop" type="button" aria-label="停止">■</button>
+      <button id="next-block" type="button" aria-label="次の読み上げ単位へ">→</button>
+    </div>
+    <div class="section-nav" aria-label="章移動">
+      <button id="prev-section" type="button" aria-label="前の章へ">‹</button>
+      <span id="section-label">導入</span>
+      <button id="next-section" type="button" aria-label="次の章へ">›</button>
+    </div>
+    <div class="voice-row">
+      <select id="voice" aria-label="日本語音声"></select>
+    </div>
+    <div class="speed"><span>速度</span><input id="rate" type="range" min="0.7" max="4" step="0.1" value="1"><span id="rateValue">1.0×</span></div>
+  </section>
+
+
+
+
+
+
+  <section class="sources" aria-label="出典">
+    <strong>出典</strong>
+    <p><a href="https://www.alphaxiv.org/abs/2610.02202">alphaXiv — ScholarCatalyst: A Benchmark for Retrieving Papers That Inspire New Research</a></p>
+    <p><a href="https://arxiv.org/abs/2610.02202">arXiv — ScholarCatalyst: A Benchmark for Retrieving Papers That Inspire New Research</a></p>
+    <p><a href="https://github.com/stanford-iris-lab/ScholarCatalyst">GitHub — ScholarCatalyst code and benchmark</a></p>
+    <p><a href="https://huggingface.co/datasets/ScholarCatalyst/ScholarCatalyst">Hugging Face — ScholarCatalyst dataset</a></p>
+  </section>
+</main>
+<script>
+(() => {
+  const synth = window.speechSynthesis;
+  const blocks = [...document.querySelectorAll("#article h1,#article h2,#article h3,#article p")];
+  const sectionStarts = [...new Set([0, ...blocks.map((node, i) => node.tagName === "H2" ? i : -1).filter(i => i >= 0)])];
+  const play = document.querySelector("#play");
+  const pause = document.querySelector("#pause");
+  const stop = document.querySelector("#stop");
+  const prevBlock = document.querySelector("#prev-block");
+  const nextBlock = document.querySelector("#next-block");
+  const prevSection = document.querySelector("#prev-section");
+  const nextSection = document.querySelector("#next-section");
+  const sectionLabel = document.querySelector("#section-label");
+  const voice = document.querySelector("#voice");
+  const rate = document.querySelector("#rate");
+  const rateValue = document.querySelector("#rateValue");
+  const theme = document.querySelector("#theme");
+  let index = 0, playing = false, paused = false, selectedVoice = "", generation = 0;
+  let wakeLock = null, wakeLockWanted = false;
+
+  async function requestWakeLock() {
+    const wakeLockApi = window.navigator?.wakeLock;
+    wakeLockWanted = true;
+    if (!wakeLockApi?.request || wakeLock) return;
+    try {
+      const lock = await wakeLockApi.request("screen");
+      if (!wakeLockWanted) {
+        await lock.release();
+        return;
+      }
+      wakeLock = lock;
+      wakeLock.addEventListener?.("release", () => { wakeLock = null; });
+    } catch {
+      wakeLock = null;
+    }
+  }
+
+  async function releaseWakeLock() {
+    wakeLockWanted = false;
+    const current = wakeLock;
+    wakeLock = null;
+    if (!current) return;
+    try {
+      await current.release();
+    } catch {
+      // Wake Lock is best-effort; speech playback must continue to work.
+    }
+  }
+
+  function voices() {
+    const previous = selectedVoice || voice.value;
+    const items = synth.getVoices().filter(v => /^ja(?:-|_)/i.test(v.lang));
+    voice.replaceChildren();
+    for (const v of items) {
+      const o = document.createElement("option");
+      o.value = v.voiceURI;
+      o.textContent = v.name;
+      voice.append(o);
+    }
+    if (items.some(v => v.voiceURI === previous)) voice.value = previous;
+    selectedVoice = voice.value;
+  }
+
+  function clearHighlight() {
+    blocks.forEach(node => node.classList.remove("is-speaking"));
+  }
+
+  function sectionPosition() {
+    let pos = 0;
+    for (let i = 0; i < sectionStarts.length; i += 1) {
+      if (sectionStarts[i] <= index) pos = i;
+      else break;
+    }
+    return pos;
+  }
+
+  function updateNavigation() {
+    prevBlock.disabled = index <= 0;
+    nextBlock.disabled = index >= blocks.length - 1;
+
+    const pos = sectionPosition();
+    const start = sectionStarts[pos] ?? 0;
+    const previousTargetExists = index > start || pos > 0;
+    prevSection.disabled = !previousTargetExists;
+    nextSection.disabled = pos >= sectionStarts.length - 1;
+
+    const startNode = blocks[start];
+    sectionLabel.textContent = startNode?.tagName === "H2" ? startNode.textContent : "導入";
+  }
+
+  function showCurrent() {
+    clearHighlight();
+    const current = blocks[index];
+    if (!current) return;
+    current.classList.add("is-speaking");
+    current.scrollIntoView({ block: "center", behavior: "smooth" });
+    updateNavigation();
+  }
+
+  function speakCurrent() {
+    if (!playing || paused || index >= blocks.length) {
+      if (index >= blocks.length) {
+        playing = false;
+        paused = false;
+        clearHighlight();
+        void releaseWakeLock();
+      }
+      updateNavigation();
+      return;
+    }
+
+    showCurrent();
+    const localGeneration = ++generation;
+    const utterance = new SpeechSynthesisUtterance(blocks[index].textContent);
+    utterance.lang = "ja-JP";
+    utterance.rate = Number(rate.value);
+    const selected = synth.getVoices().find(item => item.voiceURI === voice.value);
+    if (selected) utterance.voice = selected;
+
+    utterance.onend = () => {
+      if (localGeneration !== generation || !playing || paused) return;
+      index += 1;
+      speakCurrent();
+    };
+
+    utterance.onerror = event => {
+      if (localGeneration !== generation) return;
+      if (event.error !== "canceled" && event.error !== "interrupted") {
+        playing = false;
+        paused = false;
+        clearHighlight();
+        void releaseWakeLock();
+        updateNavigation();
+      }
+    };
+
+    synth.speak(utterance);
+  }
+
+  function jumpTo(target) {
+    const next = Math.max(0, Math.min(blocks.length - 1, target));
+    const resume = playing && !paused;
+    const keepPaused = paused;
+
+    generation += 1;
+    synth.resume?.();
+    synth.cancel();
+    index = next;
+
+    if (resume) {
+      playing = true;
+      paused = false;
+      void requestWakeLock();
+      speakCurrent();
+      return;
+    }
+
+    playing = keepPaused;
+    paused = keepPaused;
+    showCurrent();
+    if (keepPaused) void requestWakeLock();
+  }
+
+  function jumpSection(delta) {
+    const pos = sectionPosition();
+    let targetPos;
+
+    if (delta < 0 && index > sectionStarts[pos]) targetPos = pos;
+    else targetPos = pos + delta;
+
+    if (targetPos < 0 || targetPos >= sectionStarts.length) return;
+    jumpTo(sectionStarts[targetPos]);
+  }
+
+  play.addEventListener("click", () => {
+    if (paused) {
+      generation += 1;
+      synth.resume?.();
+      synth.cancel();
+      paused = false;
+      playing = true;
+      void requestWakeLock();
+      speakCurrent();
+      return;
+    }
+    if (playing) return;
+    if (index >= blocks.length) index = 0;
+    playing = true;
+    void requestWakeLock();
+    speakCurrent();
+  });
+
+  pause.addEventListener("click", () => {
+    if (!playing || paused) return;
+    synth.pause();
+    paused = true;
+  });
+
+  stop.addEventListener("click", () => {
+    generation += 1;
+    synth.resume?.();
+    synth.cancel();
+    playing = false;
+    paused = false;
+    index = 0;
+    clearHighlight();
+    updateNavigation();
+    void releaseWakeLock();
+  });
+
+  prevBlock.addEventListener("click", () => jumpTo(index - 1));
+  nextBlock.addEventListener("click", () => jumpTo(index + 1));
+  prevSection.addEventListener("click", () => jumpSection(-1));
+  nextSection.addEventListener("click", () => jumpSection(1));
+
+  voice.addEventListener("change", () => {
+    selectedVoice = voice.value;
+    if (playing && !paused) {
+      generation += 1;
+      synth.cancel();
+      speakCurrent();
+    }
+  });
+
+  rate.addEventListener("input", () => {
+    rateValue.textContent = Number(rate.value).toFixed(1) + "×";
+  });
+
+  theme.addEventListener("click", () => {
+    const dark = document.documentElement.dataset.theme === "dark";
+    document.documentElement.dataset.theme = dark ? "light" : "dark";
+    theme.textContent = dark ? "☾" : "☀";
+    localStorage.setItem("rsvp:theme", dark ? "light" : "dark");
+  });
+
+  document.documentElement.dataset.theme =
+    localStorage.getItem("rsvp:theme") ||
+    (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  theme.textContent = document.documentElement.dataset.theme === "dark" ? "☀" : "☾";
+
+  voices();
+  synth.addEventListener?.("voiceschanged", voices);
+  updateNavigation();
+
+  document.addEventListener?.("visibilitychange", () => {
+    if (document.visibilityState === "visible" && (playing || paused)) {
+      void requestWakeLock();
+    }
+  });
+
+  addEventListener("pagehide", () => {
+    generation += 1;
+    synth.cancel();
+    void releaseWakeLock();
+  });
+})();
+</script>
+</body>
+</html>
