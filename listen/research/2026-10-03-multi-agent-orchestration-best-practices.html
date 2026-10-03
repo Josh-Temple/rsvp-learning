@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f2efe8">
+  <meta name="description" content="複数のAIエージェントを効率よく動かすための、タスク分解、並列化、正本、検証、終了条件の実践的ベストプラクティスを整理したListen。">
+  <title>複数のAIをどう動かすか――並列エージェント運用の実践則</title>
+  <style>
+    :root{color-scheme:light;--bg:#f2efe8;--ink:#121722;--muted:#73766f;--line:#cbc8bf;--blue:#5d7487}
+    html[data-theme="dark"]{color-scheme:dark;--bg:#11151a;--ink:#edf0eb;--muted:#959b97;--line:#343a3e;--blue:#7892a6}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Hiragino Sans","Noto Sans JP",sans-serif;line-height:1.9}
+    .shell{width:min(760px,100%);margin:0 auto;padding:max(18px,env(safe-area-inset-top)) 20px max(42px,env(safe-area-inset-bottom))}
+    .topbar{min-height:52px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+    .icon{width:42px;height:42px;display:grid;place-items:center;border:0;background:transparent;color:var(--muted);text-decoration:none;font:inherit}
+    .meta{margin:28px 0 8px;color:var(--muted);font-size:.75rem}
+    h1{font-size:clamp(2rem,8vw,3.4rem);line-height:1.12;letter-spacing:-.04em;margin:.2em 0 .8em}
+    h2{margin:2.2em 0 .6em;font-size:1.2rem}
+    p{margin:0 0 1.25em}
+    article>*{transition:background-color .15s ease}
+    .is-speaking{background:color-mix(in srgb,var(--blue) 16%,transparent)}
+    .player{position:sticky;bottom:0;margin:32px -6px 0;padding:12px 6px;background:color-mix(in srgb,var(--bg) 94%,transparent);border-top:1px solid var(--line);backdrop-filter:blur(8px)}
+    .speed{display:grid;grid-template-columns:48px 1fr 42px;gap:10px;align-items:center;margin-top:10px;font-size:.78rem;color:var(--muted)}
+    input{width:100%}
+    .sources{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}
+    .sources a{color:var(--ink)}
+    .mode-nav{display:inline-flex;align-items:center;gap:4px}
+    .mode-icon{width:42px;height:42px;display:grid;place-items:center;color:var(--muted);text-decoration:none;opacity:.5}
+    .mode-icon.is-active{color:var(--ink);opacity:1}
+    .mode-icon svg{width:20px;height:20px;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+    .brand-mark{width:22px;height:14px;display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+    .brand-mark i{display:block}
+    .brand-mark i:nth-child(1){background:#a85248}
+    .brand-mark i:nth-child(2){background:#5d7487}
+    .brand-mark i:nth-child(3){background:#c2a653}
+    .transport{display:grid;grid-template-columns:repeat(5,48px);justify-content:center;gap:8px}
+    .transport button,.section-nav button,.voice-row select{min-height:42px;border:1px solid var(--line);background:transparent;color:var(--ink);font:inherit}
+    .transport button{width:48px}
+    .section-nav{display:grid;grid-template-columns:48px 1fr 48px;align-items:center;gap:8px;margin-top:10px}
+    .section-nav button:disabled{opacity:.25}
+    #section-label{min-width:0;overflow:hidden;color:var(--muted);font-size:.78rem;text-align:center;white-space:nowrap;text-overflow:ellipsis}
+    .voice-row{margin-top:10px}
+    .voice-row select{width:100%;padding:0 8px}
+    .mode-icon:focus-visible,.transport button:focus-visible,.section-nav button:focus-visible,.voice-row select:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+  </style>
+</head>
+<body>
+<main class="shell">
+  <header class="topbar">
+    <nav class="mode-nav" aria-label="モード切替">
+      <a class="mode-icon" href="../../index.html" aria-label="RSVPへ移動" title="RSVP">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      </a>
+      <a class="mode-icon" href="../../index.html?library=learn" aria-label="Learnへ移動" title="Learn">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 5.5c2.6-.8 5.3-.4 8 1.2v12c-2.7-1.6-5.4-2-8-1.2v-12Z" />
+          <path d="M20 5.5c-2.6-.8-5.3-.4-8 1.2v12c2.7-1.6 5.4-2 8-1.2v-12Z" />
+        </svg>
+      </a>
+      <a class="mode-icon is-active" href="../../index.html?library=listen" aria-label="Listen一覧へ移動" aria-current="page" title="Listen">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 13v-1a8 8 0 0 1 16 0v1" />
+          <path d="M4 13h3v7H5a1 1 0 0 1-1-1v-6Zm16 0h-3v7h2a1 1 0 0 0 1-1v-6Z" />
+        </svg>
+      </a>
+    </nav>
+    <button id="theme" class="icon" type="button" aria-label="テーマ切替">☾</button>
+  </header>
+
+  <article id="article">
+    <p class="meta">情報基準日 2026年10月3日</p>
+    <h1>複数のAIをどう動かすか――並列エージェント運用の実践則</h1>
+
+    <p>AIを一つのチャットで賢く使うことと、複数のAIに仕事を分担させることは、かなり違う技術です。後者で重要なのは、モデルそのものより、仕事をどう切り、どこを並列化し、誰が最後に統合するかです。</p>
+    <p>OpenAI、Anthropic、Microsoft AutoGen、GitHub Copilot、LangGraph周辺の実装やガイドを横断すると、実務で繰り返し現れる形はかなり似ています。中央の進行役があり、境界の明確な専門Workerがあり、終了条件があり、最後に検証と統合があります。</p>
+    <p>要するに、強い運用は「AIを何体使うか」から始まりません。「仕事をどう設計すれば、それぞれが独立して終えられるか」から始まります。</p>
+
+    <h2>最初に決めるのは、誰を動かすかではなく目的です</h2>
+    <p>複数のAIを使う前に、まず人間かCoordinatorが最終目的を固定します。何を完成させたいのか。何を変えてよいのか。どこまで確認できれば終わりなのか。この三つが曖昧なままWorkerを増やすと、並列化した分だけ方向のずれも増えます。</p>
+    <p>AnthropicのマルチエージェントResearchでも、Lead agentが先に戦略を作り、subagentごとに目的、出力形式、使う情報源、担当範囲を明示する設計を採っています。初期には曖昧な委任によって、複数のagentが同じ調査を繰り返す問題が起きたと説明しています。</p>
+    <p>したがって、最初の実践則は単純です。まずディレクションを定める。そのあとで計画を作り、最後にタスクへ分ける。順序を逆にしないことです。</p>
+
+    <h2>並列化の基準は、同時にできるかではありません</h2>
+    <p>並列化で最も重要なのは、相互依存の有無です。OpenAIのAgents SDKでも、複数agentの並列実行は、互いに依存しない複数タスクの速度を上げる方法として説明されています。</p>
+    <p>実務では、もう一段厳しく考えると扱いやすくなります。「同時に作業できるか」ではなく、「ほかのWorkerの結果を知らなくても、そのWorker単独で完了判定できるか」を基準にします。</p>
+    <p>たとえば、五つのサービスについて一次資料との照合をする仕事なら、各サービスは独立しやすい。一方、五つの結果を使って共通schemaを決める仕事は、前の五つが終わるまで確定できません。前者は並列、後者は統合工程です。</p>
+    <p>この区別をすると、探索や収集は並列化しやすく、設計判断や最終統合は集約した方がよい、という傾向が見えてきます。</p>
+
+    <h2>中央のCoordinatorを置く理由</h2>
+    <p>OpenAIは代表的な構成として、managerが専門agentをtoolとして呼ぶ方式と、agentからagentへ制御を渡すhandoff方式を挙げています。複数の成果を一つへまとめる仕事では、中央のmanagerが最終成果を所有する形が分かりやすいです。</p>
+    <p>Coordinatorの仕事は、全部を自分で処理することではありません。タスクを割り当てること、依存関係を見ること、重複を止めること、結果を集約することです。</p>
+    <p>逆に、Worker同士を自由に会話させれば自動的に良い結果になるとは限りません。誰が最終判断を持つのかが曖昧になると、同じ問題を複数人が解いたり、互いの前提がずれたり、いつ終わるのか分からなくなったりします。</p>
+
+    <h2>Workerは狭く、仕事は具体的にする</h2>
+    <p>各Workerには万能さを求めない方が安定します。OpenAIのガイドでも、何でもできる一般agentより、特定の仕事に強い専門agentを組み合わせることが推奨されています。</p>
+    <p>ここで効くのが、タスクごとの作業契約です。最低限、目的、担当範囲、担当外、正本、成果物、完了条件、停止条件、変更してよい範囲を明示します。</p>
+    <p>特に担当外と停止条件は重要です。AIは役に立とうとして、依頼していない修正まで進めることがあります。「このファイルだけ変更する」「依存する資料が不足したら推測せず停止する」と書くことで、勝手な拡張を抑えられます。</p>
+    <p>GitHub Copilotのcoding agent向けベストプラクティスでも、Issueには問題の明確な説明、受入条件、必要なら変更対象ファイルを含めることが勧められています。実装の前に調査や計画を分ける考え方も同じです。</p>
+
+    <h2>共有するのは会話ではなく、外部の状態です</h2>
+    <p>長い並列作業で弱くなりやすいのが、Worker Aの説明をCoordinatorが要約し、その要約をWorker Bへ渡す形です。伝言を繰り返すほど、条件や留保が落ちます。</p>
+    <p>Anthropicは、subagentの成果を外部システムへ直接保存し、Lead agentには参照だけを返す方法を説明しています。これはGitHub、ファイル、データベースなどを共通状態として使う考え方です。</p>
+    <p>実務では、GitHubのmain、特定のJSON、Issue、PR、検証receiptなどを正本にし、各Workerが開始時にfresh readする形が強いです。Chatの記憶ではなく、同じ外部状態を見て仕事を始めます。</p>
+    <p>この方法にはもう一つ利点があります。途中でChatが切れても、成果物と状態が外部に残っていれば再開できます。AIの記憶能力より、状態をどこへ保存するかの方が重要になる場面があります。</p>
+
+    <h2>Workerの自己申告だけで完了にしない</h2>
+    <p>複数agentを使うほど、独立検証の価値が上がります。OpenAIの公式パターンにも、task agentが成果を作り、evaluator agentが評価し、基準を満たすまで修正する流れがあります。</p>
+    <p>ここで重要なのは、VerifierがWorkerの説明をそのまま採用しないことです。GitHubなら、実際のdiff、テスト、CI、mainのファイル内容を見る。調査なら、実際の出典と引用箇所を見る。最終状態を外から確認します。</p>
+    <p>したがって、安定した構成は、Planner、複数Worker、Verifier、Integratorです。Verifierは正しいかを見る。Integratorは、正しいと確認された成果だけを一つの状態へまとめます。</p>
+
+    <h2>途中の手順より、最終状態を検証する</h2>
+    <p>agentは途中で予想外の経路を通ることがあります。そのため、「この順番で作業したはずだから安全」と考えるより、最後に何が残ったかを見る方が強い場合があります。</p>
+    <p>GitHub作業なら、目的のファイルが本当に変わったか、関係ないファイルが変わっていないか、テストが通っているか、mainが期待した状態かを見る。資料調査なら、必要な主張に根拠が付いているか、未確認点が未確認のまま残っているかを見る。</p>
+    <p>これはagentの説明責任を軽視する話ではありません。プロセス記録は障害解析に必要です。ただし、完了判定は自己申告ではなく、観測可能な最終状態に寄せるということです。</p>
+
+    <h2>終了条件を先に決める</h2>
+    <p>自律agentで起きやすい問題の一つが、調査や修正を続けすぎることです。Microsoft AutoGenでは、最大ターン数、メッセージ数、特定のhandoffなど、明示的なtermination conditionを持たせる仕組みがあります。</p>
+    <p>実務では、DONEだけでなくBLOCKEDも正常な終了として定義すると扱いやすくなります。必要な一次資料がない。権限が足りない。依存タスクが終わっていない。こうした場合に推測で先へ進ませず、停止して理由を返させます。</p>
+    <p>さらに、回数や範囲の上限も役立ちます。同じ条件で何度も失敗するなら、もう一度試すよりタスクを小さく分ける。探索対象が広すぎるなら、次のwaveへ回す。終わり方を設計することも、オーケストレーションの一部です。</p>
+
+    <h2>並列数は、多ければ多いほどよいわけではない</h2>
+    <p>AnthropicのResearchでは、複雑な調査でLead agentが複数のsubagentを使い、典型的には数個のagentへ仕事を分けています。並列化は速度を上げますが、agent数を増やすほどtoken使用量、検索量、重複、統合コストも増えます。</p>
+    <p>手動で複数Chatを使う場合も同じです。十個のChatを一度に開けば、十倍速くなるわけではありません。結果を読む人間の負荷も増えます。</p>
+    <p>実用上は、小さなwaveに分ける方が管理しやすいでしょう。たとえば三から五個の独立タスクを同時に動かし、一度統合してから次のwaveへ進む。これは固定ルールではありませんが、依存関係と確認負荷を抑えるには分かりやすい形です。</p>
+
+    <h2>失敗したときに全部やり直さない</h2>
+    <p>長い仕事では、checkpointと再開地点が重要になります。途中成果を外部へ保存していれば、一つのWorkerが失敗しても、成功したほかのWorkerまでやり直す必要はありません。</p>
+    <p>ここでも正本が効きます。どこまで完了したか、何が未確認か、どの入力を使ったかを残す。再実行するときは、全体を最初から再生成するのではなく、失敗した境界から再開します。</p>
+    <p>並列化の目的は速度だけではありません。失敗を局所化し、再実行範囲を小さくできることも大きな利点です。</p>
+
+    <h2>人間はどこを握るべきか</h2>
+    <p>完全自律化を目指す前に、人間が持つべき判断を残した方が安定します。方向づけ、優先順位、不可逆な変更、公開、重要な例外判断です。</p>
+    <p>一方、調査、照合、変換、テスト、候補生成のように、完了条件を明示しやすい仕事はAIへ渡しやすい。すると人間の役割は、作業者からDirectorに近づきます。</p>
+    <p>この分業では、人間が一件ずつ細かく指示する必要はありません。目的と境界を決め、AIが作った計画を見て、独立部分だけ並列化し、最後の判断を引き取ります。</p>
+
+    <h2>実際に使うなら、この順番が扱いやすい</h2>
+    <p>最初にDirectionを決めます。次にPlannerが依存関係を含む作業計画を作ります。その計画から、独立して完了判定できる仕事だけをWorkerへ分けます。</p>
+    <p>各Workerは同じ正本をfresh readし、自分の範囲だけを処理します。成果はChatの中だけに置かず、GitHubやファイルなど外部状態へ残します。</p>
+    <p>Workerが終わったらVerifierが実物を確認します。最後にIntegratorが検証済みの成果を統合し、mainや最終成果物の状態をもう一度確認します。</p>
+    <p>まとめると、Direction、Plan、Dependency decomposition、Parallel execution、Verification、Integrationの順です。複数のAIを使うこと自体より、この順序を崩さないことの方が重要です。</p>
+
+    <h2>最後に残す要点</h2>
+    <p>第一に、並列化はagent数の問題ではなく、タスク境界の問題です。ほかのWorkerの結果がなくても完了判定できる仕事だけを並列にします。</p>
+    <p>第二に、Workerは狭くします。目的、範囲、担当外、正本、成果物、完了条件、停止条件、変更権限を明示します。</p>
+    <p>第三に、共有状態は会話ではなく外部へ置きます。GitHub、ファイル、データベースなどを正本にし、各Workerはfresh readします。</p>
+    <p>第四に、WorkerとVerifierを分けます。完了報告ではなく、diff、テスト、出典、最終ファイルなど観測可能な状態で確認します。</p>
+    <p>第五に、終了条件を先に決めます。DONEだけでなくBLOCKEDを正常な停止として扱い、同じ失敗を無限に繰り返させません。</p>
+    <p>複数のAIを使う能力は、モデルをたくさん並べる能力ではありません。仕事を分解し、独立させ、検証可能な形で再び統合する能力です。AIが強くなるほど、人間側ではこの仕事設計の価値が上がっていきます。</p>
+  </article>
+
+  <section class="player" aria-label="読み上げ操作">
+    <div class="transport">
+      <button id="prev-block" type="button" aria-label="前の読み上げ単位へ">←</button>
+      <button id="play" type="button" aria-label="再生">▶</button>
+      <button id="pause" type="button" aria-label="一時停止">Ⅱ</button>
+      <button id="stop" type="button" aria-label="停止">■</button>
+      <button id="next-block" type="button" aria-label="次の読み上げ単位へ">→</button>
+    </div>
+    <div class="section-nav" aria-label="章移動">
+      <button id="prev-section" type="button" aria-label="前の章へ">‹</button>
+      <span id="section-label">導入</span>
+      <button id="next-section" type="button" aria-label="次の章へ">›</button>
+    </div>
+    <div class="voice-row">
+      <select id="voice" aria-label="日本語音声"></select>
+    </div>
+    <div class="speed"><span>速度</span><input id="rate" type="range" min="0.7" max="4" step="0.1" value="1"><span id="rateValue">1.0×</span></div>
+  </section>
+
+  <section class="sources" aria-label="出典">
+    <strong>出典</strong>
+    <p><a href="https://github.com/openai/openai-agents-python/blob/main/docs/multi_agent.md">OpenAI Agents SDK — Agent orchestration</a></p>
+    <p><a href="https://www.anthropic.com/engineering/multi-agent-research-system">Anthropic Engineering — How we built our multi-agent research system</a></p>
+    <p><a href="https://github.com/microsoft/autogen/blob/main/python/docs/src/user-guide/agentchat-user-guide/tutorial/termination.ipynb">Microsoft AutoGen — Termination conditions</a></p>
+    <p><a href="https://docs.github.com/en/copilot/using-github-copilot/using-copilot-coding-agent-to-work-on-tasks/best-practices-for-using-copilot-to-work-on-tasks">GitHub Docs — Best practices for using Copilot coding agent</a></p>
+    <p><a href="https://github.com/langchain-ai/langgraph-supervisor-py">LangGraph Supervisor — Multi-agent supervisor patterns</a></p>
+  </section>
+</main>
+<script>
+(() => {
+  const synth = window.speechSynthesis;
+  const blocks = [...document.querySelectorAll("#article h1,#article h2,#article h3,#article p")];
+  const sectionStarts = [...new Set([0, ...blocks.map((node, i) => node.tagName === "H2" ? i : -1).filter(i => i >= 0)])];
+  const play = document.querySelector("#play");
+  const pause = document.querySelector("#pause");
+  const stop = document.querySelector("#stop");
+  const prevBlock = document.querySelector("#prev-block");
+  const nextBlock = document.querySelector("#next-block");
+  const prevSection = document.querySelector("#prev-section");
+  const nextSection = document.querySelector("#next-section");
+  const sectionLabel = document.querySelector("#section-label");
+  const voice = document.querySelector("#voice");
+  const rate = document.querySelector("#rate");
+  const rateValue = document.querySelector("#rateValue");
+  const theme = document.querySelector("#theme");
+  let index = 0, playing = false, paused = false, selectedVoice = "", generation = 0;
+  let wakeLock = null, wakeLockWanted = false;
+
+  async function requestWakeLock() {
+    const wakeLockApi = window.navigator?.wakeLock;
+    wakeLockWanted = true;
+    if (!wakeLockApi?.request || wakeLock) return;
+    try {
+      const lock = await wakeLockApi.request("screen");
+      if (!wakeLockWanted) {
+        await lock.release();
+        return;
+      }
+      wakeLock = lock;
+      wakeLock.addEventListener?.("release", () => { wakeLock = null; });
+    } catch {
+      wakeLock = null;
+    }
+  }
+
+  async function releaseWakeLock() {
+    wakeLockWanted = false;
+    const current = wakeLock;
+    wakeLock = null;
+    if (!current) return;
+    try {
+      await current.release();
+    } catch {
+      // Wake Lock is best-effort; speech playback must continue to work.
+    }
+  }
+
+  function voices() {
+    const previous = selectedVoice || voice.value;
+    const items = synth.getVoices().filter(v => /^ja(?:-|_)/i.test(v.lang));
+    voice.replaceChildren();
+    for (const v of items) {
+      const o = document.createElement("option");
+      o.value = v.voiceURI;
+      o.textContent = v.name;
+      voice.append(o);
+    }
+    if (items.some(v => v.voiceURI === previous)) voice.value = previous;
+    selectedVoice = voice.value;
+  }
+
+  function clearHighlight() {
+    blocks.forEach(node => node.classList.remove("is-speaking"));
+  }
+
+  function sectionPosition() {
+    let pos = 0;
+    for (let i = 0; i < sectionStarts.length; i += 1) {
+      if (sectionStarts[i] <= index) pos = i;
+      else break;
+    }
+    return pos;
+  }
+
+  function updateNavigation() {
+    prevBlock.disabled = index <= 0;
+    nextBlock.disabled = index >= blocks.length - 1;
+
+    const pos = sectionPosition();
+    const start = sectionStarts[pos] ?? 0;
+    const previousTargetExists = index > start || pos > 0;
+    prevSection.disabled = !previousTargetExists;
+    nextSection.disabled = pos >= sectionStarts.length - 1;
+
+    const startNode = blocks[start];
+    sectionLabel.textContent = startNode?.tagName === "H2" ? startNode.textContent : "導入";
+  }
+
+  function showCurrent() {
+    clearHighlight();
+    const current = blocks[index];
+    if (!current) return;
+    current.classList.add("is-speaking");
+    current.scrollIntoView({ block: "center", behavior: "smooth" });
+    updateNavigation();
+  }
+
+  function speakCurrent() {
+    if (!playing || paused || index >= blocks.length) {
+      if (index >= blocks.length) {
+        playing = false;
+        paused = false;
+        clearHighlight();
+        void releaseWakeLock();
+      }
+      updateNavigation();
+      return;
+    }
+
+    showCurrent();
+    const localGeneration = ++generation;
+    const utterance = new SpeechSynthesisUtterance(blocks[index].textContent);
+    utterance.lang = "ja-JP";
+    utterance.rate = Number(rate.value);
+    const selected = synth.getVoices().find(item => item.voiceURI === voice.value);
+    if (selected) utterance.voice = selected;
+
+    utterance.onend = () => {
+      if (localGeneration !== generation || !playing || paused) return;
+      index += 1;
+      speakCurrent();
+    };
+
+    utterance.onerror = event => {
+      if (localGeneration !== generation) return;
+      if (event.error !== "canceled" && event.error !== "interrupted") {
+        playing = false;
+        paused = false;
+        clearHighlight();
+        void releaseWakeLock();
+        updateNavigation();
+      }
+    };
+
+    synth.speak(utterance);
+  }
+
+  function jumpTo(target) {
+    const next = Math.max(0, Math.min(blocks.length - 1, target));
+    const resume = playing && !paused;
+    const keepPaused = paused;
+
+    generation += 1;
+    synth.resume?.();
+    synth.cancel();
+    index = next;
+
+    if (resume) {
+      playing = true;
+      paused = false;
+      void requestWakeLock();
+      speakCurrent();
+      return;
+    }
+
+    playing = keepPaused;
+    paused = keepPaused;
+    showCurrent();
+    if (keepPaused) void requestWakeLock();
+  }
+
+  function jumpSection(delta) {
+    const pos = sectionPosition();
+    let targetPos;
+
+    if (delta < 0 && index > sectionStarts[pos]) targetPos = pos;
+    else targetPos = pos + delta;
+
+    if (targetPos < 0 || targetPos >= sectionStarts.length) return;
+    jumpTo(sectionStarts[targetPos]);
+  }
+
+  play.addEventListener("click", () => {
+    if (paused) {
+      generation += 1;
+      synth.resume?.();
+      synth.cancel();
+      paused = false;
+      playing = true;
+      void requestWakeLock();
+      speakCurrent();
+      return;
+    }
+    if (playing) return;
+    if (index >= blocks.length) index = 0;
+    playing = true;
+    void requestWakeLock();
+    speakCurrent();
+  });
+
+  pause.addEventListener("click", () => {
+    if (!playing || paused) return;
+    synth.pause();
+    paused = true;
+  });
+
+  stop.addEventListener("click", () => {
+    generation += 1;
+    synth.resume?.();
+    synth.cancel();
+    playing = false;
+    paused = false;
+    index = 0;
+    clearHighlight();
+    updateNavigation();
+    void releaseWakeLock();
+  });
+
+  prevBlock.addEventListener("click", () => jumpTo(index - 1));
+  nextBlock.addEventListener("click", () => jumpTo(index + 1));
+  prevSection.addEventListener("click", () => jumpSection(-1));
+  nextSection.addEventListener("click", () => jumpSection(1));
+
+  voice.addEventListener("change", () => {
+    selectedVoice = voice.value;
+    if (playing && !paused) {
+      generation += 1;
+      synth.cancel();
+      speakCurrent();
+    }
+  });
+
+  rate.addEventListener("input", () => {
+    rateValue.textContent = Number(rate.value).toFixed(1) + "×";
+  });
+
+  theme.addEventListener("click", () => {
+    const dark = document.documentElement.dataset.theme === "dark";
+    document.documentElement.dataset.theme = dark ? "light" : "dark";
+    theme.textContent = dark ? "☾" : "☀";
+    localStorage.setItem("rsvp:theme", dark ? "light" : "dark");
+  });
+
+  document.documentElement.dataset.theme =
+    localStorage.getItem("rsvp:theme") ||
+    (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  theme.textContent = document.documentElement.dataset.theme === "dark" ? "☀" : "☾";
+
+  voices();
+  synth.addEventListener?.("voiceschanged", voices);
+  updateNavigation();
+
+  document.addEventListener?.("visibilitychange", () => {
+    if (document.visibilityState === "visible" && (playing || paused)) {
+      void requestWakeLock();
+    }
+  });
+
+  addEventListener("pagehide", () => {
+    generation += 1;
+    synth.cancel();
+    void releaseWakeLock();
+  });
+})();
+</script>
+</body>
+</html>
