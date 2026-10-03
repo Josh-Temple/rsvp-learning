@@ -2,6 +2,13 @@
   "schema_version": 1,
   "items": [
     {
+      "id": "2026-10-03-multi-agent-orchestration-best-practices",
+      "title": "複数のAIをどう動かすか――並列エージェント運用の実践則",
+      "date": "2026-10-03",
+      "category": "research",
+      "path": "./research/2026-10-03-multi-agent-orchestration-best-practices.html"
+    },
+    {
       "id": "2026-10-02-seabench-self-evolving-agent-safety",
       "title": "自己改善するAIは、便利になるほど安全境界を壊すのか――SEABench",
       "date": "2026-10-02",
