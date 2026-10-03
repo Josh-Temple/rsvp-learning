@@ -3,7 +3,7 @@ name: Scheduled Vercel production deploy
 on:
   schedule:
     - cron: "17 */6 * * *"
-  # Updating this workflow on main also provides an intentional immediate-deploy path. Trigger: SEABench Daily Paper Listen 2026-10-02.
+  # Updating this workflow on main also provides an intentional immediate-deploy path. Trigger: Multi-agent orchestration Listen 2026-10-03.
   push:
     branches: [main]
     paths:
