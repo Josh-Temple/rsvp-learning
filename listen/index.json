@@ -2,6 +2,13 @@
   "schema_version": 1,
   "items": [
     {
+      "id": "2026-10-03-scholarcatalyst-research-inspiration-retrieval",
+      "title": "研究の「次の一手」を見つけるAIはまだ弱い――ScholarCatalyst",
+      "date": "2026-10-03",
+      "category": "research",
+      "path": "./research/2026-10-03-scholarcatalyst-research-inspiration-retrieval.html"
+    },
+    {
       "id": "2026-10-03-multi-agent-orchestration-best-practices",
       "title": "複数のAIをどう動かすか――並列エージェント運用の実践則",
       "date": "2026-10-03",
