@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f2efe8">
+  <meta name="description" content="OpenAIのMCP Eventsを起点に、AI運用を時刻駆動から状態変化駆動へ移す考え方と、Research Mesh、Studio Lab、Kaigo Rules、GitHub保守、学習への応用を整理したListen。">
+  <title>MCP Eventsで変わるAI運用――時刻で動くAIから、出来事で動くAIへ</title>
+  <style>
+    :root{color-scheme:light;--bg:#f2efe8;--ink:#121722;--muted:#73766f;--line:#cbc8bf;--blue:#5d7487}
+    html[data-theme="dark"]{color-scheme:dark;--bg:#11151a;--ink:#edf0eb;--muted:#959b97;--line:#343a3e;--blue:#7892a6}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Hiragino Sans","Noto Sans JP",sans-serif;line-height:1.9}
+    .shell{width:min(760px,100%);margin:0 auto;padding:max(18px,env(safe-area-inset-top)) 20px max(42px,env(safe-area-inset-bottom))}
+    .topbar{min-height:52px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+    .icon{width:42px;height:42px;display:grid;place-items:center;border:0;background:transparent;color:var(--muted);text-decoration:none;font:inherit}
+    .meta{margin:28px 0 8px;color:var(--muted);font-size:.75rem}
+    h1{font-size:clamp(2rem,8vw,3.4rem);line-height:1.12;letter-spacing:-.04em;margin:.2em 0 .8em}
+    h2{margin:2.2em 0 .6em;font-size:1.2rem}
+    p{margin:0 0 1.25em}
+    article>*{transition:background-color .15s ease}
+    .is-speaking{background:color-mix(in srgb,var(--blue) 16%,transparent)}
+    .player{position:sticky;bottom:0;margin:32px -6px 0;padding:12px 6px;background:color-mix(in srgb,var(--bg) 94%,transparent);border-top:1px solid var(--line);backdrop-filter:blur(8px)}
+    .speed{display:grid;grid-template-columns:48px 1fr 42px;gap:10px;align-items:center;margin-top:10px;font-size:.78rem;color:var(--muted)}
+    input{width:100%}
+    .sources{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}
+    .sources a{color:var(--ink)}
+    .mode-nav{display:inline-flex;align-items:center;gap:4px}
+    .mode-icon{width:42px;height:42px;display:grid;place-items:center;color:var(--muted);text-decoration:none;opacity:.5}
+    .mode-icon.is-active{color:var(--ink);opacity:1}
+    .mode-icon svg{width:20px;height:20px;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+    .brand-mark{width:22px;height:14px;display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+    .brand-mark i{display:block}
+    .brand-mark i:nth-child(1){background:#a85248}
+    .brand-mark i:nth-child(2){background:#5d7487}
+    .brand-mark i:nth-child(3){background:#c2a653}
+    .transport{display:grid;grid-template-columns:repeat(5,48px);justify-content:center;gap:8px}
+    .transport button,.section-nav button,.voice-row select{min-height:42px;border:1px solid var(--line);background:transparent;color:var(--ink);font:inherit}
+    .transport button{width:48px}
+    .section-nav{display:grid;grid-template-columns:48px 1fr 48px;align-items:center;gap:8px;margin-top:10px}
+    .section-nav button:disabled{opacity:.25}
+    #section-label{min-width:0;overflow:hidden;color:var(--muted);font-size:.78rem;text-align:center;white-space:nowrap;text-overflow:ellipsis}
+    .voice-row{margin-top:10px}
+    .voice-row select{width:100%;padding:0 8px}
+    .mode-icon:focus-visible,.transport button:focus-visible,.section-nav button:focus-visible,.voice-row select:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+  </style>
+</head>
+<body>
+<main class="shell">
+  <header class="topbar">
+    <nav class="mode-nav" aria-label="モード切替">
+      <a class="mode-icon" href="../../index.html" aria-label="RSVPへ移動" title="RSVP">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      </a>
+      <a class="mode-icon" href="../../index.html?library=learn" aria-label="Learnへ移動" title="Learn">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 5.5c2.6-.8 5.3-.4 8 1.2v12c-2.7-1.6-5.4-2-8-1.2v-12Z" />
+          <path d="M20 5.5c-2.6-.8-5.3-.4-8 1.2v12c2.7-1.6 5.4-2 8-1.2v-12Z" />
+        </svg>
+      </a>
+      <a class="mode-icon is-active" href="../../index.html?library=listen" aria-label="Listen一覧へ移動" aria-current="page" title="Listen">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 13v-1a8 8 0 0 1 16 0v1" />
+          <path d="M4 13h3v7H5a1 1 0 0 1-1-1v-6Zm16 0h-3v7h2a1 1 0 0 0 1-1v-6Z" />
+        </svg>
+      </a>
+    </nav>
+    <button id="theme" class="icon" type="button" aria-label="テーマ切替">☾</button>
+  </header>
+
+
+  <article id="article">
+    <p class="meta">情報基準日 2026年10月5日</p>
+    <h1>MCP Eventsで変わるAI運用――時刻で動くAIから、出来事で動くAIへ</h1>
+
+    <p>OpenAIが公開したMCP Eventsは、一見すると小さな機能追加に見えます。MCPを使って、外部サービスからChatGPTへイベントを送れるようになった。説明だけを聞くと、それだけです。</p>
+    <p>しかし、この機能をもう少し広い視点から見ると、意味はかなり大きくなります。これまでChatGPTを自動的に動かそうとすると、基本的には時間を基準にする必要がありました。毎朝8時に実行する。1時間ごとに状態を確認する。15分おきにQueueを見る。毎週月曜日にレポートを作る。これは予定済タスクとしては自然です。</p>
+    <p>一方で、本当に仕事が発生する時刻は決まっていません。Pull Requestが作られる時刻。レビューコメントが付く時刻。データの処理が完了する時刻。Queueの状態がREADYへ変わる時刻。外部サイトに新しい資料が公開される時刻。これらはすべて不定期です。</p>
+    <p>MCP Eventsが導入すると、この不一致をかなり小さくできます。AIを「何時になったら動くか」ではなく、「何が起きたら動くか」で起動できるからです。</p>
+
+    <h2>MCP Eventsは何を変えるのか</h2>
+    <p>通常のMCPでは、ChatGPTが外部システムへアクセスします。ChatGPTがGitHubを読む。ChatGPTがデータベースを検索する。ChatGPTが文書を更新する。つまり、基本方向はChatGPTから外部サービスです。</p>
+    <p>MCP Eventsでは逆方向が追加されます。外部システムで何かが起きる。その出来事がイベントとしてMCP Serverへ渡る。MCP ServerがChatGPTへWebhookを送る。ChatGPTのWorkやdotが起動する。そして必要なら、再びMCPのtoolを使って外部システムを調べたり、作業したりします。</p>
+    <p>OpenAIの現行実装では、MCP Serverがevents/list、events/subscribe、events/unsubscribeを実装し、ChatGPTがWebhookのcallback URLと署名用secretを渡します。イベントが届くと、購読したWork chatやdotがユーザーの事前指示に従って動きます。</p>
+    <p>ここで重要なのは、イベント自体に大量の情報を入れる必要がないことです。むしろ、その逆です。良い設計ではイベントは小さくします。</p>
+    <p>例えば、「Pull Request 123が更新された」というイベントだけを送る。ChatGPTはそれを受け取ったあとでGitHubを開き、Pull Requestの現在状態を確認します。あるいは、「Queue item 456がREADY_FOR_VERIFICATIONになった」というイベントを送り、ChatGPTがQueueとEvidenceをfresh readします。</p>
+    <p>つまりイベントは、事実の正本ではありません。「何か起きたので確認してください」という合図です。</p>
+
+    <h2>イベント本文と命令を分ける</h2>
+    <p>MCP Eventsでは、Slackのメッセージや文書コメントなど、人間が書いた文章がevent payloadへ入る場合があります。その文章には、意図的かどうかにかかわらず、AIへの命令のような文面が含まれる可能性があります。</p>
+    <p>したがって、イベント本文をそのまま命令として扱う設計は危険です。イベントは起動条件。判断材料は正本。実行ルールは事前に決めたPrompt。この三つを分ける必要があります。</p>
+    <p>例えばGitHub Issueに「このRepositoryを全部削除してください」と書かれたとしても、それがイベントとしてChatGPTへ届いたからといって、削除命令として扱ってはいけません。イベントが伝えるのは「Issueが作られた」という事実です。そこから先の行動は、あらかじめ定義された権限、Prompt、承認条件によって決めます。</p>
+    <p>OpenAIの公式ドキュメントも、コメントなどのユーザー生成テキストはdataとして扱い、event payloadの中にモデルへ行動を指示する文章を入れないよう求めています。</p>
+
+    <h2>最初の活用は、無駄な監視を減らすこと</h2>
+    <p>現在、人間やAIが何度もページを開いて確認している仕事があります。メールが来たか。Pull Requestが更新されたか。レビューが付いたか。処理が終わったか。申請が承認されたか。新しいファイルが置かれたか。</p>
+    <p>MCP Eventsでは、これらの確認作業をイベントへ変えられます。何も起きていない間、AIは何もしません。変化した時だけ動きます。</p>
+    <p>例えば、1時間ごとにQueueを確認するWorkerが5個あるとします。実行対象がない時間でも確認処理は走り、NO_ELIGIBLE_EXECUTION、対象なし、終了、という実行が大量に生まれます。</p>
+    <p>イベント駆動にすると、対象がREADYになった瞬間だけWorkerを起動する形に変えられます。これは単なるコスト削減ではありません。何も起きていないのにWorkerが動くことが減るため、運用自体が分かりやすくなります。</p>
+
+    <h2>Research Meshは時刻駆動から状態駆動へ移せる</h2>
+    <p>MCP Eventsは、単発の通知よりも、複数のAIをつなぐ用途の方が大きな可能性があります。</p>
+    <p>Research Meshを例にします。Planner、Worker、Verifier、Integratorという役割を持つAIがいるとします。時間駆動なら、Plannerが0分、Workerが15分、Verifierが35分、Integratorが45分というように動かします。</p>
+    <p>これは簡単ですが、実際の仕事の進行と時計が一致しません。Workerが3分で終わってもVerifierは次の時刻まで待つかもしれません。Workerが長引けばVerifierが先に起動する可能性もあります。</p>
+    <p>MCP Eventsなら、PlannerがTaskを作成する。task.readyイベントが発生する。Workerが起動する。Workerが成果物を保存する。result.createdイベントが発生する。Verifierが起動する。検証を通過する。verification.passedイベントが発生する。Integratorが起動する。という形に変えられます。</p>
+    <p>時計ではなく、仕事そのものの状態が次のAIを起動します。</p>
+    <p>イベント名としては、QUESTION_CREATED、RESEARCH_READY、RESULT_SUBMITTED、VERIFICATION_REQUIRED、VERIFICATION_PASSED、INTEGRATION_REQUIRED、BLOCKEDなどが考えられます。ただし名前そのものより重要なのは、一つのイベントを受け取ったAIに明確な仕事を一つ渡せることです。</p>
+    <p>イベントへ研究本文を丸ごと入れる必要はありません。stable ID、対象Repository、対象成果物、現在status、正本への参照程度に抑え、受け取ったAIが必要な資料を正本から取得する方が安全です。</p>
+
+    <h2>Studio Labでは役割間の境界として使える</h2>
+    <p>Studio Labでも同じ考え方を適用できます。新しいWork OrderがREADYになったらWorkerを起動する。成果物が保存されたらReview Workerを起動する。レビューで重大な問題が見つかったらBLOCKEDにする。人間判断が必要ならhuman_review.requiredを出す。人間が承認したらapprovedイベントから次工程を再開する。</p>
+    <p>ここでイベントは、単なる通知ではなく役割間の境界になります。Plannerは計画する。Workerは処理する。Verifierは検証する。Integratorは統合する。それぞれが別の状態変化を担当できます。</p>
+    <p>一つの巨大なAIに全部やらせるより、「何が起きたら、どの役割が起動するか」を明示できます。</p>
+
+    <h2>Kaigo RulesではVerificationとの相性がよい</h2>
+    <p>Kaigo Rulesのように、Queue、Evidence、verification stateが明確なプロジェクトでは、イベント駆動との相性が特に良くなります。</p>
+    <p>例えば、scope.created。item_body.ready_for_verification。verification.completed。currentness.changed。publication_candidate.created。blocked。こうした状態変更が起きた時だけ、対応するWorkerを起動できます。</p>
+    <p>特に有効なのはVerificationです。あるWorkerがitem bodyを作る。READY_FOR_VERIFICATIONへ変更する。その瞬間にVerifierが起動する。VerifierはQueueだけを信用するのではなく、RepositoryとEvidenceをfresh readする。検証結果を記録する。PASSなら次のイベントを出し、FAILならBLOCKEDへ移す。</p>
+    <p>一方、Publicationは別に扱うべきです。イベント駆動にすると処理速度が上がるため、誤処理も高速に連鎖します。データ生成、Verification、統合、Publicationを別の状態として扱い、外部公開には必要な人間承認を残した方が安全です。</p>
+    <p>イベント駆動は承認境界をなくす技術ではありません。承認境界まで自動的に仕事を運ぶ技術です。</p>
+
+    <h2>Repository maintenanceでは故障そのものをイベントにできる</h2>
+    <p>Public Sector AI ProcurementのようなEvidence重視のRepositoryでも使えます。新しいPDFが見つかったらdocument.discovered。原典を保存したらsource.saved。構造化が終わったらextraction.completed。Evidenceとの対応確認が必要ならevidence_check.required。Pull Requestを作ったらreview.required。CIが通ったらmerge_candidate。</p>
+    <p>さらに重要なのは、「何かを作るイベント」だけではなく「何かが壊れたイベント」も作れることです。</p>
+    <p>Evidence URLが404になった。source hashが変わった。原典ファイルが削除された。データからEvidenceへの参照が切れた。schema validationが落ちた。こうした変化をイベントにできます。</p>
+    <p>するとAIは、新しいデータを増やすだけでなく、既存資産を守るために自律的に起動するようになります。長期運用では、MCP EventsはResearchだけでなくMaintenanceとの相性もかなり良いと考えられます。</p>
+
+    <h2>GitHub開発では修正ループをつなげられる</h2>
+    <p>Issueが作られる。Bug labelが付く。ChatGPTがIssueを調査する。再現条件を確認する。コードを読む。修正できるならBranchを作る。テストを書く。Draft Pull Requestを作る。</p>
+    <p>CIが失敗したらci.failedイベントで再びChatGPTを起動する。ログを読む。修正する。CIが成功したらci.passed。レビューコメントが付いたらreview_comment.created。再びChatGPTが起動して修正する。</p>
+    <p>このループでは、人間はコードを書く人というより最終判断をする人へ移っていきます。ただし、mergeやreleaseなど不可逆性や外部影響が大きい操作は、権限と承認境界を別に設ける方がよいでしょう。</p>
+
+    <h2>コンテンツ制作とListenにも使える</h2>
+    <p>コンテンツ制作でも同じ構造が使えます。研究結果がVERIFIEDになったら記事候補としてEditorial Queueへ送る。新しい重要研究が保存されたら既存記事との関連を確認する。公開記事に影響する一次資料が更新されたらfact reviewを起動する。記事に人間のコメントが付いたら修正案を作る。</p>
+    <p>学習にも応用できます。例えばGitHubやResearch Queueへ新しい重要資料が入る。eventが発生する。ChatGPTが内容を確認する。既存の学習テーマとの関連を判断する。重要ならListen用教材を生成する。Learning Queueへ追加する。</p>
+    <p>情報が増えたら、自動的に自分向けの音声教材へ変換される仕組みです。</p>
+    <p>逆方向も考えられます。教材を完了したらlearning.completed。次に理解確認用コンテンツを作る。理解確認で弱点が見つかったらconcept.weak。そのテーマだけ短い補講を作る。</p>
+    <p>すると学習システムも固定されたカリキュラムではなく、自分の状態変化に応じて次の教材を作るシステムへ近づきます。</p>
+
+    <h2>すべてをイベントにしてはいけない</h2>
+    <p>MCP Eventsを使えるようになると、あらゆる変化をイベント化したくなります。しかし、すべての変化をAIに送ると、今度はAIがイベント処理に追われます。</p>
+    <p>commitが一つ増えるたびにChatGPTを起動する。コメントが一つ付くたびに起動する。Queueの小さな値変更ごとに起動する。これは効率的とは限りません。</p>
+    <p>LLMはデータベーストリガーではありません。一回の判断に比較的大きな計算が必要です。したがってイベントは、AIの判断が必要になる状態変化に限定した方がよいでしょう。</p>
+    <p>file.updatedよりverification.required。row.changedよりwork_item.ready。単なる変更ではなく、「この変化のあとにAIへ一つの明確な仕事を渡せるか」で選ぶ方が扱いやすくなります。</p>
+
+    <h2>重複、順不同、再実行を前提にする</h2>
+    <p>Webhookでは同じイベントが複数回届く可能性があります。OpenAIの公式ドキュメントでも、event IDを保ったまま再送し、受け取り側や書き込みtoolを重複に耐えられる設計にすることが推奨されています。</p>
+    <p>例えばPRを作る処理を同じイベントに対して二回実行したら、PRが二本できるかもしれません。そこで、対象Task IDに既存PRがあるか確認し、あれば更新し、なければ作るようにします。これがidempotency、つまり同じ要求が繰り返されても状態を壊しにくい設計です。</p>
+    <p>イベントの順序にも注意が必要です。OpenAIの実装ではイベントが順不同で到着する可能性があるとされています。MCP Eventsのdraft自体も、プロトコル全体として強い順序保証やexactly-onceを提供しません。</p>
+    <p>だからAIは、イベントに書いてあるstatusをそのまま現在状態として信じるのではなく、起動したら正本から現在状態をfresh readするべきです。</p>
+    <p>イベントは「変化が起きた可能性」を伝える。現在状態はGitHub、Database、Queue、Control Planeなどから取得する。この構造なら、イベントの重複や順序ずれがあっても壊れにくくなります。</p>
+
+    <h2>フィードバックループを止める</h2>
+    <p>もう一つ危険なのがフィードバックループです。ChatGPTが文書を更新する。document.updatedイベントが発生する。ChatGPTがそのイベントを受け取る。また文書を更新する。さらにdocument.updatedが発生する。これでは無限ループになります。</p>
+    <p>GitHubでも、ChatGPTがコメントを書く。comment.createdイベントが発生する。ChatGPTが自分のコメントに反応する。さらにコメントを書く、ということが起こり得ます。</p>
+    <p>したがって、自分自身が作った変更を除外する。originを記録する。同一run IDの変更は再処理しない。一定の状態まで到達したらイベントを止める。こうした仕組みが必要です。</p>
+    <p>OpenAIも、イベントに反応するactionがsource appを変更する場合は、その変更が新しいイベントを起こしてフィードバックループにならないかをテストするよう求めています。</p>
+
+    <h2>予定済タスクを捨てるのではなく役割を変える</h2>
+    <p>現時点では、予定済タスクをすべてMCP Eventsへ置き換える段階ではありません。MCP EventsはMCP 2.0を前提にしていますが、Events自体はdraft仕様で、ChatGPT側もWebhook deliveryとcallback verificationを中心に対応しています。draftにあるpolling、streaming、gap、terminatedは現在のChatGPT統合では未対応です。</p>
+    <p>そこで現実的なのは、通常処理はイベント、定期処理は整合性確認、という二重構造です。</p>
+    <p>例えばResearch Meshなら、TaskがREADYになったらイベントでWorkerを起動する。それとは別に数時間に一回だけ、未処理のREADYが残っていないか確認する。</p>
+    <p>イベントは高速な通常経路。Scheduled Taskは復旧経路です。この組み合わせなら、Webhook障害や購読切れが発生しても、永久に処理が止まりにくくなります。</p>
+
+    <h2>人間起動、時間起動、イベント起動を使い分ける</h2>
+    <p>AI運用には三種類の起動方法があります。一つ目は人間起動です。自分がChatGPTへ依頼する。二つ目は時間起動です。毎朝、毎時間、毎週。三つ目がイベント起動です。PRができた。データが到着した。Verificationが終わった。コメントが付いた。</p>
+    <p>この三つは競合するものではありません。役割が違います。</p>
+    <p>人間起動は方向を決める仕事。時間起動は定期確認。イベント起動は状態変化への反応。この三つを組み合わせるとかなり強い仕組みになります。</p>
+
+    <h2>dotsと組み合わせると「必要な時だけ起きるAI」になる</h2>
+    <p>dotsが加わると、さらに構造が変わります。dotに長期的な目的を与える。MCP Eventsが外部世界の変化を伝える。dotがその変化を目的に照らして判断する。必要なtoolを使う。結果を正本へ戻す。また次のイベントを待つ。</p>
+    <p>この構造は、ChatGPTを開いて質問し、回答を受け取って終了するモデルとはかなり違います。目的を持ったAIが存在し続け、必要な時だけ外部世界から起こされるモデルです。</p>
+    <p>常時動くAIを作ろうとすると、永遠にpollingする仕組みを想像しがちです。しかし実際には、静止している。イベントが来る。起きる。仕事をする。状態を保存する。また静止する、という方が自然です。</p>
+    <p>人間の組織にも近い構造です。経理担当者は請求書が来たら処理する。レビュアーはレビュー依頼が来たら確認する。運用担当者は障害が起きたら対応する。全員が毎分「仕事はありますか」と確認しているわけではありません。</p>
+
+    <h2>どこから試すべきか</h2>
+    <p>MCP Eventsの仕様自体はまだDraftで、OpenAI統合にも制限があります。したがって、最初から基幹システムを全面的にイベント依存へするのは早いでしょう。</p>
+    <p>まず適しているのは、失敗しても回復できる処理、現在pollingしていて無駄が大きい処理、明確な状態遷移がある処理、正本を別に持っている処理です。</p>
+    <p>逆に、イベントを失ったら重大事故になる処理、順序が完全保証されなければ困る処理、一回しか実行してはいけない不可逆処理、高額な金融取引、外部への重大な公開を、そのままイベントから完全自動化するべきではありません。</p>
+    <p>最初の実験としてはResearch Meshの一部が扱いやすいでしょう。TaskがREADYになった。イベントを送る。Workerが起動する。結果を保存する。result.createdを出す。Verifierが起動する。ここまでをイベント化する。</p>
+    <p>Scheduled Taskは残し、一定時間ごとに未処理Taskだけ確認する。イベント経路が安定していることを確認できたら、徐々にpollingを減らす。この順番なら可逆的です。</p>
+
+    <h2>最後に残す要点</h2>
+    <p>MCP Eventsの本質は、AIをさらに大量に動かすことではありません。必要な時だけ、必要なAIを動かすことです。</p>
+    <p>第一に、イベントは正本ではなく起動の合図として扱います。起動後の判断はGitHub、Queue、Database、Control Planeなどの現在状態をfresh readして行います。</p>
+    <p>第二に、イベントは「変化した」ではなく「AIの判断が必要な状態になった」という粒度へ寄せます。</p>
+    <p>第三に、重複、順不同、再送を前提にし、event IDによる重複排除とidempotentな書き込みを設計します。</p>
+    <p>第四に、AI自身の変更が再びAIを起動するフィードバックループを防ぎます。</p>
+    <p>第五に、イベント駆動と時間駆動を対立させません。イベントを通常経路、予定済タスクを整合性確認と復旧経路にできます。</p>
+    <p>第六に、自動化できることと、自動化すべきことを分けます。公開、重大な変更、金融取引などでは承認境界を残します。</p>
+    <p>これまでの問いは、「どのAIを何時に起動するか」でした。MCP Eventsによって、問いを変えられます。</p>
+    <p>システムの中で意味のある状態変化は何か。その変化が起きた時、誰が判断すべきか。判断に必要な正本は何か。どこまで自動で進み、どこで人間へ戻すか。失敗した時、どう回復するか。</p>
+    <p>Research Mesh、Studio Lab、Kaigo Rules、Repository maintenance、学習、コンテンツ制作は、別々の仕組みに見えます。しかし、状態、イベント、役割、正本、承認境界という観点で見ると、かなり共通した構造を持っています。</p>
+    <p>MCP Eventsは、この共通構造をChatGPTから扱えるようにするための重要な一歩です。そして今後のAI運用では、「AIに何を頼むか」だけでなく、「どんな出来事が起きた時に、AIが自分から仕事を始めるべきか」が重要な設計問題になっていきます。</p>
+  </article>
+
+  <section class="player" aria-label="読み上げ操作">
+    <div class="transport">
+      <button id="prev-block" type="button" aria-label="前の読み上げ単位へ">←</button>
+      <button id="play" type="button" aria-label="再生">▶</button>
+      <button id="pause" type="button" aria-label="一時停止">Ⅱ</button>
+      <button id="stop" type="button" aria-label="停止">■</button>
+      <button id="next-block" type="button" aria-label="次の読み上げ単位へ">→</button>
+    </div>
+    <div class="section-nav" aria-label="章移動">
+      <button id="prev-section" type="button" aria-label="前の章へ">‹</button>
+      <span id="section-label">導入</span>
+      <button id="next-section" type="button" aria-label="次の章へ">›</button>
+    </div>
+    <div class="voice-row">
+      <select id="voice" aria-label="日本語音声"></select>
+    </div>
+    <div class="speed"><span>速度</span><input id="rate" type="range" min="0.7" max="4" step="0.1" value="1"><span id="rateValue">1.0×</span></div>
+  </section>
+
+
+  <section class="sources" aria-label="出典">
+    <strong>出典</strong>
+    <p><a href="https://developers.openai.com/plugins/build/mcp-events">OpenAI Developers — MCP Events</a></p>
+    <p><a href="https://github.com/modelcontextprotocol/experimental-ext-triggers-events/blob/main/docs/design-sketch-proposal.md">Model Context Protocol — MCP Events Design Sketch</a></p>
+    <p><a href="https://github.com/modelcontextprotocol/experimental-ext-triggers-events">Model Context Protocol — Triggers & Events Working Group</a></p>
+  </section>
+</main>
+<script>
+(() => {
+  const synth = window.speechSynthesis;
+  const blocks = [...document.querySelectorAll("#article h1,#article h2,#article h3,#article p")];
+  const sectionStarts = [...new Set([0, ...blocks.map((node, i) => node.tagName === "H2" ? i : -1).filter(i => i >= 0)])];
+  const play = document.querySelector("#play");
+  const pause = document.querySelector("#pause");
+  const stop = document.querySelector("#stop");
+  const prevBlock = document.querySelector("#prev-block");
+  const nextBlock = document.querySelector("#next-block");
+  const prevSection = document.querySelector("#prev-section");
+  const nextSection = document.querySelector("#next-section");
+  const sectionLabel = document.querySelector("#section-label");
+  const voice = document.querySelector("#voice");
+  const rate = document.querySelector("#rate");
+  const rateValue = document.querySelector("#rateValue");
+  const theme = document.querySelector("#theme");
+  let index = 0, playing = false, paused = false, selectedVoice = "", generation = 0;
+  let wakeLock = null, wakeLockWanted = false;
+
+  async function requestWakeLock() {
+    const wakeLockApi = window.navigator?.wakeLock;
+    wakeLockWanted = true;
+    if (!wakeLockApi?.request || wakeLock) return;
+    try {
+      const lock = await wakeLockApi.request("screen");
+      if (!wakeLockWanted) {
+        await lock.release();
+        return;
+      }
+      wakeLock = lock;
+      wakeLock.addEventListener?.("release", () => { wakeLock = null; });
+    } catch {
+      wakeLock = null;
+    }
+  }
+
+  async function releaseWakeLock() {
+    wakeLockWanted = false;
+    const current = wakeLock;
+    wakeLock = null;
+    if (!current) return;
+    try {
+      await current.release();
+    } catch {
+      // Wake Lock is best-effort; speech playback must continue to work.
+    }
+  }
+
+  function voices() {
+    const previous = selectedVoice || voice.value;
+    const items = synth.getVoices().filter(v => /^ja(?:-|_)/i.test(v.lang));
+    voice.replaceChildren();
+    for (const v of items) {
+      const o = document.createElement("option");
+      o.value = v.voiceURI;
+      o.textContent = v.name;
+      voice.append(o);
+    }
+    if (items.some(v => v.voiceURI === previous)) voice.value = previous;
+    selectedVoice = voice.value;
+  }
+
+  function clearHighlight() {
+    blocks.forEach(node => node.classList.remove("is-speaking"));
+  }
+
+  function sectionPosition() {
+    let pos = 0;
+    for (let i = 0; i < sectionStarts.length; i += 1) {
+      if (sectionStarts[i] <= index) pos = i;
+      else break;
+    }
+    return pos;
+  }
+
+  function updateNavigation() {
+    prevBlock.disabled = index <= 0;
+    nextBlock.disabled = index >= blocks.length - 1;
+
+    const pos = sectionPosition();
+    const start = sectionStarts[pos] ?? 0;
+    const previousTargetExists = index > start || pos > 0;
+    prevSection.disabled = !previousTargetExists;
+    nextSection.disabled = pos >= sectionStarts.length - 1;
+
+    const startNode = blocks[start];
+    sectionLabel.textContent = startNode?.tagName === "H2" ? startNode.textContent : "導入";
+  }
+
+  function showCurrent() {
+    clearHighlight();
+    const current = blocks[index];
+    if (!current) return;
+    current.classList.add("is-speaking");
+    current.scrollIntoView({ block: "center", behavior: "smooth" });
+    updateNavigation();
+  }
+
+  function speakCurrent() {
+    if (!playing || paused || index >= blocks.length) {
+      if (index >= blocks.length) {
+        playing = false;
+        paused = false;
+        clearHighlight();
+        void releaseWakeLock();
+      }
+      updateNavigation();
+      return;
+    }
+
+    showCurrent();
+    const localGeneration = ++generation;
+    const utterance = new SpeechSynthesisUtterance(blocks[index].textContent);
+    utterance.lang = "ja-JP";
+    utterance.rate = Number(rate.value);
+    const selected = synth.getVoices().find(item => item.voiceURI === voice.value);
+    if (selected) utterance.voice = selected;
+
+    utterance.onend = () => {
+      if (localGeneration !== generation || !playing || paused) return;
+      index += 1;
+      speakCurrent();
+    };
+
+    utterance.onerror = event => {
+      if (localGeneration !== generation) return;
+      if (event.error !== "canceled" && event.error !== "interrupted") {
+        playing = false;
+        paused = false;
+        clearHighlight();
+        void releaseWakeLock();
+        updateNavigation();
+      }
+    };
+
+    synth.speak(utterance);
+  }
+
+  function jumpTo(target) {
+    const next = Math.max(0, Math.min(blocks.length - 1, target));
+    const resume = playing && !paused;
+    const keepPaused = paused;
+
+    generation += 1;
+    synth.resume?.();
+    synth.cancel();
+    index = next;
+
+    if (resume) {
+      playing = true;
+      paused = false;
+      void requestWakeLock();
+      speakCurrent();
+      return;
+    }
+
+    playing = keepPaused;
+    paused = keepPaused;
+    showCurrent();
+    if (keepPaused) void requestWakeLock();
+  }
+
+  function jumpSection(delta) {
+    const pos = sectionPosition();
+    let targetPos;
+
+    if (delta < 0 && index > sectionStarts[pos]) targetPos = pos;
+    else targetPos = pos + delta;
+
+    if (targetPos < 0 || targetPos >= sectionStarts.length) return;
+    jumpTo(sectionStarts[targetPos]);
+  }
+
+  play.addEventListener("click", () => {
+    if (paused) {
+      generation += 1;
+      synth.resume?.();
+      synth.cancel();
+      paused = false;
+      playing = true;
+      void requestWakeLock();
+      speakCurrent();
+      return;
+    }
+    if (playing) return;
+    if (index >= blocks.length) index = 0;
+    playing = true;
+    void requestWakeLock();
+    speakCurrent();
+  });
+
+  pause.addEventListener("click", () => {
+    if (!playing || paused) return;
+    synth.pause();
+    paused = true;
+  });
+
+  stop.addEventListener("click", () => {
+    generation += 1;
+    synth.resume?.();
+    synth.cancel();
+    playing = false;
+    paused = false;
+    index = 0;
+    clearHighlight();
+    updateNavigation();
+    void releaseWakeLock();
+  });
+
+  prevBlock.addEventListener("click", () => jumpTo(index - 1));
+  nextBlock.addEventListener("click", () => jumpTo(index + 1));
+  prevSection.addEventListener("click", () => jumpSection(-1));
+  nextSection.addEventListener("click", () => jumpSection(1));
+
+  voice.addEventListener("change", () => {
+    selectedVoice = voice.value;
+    if (playing && !paused) {
+      generation += 1;
+      synth.cancel();
+      speakCurrent();
+    }
+  });
+
+  rate.addEventListener("input", () => {
+    rateValue.textContent = Number(rate.value).toFixed(1) + "×";
+  });
+
+  theme.addEventListener("click", () => {
+    const dark = document.documentElement.dataset.theme === "dark";
+    document.documentElement.dataset.theme = dark ? "light" : "dark";
+    theme.textContent = dark ? "☾" : "☀";
+    localStorage.setItem("rsvp:theme", dark ? "light" : "dark");
+  });
+
+  document.documentElement.dataset.theme =
+    localStorage.getItem("rsvp:theme") ||
+    (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  theme.textContent = document.documentElement.dataset.theme === "dark" ? "☀" : "☾";
+
+  voices();
+  synth.addEventListener?.("voiceschanged", voices);
+  updateNavigation();
+
+  document.addEventListener?.("visibilitychange", () => {
+    if (document.visibilityState === "visible" && (playing || paused)) {
+      void requestWakeLock();
+    }
+  });
+
+  addEventListener("pagehide", () => {
+    generation += 1;
+    synth.cancel();
+    void releaseWakeLock();
+  });
+})();
+</script>
+</body>
+</html>
