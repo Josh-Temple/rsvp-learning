@@ -1,0 +1,494 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f2efe8">
+  <meta name="description" content="AIエージェントが観測から実験を重ね、説明可能な機構と新しい科学的洞察へ到達できるかを測るEurekaBenchを、方法・結果・失敗例・限界・研究支援AIへの意味まで解説するDaily Paper Listen。">
+  <title>予測できても、科学を理解したとは限らない――EurekaBench</title>
+  <style>
+    :root{color-scheme:light;--bg:#f2efe8;--ink:#121722;--muted:#73766f;--line:#cbc8bf;--blue:#5d7487}
+    html[data-theme="dark"]{color-scheme:dark;--bg:#11151a;--ink:#edf0eb;--muted:#959b97;--line:#343a3e;--blue:#7892a6}
+    *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Hiragino Sans","Noto Sans JP",sans-serif;line-height:1.9}
+    .shell{width:min(760px,100%);margin:0 auto;padding:max(18px,env(safe-area-inset-top)) 20px max(42px,env(safe-area-inset-bottom))}
+    .topbar{min-height:52px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+    .icon{width:42px;height:42px;display:grid;place-items:center;border:0;background:transparent;color:var(--muted);text-decoration:none;font:inherit}
+    .meta{margin:28px 0 8px;color:var(--muted);font-size:.75rem}
+    h1{font-size:clamp(2rem,8vw,3.4rem);line-height:1.12;letter-spacing:-.04em;margin:.2em 0 .8em} h2{margin:2.2em 0 .6em;font-size:1.2rem}
+    p{margin:0 0 1.25em} article>*{transition:background-color .15s ease}.is-speaking{background:color-mix(in srgb,var(--blue) 16%,transparent)}
+    .player{position:sticky;bottom:0;margin:32px -6px 0;padding:12px 6px;background:color-mix(in srgb,var(--bg) 94%,transparent);border-top:1px solid var(--line);backdrop-filter:blur(8px)}
+    .controls{display:grid;grid-template-columns:48px 48px 48px 1fr;gap:8px;align-items:center}.controls button,.controls select{min-height:42px;border:1px solid var(--line);background:transparent;color:var(--ink)}
+    .speed{display:grid;grid-template-columns:48px 1fr 42px;gap:10px;align-items:center;margin-top:10px;font-size:.78rem;color:var(--muted)} input{width:100%}
+    .sources{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}.sources a{color:var(--ink)}
+  
+    .topbar{display:flex;align-items:center;justify-content:space-between}
+    .mode-nav{display:inline-flex;align-items:center;gap:4px}
+    .mode-icon{width:42px;height:42px;display:grid;place-items:center;color:var(--muted);text-decoration:none;opacity:.5}
+    .mode-icon.is-active{color:var(--ink);opacity:1}
+    .mode-icon svg{width:20px;height:20px;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+    .brand-mark{width:22px;height:14px;display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+    .brand-mark i{display:block}.brand-mark i:nth-child(1){background:#a85248}.brand-mark i:nth-child(2){background:#5d7487}.brand-mark i:nth-child(3){background:#c2a653}
+    .transport{display:grid;grid-template-columns:repeat(5,48px);justify-content:center;gap:8px}
+    .transport button,.section-nav button,.voice-row select{min-height:42px;border:1px solid var(--line);background:transparent;color:var(--ink);font:inherit}
+    .transport button{width:48px}
+    .section-nav{display:grid;grid-template-columns:48px 1fr 48px;align-items:center;gap:8px;margin-top:10px}
+    .section-nav button:disabled{opacity:.25}
+    #section-label{min-width:0;overflow:hidden;color:var(--muted);font-size:.78rem;text-align:center;white-space:nowrap;text-overflow:ellipsis}
+    .voice-row{margin-top:10px}.voice-row select{width:100%;padding:0 8px}
+    .mode-icon:focus-visible,.transport button:focus-visible,.section-nav button:focus-visible,.voice-row select:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+
+  </style>
+</head>
+<body>
+<main class="shell">
+  <header class="topbar">
+    <nav class="mode-nav" aria-label="モード切替">
+      <a class="mode-icon" href="../../index.html" aria-label="RSVPへ移動" title="RSVP">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      </a>
+      <a class="mode-icon" href="../../index.html?library=learn" aria-label="Learnへ移動" title="Learn">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 5.5c2.6-.8 5.3-.4 8 1.2v12c-2.7-1.6-5.4-2-8-1.2v-12Z" />
+          <path d="M20 5.5c-2.6-.8-5.3-.4-8 1.2v12c2.7-1.6 5.4-2 8-1.2v-12Z" />
+        </svg>
+      </a>
+      <a class="mode-icon is-active" href="../../index.html?library=listen" aria-label="Listen一覧へ移動" aria-current="page" title="Listen">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 13v-1a8 8 0 0 1 16 0v1" />
+          <path d="M4 13h3v7H5a1 1 0 0 1-1-1v-6Zm16 0h-3v7h2a1 1 0 0 0 1-1v-6Z" />
+        </svg>
+      </a>
+    </nav>
+    <button id="theme" class="icon" type="button" aria-label="テーマ切替">☾</button>
+  </header>
+
+
+
+
+
+
+
+  <article id="article">
+    <p class="meta">情報基準日 2026年10月4日</p>
+    <h1>予測できても、科学を理解したとは限らない――EurekaBench</h1>
+
+    <p>今日取り上げるのは、2026年9月30日にarXivへ公開され、10月2日に公開Repositoryも初回リリースされた「EurekaBench: Measuring Agentic Ability to Discover New Scientific Insights」です。問いは、AIエージェントが科学の問題を解けるかではありません。観測された現象から実験を設計し、その背後にある仕組みを見つけ、さらに「なぜそうなるのか」「別の条件では何が起きるのか」という科学的な洞察まで導けるかを測ります。</p>
+    <p>この研究が面白いのは、正しい予測と科学的理解を意図的に分けた点です。現在のAIは、目的関数が明確で、答えを自動採点できる問題ではかなり強くなっています。数値を最適化し、コードを書き、探索を繰り返し、評価値を改善することは得意です。</p>
+    <p>しかし科学では、予測が当たるだけでは十分ではありません。同じ精度のモデルでも、片方は現象の仕組みを説明し、別条件へ一般化できるかもしれない。もう片方はデータへうまく合わせただけで、なぜ当たるか分からないかもしれません。EurekaBenchは、この差を評価対象にしています。</p>
+
+    <h2>科学的発見を「観測、機構、洞察」に分ける</h2>
+    <p>EurekaBenchが想定する流れは三段階です。まず、既存の理解ではうまく説明できない観測があります。次に、エージェントは環境へ働きかけ、実験を繰り返し、その観測を説明するmechanism、つまり機構を提案します。最後に、その機構から、新しい条件で何が起きるか、どの変数が重要か、どの仮説が成り立つかといったscientific insightを導きます。</p>
+    <p>たとえば南極の棚氷では、従来の単純な流動方程式が圧縮領域では合うのに、伸長領域ではうまく説明できないという観測があります。エージェントはシミュレーターを使い、どのような粘性構造なら衛星観測を説明できるかを試します。</p>
+    <p>ここで評価されるのは、観測データへのfitだけではありません。発見した機構が、氷が方向によって異なる変形抵抗を示す理由や、どの測定が粘性を決めるかまで説明できるかを見ます。</p>
+
+    <h2>26の長期課題を、6つの科学分野から作った</h2>
+    <p>ベンチマークは二十六課題です。内訳は、神経科学が十、地球物理が二、プラズマ物理が三、宇宙物理が七、コンピュータ科学が三、化学が一です。</p>
+    <p>研究チームは最初に十大学・八分野の十五人の経験豊富な科学者へ、AIにどの研究段階を支援してほしいかを聞きました。そのうえで十人の専門家と協力し、今回の二十六問題を構築しています。</p>
+    <p>対象は、完全に解かれた教科書問題ではありません。人間研究者がすでに一部の機構や重要な洞察を発見している一方で、まだ部分的にしか解かれていない科学問題です。既存研究と専門家の知見を利用しながら、「良い機構なら何を説明できるべきか」を評価項目にしています。</p>
+    <p>全部で三百六のscientific insight questionがあり、「発見した機構から、この現象を説明できるか」「この条件変更の影響を導けるか」といった形で採点します。</p>
+
+    <h2>AIには、答えではなく実験環境を渡す</h2>
+    <p>各問題には、初期観測、課題の説明、使える計算資源、そして実験環境へのinterfaceが与えられます。分野によって環境は違い、神経科学では神経回路シミュレーター、地球物理では氷床や水文モデル、プラズマ物理ではtokamak simulator、宇宙物理では宇宙論simulation、化学では反応系のmodelなどを使います。</p>
+    <p>エージェントは環境へqueryを送り、結果を観察し、仮説を修正します。この反復を最大千iteration、最大四時間続けられます。各runにはH100 GPU一枚が与えられます。</p>
+    <p>最後に提出するのは三つです。機構の因果的な説明を書くmechanism.md、その機構を実行可能な形にしたmechanism.py、そして何を試し、何が分かり、何が失敗したかを残すexperiments.logです。</p>
+    <p>つまり、単に最後の回答文だけを採点するわけではありません。発見した仕組みをコードとして動かし、未知のtest dataで予測させ、実験記録と説明も含めて評価します。</p>
+
+    <h2>評価を三つに分けた</h2>
+    <p>第一はscientific constraintsです。発見した機構が、その分野の基本的な科学条件を満たすかを見ます。たとえば物理量があり得ない値になる、保存則や既知の条件を壊す、といった機構は、予測値がたまたま良くても科学的には妥当ではありません。</p>
+    <p>第二はpredictive accuracyです。mechanism.pyをheld-out test dataで実行し、観測をどれだけ正確に予測できるかを測ります。</p>
+    <p>第三がscientific insightsです。機構から、専門家が定めた重要な問いへの答えを導けるかを判定します。ここではClaude Opus 4.8とGPT 5.6 Solの二つのagentic judgeが独立に評価し、必要なら同じ実験環境へ追加queryを出して、機構から本当にその洞察が導けるかを確認します。</p>
+    <p>さらにoverall scoreは、scientific constraintsをすべて通った場合だけ、予測精度と洞察の得点を認めるgatedな設計です。基本条件を壊す機構が、数値fitだけで高評価になることを防いでいます。</p>
+
+    <h2>7つの強いAIエージェントを比較した</h2>
+    <p>評価したのは七モデルです。Claude Fable 5.1、Claude Opus 5、Claude Opus 4.8、GPT 6 Astra、GPT 5.6 Sol、DeepSeek V4 Flash、Kimi K3です。</p>
+    <p>Claude系はClaude Code、GPT系はCodex、open-weight modelはOpenHands Agent SDKで動かしています。各モデルは最大reasoning effortで実行されています。</p>
+    <p>比較用のhuman scientist referenceには、それぞれの科学問題について現在までに人間研究者が到達した研究成果を使います。ここは注意が必要です。人間が同じ四時間、同じGPU、同じinterfaceで初見実験したcontrolled human baselineではありません。人類側の現在のprogressを参照値として置いているものです。</p>
+
+    <h2>最も強いAIでも、総合では人間参照の半分以下だった</h2>
+    <p>scientific constraintsを通過した場合だけ得点を認めるconditioned scoreでは、最も高かったClaude Fable 5.1が二十九・八パーセントです。GPT 6 Astraが二十八・七、Claude Opus 5が二十七・三と続きます。</p>
+    <p>human scientist referenceは六十三・七パーセントでした。つまり、この評価設計では最良のAIでも、人間研究の現時点の機構が支える科学的価値へはかなり届いていません。</p>
+    <p>さらにscientific constraints自体でも多く失敗します。GPT 6 Astraは二十六問題のうち十でconstraint failureでしたが、それ以外のモデルは十五から十七問題で失敗しています。かなり強いモデルでも、予測値を合わせながら基本的な科学条件を満たす機構を安定して構築できていません。</p>
+
+    <h2>一方で、予測精度だけなら人間参照へかなり近い</h2>
+    <p>ここがこの論文の中心です。GPT 6 Astraのpredictive accuracyは四十七・四パーセント。Claude Fable 5.1も四十七・四パーセントでした。human scientist referenceは四十八・八パーセントです。</p>
+    <p>数値だけを見ると、強いAIは人間研究の機構にかなり近い予測性能を出しています。しかしscientific insight scoreでは差が広がります。Claude Fable 5.1は四十二・四パーセント、GPT 6 Astraは二十九・四パーセント。人間参照は六十九・七パーセントでした。</p>
+    <p>つまり「予測精度が人間に近い」という一文だけでは、この実験の意味をほとんど捉えられません。科学的な仕組みを理解し、その意味を引き出せるかを見ると、大きな差が残っています。</p>
+
+    <h2>精度が高いモデルほど、洞察も高いとは限らない</h2>
+    <p>著者たちは、各問題の中でpredictive accuracyとscientific insightの順位がどれほど一致するかも調べています。</p>
+    <p>平均のKendall相関は〇・二〇で、正の関係はあるものの強くありません。さらに同点を除いた比較では、予測精度が高いagentの方がscientific insightでは低いという逆転が、平均三十九・九パーセントの比較で起きています。</p>
+    <p>したがって、予測精度を上げ続ければ自然に科学的理解も上がる、とはこのベンチマークでは言えません。少なくとも現在のagentは、二つをかなり別の能力として示しています。</p>
+
+    <h2>AIは、科学問題を「最適化問題」として扱いやすい</h2>
+    <p>専門家によるtrajectory reviewでは、いくつか共通した失敗が見つかりました。</p>
+    <p>一つ目は、最初に選んだ仮説や測定対象へ過度に依存することです。たとえば神経回路の問題で、あるneuronal readoutが本当に対象行動を表しているかを確かめず、その選択を前提に機構を組み立てます。</p>
+    <p>二つ目は、task optimizationをmechanism discoveryと取り違えることです。ある応答へ数値を合わせるためsynaptic strengthを調整し、そのfitをそのまま「仕組みを説明した」と扱うような例です。</p>
+    <p>数値目標があると、AIはそれを改善する方向へ強く引かれます。しかし、科学的発見では「なぜこのparameterなのか」「別の仮説でも同じfitになるのではないか」を検証しなければなりません。</p>
+
+    <h2>未解決の不確実性を、次の実験へ変えられない</h2>
+    <p>三つ目の失敗は、uncertaintyを認識しても、それを減らす実験を行わないことです。</p>
+    <p>プラズマ物理のARC tokamak問題では、Claude Fable 5.1が結果に数値的なartifactが混じっている可能性へ気づきました。しかし、その仮説を確かめるためにdiffusivity floorを下げる実験までは行いませんでした。</p>
+    <p>つまり、報告書に「これは不確実かもしれない」と書くことはできても、その不確実性を次のexperiment designへ結び付けられない場合があります。科学では、この一歩が重要です。</p>
+
+    <h2>観測したところで止まり、さらに条件を振らない</h2>
+    <p>四つ目は、面白い観測を得ても、その先を掘らないことです。</p>
+    <p>GPT 6 AstraはARC tokamakで、温度勾配と密度勾配への応答を観測しました。しかし、支配的なturbulence regimeそのものを変えたら性能が改善するか、という追加探索には進みませんでした。</p>
+    <p>この失敗は、実験回数がゼロだから起きるわけではありません。agentは多くのtool callを使っています。問題は、得られた結果から「次に何を切り分ければ世界について最も学べるか」を選ぶことです。</p>
+
+    <h2>それでも、良い科学的行動が全くないわけではない</h2>
+    <p>論文は失敗だけを示しているわけではありません。AIが実験結果を受けて仮説を捨てたり、モデルを修正したりする例もあります。</p>
+    <p>人間の脳活動を扱う問題では、Claude Fable 5.1が最初、文章の反復によるneural response suppressionを疑いました。しかし同じ文章を同じ条件で繰り返した追加実験では、二回目の応答がむしろ高くなり、時系列位置の影響だと解釈を修正しています。</p>
+    <p>GPT 6 Astraも、視覚物体表現の問題で最初の小規模testが不安定だったことを記録し、新しいconceptを追加したprospective experimentへ移っています。</p>
+    <p>つまり現在のagentにも、反証を受け入れ、説明を修正する科学的行動はあります。ただし、それが二十六課題全体で安定して、深い洞察まで続くわけではありません。</p>
+
+    <h2>洞察を直接教えると、大きく改善する</h2>
+    <p>研究チームは、Claude Fable 5.1へ追加のguidanceを与える実験も行っています。</p>
+    <p>まず、「良い機構は正確なだけでなく、将来の研究にも役立つべきだ」と一般的なgoalを加えると、neural dynamics問題とARC tokamak問題の両方でscientific insightへの寄与が改善しました。</p>
+    <p>さらに、評価で使う具体的なinsight questionを最初からagentへ見せると、改善はもっと大きくなります。neural dynamicsではinsight contributionが約三十二・五ポイント、ARC tokamakでは約十五・八ポイント増えました。</p>
+    <p>ただし著者たちは、これは自然な科学発見ではないと明確に注意しています。研究を始める時点で、「最終的に発見すべき洞察一覧」を科学者が知っているわけではないからです。</p>
+    <p>この結果は、agentが洞察をまったく扱えないというより、評価目標が明示されると最適化できる一方、自分で「何が重要な洞察になるか」を発見することが難しい、と読む方が適切です。</p>
+
+    <h2>judgeが後から引き出した洞察と、agent自身が発見した洞察も違う</h2>
+    <p>main evaluationでは、judge agentが提出された機構を読み、必要ならsimulatorも使って、そこからどの洞察が導けるかを調べます。</p>
+    <p>一方で、agentが実験中に自分自身で明示的に見つけた洞察だけを評価すると、スコアはさらに低くなります。Claude Fable 5.1はmainのscientific insight scoreが四十二・四パーセントですが、実験中にagent自身が発見したものに限ると二十二・七パーセントです。</p>
+    <p>つまり提出したmechanismには、後から強いjudgeが読み解けば取り出せる意味が含まれていても、研究を実行したagent自身はその意味へ気づいていない場合があります。</p>
+    <p>これは「良いmodel artifactを作ること」と「そのartifactから科学的な意味を発見すること」を分けて考える必要性を示します。</p>
+
+    <h2>評価自体にも難しさがある</h2>
+    <p>scientific insightは、予測誤差のように完全な自動計算だけでは採点できません。EurekaBenchでは二つの強いjudge agentを使い、証拠を要求し、必要なら追加実験をさせています。</p>
+    <p>それでも著者たちは、judge自身の科学的推論能力が評価上限になると認めています。強く断定された説明を、機構から十分に導けると誤認し、insightを過大評価する可能性があります。</p>
+    <p>専門家による一部submissionのreviewでも、自動judgeがやや寛大な場合が示唆されています。ARC tokamakでは、fusion expertがClaude Fable 5.1を比較対象の中では最も高く評価しつつ、研究者レベルというより、その分野の修士学生に近い仕事だと評価しています。</p>
+
+    <h2>人間参照との数字を、そのまま「AI対科学者の勝敗」にしてはいけない</h2>
+    <p>human scientist referenceのpredictive accuracyは四十八・八パーセント、scientific insightは六十九・七パーセント、conditioned scoreは六十三・七パーセントです。</p>
+    <p>しかし、人間側は同じ実験条件で四時間だけ作業した参加者ではありません。それぞれの分野で、現在までに人間研究者が積み上げた研究成果を使っています。</p>
+    <p>したがって「AIは人間の半分しか科学できない」「AIは予測精度で科学者と同等になった」といった一般化はできません。このbenchでのhuman referenceは、同条件の能力比較より、現在知られている有力な機構がどれだけの科学的価値を持つかを見る基準です。</p>
+
+    <h2>pretraining leakageも完全には排除できない</h2>
+    <p>評価時にはWeb検索を許可していますが、各問題の元になった研究論文や、それを転載するliterature aggregatorへのアクセスをblockしています。agentが検索で答えを直接拾うことを防ぐためです。</p>
+    <p>しかし、モデルのpretraining段階でsource researchを見ていた可能性までは排除できません。論文もその点を明示しています。</p>
+    <p>また、ベンチマークの問題自体は人間がすでに一部解明した研究から作られています。完全に未知の自然現象をAIが史上初めて発見したかを測るものではありません。既知の科学的進展を参照しながら、そこへ自力で再到達・一般化できるかを見る評価です。</p>
+
+    <h2>この研究がまだ言えないこと</h2>
+    <p>二十六課題は六分野へ広がっていますが、科学全体を代表する数ではありません。神経科学が十課題、宇宙物理が七課題と比重にも偏りがあります。</p>
+    <p>また、科学的発見には複数の正しい道筋があります。EurekaBenchの三百六insight questionは、専門家と設計した重要な方向を表しますが、agentが全く別の有意義な発見をしても、rubricに含まれなければ得点されない可能性があります。</p>
+    <p>さらに、judgeによるinsight評価には不確実性があります。実験回数も各model・taskについて大規模な反復比較ではなく、agentの確率的なばらつきを完全には測れていません。</p>
+    <p>そして2026年10月4日時点ではarXiv preprintです。今後、問題追加、外部検証、査読を通じて評価設計が変わる可能性があります。</p>
+
+    <h2>ここからは、研究支援AIへの含意</h2>
+    <p>ここからは論文の結果を踏まえた分析です。第一の含意は、科学AIの進歩を「benchmark scoreが上がった」「予測誤差が下がった」だけで測ると、重要な能力差を見逃す可能性があるということです。</p>
+    <p>現在のAIは、明示されたobjectiveを最適化する能力が強い。EurekaBenchでも、predictive accuracyでは人間参照にかなり近づきます。しかし科学者が本当に価値を置くのは、なぜその予測が成り立つのか、どの条件で壊れるのか、次に何を調べるべきかという理解です。</p>
+    <p>研究エージェントの評価では、最終性能だけでなく、機構の妥当性、反証可能性、uncertaintyの扱い、実験による切り分け、そこから得られる新しい問いまで見る必要があります。</p>
+
+    <h2>「不確実性を次の実験へ変える能力」が重要になる</h2>
+    <p>第二の含意は、agentのresearch loop設計です。EurekaBenchの失敗例では、「ここは分からない」と文章で認識できても、その不確実性を減らす実験を選べないケースが目立ちます。</p>
+    <p>実務的な研究支援AIを作るなら、単にreflectionを増やすより、「現在の仮説を分けるには、どの観測が最も情報量を持つか」を明示的に計画させる仕組みが有効かもしれません。</p>
+    <p>つまり、次の行動を「一番スコアが上がりそうな実験」ではなく、「競合する説明を最も区別できる実験」として選ぶ設計です。これはactive learningやBayesian experimental designに近い考え方ですが、今回の論文自体がその解決策を実証したわけではありません。</p>
+
+    <h2>AI科学者には、最適化器と説明者の両方が必要になる</h2>
+    <p>第三の含意は、agent architectureです。予測を良くする探索と、説明可能な機構を探す探索は、同じ方針で動かすと前者へ偏りやすい可能性があります。</p>
+    <p>一つのagentに全部任せるのではなく、数値性能を改善する役割、仮説の意味を問い直す役割、反証実験を考える役割、発見された機構から新しい予測を引き出す役割を分ける方法も考えられます。</p>
+    <p>ただし、役割を増やせば自動的に科学的洞察が増えるわけではありません。重要なのは、それぞれが同じ証拠へ接続され、仮説が実験によって更新されることです。</p>
+
+    <h2>最後に残す要点</h2>
+    <p>EurekaBenchは、AIが科学問題で良い数値を出せるかではなく、観測から実験を組み立て、説明可能な機構を発見し、そこから新しい科学的洞察を引き出せるかを測ります。</p>
+    <p>二十六の長期課題、六科学分野、三百六のinsight questionを使い、七つの強いAI agentを最大四時間ずつ実験させました。</p>
+    <p>強いAIはpredictive accuracyではhuman scientist referenceへかなり近づきます。GPT 6 AstraとClaude Fable 5.1は四十七・四パーセント、人間参照は四十八・八パーセントでした。</p>
+    <p>しかしscientific insightでは、Claude Fable 5.1が四十二・四、GPT 6 Astraが二十九・四に対し、人間参照は六十九・七です。予測精度と洞察の順位も強くは一致せず、高精度側が洞察で負ける比較が約四割ありました。</p>
+    <p>失敗分析では、AIが最初の仮説へ固執する、fitをmechanismと取り違える、不確実性を次の実験へ変えない、面白い観測を得ても追加探索しない、といったパターンが見つかっています。一方で、反証を受けて仮説を修正する良い例もあります。</p>
+    <p>この研究から安全に言えるのは、「AIは科学を理解できない」ということではありません。むしろ、現在のAIは明示された目的の最適化に比べて、何を説明すべきか、何をまだ知らないか、どの実験が世界の理解を深めるかを自律的に選ぶ能力が弱い、ということです。</p>
+    <p>科学AIの次の課題は、答えを早く出すことだけではありません。予測が当たった後に、なぜ当たったのかを説明し、その説明を壊す実験を自分で考え、そこから次の問いを生み出すことです。EurekaBenchは、その差を測れる形にした点で、今日聞く価値のある研究です。</p>
+  </article>
+
+  <section class="player" aria-label="読み上げ操作">
+    <div class="transport">
+      <button id="prev-block" type="button" aria-label="前の読み上げ単位へ">←</button>
+      <button id="play" type="button" aria-label="再生">▶</button>
+      <button id="pause" type="button" aria-label="一時停止">Ⅱ</button>
+      <button id="stop" type="button" aria-label="停止">■</button>
+      <button id="next-block" type="button" aria-label="次の読み上げ単位へ">→</button>
+    </div>
+    <div class="section-nav" aria-label="章移動">
+      <button id="prev-section" type="button" aria-label="前の章へ">‹</button>
+      <span id="section-label">導入</span>
+      <button id="next-section" type="button" aria-label="次の章へ">›</button>
+    </div>
+    <div class="voice-row">
+      <select id="voice" aria-label="日本語音声"></select>
+    </div>
+    <div class="speed"><span>速度</span><input id="rate" type="range" min="0.7" max="4" step="0.1" value="1"><span id="rateValue">1.0×</span></div>
+  </section>
+
+
+
+
+
+
+
+  <section class="sources" aria-label="出典">
+    <strong>出典</strong>
+    <p><a href="https://www.alphaxiv.org/abs/2610.00492">alphaXiv — EurekaBench: Measuring Agentic Ability to Discover New Scientific Insights</a></p>
+    <p><a href="https://arxiv.org/abs/2610.00492">arXiv — EurekaBench: Measuring Agentic Ability to Discover New Scientific Insights</a></p>
+    <p><a href="https://github.com/EurekaBench/EurekaBench">GitHub — EurekaBench benchmark and code</a></p>
+    <p><a href="https://eurekabench.github.io">EurekaBench — Project website</a></p>
+  </section>
+</main>
+<script>
+(() => {
+  const synth = window.speechSynthesis;
+  const blocks = [...document.querySelectorAll("#article h1,#article h2,#article h3,#article p")];
+  const sectionStarts = [...new Set([0, ...blocks.map((node, i) => node.tagName === "H2" ? i : -1).filter(i => i >= 0)])];
+  const play = document.querySelector("#play");
+  const pause = document.querySelector("#pause");
+  const stop = document.querySelector("#stop");
+  const prevBlock = document.querySelector("#prev-block");
+  const nextBlock = document.querySelector("#next-block");
+  const prevSection = document.querySelector("#prev-section");
+  const nextSection = document.querySelector("#next-section");
+  const sectionLabel = document.querySelector("#section-label");
+  const voice = document.querySelector("#voice");
+  const rate = document.querySelector("#rate");
+  const rateValue = document.querySelector("#rateValue");
+  const theme = document.querySelector("#theme");
+  let index = 0, playing = false, paused = false, selectedVoice = "", generation = 0;
+  let wakeLock = null, wakeLockWanted = false;
+
+  async function requestWakeLock() {
+    const wakeLockApi = window.navigator?.wakeLock;
+    wakeLockWanted = true;
+    if (!wakeLockApi?.request || wakeLock) return;
+    try {
+      const lock = await wakeLockApi.request("screen");
+      if (!wakeLockWanted) {
+        await lock.release();
+        return;
+      }
+      wakeLock = lock;
+      wakeLock.addEventListener?.("release", () => { wakeLock = null; });
+    } catch {
+      wakeLock = null;
+    }
+  }
+
+  async function releaseWakeLock() {
+    wakeLockWanted = false;
+    const current = wakeLock;
+    wakeLock = null;
+    if (!current) return;
+    try {
+      await current.release();
+    } catch {
+      // Wake Lock is best-effort; speech playback must continue to work.
+    }
+  }
+
+  function voices() {
+    const previous = selectedVoice || voice.value;
+    const items = synth.getVoices().filter(v => /^ja(?:-|_)/i.test(v.lang));
+    voice.replaceChildren();
+    for (const v of items) {
+      const o = document.createElement("option");
+      o.value = v.voiceURI;
+      o.textContent = v.name;
+      voice.append(o);
+    }
+    if (items.some(v => v.voiceURI === previous)) voice.value = previous;
+    selectedVoice = voice.value;
+  }
+
+  function clearHighlight() {
+    blocks.forEach(node => node.classList.remove("is-speaking"));
+  }
+
+  function sectionPosition() {
+    let pos = 0;
+    for (let i = 0; i < sectionStarts.length; i += 1) {
+      if (sectionStarts[i] <= index) pos = i;
+      else break;
+    }
+    return pos;
+  }
+
+  function updateNavigation() {
+    prevBlock.disabled = index <= 0;
+    nextBlock.disabled = index >= blocks.length - 1;
+
+    const pos = sectionPosition();
+    const start = sectionStarts[pos] ?? 0;
+    const previousTargetExists = index > start || pos > 0;
+    prevSection.disabled = !previousTargetExists;
+    nextSection.disabled = pos >= sectionStarts.length - 1;
+
+    const startNode = blocks[start];
+    sectionLabel.textContent = startNode?.tagName === "H2" ? startNode.textContent : "導入";
+  }
+
+  function showCurrent() {
+    clearHighlight();
+    const current = blocks[index];
+    if (!current) return;
+    current.classList.add("is-speaking");
+    current.scrollIntoView({ block: "center", behavior: "smooth" });
+    updateNavigation();
+  }
+
+  function speakCurrent() {
+    if (!playing || paused || index >= blocks.length) {
+      if (index >= blocks.length) {
+        playing = false;
+        paused = false;
+        clearHighlight();
+        void releaseWakeLock();
+      }
+      updateNavigation();
+      return;
+    }
+
+    showCurrent();
+    const localGeneration = ++generation;
+    const utterance = new SpeechSynthesisUtterance(blocks[index].textContent);
+    utterance.lang = "ja-JP";
+    utterance.rate = Number(rate.value);
+    const selected = synth.getVoices().find(item => item.voiceURI === voice.value);
+    if (selected) utterance.voice = selected;
+
+    utterance.onend = () => {
+      if (localGeneration !== generation || !playing || paused) return;
+      index += 1;
+      speakCurrent();
+    };
+
+    utterance.onerror = event => {
+      if (localGeneration !== generation) return;
+      if (event.error !== "canceled" && event.error !== "interrupted") {
+        playing = false;
+        paused = false;
+        clearHighlight();
+        void releaseWakeLock();
+        updateNavigation();
+      }
+    };
+
+    synth.speak(utterance);
+  }
+
+  function jumpTo(target) {
+    const next = Math.max(0, Math.min(blocks.length - 1, target));
+    const resume = playing && !paused;
+    const keepPaused = paused;
+
+    generation += 1;
+    synth.resume?.();
+    synth.cancel();
+    index = next;
+
+    if (resume) {
+      playing = true;
+      paused = false;
+      void requestWakeLock();
+      speakCurrent();
+      return;
+    }
+
+    playing = keepPaused;
+    paused = keepPaused;
+    showCurrent();
+    if (keepPaused) void requestWakeLock();
+  }
+
+  function jumpSection(delta) {
+    const pos = sectionPosition();
+    let targetPos;
+
+    if (delta < 0 && index > sectionStarts[pos]) targetPos = pos;
+    else targetPos = pos + delta;
+
+    if (targetPos < 0 || targetPos >= sectionStarts.length) return;
+    jumpTo(sectionStarts[targetPos]);
+  }
+
+  play.addEventListener("click", () => {
+    if (paused) {
+      generation += 1;
+      synth.resume?.();
+      synth.cancel();
+      paused = false;
+      playing = true;
+      void requestWakeLock();
+      speakCurrent();
+      return;
+    }
+    if (playing) return;
+    if (index >= blocks.length) index = 0;
+    playing = true;
+    void requestWakeLock();
+    speakCurrent();
+  });
+
+  pause.addEventListener("click", () => {
+    if (!playing || paused) return;
+    synth.pause();
+    paused = true;
+  });
+
+  stop.addEventListener("click", () => {
+    generation += 1;
+    synth.resume?.();
+    synth.cancel();
+    playing = false;
+    paused = false;
+    index = 0;
+    clearHighlight();
+    updateNavigation();
+    void releaseWakeLock();
+  });
+
+  prevBlock.addEventListener("click", () => jumpTo(index - 1));
+  nextBlock.addEventListener("click", () => jumpTo(index + 1));
+  prevSection.addEventListener("click", () => jumpSection(-1));
+  nextSection.addEventListener("click", () => jumpSection(1));
+
+  voice.addEventListener("change", () => {
+    selectedVoice = voice.value;
+    if (playing && !paused) {
+      generation += 1;
+      synth.cancel();
+      speakCurrent();
+    }
+  });
+
+  rate.addEventListener("input", () => {
+    rateValue.textContent = Number(rate.value).toFixed(1) + "×";
+  });
+
+  theme.addEventListener("click", () => {
+    const dark = document.documentElement.dataset.theme === "dark";
+    document.documentElement.dataset.theme = dark ? "light" : "dark";
+    theme.textContent = dark ? "☾" : "☀";
+    localStorage.setItem("rsvp:theme", dark ? "light" : "dark");
+  });
+
+  document.documentElement.dataset.theme =
+    localStorage.getItem("rsvp:theme") ||
+    (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  theme.textContent = document.documentElement.dataset.theme === "dark" ? "☀" : "☾";
+
+  voices();
+  synth.addEventListener?.("voiceschanged", voices);
+  updateNavigation();
+
+  document.addEventListener?.("visibilitychange", () => {
+    if (document.visibilityState === "visible" && (playing || paused)) {
+      void requestWakeLock();
+    }
+  });
+
+  addEventListener("pagehide", () => {
+    generation += 1;
+    synth.cancel();
+    void releaseWakeLock();
+  });
+})();
+</script>
+</body>
+</html>
