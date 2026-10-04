@@ -2,6 +2,13 @@
   "schema_version": 1,
   "items": [
     {
+      "id": "2026-10-04-eurekabench-scientific-insight-discovery",
+      "title": "予測できても、科学を理解したとは限らない――EurekaBench",
+      "date": "2026-10-04",
+      "category": "research",
+      "path": "./research/2026-10-04-eurekabench-scientific-insight-discovery.html"
+    },
+    {
       "id": "2026-10-03-scholarcatalyst-research-inspiration-retrieval",
       "title": "研究の「次の一手」を見つけるAIはまだ弱い――ScholarCatalyst",
       "date": "2026-10-03",
