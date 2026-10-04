@@ -2,6 +2,13 @@
   "schema_version": 1,
   "items": [
     {
+      "id": "2026-10-05-mcp-events-event-driven-ai",
+      "title": "MCP Eventsで変わるAI運用――時刻で動くAIから、出来事で動くAIへ",
+      "date": "2026-10-05",
+      "category": "research",
+      "path": "./research/2026-10-05-mcp-events-event-driven-ai.html"
+    },
+    {
       "id": "2026-10-04-eurekabench-scientific-insight-discovery",
       "title": "予測できても、科学を理解したとは限らない――EurekaBench",
       "date": "2026-10-04",
