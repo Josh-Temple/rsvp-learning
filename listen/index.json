@@ -2,6 +2,13 @@
   "schema_version": 1,
   "items": [
     {
+      "id": "2026-10-06-ai-theorist-rucl3-excitons",
+      "title": "未公開の実験データから、AIは物理理論を組み立てられるか――AI Theorist",
+      "date": "2026-10-06",
+      "category": "research",
+      "path": "./research/2026-10-06-ai-theorist-rucl3-excitons.html"
+    },
+    {
       "id": "2026-10-05-mcp-events-event-driven-ai",
       "title": "MCP Eventsで変わるAI運用――時刻で動くAIから、出来事で動くAIへ",
       "date": "2026-10-05",
