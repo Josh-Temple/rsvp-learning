@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f2efe8">
+  <meta name="description" content="未公開のα-RuCl3光学データを起点に、AIが候補理論を立て、第一原理計算で棄却・修正し、励起子構造と検証可能な偏光予測へ到達したAI Theorist研究を、方法・結果・限界まで長めに解説するDaily Paper Listen。">
+  <title>未公開の実験データから、AIは物理理論を組み立てられるか――AI Theorist</title>
+  <style>
+    :root{color-scheme:light;--bg:#f2efe8;--ink:#121722;--muted:#73766f;--line:#cbc8bf;--blue:#5d7487}
+    html[data-theme="dark"]{color-scheme:dark;--bg:#11151a;--ink:#edf0eb;--muted:#959b97;--line:#343a3e;--blue:#7892a6}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Hiragino Sans","Noto Sans JP",sans-serif;line-height:1.9}
+    .shell{width:min(760px,100%);margin:0 auto;padding:max(18px,env(safe-area-inset-top)) 20px max(42px,env(safe-area-inset-bottom))}
+    .topbar{min-height:52px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+    .icon{width:42px;height:42px;display:grid;place-items:center;border:0;background:transparent;color:var(--muted);text-decoration:none;font:inherit}
+    .meta{margin:28px 0 8px;color:var(--muted);font-size:.75rem}
+    h1{font-size:clamp(2rem,8vw,3.4rem);line-height:1.12;letter-spacing:-.04em;margin:.2em 0 .8em}
+    h2{margin:2.2em 0 .6em;font-size:1.2rem}
+    p{margin:0 0 1.25em}
+    article>*{transition:background-color .15s ease}
+    .is-speaking{background:color-mix(in srgb,var(--blue) 16%,transparent)}
+    .player{position:sticky;bottom:0;margin:32px -6px 0;padding:12px 6px;background:color-mix(in srgb,var(--bg) 94%,transparent);border-top:1px solid var(--line);backdrop-filter:blur(8px)}
+    .speed{display:grid;grid-template-columns:48px 1fr 42px;gap:10px;align-items:center;margin-top:10px;font-size:.78rem;color:var(--muted)}
+    input{width:100%}
+    .sources{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}
+    .sources a{color:var(--ink)}
+    .mode-nav{display:inline-flex;align-items:center;gap:4px}
+    .mode-icon{width:42px;height:42px;display:grid;place-items:center;color:var(--muted);text-decoration:none;opacity:.5}
+    .mode-icon.is-active{color:var(--ink);opacity:1}
+    .mode-icon svg{width:20px;height:20px;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+    .brand-mark{width:22px;height:14px;display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+    .brand-mark i{display:block}
+    .brand-mark i:nth-child(1){background:#a85248}
+    .brand-mark i:nth-child(2){background:#5d7487}
+    .brand-mark i:nth-child(3){background:#c2a653}
+    .transport{display:grid;grid-template-columns:repeat(5,48px);justify-content:center;gap:8px}
+    .transport button,.section-nav button,.voice-row select{min-height:42px;border:1px solid var(--line);background:transparent;color:var(--ink);font:inherit}
+    .transport button{width:48px}
+    .section-nav{display:grid;grid-template-columns:48px 1fr 48px;align-items:center;gap:8px;margin-top:10px}
+    .section-nav button:disabled{opacity:.25}
+    #section-label{min-width:0;overflow:hidden;color:var(--muted);font-size:.78rem;text-align:center;white-space:nowrap;text-overflow:ellipsis}
+    .voice-row{margin-top:10px}
+    .voice-row select{width:100%;padding:0 8px}
+    .mode-icon:focus-visible,.transport button:focus-visible,.section-nav button:focus-visible,.voice-row select:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+  </style>
+</head>
+<body>
+<main class="shell">
+  <header class="topbar">
+    <nav class="mode-nav" aria-label="モード切替">
+      <a class="mode-icon" href="../../index.html" aria-label="RSVPへ移動" title="RSVP">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      </a>
+      <a class="mode-icon" href="../../index.html?library=learn" aria-label="Learnへ移動" title="Learn">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 5.5c2.6-.8 5.3-.4 8 1.2v12c-2.7-1.6-5.4-2-8-1.2v-12Z" />
+          <path d="M20 5.5c-2.6-.8-5.3-.4-8 1.2v12c2.7-1.6 5.4-2 8-1.2v-12Z" />
+        </svg>
+      </a>
+      <a class="mode-icon is-active" href="../../index.html?library=listen" aria-label="Listen一覧へ移動" aria-current="page" title="Listen">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 13v-1a8 8 0 0 1 16 0v1" />
+          <path d="M4 13h3v7H5a1 1 0 0 1-1-1v-6Zm16 0h-3v7h2a1 1 0 0 0 1-1v-6Z" />
+        </svg>
+      </a>
+    </nav>
+    <button id="theme" class="icon" type="button" aria-label="テーマ切替">☾</button>
+  </header>
+
+
+
+  <article id="article">
+    <p class="meta">情報基準日 2026年10月6日</p>
+    <h1>未公開の実験データから、AIは物理理論を組み立てられるか――AI Theorist</h1>
+
+    <p>今日取り上げるのは、2026年10月1日にarXivへ公開された「The AI Theorist reveals excitonic structure in α-RuCl3」です。研究チームは、量子材料アルファ・ルテニウム三塩化物の未公開の光学実験データをAIへ渡し、その背後にある微視的な物理モデルを、複数のAIエージェントに探索させました。</p>
+    <p>この研究が面白いのは、公開論文の答えを探させるのではなく、人間がまだ論文として公表していない観測を出発点にしたことです。AIは文献を調べ、複数の説明候補を立て、第一原理計算を実行し、実験と合わない仮説を捨て、残った説明を修正していきます。</p>
+    <p>最終的にAI Theoristは、低エネルギーの光学応答を説明する候補として、スピン軌道相互作用、クーロン遮蔽、電子と正孔の相互作用が重要だというモデルへ到達しました。さらに、近接した複数の励起子状態が、異なる偏光選択則を持つという解釈を提案しています。</p>
+    <p>ただし、「AIが一人で新しい物理を発見した」と言うのは正確ではありません。人間の科学者が研究方向を設定し、実験を設計し、測定を実行しています。AIが自律的に担ったのは、その測定結果を受け取った後の理論探索です。今日は、この役割分担も含めて見ていきます。</p>
+
+    <h2>対象は、量子スピン液体候補として研究されるα-RuCl3</h2>
+    <p>アルファ・ルテニウム三塩化物、α-RuCl3は、Kitaev型の量子スピン液体に関連する材料として長く研究されてきました。電子相関、スピン軌道相互作用、結晶場が複雑に絡み合うため、その電子構造を説明する理論モデルは単純ではありません。</p>
+    <p>量子スピン液体そのものの実現を今回の論文が証明したわけではありません。今回の焦点はもっと限定されていて、α-RuCl3の低エネルギー光学応答に現れる複数の特徴を、第一原理計算からどこまで統一的に説明できるかです。</p>
+    <p>人間の研究者は、薄いα-RuCl3結晶をグラフェン電極で挟み、窒化ホウ素で封止したデバイスを作りました。そして8ケルビンで、微分反射とphotocurrent、つまり光照射によって流れる電流を測定しています。</p>
+    <p>実験では、低エネルギー側にL、α、αプライムと呼ぶ三つの特徴があり、さらに高エネルギー側にβがあります。αは反射でもphotocurrentでも目立ちます。一方、αプライムは反射では弱いのに、photocurrentでは比較的はっきり見えます。この違いをどう説明するかが、重要な手掛かりになりました。</p>
+
+    <h2>AI Theoristは、一つのモデルではなく複数の役割で動く</h2>
+    <p>AI Theoristは、単一のチャットモデルへ「このスペクトルを説明してください」と頼む仕組みではありません。仮説生成、計算設計、計算実行、批評、統合という役割を分けたエージェントシステムです。</p>
+    <p>仮説エージェントは、観測結果と文献を読み、複数の物理的説明を提案します。計算設計エージェントは、その候補を区別するためにどの計算を行うべきか決めます。実行エージェントは電子構造計算を走らせ、批評エージェントは数値計算が信頼できるか、実験との不一致が数値エラーなのか物理モデルの誤りなのかを確認します。最後に統合エージェントが、残った証拠をまとめて解釈と次の予測を作ります。</p>
+    <p>実装では、仮説、実行、批評、統合にClaude Opus 4.6を使い、計算設計にはQwen3.5-27Bを追加学習したモデルを使っています。計算設計モデルはsupervised fine-tuningとGRPOで調整されています。</p>
+    <p>ツールは十八種類あります。文献検索にPaperclip、電子構造計算にQuantum ESPRESSO、多体計算にBerkeleyGW、さらにGaussian Process Upper Confidence Boundを使うparameter search、NumPyやSciPyを使う数値解析、可視化などです。</p>
+
+    <h2>人間とAIの境界は明確に分けられている</h2>
+    <p>研究の最初に、人間の科学者が「α-RuCl3の電子・励起子構造を理解する」という大きな方向を設定します。AI Theoristは文献を使って、どの測定が有用かという実験計画を支援します。</p>
+    <p>しかし測定条件を最終決定し、実験装置を操作してデータを取得するのは人間です。AIがロボット実験室を自律運転したわけではありません。</p>
+    <p>その後、未公開のreflectionとphotocurrent spectrum、試料条件などをAI Theoristへ渡します。ここからの理論探索、つまり仮説を出し、どの第一原理計算で比較すべきか決め、計算し、不一致を批評し、モデルを修正する部分をAIが自律的に進めています。</p>
+    <p>したがって、この研究の主張は「完全自律科学者」よりも、「実験科学者から新しい観測を受け取り、理論家が行うような計算探索を自律化できるか」に近いです。</p>
+
+    <h2>最初から正解へ向かったわけではない</h2>
+    <p>AI Theoristは、調査全体で約一億五千四百万tokenを使いました。outputだけでも約六十八万tokenです。かなり大規模な探索です。</p>
+    <p>その中で、主に三つの説明ルートを調べています。一つ目はlocal correlationとmultiplet excitationを中心にした説明。二つ目は電子状態のoccupationを強く制約したstarting state。三つ目が、occupation制約を緩め、screeningとelectron-hole interactionを更新していく説明です。</p>
+    <p>最初のlocal-correlation modelは、観測されたgapと光学特徴を同時に説明できず、棄却されました。二つ目のconstrained starting stateでは、実験には見えない強い光学peakが計算上現れました。この不一致から、AIはoccupation constraintを外した方向へ移ります。</p>
+    <p>制約を外すと異常なpeakが弱まり、実験で支配的だったαが計算でも主要な低エネルギーresonanceになります。ここから三つ目のルートを掘り下げています。</p>
+
+    <h2>次の問題は、band gapのずれだった</h2>
+    <p>モデルを改善しても、計算上のgapには実験との不一致が残りました。AI Theoristは、このずれがquasiparticle energyそのものによるのか、それともCoulomb screeningの扱いによるのかを分けて調べます。</p>
+    <p>quasiparticle energyだけを更新し、screeningを固定した計算ではgapはあまり改善しませんでした。そこでscreeningも更新する計算へ進みます。</p>
+    <p>screening updateを重ねると、計算上のquasiparticle gapはおよそ1.33電子ボルトから1.59、1.73、そして1.80電子ボルトへ増加しました。最終計算値は1.8004電子ボルト、外挿したlimiting valueは1.8710電子ボルトです。</p>
+    <p>ここで重要なのは、AIが単にparameterを変えてfitを良くしたというより、「どの物理的仮定を変えると、どの観測が動くか」を切り分ける計算を選んでいる点です。ただし後で述べるように、すべての因果分離が完全にできたわけではありません。</p>
+
+    <h2>電子と正孔の相互作用を入れると、低エネルギーの光学応答が現れた</h2>
+    <p>計算では、まずDFTプラスUとspin-orbit couplingで電子状態を求め、GWでquasiparticle correctionを行い、さらにBethe-Salpeter equation、BSEを使って電子と正孔の相互作用を扱います。</p>
+    <p>spin-orbit couplingを入れず、electron-hole interactionだけを加えた計算では、実験で見える低エネルギー領域の光学応答は弱いままでした。逆にspin-orbit couplingだけを入れたindependent-particle calculationでも、同じ領域のoptical weightは十分ではありません。</p>
+    <p>spin-orbit couplingとelectron-hole interactionの両方を含むGW-BSE計算にすると、低エネルギー側に大きな光学強度が現れ、約1.19電子ボルトに強いresonanceが出ます。</p>
+    <p>AI Theoristは、この結果から、低エネルギーの光学応答にはspin-orbit couplingとelectron-hole interactionの両方が重要だという候補モデルへ進みました。</p>
+
+    <h2>三つの低エネルギー状態を、L、α、αプライムへ対応付けた</h2>
+    <p>BSE計算では、1.077、1.179、1.291電子ボルト付近に代表的な低エネルギーexciton stateが得られます。研究では、それぞれを実験で見えたL、α、αプライムの候補として対応付けています。</p>
+    <p>これらは約1.8電子ボルトのquasiparticle reference gapよりかなり低い位置にあります。また、正孔位置を固定して電子分布を見ると、L、α、αプライムの候補は正孔周辺へ比較的コンパクトに集中しています。</p>
+    <p>一方、β領域の代表的な1.964電子ボルトの状態は、より広い範囲へ広がります。低エネルギー三状態がgapより下にあり、空間的にも束縛された形を示すことから、研究チームはbound excitonとしての解釈を支持しています。</p>
+    <p>ここでの表現は「これらが実験peakの唯一の確定した起源」ではなく、「採用した計算モデルの中で、実験特徴と整合する候補assignment」です。</p>
+
+    <h2>αとαプライムは、偏光への応答が大きく違う</h2>
+    <p>この研究で最も具体的な新しい解釈の一つが、αとαプライムのoptical selection ruleです。</p>
+    <p>α候補はzigzag方向の偏光へ非常に強く結合し、armchair方向への結合はほとんどありません。armchair対zigzagのsquared-amplitude ratioは、およそ九かける十のマイナス五乗です。</p>
+    <p>一方、αプライム候補はarmchair方向を好み、同じ比率は約二・九です。ただし両方向を合計したtotal optical strengthは、αプライムがαのおよそ五パーセントしかありません。</p>
+    <p>つまり、二つのexcitonは空間的にはともに比較的compactでも、光との結合の強さと方向性は大きく違うという説明です。この違いが、αがreflectionで強く、αプライムが弱いことと整合します。</p>
+
+    <h2>photocurrentでαプライムが見えやすい理由は、まだ仮説を含む</h2>
+    <p>難しいのは、reflectionとphotocurrentが同じobservableではないことです。計算が直接出しているのは主としてdielectric responseやoptical matrix elementです。一方photocurrentは、光を吸収した後にexcitonが解離し、電子や正孔が実際に回収される確率にも依存します。</p>
+    <p>論文では、αプライムはαより励起energyが高いため、共通のelectron-hole continuumを仮定するとbindingが弱く、電場で解離しやすい可能性があると議論しています。それなら、光学的には弱いαプライムがphotocurrentでは比較的目立つことを説明できるかもしれません。</p>
+    <p>ただしこれは候補説明です。state-dependentなdissociationやcharge collectionを直接計算・測定して確定したわけではありません。論文自身も、calculated dielectric responseと実験のphotocurrentを直接同一視していません。</p>
+
+    <h2>AIは、新しい偏光実験を予測として残した</h2>
+    <p>AI Theoristが出した、特に分かりやすいtestable predictionがあります。入射光の偏光をzigzag方向からarmchair方向へ回転すると、αに対するαプライムの相対強度が増えるはずだ、という予測です。</p>
+    <p>もし実際のpolarization-resolved spectroscopyでこの変化が確認されれば、αとαプライムに異なるselection ruleを割り当てた今回のモデルを支持する新しい証拠になります。</p>
+    <p>逆に、予測された偏光contrastが出なければ、候補assignmentや基礎となる電子構造モデルを見直す必要があります。</p>
+    <p>重要なのは、この予測は論文時点ではまだ将来実験向けだということです。AIが予測し、人間が後で検証して成功した、というclosed-loop resultまでは今回の論文には含まれていません。</p>
+
+    <h2>独立した人間理論家も後から確認している</h2>
+    <p>論文では、AI Theoristによる探索の後に、独立したhuman theoristが数値手法とmicroscopic interpretationを確認し、結果をcorroborateしたと報告しています。</p>
+    <p>これは重要な安全策です。高価で複雑な第一原理計算では、計算が走ったことと、物理的に意味があることは同じではありません。人間の専門家が後からチェックすることで、AIだけの自己評価に閉じていません。</p>
+    <p>一方で、論文本文から確認できる範囲では、その独立理論家がどの計算を完全に再実行したのか、どの数値を独立に再現したのかという詳細なprotocolまでは十分に記載されていません。したがって「独立再現実験済み」とまで強く表現するのは避けるべきです。</p>
+
+    <h2>数値的な限界もかなり残っている</h2>
+    <p>第一の重要な限界はconvergenceです。64-point excitonic calculationでは、36-pointから64-pointへ増やしたとき、αとαプライム候補のenergyはそれぞれ約マイナス13.2、マイナス12.2ミリ電子ボルト変化しています。64から96-pointへのspectral interpolationでは主要channelのcentroid変化は最大8.3ミリ電子ボルトでした。</p>
+    <p>これはgrid sensitivityがある程度小さいことを示しますが、論文自身、mean-field calculationやscreening calculation全体が完全にconvergedしたことを示すものではないと注意しています。</p>
+    <p>二つ目はspin-orbit couplingの比較です。メイン図のSOC計算は64-point、no-SOC referenceは36-pointで、同じgridではありません。さらにpseudopotentialやquasiparticle correctionも異なるため、差をspin-orbit couplingだけの因果効果として読むことはできません。</p>
+    <p>matched 36-point analysisでもSOCに関連するoptical-weight redistributionは確認していますが、論文のworkflow図にも「SOC-only controlはまだ必要」と残されています。</p>
+
+    <h2>スペクトル全体を完全に説明したわけでもない</h2>
+    <p>候補モデルは低エネルギー特徴をかなり整理しますが、実験スペクトル全体を完全に再現したわけではありません。workflow上でも、βとαのenergy spacingがまだ小さすぎるという不一致が残っています。</p>
+    <p>また、採用したGaussian broadeningではLとαプライムは、polarization-averageしたunshifted spectrum上で独立した明確なpeakにはなりません。個々のdiscrete exciton stateと、実験で観測されるresolved spectral peakは同じものではありません。</p>
+    <p>この区別は重要です。計算で1.291電子ボルトに状態が見つかったからといって、実験のαプライムが完全にそれだと確定するわけではありません。energy、optical strength、polarization、real-space distribution、複数probeとの整合性を組み合わせたcandidate assignmentです。</p>
+
+    <h2>AIシステムとしての再現性も、現時点では未完成</h2>
+    <p>AI TheoristのMethodsには、どのモデルをどの役割に使い、どの科学toolを利用したかがかなり詳しく書かれています。しかしrole-specific prompt、tool permission、configurationの詳細は、code release時に公開するとされています。</p>
+    <p>つまり2026年10月6日時点で、論文を読めば科学計算の主要設定は追えますが、AI agent system全体を第三者が完全に同条件で再実行できる状態までは確認できません。</p>
+    <p>また、この一件について「同じ未公開データを人間理論家だけに渡した場合」「単一LLMに渡した場合」「agentを分けず自動parameter searchだけを使った場合」といったmatched baselineは報告されていません。</p>
+    <p>そのため、今回の科学的解釈がagentic architectureだから初めて得られたのか、どの構成要素が不可欠だったのかまでは分かりません。</p>
+
+    <h2>それでも、EurekaBenchとは違う意味で重要な研究</h2>
+    <p>ここからは論文を踏まえた分析です。前回取り上げたEurekaBenchでは、AIが実験環境を探索してscientific insightへ到達できるかをbenchmarkとして測っていました。</p>
+    <p>今回のAI Theoristは、それより狭い一つの科学問題に深く入り込みます。しかも、既知のbenchmark answerではなく、研究チームがまだ公開していなかった測定を入力にしています。</p>
+    <p>この違いは大きいです。benchmarkでは多数のtaskを比較できる代わりに、未知性は限定されます。今回のcase studyでは一般化性能を測れない代わりに、「新しい観測を受け取ったAIが、実際の科学計算を長く回して候補理論を作る」という現実に近い研究過程を見られます。</p>
+
+    <h2>重要なのは、AIが答えたことより、仮説を棄却したこと</h2>
+    <p>この研究で実務的に面白いのは、最終モデルそのものだけではありません。最初の説明をそのまま文章として通さず、計算結果が合わなければ捨てている点です。</p>
+    <p>local-correlation routeはgapとoptical featureを同時に説明できず棄却された。constrained stateは存在しない強いpeakを予測したため棄却された。screeningを固定した計算ではgapが改善せず、screening updateへ進んだ。こうした履歴があります。</p>
+    <p>生成AIを科学研究へ使うとき、最初にもっともらしい仮説を出す能力より、反証証拠を受けて自分の説明を捨てられる仕組みの方が重要かもしれません。</p>
+    <p>これは科学以外の業務エージェントにも通じます。仮説、検証方法、実行結果、棄却理由を分けて残すことで、最終回答だけを見るよりプロセスを監査しやすくなります。</p>
+
+    <h2>自律研究では、計算toolの品質が推論能力と同じくらい重要になる</h2>
+    <p>第二の含意は、scientific agentの能力がLLMだけでは決まらないことです。今回のシステムは、Quantum ESPRESSOやBerkeleyGWのような既存の高品質な科学計算softwareへ接続しています。</p>
+    <p>AIが行っているのは、物理法則をtokenだけで頭の中から計算することではありません。どの計算を行うべきかを決め、専門toolへ渡し、結果を比較し、次の計算を選びます。</p>
+    <p>したがって研究AIの進歩には、より強い基盤モデルだけでなく、検証可能なscientific tool、計算結果のprovenance、失敗diagnostic、再現可能なparameter設定が必要になります。</p>
+
+    <h2>完全自律より、人間とAIの境界設計の方が先に重要になる</h2>
+    <p>第三の含意は、人間をどこに残すかです。今回、人間は研究方向を設定し、実験を実行し、sample contextを提供し、最終的には独立理論家も検証に参加しています。</p>
+    <p>AIはその間の計算探索を大きく自動化しています。これは、人間を研究から外すより、時間のかかる理論探索をAIへ委ね、人間が測定と判断へ集中する形です。</p>
+    <p>少なくとも現段階では、この境界は合理的です。AIが新しいモデルを提案しても、未検証のpredictionを実験で確かめる段階や、計算上の不完全な因果分離を評価する段階では、専門家の判断がまだ重要です。</p>
+
+    <h2>最後に残す要点</h2>
+    <p>AI Theoristは、α-RuCl3の未公開のreflectionとphotocurrent観測を受け取り、文献検索、仮説生成、第一原理計算、批評、修正を繰り返して、低エネルギー光学応答を説明する候補モデルを構築しました。</p>
+    <p>探索では三つの説明ルートを調べ、実験と合わない二つを棄却し、spin-orbit coupling、更新されたCoulomb screening、electron-hole interactionを組み合わせたモデルを残しました。</p>
+    <p>そのモデルでは、L、α、αプライムに対応する候補exciton stateが約1.077、1.179、1.291電子ボルトに現れます。αはzigzag偏光へ強く、αプライムはarmchair方向を好む一方、total optical strengthはαのおよそ五パーセントです。</p>
+    <p>この解釈から、光の偏光をzigzagからarmchairへ回すと、αに対するαプライムの相対強度が増えるという検証可能な予測が出ています。ただし、この予測はまだ実験確認されていません。</p>
+    <p>さらに、計算の完全収束、SOCだけの因果分離、photocurrentのcharge-collection model、β領域とのずれ、agent systemの完全なcode公開など、未解決点も残っています。matched human baselineもありません。</p>
+    <p>したがって、この研究を「AIが量子材料の謎を解いた」と要約するのは強すぎます。より正確には、未公開の実験観測から出発し、AIエージェントが第一原理計算を使って複数の物理仮説を実際に選別し、専門家が検討できる候補モデルと次の実験予測を作った、という研究です。</p>
+    <p>それでも意味は大きいです。研究エージェントが文献要約や仮説生成だけで終わらず、計算可能な理論へ落とし込み、証拠に合わない説明を捨て、次の測定で反証できる予測まで返す。AIを科学研究の実行系へ組み込むうえで、一段具体的な形を示した研究として、今日聞く価値があります。</p>
+  </article>
+
+  <section class="player" aria-label="読み上げ操作">
+    <div class="transport">
+      <button id="prev-block" type="button" aria-label="前の読み上げ単位へ">←</button>
+      <button id="play" type="button" aria-label="再生">▶</button>
+      <button id="pause" type="button" aria-label="一時停止">Ⅱ</button>
+      <button id="stop" type="button" aria-label="停止">■</button>
+      <button id="next-block" type="button" aria-label="次の読み上げ単位へ">→</button>
+    </div>
+    <div class="section-nav" aria-label="章移動">
+      <button id="prev-section" type="button" aria-label="前の章へ">‹</button>
+      <span id="section-label">導入</span>
+      <button id="next-section" type="button" aria-label="次の章へ">›</button>
+    </div>
+    <div class="voice-row">
+      <select id="voice" aria-label="日本語音声"></select>
+    </div>
+    <div class="speed"><span>速度</span><input id="rate" type="range" min="0.7" max="4" step="0.1" value="1"><span id="rateValue">1.0×</span></div>
+  </section>
+
+
+
+  <section class="sources" aria-label="出典">
+    <strong>出典</strong>
+    <p><a href="https://www.alphaxiv.org/abs/2610.02417">alphaXiv — The AI Theorist reveals excitonic structure in α-RuCl3</a></p>
+    <p><a href="https://arxiv.org/abs/2610.02417">arXiv — The AI Theorist reveals excitonic structure in α-RuCl3</a></p>
+  </section>
+</main>
+<script>
+(() => {
+  const synth = window.speechSynthesis;
+  const blocks = [...document.querySelectorAll("#article h1,#article h2,#article h3,#article p")];
+  const sectionStarts = [...new Set([0, ...blocks.map((node, i) => node.tagName === "H2" ? i : -1).filter(i => i >= 0)])];
+  const play = document.querySelector("#play");
+  const pause = document.querySelector("#pause");
+  const stop = document.querySelector("#stop");
+  const prevBlock = document.querySelector("#prev-block");
+  const nextBlock = document.querySelector("#next-block");
+  const prevSection = document.querySelector("#prev-section");
+  const nextSection = document.querySelector("#next-section");
+  const sectionLabel = document.querySelector("#section-label");
+  const voice = document.querySelector("#voice");
+  const rate = document.querySelector("#rate");
+  const rateValue = document.querySelector("#rateValue");
+  const theme = document.querySelector("#theme");
+  let index = 0, playing = false, paused = false, selectedVoice = "", generation = 0;
+  let wakeLock = null, wakeLockWanted = false;
+
+  async function requestWakeLock() {
+    const wakeLockApi = window.navigator?.wakeLock;
+    wakeLockWanted = true;
+    if (!wakeLockApi?.request || wakeLock) return;
+    try {
+      const lock = await wakeLockApi.request("screen");
+      if (!wakeLockWanted) {
+        await lock.release();
+        return;
+      }
+      wakeLock = lock;
+      wakeLock.addEventListener?.("release", () => { wakeLock = null; });
+    } catch {
+      wakeLock = null;
+    }
+  }
+
+  async function releaseWakeLock() {
+    wakeLockWanted = false;
+    const current = wakeLock;
+    wakeLock = null;
+    if (!current) return;
+    try {
+      await current.release();
+    } catch {
+      // Wake Lock is best-effort; speech playback must continue to work.
+    }
+  }
+
+  function voices() {
+    const previous = selectedVoice || voice.value;
+    const items = synth.getVoices().filter(v => /^ja(?:-|_)/i.test(v.lang));
+    voice.replaceChildren();
+    for (const v of items) {
+      const o = document.createElement("option");
+      o.value = v.voiceURI;
+      o.textContent = v.name;
+      voice.append(o);
+    }
+    if (items.some(v => v.voiceURI === previous)) voice.value = previous;
+    selectedVoice = voice.value;
+  }
+
+  function clearHighlight() {
+    blocks.forEach(node => node.classList.remove("is-speaking"));
+  }
+
+  function sectionPosition() {
+    let pos = 0;
+    for (let i = 0; i < sectionStarts.length; i += 1) {
+      if (sectionStarts[i] <= index) pos = i;
+      else break;
+    }
+    return pos;
+  }
+
+  function updateNavigation() {
+    prevBlock.disabled = index <= 0;
+    nextBlock.disabled = index >= blocks.length - 1;
+
+    const pos = sectionPosition();
+    const start = sectionStarts[pos] ?? 0;
+    const previousTargetExists = index > start || pos > 0;
+    prevSection.disabled = !previousTargetExists;
+    nextSection.disabled = pos >= sectionStarts.length - 1;
+
+    const startNode = blocks[start];
+    sectionLabel.textContent = startNode?.tagName === "H2" ? startNode.textContent : "導入";
+  }
+
+  function showCurrent() {
+    clearHighlight();
+    const current = blocks[index];
+    if (!current) return;
+    current.classList.add("is-speaking");
+    current.scrollIntoView({ block: "center", behavior: "smooth" });
+    updateNavigation();
+  }
+
+  function speakCurrent() {
+    if (!playing || paused || index >= blocks.length) {
+      if (index >= blocks.length) {
+        playing = false;
+        paused = false;
+        clearHighlight();
+        void releaseWakeLock();
+      }
+      updateNavigation();
+      return;
+    }
+
+    showCurrent();
+    const localGeneration = ++generation;
+    const utterance = new SpeechSynthesisUtterance(blocks[index].textContent);
+    utterance.lang = "ja-JP";
+    utterance.rate = Number(rate.value);
+    const selected = synth.getVoices().find(item => item.voiceURI === voice.value);
+    if (selected) utterance.voice = selected;
+
+    utterance.onend = () => {
+      if (localGeneration !== generation || !playing || paused) return;
+      index += 1;
+      speakCurrent();
+    };
+
+    utterance.onerror = event => {
+      if (localGeneration !== generation) return;
+      if (event.error !== "canceled" && event.error !== "interrupted") {
+        playing = false;
+        paused = false;
+        clearHighlight();
+        void releaseWakeLock();
+        updateNavigation();
+      }
+    };
+
+    synth.speak(utterance);
+  }
+
+  function jumpTo(target) {
+    const next = Math.max(0, Math.min(blocks.length - 1, target));
+    const resume = playing && !paused;
+    const keepPaused = paused;
+
+    generation += 1;
+    synth.resume?.();
+    synth.cancel();
+    index = next;
+
+    if (resume) {
+      playing = true;
+      paused = false;
+      void requestWakeLock();
+      speakCurrent();
+      return;
+    }
+
+    playing = keepPaused;
+    paused = keepPaused;
+    showCurrent();
+    if (keepPaused) void requestWakeLock();
+  }
+
+  function jumpSection(delta) {
+    const pos = sectionPosition();
+    let targetPos;
+
+    if (delta < 0 && index > sectionStarts[pos]) targetPos = pos;
+    else targetPos = pos + delta;
+
+    if (targetPos < 0 || targetPos >= sectionStarts.length) return;
+    jumpTo(sectionStarts[targetPos]);
+  }
+
+  play.addEventListener("click", () => {
+    if (paused) {
+      generation += 1;
+      synth.resume?.();
+      synth.cancel();
+      paused = false;
+      playing = true;
+      void requestWakeLock();
+      speakCurrent();
+      return;
+    }
+    if (playing) return;
+    if (index >= blocks.length) index = 0;
+    playing = true;
+    void requestWakeLock();
+    speakCurrent();
+  });
+
+  pause.addEventListener("click", () => {
+    if (!playing || paused) return;
+    synth.pause();
+    paused = true;
+  });
+
+  stop.addEventListener("click", () => {
+    generation += 1;
+    synth.resume?.();
+    synth.cancel();
+    playing = false;
+    paused = false;
+    index = 0;
+    clearHighlight();
+    updateNavigation();
+    void releaseWakeLock();
+  });
+
+  prevBlock.addEventListener("click", () => jumpTo(index - 1));
+  nextBlock.addEventListener("click", () => jumpTo(index + 1));
+  prevSection.addEventListener("click", () => jumpSection(-1));
+  nextSection.addEventListener("click", () => jumpSection(1));
+
+  voice.addEventListener("change", () => {
+    selectedVoice = voice.value;
+    if (playing && !paused) {
+      generation += 1;
+      synth.cancel();
+      speakCurrent();
+    }
+  });
+
+  rate.addEventListener("input", () => {
+    rateValue.textContent = Number(rate.value).toFixed(1) + "×";
+  });
+
+  theme.addEventListener("click", () => {
+    const dark = document.documentElement.dataset.theme === "dark";
+    document.documentElement.dataset.theme = dark ? "light" : "dark";
+    theme.textContent = dark ? "☾" : "☀";
+    localStorage.setItem("rsvp:theme", dark ? "light" : "dark");
+  });
+
+  document.documentElement.dataset.theme =
+    localStorage.getItem("rsvp:theme") ||
+    (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  theme.textContent = document.documentElement.dataset.theme === "dark" ? "☀" : "☾";
+
+  voices();
+  synth.addEventListener?.("voiceschanged", voices);
+  updateNavigation();
+
+  document.addEventListener?.("visibilitychange", () => {
+    if (document.visibilityState === "visible" && (playing || paused)) {
+      void requestWakeLock();
+    }
+  });
+
+  addEventListener("pagehide", () => {
+    generation += 1;
+    synth.cancel();
+    void releaseWakeLock();
+  });
+})();
+</script>
+</body>
+</html>
