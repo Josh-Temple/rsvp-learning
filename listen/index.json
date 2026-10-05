@@ -2,6 +2,13 @@
   "schema_version": 1,
   "items": [
     {
+      "id": "2026-10-06-sentry-agent-failure-recovery",
+      "title": "AIは失敗から学べる。だが、学んだ失敗を常に覚えていると弱くなる――Sentry",
+      "date": "2026-10-06",
+      "category": "research",
+      "path": "./research/2026-10-06-sentry-agent-failure-recovery.html"
+    },
+    {
       "id": "2026-10-06-ai-theorist-rucl3-excitons",
       "title": "未公開の実験データから、AIは物理理論を組み立てられるか――AI Theorist",
       "date": "2026-10-06",
