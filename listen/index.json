@@ -2,6 +2,13 @@
   "schema_version": 1,
   "items": [
     {
+      "id": "2026-10-06-delegationbench-when-agents-should-ask",
+      "title": "AIは、いつ勝手に動かず人に聞くべきか――DelegationBench",
+      "date": "2026-10-06",
+      "category": "research",
+      "path": "./research/2026-10-06-delegationbench-when-agents-should-ask.html"
+    },
+    {
       "id": "2026-10-06-self-propagating-misalignment-memory",
       "title": "一時的な逸脱は、Memoryを通じて未来のAIへ残るのか――Self-Propagating Misalignment",
       "date": "2026-10-06",
