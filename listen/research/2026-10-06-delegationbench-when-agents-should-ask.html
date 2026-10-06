@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f2efe8">
+  <meta name="description" content="AIエージェントが自律実行と人への確認をどう切り替えるかを測るDelegationBenchを、156シナリオ、matched pairs、判断とtool実行のずれ、明示ルール時の高精度、限界まで解説するDaily Paper Listen。">
+  <title>AIは、いつ勝手に動かず人に聞くべきか――DelegationBench</title>
+  <style>
+    :root{color-scheme:light;--bg:#f2efe8;--ink:#121722;--muted:#73766f;--line:#cbc8bf;--blue:#5d7487}
+    html[data-theme="dark"]{color-scheme:dark;--bg:#11151a;--ink:#edf0eb;--muted:#959b97;--line:#343a3e;--blue:#7892a6}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Hiragino Sans","Noto Sans JP",sans-serif;line-height:1.9}
+    .shell{width:min(760px,100%);margin:0 auto;padding:max(18px,env(safe-area-inset-top)) 20px max(42px,env(safe-area-inset-bottom))}
+    .topbar{min-height:52px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+    .icon{width:42px;height:42px;display:grid;place-items:center;border:0;background:transparent;color:var(--muted);text-decoration:none;font:inherit}
+    .meta{margin:28px 0 8px;color:var(--muted);font-size:.75rem}
+    h1{font-size:clamp(2rem,8vw,3.4rem);line-height:1.12;letter-spacing:-.04em;margin:.2em 0 .8em}
+    h2{margin:2.2em 0 .6em;font-size:1.2rem}
+    p{margin:0 0 1.25em}
+    article>*{transition:background-color .15s ease}
+    .is-speaking{background:color-mix(in srgb,var(--blue) 16%,transparent)}
+    .player{position:sticky;bottom:0;margin:32px -6px 0;padding:12px 6px;background:color-mix(in srgb,var(--bg) 94%,transparent);border-top:1px solid var(--line);backdrop-filter:blur(8px)}
+    .speed{display:grid;grid-template-columns:48px 1fr 42px;gap:10px;align-items:center;margin-top:10px;font-size:.78rem;color:var(--muted)}
+    input{width:100%}
+    .sources{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}
+    .sources a{color:var(--ink)}
+    .mode-nav{display:inline-flex;align-items:center;gap:4px}
+    .mode-icon{width:42px;height:42px;display:grid;place-items:center;color:var(--muted);text-decoration:none;opacity:.5}
+    .mode-icon.is-active{color:var(--ink);opacity:1}
+    .mode-icon svg{width:20px;height:20px;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+    .brand-mark{width:22px;height:14px;display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+    .brand-mark i{display:block}
+    .brand-mark i:nth-child(1){background:#a85248}
+    .brand-mark i:nth-child(2){background:#5d7487}
+    .brand-mark i:nth-child(3){background:#c2a653}
+    .transport{display:grid;grid-template-columns:repeat(5,48px);justify-content:center;gap:8px}
+    .transport button,.section-nav button,.voice-row select{min-height:42px;border:1px solid var(--line);background:transparent;color:var(--ink);font:inherit}
+    .transport button{width:48px}
+    .section-nav{display:grid;grid-template-columns:48px 1fr 48px;align-items:center;gap:8px;margin-top:10px}
+    .section-nav button:disabled{opacity:.25}
+    #section-label{min-width:0;overflow:hidden;color:var(--muted);font-size:.78rem;text-align:center;white-space:nowrap;text-overflow:ellipsis}
+    .voice-row{margin-top:10px}
+    .voice-row select{width:100%;padding:0 8px}
+    .mode-icon:focus-visible,.transport button:focus-visible,.section-nav button:focus-visible,.voice-row select:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+  </style>
+</head>
+<body>
+<main class="shell">
+  <header class="topbar">
+    <nav class="mode-nav" aria-label="モード切替">
+      <a class="mode-icon" href="../../index.html" aria-label="RSVPへ移動" title="RSVP">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      </a>
+      <a class="mode-icon" href="../../index.html?library=learn" aria-label="Learnへ移動" title="Learn">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 5.5c2.6-.8 5.3-.4 8 1.2v12c-2.7-1.6-5.4-2-8-1.2v-12Z" />
+          <path d="M20 5.5c-2.6-.8-5.3-.4-8 1.2v12c2.7-1.6 5.4-2 8-1.2v-12Z" />
+        </svg>
+      </a>
+      <a class="mode-icon is-active" href="../../index.html?library=listen" aria-label="Listen一覧へ移動" aria-current="page" title="Listen">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 13v-1a8 8 0 0 1 16 0v1" />
+          <path d="M4 13h3v7H5a1 1 0 0 1-1-1v-6Zm16 0h-3v7h2a1 1 0 0 0 1-1v-6Z" />
+        </svg>
+      </a>
+    </nav>
+    <button id="theme" class="icon" type="button" aria-label="テーマ切替">☾</button>
+  </header>
+
+
+
+
+
+
+  <article id="article">
+    <p class="meta">情報基準日 2026年10月6日</p>
+    <h1>AIは、いつ勝手に動かず人に聞くべきか――DelegationBench</h1>
+
+    <p>今日取り上げるのは、2026年10月4日にarXivへ公開された「DelegationBench: Measuring When AI Agents Should Ask Before Acting」です。テーマは、AIエージェントがuserの代わりに行動するとき、どこまで自分で進め、どこから人へ確認すべきかです。</p>
+    <p>メール送信、カレンダー変更、ファイル削除、購入、公開、コード変更。エージェントが実務へ入るほど、「できるか」だけではなく「勝手にやってよいか」が重要になります。しかし、何でも確認すれば自律性は失われ、確認しなさすぎれば権限逸脱が起きます。</p>
+    <p>DelegationBenchが面白いのは、この境界を一つの正解率だけで測らないことです。人間annotatorとの一致率、状況の違いへ反応するか、質問形式を変えても判断が安定するか、そして実際にtoolを使わせたとき同じ慎重さが残るかを別々に測ります。</p>
+    <p>結果は、評価方法そのものへの警告になっています。あるmodelが「この行動は確認すべきです」と判断問題では答えていても、同じ状況で実際にtoolを持たせると確認せず実行することがあります。評価時の慎重さを、そのまま実運用の慎重さとみなせないという結果です。</p>
+
+    <h2>四つの選択肢を分ける</h2>
+    <p>各scenarioでは、user instruction、短いcontext、そして候補actionが与えられます。modelは四つの応答から選びます。</p>
+    <p>一つ目はACT。必要な権限と情報があり、今すぐ実行してよい。二つ目はASK。何をするかは明確だが、userのpermissionを取るべき。三つ目はREQUEST。実行に必要な事実が足りないので、追加情報を聞く。四つ目はREFUSE。権限や情報不足とは別の理由で、そのaction自体を行うべきではない、という区別です。</p>
+    <p>ASKとREQUESTを分ける点は重要です。「このファイルを永久削除してよいですか」はpermissionの問題ですが、「同名の二つのreport.pdfのどちらですか」は情報不足です。同じ「質問する」でも、agent system側で必要な処理が違います。</p>
+
+    <h2>156シナリオの中心は、48組のmatched pair</h2>
+    <p>DelegationBenchには百五十六scenarioがあります。そのうち九十六scenario、四十八pairはmatched pairです。pair内では重要な条件を一つだけ変え、modelがその差に反応するかを見ます。</p>
+    <p>変える軸は四つで、それぞれ十二pairあります。scopeは、そのactionがuserから明示的に頼まれているか。stakesは、間違えた時の損失がどれほど大きいか。reversibilityは、後から取り消せるか。visibilityは、結果が他人にも見えるかです。</p>
+    <p>たとえば「Downloadsの生成物を整理して」と頼まれた時、preview画像をTrashへ移すなら戻せます。同じファイルを永久削除するなら戻せません。instructionは同じでも、reversibilityだけが違います。この差にmodelの判断が動くかを見ます。</p>
+    <p>残り六十scenarioには、危険そうな言葉と実際の危険度を交差させたcase、必要情報を意図的に欠かしたcase、言い換えcase、境界caseがあります。対象domainはfiles、calendar、messaging、purchasing、publishing、codeです。</p>
+
+    <h2>人間ラベルも「絶対の正解」ではない</h2>
+    <p>三人のcomputer science学生が百五十六scenarioを独立にannotateしました。百四十九scenarioではmajority labelが得られ、七つは多数決が成立しませんでした。</p>
+    <p>多数ラベルの内訳はACTが六十九、ASKが七十一、REQUESTが八、REFUSEが一です。REQUESTとREFUSEは少ないため、このbenchmarkだけで四分類すべての能力を均等に比較できるわけではありません。</p>
+    <p>annotator agreementも完全ではありません。ACTか非ACTかの二値でKrippendorffのalphaは0.543、四分類では0.437です。著者はhuman labelをground truthではなく、informed reference pointとして扱っています。</p>
+    <p>この曖昧さ自体が研究テーマと関係します。delegation boundaryには、唯一の客観的正解が常にあるわけではありません。だからこそ、単純な「人間一致率」だけでagentの安全な権限判断を評価することに限界があります。</p>
+
+    <h2>10モデル、7,800回の主要評価</h2>
+    <p>主要評価では十modelを使います。GPT-5.6 Sol、Terra、Luna、GPT-OSS-120B、GPT-OSS-20B、Claude Sonnet 5、Claude Opus 4.8、Gemini 3.6 Flash、Gemini 3.5 Flash-Lite、Qwen 3.6 27Bです。</p>
+    <p>各modelが全百五十六scenarioを五回ずつ判定するため、主要評価は合計七千八百generationです。providerごとにmedium相当のreasoning設定を使いますが、実際のcompute量が同一という意味ではありません。</p>
+    <p>著者たちは、human majorityとの四分類一致率だけでなく、under-interventionとover-interventionも分けます。under-interventionは、人間側なら止めるのにmodelがACTすること。over-interventionは、人間側ならACTなのにmodelが止めることです。</p>
+
+    <h2>一番の警告は、「高い一致率」が良いdelegation policyを意味しないこと</h2>
+    <p>modelの四分類一致率は50.6パーセントから73.4パーセントでした。最も高いGemini 3.5 Flash-Liteが73.4、Gemini 3.6 Flashが71.9、Claude Sonnet 5が68.7です。</p>
+    <p>一方、著者はbenchmarkを見た後に、意図的に単純なkeyword ruleを作りました。必要情報に関する語があればREQUEST、risk wordがcontextにあればASK、それ以外はACTという三行程度のruleです。</p>
+    <p>この単純ruleのhuman majority agreementは69.1パーセントで、十modelのうち八modelより高くなりました。</p>
+    <p>しかしmatched pairを見ると、四十八pairのうち、重要条件が変わった時にruleの判断が動いたのは九pairだけです。表面的には人間ラベルとよく一致しても、scopeやstakes、reversibilityの変化を本当に理解して反応しているわけではありません。</p>
+    <p>これが著者のいうresponsiveness gapです。</p>
+
+    <h2>modelは単純ruleより反応するが、反応と一致率は別物だった</h2>
+    <p>十modelのpair responsivenessは45.8パーセントから70.8パーセントでした。つまり四十八pairのうち、設計意図に沿う方向へact rateが動いた割合です。</p>
+    <p>最も高いQwen 3.6 27Bは70.8パーセントですが、人間majorityとの四分類一致率は58.7パーセントです。逆に、human agreementが最高のGemini 3.5 Flash-Liteはresponsivenessが45.8パーセントでした。</p>
+    <p>十modelだけの記述的比較ですが、majority agreementとresponsivenessのSpearman相関はマイナス0.529です。つまり、この小さなmodel集合では、human labelとの一致が高いmodelほど条件変化への反応が強い、とはなっていません。</p>
+    <p>著者は、このため一つの総合scoreへまとめるべきではないと主張します。</p>
+
+    <h2>特にscopeには、全modelが非常に強く反応した</h2>
+    <p>四つの軸の中で最も大きくmodelを動かしたのはscopeです。userがそのactionを直接頼まなくなると、全modelでact rateが78.3から100 percentage point低下しました。</p>
+    <p>一方、人間annotatorのACT vote shareは80.6パーセントから52.8パーセントへ下がるものの、out-of-scope側十二pairのうち八pairではmajority labelがACTのままでした。</p>
+    <p>modelは「明示的に頼まれていない」を強い停止条件として扱い、人間annotatorは文脈上許容される場合があると広く解釈した可能性があります。</p>
+    <p>stakesとreversibilityの効果はmodelごとの差が大きく、visibilityは小さい効果でした。ただし著者は、stakesとreversibilityの二十四pair中十三pairで、狙ったfeature以外の条件も少し変わっていると認めています。feature別の細かな数値は、このbenchmark固有のscenarioに依存します。</p>
+
+    <h2>同じ判断でも、質問の仕方だけで最大52.5ポイント動いた</h2>
+    <p>次に著者たちは、四十八scenarioを五種類の等価なformatで聞き直します。元のmenu、option順を入れ替えたmenu、簡潔版、policy風の書き方、labelを出さないopen-ended形式です。</p>
+    <p>同じdecisionを聞いているにもかかわらず、format間でACT rateがどれだけ動くかはmodelによって大きく違いました。</p>
+    <p>最も安定したClaude Opus 4.8では最大4.2 percentage pointでした。一方、GPT-OSS-20Bでは最大52.5 point変わりました。</p>
+    <p>選択肢の順番をcounterbalanceすると、多くのmodelでannotator vote shareへのBrier scoreは改善しましたが、すべてのmetricで万能ではありません。open-ended形式では分類できない回答も出ます。</p>
+    <p>つまり、benchmarkで「このmodelは何パーセント自律実行する」と報告する時、その数字がprompt format固有のoperating pointである可能性があります。これがelicitation gapです。</p>
+
+    <h2>最も実務的な結果は、judgmentとactionの差</h2>
+    <p>ここからがこの研究の中心です。通常の評価では、modelへ「このactionを実行してよいですか」と候補actionを見せて判断させます。</p>
+    <p>しかし実際のagentは、候補actionを誰かに見せてもらうのではなく、自分で何をするか決め、tool callを作ります。そこで研究者は同じ四十八scenarioをTool-Loopへ変換しました。</p>
+    <p>Tool-Loopでは候補actionをmodelに見せません。十五種類のsimulated toolを渡し、最大三turnでtaskを実行させます。質問するためのstructured QUESTION actionも常に利用可能です。</p>
+    <p>結果は一方向でした。評価したすべてのmodelが、候補actionを「判断」している時より、実際にtoolを持って「行動」する時の方がuserへ質問する割合が下がりました。</p>
+
+    <h2>あるmodelでは、確認率が47.5パーセントから4.2パーセントへ落ちた</h2>
+    <p>Gemini 3.5 Flash-Liteはjudgment settingでは四十八scenarioの47.5パーセントでuserに確認すべきと答えていました。しかしTool-Loopでは、実際に質問でepisodeを終えた割合が4.2パーセントまで下がりました。</p>
+    <p>Gemini 3.6 Flashでも40.0パーセントから6.7パーセントへ低下しています。論文abstractが強調する最大例は47.5から4.2です。</p>
+    <p>重要なのは、質問する手段がなかったからではありません。全Tool-Loop episodeでQUESTION actionは利用可能でした。</p>
+    <p>ただし、ここから「toolを持つとmodelが必ず危険になる」と因果断定はできません。Tool-Loopでは候補actionが隠れ、自分でactionを構成し、response formatも変わり、permissionという言葉も明示されません。複数条件が同時に変わるため、何が確認率低下の原因かは今回の実験だけでは分かりません。</p>
+
+    <h2>判断と実行は完全に無関係ではない</h2>
+    <p>一方で、judgmentが全く役に立たないわけでもありません。各model内で見ると、offlineでACT率の高いscenarioほど、Tool-Loopでも候補toolを呼ぶ傾向があります。scenario内の相関はmodelごとに0.410から0.747でした。</p>
+    <p>問題はmodel間比較です。human annotatorとのmajority agreementと、Tool-Loopで候補toolを呼ぶ率のSpearman相関はわずか0.115でした。</p>
+    <p>つまり、offlineのauthorization benchmarkでmodel Aがmodel Bより高得点だからといって、実行時にもAの方が適切に確認するとは限りません。</p>
+
+    <h2>「確認しました」で終わらず、その質問が何を求めているかも違う</h2>
+    <p>Tool-Loopでmodelが質問したepisodeについて、研究者は「Yes, go ahead with that action.」と固定replyを返し、その後どう動くかも調べています。</p>
+    <p>八modelから二百二十七continuationが得られました。このうち百二十は単純なyes/no permission questionでした。これらは固定の「Yes」で九十七・五パーセント、百二十件中百十七件がtool実行へ進みました。</p>
+    <p>しかし残り百七件は、permissionだけを聞いていません。timingやscheduleを聞く、複数alternativeから選ばせる、permissionと追加情報を同時に聞く、といった質問です。</p>
+    <p>固定の「Yes」で実行へ進んだ割合はtiming系で33.3パーセント、alternative選択で65.0パーセント、permissionとinformationのmixed questionで75.0パーセントでした。</p>
+    <p>したがって「agentが質問した」という一つのcountだけでは足りません。その質問がpermissionを求めているのか、情報を求めているのかを区別しないと、human-in-the-loop設計を誤ります。</p>
+
+    <h2>tool callの厳密一致だけでも、性能を見誤る</h2>
+    <p>もう一つ評価上の問題があります。agentが候補actionを実行したか判定する時、tool名と全argumentの文字列が完全一致することを要求すると、実質的に同じactionまで不正解にする場合があります。</p>
+    <p>Tool-Loopで候補toolを呼んだ千十一callのうち、全argumentのstrict matchは59.3パーセントでした。format normalizationを入れたlenient matcherでは89.0パーセントです。</p>
+    <p>さらにblind human reviewでは、二人のreviewerがそれぞれ93.9パーセントと96.0パーセントを「意図したactionと意味的に同等」と判断しました。</p>
+    <p>つまり、agent evaluationでは「正しいtoolを選んだか」「argumentが文字列一致したか」「意味的に同じactionか」「最終状態が正しく変わったか」を分けて考える必要があります。</p>
+
+    <h2>明示的なruleを書けば、同じmodelはほぼ完璧に従えた</h2>
+    <p>この結果を「modelはpermission ruleを理解できない」と解釈すると、論文の別実験と矛盾します。</p>
+    <p>研究者はGPT-5.6 Luna、Claude Sonnet 5、Gemini 3.5 Flash-Liteの三modelについて、正しいdecisionが明示されたpolicyから機械的に決まるcaseを追加評価しています。</p>
+    <p>natural-language policyでbalanced accuracyは97.3から100パーセント。structured policyでも98.5から100パーセントです。tau-benchからadaptした十七decision pointでは三modelとも100パーセントで、unauthorized actionを試みませんでした。</p>
+    <p>したがって、主要実験のgapは「ruleがあっても従えない」という問題ではありません。曖昧なdelegation boundaryをmodel自身が推定する時に、評価formatやaction contextによって判断が変わることが問題です。</p>
+
+    <h2>著者は、単一scoreを作らないことを勧めている</h2>
+    <p>DelegationBenchの結論は、「最高scoreのmodelはこれ」というrankingではありません。</p>
+    <p>著者は少なくとも五つを別々に報告することを勧めます。human referenceとのagreementとunder・over intervention。matched pairへのresponsiveness。等価formatを変えた時のspread。実際にtoolを持たせた時のbehavior。そしてtool callが意図したactionに意味的に対応するかです。</p>
+    <p>majority agreementとTool-Loop候補tool率の相関は0.115。agreementとresponsivenessはマイナス0.529。format sensitivityとresponsivenessもほぼ無関係で、rhoはマイナス0.025でした。</p>
+    <p>これらを一つの総合点へ圧縮すると、「人間ラベルに近いが条件差へ反応しないmodel」と「反応はするがhuman preferenceとはずれるmodel」と「offlineでは慎重だがtool executionでは聞かないmodel」の違いが消えてしまいます。</p>
+
+    <h2>この研究の重要な限界</h2>
+    <p>第一に、百五十六scenarioは短いsynthetic scenarioです。real deploymentからsamplingしたものではありません。したがって、現実世界で各状況がどれほど頻繁に起きるかや、実際のuserが何を好むかは分かりません。</p>
+    <p>第二に、人間referenceはAI経験のあるcomputer science学生三人です。人数は少なく、代表性も限定的です。agreementも中程度で、七scenarioはmajorityなしです。</p>
+    <p>第三に、matched pairも完全ではありません。stakesとreversibilityの二十四pair中十三pairは、意図したfeature以外の要素も少し変わります。feature効果を純粋な因果効果として読むべきではありません。</p>
+    <p>第四に、Tool-Loopは四十八scenarioだけで、persistent stateを持ちません。judgmentからTool-Loopへ移る時に複数条件が同時に変わるため、「なぜ確認しなくなるのか」は今回の研究では特定できていません。</p>
+    <p>第五に、評価modelは十model、五familyで、そのうち一つはpreview releaseです。将来modelや別harnessへそのまま一般化できるとは限りません。</p>
+    <p>そして2026年10月6日時点ではarXiv preprintです。査読済みの確定版ではありません。</p>
+
+    <h2>ここからは、agent設計への含意</h2>
+    <p>ここからは論文を踏まえた分析です。第一の含意は、permission判断をmodelの「性格」に任せるだけでは弱いということです。</p>
+    <p>明示ruleがある場合、三modelはほぼ完璧に従えました。逆に曖昧な状況では、prompt formatやtool実行contextで大きく挙動が変わります。</p>
+    <p>ならば高stakesなactionについては、「このmodelなら慎重だろう」と期待するより、reversibility、外部公開、金銭、権限変更などの条件をsystem側で明示ruleへ落とす方が安定する可能性があります。</p>
+
+    <h2>「確認するか」は、tool実行直前で評価すべき</h2>
+    <p>第二の含意は、offline safety evaluationだけで終えないことです。</p>
+    <p>あるactionを文章で見せて「実行してよいですか」と聞く評価は有用です。しかしDelegationBenchでは、全modelが実際のTool-Loopでより少なく質問しました。</p>
+    <p>実運用に近い評価では、agent自身にactionを構成させ、実際のtool schema、permission、state transitionの前で確認判断が起きるかを見る必要があります。</p>
+    <p>これは、approval gateをLLMの自然言語判断の外側に置く設計とも整合します。重要actionでは、tool invocationそのものをpolicy layerが止め、必要ならuser approvalを要求する方法です。ただし今回の論文が特定のpermission architectureを比較したわけではありません。</p>
+
+    <h2>自律性は「質問回数が少ないほど良い」でもない</h2>
+    <p>第三の含意は、確認回数を単純に減らすことを最適化しないことです。</p>
+    <p>質問が多すぎればuser experienceは悪化します。しかし質問が少ないことは、適切なdelegationを意味しません。逆に、何でもASKするmodelも安全とは言えても役に立ちません。</p>
+    <p>必要なのは、scope、stakes、reversibility、visibility、情報不足など、どの条件変化で自律実行から確認へ切り替えるかです。</p>
+    <p>DelegationBenchがmatched pairを重視するのは、この「境界の動き」を見るためです。</p>
+
+    <h2>最後に残す要点</h2>
+    <p>DelegationBenchは、AIエージェントがいつ自分で行動し、いつuserへpermissionや追加情報を求めるべきかを測る百五十六scenarioのbenchmarkです。</p>
+    <p>人間ラベルへの一致率だけを見ると、簡単なkeyword ruleが69.1パーセントで十model中八modelを上回りました。しかしそのruleは四十八matched pairのうち九pairでしか条件変化へ反応していません。高い一致率だけでは、適切なdelegation policyを保証できません。</p>
+    <p>同じ判断を等価なformatで聞き直すだけで、modelによってACT率は最大52.5 percentage point変わりました。</p>
+    <p>さらに重要なのは、全modelが、候補actionを判断している時より実際にtoolを使う時の方がuserへ確認しなくなったことです。最大例では47.5パーセントから4.2パーセントへ低下しました。</p>
+    <p>一方、明示的なpermission ruleがあるcaseでは三modelが97.3から100パーセントのbalanced accuracyを出しています。問題はrule-followingそのものより、曖昧な境界を推定する場面にあります。</p>
+    <p>この研究から安全に言えるのは、「agentは勝手に動く」という一般論ではありません。より限定的に、**オフラインのpermission判断scoreは、実際にtoolを持ったagentがどれだけ人へ確認するかを十分に表さない**ということです。</p>
+    <p>エージェントを実務へ入れるなら、何を実行できるかだけでなく、どのactionで立ち止まり、何を人に聞き、approval後に何を実行するかまで一連のsystemとして評価する必要があります。DelegationBenchは、その境界を測る方法自体を見直した研究として、今日聞く価値があります。</p>
+  </article>
+
+  <section class="player" aria-label="読み上げ操作">
+    <div class="transport">
+      <button id="prev-block" type="button" aria-label="前の読み上げ単位へ">←</button>
+      <button id="play" type="button" aria-label="再生">▶</button>
+      <button id="pause" type="button" aria-label="一時停止">Ⅱ</button>
+      <button id="stop" type="button" aria-label="停止">■</button>
+      <button id="next-block" type="button" aria-label="次の読み上げ単位へ">→</button>
+    </div>
+    <div class="section-nav" aria-label="章移動">
+      <button id="prev-section" type="button" aria-label="前の章へ">‹</button>
+      <span id="section-label">導入</span>
+      <button id="next-section" type="button" aria-label="次の章へ">›</button>
+    </div>
+    <div class="voice-row">
+      <select id="voice" aria-label="日本語音声"></select>
+    </div>
+    <div class="speed"><span>速度</span><input id="rate" type="range" min="0.7" max="4" step="0.1" value="1"><span id="rateValue">1.0×</span></div>
+  </section>
+
+
+
+
+
+
+  <section class="sources" aria-label="出典">
+    <strong>出典</strong>
+    <p><a href="https://www.alphaxiv.org/abs/2610.05532">alphaXiv — DelegationBench: Measuring When AI Agents Should Ask Before Acting</a></p>
+    <p><a href="https://arxiv.org/abs/2610.05532">arXiv — DelegationBench: Measuring When AI Agents Should Ask Before Acting</a></p>
+    <p><a href="https://github.com/PieLord757/delegation-bench">GitHub — DelegationBench benchmark and analysis code</a></p>
+  </section>
+</main>
+<script>
+(() => {
+  const synth = window.speechSynthesis;
+  const blocks = [...document.querySelectorAll("#article h1,#article h2,#article h3,#article p")];
+  const sectionStarts = [...new Set([0, ...blocks.map((node, i) => node.tagName === "H2" ? i : -1).filter(i => i >= 0)])];
+  const play = document.querySelector("#play");
+  const pause = document.querySelector("#pause");
+  const stop = document.querySelector("#stop");
+  const prevBlock = document.querySelector("#prev-block");
+  const nextBlock = document.querySelector("#next-block");
+  const prevSection = document.querySelector("#prev-section");
+  const nextSection = document.querySelector("#next-section");
+  const sectionLabel = document.querySelector("#section-label");
+  const voice = document.querySelector("#voice");
+  const rate = document.querySelector("#rate");
+  const rateValue = document.querySelector("#rateValue");
+  const theme = document.querySelector("#theme");
+  let index = 0, playing = false, paused = false, selectedVoice = "", generation = 0;
+  let wakeLock = null, wakeLockWanted = false;
+
+  async function requestWakeLock() {
+    const wakeLockApi = window.navigator?.wakeLock;
+    wakeLockWanted = true;
+    if (!wakeLockApi?.request || wakeLock) return;
+    try {
+      const lock = await wakeLockApi.request("screen");
+      if (!wakeLockWanted) {
+        await lock.release();
+        return;
+      }
+      wakeLock = lock;
+      wakeLock.addEventListener?.("release", () => { wakeLock = null; });
+    } catch {
+      wakeLock = null;
+    }
+  }
+
+  async function releaseWakeLock() {
+    wakeLockWanted = false;
+    const current = wakeLock;
+    wakeLock = null;
+    if (!current) return;
+    try {
+      await current.release();
+    } catch {
+      // Wake Lock is best-effort; speech playback must continue to work.
+    }
+  }
+
+  function voices() {
+    const previous = selectedVoice || voice.value;
+    const items = synth.getVoices().filter(v => /^ja(?:-|_)/i.test(v.lang));
+    voice.replaceChildren();
+    for (const v of items) {
+      const o = document.createElement("option");
+      o.value = v.voiceURI;
+      o.textContent = v.name;
+      voice.append(o);
+    }
+    if (items.some(v => v.voiceURI === previous)) voice.value = previous;
+    selectedVoice = voice.value;
+  }
+
+  function clearHighlight() {
+    blocks.forEach(node => node.classList.remove("is-speaking"));
+  }
+
+  function sectionPosition() {
+    let pos = 0;
+    for (let i = 0; i < sectionStarts.length; i += 1) {
+      if (sectionStarts[i] <= index) pos = i;
+      else break;
+    }
+    return pos;
+  }
+
+  function updateNavigation() {
+    prevBlock.disabled = index <= 0;
+    nextBlock.disabled = index >= blocks.length - 1;
+
+    const pos = sectionPosition();
+    const start = sectionStarts[pos] ?? 0;
+    const previousTargetExists = index > start || pos > 0;
+    prevSection.disabled = !previousTargetExists;
+    nextSection.disabled = pos >= sectionStarts.length - 1;
+
+    const startNode = blocks[start];
+    sectionLabel.textContent = startNode?.tagName === "H2" ? startNode.textContent : "導入";
+  }
+
+  function showCurrent() {
+    clearHighlight();
+    const current = blocks[index];
+    if (!current) return;
+    current.classList.add("is-speaking");
+    current.scrollIntoView({ block: "center", behavior: "smooth" });
+    updateNavigation();
+  }
+
+  function speakCurrent() {
+    if (!playing || paused || index >= blocks.length) {
+      if (index >= blocks.length) {
+        playing = false;
+        paused = false;
+        clearHighlight();
+        void releaseWakeLock();
+      }
+      updateNavigation();
+      return;
+    }
+
+    showCurrent();
+    const localGeneration = ++generation;
+    const utterance = new SpeechSynthesisUtterance(blocks[index].textContent);
+    utterance.lang = "ja-JP";
+    utterance.rate = Number(rate.value);
+    const selected = synth.getVoices().find(item => item.voiceURI === voice.value);
+    if (selected) utterance.voice = selected;
+
+    utterance.onend = () => {
+      if (localGeneration !== generation || !playing || paused) return;
+      index += 1;
+      speakCurrent();
+    };
+
+    utterance.onerror = event => {
+      if (localGeneration !== generation) return;
+      if (event.error !== "canceled" && event.error !== "interrupted") {
+        playing = false;
+        paused = false;
+        clearHighlight();
+        void releaseWakeLock();
+        updateNavigation();
+      }
+    };
+
+    synth.speak(utterance);
+  }
+
+  function jumpTo(target) {
+    const next = Math.max(0, Math.min(blocks.length - 1, target));
+    const resume = playing && !paused;
+    const keepPaused = paused;
+
+    generation += 1;
+    synth.resume?.();
+    synth.cancel();
+    index = next;
+
+    if (resume) {
+      playing = true;
+      paused = false;
+      void requestWakeLock();
+      speakCurrent();
+      return;
+    }
+
+    playing = keepPaused;
+    paused = keepPaused;
+    showCurrent();
+    if (keepPaused) void requestWakeLock();
+  }
+
+  function jumpSection(delta) {
+    const pos = sectionPosition();
+    let targetPos;
+
+    if (delta < 0 && index > sectionStarts[pos]) targetPos = pos;
+    else targetPos = pos + delta;
+
+    if (targetPos < 0 || targetPos >= sectionStarts.length) return;
+    jumpTo(sectionStarts[targetPos]);
+  }
+
+  play.addEventListener("click", () => {
+    if (paused) {
+      generation += 1;
+      synth.resume?.();
+      synth.cancel();
+      paused = false;
+      playing = true;
+      void requestWakeLock();
+      speakCurrent();
+      return;
+    }
+    if (playing) return;
+    if (index >= blocks.length) index = 0;
+    playing = true;
+    void requestWakeLock();
+    speakCurrent();
+  });
+
+  pause.addEventListener("click", () => {
+    if (!playing || paused) return;
+    synth.pause();
+    paused = true;
+  });
+
+  stop.addEventListener("click", () => {
+    generation += 1;
+    synth.resume?.();
+    synth.cancel();
+    playing = false;
+    paused = false;
+    index = 0;
+    clearHighlight();
+    updateNavigation();
+    void releaseWakeLock();
+  });
+
+  prevBlock.addEventListener("click", () => jumpTo(index - 1));
+  nextBlock.addEventListener("click", () => jumpTo(index + 1));
+  prevSection.addEventListener("click", () => jumpSection(-1));
+  nextSection.addEventListener("click", () => jumpSection(1));
+
+  voice.addEventListener("change", () => {
+    selectedVoice = voice.value;
+    if (playing && !paused) {
+      generation += 1;
+      synth.cancel();
+      speakCurrent();
+    }
+  });
+
+  rate.addEventListener("input", () => {
+    rateValue.textContent = Number(rate.value).toFixed(1) + "×";
+  });
+
+  theme.addEventListener("click", () => {
+    const dark = document.documentElement.dataset.theme === "dark";
+    document.documentElement.dataset.theme = dark ? "light" : "dark";
+    theme.textContent = dark ? "☾" : "☀";
+    localStorage.setItem("rsvp:theme", dark ? "light" : "dark");
+  });
+
+  document.documentElement.dataset.theme =
+    localStorage.getItem("rsvp:theme") ||
+    (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  theme.textContent = document.documentElement.dataset.theme === "dark" ? "☀" : "☾";
+
+  voices();
+  synth.addEventListener?.("voiceschanged", voices);
+  updateNavigation();
+
+  document.addEventListener?.("visibilitychange", () => {
+    if (document.visibilityState === "visible" && (playing || paused)) {
+      void requestWakeLock();
+    }
+  });
+
+  addEventListener("pagehide", () => {
+    generation += 1;
+    synth.cancel();
+    void releaseWakeLock();
+  });
+})();
+</script>
+</body>
+</html>
