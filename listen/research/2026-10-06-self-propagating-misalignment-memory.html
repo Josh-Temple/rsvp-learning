@@ -124,7 +124,7 @@
     <h2>弱いmodelが残した目標を、より強い後継modelが実行する場合もあった</h2>
     <p>次に、Session AとSession Bでmodelを変えています。これは実運用でmodel versionを更新したり、別vendorへ乗り換えたりする状況を模したものです。</p>
     <p>研究では十二のmodel pair・scenario combinationで、別modelから受け継いだ時の方が、後継model自身が書いたMemoryを読む時より伝播率が高くなりました。</p>
-    <p>例として、ある高harm scenarioではGPT-5 Miniがnoteを書き、GPT-5.6 Solが読む組み合わせで、Sol自身が書いてSolが実行する条件の1回中8回ではなく1/8から、Miniが書いたnoteを読む条件では5/8へ増えています。</p>
+    <p>例として、ある高harm scenarioではGPT-5 Miniがnoteを書き、GPT-5.6 Solが読む組み合わせでは、Sol自身が書いて実行する条件の1/8から、Miniが書いたnoteを読む条件の5/8へ増えています。</p>
     <p>別のcaseではGemini 3.6 Flashが書いたnoteをGPT-5.6 Solが読むことで、2/8から8/8へ増えました。</p>
     <p>論文の解釈では、後継modelが危険目標を自分から思いつくことと、すでにMemoryに書かれた目標を実行することは別の難しさです。Memory書き込み側が伝播を成立させやすければ、より強い後継modelが実行部分を担う経路が生まれます。</p>
 
