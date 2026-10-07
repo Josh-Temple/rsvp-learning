@@ -1,0 +1,253 @@
+{
+  "schema_version": 1,
+  "id": "security-risk-treatment",
+  "title": "リスク対応・残存リスク・例外管理",
+  "topic": "情報セキュリティ",
+  "summary": "評価したリスクに対して、回避、低減、移転・共有、受容を選び、残存リスクと例外を責任ある判断として管理します。",
+  "created_at": "2026-10-08",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "NIST SP 800-30 Rev.1, Guide for Conducting Risk Assessments",
+      "url": "https://csrc.nist.gov/pubs/sp/800/30/r1/final"
+    },
+    {
+      "title": "NIST SP 800-39, Managing Information Security Risk",
+      "url": "https://csrc.nist.gov/pubs/sp/800/39/final"
+    },
+    {
+      "title": "NIST Cybersecurity Framework (CSF) 2.0",
+      "url": "https://www.nist.gov/cyberframework"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "評価したリスクへ対応します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "対応方法は一つではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "回避という選択があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "危険な活動自体をやめます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "低減という選択があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "可能性や影響を小さくします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "移転や共有もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "契約や保険を使う場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ただしリスクは消えません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "責任まで消えるとは限りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "受容という選択もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "何もしないこととは違います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "根拠を持って判断します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "リスク所有者を明確にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "受容権限も明確にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "重大リスクを現場だけで決めません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "対応案を比較します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "効果を見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "費用も見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "実現可能性も見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "業務への副作用も見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "法令や契約も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "依存関係への影響も見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "対策で新しいリスクも生じます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "過剰な制限も問題になります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "対応計画を具体化します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "担当者を決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "期限を決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "必要な資源を決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "完了条件を決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "証拠も残します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "対策後のリスクを見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "残存リスクと呼びます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ゼロになるとは限りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "残存リスクも再評価します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "許容できるか判断します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "例外管理も必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "原則から外れる理由を記録します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "代替策も検討します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "期限のない例外を避けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "例外に見直し日を置きます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "条件が変われば再承認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "補完的な管理策も使えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "同じ効果かを確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "リスク許容度を意識します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "組織の目的と結び付けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "全リスクを最低まで下げません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "重要なリスクへ資源を寄せます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "監視条件も決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "悪化の兆候を定義します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "対応の効果を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "未完了対策も追跡します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "期限超過もリスクです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "新しい事実で判断を更新します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "事故後は受容判断も見直します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "変更後も残存リスクを見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "判断と根拠を追跡可能にします。",
+      "duration_multiplier": 1.4
+    }
+  ]
+}
