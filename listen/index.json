@@ -2,6 +2,13 @@
   "schema_version": 1,
   "items": [
     {
+      "id": "2026-10-07-undobench-agent-recovery",
+      "title": "仕事ができるAIでも、障害から安全に戻れるとは限らない――UndoBench",
+      "date": "2026-10-07",
+      "category": "research",
+      "path": "./research/2026-10-07-undobench-agent-recovery.html"
+    },
+    {
       "id": "2026-10-06-delegationbench-when-agents-should-ask",
       "title": "AIは、いつ勝手に動かず人に聞くべきか――DelegationBench",
       "date": "2026-10-06",
