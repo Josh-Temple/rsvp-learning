@@ -79,7 +79,7 @@
     <h1>仕事ができるAIでも、障害から安全に戻れるとは限らない――UndoBench</h1>
 
     <p>今日取り上げるのは、2026年10月4日にarXivへ公開された「UndoBench: Separating Task Competence from Recovery Capability in Tool-Using AI Agents」です。テーマは、AIエージェントが通常時に仕事を完了できることと、外部システムの障害が起きた時に安全に回復できることは、別の能力ではないかという問題です。</p>
-    <p>この研究が面白いのは、失敗したエージェントに「もう一度考え直させる」だけではなく、分散システムで本当に起きる故障を扱っている点です。たとえば、決済APIへの課金処理自体は成功したのに、成功応答だけがネットワーク障害で失われる。エージェントから見るとtimeoutですが、外部システムではすでに課金済みです。</p>
+    <p>この研究が面白いのは、分散システムで本当に起きる故障を扱っている点です。たとえば決済APIへの課金自体は成功したのに、成功応答だけがネットワーク障害で失われる。エージェントから見るとtimeoutですが、外部システムではすでに課金済みです。</p>
     <p>この状態で単純にretryすると、二重課金になります。データベース更新なら重複レコード、通知なら二重送信、Gitなら二重tag操作など、同じ問題が起こり得ます。</p>
     <p>UndoBenchは、こうした「外部副作用が本当に何回起きたか」まで追跡します。その結果、通常条件では83.54パーセント成功していた試行でも、障害を注入すると、通常条件で成功できた試行に限った回復成功率は46.72パーセントまで下がりました。naive retryでは53.33パーセントの試行で重複した外部副作用が起きています。</p>
 
@@ -93,7 +93,7 @@
     <p>この研究の重要な設計がcounterfactual paired evaluationです。同じworkflow、同じmodel、同じseedで、一回は正常条件、もう一回は障害条件を走らせます。</p>
     <p>正常条件で失敗した試行は、「障害から回復できなかった」とは言えません。そもそもtask自体を解く能力がなかった可能性があるからです。</p>
     <p>そこでUndoBenchは、正常条件で成功した試行だけを分母にしたConditional Recovery Success Rate、CRSRを定義します。これは「本来なら仕事を完了できるagentが、障害を受けた時にも正しく完了できた割合」です。</p>
-    <p>通常のRecovery Success Rateだけでは、task competenceの低さとfault recoveryの弱さが混ざります。CRSRによってこの二つを分離するのが、benchmarkの中心です。</p>
+    <p>通常のRecovery Success Rateではtask competenceとfault recoveryが混ざるため、CRSRで分離します。</p>
 
     <h2>36 workflow、8つのenterprise domain</h2>
     <p>UndoBenchには三十六のbase workflowがあり、Cloud、CRM、Database、Git、Messaging、Payments、Storage、Ticketingの八domainを扱います。</p>
@@ -111,7 +111,7 @@
     <p>第一はB0、Naive Retryです。errorが返れば最大三回、exponential backoffを入れて同じtool callを再実行します。一般的なretry patternですが、外部mutationがcommit済みかを確認しません。</p>
     <p>第二はB2、Idempotencyです。mutating callへtask contextとargumentから決めたidempotency keyを付けます。server側がそのkeyを認識していれば、同じrequestを再送しても二重実行を防げます。</p>
     <p>第三はB5、EvoUndo-RB1です。client側にmutation journalを持ち、failure時にreconciliationを試みます。ただし今回のbenchmarkではzero-privilege条件で、remote stateを直接覗くprobeやdomain-specificな逆操作は与えられていません。</p>
-    <p>この制約は重要です。B5の結果は、EvoUndoという考え方全体の上限ではなく、「remote stateを見る権限がなく、補償処理も事前登録されていない条件での実装」を示します。</p>
+    <p>B5の結果はEvoUndo全体の上限ではなく、「remote stateを見る権限がなく、補償処理も事前登録されていない条件での実装」を示します。</p>
 
     <h2>通常時83.54パーセント、障害時の条件付き回復は46.72パーセント</h2>
     <p>主要実験全体では、正常条件のtask successが二千八百八十試行中二千四百六、83.54パーセントでした。</p>
