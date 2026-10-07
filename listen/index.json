@@ -2,6 +2,13 @@
   "schema_version": 1,
   "items": [
     {
+      "id": "2026-10-08-ontology-ai-knowledge",
+      "title": "オントロジーとは何か――AI時代に「意味」を外に持つ知識設計",
+      "date": "2026-10-08",
+      "category": "research",
+      "path": "./research/2026-10-08-ontology-ai-knowledge.html"
+    },
+    {
       "id": "2026-10-07-undobench-agent-recovery",
       "title": "仕事ができるAIでも、障害から安全に戻れるとは限らない――UndoBench",
       "date": "2026-10-07",
