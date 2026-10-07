@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="CIAを入口に、真正性、責任追跡性、最小権限、セキュア・バイ・デザインなどを結び、何を守るための原則なのかを学びます。" />
+  <meta name="theme-color" content="#f2efe8" />
+  <title>セキュリティの目的と基本原則 — Learn</title>
+  <link rel="stylesheet" href="./learn.css" />
+  <script src="./learn.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="top">
+      <a href="../index.html">RSVPに戻る</a>
+      <span class="mode">LEARN · 情報セキュリティ</span>
+    </header>
+    <main>
+      <section class="reader" id="speech-reader" aria-label="読み上げプレイヤー">
+        <div class="reader-row">
+          <button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+          <button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+          <button id="speech-stop" type="button" aria-label="停止" disabled>■</button>
+          <select id="speech-voice" aria-label="読み上げ音声"></select>
+          <label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+        </div>
+        <div id="speech-status" class="reader-status" role="status">読み上げ準備中</div>
+      </section>
+      <article id="learn-article">
+        <h1>セキュリティの目的と基本原則</h1>
+        <p class="lead">CIAを入口に、真正性、責任追跡性、最小権限、セキュア・バイ・デザインなどを結び、何を守るための原則なのかを学びます。</p>
+        <h2>セキュリティは何を守るのか</h2>
+        <p>情報セキュリティというと、情報を秘密にすることだけを想像しやすいですが、目的はそれだけではありません。正しい情報を保ち、必要なときに業務を続けられることも守る対象です。機密性、完全性、可用性は、この違いを整理する代表的な三要素です。</p>
+        <p>さらに、相手やデータが本物だと確かめられる真正性、誰が何をしたか追える責任追跡性、行為の否定を難しくする否認防止、意図した働きを安定して続ける信頼性などもあります。CIAは入口ですが、すべてではありません。</p>
+        <h2>安全性は一つの値ではない</h2>
+        <p>セキュリティ上の性質は、ときに互いに緊張関係になります。アクセスを極端に制限すれば機密性は高く見えても、必要な職員まで利用できなければ可用性を損ないます。守る対象、利用目的、影響を確認し、複数の性質を同時に考える必要があります。</p>
+        <p>そのため、絶対安全を前提にするのではなく、対策後にも残るリスクを認識し、誰がどこまで受け入れるかを管理します。</p>
+        <h2>設計原則で失敗の形を変える</h2>
+        <p>最小権限は、利用者やシステムへ必要な権限だけを与える考え方です。強い権限を常時与えると、誤操作やアカウント侵害が起きたときの影響まで広がります。</p>
+        <p>セキュア・バイ・デザインは、完成後に対策を付け足すのではなく、要件や設計の段階から安全性を組み込む考え方です。セキュア・バイ・デフォルトは、利用者が細かな設定をしなくても初期状態が安全側になるようにします。</p>
+        <h2>失敗を前提に多層で守る</h2>
+        <p>フェイルセキュアでは、障害や例外が起きたときに権限が広がるような失敗を避けます。攻撃対象領域の最小化では、不要な機能、公開口、権限、依存関係を減らし、攻撃者が利用できる入口を小さくします。</p>
+        <p>多層防御は、同じ目的の製品を増やすことではありません。予防、検知、対応、復旧など役割の違う対策を組み合わせ、一つが失敗しても被害の拡大を抑えられるようにします。</p>
+        <h2>組織全体で回す</h2>
+        <p>NIST Cybersecurity Framework 2.0は、サイバーセキュリティの成果をGovern、Identify、Protect、Detect、Respond、Recoverの六つの機能で整理しています。これは一度だけ順番に実行する工程表ではありません。</p>
+        <p>統治し、状況を把握し、保護し、検知し、対応し、復旧する活動を継続して組み合わせます。個別技術を選ぶ前に、何を守るのか、どの失敗を避けたいのかを言葉にできることが出発点です。</p>
+        <h3>この教材の扱う範囲</h3>
+        <p class="endnote">この章は基本原則を扱います。個別の暗号方式、認証方式、製品設定、法令要件は後続章または利用時点の一次資料で確認します。</p>
+      </article>
+      <section class="sources" aria-labelledby="sources-title">
+        <h2 id="sources-title">出典</h2>
+        <p><a href="https://www.nist.gov/cyberframework">NIST Cybersecurity Framework (CSF) 2.0</a></p>
+        <p><a href="https://www.ipa.go.jp/shiken/syllabus/minaoshi/rcu1hd000001g5rk-att/syllabus_sc_ver0_1.pdf">IPA 情報処理安全確保支援士試験 シラバス案 Ver.0.1</a></p>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
