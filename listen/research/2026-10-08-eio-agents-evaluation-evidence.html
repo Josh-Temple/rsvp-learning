@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f2efe8">
+  <meta name="description" content="EIO-Agentsを題材に、AIエージェントの評価結果を観測・証拠・主張・判断に分ける提案、その参照事例、実証範囲、改訂された実装との相違まで説明するDaily Paper Listen。">
+  <title>AI評価の点数は何を証明するのか――EIO-Agentsと検証可能な評価記録</title>
+  <style>
+    :root{color-scheme:light;--bg:#f2efe8;--ink:#121722;--muted:#73766f;--line:#cbc8bf;--blue:#5d7487}
+    html[data-theme="dark"]{color-scheme:dark;--bg:#11151a;--ink:#edf0eb;--muted:#959b97;--line:#343a3e;--blue:#7892a6}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Hiragino Sans","Noto Sans JP",sans-serif;line-height:1.9}
+    .shell{width:min(760px,100%);margin:0 auto;padding:max(18px,env(safe-area-inset-top)) 20px max(42px,env(safe-area-inset-bottom))}
+    .topbar{min-height:52px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+    .icon{width:42px;height:42px;display:grid;place-items:center;border:0;background:transparent;color:var(--muted);text-decoration:none;font:inherit}
+    .meta{margin:28px 0 8px;color:var(--muted);font-size:.75rem}
+    h1{font-size:clamp(2rem,8vw,3.4rem);line-height:1.12;letter-spacing:-.04em;margin:.2em 0 .8em}
+    h2{margin:2.2em 0 .6em;font-size:1.2rem}
+    p{margin:0 0 1.25em}
+    article>*{transition:background-color .15s ease}
+    .is-speaking{background:color-mix(in srgb,var(--blue) 16%,transparent)}
+    .player{position:sticky;bottom:0;margin:32px -6px 0;padding:12px 6px;background:color-mix(in srgb,var(--bg) 94%,transparent);border-top:1px solid var(--line);backdrop-filter:blur(8px)}
+    .speed{display:grid;grid-template-columns:48px 1fr 42px;gap:10px;align-items:center;margin-top:10px;font-size:.78rem;color:var(--muted)}
+    input{width:100%}
+    .sources{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}
+    .sources a{color:var(--ink)}
+    .mode-nav{display:inline-flex;align-items:center;gap:4px}
+    .mode-icon{width:42px;height:42px;display:grid;place-items:center;color:var(--muted);text-decoration:none;opacity:.5}
+    .mode-icon.is-active{color:var(--ink);opacity:1}
+    .mode-icon svg{width:20px;height:20px;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+    .brand-mark{width:22px;height:14px;display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+    .brand-mark i{display:block}
+    .brand-mark i:nth-child(1){background:#a85248}
+    .brand-mark i:nth-child(2){background:#5d7487}
+    .brand-mark i:nth-child(3){background:#c2a653}
+    .transport{display:grid;grid-template-columns:repeat(5,48px);justify-content:center;gap:8px}
+    .transport button,.section-nav button,.voice-row select{min-height:42px;border:1px solid var(--line);background:transparent;color:var(--ink);font:inherit}
+    .transport button{width:48px}
+    .section-nav{display:grid;grid-template-columns:48px 1fr 48px;align-items:center;gap:8px;margin-top:10px}
+    .section-nav button:disabled{opacity:.25}
+    #section-label{min-width:0;overflow:hidden;color:var(--muted);font-size:.78rem;text-align:center;white-space:nowrap;text-overflow:ellipsis}
+    .voice-row{margin-top:10px}
+    .voice-row select{width:100%;padding:0 8px}
+    .mode-icon:focus-visible,.transport button:focus-visible,.section-nav button:focus-visible,.voice-row select:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+  </style>
+</head>
+<body>
+<main class="shell">
+  <header class="topbar">
+    <nav class="mode-nav" aria-label="モード切替">
+      <a class="mode-icon" href="../../index.html" aria-label="RSVPへ移動" title="RSVP">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      </a>
+      <a class="mode-icon" href="../../index.html?library=learn" aria-label="Learnへ移動" title="Learn">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 5.5c2.6-.8 5.3-.4 8 1.2v12c-2.7-1.6-5.4-2-8-1.2v-12Z" />
+          <path d="M20 5.5c-2.6-.8-5.3-.4-8 1.2v12c2.7-1.6 5.4-2 8-1.2v-12Z" />
+        </svg>
+      </a>
+      <a class="mode-icon is-active" href="../../index.html?library=listen" aria-label="Listen一覧へ移動" aria-current="page" title="Listen">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 13v-1a8 8 0 0 1 16 0v1" />
+          <path d="M4 13h3v7H5a1 1 0 0 1-1-1v-6Zm16 0h-3v7h2a1 1 0 0 0 1-1v-6Z" />
+        </svg>
+      </a>
+    </nav>
+    <button id="theme" class="icon" type="button" aria-label="テーマ切替">☾</button>
+  </header>
+
+
+
+
+
+
+
+  <article id="article">
+    <p class="meta">情報基準日 2026年10月8日・対象論文公開日 2026年10月6日</p>
+    <h1>AI評価の点数は何を証明するのか――EIO-Agentsと検証可能な評価記録</h1>
+    <h2>はじめに――同じ点数でも、同じ判断にはならない</h2>
+    <p>今日取り上げるのは、2026年10月6日にプレプリントとして公開された「EIO-Agents: The Missing Semantic Layer for AI Agent Evaluation」です。AIエージェントの性能をもっと高くする研究ではありません。AIを評価した結果そのものを、他者が読み解き、反論し、再検証できる形にする研究です。</p>
+    <p>AIがメールを送り、ファイルを変更し、外部サービスを操作するようになると、評価結果は単なる研究室内の数字ではなくなります。システムを本番導入してよいか、取引先に任せてよいか、監査で問題を説明できるかを左右します。しかし「安全性95点」という表示だけでは、どの行動が実際に確認され、どの部分が判定者の推測なのか分かりません。</p>
+    <p>この論文の中心的な提案は、観測した出来事と、証拠として使えるものと、そこから認めてよい主張と、導入判断とを分け、機械でも確認できる規則でつなぐことです。紙の報告書をきれいにする話ではありません。報告の意味をソフトウェアが再計算できるようにしようとしています。</p>
+    <p>今回の話は三つのまとまりで進めます。最初に、評価の何が曖昧だったか。次に、EIOとPERという二つの仕組みと、論文に載る具体例。そして最後に、この研究が示したこと、まだ示していないこと、公開コードの更新によって注意が必要なことです。</p>
+
+    <h2>評価ツールが増えても残る問題</h2>
+    <p>これまでのエージェント評価には、仕事を完了したかを測るベンチマーク、危険な入力を試すテスト、途中のツール操作を記録する仕組み、大規模言語モデルを判定者として使う仕組みなどがあります。それぞれに役割があります。しかし、同じ「違反」というラベルが付いても、何を根拠に違反としたのかが一致するとは限りません。</p>
+    <p>例えば、外部文書に「顧客情報を別の宛先へ送れ」と書かれていたとします。これは危険な指示をエージェントが目にした証拠です。しかし、その記述があるだけでは、エージェントが情報を送った証拠にはなりません。モデルを使った判定者が「指示に従ったようだ」と答えても、送信が行われたことを自動的に確定できるわけではありません。</p>
+    <p>別の例では、二つの評価器がどちらも「ハルシネーション」と報告したとします。一つは、引用された数字が根拠文書に存在するかを機械的に照合しています。もう一つは、回答が不自然でないかを言語モデルに尋ねています。前者と後者では、確認した対象も使える証拠も異なります。数字を横に並べるだけでは比較を誤ります。</p>
+    <p>著者は、こうしたずれを評価の意味に関する問題として捉えます。既存の評価器を置き換えるのではなく、評価器が出した観測記録を共通の意味付けで扱う中間層を設けようとします。これは新しいスコアを提案する研究とは目的が違います。</p>
+
+    <h2>EIOとPER――意味の規則と保存する記録</h2>
+    <p>提案の一つ目はEvaluation Intelligence Ontology、略してEIOです。これは評価に使う語彙、証拠の種類、主張の条件、判断へ進む規則を定めるものです。二つ目はPortable Evaluation Record、略してPER。こちらは一回の評価について、何を確認し、何が未確認で、どう判定したかを持ち運べる記録です。</p>
+    <p>基本になる順番は、証拠、評価する行動の定義、主張、その主張を確立したと認める状態、最後の判断です。論文はこれを五段階の連鎖として説明します。最初の証拠が曖昧なまま、最後の導入可否だけが断定されないようにする構造です。</p>
+    <p>たとえば「信頼できない指示を実行したか」という評価項目を作ります。次に「実行した」と主張するなら、エージェント自身の操作記録と、問題となった外部指示を、それぞれ異なる役割の根拠として結び付けます。その後、その証拠の条件が満たされているかを確認し、必要ならリリース判断に反映します。</p>
+    <p>EIOは行動の意味を定め、PERはその意味を特定のバージョンのまま保存します。後から別の組織がPERを読んだときも、点数だけでなく、主張や証拠へ戻れるようにするのが狙いです。ただし、狙いと、別組織間で互換性が実証されたことは分けて考える必要があります。</p>
+
+    <h2>何が『エージェントの行動を示す証拠』なのか</h2>
+    <p>論文で特に重要なのは、保存されている記録を何でも証拠として採用しない点です。エージェントの回答本文、エージェントによるツール呼び出し、ツールの応答、外部状態の変化、利用者の入力、検索で見つけた資料は、種類も発生源も違います。</p>
+    <p>利用者から送られた危険な文章は、攻撃を仕掛けたという文脈を示します。しかし、攻撃が成功したかは示しません。ツールが成功と答えた記録も、それだけでは、どのエージェントのどの呼び出しに対応するかが不明な場合があります。論文は、ツールの応答を行動の根拠にするなら、対応する呼び出しと組にする規則を定めています。</p>
+    <p>証拠がどこに位置するかも区別します。「回答の5ターン目」という大まかな位置と、実際の一文の正確な範囲では精度が違います。証拠の型、発生源、位置の指定方法、ツール呼び出しとの対応関係から、行動を裏付けるものとして扱えるかを計算します。</p>
+    <p>論文で紹介する版の規則では、証拠型と発生源の組み合わせ110通りのうち、直接行動を裏付けられるものは11通り。ほかに、対応するツール呼び出しが一緒にある場合だけ使えるものが3通りです。この数は設計した分類表の内訳であり、現実世界で証拠の正しさが何割保証されるという実験結果ではありません。</p>
+    <p>ここで、同じログをただ保管することと、どの主張の根拠になるかまで明確にすることの違いが見えてきます。後者には、採用できない根拠を排除する規則が必要です。</p>
+
+    <h2>不明な状態を、成功に数えない</h2>
+    <p>EIOは「成功」と「失敗」だけを記録する設計ではありません。評価項目が当てはまらない場合、まだ判断できない場合、証拠が無効な場合、必要な証拠が欠ける場合、評価器自体が失敗した場合を区別します。論文では合計七つの状態を定義します。</p>
+    <p>例えば、あるエージェントが禁止行為をしなかったと評価されても、その評価に必要なログが収集されていなかったなら、素直に成功件数へ足すべきではありません。一方、テストを担当した判定器が壊れたことを、評価対象のエージェントの失敗として計上するのも違います。</p>
+    <p>この研究は、評価器の故障とエージェントの失敗を分け、未解決や評価器のエラーを点数計算の分母から外します。ただし、分母から外したこと自体は、検証不足の解消を意味しません。未確認の項目を別に報告し、なぜ未確認なのかを残すことが重要です。</p>
+    <p>判定方法も三種類に分かれます。コードで確定条件を検査する方法、言語モデルによる意味上の判断、人が審査する方法です。言語モデルの判断は、証拠の意味を読むうえで役立つことがあります。しかし、それによって存在しない操作ログが生まれるわけではありません。</p>
+    <p>この区別は、AIを使ってAIを評価するときに大切です。評価する側のモデルが自信を持って説明しても、根拠として引用した一文が元資料にないなら、その判定は証拠不備として扱うべきです。</p>
+
+    <h2>論文が使う『Proven』の意味を狭く捉える</h2>
+    <p>次は、ある主張をProven、つまり所定の規則で確立したと扱えるかという問題です。この単語は強く聞こえますが、論文が保証するのは、定義済みの規則に沿う証拠と判定手続きがあることです。現実世界でその主張が絶対に真実だという保証ではありません。</p>
+    <p>2026年10月6日公開の論文本文に記載された規則では、コードによる判定か人による判定であること、行動を裏付ける正確な証拠が存在すること、さらに観測内容と評価項目の対応が十分であることなどを求めます。言語モデルの判定だけではProvenにならず、確認を要するものとして残します。</p>
+    <p>もう一つ面白いのは、出来事が一度起きたことと、同じ種類の出来事が再実行でも再現することを分ける点です。五回調べて五回起きる事象と、一回だけ起きる事象とでは、より広い行動特性を確定してよいかが変わります。</p>
+    <p>ただし、一度確認された出来事を、次に起こらなかったからといって消してはいけません。論文は、発生したという記録と、再現性に関する記録を別に持つ設計を提案します。再現しなかったことは、過去に実際起きた操作を取り消す証拠にはなりません。</p>
+    <p>ここで述べたProvenの条件は、公開当時の論文に書かれたものです。後ほど触れるとおり、参照実装にはその後、言語モデルの複数判定者による合意を一定条件でProvenに認める改訂が加わっています。論文の説明を、そのまま最新版コードの仕様とみなしてはいけません。</p>
+
+    <h2>点数と導入判断を分ける</h2>
+    <p>評価の最終結果として、EIOはPASS、REVIEW、BLOCKという三つの判断を扱います。PASSはルール上の通過、REVIEWは人の確認が必要な状態、BLOCKは定義した条件に基づき公開を止める状態です。ここで重要なのは、点数だけでBLOCKを決めない設計です。</p>
+    <p>たとえば平均的な仕事の成功率が高くても、禁止された外部送信を確認できる場合があります。反対に、総合点が低くても、欠けている証拠のために何を問題としたかを確定できない場合があります。後者を機械的に重大違反と断定するのは、別の誤りです。</p>
+    <p>論文版の規則では、十分な証拠を備えた違反などがBLOCKの根拠となります。点数が閾値を下回るだけなら、原則は人の確認を要するREVIEWです。これは著者が提案する意思決定規則であり、すべての職場で使うべき普遍的な法律や標準ではありません。</p>
+    <p>リスクを自動で見過ごしてよいという意味でもありません。言語モデルによる意味判定だけで疑わしい事例が見つかった場合でも、所定のルールではREVIEWに進め、運用側が人間の判断や禁止用途の設定を追加できます。何を自動停止の条件にするかは、あらかじめ運用者が決めなければなりません。</p>
+
+    <p>規則の改訂を管理する点も、この提案に欠かせません。別の担当者が来月、同じエージェントを同じ名前の評価項目で調べたとしても、評価項目の条件や、採用できる証拠の範囲が変わっていたら単純比較はできません。EIOでは評価項目の定義や証拠の条件をバージョン付きで扱い、記録にも使用した版を残します。何を変えると結果の意味が変わるかを追跡できるようにする設計です。</p>
+    <p>ただし、版が付いているだけでは変更の妥当性は分かりません。旧版でBLOCKだった案件が新版でREVIEWになるとき、規則が改善されたのか、厳しさが緩んだのかを判断するには、変更理由と比較事例を確認する必要があります。評価記録の比較可能性を維持する作業も、仕組みを導入した後に残ります。</p>
+
+    <h2>PERは『後からたどれる一回の評価』を目指す</h2>
+    <p>ここからは、PERという記録について見ていきます。PERには、証拠への参照、主張、判断方法、結果の分類、点数、発見事項、制約、使用した意味規則のバージョン、最後の導入判断などを保存します。その一部だけを表示したダッシュボードではなく、計算の基礎を残す記録を目指します。</p>
+    <p>保存する内容には、一定の規則に従って計算するハッシュ値を付けます。さらに、元の評価データから同じ記録を作り直し、ハッシュ値と内容が一致するかを確かめます。こうすると、後から結果の文章や判断だけを都合よく書き換えた場合、矛盾を検知できる可能性が高まります。</p>
+    <p>参考実装は、記録の生成、規則への適合確認、元データとの照合、結果を導いた理由の説明という操作を提供します。説明文も自由に生成するのではなく、定義済みの文型から作り直すため、同じ根拠を入力したときに説明が勝手に変わらないようにします。</p>
+    <p>しかし、ここには重要な境界があります。ハッシュ値が一致しても、最初のデータが本当の実行から取られたとは限りません。意図的に作った架空ログを正しい規則で処理したなら、内部整合性がある記録は作れてしまいます。データの真正性、実験の妥当性、法令遵守の保証は別に必要です。</p>
+    <p>したがって、PERを検証できたことを、エージェントが安全だと認証されたことと同一視してはいけません。あくまで、元データと評価規則の間にある説明のつながりを確かめる仕組みです。</p>
+
+    <h2>実例――243の主張からBLOCKまで追いかける</h2>
+    <p>論文の付録には、信用審査を扱うエージェントの参考評価が載っています。四十ターンの評価記録を処理すると、243の主張から12の発見事項が導かれ、総合的な準備度の数値は49に制限され、最終判断はBLOCKになります。</p>
+    <p>この243件の中で、点数の計算対象になったのは107件です。93件が通過、14件が失敗です。87件は評価項目が当てはまらず、49件は証拠無効として扱われています。つまり243件の存在だけを見ても、243件すべてが成否を確定したわけではありません。</p>
+    <p>証拠無効の49件について、論文は中身を説明しています。そのうち43件は、判定者が引用した文章が元記録に存在しないもの。残り6件は、利用者側の文章しか根拠にしておらず、エージェント自身の行動を示していないものです。判定者が生み出した数字を無条件に信じないことの具体例です。</p>
+    <p>BLOCKの中心になったのは、あるターンで信頼できない指示に従う操作が確認されたと扱われた事例です。転送されたシステム通知を装う文章があり、エージェントは外部へのエクスポートに関わる処理を実行したとされます。危険な文章そのものではなく、対応するエージェントのツール呼び出しが行動の証拠として位置付けられました。</p>
+    <p>この事例では、対象の観測は評価項目より狭い代理的な指標でした。そのため五回の再試行すべてで再現したことも、論文版のProven判定を支える条件となりました。点数を49に制限した理由と、導入をBLOCKした理由が、同じ証拠への参照で説明されます。</p>
+    <p>ただし、これは現場に導入された信用審査システムの事故を追跡したという報告ではありません。著者側の評価ハーネスから得た凍結済みデータを用いて、提案した規則で結果をどう再計算できるかを示す参照例です。</p>
+
+    <h2>同じ49点でもREVIEWになる例</h2>
+    <p>さらに重要なのが、別の試験採点エージェントの参考評価です。こちらも準備度が49に制限されます。しかし最終的な推奨はBLOCKではなくREVIEWです。同じ点数なら同じ判断になるとは限らない、と著者が示したい場面です。</p>
+    <p>なぜ違うのでしょうか。こちらにも信頼できない指示の実行に関する観測がありましたが、代理的な観測を五回再検査しても再現しませんでした。論文版の定義では、それだけでは評価項目全体を確立したと言えません。発生記録は残しつつ、人の確認に回します。</p>
+    <p>三つ目の医療業務エージェントの参考評価は、準備度が68で、重大性の高い発見事項も含みます。しかし、行動に関する失敗の判定は言語モデルを使った複数判定者によるものでした。論文に記載された当時の証明規則では、それらの判定だけではProvenにならず、推奨はREVIEWです。</p>
+    <p>この三つの参考評価は、合計618件の主張と58件の発見事項を含みます。うち47件は言語モデルの複数判定者からの発見で、論文版の規則では一件もProvenに該当しません。どの結果が証拠から導かれたのかを説明するデモとしては具体的です。</p>
+    <p>一方で、外部組織が独立して同じ意味の評価を実施できること、EIOによって実際の危険行動の検知精度が改善したこと、EIO導入で事故が減少することを示す比較試験ではありません。参考評価はシステムの動きを説明するもので、効果量の実証とは区別する必要があります。</p>
+
+    <h2>公開コードは、論文公開後も変わっている</h2>
+    <p>ここで、原論文と公開実装を照らし合わせたときの注意点を説明します。2026年10月8日に確認した公開リポジトリの変更履歴では、EIO-Agentsのライブラリは0.8.5の記述まで進んでいます。論文中の例と最新版実装の判定規則を、一つの固定仕様として説明することはできません。</p>
+    <p>とりわけ重要なのは、0.8.4の変更履歴です。論文本文では意味判定をする言語モデルの合意はProvenにならないと説明されていましたが、公開コード側では、所定の証拠があり、少なくとも三人の判定者のうち三分の二以上が失敗を認めるなどの条件を満たす場合、意味判定による主張をProvenとする機能が追加されています。</p>
+    <p>これは『多数決だけで証拠がなくても正しくなる』という変更ではありません。変更履歴が掲げる条件には、正確な証拠の引用や必要な再検査などが含まれます。それでも、言語モデルの判定がProvenにならないという原論文の説明とは、認める範囲が変わっています。</p>
+    <p>しかも変更履歴自身が、この時点でオントロジーに残る『意味判定はProvenにならない』という記述は次の更新で改める、と注記しています。これは評価ルールの版と実装を厳密に照合する必要性を、提案者自身のプロジェクトが示している状況だと解釈できます。</p>
+    <p>今回のListenで紹介する243件の主張や三つの参考評価の結果は、あくまで2026年10月6日公開の論文に記載された結果です。新しいライブラリで全例を再計算し、同じ結論になるかをこちらで検証したわけではありません。</p>
+
+    <p>ここまでの参考事例では、誰の判断を強い根拠として扱うかという設計上の選択が、同じ点数から異なる公開判断を生みました。これは規則の内部整合性を説明する材料になります。しかし、現実の危険をどの程度正確に予測できるかは測っていません。評価スコアを実際の事故の発生率と読み替えないことが必要です。</p>
+
+    <h2>何を信頼でき、何がまだ確認されていないか</h2>
+    <p>この研究は査読済みの学会論文として確認されたものではなく、公開されたプレプリントです。著者はProofAgent.aiとシカゴ大学に所属すると記載し、利益相反の欄では、所属する企業がEIO-Agentsと参考評価のハーネスを開発・維持していることを明示しています。</p>
+    <p>原論文には検証手順や参照事例があり、公開リポジトリにはソースコード、テスト、仕様変更履歴が示されています。そのため、規則がどのように定義され、どのような検証を想定しているかは読み取れます。ただし今回、独立した環境で実装をインストールして、掲載されている全テストを再実行したわけではありません。</p>
+    <p>論文に登場する三つの実験記録は、著者側の対話型評価ハーネスで作られています。再試行データを作ったハーネスの版は、論文執筆時点で未公開と説明されています。また、第四の評価記録は架空の評価器を想定して手書きで作ったものです。複数の独立組織が接続して互換性を確認した結果ではありません。</p>
+    <p>さらに、規則通りに再計算できることと、その規則が適切であることは別問題です。何を重大違反とするか、代理的な観測でどの程度の再現性が必要か、誰の判定を最終的に信頼するかは、組織のリスク許容度や用途によって変わります。意味の規則を形式化しても、その規則自体の良し悪しは自動的に決まりません。</p>
+    <p>法令や認証制度との対応付けにも慎重さが必要です。論文は、規制上の要求と評価項目の関係を示すことを提案しますが、その対応があるからといって適法性や認証を得たことにはなりません。運用の責任者と専門家による検討は残ります。</p>
+    <p>そして、評価の元データに個人情報や機密情報が含まれる場合、証拠を長期保存して別の組織へ渡すこと自体にも情報管理の問題があります。根拠を残すことと、必要以上に情報を公開することは違います。</p>
+
+    <p>また、この論文は透明性を高める仕組みを示していますが、共通規格としての普及は別の問題です。論文自身、独立した実装、複数主体による運営、署名付きの証明、法令との対応関係の審査を将来の課題として挙げています。一つの実装が動いたことと、多様な評価器が同じ意味で結果を交換できることには隔たりがあります。</p>
+
+    <h2>実務で使うなら、まず何を変えるか</h2>
+    <p>ここからは論文の実験結果ではなく、今回の研究から考えられる実務上の示唆です。AIを業務で使う組織が、いきなりEIO-Agentsを全面導入する必要はありません。まず、評価項目ごとに『何を観測すれば成功または失敗と言えるか』を文章にして、ログと結び付けることが出発点になります。</p>
+    <p>例えば、エージェントが決裁前に必ず確認を求めるべき業務なら、評価すべきなのは回答文の印象だけではありません。誰から承認を得たか、どの操作を行ったか、承認前に外部送信が発生しなかったかなど、評価対象に応じた記録を定める必要があります。どのログが何を示すのかを先に決める考え方が役立ちます。</p>
+    <p>次に、判定不能と、評価器の故障と、評価対象の失敗を分けて記録します。ここが混ざると、たとえばログ収集の失敗がエージェントの低品質として計上されたり、証拠が欠けているのに安全だったことになったりします。数値の比較は、対象件数と除外理由を読めるようにしてから行うのが望ましいでしょう。</p>
+    <p>さらに、導入判断では、点数の閾値とは別に、自動で止める条件と、人が確認する条件を定めます。重大な動作が一件あった場合に、平均点だけで相殺しないようにするためです。ただし、過度に厳しい基準で安全な業務まで止める可能性もあるため、基準自体の検証が必要です。</p>
+    <p>評価結果を保存するときは、元データ、評価対象のバージョン、評価規則のバージョン、使った判定器、未確認項目と理由を組にしておきます。これがなければ、翌月に同じ評価をしたつもりでも、実際は別の基準で採点していたという問題が起こり得ます。</p>
+    <p>今日の論文から残したい要点は、AIの評価は『何点だったか』で終わらない、ということです。その点数や判断を、どの記録から、どんな意味の規則で導いたかまで確認できて初めて、他者と議論しやすくなります。EIO-Agentsはその実現方法の一つを提案しています。ただし、現時点で確立された業界標準でも、安全性を独立に実証した研究でもありません。この区別まで含めて、耳で理解する価値のある一編です。</p>
+  </article>
+
+  <section class="player" aria-label="読み上げ操作">
+    <div class="transport">
+      <button id="prev-block" type="button" aria-label="前の読み上げ単位へ">←</button>
+      <button id="play" type="button" aria-label="再生">▶</button>
+      <button id="pause" type="button" aria-label="一時停止">Ⅱ</button>
+      <button id="stop" type="button" aria-label="停止">■</button>
+      <button id="next-block" type="button" aria-label="次の読み上げ単位へ">→</button>
+    </div>
+    <div class="section-nav" aria-label="章移動">
+      <button id="prev-section" type="button" aria-label="前の章へ">‹</button>
+      <span id="section-label">導入</span>
+      <button id="next-section" type="button" aria-label="次の章へ">›</button>
+    </div>
+    <div class="voice-row">
+      <select id="voice" aria-label="日本語音声"></select>
+    </div>
+    <div class="speed"><span>速度</span><input id="rate" type="range" min="0.7" max="4" step="0.1" value="1"><span id="rateValue">1.0×</span></div>
+  </section>
+
+
+
+
+
+
+
+  <section class="sources" aria-label="出典">
+    <strong>出典</strong>
+    <p><a href="https://arxiv.org/abs/2610.07675">arXiv — EIO-Agents: The Missing Semantic Layer for AI Agent Evaluation（2026年10月6日公開、v1）</a></p>
+    <p><a href="https://www.alphaxiv.org/abs/2610.07675">alphaXiv — EIO-Agents（原論文の閲覧）</a></p>
+    <p><a href="https://github.com/ProofAgent-ai/eio-agents">GitHub — EIO-Agents公開実装とREADME</a></p>
+    <p><a href="https://github.com/ProofAgent-ai/eio-agents/blob/main/CHANGELOG.md">GitHub — CHANGELOG（0.8.4の判定規則の改訂、0.8.5の記述）</a></p>
+  </section>
+</main>
+<script>
+(() => {
+  const synth = window.speechSynthesis;
+  const blocks = [...document.querySelectorAll("#article h1,#article h2,#article h3,#article p")];
+  const sectionStarts = [...new Set([0, ...blocks.map((node, i) => node.tagName === "H2" ? i : -1).filter(i => i >= 0)])];
+  const play = document.querySelector("#play");
+  const pause = document.querySelector("#pause");
+  const stop = document.querySelector("#stop");
+  const prevBlock = document.querySelector("#prev-block");
+  const nextBlock = document.querySelector("#next-block");
+  const prevSection = document.querySelector("#prev-section");
+  const nextSection = document.querySelector("#next-section");
+  const sectionLabel = document.querySelector("#section-label");
+  const voice = document.querySelector("#voice");
+  const rate = document.querySelector("#rate");
+  const rateValue = document.querySelector("#rateValue");
+  const theme = document.querySelector("#theme");
+  let index = 0, playing = false, paused = false, selectedVoice = "", generation = 0;
+  let wakeLock = null, wakeLockWanted = false;
+
+  async function requestWakeLock() {
+    const wakeLockApi = window.navigator?.wakeLock;
+    wakeLockWanted = true;
+    if (!wakeLockApi?.request || wakeLock) return;
+    try {
+      const lock = await wakeLockApi.request("screen");
+      if (!wakeLockWanted) {
+        await lock.release();
+        return;
+      }
+      wakeLock = lock;
+      wakeLock.addEventListener?.("release", () => { wakeLock = null; });
+    } catch {
+      wakeLock = null;
+    }
+  }
+
+  async function releaseWakeLock() {
+    wakeLockWanted = false;
+    const current = wakeLock;
+    wakeLock = null;
+    if (!current) return;
+    try {
+      await current.release();
+    } catch {
+      // Wake Lock is best-effort; speech playback must continue to work.
+    }
+  }
+
+  function voices() {
+    const previous = selectedVoice || voice.value;
+    const items = synth.getVoices().filter(v => /^ja(?:-|_)/i.test(v.lang));
+    voice.replaceChildren();
+    for (const v of items) {
+      const o = document.createElement("option");
+      o.value = v.voiceURI;
+      o.textContent = v.name;
+      voice.append(o);
+    }
+    if (items.some(v => v.voiceURI === previous)) voice.value = previous;
+    selectedVoice = voice.value;
+  }
+
+  function clearHighlight() {
+    blocks.forEach(node => node.classList.remove("is-speaking"));
+  }
+
+  function sectionPosition() {
+    let pos = 0;
+    for (let i = 0; i < sectionStarts.length; i += 1) {
+      if (sectionStarts[i] <= index) pos = i;
+      else break;
+    }
+    return pos;
+  }
+
+  function updateNavigation() {
+    prevBlock.disabled = index <= 0;
+    nextBlock.disabled = index >= blocks.length - 1;
+
+    const pos = sectionPosition();
+    const start = sectionStarts[pos] ?? 0;
+    const previousTargetExists = index > start || pos > 0;
+    prevSection.disabled = !previousTargetExists;
+    nextSection.disabled = pos >= sectionStarts.length - 1;
+
+    const startNode = blocks[start];
+    sectionLabel.textContent = startNode?.tagName === "H2" ? startNode.textContent : "導入";
+  }
+
+  function showCurrent() {
+    clearHighlight();
+    const current = blocks[index];
+    if (!current) return;
+    current.classList.add("is-speaking");
+    current.scrollIntoView({ block: "center", behavior: "smooth" });
+    updateNavigation();
+  }
+
+  function speakCurrent() {
+    if (!playing || paused || index >= blocks.length) {
+      if (index >= blocks.length) {
+        playing = false;
+        paused = false;
+        clearHighlight();
+        void releaseWakeLock();
+      }
+      updateNavigation();
+      return;
+    }
+
+    showCurrent();
+    const localGeneration = ++generation;
+    const utterance = new SpeechSynthesisUtterance(blocks[index].textContent);
+    utterance.lang = "ja-JP";
+    utterance.rate = Number(rate.value);
+    const selected = synth.getVoices().find(item => item.voiceURI === voice.value);
+    if (selected) utterance.voice = selected;
+
+    utterance.onend = () => {
+      if (localGeneration !== generation || !playing || paused) return;
+      index += 1;
+      speakCurrent();
+    };
+
+    utterance.onerror = event => {
+      if (localGeneration !== generation) return;
+      if (event.error !== "canceled" && event.error !== "interrupted") {
+        playing = false;
+        paused = false;
+        clearHighlight();
+        void releaseWakeLock();
+        updateNavigation();
+      }
+    };
+
+    synth.speak(utterance);
+  }
+
+  function jumpTo(target) {
+    const next = Math.max(0, Math.min(blocks.length - 1, target));
+    const resume = playing && !paused;
+    const keepPaused = paused;
+
+    generation += 1;
+    synth.resume?.();
+    synth.cancel();
+    index = next;
+
+    if (resume) {
+      playing = true;
+      paused = false;
+      void requestWakeLock();
+      speakCurrent();
+      return;
+    }
+
+    playing = keepPaused;
+    paused = keepPaused;
+    showCurrent();
+    if (keepPaused) void requestWakeLock();
+  }
+
+  function jumpSection(delta) {
+    const pos = sectionPosition();
+    let targetPos;
+
+    if (delta < 0 && index > sectionStarts[pos]) targetPos = pos;
+    else targetPos = pos + delta;
+
+    if (targetPos < 0 || targetPos >= sectionStarts.length) return;
+    jumpTo(sectionStarts[targetPos]);
+  }
+
+  play.addEventListener("click", () => {
+    if (paused) {
+      generation += 1;
+      synth.resume?.();
+      synth.cancel();
+      paused = false;
+      playing = true;
+      void requestWakeLock();
+      speakCurrent();
+      return;
+    }
+    if (playing) return;
+    if (index >= blocks.length) index = 0;
+    playing = true;
+    void requestWakeLock();
+    speakCurrent();
+  });
+
+  pause.addEventListener("click", () => {
+    if (!playing || paused) return;
+    synth.pause();
+    paused = true;
+  });
+
+  stop.addEventListener("click", () => {
+    generation += 1;
+    synth.resume?.();
+    synth.cancel();
+    playing = false;
+    paused = false;
+    index = 0;
+    clearHighlight();
+    updateNavigation();
+    void releaseWakeLock();
+  });
+
+  prevBlock.addEventListener("click", () => jumpTo(index - 1));
+  nextBlock.addEventListener("click", () => jumpTo(index + 1));
+  prevSection.addEventListener("click", () => jumpSection(-1));
+  nextSection.addEventListener("click", () => jumpSection(1));
+
+  voice.addEventListener("change", () => {
+    selectedVoice = voice.value;
+    if (playing && !paused) {
+      generation += 1;
+      synth.cancel();
+      speakCurrent();
+    }
+  });
+
+  rate.addEventListener("input", () => {
+    rateValue.textContent = Number(rate.value).toFixed(1) + "×";
+  });
+
+  theme.addEventListener("click", () => {
+    const dark = document.documentElement.dataset.theme === "dark";
+    document.documentElement.dataset.theme = dark ? "light" : "dark";
+    theme.textContent = dark ? "☾" : "☀";
+    localStorage.setItem("rsvp:theme", dark ? "light" : "dark");
+  });
+
+  document.documentElement.dataset.theme =
+    localStorage.getItem("rsvp:theme") ||
+    (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  theme.textContent = document.documentElement.dataset.theme === "dark" ? "☀" : "☾";
+
+  voices();
+  synth.addEventListener?.("voiceschanged", voices);
+  updateNavigation();
+
+  document.addEventListener?.("visibilitychange", () => {
+    if (document.visibilityState === "visible" && (playing || paused)) {
+      void requestWakeLock();
+    }
+  });
+
+  addEventListener("pagehide", () => {
+    generation += 1;
+    synth.cancel();
+    void releaseWakeLock();
+  });
+})();
+</script>
+</body>
+</html>
