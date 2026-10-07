@@ -247,6 +247,19 @@
         "integrated-case-delivery-change",
         "integrated-case-outcomes-operations"
       ]
+    },
+    {
+      "id": "security-foundations-risk",
+      "title": "情報セキュリティ I：基礎・リスク・脅威",
+      "chapters": [
+        "security-purpose-principles",
+        "security-assets-dependencies",
+        "security-threats-vulnerabilities",
+        "security-risk-assessment",
+        "security-risk-treatment",
+        "security-threat-modeling",
+        "security-defense-in-depth"
+      ]
     }
   ]
 }
