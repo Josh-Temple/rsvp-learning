@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f2efe8">
+  <meta name="description" content="オントロジーの基本、タクソノミー・スキーマ・知識グラフとの違い、RDF・OWL・SHACL、開世界仮説、生成AIとの接点、実務での導入判断を音声だけで追えるように整理したListen。">
+  <title>オントロジーとは何か――AI時代に「意味」を外に持つ知識設計</title>
+  <style>
+    :root{color-scheme:light;--bg:#f2efe8;--ink:#121722;--muted:#73766f;--line:#cbc8bf;--blue:#5d7487}
+    html[data-theme="dark"]{color-scheme:dark;--bg:#11151a;--ink:#edf0eb;--muted:#959b97;--line:#343a3e;--blue:#7892a6}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Hiragino Sans","Noto Sans JP",sans-serif;line-height:1.9}
+    .shell{width:min(760px,100%);margin:0 auto;padding:max(18px,env(safe-area-inset-top)) 20px max(42px,env(safe-area-inset-bottom))}
+    .topbar{min-height:52px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+    .icon{width:42px;height:42px;display:grid;place-items:center;border:0;background:transparent;color:var(--muted);text-decoration:none;font:inherit}
+    .meta{margin:28px 0 8px;color:var(--muted);font-size:.75rem}
+    h1{font-size:clamp(2rem,8vw,3.4rem);line-height:1.12;letter-spacing:-.04em;margin:.2em 0 .8em}
+    h2{margin:2.2em 0 .6em;font-size:1.2rem}
+    p{margin:0 0 1.25em}
+    article>*{transition:background-color .15s ease}
+    .is-speaking{background:color-mix(in srgb,var(--blue) 16%,transparent)}
+    .player{position:sticky;bottom:0;margin:32px -6px 0;padding:12px 6px;background:color-mix(in srgb,var(--bg) 94%,transparent);border-top:1px solid var(--line);backdrop-filter:blur(8px)}
+    .speed{display:grid;grid-template-columns:48px 1fr 42px;gap:10px;align-items:center;margin-top:10px;font-size:.78rem;color:var(--muted)}
+    input{width:100%}
+    .sources{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}
+    .sources a{color:var(--ink)}
+    .mode-nav{display:inline-flex;align-items:center;gap:4px}
+    .mode-icon{width:42px;height:42px;display:grid;place-items:center;color:var(--muted);text-decoration:none;opacity:.5}
+    .mode-icon.is-active{color:var(--ink);opacity:1}
+    .mode-icon svg{width:20px;height:20px;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+    .brand-mark{width:22px;height:14px;display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+    .brand-mark i{display:block}
+    .brand-mark i:nth-child(1){background:#a85248}
+    .brand-mark i:nth-child(2){background:#5d7487}
+    .brand-mark i:nth-child(3){background:#c2a653}
+    .transport{display:grid;grid-template-columns:repeat(5,48px);justify-content:center;gap:8px}
+    .transport button,.section-nav button,.voice-row select{min-height:42px;border:1px solid var(--line);background:transparent;color:var(--ink);font:inherit}
+    .transport button{width:48px}
+    .section-nav{display:grid;grid-template-columns:48px 1fr 48px;align-items:center;gap:8px;margin-top:10px}
+    .section-nav button:disabled{opacity:.25}
+    #section-label{min-width:0;overflow:hidden;color:var(--muted);font-size:.78rem;text-align:center;white-space:nowrap;text-overflow:ellipsis}
+    .voice-row{margin-top:10px}
+    .voice-row select{width:100%;padding:0 8px}
+    .mode-icon:focus-visible,.transport button:focus-visible,.section-nav button:focus-visible,.voice-row select:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+  </style>
+</head>
+<body>
+<main class="shell">
+  <header class="topbar">
+    <nav class="mode-nav" aria-label="モード切替">
+      <a class="mode-icon" href="../../index.html" aria-label="RSVPへ移動" title="RSVP">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      </a>
+      <a class="mode-icon" href="../../index.html?library=learn" aria-label="Learnへ移動" title="Learn">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 5.5c2.6-.8 5.3-.4 8 1.2v12c-2.7-1.6-5.4-2-8-1.2v-12Z" />
+          <path d="M20 5.5c-2.6-.8-5.3-.4-8 1.2v12c2.7-1.6 5.4-2 8-1.2v-12Z" />
+        </svg>
+      </a>
+      <a class="mode-icon is-active" href="../../index.html?library=listen" aria-label="Listen一覧へ移動" aria-current="page" title="Listen">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 13v-1a8 8 0 0 1 16 0v1" />
+          <path d="M4 13h3v7H5a1 1 0 0 1-1-1v-6Zm16 0h-3v7h2a1 1 0 0 0 1-1v-6Z" />
+        </svg>
+      </a>
+    </nav>
+    <button id="theme" class="icon" type="button" aria-label="テーマ切替">☾</button>
+  </header>
+
+  <article id="article">
+    <p class="meta">情報基準日 2026年10月8日</p>
+    <h1>オントロジーとは何か――AI時代に「意味」を外に持つ知識設計</h1>
+
+    <p>オントロジーという言葉は、知識グラフやセマンティックウェブ、生成AIの文脈でよく登場します。しかし、説明を読んでも「高度な分類表なのか」「データベースのスキーマなのか」「知識グラフと何が違うのか」が分かりにくい概念でもあります。</p>
+    <p>今回の中心は一つです。オントロジーは、ある領域について、何が存在し、それらがどのような関係にあり、どのような意味を持つかを、機械が扱える形で明示するための知識モデルです。</p>
+    <p>重要なのは、情報そのものを大量に保存することより、情報の意味を外に出して定義することです。この考え方は、異なるデータを統合するときだけでなく、生成AIに組織固有の知識を扱わせるときにも意味を持ちます。</p>
+
+    <h2>まず、オントロジーを一言で捉える</h2>
+    <p>情報科学でいうオントロジーは、ある対象領域で使う概念と、その概念同士の関係を、明示的かつ形式的に表したものです。</p>
+    <p>例えば、行政調達を扱うとします。そこには、自治体、企業、調達案件、要件、評価項目、契約、根拠資料といった概念があります。ただ単にこれらの単語を一覧にしただけなら、語彙集です。</p>
+    <p>オントロジーでは、さらに関係を定義します。自治体は組織の一種である。調達案件は組織によって実施される。調達案件には要件がある。要件には根拠資料がある。企業は契約において受託者という役割を持つことがある。こうした意味関係までモデルに含めます。</p>
+    <p>この違いは小さく見えて、実際には大きな意味を持ちます。「受託者」を会社の種類として扱うのか、契約における役割として扱うのかで、データの意味が変わるからです。</p>
+
+    <h2>タクソノミー、スキーマ、知識グラフとは何が違うのか</h2>
+    <p>オントロジーを理解するには、似た概念との違いを見るのが近道です。</p>
+    <p>まずタクソノミーは、主に分類の階層を表します。例えば、AIの下に生成AIがあり、その下に大規模言語モデルがある、といった上位と下位の関係です。分類が目的なら、タクソノミーだけで十分な場合があります。</p>
+    <p>次にスキーマは、データの構造を決めます。契約データには契約日という項目がある。契約日は日付型である。契約金額は数値である。こうした定義です。JSON Schemaやデータベーススキーマは、この用途に向いています。</p>
+    <p>一方、オントロジーは「契約とは何か」「契約当事者とはどのような関係か」「自治体と組織の関係は何か」といった意味を扱います。データがどの列に入るかではなく、そのデータが何を意味するかを扱う点が違います。</p>
+    <p>そして知識グラフは、具体的な事実をノードと関係として持つものです。例えば、「横浜市は自治体である」「ある調達案件は横浜市が実施した」「その案件にはある要件がある」といった具体的事実です。</p>
+    <p>整理すると、オントロジーは世界をどう表現するかという設計で、知識グラフはその設計に沿って具体的な知識を入れたもの、と考えると分かりやすくなります。ただし、現実のシステムでは境界は重なり、正式なオントロジーを持たない知識グラフもあります。</p>
+
+    <h2>RDFは、知識を三つ組で表す</h2>
+    <p>オントロジー周辺でよく出てくる最初の技術がRDFです。RDFは、Resource Description Frameworkの略です。</p>
+    <p>RDFでは、知識を主語、述語、目的語の三つ組で表します。例えば、「横浜市は自治体である」なら、横浜市が主語、種類を表す関係が述語、自治体が目的語です。「横浜市は神奈川県に所在する」なら、横浜市、所在する、神奈川県という三つ組になります。</p>
+    <p>この三つ組を大量につなげると、グラフになります。人、組織、文書、制度、場所、出来事などを、共通の関係表現で結び付けられるのがRDFの特徴です。</p>
+    <p>ただし、RDFだけでは「自治体は組織の一種である」という意味をどこまで推論してよいのかは十分に表せません。そこで、より豊かな意味を定義するためにOWLが使われます。</p>
+
+    <h2>OWLは、意味と推論を定義する</h2>
+    <p>OWLは、Web Ontology Languageの略で、W3Cが標準化しているオントロジー記述言語です。</p>
+    <p>OWLでは、クラス、プロパティ、個体、そしてそれらの関係を表す公理を定義できます。例えば、「自治体は組織の一種である」と定義し、別の場所で「横浜市は自治体である」と記述したとします。</p>
+    <p>この二つを組み合わせれば、「横浜市は組織である」という関係を、明示的に書いていなくても導けます。これが推論です。</p>
+    <p>ここで大切なのは、オントロジーが単なる検索用ラベルではないことです。概念間の意味関係を形式的に定義することで、既存の事実から新しい関係を導けるようになります。</p>
+    <p>ただし、表現力を上げれば上げるほど設計も推論も複雑になります。オントロジーは細かく作れば必ず良くなるわけではありません。必要な質問に答えられる範囲まで設計し、それ以上を無理に形式化しないことが重要です。</p>
+
+    <h2>「書いていない」と「存在しない」は違う</h2>
+    <p>OWLを理解するうえで重要なのが、開世界仮説です。英語ではopen-world assumptionと呼ばれます。</p>
+    <p>これは、ある事実が書かれていないからといって、その事実が偽だとは限らない、という考え方です。</p>
+    <p>例えば、企業Aについて代表者の情報が登録されていなかったとします。オントロジーの世界では、そこから「企業Aには代表者がいない」とは結論しません。分かっていないだけかもしれないからです。</p>
+    <p>この発想は、Web上の分散情報、研究知識、法令や行政資料のように、情報が常に完全とは限らない領域と相性があります。</p>
+    <p>一方、業務システムでは「必要項目が空ならエラーにしたい」という場面もあります。そのため、意味を表す仕組みと、入力データを検証する仕組みは分けて考える必要があります。</p>
+
+    <h2>SHACLは、データが条件を満たしているかを検証する</h2>
+    <p>そこで登場するのがSHACLです。SHACLは、Shapes Constraint Languageの略です。</p>
+    <p>例えば、「契約には契約日が必要」「契約日は日付型でなければならない」「案件IDは一件につき一つだけ」といった条件を記述し、RDFデータがその条件を満たしているか検証できます。</p>
+    <p>役割を大まかに分けるなら、RDFは事実を表し、OWLは意味や推論を表し、SHACLはデータが期待する形を満たしているか検証します。</p>
+    <p>2026年10月8日時点では、SHACL 1.2 CoreはW3CのWorking Draftです。最新のWorking Draftは2026年9月18日付で、まだ確定したRecommendationではありません。現行の標準として利用するときは、安定版と開発中仕様を区別する必要があります。</p>
+
+    <h2>なぜ生成AIの時代にオントロジーが再び重要になるのか</h2>
+    <p>ここからは生成AIとの関係です。</p>
+    <p>大規模言語モデルは、自然言語を読み、曖昧な表現から概念や関係を抽出する能力が高くなっています。しかし、「この二つの概念を同じものとして扱ってよいのか」「この規則にはどの例外があるのか」「この情報はどの根拠に由来するのか」を、組織固有のルールとして安定して保持することは別の問題です。</p>
+    <p>通常のRAGでは、質問に近い文章を検索し、その文章を大規模言語モデルへ渡します。これは非常に有用ですが、文章の類似度だけでは、概念間の関係や適用条件を十分に表せない場合があります。</p>
+    <p>そこで、検索の前提としてオントロジーや知識グラフを使う研究があります。Microsoft Researchが2025年に公開したOG-RAGは、ドメイン固有のオントロジーを使って検索対象を構造化し、複数の大規模言語モデルで通常の比較手法より改善したと報告しています。</p>
+    <p>ただし、これは一つの研究結果です。オントロジーを加えれば、どのRAGでも必ず精度が上がることを意味しません。対象領域、オントロジーの品質、検索設計、評価方法によって効果は変わります。</p>
+
+    <h2>生成AIとオントロジーの役割は、競合ではなく分担に近い</h2>
+    <p>実務上は、生成AIとオントロジーをどちらか一方に選ぶ必要はありません。むしろ役割を分ける方が自然です。</p>
+    <p>大規模言語モデルは、文書から候補となる概念や関係を抽出する。表記揺れを見つける。新しい資料と既存の知識モデルを対応付ける。人間が読むには多すぎる非構造情報を整理する。こうした仕事が得意です。</p>
+    <p>一方、オントロジーは、何を同じ概念として扱うのか、どの関係を正式なものとするのか、どの推論を許すのかを明示します。</p>
+    <p>知識グラフは、確認された具体的な事実を保持します。そしてRAGやAIエージェントは、その構造を使って必要な情報を取得し、判断や作業へつなげます。</p>
+    <p>ここから導ける実務上の見立ては、生成AIに知識をすべて内在化させるのではなく、組織にとって重要な意味や関係を外部の知識モデルとして管理する価値が高まる可能性がある、ということです。</p>
+
+    <h2>オントロジーは「世界を全部定義する」ところから始めない</h2>
+    <p>では、実際に作るならどう進めるのでしょうか。</p>
+    <p>StanfordのOntology Development 101では、最初に対象領域と範囲を決め、その知識基盤で答えられるべき質問を考える方法が示されています。この質問はcompetency questionsと呼ばれます。</p>
+    <p>例えば行政調達なら、「この案件にはどの要件が適用されるか」「その要件の根拠資料は何か」「どの事業者がどの評価項目で評価されたか」「後から変更された要件はどれか」といった質問です。</p>
+    <p>この質問に答えるために必要な概念として、調達案件、組織、要件、根拠資料、評価項目、契約などを定義します。その後で、実施する、要件を持つ、根拠とする、評価する、置き換える、といった関係を定義します。</p>
+    <p>この順番なら、「世界のすべてを正確に分類する」という終わりのない作業になりにくくなります。必要な質問に答えられる範囲から始め、利用しながら改良します。</p>
+
+    <h2>オントロジーを使うべき場面と、使わなくてよい場面</h2>
+    <p>オントロジーが特に有効なのは、複数のデータ源を統合するときです。同じ言葉が異なる意味で使われる。逆に、違う言葉が同じ概念を指す。制度や科学のように関係が複雑で、適用範囲、例外、由来、時間的な変化を追跡する必要がある。こうした条件が重なるほど価値が出やすくなります。</p>
+    <p>生成AIに単なる文書検索ではなく、「この条件ならどの規則が適用されるか」「この主張はどの根拠につながるか」といった構造的な探索をさせたい場合も、検討する意味があります。</p>
+    <p>一方、商品を十個のカテゴリに分けたいだけなら、タクソノミーで十分かもしれません。JSONにどのフィールドを持たせるか決めたいだけなら、JSON Schemaで十分です。入力値の妥当性だけを検証したいなら、専用の検証ルールの方が単純です。</p>
+    <p>オントロジーには設計コストがあります。概念の境界について人間同士で合意する必要があり、制度変更や業務変更に合わせて保守もしなければなりません。強い推論を使うほど、意図していない論理的帰結が出ないか確認する必要もあります。</p>
+
+    <h2>実務で最も重要なのは、意味のずれを見えるようにすること</h2>
+    <p>オントロジーの価値を、難しい推論だけに求める必要はありません。実務では、意味のずれを明示するだけでも大きな価値があります。</p>
+    <p>例えば、事業者、企業、法人、受託者、契約相手という五つの言葉が複数のシステムに存在するとします。これらをすべて同じ列へ押し込むと、後から違いが分からなくなります。</p>
+    <p>オントロジーでは、法人は組織の一種、企業は法人の一種、受託者は契約における役割、といったように区別できます。すると、AIが文書を読むときも、人間がデータを統合するときも、「同じに見えるが実際には違うもの」を扱いやすくなります。</p>
+    <p>つまり、オントロジーの核心は「賢い自動推論」だけではありません。人間が暗黙に持っていた意味の前提を、システムの外に出して共有できる形にすることです。</p>
+
+    <h2>最後に残す要点</h2>
+    <p>オントロジーは、ある領域に何が存在し、それらがどう関係するかを機械可読に定義する知識モデルです。分類だけを扱うタクソノミーや、データ構造を決めるスキーマよりも、意味と関係を中心に扱います。</p>
+    <p>RDFは事実を三つ組で表し、OWLは概念の意味や推論可能な関係を定義します。SHACLは、データが期待する条件を満たしているかを検証します。</p>
+    <p>そして生成AIとの関係では、オントロジーは大規模言語モデルの代替ではありません。大規模言語モデルが非構造情報を読み、オントロジーが意味を定義し、知識グラフが確認された事実を保持し、RAGやAIエージェントがそれを利用する。この分担が一つの有力な設計になります。</p>
+    <p>ただし、オントロジーは万能ではありません。必要な質問が単純なら、もっと軽い仕組みで十分です。導入するときは、まず「この知識基盤で何に答えたいのか」を明確にし、そのために必要な概念と関係だけを定義する。そこから始めるのが現実的です。</p>
+  </article>
+
+  <section class="player" aria-label="読み上げ操作">
+    <div class="transport">
+      <button id="prev-block" type="button" aria-label="前の読み上げ単位へ">←</button>
+      <button id="play" type="button" aria-label="再生">▶</button>
+      <button id="pause" type="button" aria-label="一時停止">Ⅱ</button>
+      <button id="stop" type="button" aria-label="停止">■</button>
+      <button id="next-block" type="button" aria-label="次の読み上げ単位へ">→</button>
+    </div>
+    <div class="section-nav" aria-label="章移動">
+      <button id="prev-section" type="button" aria-label="前の章へ">‹</button>
+      <span id="section-label">導入</span>
+      <button id="next-section" type="button" aria-label="次の章へ">›</button>
+    </div>
+    <div class="voice-row">
+      <select id="voice" aria-label="日本語音声"></select>
+    </div>
+    <div class="speed"><span>速度</span><input id="rate" type="range" min="0.7" max="4" step="0.1" value="1"><span id="rateValue">1.0×</span></div>
+  </section>
+
+  <section class="sources" aria-label="出典">
+    <strong>出典</strong>
+    <p><a href="https://www.w3.org/TR/owl2-primer/">W3C — OWL 2 Web Ontology Language Primer</a></p>
+    <p><a href="https://www.w3.org/TR/rdf11-concepts/">W3C — RDF 1.1 Concepts and Abstract Syntax</a></p>
+    <p><a href="https://www.w3.org/TR/skos-primer/">W3C — SKOS Simple Knowledge Organization System Primer</a></p>
+    <p><a href="https://www.w3.org/TR/shacl12-core/">W3C — SHACL 1.2 Core</a></p>
+    <p><a href="https://protege.stanford.edu/publications/ontology_development/ontology101-noy-mcguinness.html">Stanford Protégé — Ontology Development 101</a></p>
+    <p><a href="https://www.microsoft.com/en-us/research/publication/og-rag-ontology-grounded-retrieval-augmented-generation-for-large-language-models/">Microsoft Research — OG-RAG</a></p>
+  </section>
+</main>
+<script>
+(() => {
+  const synth = window.speechSynthesis;
+  const blocks = [...document.querySelectorAll("#article h1,#article h2,#article h3,#article p")];
+  const sectionStarts = [...new Set([0, ...blocks.map((node, i) => node.tagName === "H2" ? i : -1).filter(i => i >= 0)])];
+  const play = document.querySelector("#play");
+  const pause = document.querySelector("#pause");
+  const stop = document.querySelector("#stop");
+  const prevBlock = document.querySelector("#prev-block");
+  const nextBlock = document.querySelector("#next-block");
+  const prevSection = document.querySelector("#prev-section");
+  const nextSection = document.querySelector("#next-section");
+  const sectionLabel = document.querySelector("#section-label");
+  const voice = document.querySelector("#voice");
+  const rate = document.querySelector("#rate");
+  const rateValue = document.querySelector("#rateValue");
+  const theme = document.querySelector("#theme");
+  let index = 0, playing = false, paused = false, selectedVoice = "", generation = 0;
+  let wakeLock = null, wakeLockWanted = false;
+
+  async function requestWakeLock() {
+    const wakeLockApi = window.navigator?.wakeLock;
+    wakeLockWanted = true;
+    if (!wakeLockApi?.request || wakeLock) return;
+    try {
+      const lock = await wakeLockApi.request("screen");
+      if (!wakeLockWanted) {
+        await lock.release();
+        return;
+      }
+      wakeLock = lock;
+      wakeLock.addEventListener?.("release", () => { wakeLock = null; });
+    } catch {
+      wakeLock = null;
+    }
+  }
+
+  async function releaseWakeLock() {
+    wakeLockWanted = false;
+    const current = wakeLock;
+    wakeLock = null;
+    if (!current) return;
+    try {
+      await current.release();
+    } catch {
+      // Wake Lock is best-effort; speech playback must continue to work.
+    }
+  }
+
+  function voices() {
+    const previous = selectedVoice || voice.value;
+    const items = synth.getVoices().filter(v => /^ja(?:-|_)/i.test(v.lang));
+    voice.replaceChildren();
+    for (const v of items) {
+      const o = document.createElement("option");
+      o.value = v.voiceURI;
+      o.textContent = v.name;
+      voice.append(o);
+    }
+    if (items.some(v => v.voiceURI === previous)) voice.value = previous;
+    selectedVoice = voice.value;
+  }
+
+  function clearHighlight() {
+    blocks.forEach(node => node.classList.remove("is-speaking"));
+  }
+
+  function sectionPosition() {
+    let pos = 0;
+    for (let i = 0; i < sectionStarts.length; i += 1) {
+      if (sectionStarts[i] <= index) pos = i;
+      else break;
+    }
+    return pos;
+  }
+
+  function updateNavigation() {
+    prevBlock.disabled = index <= 0;
+    nextBlock.disabled = index >= blocks.length - 1;
+
+    const pos = sectionPosition();
+    const start = sectionStarts[pos] ?? 0;
+    const previousTargetExists = index > start || pos > 0;
+    prevSection.disabled = !previousTargetExists;
+    nextSection.disabled = pos >= sectionStarts.length - 1;
+
+    const startNode = blocks[start];
+    sectionLabel.textContent = startNode?.tagName === "H2" ? startNode.textContent : "導入";
+  }
+
+  function showCurrent() {
+    clearHighlight();
+    const current = blocks[index];
+    if (!current) return;
+    current.classList.add("is-speaking");
+    current.scrollIntoView({ block: "center", behavior: "smooth" });
+    updateNavigation();
+  }
+
+  function speakCurrent() {
+    if (!playing || paused || index >= blocks.length) {
+      if (index >= blocks.length) {
+        playing = false;
+        paused = false;
+        clearHighlight();
+        void releaseWakeLock();
+      }
+      updateNavigation();
+      return;
+    }
+
+    showCurrent();
+    const localGeneration = ++generation;
+    const utterance = new SpeechSynthesisUtterance(blocks[index].textContent);
+    utterance.lang = "ja-JP";
+    utterance.rate = Number(rate.value);
+    const selected = synth.getVoices().find(item => item.voiceURI === voice.value);
+    if (selected) utterance.voice = selected;
+
+    utterance.onend = () => {
+      if (localGeneration !== generation || !playing || paused) return;
+      index += 1;
+      speakCurrent();
+    };
+
+    utterance.onerror = event => {
+      if (localGeneration !== generation) return;
+      if (event.error !== "canceled" && event.error !== "interrupted") {
+        playing = false;
+        paused = false;
+        clearHighlight();
+        void releaseWakeLock();
+        updateNavigation();
+      }
+    };
+
+    synth.speak(utterance);
+  }
+
+  function jumpTo(target) {
+    const next = Math.max(0, Math.min(blocks.length - 1, target));
+    const resume = playing && !paused;
+    const keepPaused = paused;
+
+    generation += 1;
+    synth.resume?.();
+    synth.cancel();
+    index = next;
+
+    if (resume) {
+      playing = true;
+      paused = false;
+      void requestWakeLock();
+      speakCurrent();
+      return;
+    }
+
+    playing = keepPaused;
+    paused = keepPaused;
+    showCurrent();
+    if (keepPaused) void requestWakeLock();
+  }
+
+  function jumpSection(delta) {
+    const pos = sectionPosition();
+    let targetPos;
+
+    if (delta < 0 && index > sectionStarts[pos]) targetPos = pos;
+    else targetPos = pos + delta;
+
+    if (targetPos < 0 || targetPos >= sectionStarts.length) return;
+    jumpTo(sectionStarts[targetPos]);
+  }
+
+  play.addEventListener("click", () => {
+    if (paused) {
+      generation += 1;
+      synth.resume?.();
+      synth.cancel();
+      paused = false;
+      playing = true;
+      void requestWakeLock();
+      speakCurrent();
+      return;
+    }
+    if (playing) return;
+    if (index >= blocks.length) index = 0;
+    playing = true;
+    void requestWakeLock();
+    speakCurrent();
+  });
+
+  pause.addEventListener("click", () => {
+    if (!playing || paused) return;
+    synth.pause();
+    paused = true;
+  });
+
+  stop.addEventListener("click", () => {
+    generation += 1;
+    synth.resume?.();
+    synth.cancel();
+    playing = false;
+    paused = false;
+    index = 0;
+    clearHighlight();
+    updateNavigation();
+    void releaseWakeLock();
+  });
+
+  prevBlock.addEventListener("click", () => jumpTo(index - 1));
+  nextBlock.addEventListener("click", () => jumpTo(index + 1));
+  prevSection.addEventListener("click", () => jumpSection(-1));
+  nextSection.addEventListener("click", () => jumpSection(1));
+
+  voice.addEventListener("change", () => {
+    selectedVoice = voice.value;
+    if (playing && !paused) {
+      generation += 1;
+      synth.cancel();
+      speakCurrent();
+    }
+  });
+
+  rate.addEventListener("input", () => {
+    rateValue.textContent = Number(rate.value).toFixed(1) + "×";
+  });
+
+  theme.addEventListener("click", () => {
+    const dark = document.documentElement.dataset.theme === "dark";
+    document.documentElement.dataset.theme = dark ? "light" : "dark";
+    theme.textContent = dark ? "☾" : "☀";
+    localStorage.setItem("rsvp:theme", dark ? "light" : "dark");
+  });
+
+  document.documentElement.dataset.theme =
+    localStorage.getItem("rsvp:theme") ||
+    (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  theme.textContent = document.documentElement.dataset.theme === "dark" ? "☀" : "☾";
+
+  voices();
+  synth.addEventListener?.("voiceschanged", voices);
+  updateNavigation();
+
+  document.addEventListener?.("visibilitychange", () => {
+    if (document.visibilityState === "visible" && (playing || paused)) {
+      void requestWakeLock();
+    }
+  });
+
+  addEventListener("pagehide", () => {
+    generation += 1;
+    synth.cancel();
+    void releaseWakeLock();
+  });
+})();
+</script>
+</body>
+</html>
