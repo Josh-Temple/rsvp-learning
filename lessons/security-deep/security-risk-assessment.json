@@ -1,0 +1,257 @@
+{
+  "schema_version": 1,
+  "id": "security-risk-assessment",
+  "title": "リスクアセスメント",
+  "topic": "情報セキュリティ",
+  "summary": "対象範囲、脅威シナリオ、発生可能性、影響、既存対策、不確実性を整理し、優先順位を決めるリスクアセスメントの考え方を学びます。",
+  "created_at": "2026-10-08",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "NIST SP 800-30 Rev.1, Guide for Conducting Risk Assessments",
+      "url": "https://csrc.nist.gov/pubs/sp/800/30/r1/final"
+    },
+    {
+      "title": "NIST Cybersecurity Framework (CSF) 2.0",
+      "url": "https://www.nist.gov/cyberframework"
+    },
+    {
+      "title": "IPA 情報処理安全確保支援士試験 シラバス案 Ver.0.1",
+      "url": "https://www.ipa.go.jp/shiken/syllabus/minaoshi/rcu1hd000001g5rk-att/syllabus_sc_ver0_1.pdf"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "リスク評価には範囲が必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "何を評価するかを決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "対象業務を明確にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "対象システムも明確にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "時間軸も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "評価基準を先に決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "後から都合よく変えません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "資産と依存関係を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "脅威シナリオを作ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "脆弱性や露出も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "既存対策も洗い出します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "発生可能性を考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "頻度だけでは決まりません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "攻撃者の能力も関係します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "到達しやすさも関係します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "必要条件の多さも関係します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "影響も別に評価します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "金銭損失だけではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "業務停止も影響です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "個人への影響もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "信用低下も考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "法務上の影響もあり得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "安全への影響も考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "波及範囲も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一つの尺度に無理にまとめません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "定性的評価があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "低中高などで整理できます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "比較しやすい利点があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "境界が曖昧になる弱点もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "定量的評価もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "金額や頻度を使う場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "入力値の品質が重要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "推定値には幅があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "小数点で精密に見せません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "リスクマトリックスも使われます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "便利ですが限界があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "同じ色でも状況は違います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "順序が変わる場合もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "複数手法を組み合わせます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "根拠を記録します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "仮定も記録します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "不確実性も記録します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "データ不足を隠しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "最悪条件だけにも寄りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "平均だけにも寄りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "極端な影響も検討します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "既存対策の有効性を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "存在だけでは十分ではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "設定や運用を確かめます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "検知能力も評価します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "復旧能力も評価します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "リスク所有者を明確にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "判断する責任者が必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "優先順位を説明できる形にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "重大変更後は再評価します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "事故後にも見直します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "新しい脅威でも見直します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "評価は一度きりではありません。",
+      "duration_multiplier": 1.4
+    }
+  ]
+}
