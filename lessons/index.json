@@ -1006,6 +1006,62 @@
       "path": "./lessons/integrated-case/integrated-case-outcomes-operations.json",
       "status": "COMPLETE v0.1",
       "learn_path": "./learn/integrated-case-outcomes-operations.html"
+    },
+    {
+      "id": "security-purpose-principles",
+      "title": "セキュリティの目的と基本原則",
+      "topic": "情報セキュリティ",
+      "path": "./lessons/security-deep/security-purpose-principles.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/security-purpose-principles.html"
+    },
+    {
+      "id": "security-assets-dependencies",
+      "title": "情報資産・依存関係・信頼境界",
+      "topic": "情報セキュリティ",
+      "path": "./lessons/security-deep/security-assets-dependencies.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/security-assets-dependencies.html"
+    },
+    {
+      "id": "security-threats-vulnerabilities",
+      "title": "脅威・脆弱性・露出・攻撃対象領域",
+      "topic": "情報セキュリティ",
+      "path": "./lessons/security-deep/security-threats-vulnerabilities.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/security-threats-vulnerabilities.html"
+    },
+    {
+      "id": "security-risk-assessment",
+      "title": "リスクアセスメント",
+      "topic": "情報セキュリティ",
+      "path": "./lessons/security-deep/security-risk-assessment.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/security-risk-assessment.html"
+    },
+    {
+      "id": "security-risk-treatment",
+      "title": "リスク対応・残存リスク・例外管理",
+      "topic": "情報セキュリティ",
+      "path": "./lessons/security-deep/security-risk-treatment.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/security-risk-treatment.html"
+    },
+    {
+      "id": "security-threat-modeling",
+      "title": "脅威モデリング",
+      "topic": "情報セキュリティ",
+      "path": "./lessons/security-deep/security-threat-modeling.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/security-threat-modeling.html"
+    },
+    {
+      "id": "security-defense-in-depth",
+      "title": "多層防御と管理策の有効性確認",
+      "topic": "情報セキュリティ",
+      "path": "./lessons/security-deep/security-defense-in-depth.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/security-defense-in-depth.html"
     }
   ]
 }

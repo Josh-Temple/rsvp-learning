@@ -1,0 +1,261 @@
+{
+  "schema_version": 1,
+  "id": "security-threat-modeling",
+  "title": "脅威モデリング",
+  "topic": "情報セキュリティ",
+  "summary": "システムを構造化して捉え、何が起こり得るか、何をするか、十分に検討できたかを繰り返し考える脅威モデリングを学びます。",
+  "created_at": "2026-10-08",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "OWASP Threat Modeling Project",
+      "url": "https://owasp.org/projects/threat-modeling-project"
+    },
+    {
+      "title": "OWASP Threat Modeling Cheat Sheet",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Threat_Modeling_Cheat_Sheet.html"
+    },
+    {
+      "title": "IPA 情報処理安全確保支援士試験 シラバス案 Ver.0.1",
+      "url": "https://www.ipa.go.jp/shiken/syllabus/minaoshi/rcu1hd000001g5rk-att/syllabus_sc_ver0_1.pdf"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "脅威モデリングは設計判断に使います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "攻撃後だけに考えません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "早い段階から行えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "最初に対象範囲を決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "何を作るかを理解します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "構成要素を整理します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "データの流れを整理します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "外部主体も整理します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "信頼境界を示します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "入口と出口を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "管理経路も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "前提条件も記録します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "次に何が起こるか考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "攻撃者の視点も使います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "事故の可能性も含めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "STRIDEは分類法の一つです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "なりすましを考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "改ざんを考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "否認を考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "情報漏えいを考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "サービス妨害を考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "権限昇格を考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "分類は発想を助ける道具です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "項目を埋めることが目的ではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Misuse Caseも使えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Attack Treeも方法の一つです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "複数の方法を選べます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "脅威をシナリオへ落とします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "対象資産を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "必要条件を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "攻撃経路を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "成功時の影響を考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "既存対策も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "優先順位を付けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "すべてを同じ重さで扱いません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "次に対策を考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "設計変更で消せる場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "権限を減らす場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "境界を追加する場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "検知を追加する場合もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "復旧策も検討します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "残るリスクも記録します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "最後に十分かを確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "図が最新か確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "脅威漏れをレビューします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "対策が実装されたか確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "新しい弱点がないか見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "変更時にモデルを更新します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "新しいAPIでも見直します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "委託先変更でも見直します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "脅威モデルは一度きりではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ペネトレーションテストとは違います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "コードレビューとも違います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "相互に補完できます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "成果物は図だけではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "脅威一覧も成果です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "対策と根拠も成果です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "未解決事項も残します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "設計の意思決定へつなげます。",
+      "duration_multiplier": 1.4
+    }
+  ]
+}

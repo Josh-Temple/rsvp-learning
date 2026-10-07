@@ -1,0 +1,253 @@
+{
+  "schema_version": 1,
+  "id": "security-assets-dependencies",
+  "title": "情報資産・依存関係・信頼境界",
+  "topic": "情報セキュリティ",
+  "summary": "データだけでなく、Identity、設定、外部サービス、業務依存まで資産として捉え、データフローと信頼境界から守る対象を具体化します。",
+  "created_at": "2026-10-08",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "NIST Cybersecurity Framework (CSF) 2.0",
+      "url": "https://www.nist.gov/cyberframework"
+    },
+    {
+      "title": "CIS Critical Security Controls Version 8.1",
+      "url": "https://www.cisecurity.org/controls/v8-1"
+    },
+    {
+      "title": "IPA 情報処理安全確保支援士試験 シラバス案 Ver.0.1",
+      "url": "https://www.ipa.go.jp/shiken/syllabus/minaoshi/rcu1hd000001g5rk-att/syllabus_sc_ver0_1.pdf"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "守る対象を先に把握します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "資産はデータだけではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "業務そのものも資産です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "システムも資産です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "端末やサーバーも含みます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Identityも重要な資産です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "認証情報も守る対象です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "鍵やSecretも資産です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "設定情報も資産です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ログも守る対象になります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ソースコードも資産です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ビルド環境も含めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "外部サービスも依存先です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "委託先も依存関係に入ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "人の知識も失われ得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "資産台帳は一覧だけでは足りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "所有者を明確にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用目的も記録します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "扱うデータも確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "重要度も判断します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "停止時の影響も考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "代替手段の有無も見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "依存関係をつなげて見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "単独で動くシステムは少ないです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "認証基盤へ依存する場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "DNSへ依存する場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "クラウドへ依存する場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "外部APIへ依存する場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "データの流れも確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "どこで生成されるかを見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "どこへ保存されるかを見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "どこへ送信されるかを見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "誰が利用するかを見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "どこで変換されるかも見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "信頼境界を意識します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "境界を越える通信を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "組織内でも無条件には信頼しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "端末間にも境界があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "サービス間にも境界があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "管理者経路も別に考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "本番と開発の境界も重要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Shadow ITは把握漏れを生みます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "未把握資産は管理しにくいです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "自動検出だけにも頼りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "業務担当者の知識も使います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "資産はライフサイクルで変わります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "導入時だけでは不十分です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "変更時に台帳を更新します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "廃止時の処理も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "データ残存にも注意します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "最重要資産を識別します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "すべてを同じ強さで守りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "業務影響で優先順位を付けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "単一障害点も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "代替経路も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "依存の集中もリスクになります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "守る対象の理解が対策の前提です。",
+      "duration_multiplier": 1.4
+    }
+  ]
+}

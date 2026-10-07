@@ -1,0 +1,261 @@
+{
+  "schema_version": 1,
+  "id": "security-defense-in-depth",
+  "title": "多層防御と管理策の有効性確認",
+  "topic": "情報セキュリティ",
+  "summary": "予防、検知、対応、復旧を組み合わせ、管理策の存在ではなく、範囲、依存関係、運用、テスト、証拠から実際の有効性を確かめます。",
+  "created_at": "2026-10-08",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "NIST Cybersecurity Framework (CSF) 2.0",
+      "url": "https://www.nist.gov/cyberframework"
+    },
+    {
+      "title": "CIS Critical Security Controls Version 8.1",
+      "url": "https://www.cisecurity.org/controls/v8-1"
+    },
+    {
+      "title": "IPA 情報処理安全確保支援士試験 シラバス案 Ver.0.1",
+      "url": "https://www.ipa.go.jp/shiken/syllabus/minaoshi/rcu1hd000001g5rk-att/syllabus_sc_ver0_1.pdf"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "一つの対策だけに依存しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "多層防御で失敗を補います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "層の数だけを増やしません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "役割の違いを考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "予防的な管理策があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "発生しにくくします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "検知的な管理策があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "異常を見つけます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "対応の管理策もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "影響を封じ込めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "復旧の管理策もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "業務を戻します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "技術対策だけではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "管理的な対策もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "物理的な対策もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "同じ失敗に依存しないようにします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "共通障害点を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "同じIdentity基盤への依存も見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "同じクラウドへの依存も見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "同じ管理者への依存も見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "管理策の対象範囲を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一部端末だけでは不足する場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "例外端末も把握します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "管理者アカウントも含めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "設定が正しいか確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "初期値のままかも見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "更新されているか確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ログが出ているか確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "アラートが届くか確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "担当者が対応できるか確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "バックアップも復元を試します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "存在だけでは復旧を証明しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "演習で手順を確かめます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Tabletop演習も使えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "技術試験も組み合わせます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "誤検知も評価します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "見逃しも評価します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "検知速度も見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "対応速度も見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "復旧時間も見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Coverageも確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "重要資産を覆えているか見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "証拠を残します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "設定記録も証拠です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ログも証拠になります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "試験結果も証拠です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "改善履歴も残します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "代替管理策も評価します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "目的を同じく満たすか見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "管理策は劣化します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "設定ドリフトが起こります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "人員変更も影響します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "依存サービスも変わります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "継続監視が必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "指標を目的化しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "件数だけで安全と判断しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "失敗条件を先に考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "どの層が補うか確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "効いている証拠まで確認します。",
+      "duration_multiplier": 1.4
+    }
+  ]
+}

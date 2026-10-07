@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ja">
+<head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta name="description" content="予防、検知、対応、復旧を組み合わせ、管理策の存在ではなく、範囲、依存関係、運用、テスト、証拠から実際の有効性を確かめます。" /><meta name="theme-color" content="#f2efe8" /><title>多層防御と管理策の有効性確認 — Learn</title><link rel="stylesheet" href="./learn.css" /><script src="./learn.js" defer></script></head>
+<body><div class="shell"><header class="top"><a href="../index.html">RSVPに戻る</a><span class="mode">LEARN · 情報セキュリティ</span></header><main>
+<section class="reader" id="speech-reader" aria-label="読み上げプレイヤー"><div class="reader-row"><button id="speech-play" type="button" aria-label="読み上げを開始">▶</button><button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button><button id="speech-stop" type="button" aria-label="停止" disabled>■</button><select id="speech-voice" aria-label="読み上げ音声"></select><label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label></div><div id="speech-status" class="reader-status" role="status">読み上げ準備中</div></section>
+<article id="learn-article"><h1>多層防御と管理策の有効性確認</h1><p class="lead">予防、検知、対応、復旧を組み合わせ、管理策の存在ではなく、範囲、依存関係、運用、テスト、証拠から実際の有効性を確かめます。</p>
+<h2>多層防御は製品数ではない</h2>
+<p>多層防御は、同じ種類の製品を何重にも置くことではありません。予防、検知、対応、復旧など役割の違う管理策を組み合わせ、一つの対策が失敗しても別の層で影響を抑えられるようにします。</p>
+<p>技術対策だけでなく、承認手順、教育、物理アクセス、連絡体制など管理的・物理的な対策も組み合わせます。</p>
+<h2>共通の失敗を探す</h2>
+<p>二つの対策があっても、両方が同じIdentity基盤、同じ管理者、同じクラウドへ依存していれば、一つの障害で同時に失敗することがあります。多層に見えても共通障害点があれば独立性は弱くなります。</p>
+<p>どの失敗をどの層が補うのかを明確にし、重要な依存関係を確認します。</p>
+<h2>存在ではなくCoverageと設定を見る</h2>
+<p>管理策が導入済みという記録だけでは不十分です。重要資産や管理者アカウントまで対象になっているか、例外端末が放置されていないか、設定が安全側か、更新が続いているかを確認します。</p>
+<p>ログやアラートが実際に発生し、担当者へ届き、必要な対応へつながるかも管理策の一部です。</p>
+<h2>試験で効き目を確かめる</h2>
+<p>バックアップは保存されているだけでは復旧可能性を証明しません。復元試験を行い、必要なデータと手順で業務を戻せるか確認します。インシデント対応もTabletop演習や技術試験で手順と判断を検証できます。</p>
+<p>検知では誤検知だけでなく見逃し、検知速度、対応速度も見ます。重要なのは、管理策の存在ではなく、目的を達成している証拠です。</p>
+<h2>管理策は時間とともに劣化する</h2>
+<p>設定ドリフト、人員変更、システム追加、委託先やクラウドサービスの変更によって、以前は有効だった管理策が弱くなることがあります。継続的に状態を監視し、変更後に再確認します。</p>
+<p>CIS Controlsのような管理策一覧は漏れを減らすために役立ちますが、チェック欄を埋めること自体を安全性の証明にはしません。どのリスクに効き、どの失敗条件を補い、何を証拠として確認したかまで追うことが重要です。</p>
+
+<h2>要点の再確認</h2>
+<p>一つの対策だけに依存しません。</p>
+<p>多層防御で失敗を補います。</p>
+<p>層の数だけを増やしません。</p>
+<p>役割の違いを考えます。</p>
+<p>予防的な管理策があります。</p>
+<p>発生しにくくします。</p>
+<p>検知的な管理策があります。</p>
+<p>異常を見つけます。</p>
+<p>対応の管理策もあります。</p>
+<p>影響を封じ込めます。</p>
+<p>復旧の管理策もあります。</p>
+<p>業務を戻します。</p>
+<p>技術対策だけではありません。</p>
+<p>管理的な対策もあります。</p>
+<p>物理的な対策もあります。</p>
+<p>同じ失敗に依存しないようにします。</p>
+<p>共通障害点を確認します。</p>
+<p>同じIdentity基盤への依存も見ます。</p>
+<p>同じクラウドへの依存も見ます。</p>
+<p>同じ管理者への依存も見ます。</p>
+<p>管理策の対象範囲を確認します。</p>
+<p>一部端末だけでは不足する場合があります。</p>
+<p>例外端末も把握します。</p>
+<p>管理者アカウントも含めます。</p>
+<p>設定が正しいか確認します。</p>
+<p>初期値のままかも見ます。</p>
+<p>更新されているか確認します。</p>
+<p>ログが出ているか確認します。</p>
+<p>アラートが届くか確認します。</p>
+<p>担当者が対応できるか確認します。</p>
+<p>バックアップも復元を試します。</p>
+<p>存在だけでは復旧を証明しません。</p>
+<p>演習で手順を確かめます。</p>
+<p>Tabletop演習も使えます。</p>
+<p>技術試験も組み合わせます。</p>
+<p>誤検知も評価します。</p>
+<p>見逃しも評価します。</p>
+<p>検知速度も見ます。</p>
+<p>対応速度も見ます。</p>
+<p>復旧時間も見ます。</p>
+<p>Coverageも確認します。</p>
+<p>重要資産を覆えているか見ます。</p>
+<p>証拠を残します。</p>
+<p>設定記録も証拠です。</p>
+<p>ログも証拠になります。</p>
+<p>試験結果も証拠です。</p>
+<p>改善履歴も残します。</p>
+<p>代替管理策も評価します。</p>
+<p>目的を同じく満たすか見ます。</p>
+<p>管理策は劣化します。</p>
+<p>設定ドリフトが起こります。</p>
+<p>人員変更も影響します。</p>
+<p>依存サービスも変わります。</p>
+<p>継続監視が必要です。</p>
+<p>指標を目的化しません。</p>
+<p>件数だけで安全と判断しません。</p>
+<p>失敗条件を先に考えます。</p>
+<p>どの層が補うか確認します。</p>
+<p>効いている証拠まで確認します。</p>
+<h3>この教材の扱う範囲</h3><p class="endnote">具体的な管理策セットは対象組織やシステムで異なります。CIS Controls等は選択を助ける基準として使い、チェックリスト完了だけを安全性の証明にはしません。</p></article>
+<section class="sources" aria-labelledby="sources-title"><h2 id="sources-title">出典</h2><p><a href="https://www.nist.gov/cyberframework">NIST Cybersecurity Framework (CSF) 2.0</a></p><p><a href="https://www.cisecurity.org/controls/v8-1">CIS Critical Security Controls Version 8.1</a></p><p><a href="https://www.ipa.go.jp/shiken/syllabus/minaoshi/rcu1hd000001g5rk-att/syllabus_sc_ver0_1.pdf">IPA 情報処理安全確保支援士試験 シラバス案 Ver.0.1</a></p></section>
+</main></div></body></html>
