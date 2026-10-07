@@ -1,0 +1,514 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f2efe8">
+  <meta name="description" content="Toolを使うAIエージェントの通常時の能力と障害回復能力を分けて測るUndoBenchを、lost ACK、二重副作用、idempotency、fault timing、限界、実務への意味まで解説するDaily Paper Listen。">
+  <title>仕事ができるAIでも、障害から安全に戻れるとは限らない――UndoBench</title>
+  <style>
+    :root{color-scheme:light;--bg:#f2efe8;--ink:#121722;--muted:#73766f;--line:#cbc8bf;--blue:#5d7487}
+    html[data-theme="dark"]{color-scheme:dark;--bg:#11151a;--ink:#edf0eb;--muted:#959b97;--line:#343a3e;--blue:#7892a6}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Hiragino Sans","Noto Sans JP",sans-serif;line-height:1.9}
+    .shell{width:min(760px,100%);margin:0 auto;padding:max(18px,env(safe-area-inset-top)) 20px max(42px,env(safe-area-inset-bottom))}
+    .topbar{min-height:52px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+    .icon{width:42px;height:42px;display:grid;place-items:center;border:0;background:transparent;color:var(--muted);text-decoration:none;font:inherit}
+    .meta{margin:28px 0 8px;color:var(--muted);font-size:.75rem}
+    h1{font-size:clamp(2rem,8vw,3.4rem);line-height:1.12;letter-spacing:-.04em;margin:.2em 0 .8em}
+    h2{margin:2.2em 0 .6em;font-size:1.2rem}
+    p{margin:0 0 1.25em}
+    article>*{transition:background-color .15s ease}
+    .is-speaking{background:color-mix(in srgb,var(--blue) 16%,transparent)}
+    .player{position:sticky;bottom:0;margin:32px -6px 0;padding:12px 6px;background:color-mix(in srgb,var(--bg) 94%,transparent);border-top:1px solid var(--line);backdrop-filter:blur(8px)}
+    .speed{display:grid;grid-template-columns:48px 1fr 42px;gap:10px;align-items:center;margin-top:10px;font-size:.78rem;color:var(--muted)}
+    input{width:100%}
+    .sources{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}
+    .sources a{color:var(--ink)}
+    .mode-nav{display:inline-flex;align-items:center;gap:4px}
+    .mode-icon{width:42px;height:42px;display:grid;place-items:center;color:var(--muted);text-decoration:none;opacity:.5}
+    .mode-icon.is-active{color:var(--ink);opacity:1}
+    .mode-icon svg{width:20px;height:20px;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+    .brand-mark{width:22px;height:14px;display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+    .brand-mark i{display:block}
+    .brand-mark i:nth-child(1){background:#a85248}
+    .brand-mark i:nth-child(2){background:#5d7487}
+    .brand-mark i:nth-child(3){background:#c2a653}
+    .transport{display:grid;grid-template-columns:repeat(5,48px);justify-content:center;gap:8px}
+    .transport button,.section-nav button,.voice-row select{min-height:42px;border:1px solid var(--line);background:transparent;color:var(--ink);font:inherit}
+    .transport button{width:48px}
+    .section-nav{display:grid;grid-template-columns:48px 1fr 48px;align-items:center;gap:8px;margin-top:10px}
+    .section-nav button:disabled{opacity:.25}
+    #section-label{min-width:0;overflow:hidden;color:var(--muted);font-size:.78rem;text-align:center;white-space:nowrap;text-overflow:ellipsis}
+    .voice-row{margin-top:10px}
+    .voice-row select{width:100%;padding:0 8px}
+    .mode-icon:focus-visible,.transport button:focus-visible,.section-nav button:focus-visible,.voice-row select:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+  </style>
+</head>
+<body>
+<main class="shell">
+  <header class="topbar">
+    <nav class="mode-nav" aria-label="モード切替">
+      <a class="mode-icon" href="../../index.html" aria-label="RSVPへ移動" title="RSVP">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      </a>
+      <a class="mode-icon" href="../../index.html?library=learn" aria-label="Learnへ移動" title="Learn">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 5.5c2.6-.8 5.3-.4 8 1.2v12c-2.7-1.6-5.4-2-8-1.2v-12Z" />
+          <path d="M20 5.5c-2.6-.8-5.3-.4-8 1.2v12c2.7-1.6 5.4-2 8-1.2v-12Z" />
+        </svg>
+      </a>
+      <a class="mode-icon is-active" href="../../index.html?library=listen" aria-label="Listen一覧へ移動" aria-current="page" title="Listen">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 13v-1a8 8 0 0 1 16 0v1" />
+          <path d="M4 13h3v7H5a1 1 0 0 1-1-1v-6Zm16 0h-3v7h2a1 1 0 0 0 1-1v-6Z" />
+        </svg>
+      </a>
+    </nav>
+    <button id="theme" class="icon" type="button" aria-label="テーマ切替">☾</button>
+  </header>
+
+
+
+
+
+
+
+  <article id="article">
+    <p class="meta">情報基準日 2026年10月7日</p>
+    <h1>仕事ができるAIでも、障害から安全に戻れるとは限らない――UndoBench</h1>
+
+    <p>今日取り上げるのは、2026年10月4日にarXivへ公開された「UndoBench: Separating Task Competence from Recovery Capability in Tool-Using AI Agents」です。テーマは、AIエージェントが通常時に仕事を完了できることと、外部システムの障害が起きた時に安全に回復できることは、別の能力ではないかという問題です。</p>
+    <p>この研究が面白いのは、失敗したエージェントに「もう一度考え直させる」だけではなく、分散システムで本当に起きる故障を扱っている点です。たとえば、決済APIへの課金処理自体は成功したのに、成功応答だけがネットワーク障害で失われる。エージェントから見るとtimeoutですが、外部システムではすでに課金済みです。</p>
+    <p>この状態で単純にretryすると、二重課金になります。データベース更新なら重複レコード、通知なら二重送信、Gitなら二重tag操作など、同じ問題が起こり得ます。</p>
+    <p>UndoBenchは、こうした「外部副作用が本当に何回起きたか」まで追跡します。その結果、通常条件では83.54パーセント成功していた試行でも、障害を注入すると、通常条件で成功できた試行に限った回復成功率は46.72パーセントまで下がりました。naive retryでは53.33パーセントの試行で重複した外部副作用が起きています。</p>
+
+    <h2>通常のagent benchmarkでは見えにくい失敗</h2>
+    <p>多くのagent benchmarkは、理想的な環境でtaskを完了できるかを測ります。コードを直せたか、Web操作を完了したか、APIを正しく呼べたか、といった評価です。</p>
+    <p>しかしproduction環境では、tool callは必ず成功か失敗かの二択で返ってくるわけではありません。requestはremote systemへ届いたがresponseが戻らない、処理の途中で一部だけstateが変わる、複数stepのうち途中だけ成功するといった状態があります。</p>
+    <p>このとき、最終taskだけを見ていると問題を取り逃します。たとえば二重課金しても、最終画面上は「支払い完了」になっているかもしれません。task successだけなら成功扱いになり得ます。</p>
+    <p>UndoBenchは、最終状態とwire-levelのeffect historyを両方見ます。「目的を達成したか」だけでなく、「必要な副作用が一度だけ起きたか」「重複していないか」「必要な副作用が欠けていないか」を測ります。</p>
+
+    <h2>同じseedで、正常時と障害時をペアにする</h2>
+    <p>この研究の重要な設計がcounterfactual paired evaluationです。同じworkflow、同じmodel、同じseedで、一回は正常条件、もう一回は障害条件を走らせます。</p>
+    <p>正常条件で失敗した試行は、「障害から回復できなかった」とは言えません。そもそもtask自体を解く能力がなかった可能性があるからです。</p>
+    <p>そこでUndoBenchは、正常条件で成功した試行だけを分母にしたConditional Recovery Success Rate、CRSRを定義します。これは「本来なら仕事を完了できるagentが、障害を受けた時にも正しく完了できた割合」です。</p>
+    <p>通常のRecovery Success Rateだけでは、task competenceの低さとfault recoveryの弱さが混ざります。CRSRによってこの二つを分離するのが、benchmarkの中心です。</p>
+
+    <h2>36 workflow、8つのenterprise domain</h2>
+    <p>UndoBenchには三十六のbase workflowがあり、Cloud、CRM、Database、Git、Messaging、Payments、Storage、Ticketingの八domainを扱います。</p>
+    <p>例には、blue-green deploymentのtraffic切替、SLA更新、database schema migration、release tag作成、incident notification、subscription renewal、wire transfer、object storage操作、ticket escalationなどがあります。</p>
+    <p>研究ではDEVが十四task、VALIDATIONが十task、held-out TESTが十二taskです。主要なconfirmatory studyはこの十二TEST workflowで行われています。</p>
+    <p>主要実験ではLlama-3.1-8B-InstructとLlama-3.2-3B-Instruct、Direct Tool CallingとLangGraphという二つのruntime framework、三種類のrecovery methodを組み合わせ、二十seedで評価します。合計二千八百八十のpaired trial、正常と障害を合わせて五千七百六十executionです。</p>
+
+    <h2>中心的な故障は「処理済み、でもACKがない」</h2>
+    <p>主要実験が扱うのはPOST_MUTATION_PRE_ACKです。remote systemへのmutationはcommit済みですが、その成功応答がagentへ届く前に失われます。</p>
+    <p>たとえばagentがsubscription renewalを実行します。決済側では課金が完了します。しかしnetwork connectionが切れ、agentにはtimeoutだけが返ります。</p>
+    <p>ここでagentが見ているerror messageだけからは、処理が「実行されなかった」のか「実行されたが返事だけ失われた」のか分かりません。これを論文ではoutcome ambiguityとして扱います。</p>
+    <p>このambiguityがある状態でblind retryすると、二重副作用が起こります。普通のLLM reasoningだけで解決しにくいのは、必要な情報そのものがagentのcontextに存在しないからです。</p>
+
+    <h2>比較した三つの回復方法</h2>
+    <p>第一はB0、Naive Retryです。errorが返れば最大三回、exponential backoffを入れて同じtool callを再実行します。一般的なretry patternですが、外部mutationがcommit済みかを確認しません。</p>
+    <p>第二はB2、Idempotencyです。mutating callへtask contextとargumentから決めたidempotency keyを付けます。server側がそのkeyを認識していれば、同じrequestを再送しても二重実行を防げます。</p>
+    <p>第三はB5、EvoUndo-RB1です。client側にmutation journalを持ち、failure時にreconciliationを試みます。ただし今回のbenchmarkではzero-privilege条件で、remote stateを直接覗くprobeやdomain-specificな逆操作は与えられていません。</p>
+    <p>この制約は重要です。B5の結果は、EvoUndoという考え方全体の上限ではなく、「remote stateを見る権限がなく、補償処理も事前登録されていない条件での実装」を示します。</p>
+
+    <h2>通常時83.54パーセント、障害時の条件付き回復は46.72パーセント</h2>
+    <p>主要実験全体では、正常条件のtask successが二千八百八十試行中二千四百六、83.54パーセントでした。</p>
+    <p>一方、障害条件で最終的に成功したのは千百二十四試行、unconditionalなRSRでは39.03パーセントです。</p>
+    <p>正常時に成功していた二千四百六試行だけへ絞ると、障害条件でも成功した割合、CRSRは46.72パーセントでした。</p>
+    <p>つまり、この実験では「通常時にtaskを解ける」試行の半分以上が、lost acknowledgmentを入れると安全に完了できなくなりました。task competenceだけを見ると、この差は見えません。</p>
+
+    <h2>naive retryでは、半分以上に重複副作用が出た</h2>
+    <p>recovery method別に見ると、Naive RetryのCRSRは42.77パーセントでした。そしてDuplicate Effect Rate、DERは53.33パーセントです。</p>
+    <p>これは、error後のretryによって、同じ意味のexternal mutationを二回以上commitしてしまった試行の割合です。主要なlost-ACK条件ではUnsafe Retry Rateも同じ53.33パーセントになります。</p>
+    <p>具体的にはsubscription renewalでduplicate executionが60パーセント、wire transferで35パーセントでした。一方、database schema migrationではSQLite側のunique constraintが二回目を止めたため、duplicateは0パーセントでした。</p>
+    <p>同じretry policyでも、外部systemの契約やconstraintによって結果が変わります。agentだけの能力ではなく、tool endpoint側の設計が安全性を決めています。</p>
+
+    <h2>idempotencyは有効だが、「keyを付けるだけ」では足りない</h2>
+    <p>標準B2ではCRSRが53.49パーセントとなり、Naive Retryの42.77パーセントより10.72 percentage point高くなりました。DERも53.33から45.42パーセントへ下がります。</p>
+    <p>ただし、この差はtask-clustered bootstrapでは統計的にbenchmark-wideな優位性を確立していません。調整済みp値は1.00で、confidence intervalも0を含む境界まで広がっています。</p>
+    <p>理由の一つは、idempotency keyを受け取っても、server側がdeduplicationを実装していないendpointが多いことです。主要TESTでは実際にidempotency trackingを持つendpointは三つでした。</p>
+    <p>その三つではCRSRが100パーセント、DERが0パーセントでした。一方、deduplication supportのないendpointでは、keyを付けても二重実行は止まりません。</p>
+
+    <h2>server側までidempotencyを広げると、結果は大きく変わった</h2>
+    <p>研究者はこの点を切り分けるため、commercial API modelを使ったsecondary experimentで、十二TEST workflowすべてにserver-side idempotencyを実装したB2-Kを追加しています。</p>
+    <p>この条件では、標準B2のCRSRが33.20パーセントだったのに対し、B2-Kは97.24パーセントまで上がりました。Duplicate Effect Rateは0パーセントです。</p>
+    <p>両条件で正常時に成功できた共通trialだけを見ると、標準B2は33.33パーセント、B2-Kは98.64パーセントでした。</p>
+    <p>ここから言えるのは、lost-ACK問題では「agentが賢くretryする」より、server側のdeduplication contractが非常に大きな役割を持つことです。</p>
+    <p>ただしB2-Kでも完全ではありません。七百六十二のcapable trialのうち二十一は失敗しました。十七件はtool call以前のprovider error、四件はdeduplication成功後のmulti-turn continuationでmodelが不正なargumentを生成したfailureです。idempotencyはduplicate side effectを止めても、model generation failureまでは直しません。</p>
+
+    <h2>より新しいcommercial modelでも、competenceとrecoveryの差は残った</h2>
+    <p>secondary extensionではGemini 3.8 FlashとGLM-5.2 MaaSも評価しています。</p>
+    <p>通常時のcompetenceはGeminiが80.69パーセント、GLM-5.2が77.71パーセントでした。しかしNaive Retryでlost-ACKを入れると、CRSRはGeminiで21.08パーセント、GLMで21.89パーセントまで下がりました。</p>
+    <p>Naive RetryのDERはGeminiで65.62パーセント、GLMで51.25パーセントです。</p>
+    <p>つまり、より新しいgeneral reasoning modelへ変えるだけでは、外部副作用のambiguityは消えません。systemからcommit状態が見えず、retry contractもなければ、reasoning能力だけで安全に判断できる情報が不足しています。</p>
+
+    <h2>故障が起きる「タイミング」で、有効な回復策が変わる</h2>
+    <p>UndoBenchは、recoveryを一つのscalar能力とみなさず、mutation lifecycleのどこでfailureが起きたかを分けています。</p>
+    <p>PRE_MUTATIONは、外部stateを変更する前にfailureが起きる状態です。DURING_MUTATIONは、複数stepの途中など、外部stateが部分的に変わった状態です。POST_MUTATION_PRE_ACKは、mutationがcommit済みなのにacknowledgmentだけが届かない状態です。</p>
+    <p>commercial modelを使った四つのcomposite workflow比較では、この違いがはっきり出ました。</p>
+
+    <h2>mutation前なら、単純retryでも大きな問題は起きにくい</h2>
+    <p>PRE_MUTATIONでは、Naive RetryのCRSRが77.17パーセント、Idempotencyが77.42、EvoUndo-RB1が76.68、Verify-Retryが76.92でした。四methodはほぼ同じです。</p>
+    <p>より広い十二TEST workflow全体でも、Naive Retryは78.44パーセント、他methodも77から79パーセント程度でした。</p>
+    <p>重要なのは、正常時にtaskを解けたtrialではduplicate effectが0だったことです。まだ外部mutationが起きていないため、同じrequestを出し直しても二重commitになりません。</p>
+    <p>つまり「retryは危険」という一般論ではありません。retryが安全かどうかは、failureがmutationの前か後かで変わります。</p>
+
+    <h2>partial mutationでは、単一call向けのidempotencyでは足りなかった</h2>
+    <p>DURING_MUTATIONは最も厳しい条件でした。評価できる四つのcomposite workflowで、Naive Retry、標準Idempotency、zero-privilege EvoUndo-RB1はいずれもCRSR 0パーセントです。</p>
+    <p>DERもNaive Retryで82.50パーセント、Idempotencyで81.56、EvoUndoで82.50でした。</p>
+    <p>理由は、複数stepの一部だけが成功した状態では、単一API callを重複排除するだけではworkflow全体のinvariantを戻せないからです。どこまでstateが進んだかを調べ、残った処理を続けるか、補償操作を行う必要があります。</p>
+    <p>Verify-Retryだけは25.89パーセントまで回復しました。ただし成功したのはpublic probeで途中stateを確認できたCloud workflowで、Git、Storage、Databaseの三つでは十分に回復できませんでした。</p>
+
+    <h2>「確認してからretry」はpost-commit ambiguityには強い</h2>
+    <p>追加baselineのB6、Verify-Before-Retryは、error後すぐに再送せず、非破壊のpublic probeで外部stateを確認します。確認できなければ慎重にabstainする設計です。</p>
+    <p>四composite workflowのPOST_MUTATION_PRE_ACKでは、Naive RetryのCRSRが43.13パーセント、標準Idempotencyが45.98、EvoUndoが45.57なのに対し、Verify-Retryは75.00パーセントでした。</p>
+    <p>ただしB6は主要confirmatory comparisonに事前登録されたbaselineではなく、post-hocな追加評価です。この数字をB0、B2、B5と完全に同じ重みで扱うべきではありません。</p>
+    <p>また、DURING_MUTATIONでは25.89パーセントに留まっています。stateを観測できることと、そのstateを修復できることは別だからです。</p>
+
+    <h2>この研究から見えるのは「modelよりcontract」の問題</h2>
+    <p>ここまでの結果をまとめると、failure recoveryはLLMの知能だけでは決まりません。</p>
+    <p>外部systemがidempotency keyを理解するか。現在stateを問い合わせる安全なprobeがあるか。途中状態から戻すcompensating actionがあるか。workflow全体をcheckpointできるか。こうしたinterface contractが大きく効きます。</p>
+    <p>特にlost-ACKでは、agentのcontextに「実行済みかどうか」という情報がありません。その状態でmodelへ何度reasoningさせても、観測不能な事実を確定することはできません。</p>
+    <p>UndoBenchの結果は、agent reliabilityをmodel benchmarkだけで評価する限界をかなり具体的に示しています。</p>
+
+    <h2>Sentryとの違い</h2>
+    <p>ここは既存Listenとの違いも整理しておきます。Sentryは、agentのtrajectoryから「進捗停止」「grounding failure」「無効action」などを検出し、過去の回復lessonを必要な時だけ取り出して立て直す研究でした。</p>
+    <p>UndoBenchの中心はそれとは違います。問題は、agentが失敗を理解できるかではなく、外部systemのmutation状態が曖昧なことです。</p>
+    <p>「timeoutが起きたら過去の教訓を思い出す」だけでは、remote paymentがcommit済みかは分かりません。必要なのはserver-side idempotencyやstate probe、transaction設計です。</p>
+    <p>つまりSentryがagentのruntime reasoning layerに近いのに対し、UndoBenchはagentと外部systemの境界設計を評価しています。</p>
+
+    <h2>統計上の注意もある</h2>
+    <p>主要TEST suiteは十二の独立task clusterです。各taskを二十seedで繰り返すためexecution数は多いですが、独立なtask clusterそのものが増えるわけではありません。</p>
+    <p>そのため、標準IdempotencyがNaive Retryより10.72ポイント高かった差も、task-clustered bootstrapでは統計的優位を確立できませんでした。</p>
+    <p>研究はこの点を明示し、seed数が多いことを「十二task以上の独立証拠」とは扱っていません。</p>
+    <p>また、Llama-3.1-8BとLlama-3.2-3BのCRSR差もconfidence intervalがzeroをまたぎ、model差としては未解決です。</p>
+
+    <h2>この研究の限界</h2>
+    <p>第一に、主要confirmatory studyは二つの比較的小さいopen-weight modelです。Gemini 3.8 FlashとGLM-5.2の追加評価はありますが、すべてのfrontier modelを網羅した研究ではありません。</p>
+    <p>第二に、enterprise environmentはsandboxです。SQLite、local Git、mocked StripeやAWSなどを使っており、productionの高concurrencyや複雑なlatency、real permission systemまで再現しているわけではありません。</p>
+    <p>第三に、主要studyのfaultはPOST_MUTATION_PRE_ACKへ集中しています。PRE_MUTATIONとDURING_MUTATIONも追加評価していますが、POST_ACK_PRE_CHECKPOINT、compensation途中のfailure、cascading failure、Byzantine failureなどは未評価です。</p>
+    <p>第四に、一trajectoryにつきfaultは一つです。複数障害が連鎖する条件は扱っていません。</p>
+    <p>第五に、Naive Retryは最大三回という固定設定です。backoffやretry budgetを変えたsensitivity analysisは今後の課題です。</p>
+    <p>第六に、Verify-Retryはpost-hoc baselineです。興味深い結果ですが、最初からfreezeされたconfirmatory comparisonではありません。</p>
+    <p>そして2026年10月7日時点ではarXiv preprintです。benchmarkで高得点でも、unmonitored production deploymentが安全だと保証するものではないと論文自身が注意しています。</p>
+
+    <h2>ここからは、実務のagent設計への含意</h2>
+    <p>ここからは論文を踏まえた分析です。第一の含意は、agentの「retry policy」をLLM promptだけで設計しないことです。</p>
+    <p>読み取り専用APIならretryは比較的安全です。しかし課金、送信、削除、権限変更、公開、deployなど外部stateを変えるtoolでは、timeoutをそのまま「未実行」と解釈してはいけません。</p>
+    <p>tool contract側で、このoperationはidempotentか、idempotency keyを受け取るか、実行結果をqueryできるか、compensationがあるかを明示する必要があります。</p>
+
+    <h2>「エラー」と「結果不明」を別のstateとして扱う必要がある</h2>
+    <p>第二の含意は、agent runtimeのerror taxonomyです。</p>
+    <p>PRE_MUTATIONのconnection errorと、POST_MUTATION_PRE_ACKのlost acknowledgmentを、どちらも単なる「tool error」としてLLMへ返すと、適切なrecovery policyを選べません。</p>
+    <p>少なくとも「mutation前に失敗」「commit状態不明」「partial mutation」「commit済み確認済み」のように、外部副作用のphaseをruntimeが持つ方が合理的です。</p>
+    <p>UndoBenchが示した大きな性能差は、recoveryが一般的な一能力ではなく、fault phaseに依存するsystem propertyであることを示唆します。</p>
+
+    <h2>評価も、task successだけでは足りない</h2>
+    <p>第三の含意は、agent benchmarkの作り方です。</p>
+    <p>最終taskが成功したかだけでなく、duplicate effect、missing effect、exactly-once effectを測る必要があります。特に高stakesなtoolでは、外部副作用の履歴を評価できるinstrumentationが重要です。</p>
+    <p>たとえば「送金できた」ではなく、「意図した送金が一回だけcommitされた」まで見る。通知なら「正しい通知が一回だけ送られた」、deploymentなら「正しいrevisionだけがactiveになった」といった評価です。</p>
+    <p>agentを業務へ入れる場合、これはmodel accuracyよりproduction engineeringに近い問題です。</p>
+
+    <h2>最後に残す要点</h2>
+    <p>UndoBenchは、toolを使うAIエージェントのtask competenceとfault recoveryを同じseedのpaired trialで分離して測るbenchmarkです。</p>
+    <p>主要実験では通常時のtask successが83.54パーセントだった一方、通常時に成功できたtrialの障害時CRSRは46.72パーセントでした。Naive Retryでは53.33パーセントにduplicate external effectが起きています。</p>
+    <p>標準的なidempotency keyは一部改善しましたが、server側にdeduplication supportがないendpointでは十分に効きません。十二TEST workflowすべてへserver-side idempotencyを広げた追加実験ではCRSRが97.24パーセント、DERは0パーセントになりました。</p>
+    <p>一方、partial mutationではper-call idempotencyだけではworkflow全体を修復できず、主要三methodのCRSRは0パーセントでした。どの回復策が有効かはfault timingで変わります。</p>
+    <p>この研究から安全に言えるのは、「AIエージェントは障害に弱い」という一般論ではありません。より具体的には、**通常条件で高いtask completionを示すことは、分散システム障害下で安全にrecoverできることを保証しない**ということです。</p>
+    <p>agentをproductionへ入れるなら、modelの賢さだけでなく、idempotency、state verification、transaction、compensation、effect-history monitoringまで含むsystemとして設計・評価する必要があります。UndoBenchは、その差をかなり明瞭に測った研究として、今日聞く価値があります。</p>
+  </article>
+
+  <section class="player" aria-label="読み上げ操作">
+    <div class="transport">
+      <button id="prev-block" type="button" aria-label="前の読み上げ単位へ">←</button>
+      <button id="play" type="button" aria-label="再生">▶</button>
+      <button id="pause" type="button" aria-label="一時停止">Ⅱ</button>
+      <button id="stop" type="button" aria-label="停止">■</button>
+      <button id="next-block" type="button" aria-label="次の読み上げ単位へ">→</button>
+    </div>
+    <div class="section-nav" aria-label="章移動">
+      <button id="prev-section" type="button" aria-label="前の章へ">‹</button>
+      <span id="section-label">導入</span>
+      <button id="next-section" type="button" aria-label="次の章へ">›</button>
+    </div>
+    <div class="voice-row">
+      <select id="voice" aria-label="日本語音声"></select>
+    </div>
+    <div class="speed"><span>速度</span><input id="rate" type="range" min="0.7" max="4" step="0.1" value="1"><span id="rateValue">1.0×</span></div>
+  </section>
+
+
+
+
+
+
+
+  <section class="sources" aria-label="出典">
+    <strong>出典</strong>
+    <p><a href="https://www.alphaxiv.org/abs/2610.05622">alphaXiv — UndoBench: Separating Task Competence from Recovery Capability in Tool-Using AI Agents</a></p>
+    <p><a href="https://arxiv.org/abs/2610.05622">arXiv — UndoBench: Separating Task Competence from Recovery Capability in Tool-Using AI Agents</a></p>
+    <p><a href="https://github.com/tradertanmay/undobench">GitHub — UndoBench benchmark and reproduction code</a></p>
+    <p><a href="https://huggingface.co/datasets/TanmaySah/undobench">Hugging Face — UndoBench dataset</a></p>
+  </section>
+</main>
+<script>
+(() => {
+  const synth = window.speechSynthesis;
+  const blocks = [...document.querySelectorAll("#article h1,#article h2,#article h3,#article p")];
+  const sectionStarts = [...new Set([0, ...blocks.map((node, i) => node.tagName === "H2" ? i : -1).filter(i => i >= 0)])];
+  const play = document.querySelector("#play");
+  const pause = document.querySelector("#pause");
+  const stop = document.querySelector("#stop");
+  const prevBlock = document.querySelector("#prev-block");
+  const nextBlock = document.querySelector("#next-block");
+  const prevSection = document.querySelector("#prev-section");
+  const nextSection = document.querySelector("#next-section");
+  const sectionLabel = document.querySelector("#section-label");
+  const voice = document.querySelector("#voice");
+  const rate = document.querySelector("#rate");
+  const rateValue = document.querySelector("#rateValue");
+  const theme = document.querySelector("#theme");
+  let index = 0, playing = false, paused = false, selectedVoice = "", generation = 0;
+  let wakeLock = null, wakeLockWanted = false;
+
+  async function requestWakeLock() {
+    const wakeLockApi = window.navigator?.wakeLock;
+    wakeLockWanted = true;
+    if (!wakeLockApi?.request || wakeLock) return;
+    try {
+      const lock = await wakeLockApi.request("screen");
+      if (!wakeLockWanted) {
+        await lock.release();
+        return;
+      }
+      wakeLock = lock;
+      wakeLock.addEventListener?.("release", () => { wakeLock = null; });
+    } catch {
+      wakeLock = null;
+    }
+  }
+
+  async function releaseWakeLock() {
+    wakeLockWanted = false;
+    const current = wakeLock;
+    wakeLock = null;
+    if (!current) return;
+    try {
+      await current.release();
+    } catch {
+      // Wake Lock is best-effort; speech playback must continue to work.
+    }
+  }
+
+  function voices() {
+    const previous = selectedVoice || voice.value;
+    const items = synth.getVoices().filter(v => /^ja(?:-|_)/i.test(v.lang));
+    voice.replaceChildren();
+    for (const v of items) {
+      const o = document.createElement("option");
+      o.value = v.voiceURI;
+      o.textContent = v.name;
+      voice.append(o);
+    }
+    if (items.some(v => v.voiceURI === previous)) voice.value = previous;
+    selectedVoice = voice.value;
+  }
+
+  function clearHighlight() {
+    blocks.forEach(node => node.classList.remove("is-speaking"));
+  }
+
+  function sectionPosition() {
+    let pos = 0;
+    for (let i = 0; i < sectionStarts.length; i += 1) {
+      if (sectionStarts[i] <= index) pos = i;
+      else break;
+    }
+    return pos;
+  }
+
+  function updateNavigation() {
+    prevBlock.disabled = index <= 0;
+    nextBlock.disabled = index >= blocks.length - 1;
+
+    const pos = sectionPosition();
+    const start = sectionStarts[pos] ?? 0;
+    const previousTargetExists = index > start || pos > 0;
+    prevSection.disabled = !previousTargetExists;
+    nextSection.disabled = pos >= sectionStarts.length - 1;
+
+    const startNode = blocks[start];
+    sectionLabel.textContent = startNode?.tagName === "H2" ? startNode.textContent : "導入";
+  }
+
+  function showCurrent() {
+    clearHighlight();
+    const current = blocks[index];
+    if (!current) return;
+    current.classList.add("is-speaking");
+    current.scrollIntoView({ block: "center", behavior: "smooth" });
+    updateNavigation();
+  }
+
+  function speakCurrent() {
+    if (!playing || paused || index >= blocks.length) {
+      if (index >= blocks.length) {
+        playing = false;
+        paused = false;
+        clearHighlight();
+        void releaseWakeLock();
+      }
+      updateNavigation();
+      return;
+    }
+
+    showCurrent();
+    const localGeneration = ++generation;
+    const utterance = new SpeechSynthesisUtterance(blocks[index].textContent);
+    utterance.lang = "ja-JP";
+    utterance.rate = Number(rate.value);
+    const selected = synth.getVoices().find(item => item.voiceURI === voice.value);
+    if (selected) utterance.voice = selected;
+
+    utterance.onend = () => {
+      if (localGeneration !== generation || !playing || paused) return;
+      index += 1;
+      speakCurrent();
+    };
+
+    utterance.onerror = event => {
+      if (localGeneration !== generation) return;
+      if (event.error !== "canceled" && event.error !== "interrupted") {
+        playing = false;
+        paused = false;
+        clearHighlight();
+        void releaseWakeLock();
+        updateNavigation();
+      }
+    };
+
+    synth.speak(utterance);
+  }
+
+  function jumpTo(target) {
+    const next = Math.max(0, Math.min(blocks.length - 1, target));
+    const resume = playing && !paused;
+    const keepPaused = paused;
+
+    generation += 1;
+    synth.resume?.();
+    synth.cancel();
+    index = next;
+
+    if (resume) {
+      playing = true;
+      paused = false;
+      void requestWakeLock();
+      speakCurrent();
+      return;
+    }
+
+    playing = keepPaused;
+    paused = keepPaused;
+    showCurrent();
+    if (keepPaused) void requestWakeLock();
+  }
+
+  function jumpSection(delta) {
+    const pos = sectionPosition();
+    let targetPos;
+
+    if (delta < 0 && index > sectionStarts[pos]) targetPos = pos;
+    else targetPos = pos + delta;
+
+    if (targetPos < 0 || targetPos >= sectionStarts.length) return;
+    jumpTo(sectionStarts[targetPos]);
+  }
+
+  play.addEventListener("click", () => {
+    if (paused) {
+      generation += 1;
+      synth.resume?.();
+      synth.cancel();
+      paused = false;
+      playing = true;
+      void requestWakeLock();
+      speakCurrent();
+      return;
+    }
+    if (playing) return;
+    if (index >= blocks.length) index = 0;
+    playing = true;
+    void requestWakeLock();
+    speakCurrent();
+  });
+
+  pause.addEventListener("click", () => {
+    if (!playing || paused) return;
+    synth.pause();
+    paused = true;
+  });
+
+  stop.addEventListener("click", () => {
+    generation += 1;
+    synth.resume?.();
+    synth.cancel();
+    playing = false;
+    paused = false;
+    index = 0;
+    clearHighlight();
+    updateNavigation();
+    void releaseWakeLock();
+  });
+
+  prevBlock.addEventListener("click", () => jumpTo(index - 1));
+  nextBlock.addEventListener("click", () => jumpTo(index + 1));
+  prevSection.addEventListener("click", () => jumpSection(-1));
+  nextSection.addEventListener("click", () => jumpSection(1));
+
+  voice.addEventListener("change", () => {
+    selectedVoice = voice.value;
+    if (playing && !paused) {
+      generation += 1;
+      synth.cancel();
+      speakCurrent();
+    }
+  });
+
+  rate.addEventListener("input", () => {
+    rateValue.textContent = Number(rate.value).toFixed(1) + "×";
+  });
+
+  theme.addEventListener("click", () => {
+    const dark = document.documentElement.dataset.theme === "dark";
+    document.documentElement.dataset.theme = dark ? "light" : "dark";
+    theme.textContent = dark ? "☾" : "☀";
+    localStorage.setItem("rsvp:theme", dark ? "light" : "dark");
+  });
+
+  document.documentElement.dataset.theme =
+    localStorage.getItem("rsvp:theme") ||
+    (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  theme.textContent = document.documentElement.dataset.theme === "dark" ? "☀" : "☾";
+
+  voices();
+  synth.addEventListener?.("voiceschanged", voices);
+  updateNavigation();
+
+  document.addEventListener?.("visibilitychange", () => {
+    if (document.visibilityState === "visible" && (playing || paused)) {
+      void requestWakeLock();
+    }
+  });
+
+  addEventListener("pagehide", () => {
+    generation += 1;
+    synth.cancel();
+    void releaseWakeLock();
+  });
+})();
+</script>
+</body>
+</html>
