@@ -1,0 +1,253 @@
+{
+  "schema_version": 1,
+  "id": "security-threats-vulnerabilities",
+  "title": "脅威・脆弱性・露出・攻撃対象領域",
+  "topic": "情報セキュリティ",
+  "summary": "脅威、脅威主体、脅威事象、脆弱性、露出、攻撃経路、攻撃対象領域を区別し、何が危険なのかを分解して考えます。",
+  "created_at": "2026-10-08",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "IPA 情報処理安全確保支援士試験 シラバス案 Ver.0.1",
+      "url": "https://www.ipa.go.jp/shiken/syllabus/minaoshi/rcu1hd000001g5rk-att/syllabus_sc_ver0_1.pdf"
+    },
+    {
+      "title": "OWASP Top 10:2025",
+      "url": "https://top10.owasp.org/2025/"
+    },
+    {
+      "title": "NIST SP 800-30 Rev.1, Guide for Conducting Risk Assessments",
+      "url": "https://csrc.nist.gov/pubs/sp/800/30/r1/final"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "脅威と脆弱性を分けて考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "脅威は損害の原因になり得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "脅威主体は行為者を指します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "外部攻撃者だけではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "内部者も脅威主体になり得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "事故や災害は主体を持ちません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "脅威事象として扱えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "脆弱性は利用され得る弱点です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ソフトの欠陥だけではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "設定ミスも脆弱性になります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "過剰権限も弱点になります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "運用不備も弱点になります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "人的な弱さも考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "露出は到達可能性に関係します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "弱点が外部へ見える場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "内部だけから届く場合もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "到達条件で危険度は変わります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "攻撃ベクトルは侵入経路です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "メールが経路になる場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Webが経路になる場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "認証情報が経路になる場合もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "供給網も経路になり得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "攻撃対象領域を把握します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "公開サービスだけではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "管理画面も入口になります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "APIも入口になります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "クラウド設定も対象です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "CI/CDも攻撃対象です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "委託先もつながっています。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "不要な入口は減らします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "攻撃対象領域は変化します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "新機能で入口が増えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "新しい委託先でも変わります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "公開設定の変更でも変わります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ゼロデイも考慮します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "未知の弱点は完全には防げません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "既知脆弱性だけを見ません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "設計上の弱点もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "OWASPは代表的な分類を示します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "分類は完全な一覧ではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "アクセス制御の不備も重要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "設定不備も重要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "供給網の不備も扱われます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Injectionも代表例です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "安全性を欠く設計もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "攻撃しやすさを評価します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "成功時の影響も分けて見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "既存対策も評価に含めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "検知できるかも重要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "復旧できるかも重要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一つの用語だけで結論を出しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "脅威シナリオへ具体化します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "誰が何を狙うかを考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "どの弱点を使うかを考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "どこから到達するかを考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "何が起きるかを考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "分解すると対策を選びやすくなります。",
+      "duration_multiplier": 1.4
+    }
+  ]
+}
