@@ -138,3 +138,24 @@ test("authenticated mail heading does not imply authentication proves safety", a
   assert.match(html, /<h2>認証済みでも安全とは限らない<\/h2>/);
   assert.doesNotMatch(html, /認証済みでも詐欺メールとは限らない/);
 });
+
+
+test("continuous Learn course shows current chapter sources outside the speech track", async () => {
+  const index = await fs.readFile(new URL("../index.html", import.meta.url), "utf8");
+  const player = await fs.readFile(new URL("../learn/course-player.js", import.meta.url), "utf8");
+  assert.match(index, /id="learn-course-sources"[^>]*hidden/);
+  assert.match(player, /parsed\.querySelector\("section\.sources"\)/);
+  assert.match(player, /sources\.innerHTML = parsed\.citations/);
+  assert.match(player, /sources\.hidden = !parsed\.citations\.trim\(\)/);
+  assert.match(player, /items = \[\.\.\.article\.querySelectorAll/);
+  for (const id of [
+    "security-risk-assessment",
+    "security-sessions-federation-oauth-oidc-saml",
+    "security-cloud-shared-responsibility-iam-config",
+    "security-email-spf-dkim-dmarc"
+  ]) {
+    const html = await fs.readFile(new URL("../learn/" + id + ".html", import.meta.url), "utf8");
+    assert.match(html, /<\/article><section class="sources"/, id + ": citations should be available outside the spoken article");
+    assert.match(html, /<section class="sources"[\s\S]*?<a href="https:\/\//, id + ": source links absent");
+  }
+});
