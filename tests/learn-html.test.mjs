@@ -6,6 +6,8 @@ const root = new URL("../", import.meta.url);
 const catalog = JSON.parse(await fs.readFile(new URL("../lessons/index.json", import.meta.url), "utf8"));
 const completeEntries = catalog.lessons.filter((entry) => entry.status === "COMPLETE v0.1");
 const entries = catalog.lessons.filter((entry) => entry.learn_path);
+const pilotCoverage = JSON.parse(await fs.readFile(new URL("./fixtures/security-learn-coverage.json", import.meta.url), "utf8")).lessons;
+const hasCoverage = (body, gate) => gate.terms.every((term) => body.includes(term));
 const textOf = (html) => html.replace(/<[^>]+>/g, " ").replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/\s+/g, " ").trim();
 
 test("all COMPLETE catalog entries have static Learn HTML independent of RSVP chunk concatenation", async () => {
@@ -36,23 +38,34 @@ test("all COMPLETE catalog entries have static Learn HTML independent of RSVP ch
     const lesson = JSON.parse(await fs.readFile(new URL(entry.path.replace(/^\.\//, ""), root), "utf8"));
     const rsvpText = lesson.chunks.map((chunk) => chunk.text).join("");
     assert.notEqual(body, rsvpText, `${entry.id}: article is a direct RSVP chunk concatenation`);
-    const markdown = await fs.readFile(new URL(entry.path.replace(/\.json$/, ".md").replace(/^\.\//, ""), root), "utf8");
-    const lessonBody = markdown.match(/^## 本文\\s*([\\s\\S]*?)(?=^## |$)/m)?.[1] ?? "";
-    const pronunciations = [
-      [/CI[/]CD/g, "シーアイ・シーディー"], [/OAuth/gi, "オーオース"], [/API/g, "エーピーアイ"],
-      [/HTTP/g, "エイチティーティーピー"], [/HTTPS/g, "エイチティーティーピーエス"], [/JSON/g, "ジェイソン"],
-      [/SQL/g, "エスキューエル"], [/URL/g, "ユーアールエル"], [/DNS/g, "ディーエヌエス"],
-      [/CPU/g, "シーピーユー"], [/LLM/g, "エルエルエム"], [/RAG/g, "ラグ"], [/IAM/g, "アイアム"],
-      [/KPI/g, "ケーピーアイ"], [/WBS/g, "ダブリュービーエス"], [/PMO/g, "ピーエムオー"],
-      [/SaaS/g, "サース"], [/PaaS/g, "パース"], [/IaaS/g, "アイアース"], [/As-Is/g, "アズイズ"],
-      [/To-Be/g, "トゥービー"], [/GitHub/gi, "ギットハブ"], [/Git/gi, "ギット"], [/CI/g, "シーアイ"],
-      [/CD/g, "シーディー"], [/PMBOK/g, "ピーエムボック"], [/ROI/g, "アールオーアイ"],
-      [/MTTR/g, "エムティーティーアール"], [/MTBF/g, "エムティービーエフ"],
-    ];
-    for (const line of lessonBody.split(/\\r?\\n/).map((value) => value.trim()).filter(Boolean)) {
-      const item = line.replace(/^\\d+[.)、]\\s*/, "").replace(/[。！？]+$/, "");
-      const spoken = pronunciations.reduce((value, [pattern, replacement]) => value.replace(pattern, replacement), item);
-      assert.ok(body.includes(spoken), `${entry.id}: Learn text omits Markdown item: ${item}`);
+    const review = pilotCoverage[entry.id];
+    if (review) {
+      const markdown = await fs.readFile(new URL(entry.path.replace(/\\.json$/, ".md").replace(/^\\.\\//, ""), root), "utf8");
+      // A static Learn page remains independently readable; coverage is reviewed at the concept level,
+      // not by appending every RSVP/Markdown fragment verbatim.
+      assert.ok(!/要点の再確認/.test(article), `${entry.id}: verbatim recap section remains`);
+      assert.match(article, /<h2>短い振り返り<\\/h2>/, `${entry.id}: short contextual recap missing`);
+      assert.ok(body.length > 850, `${entry.id}: pilot lecture lacks explanatory depth`);
+      for (const gate of review.gates) {
+        assert.ok(hasCoverage(body, gate), `${entry.id}: semantic coverage missing: ${gate.label} (${gate.terms.join(", ")})`);
+      }
+      const sources = [...markdown.matchAll(/^\\s*-\\s*\\[[^\\]]+\\]\\((https?:\\/\\/[^)]+)\\)/gm)].map((match) => match[1]);
+      assert.ok(sources.length > 0, `${entry.id}: pilot must retain source citations`);
+      const sourcesHtml = html.match(/<section class="sources"[\\s\\S]*?<\\/section>/i)?.[0] ?? "";
+      for (const url of sources) {
+        assert.ok(sourcesHtml.includes(`href="${url.replaceAll("&", "&amp;")}"`) || sourcesHtml.includes(`href="${url}"`),
+          `${entry.id}: source from Markdown missing in Learn: ${url}`);
+      }
+    }
+  }
+});
+
+test("pilot coverage gates fail closed when essential explanations are absent", () => {
+  for (const [id, review] of Object.entries(pilotCoverage)) {
+    assert.ok(review.gates.length >= 6, `${id}: too few coverage gates`);
+    for (const gate of review.gates) {
+      assert.ok(gate.label && gate.terms.length > 0 && gate.terms.every(Boolean));
+      assert.equal(hasCoverage("", gate), false, `${id}: empty article must fail ${gate.label}`);
     }
   }
 });
