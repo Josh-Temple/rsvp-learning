@@ -388,6 +388,15 @@
             "ログイン後"
           ],
           "within_paragraph": true
+        },
+        {
+          "label": "漏えい情報の再利用とスプレーの分布を区別する",
+          "terms": [
+            "漏えいしたIDとパスワード",
+            "少数の同じパスワード候補",
+            "多数のID"
+          ],
+          "within_paragraph": true
         }
       ]
     },
