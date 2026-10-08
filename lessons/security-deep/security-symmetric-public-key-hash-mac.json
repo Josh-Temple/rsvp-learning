@@ -126,12 +126,8 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "Digital signatureとは",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "異なります。",
-      "duration_multiplier": 1.15
+      "text": "Digital signatureとは別です。",
+      "duration_multiplier": 2.3
     },
     {
       "text": "暗号化も完全性を自動保証しません。",
