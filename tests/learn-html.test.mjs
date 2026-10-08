@@ -131,3 +131,10 @@ test("Learn library exposes course-level continuous playback without replacing s
   assert.match(player, /SpeechSynthesisUtterance/);
   assert.match(player, /navigator\?\.wakeLock/);
 });
+
+
+test("authenticated mail heading does not imply authentication proves safety", async () => {
+  const html = await fs.readFile(new URL("../learn/security-email-spf-dkim-dmarc.html", import.meta.url), "utf8");
+  assert.match(html, /<h2>認証済みでも安全とは限らない<\/h2>/);
+  assert.doesNotMatch(html, /認証済みでも詐欺メールとは限らない/);
+});
