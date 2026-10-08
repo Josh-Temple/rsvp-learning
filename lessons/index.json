@@ -1182,6 +1182,70 @@
       "path": "./lessons/security-deep/security-data-classification-encryption-retention.json",
       "status": "COMPLETE v0.1",
       "learn_path": "./learn/security-data-classification-encryption-retention.html"
+    },
+    {
+      "id": "security-communication-path-boundaries",
+      "title": "通信経路とセキュリティ境界",
+      "topic": "情報セキュリティ",
+      "path": "./lessons/security-deep/security-communication-path-boundaries.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/security-communication-path-boundaries.html"
+    },
+    {
+      "id": "security-dns-tls-https",
+      "title": "DNS・TLS・HTTPS",
+      "topic": "情報セキュリティ",
+      "path": "./lessons/security-deep/security-dns-tls-https.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/security-dns-tls-https.html"
+    },
+    {
+      "id": "security-firewall-proxy-waf-ids-ips",
+      "title": "Firewall・Proxy・WAF・IDS/IPS",
+      "topic": "情報セキュリティ",
+      "path": "./lessons/security-deep/security-firewall-proxy-waf-ids-ips.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/security-firewall-proxy-waf-ids-ips.html"
+    },
+    {
+      "id": "security-segmentation-vpn-zero-trust",
+      "title": "セグメンテーション・VPN・Zero Trust",
+      "topic": "情報セキュリティ",
+      "path": "./lessons/security-deep/security-segmentation-vpn-zero-trust.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/security-segmentation-vpn-zero-trust.html"
+    },
+    {
+      "id": "security-email-spf-dkim-dmarc",
+      "title": "メール・SPF・DKIM・DMARC",
+      "topic": "情報セキュリティ",
+      "path": "./lessons/security-deep/security-email-spf-dkim-dmarc.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/security-email-spf-dkim-dmarc.html"
+    },
+    {
+      "id": "security-endpoint-hardening-edr-mdm",
+      "title": "Endpoint hardening・EDR・MDM",
+      "topic": "情報セキュリティ",
+      "path": "./lessons/security-deep/security-endpoint-hardening-edr-mdm.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/security-endpoint-hardening-edr-mdm.html"
+    },
+    {
+      "id": "security-cloud-shared-responsibility-iam-config",
+      "title": "Cloud責任分界・IAM・設定",
+      "topic": "情報セキュリティ",
+      "path": "./lessons/security-deep/security-cloud-shared-responsibility-iam-config.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/security-cloud-shared-responsibility-iam-config.html"
+    },
+    {
+      "id": "security-container-serverless-saas-iot",
+      "title": "Container・Serverless・SaaS・IoT",
+      "topic": "情報セキュリティ",
+      "path": "./lessons/security-deep/security-container-serverless-saas-iot.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/security-container-serverless-saas-iot.html"
     }
   ]
 }

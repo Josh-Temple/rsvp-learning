@@ -1,0 +1,229 @@
+{
+  "schema_version": 1,
+  "id": "security-segmentation-vpn-zero-trust",
+  "title": "セグメンテーション・VPN・Zero Trust",
+  "topic": "情報セキュリティ",
+  "summary": "Network分割、VPN、Zero Trustを『内部なら安全』の代替として整理し、Identity・Device・Resourceを単位とする継続的なAccess判断を学びます。",
+  "created_at": "2026-10-08",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "NIST SP 800-207 Zero Trust Architecture",
+      "url": "https://csrc.nist.gov/pubs/sp/800/207/final"
+    },
+    {
+      "title": "CIS Critical Security Controls v8.1",
+      "url": "https://www.cisecurity.org/controls/v8-1"
+    },
+    {
+      "title": "IPA 新試験制度のシラバス案について",
+      "url": "https://www.ipa.go.jp/shiken/syllabus/henkou/2026/20260630.html"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "分割は影響範囲を抑えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "全端末を一つのNetworkに置きません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "業務の必要性で区切ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Server群を分ける場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "管理Networkも分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "開発と本番も分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用者端末も分けられます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "VLANは分割手段の一つです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Firewall Ruleと組み合わせます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Cloud networkでも分割します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Account分離も考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "分割だけで認可は完了しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "横展開を難しくします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Blast radiusを小さくします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "VPNは安全なTunnelを作ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Remote accessに使われます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Site間接続にも使われます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "VPN接続済みでも無条件に信じません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Credential侵害を考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Client端末侵害も考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "MFAを組み合わせます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "端末状態も評価できます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "接続先を必要最小限にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Split tunnelingも評価します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "DNS経路も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Zero Trustは場所の信頼を減らします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Resource保護を中心にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Identityを確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Device状態も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Access対象も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Contextを使う場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "継続的な判断を行います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "最小権限を適用します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Microsegmentationも使えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Service間にも適用できます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Policyを一元化する場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "判断点を明確にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Enforcement pointも必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Logで判断を追跡します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "例外経路を管理します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Legacy systemも考慮します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "段階的に移行します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "重要Resourceから始められます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用者体験も評価します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "可用性も守ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Identity障害時を設計します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "緊急Accessを管理します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "VPNとZero Trustを",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "対立概念にしません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "目的に応じて組み合わせます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "信頼を明示的に評価します。",
+      "duration_multiplier": 1.4
+    }
+  ]
+}
