@@ -362,4 +362,4 @@ Course間の役割は、I=守る対象・リスク判断、II=攻撃の観測と
 
 #### 8.6 後続のproduction API fresh確認（同日・監査保存後）
 
-本節8冒頭の「このCではVercel APIを新規操作していない」は**監査文書初回作成時の状態**。その後同日にVercel連携APIで同一project \`prj_7yYGl5D3Q7UwQgQuXaGmOYLkTzbu\` のproduction deployment一覧をfresh取得し、最新表示は \`dpl_CYHqCXPTCoEqH3r9QDK66XLiy5fN\`、\`target=production\`、\`state=READY\`、\`meta.githubCommitSha=fd003b63b816799dd8f1f1eac0de4fd70db32da9\` と確認した。inspector: https://vercel.com/josh-temples-projects/rsvp-learning/CYHqCXPTCoEqH3r9QDK66XLiy5fN 。前Waveの \`0a168c…\` はその時点の旧配信ソースにすぎない。**ドメインaliasの現割当て、アクセス保護、ページ取得・表示、再生、実音声、Android実機について本Cは確認していない（NOT_VERIFIED）**。D/Eの実利用ゲートを代替しない。
+本節8冒頭の「このCではVercel APIを新規操作していない」は**監査文書初回作成時の状態**。その後同日にVercel連携APIで同一project `prj_7yYGl5D3Q7UwQgQuXaGmOYLkTzbu` のproduction deployment一覧をfresh取得し、最新表示は `dpl_CYHqCXPTCoEqH3r9QDK66XLiy5fN`、`target=production`、`state=READY`、`meta.githubCommitSha=fd003b63b816799dd8f1f1eac0de4fd70db32da9` と確認した。inspector: https://vercel.com/josh-temples-projects/rsvp-learning/CYHqCXPTCoEqH3r9QDK66XLiy5fN 。前Waveの `0a168c…` はその時点の旧配信ソースにすぎない。**ドメインaliasの現割当て、アクセス保護、ページ取得・表示、再生、実音声、Android実機について本Cは確認していない（NOT_VERIFIED）**。D/Eの実利用ゲートを代替しない。
