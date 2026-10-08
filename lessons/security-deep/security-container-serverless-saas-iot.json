@@ -1,0 +1,261 @@
+{
+  "schema_version": 1,
+  "id": "security-container-serverless-saas-iot",
+  "title": "Container・Serverless・SaaS・IoT",
+  "topic": "情報セキュリティ",
+  "summary": "Managed technologyごとに『管理しなくてよい部分』と『残るAttack surface』を分け、Image、Workload identity、Runtime、Event、IoT lifecycleを学びます。",
+  "created_at": "2026-10-08",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "NIST SP 800-190 Application Container Security Guide",
+      "url": "https://csrc.nist.gov/pubs/sp/800/190/final"
+    },
+    {
+      "title": "CISA Cloud Security Technical Reference Architecture v2",
+      "url": "https://www.cisa.gov/topics/cybersecurity-best-practices/executive-order-improving-nations-cybersecurity"
+    },
+    {
+      "title": "NISTIR 8259 Series",
+      "url": "https://www.nist.gov/itl/applied-cybersecurity/nist-cybersecurity-iot-program/nistir-8259-series"
+    },
+    {
+      "title": "IPA 新試験制度のシラバス案について",
+      "url": "https://www.ipa.go.jp/shiken/syllabus/henkou/2026/20260630.html"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "Managed技術でも責任は残ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "管理対象が変わるだけです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ContainerはImageを使います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Image sourceを管理します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Base imageを把握します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Dependencyも把握します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "不要Packageを減らします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Image scanを使えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "署名を使う場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Registry accessを管理します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Runtime権限を絞ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Root実行を避けられる場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Hostとの境界を守ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "SecretをImageへ埋め込みません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Workload identityを使います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Network policyも使えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Orchestrator APIを強く守ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Audit logを有効にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ServerlessもCodeと設定があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Function権限を最小化します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Event sourceを検証します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Secret管理も必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Dependencyも",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Supply chainです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "LogとTraceを集めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "短時間実行でも監視します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "SaaSは設定がAttack surfa",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ceです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Sharingを管理します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "OAuth app連携を管理します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Admin roleを管理します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Data exportも監視します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Tenant設定をBackupで",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "きるか確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "IoTは長いLifecycleがあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Device identityが必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Secure configuration",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "が必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Data protectionも必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Interface accessを制御します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Software update能力が重要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Security stateを",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "報告できると有用です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "製造者Supportも確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Support期間を調達時に見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Default passwordを避けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Unique credentialを使います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "不要Serviceを無効化します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Network分離も使います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "物理Accessも考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "廃棄時にDataを消去します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Update不能Deviceは",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Riskになります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Managedだから安全とは限りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "IdentityとConfigurati",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "onを中心に見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Lifecycleと",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Supply chainまで追います。",
+      "duration_multiplier": 1.4
+    }
+  ]
+}

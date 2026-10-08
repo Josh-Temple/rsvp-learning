@@ -287,6 +287,20 @@
         "security-key-secret-credential-lifecycle",
         "security-data-classification-encryption-retention"
       ]
+    },
+    {
+      "id": "security-network-cloud",
+      "title": "情報セキュリティ IV：Network・Endpoint・Cloud",
+      "chapters": [
+        "security-communication-path-boundaries",
+        "security-dns-tls-https",
+        "security-firewall-proxy-waf-ids-ips",
+        "security-segmentation-vpn-zero-trust",
+        "security-email-spf-dkim-dmarc",
+        "security-endpoint-hardening-edr-mdm",
+        "security-cloud-shared-responsibility-iam-config",
+        "security-container-serverless-saas-iot"
+      ]
     }
   ]
 }

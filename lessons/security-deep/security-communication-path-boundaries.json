@@ -1,0 +1,221 @@
+{
+  "schema_version": 1,
+  "id": "security-communication-path-boundaries",
+  "title": "通信経路とセキュリティ境界",
+  "topic": "情報セキュリティ",
+  "summary": "利用者からServiceまでの通信経路を名前解決、接続、Gateway、Application、外部依存へ分解し、どこで信頼条件が変わるかを学びます。",
+  "created_at": "2026-10-08",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "NIST SP 800-207 Zero Trust Architecture",
+      "url": "https://csrc.nist.gov/pubs/sp/800/207/final"
+    },
+    {
+      "title": "IPA 新試験制度のシラバス案について",
+      "url": "https://www.ipa.go.jp/shiken/syllabus/henkou/2026/20260630.html"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "通信は一つの線ではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "名前解決から始まる場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Routeを通って相手へ届きます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Gatewayを通る場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Proxyを通る場合もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Load balancerも経路になります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "CDNが入る場合もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Applicationへ到達します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Databaseへ進む場合もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "外部APIへ出る場合もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Data flowを描きます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "送信元を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "送信先を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Protocolを確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Portも確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Dataの種類も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "認証情報の流れも確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "管理通信は別に考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "監視通信も別経路の場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "信頼境界を示します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Internet境界だけではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用者とServiceにも境界があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Service間にも境界があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Cloud account間にもあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "管理面とData面も分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "暗黙の信頼を減らします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Network位置だけで信じません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Identityと端末状態も使います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "経路上の保護を考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "暗号化が必要な場所を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "認証が必要な場所を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "認可も必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "観測点を設計します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "DNS logがあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Proxy logがあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Firewall logがあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Application logもあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Cloud audit logもあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "全てを集めるだけでは足りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "重要な判断に使える形にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "失敗経路も考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "DNS障害があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Identity障害があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Gateway障害もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "外部API障害もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "代替経路の安全性も見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Bypass経路を残さないようにします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "実際の通信と図を比較します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "変更時にData flowを更新します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "経路理解が防御設計の前提です。",
+      "duration_multiplier": 1.4
+    }
+  ]
+}

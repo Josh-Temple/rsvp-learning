@@ -1,0 +1,245 @@
+{
+  "schema_version": 1,
+  "id": "security-endpoint-hardening-edr-mdm",
+  "title": "Endpoint hardening・EDR・MDM",
+  "topic": "情報セキュリティ",
+  "summary": "PCやMobileを侵害前提で管理し、Secure configuration、Patch、Application control、EDR、MDM、Encryption、Lifecycleを組み合わせます。",
+  "created_at": "2026-10-08",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "NIST SP 800-124 Rev.2 Mobile Device Security",
+      "url": "https://csrc.nist.gov/pubs/sp/800/124/r2/final"
+    },
+    {
+      "title": "CIS Critical Security Controls v8.1",
+      "url": "https://www.cisecurity.org/controls/v8-1"
+    },
+    {
+      "title": "IPA 新試験制度のシラバス案について",
+      "url": "https://www.ipa.go.jp/shiken/syllabus/henkou/2026/20260630.html"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "Endpointは利用者に近い資産です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "攻撃の入口になる場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "認証情報も存在します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "業務Dataも存在します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Secure configuration",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "を適用します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "不要な機能を減らします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Local adminを減らします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Patchを適用します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "OSだけではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Applicationも更新します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Browserも重要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "DriverやFirmwareも確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Disk encryptionを使います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "紛失時のData保護に役立ちます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Screen lockも設定します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Application controlも",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "使えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "許可Softwareを管理します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Macro policyも管理対象です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Removable mediaも考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Anti-malwareを維持します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "EDRはEndpointを観測します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Process行動を収集できます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "File eventも見られます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Network eventも使えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "DetectionとResponseを支えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "隔離機能を持つ場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "EDRだけで完全防御ではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Agent coverageを確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "停止状態を監視します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Policy差分も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Telemetry送信を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "MDMはMobile管理に使います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "設定を配布できます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Complianceを確認できます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "遠隔LockやWipeも使えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Organization deviceが",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "あります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "BYODもあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "管理範囲を分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Privacyを考慮します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Work profileなどを",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "使う場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "App dataを分離します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "紛失手順を整備します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "退職時のData削除も設計します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "廃棄時も消去します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Inventoryと連動します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "未管理端末を検出します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "重要AccessをManaged dev",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "iceへ限定できます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Endpoint logを",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Incident対応へ使います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Lifecycle全体で端末を守ります。",
+      "duration_multiplier": 1.4
+    }
+  ]
+}

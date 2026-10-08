@@ -1,0 +1,217 @@
+{
+  "schema_version": 1,
+  "id": "security-dns-tls-https",
+  "title": "DNS・TLS・HTTPS",
+  "topic": "情報セキュリティ",
+  "summary": "名前解決と暗号化通信を別の層として理解し、DNS、証明書、TLS handshake、HTTPSが何を守り何を守らないかを学びます。",
+  "created_at": "2026-10-08",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "IETF RFC 9846 TLS 1.3",
+      "url": "https://www.rfc-editor.org/info/rfc9846/"
+    },
+    {
+      "title": "IETF RFC 4033 DNS Security Introduction and Requirements",
+      "url": "https://www.rfc-editor.org/info/rfc4033/"
+    },
+    {
+      "title": "IPA 新試験制度のシラバス案について",
+      "url": "https://www.ipa.go.jp/shiken/syllabus/henkou/2026/20260630.html"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "DNSは名前解決を担います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Domain名を接続先へ結びます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "DNSとTLSは別の仕組みです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "DNSが正しくても通信は暗号化されません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "TLSがあっても名前解決は別問題です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "DNS改ざんを考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "偽の応答へ誘導される場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "DNSSECは真正性確認を支えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "DNSSECは通信暗号化ではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "TLSは通信を保護します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "盗聴を防ぐ目的があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "改ざんを防ぐ目的もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "相手認証も重要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "TLS 1.3があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Handshakeで条件を合意します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "鍵素材を確立します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "証明書を検証する場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "名前の一致を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Trust chainも確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "期限も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "警告を無視しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "HTTPSはHTTPをTLSで保護します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "URL全体の意味も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "似たDomainに注意します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "鍵の保護も必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "TLS終端位置を把握します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "CDNで終端する場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Load balancerで",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "終端する場合もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "内部で再暗号化する場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "終端後の経路も評価します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "TLSはApplication認可をしません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "SQL Injectionも防ぎません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "XSSも防ぎません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "侵害済みEndpointも救えません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Server側の弱点も残ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Client側の弱点も残ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Certificate更新を自動化できます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "失効や鍵漏えいにも備えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Protocol downgradeを避けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "古いProtocolを管理します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "監視も行います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Certificate期限を監視します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "TLS errorも観測します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "DNS変化も監視対象です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "名前解決と通信保護を結びます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Application保護とも組み合わせます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "複数層で接続の信頼を作ります。",
+      "duration_multiplier": 1.4
+    }
+  ]
+}

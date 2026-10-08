@@ -1,0 +1,233 @@
+{
+  "schema_version": 1,
+  "id": "security-email-spf-dkim-dmarc",
+  "title": "メール・SPF・DKIM・DMARC",
+  "topic": "情報セキュリティ",
+  "summary": "Emailの送信経路とFrom表示の違いを理解し、SPF、DKIM、DMARCを役割別に組み合わせ、Domainなりすまし対策と限界を学びます。",
+  "created_at": "2026-10-08",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "IETF RFC 7208 Sender Policy Framework",
+      "url": "https://www.rfc-editor.org/info/rfc7208/"
+    },
+    {
+      "title": "IETF RFC 6376 DKIM Signatures",
+      "url": "https://www.rfc-editor.org/info/rfc6376/"
+    },
+    {
+      "title": "IETF RFC 9989 DMARC",
+      "url": "https://www.rfc-editor.org/info/rfc9989/"
+    },
+    {
+      "title": "IPA 新試験制度のシラバス案について",
+      "url": "https://www.ipa.go.jp/shiken/syllabus/henkou/2026/20260630.html"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "Emailには複数のDomainがあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用者に見えるFromがあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "配送用のDomainもあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "SPFは送信Hostを認可します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Domainが許可した送信元を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "DNSへPolicyを公開します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "SPFだけでは見えるFromを保証しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "転送で課題が出る場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "DKIMはMessageへ署名します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "送信Domainが署名します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "公開鍵をDNSで取得します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Message変更を検出できます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "署名Domainを確認できます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "見えるFromとは別の場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "DMARCはAlignmentを使います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "見えるFromとの整合を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "SPFまたはDKIM結果を利用します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Policyを公開できます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "失敗Mailの扱いを示します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Reportも受け取れます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "2026年にRFC 9989が公開されました。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "旧RFC 7489を置き換えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "いきなり強いPolicyにしません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "正規送信元を棚卸しします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Mail serviceを把握します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Marketing serviceも確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Ticket systemも確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "委託先送信も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "SPF recordを管理します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "DKIM keyも管理します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Key rotationも行います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Reportを分析します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "誤設定を見つけます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "不正送信の兆候も見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "DMARCは全Phishingを防ぎません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "似たDomainは別問題です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "侵害済み正規Accountも別問題です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Display name spoofin",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "gも残ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Content検査も必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用者報告も必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "URL防御も組み合わせます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "MFAも組み合わせます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "BEC対策は業務手順も必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "送信側と受信側を分けて考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Domain reputationも",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "補助情報です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Mail logを保持します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "認証結果を観測します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "変更時に再確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Mail認証を継続運用します。",
+      "duration_multiplier": 1.4
+    }
+  ]
+}
