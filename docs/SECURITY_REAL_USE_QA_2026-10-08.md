@@ -82,3 +82,80 @@ Vercelのproject設定ではSSO protectionが一部環境に有効。アクセ�
 - [Learn course player](../learn/course-player.js)
 - [旧統合判定](SECURITY_LEARNING_INTEGRATION_2026-10-08.md)
 - [旧Android / Learn読み上げパイロット](LEARN_READALOUD_PILOT_20260927.md)
+
+
+---
+
+## 6. 2026-10-09 JST — 独立品質検証・実利用QA Wave / Worker D 後続snapshot
+
+**検証区分:** 本番デプロイAPI + 認可されたVercel連携のHTTP代理取得 + GitHub main静的コードレビュー。**本番GUIブラウザ操作・Android Chrome実機操作・実音声の聴取は未実施。**
+
+**開始時点の確認（2026-10-09 07:50以降 JST）**
+
+- 指示: Library `/RSVP Learning/Work Instructions/2026-10-09_security_learning_independent_validation_and_depth_expansion_wave_instructions.md` Section 6。
+- GitHub: `Josh-Temple/rsvp-learning` private / default `main`、実行開始時main **`fd003b63b816799dd8f1f1eac0de4fd70db32da9`**（GitHubの直近コミット検索・当該refのファイル読取で照合）。
+- Open PR: GitHub個別照会で旧Draft **#6**（head `889aa99005afceb0c0f69ceb212fa3090bfc08a1`、照会時base `b0b37d3f676b9cd7b17d29bc0d095b9f60c1f77f`）と別件 **#29**（head `fa846811d5e32cba9ab7e3a45e43f2cddf8a2bea`、照会時base `1fffa341f7b86e41050c192ffba7de2bdc008c8`）を確認。いずれも**範囲外・非変更**。検索APIによるopen PR一覧は空応答であり、一覧の網羅性は保証しない。前Waveの関連 #95〜#100 はclosed/統合記録と照合。今WaveのA/B/Cの新規作業は本Dの確定的な監査対象ではない。
+- 配信先: Vercel project `rsvp-learning`、project ID `prj_7yYGl5D3Q7UwQgQuXaGmOYLkTzbu`。production deployment **`dpl_CYHqCXPTCoEqH3r9QDK66XLiy5fN`**、**READY**、metadataの `githubCommitSha=fd003b63b816799dd8f1f1eac0de4fd70db32da9`、production alias `rsvp-learning-kappa.vercel.app` が同deploymentに存在することをAPIで確認。今回の調査時点では**本番配信コードのGit SHAと開始main SHAが一致**する。
+- Vercel project設定: `ssoProtection.enabled=true`, `deploymentType=all_except_custom_domains`。連携の取得成功を「匿名ユーザーが到達できる」と読み替えない。
+- 旧snapshotのproduction SHA差、出典欠落、RSVP Pages workflowの記録は**当時の事実として維持**する。#99 の出典表示修正と `PUBLIC_LISTENING_BOUNDARY_2026-10-08.md` によるPages方針変更を反映した**新しい観測**を以下に記録する。
+
+### 6.1 テスト環境・証拠の種類
+
+| 種別 | 実行したこと | 実行していないこと |
+|---|---|---|
+| Vercel API | project/deployment/alias/READY/ソースSHA/保護設定の取得 | browser rendering / clicking / audio |
+| Vercel HTTP代理取得 | 正規production URLのHTML/JS/JSON/代表Lesson HTMLのレスポンス本文とHTTP statusを確認 | 匿名の一般ブラウザでの通信・Cookie・操作の保証 |
+| GitHub API | private main、#6/#29、既存QA/統合/公開境界、player/app/テスト/カタログの現行ファイル照合 | 全Action runの網羅的列挙、今回のnpmローカル実行 |
+| ローカル環境 | Chromiumバイナリの存在を確認。productionホストのDNS解決を試みたが `gaierror: Temporary failure in name resolution` | productionへのChromium実アクセス、390px画面描画、実機・音声 |
+| 汎用Webアクセス | productionトップと代表Learn URLを試したが「このツールではアクセス不能」 | この結果だけからSSO、公開範囲、恒常的障害の原因を断定 |
+
+### 6.2 本番配信・静的整合性の測定
+
+**base URL:** `https://rsvp-learning-kappa.vercel.app/`。各パスのHTTP 200はVercel連携経由の結果である。
+
+| test_id | environment / device / browser | URL・操作・期待結果 | 実測・evidence | 判定 |
+|---|---|---|---|---|
+| D-20261009-01 | Vercel API / device N/A | production READY、alias、source SHA | READY、3 aliasのうち `rsvp-learning-kappa.vercel.app` が存在。source SHA=開始main SHA。deployment `dpl_CYHqCXPTCoEqH3r9QDK66XLiy5fN` | **PASS（APIのみ）** |
+| D-20261009-02 | HTTP代理取得 / browser N/A | `/` にRSVP・Course Learn・章別出典のDOM | HTTP 200。RSVP速度 `#speed`、`#learn-course-player`、`#learn-course-sources`、単章出典 `#source-section` の存在 | **PASS（静的）** |
+| D-20261009-03 | HTTP代理取得 / browser N/A | `/app.js`、`/learn/learn.js`、`/learn/course-player.js` が配信される | すべてHTTP 200。追加で `index.html` / `learn/learn.js` / `learn/course-player.js` は開始mainに固定したGitHub本文と**文字列全体一致** | **PASS（配信・3ファイル一致）** |
+| D-20261009-04 | HTTP代理取得 / browser N/A | `/courses/index.json`、`/lessons/index.json` の取得と解析 | 双方HTTP 200、JSON解析可能。専門Course I〜IV `security-foundations-risk=7`、`security-threat-flow=7`、`security-identity-crypto=8`、`security-network-cloud=8` で**計30章**を確認（別の入門章を含めない） | **PASS（取得と一覧構造）** |
+| D-20261009-05 | HTTP代理取得 / browser N/A | 既改稿8章の単章Learn HTMLに本文・操作・出典が存在 | **8/8 HTTP 200**、各HTMLに `#learn-article`、`#speech-play`、`section.sources`。HTML内のHTTP(S)出典リンク数は後述の順に **3 / 6 / 4 / 4 / 4 / 4 / 4 / 4** | **PASS（8章の静的構造）** |
+| D-20261009-06 | 配信済みplayer JS + mainテスト / browser N/A | 連続再生で章別出典を本文とは別表示し、章切替で上書き・非表示にする | `parseArticle()` が `section.sources` を取得。`loadChapter()` が `sources.innerHTML = parsed.citations` と `sources.hidden = !parsed.citations.trim()` を実行。専用DOM `#learn-course-sources` と構造検査を確認。#99修正後のコードがproductionにある | **PASS（静的修正実装のみ）**。実画面の切替は **NOT_VERIFIED** |
+| D-20261009-07 | 配信済みplayer JS / browser N/A | Course連続再生、章末自動切替、最後で停止、前後移動、戻り、速度・音声 | `SpeechSynthesisUtterance.onend` → `speakCurrent()` → `finishChapter()` → `loadChapter(next)` の実装あり。最終章は `completed=true` / `state=idle`、移動は `moveChapter()`。発火・音声・UI効果は未観測 | **PASS（静的な制御経路）** / **NOT_VERIFIED（動作）** |
+| D-20261009-08 | 配信済みindex/app JS / browser N/A | RSVP単章・再生/一時停止/戻る/進む/速度の操作 | 対応するDOM、イベント登録・再生制御コードを確認。クリック、チャンク自然さ、再生中の速度変更効果は未観測 | **PASS（静的な操作経路）** / **NOT_VERIFIED（動作）** |
+| D-20261009-09 | Chromium / desktop / ネットワーク不可 | production実アクセス、390px/desktop描画、コース選択→連続再生 | Chromiumは存在。ただしproductionのDNS解決不可。本番画面のスクリーンショットとユーザー操作が取得できない | **NOT_VERIFIED** |
+| D-20261009-10 | Android実機 / Android Chrome / 未接続 | 390px相当、タップ、再生・停止、音声・速度、章遷移、出典 | Android端末にアクセスしていない。エミュレーター・HTTP・静的コードを実機確認としない | **NOT_VERIFIED** |
+| D-20261009-11 | Android実機 / Web Speech API / 未接続 | ページ内音声合成で単章と通し再生、停止/速度/音声選択、実際の聴取 | 実音声・端末の音声エンジン・イベントを測定していない | **NOT_VERIFIED** |
+| D-20261009-12 | Android実機 / Chrome標準機能 / 未接続 | Chromeメニュー「このページを読み上げ」から利用できるか | Chrome標準機能はアプリ内Web Speech APIと別。実機メニュー・読み上げを確認していない | **NOT_VERIFIED** |
+| D-20261009-13 | Android実機 / 未接続 | 画面OFF・バックグラウンドで音声継続するか | 状態遷移・音声の実測なし。Wake Lockコードだけで継続可とは言わない | **NOT_VERIFIED** |
+| D-20261009-14 | GitHub status / npm環境 | 当該mainのCIと `npm run check` | mainのcombined statusにはVercel successを確認。対象SHAのPR起動workflow一覧は空（ツールの検索範囲に制限）。既存統合記録の旧SHA `0a168c…` のTest成功は今のmainの新規Test証拠ではない。private repoのローカルcheckoutがないため `npm run check` は未実行 | **Test: NOT_VERIFIED / npm: NOT_RUN** |
+| D-20261009-15 | GitHub private/public境界 | RSVP一般公開やInstant Radio自動同期が無断で起きないこと | GitHub privateを確認。公開方針の正本で「RSVP private／Instant Radio public・明示的公開のみ」を再確認。実際の匿名到達性・GitHub Pages Settings画面は未観測。設定変更は実施せず | **PASS（repository visibilityと方針）** / **NOT_VERIFIED（匿名アクセス・Pages設定）** |
+
+静的に取得した**改稿済み8章と出典リンク数**（同じ順番で検査）：`security-risk-assessment`（3）、`security-sessions-federation-oauth-oidc-saml`（6）、`security-cloud-shared-responsibility-iam-config`（4）、`security-email-spf-dkim-dmarc`（4）、`security-social-engineering-bec-phishing`（4）、`security-malware-ransomware`（4）、`security-credential-session-attacks`（4）、`security-identity-proofing-authn-authz`（4）。**リンク数・取得成功はリンク先仕様の現行性・正確性を保証しない**（内容の独立審査はC）。
+
+### 6.3 新旧不具合の境界・判定
+
+- **旧P1「Course連続再生で出典欠落」**: 上の旧Section 3.1が示した失敗は、後続PR **#99** により静的な実装不備が修復され、その修正コードが本番HTTPで取得できた。今回のDでは**静的修正を確認した**と判定し、旧発見を消さない。**実際に章を変えた瞬間の画面表示・リンク操作は未検証**。古いFAILを現在も残存するバグと断定せず、実利用PASSにも昇格しない。
+- **新しいP0・P1不具合**: 本Dで実測できたHTTP・コード・代表8章の構造の範囲では**新規の確証なし**。これは全操作/音声に不具合がないという意味ではない。
+- **速度変更の注意点**: 単章/コースの速度スライダーは入力イベントで値を更新し、新規 `SpeechSynthesisUtterance` 作成時に `rate` を設定する実装。再生中の発話に即時反映されるとはコード上で証明できない。実聴取で確認する。
+- **公開境界**: 過去snapshotのPages workflowや `/listen/chrome` スロットの記述を最新状態と混同しない。現行正本は `docs/PUBLIC_LISTENING_BOUNDARY_2026-10-08.md`。private教材のPages公開・100スロットの自動同期は行っていない。
+
+### 6.4 実機操作の最小確認手順（利用者・Eへ）
+
+1. Android Chrome（実機）で `https://rsvp-learning-kappa.vercel.app/` を開き、端末機種・Android/Chrome版、確認時刻、ログイン要否だけを個人情報なしで記録。390px相当の縦画面で、横スクロール・ボタンの重なり・出典の可読性を確認。
+2. RSVPの `security-risk-assessment` で再生→一時停止→1チャンク戻る/進む→速度変更→停止。画面表示の自然さと選択した章の出典を目視確認。
+3. 単章Learnを開き、`▶ / Ⅱ / ■`、速度、音声選択、実音声と画面のハイライトを確認。音が出ない/止まる場合は、その操作・再現条件だけ記録。
+4. Learn一覧からCourse I `security-foundations-risk`、Course III `security-identity-crypto`、Course IV `security-network-cloud` の通し再生を開始し、**章末自動遷移、章別出典の更新、前後章、速度・音声切替、最終章停止、一覧へ戻る**を確認。各Courseの初章・中間・最終章で一度ずつ出典を確認し、前章の出典が残らないことを調べる。
+5. Chromeブラウザメニュー内の**標準「このページを読み上げ」**の利用可否を、ページ内 `▶` と混同せず別に判定。画面OFF/バックグラウンドは試した場合のみ結果を記載。録音・端末内の個人情報・保存済み習熟度をGitHubへアップロードしない。
+
+### 6.5 Worker Eへの引継ぎ／終了条件
+
+**Worker D判定: `PARTIAL_WITH_GAPS`**。production API（READY/alias/SHA一致）、HTTPによる主要コード・カタログ・既改稿8章、#99修正後の章別出典の静的機構は**確認した範囲でPASS**。一方、**390pxとdesktopの本番実ブラウザ描画/クリック、Android Chrome、実音声、Chrome標準読み上げ、実際の章切替と出典更新はすべてNOT_VERIFIED**。今回のレポート完成は実機QAの合格ではない。
+
+- **P1 / D+利用者 / 環境依存**: 上記6.4に沿ったAndroid実機の最小実測。合格には端末・URL・deployed SHA・操作・期待/実測・問題時の再現手順を残す。
+- **P1 / E**: Dの静的PASSを実ブラウザPASSへ無条件に格上げしない。C・B/Aの新headが統合された場合は新SHA/production aliasを再確認し、出典DOMとchapter切替を回帰確認する。
+- **P1 / E**: 現在mainのTestは今Dの取得経路では網羅的に検証していないため、必要なGitHub Actions run URL/commit conclusionを再取得。`npm run check`は適切なcheckout/CIで行う。
+- **P0 / E**: RSVP privateとInstant Radio publicを維持。Pages設定・匿名アクセス・秘密情報露出は許可と証拠のないまま公開方向へ変更しない。
+- **非所有**: AのMarkdown/RSVP、BのLearn HTML、Cの専門内容審査、Eのmerge・デプロイ、Course V実装は本Dで行わない。
+
+**保存運用:** 本snapshotを旧QA報告に追記し、既存の当時の観測/判定を変更しない。対象PRの差分・head SHAと保存本文をreadbackしてEへ引き継ぐ。
