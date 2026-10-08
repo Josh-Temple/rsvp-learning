@@ -4,7 +4,9 @@
   "scripts": {
     "test": "node --test tests/*.test.mjs",
     "validate": "node scripts/validate-content.mjs && node scripts/validate-status-sync.mjs && python3 scripts/validate-learn-html.py",
-    "check": "npm run test && npm run validate"
+    "check": "npm run test && npm run validate",
+    "build:pages": "node scripts/build-github-pages.mjs",
+    "read-aloud:next": "node scripts/read-aloud-slots.mjs next"
   },
   "devDependencies": {
     "ajv": "8.17.1",
