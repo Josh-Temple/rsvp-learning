@@ -8,6 +8,10 @@
   "base_duration_ms": 680,
   "sources": [
     {
+      "title": "IETF RFC 10017 OAuth 2.0 for Browser-Based Applications",
+      "url": "https://datatracker.ietf.org/doc/html/rfc10017"
+    },
+    {
       "title": "NIST SP 800-63C-4 Federation and Assertions",
       "url": "https://csrc.nist.gov/pubs/sp/800/63/c/4/final"
     },
@@ -26,10 +30,6 @@
     {
       "title": "IPA 新試験制度のシラバス案について",
       "url": "https://www.ipa.go.jp/shiken/syllabus/henkou/2026/20260630.html"
-    },
-    {
-      "title": "IETF RFC 10017 OAuth 2.0 for Browser-Based Applications",
-      "url": "https://datatracker.ietf.org/doc/html/rfc10017"
     }
   ],
   "chunks": [
