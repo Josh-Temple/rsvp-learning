@@ -1,0 +1,233 @@
+{
+  "schema_version": 1,
+  "id": "security-data-classification-encryption-retention",
+  "title": "データ分類・暗号化・保持・廃棄",
+  "topic": "情報セキュリティ",
+  "summary": "Data lifecycleを生成、利用、共有、保存、Backup、Archive、廃棄まで追い、分類に応じてAccess、Encryption、Retentionを変える考え方を学びます。",
+  "created_at": "2026-10-08",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "NIST SP 800-57 Part 1 Rev.5 Key Management",
+      "url": "https://csrc.nist.gov/pubs/sp/800/57/pt1/r5/final"
+    },
+    {
+      "title": "NIST FIPS 197 Advanced Encryption Standard",
+      "url": "https://csrc.nist.gov/pubs/fips/197/final"
+    },
+    {
+      "title": "IPA 新試験制度のシラバス案について",
+      "url": "https://www.ipa.go.jp/shiken/syllabus/henkou/2026/20260630.html"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "DataにもLifecycleがあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "生成から廃棄まで追います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "まずDataを把握します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "所在を把握します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "所有者を決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用目的を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Sensitivityを分類します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "公開可能なDataがあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "内部限定Dataがあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "機密Dataもあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "分類は組織ごとに定義します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Labelだけで終わりません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "取扱規則へ結び付けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Access controlを変えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "共有方法を変えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Encryption要件も変えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Retentionも変えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "通信中のDataを守ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "TLSなどを使います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "保存中のDataも守ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Storage encryptionを使えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Application level暗号も",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "あります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "用途に応じて選びます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "鍵の所在を分けて考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "暗号化と認可は別です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "暗号化済みでも過剰権限は危険です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Data minimizationも重要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "不要なDataを集めません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "不要な複製を減らします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Test環境へのCopyにも注意します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Maskingを使う場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Tokenizationも選択肢です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "匿名化とは目的が異なります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "BackupもDataの一部です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "同じ分類で保護します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "復元権限を管理します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Archiveも忘れません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "外部共有を追跡します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "委託先の保護も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Cross borderも確認対象です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Retention期限を決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "理由なく永久保存しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Legal holdは別管理します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "削除手順を設計します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Replicaも考慮します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Backupからの残存も考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Cryptographic erasur",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "eもあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "廃棄証拠を残す場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Data flowを定期的に見直します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "分類と保護をLifecycleで連動させます。",
+      "duration_multiplier": 1.4
+    }
+  ]
+}

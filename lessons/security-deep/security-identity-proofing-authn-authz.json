@@ -1,0 +1,233 @@
+{
+  "schema_version": 1,
+  "id": "security-identity-proofing-authn-authz",
+  "title": "識別・本人確認・認証・認可",
+  "topic": "情報セキュリティ",
+  "summary": "Identityの入口を、識別、本人確認、Enrollment、認証、認可に分解し、それぞれの失敗が何を意味するかを学びます。",
+  "created_at": "2026-10-08",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "NIST SP 800-63-4 Digital Identity Guidelines",
+      "url": "https://csrc.nist.gov/pubs/sp/800/63/4/final"
+    },
+    {
+      "title": "NIST SP 800-63A-4 Identity Proofing and Enrollment",
+      "url": "https://csrc.nist.gov/pubs/sp/800/63/a/4/final"
+    },
+    {
+      "title": "NIST SP 800-63B-4 Authentication and Authenticator Management",
+      "url": "https://csrc.nist.gov/pubs/sp/800/63/b/4/final"
+    },
+    {
+      "title": "IPA 新試験制度のシラバス案について",
+      "url": "https://www.ipa.go.jp/shiken/syllabus/henkou/2026/20260630.html"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "Identityは利用主体を扱います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "人だけが主体とは限りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "サービスもIdentityを持ちます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "端末も識別対象になります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "識別は名乗る段階です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "IDを示すことが識別です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "識別だけでは本人と証明できません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "本人確認は実在性を確かめます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "登録時の確認が重要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Enrollmentで利用関係を作ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "認証器を登録する場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "回復手段も登録対象です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "認証は利用時の確認です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "登録済み主体かを確かめます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "認証器を使って確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "認証成功と認可は別です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "認可は許可範囲を決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "誰かと何を許すかは別問題です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "権限は必要最小限にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Identity lifecycleを考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "作成時の審査があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "権限付与があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "変更があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "休止があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "削除があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "異動でも見直します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "退職でも迅速に止めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "休眠アカウントを減らします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "共有アカウントは追跡性を弱めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "個人識別できる設計を優先します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ただし非常用IDも設計します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "非常用利用は強く記録します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Identity proofingに",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "も失敗があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "偽の証拠を受け入れる場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "別人を登録する場合もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "認証にも失敗があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "資格情報が盗まれる場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "回復経路が狙われる場合もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "認可にも失敗があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "過剰権限が代表例です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "対象ごとの権限確認が必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "UIだけで隠しても認可ではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "サーバー側で判断します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "監査可能性も必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "誰が権限を付与したか残します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "誰が利用したかも残します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Identity情報も保護します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "個人情報を過剰収集しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "リスクに応じた保証を選びます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "各段階を分けると対策を選びやすくなります。",
+      "duration_multiplier": 1.4
+    }
+  ]
+}
