@@ -20,7 +20,7 @@ test("all COMPLETE catalog entries have static Learn HTML independent of RSVP ch
     const article = html.match(/<article\b[^>]*>([\s\S]*?)<\/article>/i)?.[1];
     assert.ok(article, `${entry.id}: article missing`);
     const body = textOf(article);
-    const paragraphs = [...article.matchAll(/<p\\b[^>]*>([\\s\\S]*?)<\\/p>/gi)].map((match) => textOf(match[1]));
+    const paragraphs = [...article.matchAll(/<p\b[^>]*>([\s\S]*?)<\/p>/gi)].map((match) => textOf(match[1]));
     assert.ok(/<h1\b/.test(article) && /<h2\b/.test(article) && /<p\b/.test(article), `${entry.id}: semantic article structure missing`);
     assert.ok(body.length > 200, `${entry.id}: initial article text is too short`);
     assert.ok(!/<table\b/i.test(article), `${entry.id}: table-dependent article`);
