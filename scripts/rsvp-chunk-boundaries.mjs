@@ -16,6 +16,12 @@ export function inspectRsvpChunkBoundaries(chunks) {
       findings.push({ index, code: "ADJACENT_LATIN_TEXT", severity: "ERROR", left, right });
       continue;
     }
+    // Consecutive particles may form one grammatical unit (e.g. に + も).
+    // REVIEW, not ERROR: Japanese grammar still needs a human judgment.
+    if (/(?:に|で|と|へ)$/.test(a) && /^(?:も|は)(?=[\p{Script=Han}\p{Script=Katakana}])/u.test(b)) {
+      findings.push({ index, code: "POSSIBLE_COMPOUND_PARTICLE_SPLIT", severity: "REVIEW", left, right });
+      continue;
+    }
     if (/(?:だけで|を|に|で|が|は|も|へ|と)$/.test(a)) {
       findings.push({ index, code: "POSSIBLE_PARTICLE_SPLIT", severity: "REVIEW", left, right });
     }
