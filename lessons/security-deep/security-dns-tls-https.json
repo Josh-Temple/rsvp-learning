@@ -130,12 +130,8 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "Load balancerで",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "終端する場合もあります。",
-      "duration_multiplier": 1.15
+      "text": "Load balancerでも終端可能です。",
+      "duration_multiplier": 2.3
     },
     {
       "text": "内部で再暗号化する場合があります。",
