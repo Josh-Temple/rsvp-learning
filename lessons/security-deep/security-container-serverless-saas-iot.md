@@ -31,42 +31,34 @@ Serverを直接管理しない技術でもSecurity責任が残ることを説明
 20. Function権限を最小化します。
 21. Event sourceを検証します。
 22. Secret管理も必要です。
-23. Dependencyも
-24. Supply chainです。
-25. LogとTraceを集めます。
-26. 短時間実行でも監視します。
-27. SaaSは設定がAttack surfa
-28. ceです。
-29. Sharingを管理します。
-30. OAuth app連携を管理します。
-31. Admin roleを管理します。
-32. Data exportも監視します。
-33. Tenant設定をBackupで
-34. きるか確認します。
-35. IoTは長いLifecycleがあります。
-36. Device identityが必要です。
-37. Secure configuration
-38. が必要です。
-39. Data protectionも必要です。
-40. Interface accessを制御します。
-41. Software update能力が重要です。
-42. Security stateを
-43. 報告できると有用です。
-44. 製造者Supportも確認します。
-45. Support期間を調達時に見ます。
-46. Default passwordを避けます。
-47. Unique credentialを使います。
-48. 不要Serviceを無効化します。
-49. Network分離も使います。
-50. 物理Accessも考えます。
-51. 廃棄時にDataを消去します。
-52. Update不能Deviceは
-53. Riskになります。
-54. Managedだから安全とは限りません。
-55. IdentityとConfigurati
-56. onを中心に見ます。
-57. Lifecycleと
-58. Supply chainまで追います。
+23. 依存関係も供給網の一部です。
+24. LogとTraceを集めます。
+25. 短時間実行でも監視します。
+26. SaaSの設定も攻撃面です。
+27. Sharingを管理します。
+28. OAuth app連携を管理します。
+29. Admin roleを管理します。
+30. Data exportも監視します。
+31. Tenant設定を復元できるか確認します。
+32. IoTは長いLifecycleがあります。
+33. Device identityが必要です。
+34. 安全な設定が必要です。
+35. Data protectionも必要です。
+36. Interface accessを制御します。
+37. Software update能力が重要です。
+38. 機器の安全状態を把握できると有用です。
+39. 製造者Supportも確認します。
+40. Support期間を調達時に見ます。
+41. Default passwordを避けます。
+42. Unique credentialを使います。
+43. 不要Serviceを無効化します。
+44. Network分離も使います。
+45. 物理Accessも考えます。
+46. 廃棄時にDataを消去します。
+47. 更新できない機器はリスクになります。
+48. Managedだから安全とは限りません。
+49. IDと設定の管理を重視します。
+50. ライフサイクルと供給網を確認します。
 
 ## 注意
 
