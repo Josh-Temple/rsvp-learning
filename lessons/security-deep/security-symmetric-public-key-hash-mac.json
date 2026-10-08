@@ -1,0 +1,233 @@
+{
+  "schema_version": 1,
+  "id": "security-symmetric-public-key-hash-mac",
+  "title": "共通鍵・公開鍵・ハッシュ・MAC",
+  "topic": "情報セキュリティ",
+  "summary": "暗号の主要なPrimitiveを、機密性、完全性、真正性という目的から区別し、組み合わせ方と限界を学びます。",
+  "created_at": "2026-10-08",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "NIST FIPS 197 Advanced Encryption Standard",
+      "url": "https://csrc.nist.gov/pubs/fips/197/final"
+    },
+    {
+      "title": "NIST FIPS 180-4 Secure Hash Standard",
+      "url": "https://csrc.nist.gov/pubs/fips/180-4/upd1/final"
+    },
+    {
+      "title": "NIST SP 800-57 Part 1 Rev.5 Key Management",
+      "url": "https://csrc.nist.gov/pubs/sp/800/57/pt1/r5/final"
+    },
+    {
+      "title": "IPA 新試験制度のシラバス案について",
+      "url": "https://www.ipa.go.jp/shiken/syllabus/henkou/2026/20260630.html"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "暗号技術は目的から選びます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "秘密にする目的があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "改ざん検知の目的もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "相手確認の目的もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "共通鍵暗号があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "同じ秘密鍵を共有します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "暗号化と復号に使います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "高速に処理しやすい特徴があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "鍵共有が課題になります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "公開鍵暗号があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "公開鍵と秘密鍵を使います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "用途によって役割が異なります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "大容量Dataを直接扱わない場合もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Hybrid方式が一般的です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "公開鍵技術で鍵を扱います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "共通鍵でDataを暗号化します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Hashは一方向の要約を作ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "復号するものではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "同じ入力から同じDigestを作ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "変更検知に使えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Hashだけでは送信者を証明しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "攻撃者もHashを計算できるからです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "MACは秘密鍵を使います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Messageの完全性を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "共有秘密の保有も確認できます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Digital signatureとは",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "異なります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "暗号化も完全性を自動保証しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Mode選択が重要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "認証付き暗号があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "機密性と完全性を組み合わせます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "NonceやIVが必要な方式があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "再利用が危険な方式もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Libraryの規則に従います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "独自の乱数設計を避けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "鍵長だけで安全性を決めません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Algorithmの状態を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "実装も重要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "鍵管理も重要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Side channelも実装リスクです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Protocol全体で安全性を見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "暗号があっても認可は必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "暗号があってもEndpointは守ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "暗号があってもBackupは必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "古いAlgorithmから移行します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Crypto agilityを考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "置換可能な構成にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Data formatも移行に影響します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "鍵の所在も把握します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "目的とPrimitiveを対応させます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "暗号を魔法の安全装置にしません。",
+      "duration_multiplier": 1.4
+    }
+  ]
+}

@@ -273,6 +273,20 @@
         "security-c2-exfiltration-stealth",
         "security-mitre-attack-scenarios"
       ]
+    },
+    {
+      "id": "security-identity-crypto",
+      "title": "情報セキュリティ III：Identity・暗号・データ保護",
+      "chapters": [
+        "security-identity-proofing-authn-authz",
+        "security-password-mfa-phishing-resistant",
+        "security-sessions-federation-oauth-oidc-saml",
+        "security-rbac-abac-privileged-access",
+        "security-symmetric-public-key-hash-mac",
+        "security-signatures-pki-certificates",
+        "security-key-secret-credential-lifecycle",
+        "security-data-classification-encryption-retention"
+      ]
     }
   ]
 }

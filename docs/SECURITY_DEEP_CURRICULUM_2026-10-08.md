@@ -193,8 +193,9 @@ Draft PR #6 `content/security-course-v0.1` には、16章構成の詳細原稿�
 ## 実装状況
 
 - Course I — 基礎・リスク・脅威: COMPLETE / main反映済み
-- Course II — 脅威主体・攻撃の流れ: COMPLETE / 2026-10-08実装
-- Course III以降: 未実装
+- Course II — 脅威主体・攻撃の流れ: COMPLETE / main反映済み
+- Course III — Identity・暗号・データ保護: COMPLETE / 2026-10-08実装
+- Course IV以降: 未実装
 
 Course IIでは、MITRE ATT&CKの現行Enterprise tactics、IPAの2027年度向け情報処理安全確保支援士試験シラバス案、IPAのメール攻撃・BEC・ランサムウェア資料、CISAのランサムウェア・MFAガイダンスをfresh確認しました。
 

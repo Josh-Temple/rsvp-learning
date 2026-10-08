@@ -1,0 +1,241 @@
+{
+  "schema_version": 1,
+  "id": "security-sessions-federation-oauth-oidc-saml",
+  "title": "セッション・SSO・OAuth・OIDC・SAML",
+  "topic": "情報セキュリティ",
+  "summary": "認証後のセッション、SSO、Federationを整理し、OAuth、OpenID Connect、SAMLの目的を混同せずに理解します。",
+  "created_at": "2026-10-08",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "IETF RFC 10017 OAuth 2.0 for Browser-Based Applications",
+      "url": "https://datatracker.ietf.org/doc/html/rfc10017"
+    },
+    {
+      "title": "NIST SP 800-63C-4 Federation and Assertions",
+      "url": "https://csrc.nist.gov/pubs/sp/800/63/c/4/final"
+    },
+    {
+      "title": "IETF RFC 9700 Best Current Practice for OAuth 2.0 Security",
+      "url": "https://datatracker.ietf.org/doc/html/rfc9700/"
+    },
+    {
+      "title": "OpenID Connect Core 1.0 incorporating errata set 2",
+      "url": "https://openid.net/specs/openid-connect-core-1_0-errata2.html"
+    },
+    {
+      "title": "OASIS SAML 2.0 Technical Overview",
+      "url": "https://docs.oasis-open.org/security/saml/Post2.0/sstc-saml-tech-overview-2.0.html"
+    },
+    {
+      "title": "IPA 新試験制度のシラバス案について",
+      "url": "https://www.ipa.go.jp/shiken/syllabus/henkou/2026/20260630.html"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "認証後にはセッションがあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "毎回パスワードを送るわけではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "セッション識別子を使う場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Tokenを使う場合もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "セッション自体を守ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "盗まれれば悪用される場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "有効期限を設けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "必要に応じて再認証します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Logoutも設計します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "失効も設計します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "SSOは一度の認証を共有します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利便性を高めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "集中管理にも役立ちます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一方で影響範囲も広がります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Identity Providerを",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "強く守ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Federationは信頼をまたぎます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Assertionで情報を伝える場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "発行者を検証します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "受け手も検証します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "対象者も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "有効期限も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "OAuthは認可の仕組みです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "第三者へ限定アクセスを与えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "認証そのものと混同しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Access Tokenを使う場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Scopeで権限を限定します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "必要以上のScopeを避けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Redirect処理も重要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "現在のSecurity BCPを参照します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "古い実装慣行に依存しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "OIDCはIdentity layerです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "OAuth 2.0の上に構築されます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "End Userの認証を扱います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ID Tokenを使います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Claimで属性を伝えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Tokenの用途を混同しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "SAMLもFederationに使われます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "XMLベースのAssertionを扱います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "SSOで広く利用されています。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "署名検証が重要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Metadataの信頼も重要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Federationは信頼設定が核心です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "登録済み相手だけを信頼します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "鍵や証明書を管理します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Token漏えいを監視します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Session revocationも備えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "アカウント停止と連動させます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "権限変更とも連動させます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一つのLogoutで全て消えるとは限りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "実装境界を理解して設計します。",
+      "duration_multiplier": 1.4
+    }
+  ]
+}

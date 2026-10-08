@@ -1118,6 +1118,70 @@
       "path": "./lessons/security-deep/security-mitre-attack-scenarios.json",
       "status": "COMPLETE v0.1",
       "learn_path": "./learn/security-mitre-attack-scenarios.html"
+    },
+    {
+      "id": "security-identity-proofing-authn-authz",
+      "title": "識別・本人確認・認証・認可",
+      "topic": "情報セキュリティ",
+      "path": "./lessons/security-deep/security-identity-proofing-authn-authz.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/security-identity-proofing-authn-authz.html"
+    },
+    {
+      "id": "security-password-mfa-phishing-resistant",
+      "title": "パスワード・MFA・フィッシング耐性",
+      "topic": "情報セキュリティ",
+      "path": "./lessons/security-deep/security-password-mfa-phishing-resistant.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/security-password-mfa-phishing-resistant.html"
+    },
+    {
+      "id": "security-sessions-federation-oauth-oidc-saml",
+      "title": "セッション・SSO・OAuth・OIDC・SAML",
+      "topic": "情報セキュリティ",
+      "path": "./lessons/security-deep/security-sessions-federation-oauth-oidc-saml.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/security-sessions-federation-oauth-oidc-saml.html"
+    },
+    {
+      "id": "security-rbac-abac-privileged-access",
+      "title": "RBAC・ABAC・最小権限・特権管理",
+      "topic": "情報セキュリティ",
+      "path": "./lessons/security-deep/security-rbac-abac-privileged-access.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/security-rbac-abac-privileged-access.html"
+    },
+    {
+      "id": "security-symmetric-public-key-hash-mac",
+      "title": "共通鍵・公開鍵・ハッシュ・MAC",
+      "topic": "情報セキュリティ",
+      "path": "./lessons/security-deep/security-symmetric-public-key-hash-mac.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/security-symmetric-public-key-hash-mac.html"
+    },
+    {
+      "id": "security-signatures-pki-certificates",
+      "title": "デジタル署名・PKI・証明書",
+      "topic": "情報セキュリティ",
+      "path": "./lessons/security-deep/security-signatures-pki-certificates.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/security-signatures-pki-certificates.html"
+    },
+    {
+      "id": "security-key-secret-credential-lifecycle",
+      "title": "鍵・Secret・Credentialのライフサイクル",
+      "topic": "情報セキュリティ",
+      "path": "./lessons/security-deep/security-key-secret-credential-lifecycle.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/security-key-secret-credential-lifecycle.html"
+    },
+    {
+      "id": "security-data-classification-encryption-retention",
+      "title": "データ分類・暗号化・保持・廃棄",
+      "topic": "情報セキュリティ",
+      "path": "./lessons/security-deep/security-data-classification-encryption-retention.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/security-data-classification-encryption-retention.html"
     }
   ]
 }

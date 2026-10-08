@@ -1,0 +1,225 @@
+{
+  "schema_version": 1,
+  "id": "security-signatures-pki-certificates",
+  "title": "デジタル署名・PKI・証明書",
+  "topic": "情報セキュリティ",
+  "summary": "デジタル署名、公開鍵証明書、CA、Trust chainを結び、TLSなどで相手を信頼する仕組みと検証の失敗条件を学びます。",
+  "created_at": "2026-10-08",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "NIST FIPS 186-5 Digital Signature Standard",
+      "url": "https://csrc.nist.gov/pubs/fips/186-5/final"
+    },
+    {
+      "title": "NIST SP 800-57 Part 1 Rev.5 Key Management",
+      "url": "https://csrc.nist.gov/pubs/sp/800/57/pt1/r5/final"
+    },
+    {
+      "title": "IPA 新試験制度のシラバス案について",
+      "url": "https://www.ipa.go.jp/shiken/syllabus/henkou/2026/20260630.html"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "デジタル署名は暗号化とは別です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "主な目的は真正性と完全性です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "署名者の秘密鍵を使います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "検証には公開鍵を使います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Data変更を検出できます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "署名者との結び付きも必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "公開鍵だけでは主体を保証しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "PKIが信頼を支えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "証明書を使います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "証明書は公開鍵情報を含みます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "主体情報も含みます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "発行者情報も含みます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "有効期間もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用目的も制約されます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "CAが証明書を発行します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Root CAがあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Intermediate CAもあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Trust chainを検証します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Rootの信頼が前提になります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "信頼Storeを管理します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "証明書署名を検証します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "有効期限を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "名前の一致も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "用途も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "失効状態も考慮します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "秘密鍵漏えいは重大です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "証明書だけ交換して終わりません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "侵害した鍵を無効化します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "新しい鍵を生成します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "依存先も更新します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "TLSでも証明書を使います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Server認証に利用します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Client証明書も使えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "暗号化だけがTLSの役割ではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "相手の確認も重要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "証明書警告を無視しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "検証無効化は信頼を壊します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Code signingにも署名を使います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Softwareの出所確認に役立ちます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "署名済みでも安全とは限りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "署名者が侵害される場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "署名対象の品質も別問題です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Timestampも利用されます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "署名時点を扱う仕組みがあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "鍵保護が中心課題です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Hardware保護を使う場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "発行権限も厳しく管理します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "証明書台帳を持ちます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "期限切れを監視します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "PKIを信頼Lifecycleとして運用します。",
+      "duration_multiplier": 1.4
+    }
+  ]
+}
