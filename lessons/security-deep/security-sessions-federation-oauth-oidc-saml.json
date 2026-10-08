@@ -26,6 +26,10 @@
     {
       "title": "IPA 新試験制度のシラバス案について",
       "url": "https://www.ipa.go.jp/shiken/syllabus/henkou/2026/20260630.html"
+    },
+    {
+      "title": "IETF RFC 10017 OAuth 2.0 for Browser-Based Applications",
+      "url": "https://datatracker.ietf.org/doc/html/rfc10017"
     }
   ],
   "chunks": [
