@@ -136,3 +136,91 @@ Course V〜VIIIの計画上の30章は**未実装**。この表は既存カリ�
 - Production / Pagesの実ページ: NOT_VERIFIED
 - 新しいPRのCI: PR作成後に確認。先行mainのVercel commit statusのsuccessは、実機/全文品質の検証ではない。
 - ステータス: **PARTIAL_WITH_GAPS**（Cの30章の文書レビューは実施。全30形式の機械検査・全出典の行単位照合・4章改稿/人手聴取は未実施で、担当境界外も含む）
+
+
+---
+
+## 7. 現行main再判定（2026-10-08・Worker C 第2巡）
+
+本節は初回監査を消さずに追記する**後続時点の判定**である。上記第2節のP0や表示破断は当時の所見であり、2026-10-08の下記snapshotで再評価した。「旧監査で指摘した」ことと「現在も未修正」を区別する。
+
+- 指示: Library「情報セキュリティ教材の実質品質・利用環境検証・段階的拡充 Wave」Worker C。
+- GitHub APIでfresh確認した開始main full SHA: \`2eb12f4847f204816fd9aa9c2b1fdc512805e380\`（2026-10-08 JST）。mainから分岐し、本節のみを変更する。
+- GitHubのopen PRは旧Draft #6と別スコープ #29。A/B/DのこのWaveの新規成果は**このsnapshotのmainに含まれない**。他Workerの変更を監査済みとして先取りしない。
+- mainの直近GitHub Actions \`Test\` はsuccess、\`Deploy GitHub Pages\` はfailure（いずれも \`2eb12f4\`）。CIの状態は**教材の意味・音声・公開の品質判定とは分離**。
+- 2026-10-08の初回C開始main \`1d6017a...\` からこのmainまでのcommit比較、および下記対象ファイルの読み戻しを根拠とした。全30章のMarkdown本文は初回監査の対象だったが、**第2巡で全30章のLearn/RSVPを全文再通読したわけではない**。未照合範囲をPASSにしない。
+- 判定語: \`PASS\` は**指定した狭い検証項目**で合格、\`NEEDS_REVISION\` は説明深度・表現・問題に改善が必要、\`BLOCKED\` は内容受入または拡張を止める未解決条件。これらはカタログ \`COMPLETE v0.1\` と独立した監査判定。
+
+### 7.1 過去の表示破断を現在の欠陥と混同しない
+
+| 初回指摘 | 2026-10-08現行mainでの確認 | 現行の意味単位判定 |
+|---|---|---|
+| Cloud \`Infrastructure as Co\` / \`de\` | \`security-cloud-shared-responsibility-iam-config.md\` の \`Infrastructure as Code\` /「構成をコードとして管理します。」に変更済み | 英字途中破断は \`PASS\`。新たな2行の読みやすさはAの境界監査と連携 |
+| Mail \`Display name spoofin\` / \`g\` | \`security-email-spf-dkim-dmarc.md\` の \`Display name spoofing\` /「表示名の偽装も残ります。」に変更済み | 英字途中破断は \`PASS\` |
+| Container \`Attack surfa\` / \`ce\` | \`security-container-serverless-saas-iot.md\` に当該英字途中破断なし | 当該破断は \`PASS\`。説明深度は未達 |
+| Data \`Cryptographic erasur\` / \`e\` | \`security-data-classification-encryption-retention.md\` の \`Cryptographic erasure\` に修正済み | 当該破断は \`PASS\` |
+| Endpoint \`Managed dev\` / \`ice\` | \`security-endpoint-hardening-edr-mdm.md\` に当該英字途中破断なし | 当該破断は \`PASS\` |
+
+一方、以下のMarkdown上の意味単位の切れ目は現行mainでも確認した。これは字数制限への適合と**日本語の自然さを別判定する必要がある**例であり、Aの担当として改善後にCが意味を再照合する。
+
+- \`security-identity-proofing-authn-authz\`: 「Identity proofingに」→「も失敗があります。」
+- \`security-sessions-federation-oauth-oidc-saml\`: 「Identity Providerを」→「強く守ります。」
+- \`security-symmetric-public-key-hash-mac\`: 「Digital signatureとは」→「異なります。」
+- \`security-key-secret-credential-lifecycle\`: 「Secret managerを」→「使う場合があります。」、「Emergency rotationも」→「演習します。」
+- \`security-segmentation-vpn-zero-trust\`: 「VPNとZero Trustを」→「対立概念にしません。」
+
+初回に指摘したLoad balancerの例は、現行 \`security-communication-path-boundaries.md\` では「Load balancerも経路になります。」という完結した文へ変わっているため、旧境界を**現存欠陥と数えない**。上記は現行mainに残る**6境界**。Aによる以後の修正は再取得して判定し直す。
+
+### 7.2 既存30章の現行監査（形式修正と説明深度を分離）
+
+初回監査の30行について、現行mainの初回監査後の変更ファイル集合と代表本文を再突合した。Markdownの説明の深さを十分に改稿した証拠はなく、専門学習の受入は**30/30 \`NEEDS_REVISION\` のまま**。ただし修正済みの英字途中破断をP0の未解決事項として扱わない。
+
+| Course | 対象Lesson ID（全30） | 第2巡の優先順位・必要作業 |
+|---|---|---|
+| I (7) | \`security-purpose-principles\`; \`security-assets-dependencies\`; \`security-threats-vulnerabilities\`; \`security-risk-assessment\`; \`security-risk-treatment\`; \`security-threat-modeling\`; \`security-defense-in-depth\` | \`purpose\` P2、その他P1。RiskのLearnは改善したが、Markdownに判断の具体的な通し例がなく、専門学習の深度は未達 |
+| II (7) | \`security-adversaries-initial-access\`; \`security-social-engineering-bec-phishing\`; \`security-malware-ransomware\`; \`security-credential-session-attacks\`; \`security-post-compromise-movement\`; \`security-c2-exfiltration-stealth\`; \`security-mitre-attack-scenarios\` | \`adversaries\` P2、その他P1。観測証拠→判断→反証・検証までの安全な模擬ケースを追加 |
+| III (8) | \`security-identity-proofing-authn-authz\`; \`security-password-mfa-phishing-resistant\`; \`security-sessions-federation-oauth-oidc-saml\`; \`security-rbac-abac-privileged-access\`; \`security-symmetric-public-key-hash-mac\`; \`security-signatures-pki-certificates\`; \`security-key-secret-credential-lifecycle\`; \`security-data-classification-encryption-retention\` | 全章P1。境界が残る \`identity-proofing\`, \`sessions\`, \`symmetric\`, \`key-secret\` はA優先。 \`data-classification\` の旧英字破断P0は解除 |
+| IV (8) | \`security-communication-path-boundaries\`; \`security-dns-tls-https\`; \`security-firewall-proxy-waf-ids-ips\`; \`security-segmentation-vpn-zero-trust\`; \`security-email-spf-dkim-dmarc\`; \`security-endpoint-hardening-edr-mdm\`; \`security-cloud-shared-responsibility-iam-config\`; \`security-container-serverless-saas-iot\` | 全章P1。\`segmentation\` はAの境界修正、\`email\` はBのLearn見出し修正を優先。旧英字破断による \`endpoint\`・\`cloud\`・\`container\`・\`email\` のP0は解除 |
+
+**P1としてBの横展開で先に扱う候補:** ①BEC/Phishing、②Ransomware、③Credential/Session attacks、④Identity proofing・Authentication・Authorization、⑤MITRE ATT&CK scenarios、⑥Firewall/Proxy/WAF/IDS/IPS。これらは単なる行数追加ではなく、各章で「観測事実、判断条件、反例、検証証拠」の欠落を解消する。Bの新しいHTMLや問題がmainに入るまでは監査未了とする。
+
+Course間の役割は、I=守る対象・リスク判断、II=攻撃の観測と封じ込め、III=本人・認証情報・権限・暗号の保護、IV=通信と実行環境・管理責任、と区別する。リスクと権限、Identity攻撃、信頼境界の再登場は有用だが、後続章で何を深めるかを明示する必要がある。
+
+### 7.3 パイロット4章：重要主張・出典・説明・検証
+
+対象Markdown、現在のLearn HTML、\`docs/SECURITY_LEARN_PILOT_2026-10-08.md\` の12問を第2巡で照合。主張別一次資料は**下表の箇所を今回公式ページで再取得**。全節・全URLの網羅検証、実機音声と学習者テストは行っていない。
+
+| Lesson | 主要主張と実際に照合した原典 | 内容・判断例・限界の評価 | 判定 |
+|---|---|---|---|
+| \`security-risk-assessment\` | NIST SP 800-30 Rev.1（2012、Guide for Conducting Risk Assessments：prepare → conduct → maintain、[NIST公式](https://csrc.nist.gov/pubs/sp/800/30/r1/final)） | Learnは架空の住民申請と集計ツール、入口から影響への因果、不確実性・対策の効き目・再評価を含む。Markdownの58短文には通しケースがなく、評価手順の3段階との明示的な接続も薄い。定量・定性の判断尺度は組織依存と明記しており、特定のリスク点数を断定しない | 原典に整合する主要説明は\`PASS\`。形式横断の深度は\`NEEDS_REVISION\` |
+| \`security-sessions-federation-oauth-oidc-saml\` | [RFC 10017, §§1,4](https://www.rfc-editor.org/info/rfc10017)（Browser-based OAuthとCode+PKCE）、[OIDC Core §3.1.3.7](https://openid.net/specs/openid-connect-core-1_0-errata2.html)（ID Token検証・issuer/audience）、[NIST SP 800-63C-4 §4.7](https://pages.nist.gov/800-63-4/sp800-63c.html)（IdP/RPセッションの独立）、[OASIS SAML 2.0 Technical Overview](https://docs.oasis-open.org/security/saml/Post2.0/sstc-saml-tech-overview-2.0.html) | OAuthの認可/ID Tokenの認証、署名・相手先、logoutの非連動をLearnで区別。Markdownには不自然な\`Identity Providerを\`の断片が残る。SAML個別プロファイルや全トークン検証条件までは未網羅 | 抽出した主要主張は\`PASS\`。自然さと形式同期は\`NEEDS_REVISION\` |
+| \`security-cloud-shared-responsibility-iam-config\` | [AWS責任共有モデル](https://aws.amazon.com/jp/compliance/shared-responsibility-model/)（サービスごとの利用者/事業者責任とEC2のゲストOS・設定例）。既存教材のCISA Cloud Security TRA v2リンクはCISAのEO一覧ページであり、引用箇所の節までは示していない | LearnはIaaS/PaaS/SaaS、SaaS外部共有、IAM、構成ドリフト、ログと復旧を説明。AWS例を全事業者共通の契約上の約束とはしない。事業者別の責任表、鍵・設定とアクセスログの試験証拠、CISA TRA v2の該当節は追加照合が必要 | 一般原則\`PASS\`、固有の責任分界と出典節の十分性\`NEEDS_REVISION\` |
+| \`security-email-spf-dkim-dmarc\` | [RFC 9989 §§4.10, 5.3](https://www.rfc-editor.org/info/rfc9989)（SPF/DKIMのいずれかの成功とAuthor Domainとのalignment、受信側の判断）。2026-05刊、RFC 7489/9091をobsolete。SPF RFC 7208 / DKIM RFC 6376は今回**全文条項再照合をしていない** | LearnのSPFとDKIMの役割分担、DMARC alignment、正規転送・正規アカウント侵害への限界は概ね妥当。ただし見出し**「認証済みでも詐欺メールとは限らない」**は、意図した「認証済みでも安全とは限らない」と逆方向に読め、直後の本文と矛盾する。これは単なる字数問題ではない。Bに修正を依頼し、修正後の日本語・出典・問題を再審査する | RFC主張の限定確認\`PASS\`、Learn見出しの意味保持\`NEEDS_REVISION\`（優先P0・B修正依頼） |
+
+**未照合**: RFC 9700全文、SAMLの具体的Assertionプロファイル、CISA Cloud TRA v2のPDF内該当節、各Cloud Provider契約/サービスごとの現在仕様、IPAシラバス案の全項目、各Lessonに列挙された全出典の節と全行。一般説明に無理にリンクを増やさず、版依存や重大な解釈に必要な節を優先する。IPAの案は正式決定版として扱わない。
+
+### 7.4 理解確認12問のレビュー
+
+\`docs/SECURITY_LEARN_PILOT_2026-10-08.md\` の各Course 3問、計12問は問い・模範解答・誤答例と理由・確認対象が**文書上そろっている（12/12、構造面のみPASS）**。判断条件を変えて考える問いも含み、単なる用語暗記だけではない。ただし学習者の解答や理解度は未収集であり、心理測定上の妥当性や学習効果は\`NOT_VERIFIED\`。
+
+| 範囲 | 内容レビューと改善要求 | 判定 |
+|---|---|---|
+| Risk Q1〜Q3 | Q1は「中リスク」が同じでも優先順位が異なる条件を説明できる良い問い。Q2は対策の**導入と有効性**を区別できる。Q3は新委託先を追加しても接続・取り扱う情報が変わらないなどの条件を明示して、再評価の深さを採点できるようにする | \`NEEDS_REVISION\`（採点条件を追加） |
+| Session/SSO/OAuth Q1〜Q3 | Q1のアクセストークン≠認証証拠は原則として妥当。Q2は**SSOとフェデレーションが重なり得るが同義ではない**実例を加える。Q3はアカウント停止後のRP側セッション独立を問え、63C-4に整合 | \`NEEDS_REVISION\`（Q2に条件付きの正答例） |
+| Cloud Q1〜Q3 | SaaSの利用者側責任、暗号化で解決しない共有設定、IaCの設定ドリフトを区別できる。Q1は特定製品・契約で例外があることを採点基準に含める。Q3は現行設定の確認手段と許容される構成差分を記述できると望ましい | \`NEEDS_REVISION\`（具体的な採点基準） |
+| Mail Q1〜Q3 | Q1の「Fromが正しい」は曖昧。**SPF/DKIM passとRFC5322.FromとのDMARC alignment**を明示して問う。Q2は受信側処理がローカルポリシーにも依存する点を加える。Q3はDMARC passと取引内容の正当性が異なることを測れる | \`NEEDS_REVISION\`（Q1の問いを明確化） |
+
+模範解答と異なる理由付けでも根拠が妥当なら加点するルーブリック、誤答が成立する条件、提示する追加証拠を次のB改稿案に含める。**12問が存在することは12問の学習効果検証完了を意味しない**。
+
+### 7.5 未解決事項・Eへの引渡し
+
+| 重要度 | Lesson / 担当 | 残件・終了条件 | 現状 |
+|---|---|---|---|
+| P0 | Mail Learn / B→E | 「認証済みでも詐欺メールとは限らない」の意図を正し、見出しと説明が一致することをCが再読する。修正前に内容の受入を宣言しない | \`NEEDS_REVISION\` |
+| P1 | Markdown/RSVP 6境界 / A→C→E | 上記7.1の現存6境界を自然な文節に改め、Markdown・JSON・Learn意味の一致と24字制約を再照合 | \`NEEDS_REVISION\` |
+| P1 | 4章主要原典・問題 / B+C→E | 主張別の節、架空例、条件変更問題の採点基準を明示。Cloudは責任分界の具体的なプロバイダー資料を追加確認 | \`NEEDS_REVISION\` |
+| P1 | 横展開4〜6章 / B→C | 新Learn原稿と理解確認問題を提出後、元Markdown/JSON・重要主張・一次資料を照合。未提出の版を監査済みと扱わない | \`BLOCKED\`（成果待ち） |
+| P2 | 全30章の深度 / B+C→E | 優先Lessonを段階的に、原因・動作・検証・反例・ケース判断で改稿し、都度判定 | \`NEEDS_REVISION\` |
+| 別所管 | Android Chrome / D、統合 / E | 音声自然さ、実利用、本番デプロイの成功はD/Eの証拠を要する | \`NOT_VERIFIED\`（Cは代替しない） |
+
+**Cの結論: \`PARTIAL_WITH_GAPS\`。** 現行mainに対する30章の監査差分、4パイロットの限定的な主張別一次資料照合、12問の採点品質レビュー、A/B/Eへの個別引渡しは記録した。一方、30章全形式・全出典の網羅照合、新B横展開章、実際の読み上げ・学習者テストは未完了。ここでの \`PASS\` は主張または構造の限定検査に限られ、教材全体をCOMPLETEと再認定するものではない。既存の教材Markdown/JSON/HTML/Catalogと公開設定は本Cで変更しない。
