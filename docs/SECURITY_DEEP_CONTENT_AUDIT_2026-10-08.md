@@ -358,3 +358,8 @@ Course間の役割は、I=守る対象・リスク判断、II=攻撃の観測と
 **このC時点の総合内容評価：PARTIAL_WITH_GAPS**。8章の主張について確認した節は限定的で、各章に深度と採点課題が残る（8/8 NEEDS_REVISION）。20問の問題案は**20/20 quiz_reviewed / 学習者実測0件（user_learning_not_verified）**。残り22章は過去の30/30 NEEDS_REVISIONから独立PASSへ昇格する新証拠なし（継続扱い）。**重大な逆意味P0は確認した8章で未検出**。原典未確認の断定やAndroid実機PASSは作らない。
 
 ローカル npm run check：**NOT_RUN**（GitHub connectorによる読取・文書監査のみ）。このC PRでのGitHub Actions Test：**PR作成後に実際のrun IDと結論を追記するまでNOT_VERIFIED**。mainの過去CIとは分ける。Learn HTML、RSVP、Catalog、Course順序、個人学習履歴、private公開設定、本番deploymentは本Cでは変更しない。
+
+
+#### 8.6 後続のproduction API fresh確認（同日・監査保存後）
+
+本節8冒頭の「このCではVercel APIを新規操作していない」は**監査文書初回作成時の状態**。その後同日にVercel連携APIで同一project \`prj_7yYGl5D3Q7UwQgQuXaGmOYLkTzbu\` のproduction deployment一覧をfresh取得し、最新表示は \`dpl_CYHqCXPTCoEqH3r9QDK66XLiy5fN\`、\`target=production\`、\`state=READY\`、\`meta.githubCommitSha=fd003b63b816799dd8f1f1eac0de4fd70db32da9\` と確認した。inspector: https://vercel.com/josh-temples-projects/rsvp-learning/CYHqCXPTCoEqH3r9QDK66XLiy5fN 。前Waveの \`0a168c…\` はその時点の旧配信ソースにすぎない。**ドメインaliasの現割当て、アクセス保護、ページ取得・表示、再生、実音声、Android実機について本Cは確認していない（NOT_VERIFIED）**。D/Eの実利用ゲートを代替しない。
