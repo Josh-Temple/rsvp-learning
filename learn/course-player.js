@@ -5,6 +5,7 @@
   const courseTitle = document.querySelector("#learn-course-title");
   const position = document.querySelector("#learn-course-position");
   const article = document.querySelector("#learn-course-article");
+  const sources = document.querySelector("#learn-course-sources");
   const reader = document.querySelector("#learn-course-reader");
   const playButton = document.querySelector("#learn-course-play");
   const pauseButton = document.querySelector("#learn-course-pause");
@@ -16,7 +17,7 @@
   const rateLabel = document.querySelector("#learn-course-rate-label");
   const status = document.querySelector("#learn-course-status");
 
-  if (!overlay || !article || !reader || !playButton || !pauseButton || !stopButton || !voiceSelect || !rateInput || !status) {
+  if (!overlay || !article || !sources || !reader || !playButton || !pauseButton || !stopButton || !voiceSelect || !rateInput || !status) {
     return;
   }
 
@@ -202,7 +203,8 @@
     const parsed = new DOMParser().parseFromString(html, "text/html");
     const source = parsed.querySelector("#learn-article");
     if (!source) throw new Error("Learn本文が見つかりません");
-    return source.innerHTML;
+    const citations = parsed.querySelector("section.sources");
+    return { body: source.innerHTML, citations: citations?.innerHTML ?? "" };
   }
 
   async function loadChapter(nextIndex, activeRun) {
@@ -216,7 +218,10 @@
     const html = await response.text();
     if (activeRun !== runId) return false;
 
-    article.innerHTML = parseArticle(html);
+    const parsed = parseArticle(html);
+    article.innerHTML = parsed.body;
+    sources.innerHTML = parsed.citations;
+    sources.hidden = !parsed.citations.trim();
     items = [...article.querySelectorAll("h1, h2, h3, p")]
       .filter((element) => element.textContent.trim().length > 0);
     if (!items.length) throw new Error("読み上げ本文がありません");
