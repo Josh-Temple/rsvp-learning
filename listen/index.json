@@ -2,6 +2,13 @@
   "schema_version": 1,
   "items": [
     {
+      "id": "2026-10-08-autosella-molecular-optimization",
+      "title": "AIは科学計算のアルゴリズムを改善できるか――AutoSellaの実験と限界",
+      "date": "2026-10-08",
+      "category": "research",
+      "path": "./research/2026-10-08-autosella-molecular-optimization.html"
+    },
+    {
       "id": "2026-10-08-eio-agents-evaluation-evidence",
       "title": "AI評価の点数は何を証明するのか――EIO-Agentsと検証可能な評価記録",
       "date": "2026-10-08",
