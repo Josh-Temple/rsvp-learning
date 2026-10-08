@@ -260,6 +260,19 @@
         "security-threat-modeling",
         "security-defense-in-depth"
       ]
+    },
+    {
+      "id": "security-threat-flow",
+      "title": "情報セキュリティ II：脅威主体・攻撃の流れ",
+      "chapters": [
+        "security-adversaries-initial-access",
+        "security-social-engineering-bec-phishing",
+        "security-malware-ransomware",
+        "security-credential-session-attacks",
+        "security-post-compromise-movement",
+        "security-c2-exfiltration-stealth",
+        "security-mitre-attack-scenarios"
+      ]
     }
   ]
 }

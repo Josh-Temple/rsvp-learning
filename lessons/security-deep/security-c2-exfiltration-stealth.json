@@ -1,0 +1,229 @@
+{
+  "schema_version": 1,
+  "id": "security-c2-exfiltration-stealth",
+  "title": "C2・持ち出し・痕跡",
+  "topic": "情報セキュリティ",
+  "summary": "侵害後の外部制御、情報収集、持ち出し、隠蔽、防御機能の弱体化を区別し、ネットワークとIdentityの観測から検知する考え方を学びます。",
+  "created_at": "2026-10-08",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "MITRE ATT&CK Enterprise Tactics",
+      "url": "https://attack.mitre.org/tactics/"
+    },
+    {
+      "title": "MITRE ATT&CK Enterprise Matrix",
+      "url": "https://attack.mitre.org/matrices/enterprise/"
+    },
+    {
+      "title": "CISA #StopRansomware Guide",
+      "url": "https://www.cisa.gov/stopransomware/ransomware-guide"
+    },
+    {
+      "title": "IPA 新試験制度のシラバス案について",
+      "url": "https://www.ipa.go.jp/shiken/syllabus/henkou/2026/20260630.html"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "C2は外部制御用の通信です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "侵害端末を外部から制御します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "命令を受け取る場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "結果を返す場合もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "正規の通信方式が使われる場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "暗号化通信が使われる場合もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "暗号化されているだけでは安全と限りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "正規クラウドが悪用される場合もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "通信先の評判だけでは判断しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "通信の頻度も見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "時間帯も見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "端末の役割も見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "通信量も見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "プロセスの行動も見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "情報収集の段階があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "端末内の情報を集める場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "共有領域から集める場合もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "メールやクラウド情報も対象になります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "持ち出し前にまとめる場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "外部への情報持ち出しがあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一度に大量とは限りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "少量を分ける場合もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "通常通信に混ざる場合もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "出口制御が重要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "必要な外向き通信を把握します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "不要な外向き通信を減らします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "プロキシログも観測に使えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "DNSログも手掛かりになります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "クラウド監査ログも重要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Identityログも組み合わせます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "隠蔽を狙う行動があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "正常に見せようとする場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "痕跡を減らそうとする場合もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "防御機能を弱める行動もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ログ収集を妨げる場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "セキュリティ機能を止める場合もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "監視設定の変更も重要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ログ欠損自体が兆候になる場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "正常基準を持つことが重要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "端末ごとに通常通信は違います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "サーバーと利用端末も違います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "単一指標だけで断定しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "複数の弱い兆候を結びます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "C2遮断だけで調査を終えません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "関連アカウントも封じ込めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "持ち出し対象を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "他端末への到達も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "証拠を保全します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "影響と目的を見極めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "侵害後の観測点を事前に設計します。",
+      "duration_multiplier": 1.4
+    }
+  ]
+}

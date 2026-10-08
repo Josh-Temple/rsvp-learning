@@ -1,6 +1,6 @@
 # 情報セキュリティ本格学習カリキュラム
 
-Status: ACTIVE DESIGN  
+Status: ACTIVE IMPLEMENTATION  
 Created: 2026-10-08  
 Base main: `919bfba37e5e51bf4c1736bcf2b28e875b31714a`
 
@@ -190,8 +190,12 @@ Draft PR #6 `content/security-course-v0.1` には、16章構成の詳細原稿�
 6. 全60 Lessonのcoverage / overlap / source / Learn監査を行う
 7. 旧8章Courseを残すか、入口Courseとして再定義するか最終判断する
 
-## 今回のWave
+## 実装状況
 
-今回の最初の実装対象はCourse I「基礎・リスク・脅威」です。
+- Course I — 基礎・リスク・脅威: COMPLETE / main反映済み
+- Course II — 脅威主体・攻撃の流れ: COMPLETE / 2026-10-08実装
+- Course III以降: 未実装
 
-既存の `information-security` Courseは変更せず、7 Lessonがすべて `COMPLETE v0.1` になってから新Courseとして追加します。
+Course IIでは、MITRE ATT&CKの現行Enterprise tactics、IPAの2027年度向け情報処理安全確保支援士試験シラバス案、IPAのメール攻撃・BEC・ランサムウェア資料、CISAのランサムウェア・MFAガイダンスをfresh確認しました。
+
+攻撃手法は実行手順としてではなく、防御・検知・封じ込め・復旧へ結び付ける知識として扱います。

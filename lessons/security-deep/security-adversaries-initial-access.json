@@ -1,0 +1,225 @@
+{
+  "schema_version": 1,
+  "id": "security-adversaries-initial-access",
+  "title": "攻撃者・動機・初期アクセス",
+  "topic": "情報セキュリティ",
+  "summary": "攻撃者を固定的なラベルで捉えず、目的、能力、対象、侵入前の準備、初期アクセスの経路から脅威シナリオを組み立てます。",
+  "created_at": "2026-10-08",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "MITRE ATT&CK Enterprise Tactics",
+      "url": "https://attack.mitre.org/tactics/"
+    },
+    {
+      "title": "MITRE ATT&CK Enterprise Matrix",
+      "url": "https://attack.mitre.org/matrices/enterprise/"
+    },
+    {
+      "title": "IPA 新試験制度のシラバス案について",
+      "url": "https://www.ipa.go.jp/shiken/syllabus/henkou/2026/20260630.html"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "攻撃者をラベルだけで見ません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "目的から考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "金銭目的の場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "情報窃取が目的の場合もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "妨害が目的の場合もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "影響力の獲得を狙う場合もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "内部者が関係する場合もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "能力も一様ではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "使える時間も異なります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "使える資源も異なります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "対象への知識も異なります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "帰属判断は慎重に扱います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "技術だけで断定しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "防御では行動を見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "侵入前に偵察する場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "公開情報を集める場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "対象の技術を調べる場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "連絡先を調べる場合もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "攻撃用資源を準備する場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "初期アクセスは入口です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "侵害全体と同じ意味ではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "フィッシングが入口になります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "公開システムの弱点も入口です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "外部リモートサービスも入口です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "有効なアカウントも悪用されます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "信頼関係も入口になり得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "供給網も入口になり得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "複数経路を想定します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一つを閉じれば終わりではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "公開資産を把握します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "不要な公開口を減らします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "脆弱性を継続管理します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "認証を強化します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "メール対策も重ねます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "委託先との接続も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "初期アクセスの兆候を見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "異常なログインを確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "新しい端末からの利用も見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "不審なメール報告も使います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "公開サービスの異常も見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "侵入成功を前提にも備えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "最小権限で影響を抑えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "分離で横展開を難しくします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ログで後続行動を追います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "攻撃者の目的は途中で変わる場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "アクセスが売買される場合もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "別の攻撃者へ引き継がれる場合もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一つの攻撃者像に固定しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "行動と対象資産を結びます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "脅威シナリオとして管理します。",
+      "duration_multiplier": 1.4
+    }
+  ]
+}
