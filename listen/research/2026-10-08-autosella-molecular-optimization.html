@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f2efe8">
+  <meta name="description" content="AIが分子の構造最適化アルゴリズムを改良したAutoSellaを解説。実験、比較対象、DFTへの転移、最終構造の不一致と研究の限界を確認するDaily Paper Listen。">
+  <title>AIは科学計算のアルゴリズムを改善できるか――AutoSellaの実験と限界</title>
+  <style>
+    :root{color-scheme:light;--bg:#f2efe8;--ink:#121722;--muted:#73766f;--line:#cbc8bf;--blue:#5d7487}
+    html[data-theme="dark"]{color-scheme:dark;--bg:#11151a;--ink:#edf0eb;--muted:#959b97;--line:#343a3e;--blue:#7892a6}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Hiragino Sans","Noto Sans JP",sans-serif;line-height:1.9}
+    .shell{width:min(760px,100%);margin:0 auto;padding:max(18px,env(safe-area-inset-top)) 20px max(42px,env(safe-area-inset-bottom))}
+    .topbar{min-height:52px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+    .icon{width:42px;height:42px;display:grid;place-items:center;border:0;background:transparent;color:var(--muted);text-decoration:none;font:inherit}
+    .meta{margin:28px 0 8px;color:var(--muted);font-size:.75rem}
+    h1{font-size:clamp(2rem,8vw,3.4rem);line-height:1.12;letter-spacing:-.04em;margin:.2em 0 .8em}
+    h2{margin:2.2em 0 .6em;font-size:1.2rem}
+    p{margin:0 0 1.25em}
+    article>*{transition:background-color .15s ease}
+    .is-speaking{background:color-mix(in srgb,var(--blue) 16%,transparent)}
+    .player{position:sticky;bottom:0;margin:32px -6px 0;padding:12px 6px;background:color-mix(in srgb,var(--bg) 94%,transparent);border-top:1px solid var(--line);backdrop-filter:blur(8px)}
+    .speed{display:grid;grid-template-columns:48px 1fr 42px;gap:10px;align-items:center;margin-top:10px;font-size:.78rem;color:var(--muted)}
+    input{width:100%}
+    .sources{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}
+    .sources a{color:var(--ink)}
+    .mode-nav{display:inline-flex;align-items:center;gap:4px}
+    .mode-icon{width:42px;height:42px;display:grid;place-items:center;color:var(--muted);text-decoration:none;opacity:.5}
+    .mode-icon.is-active{color:var(--ink);opacity:1}
+    .mode-icon svg{width:20px;height:20px;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+    .brand-mark{width:22px;height:14px;display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+    .brand-mark i{display:block}
+    .brand-mark i:nth-child(1){background:#a85248}
+    .brand-mark i:nth-child(2){background:#5d7487}
+    .brand-mark i:nth-child(3){background:#c2a653}
+    .transport{display:grid;grid-template-columns:repeat(5,48px);justify-content:center;gap:8px}
+    .transport button,.section-nav button,.voice-row select{min-height:42px;border:1px solid var(--line);background:transparent;color:var(--ink);font:inherit}
+    .transport button{width:48px}
+    .section-nav{display:grid;grid-template-columns:48px 1fr 48px;align-items:center;gap:8px;margin-top:10px}
+    .section-nav button:disabled{opacity:.25}
+    #section-label{min-width:0;overflow:hidden;color:var(--muted);font-size:.78rem;text-align:center;white-space:nowrap;text-overflow:ellipsis}
+    .voice-row{margin-top:10px}
+    .voice-row select{width:100%;padding:0 8px}
+    .mode-icon:focus-visible,.transport button:focus-visible,.section-nav button:focus-visible,.voice-row select:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+  </style>
+</head>
+<body>
+<main class="shell">
+  <header class="topbar">
+    <nav class="mode-nav" aria-label="モード切替">
+      <a class="mode-icon" href="../../index.html" aria-label="RSVPへ移動" title="RSVP">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      </a>
+      <a class="mode-icon" href="../../index.html?library=learn" aria-label="Learnへ移動" title="Learn">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 5.5c2.6-.8 5.3-.4 8 1.2v12c-2.7-1.6-5.4-2-8-1.2v-12Z" />
+          <path d="M20 5.5c-2.6-.8-5.3-.4-8 1.2v12c2.7-1.6 5.4-2 8-1.2v-12Z" />
+        </svg>
+      </a>
+      <a class="mode-icon is-active" href="../../index.html?library=listen" aria-label="Listen一覧へ移動" aria-current="page" title="Listen">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 13v-1a8 8 0 0 1 16 0v1" />
+          <path d="M4 13h3v7H5a1 1 0 0 1-1-1v-6Zm16 0h-3v7h2a1 1 0 0 0 1-1v-6Z" />
+        </svg>
+      </a>
+    </nav>
+    <button id="theme" class="icon" type="button" aria-label="テーマ切替">☾</button>
+  </header>
+
+
+
+
+
+
+
+  <article id="article">
+    <p class="meta">情報基準日 2026年10月8日・論文公開 2026年10月5日・査読中のプレプリント</p>
+    <h1>AIは科学計算のアルゴリズムを改善できるか――AutoSellaの実験と限界</h1>
+
+    <h2>今回の研究で何が起きたのか</h2>
+    <p>今日は、2026年10月5日に公開されたプレプリント「Optimizing the Optimizer: Language Models Discover Faster Molecular Relaxation」を取り上げます。研究者の代わりにAIが、既存の科学計算アルゴリズムのコードを改良できるかを調べた研究です。対象は、分子の原子の配置を動かし、エネルギーの低い構造を探す最適化処理です。</p>
+    <p>結論から言えば、研究で得られたAutoSella-Fという改良版は、比較対象のSellaよりも、原子に働く力を計算する回数を少なくできました。特に、改良案の探索に使わなかった量子化学の計算条件でも、分子一つ当たりの平均計算回数がおよそ23％から60％少ない結果になりました。</p>
+    <p>ただし、この成果を「AIが分子の計算を常に60％高速化した」と解釈するのは正しくありません。測った中心指標は実時間ではなく、力の計算回数です。さらに、複雑な分子の組合せでは、従来法と異なる最終構造に到達する例が多くありました。平均的なエネルギーが改善したことと、個別の構造が同じであることは違います。</p>
+    <p>何より面白いのは、AIにコードを自由に書かせただけではないことです。速くなったように見せかける変更や、特定の試験データでしか通用しない変更を棄却する条件を、研究者があらかじめ用意しました。その制約の下でAIが改良を重ねると、最初の想定より幅広い計算条件へ性能が移る例が得られました。</p>
+    <p>このListenでは、なぜ分子の構造最適化が重要なのか、AIがどう探索したのか、具体的に何が変わったのか、比較実験が示すことと示さないことを、順番に確認します。数字の大きさだけでなく、実験設計の意味を理解することを目標にします。</p>
+
+    <h2>分子の構造最適化と、その計算コスト</h2>
+    <p>分子の原子は、空間の中で一定の位置に固定されているわけではありません。原子間の距離や角度、周囲の別の分子との配置によって、計算されるエネルギーが変わります。構造最適化では、はじめの配置から原子を少しずつ動かし、エネルギーがそれ以上ほとんど下がらない状態を探します。</p>
+    <p>そのために、原子に働く力を調べます。次にどちらへ動くのがよいかを予測し、配置を変え、また力を計算します。これを繰り返して、定められた収束条件を満たす状態を探します。全ての配置を列挙するわけではありません。通常は、初期配置の近くにある局所的な安定構造を探す問題です。</p>
+    <p>この計算の費用は、原子に働く力をどのような方法で求めるかによって大きく変わります。高精度な電子状態を扱う密度汎関数理論、略してDFTでは、力の評価に多くの計算時間が必要です。最適化アルゴリズムの内部処理より、力の計算を呼び出す回数が費用に強く効く場面があります。</p>
+    <p>一方、力の計算回数が少ないだけでは良い最適化法とは言えません。たとえば、十分に原子が動かないうちに停止すれば、計算回数は確実に減ります。しかし、結果が高いエネルギーのままだと、構造最適化の目的を果たしません。速さの条件と結果の条件を切り離して評価する必要があります。</p>
+    <p>この分野では、準ニュートン法、内部座標の扱い、ヘッセ行列と呼ばれるエネルギー変化の近似、過去の勾配の再利用など、長い年月にわたって人間が改良してきました。今回のAIが出発点にしたSellaも、その蓄積から生まれた公開ソフトです。最初からアルゴリズムを考え直すのではなく、既に強い方法を改善する研究なのです。</p>
+
+    <h2>比較対象をどう選んだのか</h2>
+    <p>著者らは、既存の複数の公開最適化パッケージを同じ評価基盤で比較し、Sella 2.5.0を出発点に選びました。比較では、力を求める処理の呼び出し方、収束を認める条件、計算回数の上限を揃えています。それぞれのソフトが異なる停止基準を使うことで、不公平な差が出ないようにするためです。</p>
+    <p>研究で比較した設定の範囲では、Sellaは既存の最適化器の中で、必要な力の計算回数が少ない基準となりました。だから、わざと弱いアルゴリズムを選んで簡単に上回ったわけではないことに一定の根拠があります。</p>
+    <p>ただし、これをSellaが世界中のすべての分子最適化法よりも優れているという証明にしてはいけません。比較に含まれる方法と設定、対象の分子、利用した計算方法の範囲で成立する主張です。</p>
+    <p>また、探索の開始時に使ったSellaの分子片の扱いと、最終論文の比較表で基準にしたSellaの設定には違いがあります。著者らは、より深いエネルギー低下を得る一方で計算回数のかかる設定から探索を始め、最終的な比較では、分子片を個別に扱う基準設定を使いました。探索中の改善率と最終表の比率を同じものとして読まないようにします。</p>
+    <p>こうした比較対象の調整は地味ですが重要です。AIが生み出したコードそのものが高度に見えても、計測条件を揃えなければ、実際に使う価値があるかを判定できないからです。</p>
+
+    <h2>AIがコードを変更する研究の流れ</h2>
+    <p>AIエージェントには、Sellaを基に整理した一つのプログラムファイルを編集する役割が与えられました。AIは改良案を考え、コードを書き換え、その版を保存します。改良した候補は、専用の評価環境で実行され、分子ごとの計算回数、エネルギー、計算失敗の有無を測られます。</p>
+    <p>結果が得られると、エージェントはどこで改善し、どこで失敗したかを読むことができます。単に成功と失敗の一行だけを返すのではなく、分子ごとの結果や診断情報があり、次の変更で何を直すべきかを考える材料になります。以前に試して採用されなかった仕組みも研究履歴に記録されます。</p>
+    <p>重要なのは、候補を提案する側と、測定して採否を決める側が分離されていることです。AIには、研究の対象ファイルを編集する余地があります。一方で、評価用データや正式な得点の決定処理は遠隔の評価環境で管理し、AIから自由には変更できないようにしています。</p>
+    <p>この分離がない場合、たとえば採点コードの停止条件を勝手に緩くすることで、見かけの数字を改善する余地があります。研究者がAIにできることの範囲を定め、測定結果に基づいて変更を選別する。これは自動研究を実用的な実験へ近づけるための基本的な条件です。</p>
+    <p>著者らは複数のエージェントで独立した探索を行いました。本文の主な二つは、Claude Fable 5.1とClaude Codeを使った探索から生まれたAutoSella-F、GPT-6 AstraとCodex CLIを使った探索から生まれたAutoSella-Aです。モデル名と構成は論文の記載に従っています。付録には別のエージェントによる探索もあります。</p>
+    <p>ここでいう研究の自動化は、研究全体をAIだけで実施したという意味ではありません。研究者が問題設定、基準プログラム、データ、検査方法を設計し、その範囲でAIが仮説の生成とコード改良を繰り返しています。成果をAIの力だけに帰属させる説明では、実験環境の役割が抜け落ちます。</p>
+
+    <h2>妥当性と一般化の二段階で採用する</h2>
+    <p>AIの変更を採用する前に、二種類の検査を通します。第一は、速さを得るために本来の目的を損なっていないかを調べること。第二は、学習用の分子だけでなく、別の分子でも改善があるかを確認することです。</p>
+    <p>まず、訓練用データで候補のコードを評価します。計算の例外、非有限の数値、異常な出力などがあれば失格です。力の計算回数が少なくても、平均的に下げられたエネルギーが基準より劣るなら採用されません。数値誤差と区別しにくいごく小さな改善も、一定の基準を設けて除外しています。</p>
+    <p>訓練側を通過した候補は、独立した検証用のデータで再び試されます。ここでも計算回数とエネルギーの条件を満たした場合だけ、それまでの最良版を置き換えます。訓練では良くても検証では悪いコードは採用せず、前の最良版を起点に次の変更を考えます。</p>
+    <p>この手順は、数値の改善だけを追う仕組みとは明確に違います。例えば十分な計算をせずに停止した候補は、力の計算回数が極端に少なくなりますが、エネルギー低下を維持する条件を通らないため残りにくくなります。個別の訓練分子に対する細工も、別の検証分子での採否判定によって抑えられます。</p>
+    <p>ただし、エネルギーについて調べる条件は平均を中心に組み立てられています。個々の分子で基準を上回る場合と下回る場合が混在していても、全体の平均として通過する余地はあります。さらに、計算回数上限に達して未収束になったケースを、探索中にその理由だけで失格としない条件もあります。</p>
+    <p>したがって、『全ての分子で従来法以上の結果を保証する』仕組みではありません。妥当性の門を設けたことで、見せかけの高速化に対して防御を強めていますが、残るリスクは最終的な評価で別に確認する必要があります。</p>
+
+    <h2>探索用と最終評価用の分子を分ける</h2>
+    <p>探索に使う計算には、GFN2-xTBという比較的安価な量子化学の方法を選んでいます。全ての候補を高価なDFTで評価していては、試行できる変更の数が大きく減ってしまうためです。まず安価な条件でアルゴリズムを探索し、高価な計算で通用するかを最後に調べる設計です。</p>
+    <p>訓練には469の分子構造、検証には465の構造を使用しました。通常の薬らしい分子に加え、非共有結合の相互作用を含む二量体や登録薬の構造を取り入れています。この二つの集合を分けたうえで、毎回候補を通すかどうかを判断しました。</p>
+    <p>さらに、最終評価には別の四つの集合を用意しています。訓練から離れた薬らしい分子500構造、二つのアミノ酸がつながったペプチド673構造、アミノ酸と小分子の組合せ475構造、水分子に囲まれた薬らしい分子100構造です。合計で1,748構造になります。</p>
+    <p>訓練した分子との違いだけではなく、分子同士が接する場合や、複数の分子片が一緒に動く場合も含めました。特に水分子のある系は、溶質と周囲の水の位置が連動して変わるため、単一分子より難しい条件となり得ます。</p>
+    <p>さらに同じ四つの評価集合について、探索に使用したGFN2-xTBと、未使用のGFN-FFという力場、r2SCAN-3cというDFTの条件を比較しています。未知の分子と未知の計算方法へ性能が移るかを調べるためです。</p>
+    <p>ここで、未知という言葉の範囲を明確にしておきます。論文の指定した分子構造と、指定した別の計算手法という意味です。あらゆる化学物質、結晶、反応経路、電子状態、溶媒条件に適用できることを示したわけではありません。</p>
+
+    <h2>結果を正確に読む――計算回数の比率</h2>
+    <p>最終的に選ばれたAutoSella-Fは、探索に使用したGFN2-xTBで、四つの評価集合すべてにおいてSellaより少ない力の計算回数を示しました。Sellaを100とすると、薬らしい分子では約73、ペプチドでは約65、アミノ酸と小分子の組合せでは約70、水分子を含む系では約40です。</p>
+    <p>これらの平均比率は、力の計算回数がおよそ27％、35％、30％、60％減ったことに対応します。平均的なエネルギー低下も、四つの集合ではSellaに対して劣らない結果となりました。計算回数だけを減らして、全体として不十分な最適化で終えたという説明にはなりません。</p>
+    <p>そのうえで、探索に使用しなかったDFTの条件を調べます。AutoSella-Fの計算回数比率は、同じ順番で約77、73、69、40でした。つまり、計算回数の削減は探索時の安価な計算方法に閉じず、より高価な別の物理モデルでも確認されました。</p>
+    <p>DFTの条件で、Sellaに対する一分子当たりの平均の削減幅は約23％から60％です。これが今回の論文の主要な定量結果の一つです。ただし、実際の実行時間や金銭的なコストを直接同じ割合だけ削減したという結論ではありません。</p>
+    <p>DFTでは力の計算が全体の処理時間を支配することが多いため、この指標は実務的に重要です。一方、CPUやメモリの環境、アルゴリズム内部の計算、並列化、エラーによる再試行などがあれば、壁時計時間との関係は変わります。どの現場でも同じ割合で費用が減ると読むべきではありません。</p>
+    <p>論文では分子一つ一つの相対比率を平均した指標と、力の呼び出し総数を比較する指標を分けています。時間のかかる特定分子に強く影響される合計比率と、各分子を等しい重みで数えた比率は必ずしも同じではありません。今回紹介した主な数字は、一分子ごとの相対比率を平均したものです。</p>
+
+    <h2>AutoSella-Aと、試行回数だけでは分からない探索の質</h2>
+    <p>もう一つのAutoSella-Aも、DFTの薬らしい分子、ペプチド、アミノ酸と小分子の組合せでは改善を見せました。Sellaを100とした力の計算回数は、それぞれ約83、78、87です。しかし、水分子を含む系では約109となり、かえって計算回数が増えました。</p>
+    <p>しかもこの複雑な系では、平均のエネルギー回復比率もSellaを下回ります。つまり、AutoSella-Aは一部の未知の条件では良いものの、全ての評価集合にわたって改善するとは言えません。同じ枠組みでAIに改善を試させても、最終的に残るコードの質は異なります。</p>
+    <p>二つの探索には、それぞれ66時間の活動時間が与えられました。AutoSella-Fにつながる側は108候補を評価し、そのうち37の改善を採用しています。AutoSella-A側は672候補を評価し、採用した改善は29でした。候補数の多さが、そのまま質の高い成果につながったわけではありません。</p>
+    <p>著者らは、AutoSella-F側に、過去の結果と分子構造を丹念に読み込む区間があったと説明します。ある160分の区間では多数のコマンドやファイルの閲覧を通じ、初期段階の構造の扱いに関する改善を考えました。多くの候補を短時間で出すことと、一つの問題を深く検討することは、別の作業です。</p>
+    <p>しかし、これをモデルの一般的な研究能力のランキングと考えるのは早計です。二つの探索で使うモデルと実行環境は異なり、主な結果はそれぞれ一つの探索履歴です。独立した複数回の試行を揃えて統計的に比較したわけではありません。実験が示すのは、その条件で得られた異なる改良の結果です。</p>
+    <p>この違いから、AIエージェントの評価では、単に出力したコードの件数や実行したツール呼び出しの件数ではなく、採用された変更が未知の条件でどれだけ役立つかを見る必要がある、と考えられます。</p>
+
+    <h2>どのようなアルゴリズム上の改良が残ったか</h2>
+    <p>次に、数字の背後で何が変わったかを見ます。論文はAutoSella-Fで重要だった変更として、分子構造を表す座標と曲率の近似、離れた分子片の扱い、過去の力の計算の再利用に関する改良を挙げています。</p>
+    <p>最適化では、現在の原子位置から次にどの方向へ進めばよいかを予測する必要があります。そのとき、原子間の結合や分子間の接触をどう表すか、エネルギーの変化をどう近似するかが効いてきます。AutoSella-Fには、非共有結合の接触に関係する曲率の変化を扱う改良が含まれました。</p>
+    <p>また、複数の分子片を扱う場合は、原子一つ一つの動きだけでなく、分子片全体が移動したり回転したりする動きが問題になります。こうした構造を適切に表現する変更は、水分子を含む系や、アミノ酸と小分子の組合せで意味を持つ可能性があります。</p>
+    <p>過去の勾配情報を再利用する際には、古い分子配置に基づいて保存した情報が、現在の配置をうまく表さないことがあります。論文の探索履歴には、一度導入した補正を過去の勾配差の使い方が打ち消してしまうと分析し、その更新方法を修正する経過が記されています。</p>
+    <p>完成したアルゴリズムから関連する変更のまとまりを取り除き、検証用データでどれだけ性能が落ちるかを調べる実験も行われています。AutoSella-Fでは、曲率と座標に関する変更を外すと計算回数の平均比率が約18.7ポイント、分子片の扱いに関する変更を外すと約11.3ポイント悪化しました。</p>
+    <p>さらに、過去の情報を利用するヘッセ行列の更新部分を取り除いても、性能は大きく悪化します。これらの比較は、AIの改良が単なる停止条件の緩和ではなく、最適化の手順自体に関わっていたことを支持します。</p>
+    <p>ただし、複数の変更は互いに影響します。一つを取り除く実験で測った悪化幅を、そのまま独立した寄与として合計できるとは限りません。研究者らが行ったのは、完成したコードに必要な改良のまとまりを調べる検査です。</p>
+
+    <h2>最も重要な限界――同じ最終構造なのか</h2>
+    <p>ここからは、計算回数の削減より慎重に読みたい結果です。エネルギーが同じ程度まで下がっても、分子の原子配置が同じになったとは限りません。複数の局所的な安定構造がある場合、一方のアルゴリズムは別の配置へ進む可能性があります。</p>
+    <p>著者らは、最終的な原子位置のずれ、最終エネルギーの差、振動解析による不安定性の確認を組み合わせて、Sellaと同じ局所的な最小点に達したと扱えるかを調べています。単に平均エネルギーが下がったかを見るだけではない検証です。</p>
+    <p>薬らしい分子のデータでは、AutoSella-FがSellaと同じ最小点に達したと判定される割合は97.2％でした。二つのアミノ酸からなるペプチドでは93.2％です。この二つの比較的単純な集合では、少ない力の計算回数でかなり近い結果に到達したと理解できます。</p>
+    <p>しかし、アミノ酸と小分子の組合せでは一致率が39.8％まで下がります。さらに、水分子を含む100構造では、AutoSella-FがSellaと同じ最小点に達したと判定されたのは1.0％だけでした。最も大きな計算回数の削減が示された集合で、同じ最終構造を得たとはほとんど言えないのです。</p>
+    <p>これは残りの構造がすべて間違っていると意味するわけではありません。水分子や分子片が異なる配置に落ち着き、別の安定した状態になることがあります。著者らは、複雑な系で異なる原子配置へ至るのは、分子片同士の相対位置の候補が多いためではないかと考えています。これは著者による解釈です。</p>
+    <p>一方、より低いエネルギーに達したなら必ず望ましいという結論も避けるべきです。実際、探索用と同じGFN2-xTB条件の補足表では、水分子を含む集合の38％で、AutoSella-Fの最終エネルギーがSellaより一モル当たり一キロカロリーを超えて高い例がありました。大幅に低いエネルギーへ進む例も含まれるため、全体平均では改善しているのです。</p>
+    <p>このように、平均的なエネルギーと、分子ごとの結果のばらつきは、分けて確認する必要があります。研究対象が分子構造そのものである以上、用途によっては計算回数を減らすこと以上に、求めたかった構造が得られたかが重要になります。</p>
+    <p>なお、こうした構造一致率について詳細に示された比較は、主としてGFN2-xTBを使った結果です。DFTにおける力の計算回数の削減を示した表をもって、DFTでも全分子で同じ最終構造を得たと結論付けてはいけません。</p>
+
+    <h2>どこまで信頼でき、何はまだ言えないか</h2>
+    <p>この研究には明確な長所があります。既存の強い基準を使い、学習と検証のデータを分け、さらに未知の分子と未知の力の計算方法で確認しています。比較の条件やコードの変更履歴を記録し、著者のGitHubには完成したアルゴリズムや評価用の資料が公開されています。</p>
+    <p>研究者らは、最終構造のずれという見落としやすい問題も補足解析で扱っています。その点は評価できます。平均的なエネルギーだけでは見えない、複雑な分子での不一致を示しているからです。</p>
+    <p>一方、論文は公開時点で査読中のプレプリントです。今回こちらでは原論文の本文と付録、公開された著者のREADMEを確認しましたが、量子化学の実行環境を独立に組み立て、論文の全計算を再実行したわけではありません。公開コードが存在することと、独立追試が成功したことを混同しません。</p>
+    <p>化学的な適用範囲にも限界があります。評価は四つの分子集合と三つの力の計算方法が中心です。結晶、別の電荷状態、極端な分子規模、反応経路、さらに高度な電子状態計算など、論文に含まれない条件で同じ改善が成立するかは確認されていません。</p>
+    <p>AIを使った探索そのものには、独立した計算環境、並列の評価ワーカー、長時間のエージェント実行が必要でした。完成したコードを何度も利用すれば研究費用を下げられる可能性がありますが、探索にかけた費用をどれだけの利用回数で回収できるかは別問題です。</p>
+    <p>また、成功例の見せ方にも注意が必要です。AutoSella-Fが良かったからといって、すべての自動研究エージェントが改良を生み出せるわけではありません。AutoSella-Aは複雑な系で回帰しましたし、二つの探索結果だけから利用した基盤モデル一般の優劣を判定することはできません。</p>
+    <p>最終的な妥当性の判断には、化学的な目的をよく知る人の確認が必要です。収束判定やエネルギー差は一つの方法ですが、その構造を別の計算の初期値として使ってよいか、必要な現象を表しているかといった問いは、今回の指標だけでは答えられません。</p>
+
+    <h2>科学研究とAIエージェント運用への示唆</h2>
+    <p>最後に、ここからは論文の実験結果ではなく、その方法を研究や実務へどう応用して考えられるかという分析です。最も参考になるのは、AIの出した改良案を大量に集めることより、改良を採用してよい条件を明確に定めたことです。</p>
+    <p>エージェントが新しいコードを作るとき、測定結果が少し良かっただけで採用しないこと。機能の正しさを保つ条件を置くこと。開発に使っていないデータで再評価すること。これらは分子計算以外のコード改良にも通じる考え方です。ただし、同じ効果が他の業務でも測定されたわけではありません。</p>
+    <p>もう一つは、安い実験と高い実験を組み合わせる設計です。すべての候補を高コスト環境で試す必要はありません。安価な近似的試験で絞り込み、採用候補を厳しい実条件で確かめる方法には汎用的な価値があります。しかし、近似的な試験と実条件が十分に関係していなければ、誤って候補を選ぶ危険もあります。</p>
+    <p>また、平均的に良い結果があっても、少数の重大な失敗例を確認する必要があります。AutoSella-Fは計算回数の平均を改善しましたが、複雑な分子では従来法と異なる構造に到達しました。業務用AIでも、平均処理時間や完了率だけではなく、結果が用途に合っているかを独立に確認しなければなりません。</p>
+    <p>研究履歴が残ることにも意味があります。採用されなかった案、失敗した計算、コードの版、どの分子で悪くなったかが分からなければ、研究の再現やその後の改良は難しくなります。成功例だけを見せるより、なぜ採用したかを再検査できる方が、別の人に引き継ぎやすくなります。</p>
+    <p>今日の研究が直接示したのは、明確な目標と検査条件の下で、AIエージェントが既存の科学計算コードを改善し、探索中には使わなかった量子化学計算でも利点を持つアルゴリズムを作れたということです。</p>
+    <p>同時に、数値的な改善を評価するときは、何を最適化したのか、何を犠牲にしていないか、どの条件まで一般化したかを分けるべきことも分かりました。AIが科学的な改良を支援する可能性と、その検証の難しさの両方を示した研究として、聞く価値があると考えます。</p>
+  </article>
+
+  <section class="player" aria-label="読み上げ操作">
+    <div class="transport">
+      <button id="prev-block" type="button" aria-label="前の読み上げ単位へ">←</button>
+      <button id="play" type="button" aria-label="再生">▶</button>
+      <button id="pause" type="button" aria-label="一時停止">Ⅱ</button>
+      <button id="stop" type="button" aria-label="停止">■</button>
+      <button id="next-block" type="button" aria-label="次の読み上げ単位へ">→</button>
+    </div>
+    <div class="section-nav" aria-label="章移動">
+      <button id="prev-section" type="button" aria-label="前の章へ">‹</button>
+      <span id="section-label">導入</span>
+      <button id="next-section" type="button" aria-label="次の章へ">›</button>
+    </div>
+    <div class="voice-row">
+      <select id="voice" aria-label="日本語音声"></select>
+    </div>
+    <div class="speed"><span>速度</span><input id="rate" type="range" min="0.7" max="4" step="0.1" value="1"><span id="rateValue">1.0×</span></div>
+  </section>
+
+
+
+
+
+
+
+  <section class="sources" aria-label="出典">
+    <strong>出典</strong>
+    <p><a href="https://arxiv.org/abs/2610.06577">arXiv — Optimizing the Optimizer: Language Models Discover Faster Molecular Relaxation（原論文・付録）</a></p>
+    <p><a href="https://www.alphaxiv.org/abs/2610.06577">alphaXiv — 原論文の閲覧ページ</a></p>
+    <p><a href="https://github.com/vdeshchenya/autosella">GitHub — 著者らのAutoSella実装と再現用の資料</a></p>
+    <p><a href="https://huggingface.co/papers/2610.06577">Hugging Face — Daily Papers掲載ページ</a></p>
+  </section>
+</main>
+<script>
+(() => {
+  const synth = window.speechSynthesis;
+  const blocks = [...document.querySelectorAll("#article h1,#article h2,#article h3,#article p")];
+  const sectionStarts = [...new Set([0, ...blocks.map((node, i) => node.tagName === "H2" ? i : -1).filter(i => i >= 0)])];
+  const play = document.querySelector("#play");
+  const pause = document.querySelector("#pause");
+  const stop = document.querySelector("#stop");
+  const prevBlock = document.querySelector("#prev-block");
+  const nextBlock = document.querySelector("#next-block");
+  const prevSection = document.querySelector("#prev-section");
+  const nextSection = document.querySelector("#next-section");
+  const sectionLabel = document.querySelector("#section-label");
+  const voice = document.querySelector("#voice");
+  const rate = document.querySelector("#rate");
+  const rateValue = document.querySelector("#rateValue");
+  const theme = document.querySelector("#theme");
+  let index = 0, playing = false, paused = false, selectedVoice = "", generation = 0;
+  let wakeLock = null, wakeLockWanted = false;
+
+  async function requestWakeLock() {
+    const wakeLockApi = window.navigator?.wakeLock;
+    wakeLockWanted = true;
+    if (!wakeLockApi?.request || wakeLock) return;
+    try {
+      const lock = await wakeLockApi.request("screen");
+      if (!wakeLockWanted) {
+        await lock.release();
+        return;
+      }
+      wakeLock = lock;
+      wakeLock.addEventListener?.("release", () => { wakeLock = null; });
+    } catch {
+      wakeLock = null;
+    }
+  }
+
+  async function releaseWakeLock() {
+    wakeLockWanted = false;
+    const current = wakeLock;
+    wakeLock = null;
+    if (!current) return;
+    try {
+      await current.release();
+    } catch {
+      // Wake Lock is best-effort; speech playback must continue to work.
+    }
+  }
+
+  function voices() {
+    const previous = selectedVoice || voice.value;
+    const items = synth.getVoices().filter(v => /^ja(?:-|_)/i.test(v.lang));
+    voice.replaceChildren();
+    for (const v of items) {
+      const o = document.createElement("option");
+      o.value = v.voiceURI;
+      o.textContent = v.name;
+      voice.append(o);
+    }
+    if (items.some(v => v.voiceURI === previous)) voice.value = previous;
+    selectedVoice = voice.value;
+  }
+
+  function clearHighlight() {
+    blocks.forEach(node => node.classList.remove("is-speaking"));
+  }
+
+  function sectionPosition() {
+    let pos = 0;
+    for (let i = 0; i < sectionStarts.length; i += 1) {
+      if (sectionStarts[i] <= index) pos = i;
+      else break;
+    }
+    return pos;
+  }
+
+  function updateNavigation() {
+    prevBlock.disabled = index <= 0;
+    nextBlock.disabled = index >= blocks.length - 1;
+
+    const pos = sectionPosition();
+    const start = sectionStarts[pos] ?? 0;
+    const previousTargetExists = index > start || pos > 0;
+    prevSection.disabled = !previousTargetExists;
+    nextSection.disabled = pos >= sectionStarts.length - 1;
+
+    const startNode = blocks[start];
+    sectionLabel.textContent = startNode?.tagName === "H2" ? startNode.textContent : "導入";
+  }
+
+  function showCurrent() {
+    clearHighlight();
+    const current = blocks[index];
+    if (!current) return;
+    current.classList.add("is-speaking");
+    current.scrollIntoView({ block: "center", behavior: "smooth" });
+    updateNavigation();
+  }
+
+  function speakCurrent() {
+    if (!playing || paused || index >= blocks.length) {
+      if (index >= blocks.length) {
+        playing = false;
+        paused = false;
+        clearHighlight();
+        void releaseWakeLock();
+      }
+      updateNavigation();
+      return;
+    }
+
+    showCurrent();
+    const localGeneration = ++generation;
+    const utterance = new SpeechSynthesisUtterance(blocks[index].textContent);
+    utterance.lang = "ja-JP";
+    utterance.rate = Number(rate.value);
+    const selected = synth.getVoices().find(item => item.voiceURI === voice.value);
+    if (selected) utterance.voice = selected;
+
+    utterance.onend = () => {
+      if (localGeneration !== generation || !playing || paused) return;
+      index += 1;
+      speakCurrent();
+    };
+
+    utterance.onerror = event => {
+      if (localGeneration !== generation) return;
+      if (event.error !== "canceled" && event.error !== "interrupted") {
+        playing = false;
+        paused = false;
+        clearHighlight();
+        void releaseWakeLock();
+        updateNavigation();
+      }
+    };
+
+    synth.speak(utterance);
+  }
+
+  function jumpTo(target) {
+    const next = Math.max(0, Math.min(blocks.length - 1, target));
+    const resume = playing && !paused;
+    const keepPaused = paused;
+
+    generation += 1;
+    synth.resume?.();
+    synth.cancel();
+    index = next;
+
+    if (resume) {
+      playing = true;
+      paused = false;
+      void requestWakeLock();
+      speakCurrent();
+      return;
+    }
+
+    playing = keepPaused;
+    paused = keepPaused;
+    showCurrent();
+    if (keepPaused) void requestWakeLock();
+  }
+
+  function jumpSection(delta) {
+    const pos = sectionPosition();
+    let targetPos;
+
+    if (delta < 0 && index > sectionStarts[pos]) targetPos = pos;
+    else targetPos = pos + delta;
+
+    if (targetPos < 0 || targetPos >= sectionStarts.length) return;
+    jumpTo(sectionStarts[targetPos]);
+  }
+
+  play.addEventListener("click", () => {
+    if (paused) {
+      generation += 1;
+      synth.resume?.();
+      synth.cancel();
+      paused = false;
+      playing = true;
+      void requestWakeLock();
+      speakCurrent();
+      return;
+    }
+    if (playing) return;
+    if (index >= blocks.length) index = 0;
+    playing = true;
+    void requestWakeLock();
+    speakCurrent();
+  });
+
+  pause.addEventListener("click", () => {
+    if (!playing || paused) return;
+    synth.pause();
+    paused = true;
+  });
+
+  stop.addEventListener("click", () => {
+    generation += 1;
+    synth.resume?.();
+    synth.cancel();
+    playing = false;
+    paused = false;
+    index = 0;
+    clearHighlight();
+    updateNavigation();
+    void releaseWakeLock();
+  });
+
+  prevBlock.addEventListener("click", () => jumpTo(index - 1));
+  nextBlock.addEventListener("click", () => jumpTo(index + 1));
+  prevSection.addEventListener("click", () => jumpSection(-1));
+  nextSection.addEventListener("click", () => jumpSection(1));
+
+  voice.addEventListener("change", () => {
+    selectedVoice = voice.value;
+    if (playing && !paused) {
+      generation += 1;
+      synth.cancel();
+      speakCurrent();
+    }
+  });
+
+  rate.addEventListener("input", () => {
+    rateValue.textContent = Number(rate.value).toFixed(1) + "×";
+  });
+
+  theme.addEventListener("click", () => {
+    const dark = document.documentElement.dataset.theme === "dark";
+    document.documentElement.dataset.theme = dark ? "light" : "dark";
+    theme.textContent = dark ? "☾" : "☀";
+    localStorage.setItem("rsvp:theme", dark ? "light" : "dark");
+  });
+
+  document.documentElement.dataset.theme =
+    localStorage.getItem("rsvp:theme") ||
+    (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  theme.textContent = document.documentElement.dataset.theme === "dark" ? "☀" : "☾";
+
+  voices();
+  synth.addEventListener?.("voiceschanged", voices);
+  updateNavigation();
+
+  document.addEventListener?.("visibilitychange", () => {
+    if (document.visibilityState === "visible" && (playing || paused)) {
+      void requestWakeLock();
+    }
+  });
+
+  addEventListener("pagehide", () => {
+    generation += 1;
+    synth.cancel();
+    void releaseWakeLock();
+  });
+})();
+</script>
+</body>
+</html>
