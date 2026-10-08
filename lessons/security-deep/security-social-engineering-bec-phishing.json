@@ -1,0 +1,229 @@
+{
+  "schema_version": 1,
+  "id": "security-social-engineering-bec-phishing",
+  "title": "ソーシャルエンジニアリング・BEC・フィッシング",
+  "topic": "情報セキュリティ",
+  "summary": "人の判断や業務プロセスを狙う攻撃を、フィッシング、標的型メール、BECなどに分け、利用者教育だけに依存しない防御を学びます。",
+  "created_at": "2026-10-08",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "IPA 企業組織を狙うメールを悪用した攻撃の手口とその対策",
+      "url": "https://www.ipa.go.jp/security/support/abuse_email.html"
+    },
+    {
+      "title": "IPA ビジネスメール詐欺（BEC）対策特設ページ",
+      "url": "https://www.ipa.go.jp/security/bec/about.html"
+    },
+    {
+      "title": "CISA Require Multifactor Authentication",
+      "url": "https://www.cisa.gov/audiences/small-and-medium-businesses/secure-your-business/require-multifactor-authentication"
+    },
+    {
+      "title": "IPA 新試験制度のシラバス案について",
+      "url": "https://www.ipa.go.jp/shiken/syllabus/henkou/2026/20260630.html"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "人を狙う攻撃があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "技術的な弱点だけを使いません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "信頼や焦りを利用します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "権威を利用する場合もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "秘密を求める場合もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "フィッシングは代表的な手口です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "メールだけとは限りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "SMSが使われる場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "通話が使われる場合もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "SNSも経路になり得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "リンクで偽サイトへ誘導する場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "添付を使う場合もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "認証情報を狙う場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "マルウェア感染を狙う場合もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "標的型メールは対象へ合わせます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "公開情報が悪用される場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "BECは業務プロセスも狙います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "送金や口座変更を求める場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "偽メールだけとは限りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "正規アカウントが侵害される場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "過去の会話が悪用される場合もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "文面だけで真偽を決めません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "重要な依頼は別経路で確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "既知の連絡先を使います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "メール記載の連絡先だけに頼りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "送金手順に複数確認を入れます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "口座変更は特に確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "緊急依頼でも手順を省きません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用者教育は必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ただし教育だけに依存しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "報告しやすい仕組みを作ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "疑わしいメールを共有します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "報告を責めない文化も重要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "メール認証も防御に使います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "フィルタリングも組み合わせます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "端末防御も重ねます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "MFAも被害を減らします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ただし方式に強弱があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "フィッシング耐性も考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "認証後の異常も監視します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "メール転送設定も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "不審なログインを確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "送信済みメールも調査対象です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "被害時は証拠を残します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "送金被害は早期連絡が重要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "関係部門へ迅速に共有します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "アカウント侵害も封じ込めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "単なる注意力の問題にしません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "人と仕組みと技術で守ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "重要業務ほど多層で確認します。",
+      "duration_multiplier": 1.4
+    }
+  ]
+}

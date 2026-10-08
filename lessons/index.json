@@ -1062,6 +1062,62 @@
       "path": "./lessons/security-deep/security-defense-in-depth.json",
       "status": "COMPLETE v0.1",
       "learn_path": "./learn/security-defense-in-depth.html"
+    },
+    {
+      "id": "security-adversaries-initial-access",
+      "title": "攻撃者・動機・初期アクセス",
+      "topic": "情報セキュリティ",
+      "path": "./lessons/security-deep/security-adversaries-initial-access.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/security-adversaries-initial-access.html"
+    },
+    {
+      "id": "security-social-engineering-bec-phishing",
+      "title": "ソーシャルエンジニアリング・BEC・フィッシング",
+      "topic": "情報セキュリティ",
+      "path": "./lessons/security-deep/security-social-engineering-bec-phishing.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/security-social-engineering-bec-phishing.html"
+    },
+    {
+      "id": "security-malware-ransomware",
+      "title": "マルウェア・ランサムウェア",
+      "topic": "情報セキュリティ",
+      "path": "./lessons/security-deep/security-malware-ransomware.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/security-malware-ransomware.html"
+    },
+    {
+      "id": "security-credential-session-attacks",
+      "title": "資格情報・セッションを狙う攻撃",
+      "topic": "情報セキュリティ",
+      "path": "./lessons/security-deep/security-credential-session-attacks.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/security-credential-session-attacks.html"
+    },
+    {
+      "id": "security-post-compromise-movement",
+      "title": "偵察・権限昇格・永続化・横展開",
+      "topic": "情報セキュリティ",
+      "path": "./lessons/security-deep/security-post-compromise-movement.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/security-post-compromise-movement.html"
+    },
+    {
+      "id": "security-c2-exfiltration-stealth",
+      "title": "C2・持ち出し・痕跡",
+      "topic": "情報セキュリティ",
+      "path": "./lessons/security-deep/security-c2-exfiltration-stealth.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/security-c2-exfiltration-stealth.html"
+    },
+    {
+      "id": "security-mitre-attack-scenarios",
+      "title": "MITRE ATT&CKと攻撃シナリオ",
+      "topic": "情報セキュリティ",
+      "path": "./lessons/security-deep/security-mitre-attack-scenarios.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/security-mitre-attack-scenarios.html"
     }
   ]
 }

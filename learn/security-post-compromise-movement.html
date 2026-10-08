@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ja">
+<head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta name="description" content="侵入後に攻撃者が環境を理解し、アクセスを維持し、権限と到達範囲を広げる流れを学び、横展開を前提とした防御を考えます。" /><meta name="theme-color" content="#f2efe8" /><title>偵察・権限昇格・永続化・横展開 — Learn</title><link rel="stylesheet" href="./learn.css" /><script src="./learn.js" defer></script></head>
+<body><div class="shell"><header class="top"><a href="../index.html">RSVPに戻る</a><span class="mode">LEARN · 情報セキュリティ</span></header><main>
+<section class="reader" id="speech-reader" aria-label="読み上げプレイヤー"><div class="reader-row"><button id="speech-play" type="button" aria-label="読み上げを開始">▶</button><button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button><button id="speech-stop" type="button" aria-label="停止" disabled>■</button><select id="speech-voice" aria-label="読み上げ音声"></select><label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label></div><div id="speech-status" class="reader-status" role="status">読み上げ準備中</div></section>
+<article id="learn-article"><h1>偵察・権限昇格・永続化・横展開</h1><p class="lead">侵入後に攻撃者が環境を理解し、アクセスを維持し、権限と到達範囲を広げる流れを学び、横展開を前提とした防御を考えます。</p>
+<h2>侵入後は環境理解から始まることがある</h2>
+<p>攻撃者は侵入した直後に最終目的を実行するとは限りません。端末、利用者、ネットワーク、重要システム、権限の高いアカウントなどを調べ、次にどこへ進むか判断する場合があります。</p>
+<p>MITRE ATT&CKでは、このような環境把握をDiscoveryとして整理しています。</p>
+<h2>アクセスを維持し権限を広げる</h2>
+<p>Persistenceはアクセスを維持する目的、Privilege Escalationはより高い権限を得る目的を表します。過剰権限や設定不備があると、一つのアカウント侵害から影響が広がりやすくなります。</p>
+<p>新しいアカウント、設定変更、権限付与などの重要な変化を監視することが必要です。</p>
+<h2>横展開は正規機能でも起こり得る</h2>
+<p>Lateral Movementは、侵入した場所から別の端末やサービスへ到達範囲を広げる行動です。有効なアカウントや正規の管理機能が悪用される場合があり、管理通信だから安全とは限りません。</p>
+<p>クラウドやIdentity基盤でも、権限関係を通じて影響範囲が広がることがあります。</p>
+<h2>防御は広がりを止める設計にする</h2>
+<p>最小権限、管理者アカウントと管理経路の分離、ネットワーク分割、端末間通信の制限、サービス間権限の最小化、共有資格情報の削減などで横展開の条件を減らします。</p>
+<p>重要資産には追加の認証や監視を置き、一つの侵入から直接到達できない構成にします。</p>
+<h2>調査では時間軸で影響範囲を見る</h2>
+<p>侵入端末を隔離しただけで終わらず、関連アカウント、接続先、新しい永続化、権限変更などを確認し、いつどこまで到達したかを追います。</p>
+<p>単発のアラートではなく、環境把握、権限変更、接続拡大といった行動の連鎖を見ることで、侵害の進行を理解しやすくなります。</p>
+<h2>要点の再確認</h2>
+<p>侵入後も攻撃は続く場合があります。</p>
+<p>まず環境を調べる場合があります。</p>
+<p>Discoveryは環境把握の行動です。</p>
+<p>端末や利用者を調べます。</p>
+<p>ネットワーク構成を調べる場合もあります。</p>
+<p>重要システムを探す場合があります。</p>
+<p>権限の高いアカウントを探す場合もあります。</p>
+<p>Persistenceはアクセス維持を狙います。</p>
+<p>再起動後も残る方法が使われる場合があります。</p>
+<p>別アカウントを作る場合もあります。</p>
+<p>設定変更が使われる場合もあります。</p>
+<p>権限昇格で高い権限を狙います。</p>
+<p>一般権限から高権限を狙います。</p>
+<p>設定不備が悪用される場合があります。</p>
+<p>過剰権限も影響を広げます。</p>
+<p>横展開で別の場所へ移動します。</p>
+<p>別端末やサービスへ移動します。</p>
+<p>有効なアカウントが使われる場合があります。</p>
+<p>正規の管理機能が悪用される場合もあります。</p>
+<p>管理通信だけで安全とは限りません。</p>
+<p>共有資源も経路になり得ます。</p>
+<p>クラウド内でも横展開があります。</p>
+<p>Identity基盤も重要な境界です。</p>
+<p>防御機能を弱める行動もあります。</p>
+<p>ログを減らそうとする場合があります。</p>
+<p>セキュリティ機能を止める場合もあります。</p>
+<p>検知は単発イベントだけで見ません。</p>
+<p>行動の連鎖を見ます。</p>
+<p>普段と違う管理操作を見ます。</p>
+<p>新しい権限付与を見ます。</p>
+<p>異常なサービス間アクセスも見ます。</p>
+<p>短時間の多段アクセスも手掛かりです。</p>
+<p>最小権限で拡大を抑えます。</p>
+<p>管理者アカウントを分離します。</p>
+<p>管理経路も分離します。</p>
+<p>ネットワーク分割を使います。</p>
+<p>端末間通信を必要最小限にします。</p>
+<p>サービス間権限も絞ります。</p>
+<p>共有資格情報を避けます。</p>
+<p>ローカル管理権限を抑えます。</p>
+<p>重要資産は追加防御します。</p>
+<p>横展開を演習で検証します。</p>
+<p>侵入端末だけを隔離して終わりません。</p>
+<p>関連アカウントを確認します。</p>
+<p>接続先も確認します。</p>
+<p>新規永続化の痕跡も確認します。</p>
+<p>権限変更も確認します。</p>
+<p>影響範囲を時間軸で追います。</p>
+<p>どこまで到達したかを判断します。</p>
+<p>侵入後の広がりを前提に設計します。</p>
+<h3>この教材の扱う範囲</h3><p class="endnote">具体的な権限昇格手順、認証情報抽出コマンド、横展開コマンドは扱いません。検知と封じ込めに必要な概念へ限定します。</p></article>
+<section class="sources" aria-labelledby="sources-title"><h2 id="sources-title">出典</h2><p><a href="https://attack.mitre.org/tactics/">MITRE ATT&CK Enterprise Tactics</a></p><p><a href="https://attack.mitre.org/matrices/enterprise/">MITRE ATT&CK Enterprise Matrix</a></p><p><a href="https://www.cisa.gov/stopransomware/ransomware-guide">CISA #StopRansomware Guide</a></p><p><a href="https://www.ipa.go.jp/shiken/syllabus/henkou/2026/20260630.html">IPA 新試験制度のシラバス案について</a></p></section>
+</main></div></body></html>

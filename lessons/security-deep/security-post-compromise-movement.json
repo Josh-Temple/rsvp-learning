@@ -1,0 +1,229 @@
+{
+  "schema_version": 1,
+  "id": "security-post-compromise-movement",
+  "title": "偵察・権限昇格・永続化・横展開",
+  "topic": "情報セキュリティ",
+  "summary": "侵入後に攻撃者が環境を理解し、アクセスを維持し、権限と到達範囲を広げる流れを学び、横展開を前提とした防御を考えます。",
+  "created_at": "2026-10-08",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "MITRE ATT&CK Enterprise Tactics",
+      "url": "https://attack.mitre.org/tactics/"
+    },
+    {
+      "title": "MITRE ATT&CK Enterprise Matrix",
+      "url": "https://attack.mitre.org/matrices/enterprise/"
+    },
+    {
+      "title": "CISA #StopRansomware Guide",
+      "url": "https://www.cisa.gov/stopransomware/ransomware-guide"
+    },
+    {
+      "title": "IPA 新試験制度のシラバス案について",
+      "url": "https://www.ipa.go.jp/shiken/syllabus/henkou/2026/20260630.html"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "侵入後も攻撃は続く場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "まず環境を調べる場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Discoveryは環境把握の行動です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "端末や利用者を調べます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ネットワーク構成を調べる場合もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "重要システムを探す場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "権限の高いアカウントを探す場合もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Persistenceはアクセス維持を狙います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "再起動後も残る方法が使われる場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "別アカウントを作る場合もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "設定変更が使われる場合もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "権限昇格で高い権限を狙います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一般権限から高権限を狙います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "設定不備が悪用される場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "過剰権限も影響を広げます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "横展開で別の場所へ移動します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "別端末やサービスへ移動します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "有効なアカウントが使われる場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "正規の管理機能が悪用される場合もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "管理通信だけで安全とは限りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "共有資源も経路になり得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "クラウド内でも横展開があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Identity基盤も重要な境界です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "防御機能を弱める行動もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ログを減らそうとする場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "セキュリティ機能を止める場合もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "検知は単発イベントだけで見ません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "行動の連鎖を見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "普段と違う管理操作を見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "新しい権限付与を見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "異常なサービス間アクセスも見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "短時間の多段アクセスも手掛かりです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "最小権限で拡大を抑えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "管理者アカウントを分離します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "管理経路も分離します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ネットワーク分割を使います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "端末間通信を必要最小限にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "サービス間権限も絞ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "共有資格情報を避けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ローカル管理権限を抑えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "重要資産は追加防御します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "横展開を演習で検証します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "侵入端末だけを隔離して終わりません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "関連アカウントを確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "接続先も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "新規永続化の痕跡も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "権限変更も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "影響範囲を時間軸で追います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "どこまで到達したかを判断します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "侵入後の広がりを前提に設計します。",
+      "duration_multiplier": 1.4
+    }
+  ]
+}
