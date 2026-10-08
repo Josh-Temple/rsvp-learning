@@ -40,18 +40,18 @@ test("all COMPLETE catalog entries have static Learn HTML independent of RSVP ch
     assert.notEqual(body, rsvpText, `${entry.id}: article is a direct RSVP chunk concatenation`);
     const review = pilotCoverage[entry.id];
     if (review) {
-      const markdown = await fs.readFile(new URL(entry.path.replace(/\\.json$/, ".md").replace(/^\\.\\//, ""), root), "utf8");
+      const markdown = await fs.readFile(new URL(entry.path.replace(/\.json$/, ".md").replace(/^\.\//, ""), root), "utf8");
       // A static Learn page remains independently readable; coverage is reviewed at the concept level,
       // not by appending every RSVP/Markdown fragment verbatim.
       assert.ok(!/要点の再確認/.test(article), `${entry.id}: verbatim recap section remains`);
-      assert.match(article, /<h2>短い振り返り<\\/h2>/, `${entry.id}: short contextual recap missing`);
+      assert.match(article, /<h2>短い振り返り<\/h2>/, `${entry.id}: short contextual recap missing`);
       assert.ok(body.length > 850, `${entry.id}: pilot lecture lacks explanatory depth`);
       for (const gate of review.gates) {
         assert.ok(hasCoverage(body, gate), `${entry.id}: semantic coverage missing: ${gate.label} (${gate.terms.join(", ")})`);
       }
-      const sources = [...markdown.matchAll(/^\\s*-\\s*\\[[^\\]]+\\]\\((https?:\\/\\/[^)]+)\\)/gm)].map((match) => match[1]);
+      const sources = [...markdown.matchAll(/^\s*-\s*\[[^\]]+\]\((https?:\/\/[^)]+)\)/gm)].map((match) => match[1]);
       assert.ok(sources.length > 0, `${entry.id}: pilot must retain source citations`);
-      const sourcesHtml = html.match(/<section class="sources"[\\s\\S]*?<\\/section>/i)?.[0] ?? "";
+      const sourcesHtml = html.match(/<section class="sources"[\s\S]*?<\/section>/i)?.[0] ?? "";
       for (const url of sources) {
         assert.ok(sourcesHtml.includes(`href="${url.replaceAll("&", "&amp;")}"`) || sourcesHtml.includes(`href="${url}"`),
           `${entry.id}: source from Markdown missing in Learn: ${url}`);
