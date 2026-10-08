@@ -373,7 +373,7 @@ Course間の役割は、I=守る対象・リスク判断、II=攻撃の観測と
 - B [PR #101](https://github.com/Josh-Temple/rsvp-learning/pull/101): head **f8216e0bbb6fce7cd2155a00f28318b65ec989cc** / base **fd003b63b816799dd8f1f1eac0de4fd70db32da9**。4ファイル変更：Learn HTML 2章、quiz補足資料、概念fixture。
 - A [PR #102](https://github.com/Josh-Temple/rsvp-learning/pull/102): head **198df1210b176d880225b59e121c3953268f2b50** / base同上。10ファイル変更：4章Markdown・RSVP JSONの各2件、境界監査資料、chunk単体検査。
 - C [PR #103](https://github.com/Josh-Temple/rsvp-learning/pull/103): 本文書のみ。A/Bの所有ファイルを直接変更していない。
-- 各headに対するGitHub Actions Test：B **run 37856323514 success**、A **run 37856299497 success**。C自身の最終head **5863a2b8bcf3755ebac6e728f22fcd08aa06fb0d** は **run 37856495559 success**。CI成功を内容・音声の合格と混同しない。
+- 各headに対するGitHub Actions Test：B **run 37856323514 success**、A **run 37856299497 success**。C自身の追補前head **5863a2b8bcf3755ebac6e728f22fcd08aa06fb0d** は **run 37856495559 success**。CI成功を内容・音声の合格と混同しない。
 
 ### 9.1 A新4章のMD/RSVPをheadの内容で読み直した結果
 
