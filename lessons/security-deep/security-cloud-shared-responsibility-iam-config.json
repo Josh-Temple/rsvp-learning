@@ -150,19 +150,15 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "Configuration driftを",
+      "text": "設定のずれを継続監視します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "監視します。",
+      "text": "Infrastructure as Code",
       "duration_multiplier": 1.15
     },
     {
-      "text": "Infrastructure as Co",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "deも使えます。",
+      "text": "構成をコードとして管理します。",
       "duration_multiplier": 1.15
     },
     {
@@ -186,11 +182,11 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "Billingだけで",
+      "text": "課金区分だけではありません。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "なくSecurity境界になります。",
+      "text": "安全上の境界にもなります。",
       "duration_multiplier": 1.15
     },
     {

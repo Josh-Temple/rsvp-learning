@@ -38,11 +38,7 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "Secure configuration",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "を適用します。",
+      "text": "安全な設定を適用します。",
       "duration_multiplier": 1.15
     },
     {
@@ -86,11 +82,7 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "Application controlも",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "使えます。",
+      "text": "アプリの実行制御も使えます。",
       "duration_multiplier": 1.15
     },
     {
@@ -170,11 +162,7 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "Organization deviceが",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "あります。",
+      "text": "組織所有の端末もあります。",
       "duration_multiplier": 1.15
     },
     {
@@ -190,11 +178,7 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "Work profileなどを",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "使う場合があります。",
+      "text": "仕事用の領域を使う場合があります。",
       "duration_multiplier": 1.15
     },
     {
@@ -222,19 +206,11 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "重要AccessをManaged dev",
+      "text": "重要なアクセスを管理端末に限定できます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "iceへ限定できます。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "Endpoint logを",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "Incident対応へ使います。",
+      "text": "端末のログを事故対応に利用します。",
       "duration_multiplier": 1.15
     },
     {

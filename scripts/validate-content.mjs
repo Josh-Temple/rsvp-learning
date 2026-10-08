@@ -3,6 +3,7 @@ import path from "node:path";
 import process from "node:process";
 import Ajv2020 from "ajv/dist/2020.js";
 import addFormats from "ajv-formats";
+import { inspectRsvpChunkBoundaries } from "./rsvp-chunk-boundaries.mjs";
 
 const root = process.cwd();
 const errors = [];
@@ -97,6 +98,19 @@ for (const meta of lessons) {
     if ([...text].length > 24) {
       longChunkCount += 1;
       warnings.push(`24文字超: ${meta.id} chunks[${index}] (${[...text].length}文字) "${text}"`);
+    }
+  }
+  // Only security-deep has undergone corpus-level boundary review.
+  // Extend enforcement to other courses after auditing their legacy chunks.
+  if (/^\.\/lessons\/security-deep\//.test(meta.path)) {
+    for (const issue of inspectRsvpChunkBoundaries(lesson.chunks)) {
+      const location = meta.id + " chunks[" + issue.index + "] → chunks[" + (issue.index + 1) + "]";
+      const example = JSON.stringify(issue.left) + " / " + JSON.stringify(issue.right);
+      if (issue.severity === "ERROR") {
+        errors.push("専門用語の分割疑い: " + location + " " + example);
+      } else {
+        warnings.push("文節の分割を要確認: " + location + " " + example);
+      }
     }
   }
 }

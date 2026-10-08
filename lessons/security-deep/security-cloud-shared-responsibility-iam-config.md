@@ -40,28 +40,27 @@ Providerが守る範囲と利用組織が設定・運用する範囲を説明し
 29. Data access logも検討します。
 30. Logの改ざん耐性を高めます。
 31. 別Accountへ保管する場合があります。
-32. Configuration driftを
-33. 監視します。
-34. Infrastructure as Co
-35. deも使えます。
-36. Reviewを行います。
-37. Policy as Codeも使えます。
-38. Guardrailを設けます。
-39. Multi-accountを使う場合があります。
-40. 環境を分離できます。
-41. Billingだけで
-42. なくSecurity境界になります。
-43. Break glassを設計します。
-44. Provider障害も考えます。
-45. Region障害も考えます。
-46. Backupと復旧を確認します。
-47. SaaSでも設定責任があります。
-48. Sharing設定を確認します。
-49. External app連携も確認します。
-50. Audit logを確認します。
-51. Provider更新も追います。
-52. 責任分界を定期的に再確認します。
-53. Cloud postureを継続管理します。
+32. 設定のずれを継続監視します。
+33. Infrastructure as Code
+34. 構成をコードとして管理します。
+35. Reviewを行います。
+36. Policy as Codeも使えます。
+37. Guardrailを設けます。
+38. Multi-accountを使う場合があります。
+39. 環境を分離できます。
+40. 課金区分だけではありません。
+41. 安全上の境界にもなります。
+42. Break glassを設計します。
+43. Provider障害も考えます。
+44. Region障害も考えます。
+45. Backupと復旧を確認します。
+46. SaaSでも設定責任があります。
+47. Sharing設定を確認します。
+48. External app連携も確認します。
+49. Audit logを確認します。
+50. Provider更新も追います。
+51. 責任分界を定期的に再確認します。
+52. Cloud postureを継続管理します。
 
 ## 注意
 

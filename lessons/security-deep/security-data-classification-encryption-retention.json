@@ -106,11 +106,7 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "Application level暗号も",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "あります。",
+      "text": "アプリ層での暗号化もあります。",
       "duration_multiplier": 1.15
     },
     {
@@ -210,11 +206,11 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "Cryptographic erasur",
+      "text": "Cryptographic erasure",
       "duration_multiplier": 1.15
     },
     {
-      "text": "eもあります。",
+      "text": "鍵の破棄による消去もあります。",
       "duration_multiplier": 1.15
     },
     {

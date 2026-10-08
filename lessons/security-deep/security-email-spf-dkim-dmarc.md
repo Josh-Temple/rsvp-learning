@@ -46,16 +46,16 @@ SPFを設定したからフィッシングが防げると誤解せず、認証�
 35. DMARCは全Phishingを防ぎません。
 36. 似たDomainは別問題です。
 37. 侵害済み正規Accountも別問題です。
-38. Display name spoofin
-39. gも残ります。
+38. Display name spoofing
+39. 表示名の偽装も残ります。
 40. Content検査も必要です。
 41. 利用者報告も必要です。
 42. URL防御も組み合わせます。
 43. MFAも組み合わせます。
 44. BEC対策は業務手順も必要です。
 45. 送信側と受信側を分けて考えます。
-46. Domain reputationも
-47. 補助情報です。
+46. Domain reputation
+47. 評価の補助情報です。
 48. Mail logを保持します。
 49. 認証結果を観測します。
 50. 変更時に再確認します。

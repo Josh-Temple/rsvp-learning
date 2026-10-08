@@ -1,0 +1,92 @@
+import assert from "node:assert/strict";
+import fs from "node:fs/promises";
+import os from "node:os";
+import path from "node:path";
+import { spawnSync } from "node:child_process";
+import test from "node:test";
+import { fileURLToPath } from "node:url";
+import { inspectRsvpChunkBoundaries } from "../scripts/rsvp-chunk-boundaries.mjs";
+
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+const chunks = (...texts) => texts.map((text) => ({ text, duration_multiplier: 1.15 }));
+
+test("rejects split Latin terms even when both chunks are under 24 characters", () => {
+  for (const items of [
+    chunks("Infrastructure as Co", "deも使えます。"),
+    chunks("Display name spoofin", "gも残ります。"),
+    chunks("SaaSは設定がAttack surfa", "ceです。"),
+    chunks("重要AccessをManaged dev", "iceへ限定できます。"),
+  ]) {
+    assert.ok(items.every((item) => [...item.text].length <= 24));
+    const found = inspectRsvpChunkBoundaries(items);
+    assert.equal(found.length, 1);
+    assert.equal(found[0].code, "ADJACENT_LATIN_TEXT");
+    assert.equal(found[0].severity, "ERROR");
+    assert.equal(found[0].index, 0);
+  }
+});
+
+test("accepts intact terminology and complete sentence boundaries", () => {
+  const found = inspectRsvpChunkBoundaries(chunks(
+    "Infrastructure as Code",
+    "構成をコードとして管理します。",
+    "IaaSがあります。",
+    "PaaSもあります。",
+    "Display name spoofing",
+    "表示名の偽装も残ります。",
+  ));
+  assert.equal(found.filter((item) => item.severity === "ERROR").length, 0);
+});
+
+test("possible Japanese particle splits are review findings, not automatic errors", () => {
+  const found = inspectRsvpChunkBoundaries(chunks("Configuration driftを", "監視します。"));
+  assert.equal(found.length, 1);
+  assert.equal(found[0].code, "POSSIBLE_PARTICLE_SPLIT");
+  assert.equal(found[0].severity, "REVIEW");
+  assert.deepEqual(inspectRsvpChunkBoundaries(chunks("監視します。", "設定も見直します。")), []);
+});
+
+test("invalid chunks do not crash the boundary check", () => {
+  assert.deepEqual(inspectRsvpChunkBoundaries(null), []);
+  assert.deepEqual(inspectRsvpChunkBoundaries([{ text: null }, { text: "Example" }]), []);
+});
+
+test("security-deep catalog lessons contain no adjacent Latin-letter boundaries", async () => {
+  const index = JSON.parse(await fs.readFile(path.join(root, "lessons/index.json"), "utf8"));
+  const entries = index.lessons.filter((meta) => /^\.\/lessons\/security-deep\//.test(meta.path));
+  assert.equal(entries.length, 30, "review scope changed: update coverage deliberately");
+  for (const meta of entries) {
+    const lesson = JSON.parse(await fs.readFile(path.join(root, meta.path), "utf8"));
+    const errors = inspectRsvpChunkBoundaries(lesson.chunks).filter((item) => item.severity === "ERROR");
+    assert.deepEqual(errors, [], meta.id + ": split technical term");
+    for (const [index, chunk] of lesson.chunks.entries()) {
+      assert.ok([...chunk.text].length <= 24, meta.id + " chunks[" + index + "] exceeds 24 chars");
+    }
+  }
+});
+
+test("content validator rejects broken Latin words in new security-deep lessons", async (t) => {
+  const dir = await fs.mkdtemp(path.join(os.tmpdir(), "rsvp-split-regression-"));
+  t.after(() => fs.rm(dir, { recursive: true, force: true }));
+  for (const directory of ["schema", "lessons/security-deep", "courses"]) {
+    await fs.mkdir(path.join(dir, directory), { recursive: true });
+  }
+  await fs.copyFile(path.join(root, "schema/lesson.schema.json"), path.join(dir, "schema/lesson.schema.json"));
+  await fs.writeFile(path.join(dir, "lessons/index.json"), JSON.stringify({ lessons: [{
+    id: "split-test", title: "Test", path: "./lessons/security-deep/split-test.json",
+  }] }));
+  await fs.writeFile(path.join(dir, "courses/index.json"), JSON.stringify({ courses: [{
+    id: "test-course", chapters: ["split-test"],
+  }] }));
+  await fs.writeFile(path.join(dir, "lessons/security-deep/split-test.json"), JSON.stringify({
+    schema_version: 1, id: "split-test", title: "Test", topic: "Security", summary: "Test",
+    created_at: "2026-10-08", base_duration_ms: 680,
+    sources: [{ title: "Example", url: "https://example.com" }],
+    chunks: chunks("Infrastructure as Co", "deも使えます。"),
+  }));
+  const result = spawnSync(process.execPath, [path.join(root, "scripts/validate-content.mjs")], {
+    cwd: dir, encoding: "utf8",
+  });
+  assert.notEqual(result.status, 0);
+  assert.match(result.stderr, /専門用語の分割疑い/);
+});
