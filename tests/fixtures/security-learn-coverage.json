@@ -1,0 +1,215 @@
+{
+  "schema_version": 1,
+  "comment": "各gateは講義内に留めるべき意味上の目印。逐語的なMarkdown全項目チェックではなく、変更時の人間レビューと組み合わせて使用。",
+  "lessons": {
+    "security-risk-assessment": {
+      "gates": [
+        {
+          "label": "評価対象と基準",
+          "terms": [
+            "対象となる業務",
+            "対象とする業務"
+          ]
+        },
+        {
+          "label": "脅威シナリオ",
+          "terms": [
+            "脅威シナリオ"
+          ]
+        },
+        {
+          "label": "発生可能性と影響",
+          "terms": [
+            "発生可能性",
+            "影響"
+          ]
+        },
+        {
+          "label": "評価手法の限界",
+          "terms": [
+            "境界が曖昧"
+          ]
+        },
+        {
+          "label": "不確実性",
+          "terms": [
+            "不確実性"
+          ]
+        },
+        {
+          "label": "有効性確認",
+          "terms": [
+            "復旧訓練",
+            "アクセス権の定期レビュー"
+          ]
+        },
+        {
+          "label": "再評価条件",
+          "terms": [
+            "再評価"
+          ]
+        }
+      ]
+    },
+    "security-sessions-federation-oauth-oidc-saml": {
+      "gates": [
+        {
+          "label": "セッション保護",
+          "terms": [
+            "セッション識別子"
+          ]
+        },
+        {
+          "label": "SSOとFederation",
+          "terms": [
+            "SSO",
+            "フェデレーション"
+          ]
+        },
+        {
+          "label": "OAuthの認可境界",
+          "terms": [
+            "認可",
+            "アクセストークン"
+          ]
+        },
+        {
+          "label": "OIDCとIDトークン",
+          "terms": [
+            "OIDC",
+            "IDトークン"
+          ]
+        },
+        {
+          "label": "SAMLの信頼条件",
+          "terms": [
+            "SAML",
+            "署名"
+          ]
+        },
+        {
+          "label": "ブラウザの安全な方式",
+          "terms": [
+            "PKCE"
+          ]
+        },
+        {
+          "label": "失効と終了時の限界",
+          "terms": [
+            "失効",
+            "ログアウト"
+          ]
+        }
+      ]
+    },
+    "security-cloud-shared-responsibility-iam-config": {
+      "gates": [
+        {
+          "label": "責任分界",
+          "terms": [
+            "責任分界"
+          ]
+        },
+        {
+          "label": "サービスモデル",
+          "terms": [
+            "IaaS",
+            "PaaS",
+            "SaaS"
+          ]
+        },
+        {
+          "label": "IAMの権限管理",
+          "terms": [
+            "IAM"
+          ]
+        },
+        {
+          "label": "公開範囲",
+          "terms": [
+            "公開範囲"
+          ]
+        },
+        {
+          "label": "暗号化の限界",
+          "terms": [
+            "暗号化"
+          ]
+        },
+        {
+          "label": "構成ドリフト",
+          "terms": [
+            "構成ドリフト"
+          ]
+        },
+        {
+          "label": "ログ保護",
+          "terms": [
+            "ログ"
+          ]
+        },
+        {
+          "label": "復旧の検証",
+          "terms": [
+            "復旧"
+          ]
+        }
+      ]
+    },
+    "security-email-spf-dkim-dmarc": {
+      "gates": [
+        {
+          "label": "異なるドメインの用途",
+          "terms": [
+            "配送時に使うドメイン"
+          ]
+        },
+        {
+          "label": "SPFの目的と限界",
+          "terms": [
+            "SPF",
+            "転送"
+          ]
+        },
+        {
+          "label": "DKIMの目的と限界",
+          "terms": [
+            "DKIM",
+            "署名"
+          ]
+        },
+        {
+          "label": "DMARCの整合",
+          "terms": [
+            "アライメント"
+          ]
+        },
+        {
+          "label": "現行規格",
+          "terms": [
+            "RFC 9989"
+          ]
+        },
+        {
+          "label": "導入と運用",
+          "terms": [
+            "レポート",
+            "送信元"
+          ]
+        },
+        {
+          "label": "防ぎきれない攻撃",
+          "terms": [
+            "正規アカウント"
+          ]
+        },
+        {
+          "label": "他の業務対策",
+          "terms": [
+            "別経路"
+          ]
+        }
+      ]
+    }
+  }
+}
