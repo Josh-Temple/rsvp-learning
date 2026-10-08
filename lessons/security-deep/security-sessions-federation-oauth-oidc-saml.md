@@ -67,6 +67,7 @@ Created: 2026-10-08
 
 ## 出典
 
+- [IETF RFC 10017 OAuth 2.0 for Browser-Based Applications](https://datatracker.ietf.org/doc/html/rfc10017)
 - [NIST SP 800-63C-4 Federation and Assertions](https://csrc.nist.gov/pubs/sp/800/63/c/4/final)
 - [IETF RFC 9700 Best Current Practice for OAuth 2.0 Security](https://datatracker.ietf.org/doc/html/rfc9700/)
 - [OpenID Connect Core 1.0 incorporating errata set 2](https://openid.net/specs/openid-connect-core-1_0-errata2.html)
