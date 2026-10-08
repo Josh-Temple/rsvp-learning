@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "comment": "各gateは講義内に留めるべき意味上の目印。逐語的なMarkdown全項目チェックではなく、変更時の人間レビューと組み合わせて使用。",
+  "comment": "各gateはLearn講義で保持すべき概念・条件・反例の目印。within_paragraph指定は同一段落内での共起を要求するが、文章の真偽・音声品質の人手レビューは別途必須。",
   "lessons": {
     "security-risk-assessment": {
       "gates": [
@@ -207,6 +207,249 @@
           "terms": [
             "別経路"
           ]
+        }
+      ]
+    },
+    "security-social-engineering-bec-phishing": {
+      "gates": [
+        {
+          "label": "BECの事例",
+          "terms": [
+            "架空の支払先変更依頼"
+          ]
+        },
+        {
+          "label": "処理の保留と独立確認",
+          "terms": [
+            "保留",
+            "独立した連絡先"
+          ],
+          "within_paragraph": true
+        },
+        {
+          "label": "メール認証と正規アカウントの限界",
+          "terms": [
+            "メール認証",
+            "正規アカウント"
+          ],
+          "within_paragraph": true
+        },
+        {
+          "label": "MFA方式の違い",
+          "terms": [
+            "多要素認証",
+            "フィッシングへの耐性"
+          ],
+          "within_paragraph": true
+        },
+        {
+          "label": "調査証拠",
+          "terms": [
+            "不審ログイン",
+            "転送設定",
+            "送信済みメール"
+          ],
+          "within_paragraph": true
+        },
+        {
+          "label": "模擬演習",
+          "terms": [
+            "模擬メール",
+            "保留",
+            "別経路確認"
+          ],
+          "within_paragraph": true
+        },
+        {
+          "label": "安全な学習境界",
+          "terms": [
+            "実在の相手への接触を求める演習ではありません"
+          ]
+        }
+      ]
+    },
+    "security-malware-ransomware": {
+      "gates": [
+        {
+          "label": "侵害を早期に疑う判断",
+          "terms": [
+            "暗号化",
+            "封じ込め"
+          ],
+          "within_paragraph": true
+        },
+        {
+          "label": "正常な変更との区別",
+          "terms": [
+            "異常なファイル変更",
+            "侵害を断定せず"
+          ],
+          "within_paragraph": true
+        },
+        {
+          "label": "拡大防止と証拠保全",
+          "terms": [
+            "重大な兆候",
+            "証拠保全"
+          ],
+          "within_paragraph": true
+        },
+        {
+          "label": "影響と復旧優先順位",
+          "terms": [
+            "住民向け申請サービス",
+            "復旧順"
+          ],
+          "within_paragraph": true
+        },
+        {
+          "label": "復元試験の条件",
+          "terms": [
+            "バックアップ",
+            "整合",
+            "所要時間"
+          ],
+          "within_paragraph": true
+        },
+        {
+          "label": "検知の限界",
+          "terms": [
+            "EDR",
+            "ログが欠ける"
+          ],
+          "within_paragraph": true
+        },
+        {
+          "label": "復旧の結論",
+          "terms": [
+            "隔離された環境",
+            "復旧"
+          ],
+          "within_paragraph": true
+        }
+      ]
+    },
+    "security-credential-session-attacks": {
+      "gates": [
+        {
+          "label": "攻撃方法の差異",
+          "terms": [
+            "少数",
+            "多数",
+            "監視"
+          ],
+          "within_paragraph": true
+        },
+        {
+          "label": "MFA疲労と回復",
+          "terms": [
+            "多要素認証",
+            "回復手続き"
+          ],
+          "within_paragraph": true
+        },
+        {
+          "label": "観測事実の時系列",
+          "terms": [
+            "架空の職員アカウント",
+            "時系列"
+          ],
+          "within_paragraph": true
+        },
+        {
+          "label": "本人操作の可能性",
+          "terms": [
+            "正規の本人",
+            "事実"
+          ],
+          "within_paragraph": true
+        },
+        {
+          "label": "パスワード変更の限界",
+          "terms": [
+            "パスワード",
+            "セッショントークン",
+            "失効"
+          ],
+          "within_paragraph": true
+        },
+        {
+          "label": "模擬環境での有効性検証",
+          "terms": [
+            "模擬アカウント",
+            "検証環境"
+          ],
+          "within_paragraph": true
+        },
+        {
+          "label": "認証後の残余リスク",
+          "terms": [
+            "認証前",
+            "ログイン後"
+          ],
+          "within_paragraph": true
+        }
+      ]
+    },
+    "security-identity-proofing-authn-authz": {
+      "gates": [
+        {
+          "label": "四つの段階の区別",
+          "terms": [
+            "識別",
+            "本人確認",
+            "認証",
+            "認可"
+          ],
+          "within_paragraph": true
+        },
+        {
+          "label": "登録時の失敗",
+          "terms": [
+            "偽造された証拠",
+            "本人確認"
+          ],
+          "within_paragraph": true
+        },
+        {
+          "label": "認可の失敗",
+          "terms": [
+            "異動後",
+            "処理側"
+          ],
+          "within_paragraph": true
+        },
+        {
+          "label": "サーバー側確認",
+          "terms": [
+            "サーバー側",
+            "権限"
+          ],
+          "within_paragraph": true
+        },
+        {
+          "label": "模擬検査",
+          "terms": [
+            "模擬アカウント",
+            "拒否"
+          ],
+          "within_paragraph": true
+        },
+        {
+          "label": "回復と個人情報",
+          "terms": [
+            "アカウント回復",
+            "個人情報"
+          ],
+          "within_paragraph": true
+        },
+        {
+          "label": "規範の適用境界",
+          "terms": [
+            "NIST SP 800-63-4",
+            "法定義務"
+          ],
+          "within_paragraph": true
         }
       ]
     }
