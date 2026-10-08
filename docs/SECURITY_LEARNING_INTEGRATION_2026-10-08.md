@@ -125,3 +125,52 @@ Overall result: **PARTIAL_WITH_GAPS**（統合と自動検査は完了。教材�
 5. **配信境界の維持**（E）: public Chrome読み上げの100スロットはInstant Radioへ委ね、private RSVPコンテンツを自動で一般公開しない。
 
 更新履歴の確認はこの正本とGitHub PR/CI、Vercel APIの実際のsnapshotを優先する。旧節の時点情報や古いPR説明を現行の主張に用いない。
+
+
+---
+
+## 8. 第3Wave E統合・独立審査・本番配信の最終判定（2026-10-09 JST）
+
+対象: Library `/RSVP Learning/Work Instructions/2026-10-09_security_learning_independent_validation_and_depth_expansion_wave_instructions.md` Section 7。過去の各節を改変せず、以下を後続snapshotとする。
+
+**総合: PARTIAL_WITH_GAPS。** A〜Dの提出物を内容・CI・依存関係で分離判定し、審査記録・QA記録・Bの限定改稿・Eの限定修復を取り込んだ。本格的な専門学習の全章合格、Android実機、音声、学習効果は未達である。
+
+### 8.1 fresh readとSHA固定統合
+
+- E開始時にprivateリポジトリ `Josh-Temple/rsvp-learning` の `main` を再取得: **`fd003b63b816799dd8f1f1eac0de4fd70db32da9`**（2026-10-09 JST）。当時のA〜D PR #101〜#104はいずれもこのbase SHA。変更対象ファイルとdiff、独立監査、head CIを確認した。
+- B [#101](https://github.com/Josh-Temple/rsvp-learning/pull/101): head `f8216e0bbb6fce7cd2155a00f28318b65ec989cc`、4ファイル、Test [37856323514](https://github.com/Josh-Temple/rsvp-learning/actions/runs/37856323514) success。既存8章のLearnうち2章を限定修正、20問の採点基準を補充。
+- A [#102](https://github.com/Josh-Temple/rsvp-learning/pull/102): head `198df1210b176d880225b59e121c3953268f2b50`、10ファイル、Test [37856299497](https://github.com/Josh-Temple/rsvp-learning/actions/runs/37856299497) success。4章のMD/RSVP改稿。ただしdraft、Cの重要指摘、Bの新4章Learn欠落のため**非統合・HOLD**。
+- C [#103](https://github.com/Josh-Temple/rsvp-learning/pull/103): head `a2e3a7f7f8c33c2f7cbc4336dee87521cea30b19`、監査文書1ファイル、Test [37856722397](https://github.com/Josh-Temple/rsvp-learning/actions/runs/37856722397) success。第9節で上記A/Bの実headを追補監査。
+- D [#104](https://github.com/Josh-Temple/rsvp-learning/pull/104): head `7e5b1c11202dd9a6888530a6d9772f11f4610711`、QA文書1ファイル、Test [37856595983](https://github.com/Josh-Temple/rsvp-learning/actions/runs/37856595983) success。
+- 安全な順序でC #103→D #104→B #101を、それぞれexpected head SHA固定でsquash merge。mainは順に `f14669f5320bc158616f21193e724dd28d310f52` → `f7eafda837dea3fb93d3dafdb6b8af9a90a5e552` → `779f0326b94eeb5978d0d2976400ccf17ff62c93`。各main Test [37857480951](https://github.com/Josh-Temple/rsvp-learning/actions/runs/37857480951)、[37857520874](https://github.com/Josh-Temple/rsvp-learning/actions/runs/37857520874)、[37857574445](https://github.com/Josh-Temple/rsvp-learning/actions/runs/37857574445) はsuccess。
+- E限定修正 [#105](https://github.com/Josh-Temple/rsvp-learning/pull/105): head `0230f8be13a8f051b782e00cbb41b58d15ab9181`。`security-malware-ransomware.json`の「侵害の最終段階」とするsummaryをLearnと整合する条件付き表現へ変更。`docs/SECURITY_LEARN_PILOT_2026-10-08.md`のメールQ1をRFC5322.FromとDMARCドメインアライメントに限定し、模範解答も修正。2ファイルのみ、readback済み、head Test [37857648260](https://github.com/Josh-Temple/rsvp-learning/actions/runs/37857648260) success後にSHA固定merge。
+- **検査・配信用main: `1142d8090dff27516fd73385770478e91b49412a`**。main Test [37857689589](https://github.com/Josh-Temple/rsvp-learning/actions/runs/37857689589) success。`.github/workflows/test.yml` の `npm run check`（test+validate）実行による結果。Eが別途ローカルnpmを実行した証拠ではない。
+- この第8節を追加するE文書PRのmerge後main SHAとTestは別途確認する。後続文書コミットによりmainが進んでも、上記は配信コードのsource SHAとして記録する。
+
+### 8.2 各Workerと教材品質の境界
+
+| 区分 | 今回確認した範囲 | 判定と残件 |
+| --- | --- | --- |
+| A / 新優先4章 | `security-threat-modeling`、`security-mitre-attack-scenarios`、`security-password-mfa-phishing-resistant`、`security-firewall-proxy-waf-ids-ips` のMD/JSONをAが同期改稿。CがA headで55/56/59/56 chunksの番号・文章を照合 | **4/4 NEEDS_REVISION、#102 HOLD**。信頼境界の説明、耐フィッシング認証条件、個別原典、対応Learn 4章とC修正版独立審査が不足。mainには未反映 |
+| B / 改稿済み8章 | 2章の限定HTML改善、20問の2/1/0点の採点案。E #105でsummaryとメールQ1を補修 | 変更箇所はC部分PASS、20/20問の採点基準の構造はC確認。ただし**8/8 NEEDS_REVISION**、学習者の理解・採点者間一致はNOT_VERIFIED。#105修正版の再独立審査も未了 |
+| C / 30章 | 既存8章とA/B新headを区別して審査、30章残件表更新 | 8章は新規詳細審査、残22章は前回残件を継承。**30/30専門学習深度NEEDS_REVISION**から全合格へは昇格しない。source verificationは確認できた節に限りpartial |
+| D / production QA | 旧fd003系productionについてVercel API、HTTP代理、8章HTML、JSとCatalog、章別出典の静的機構を確認 | 静的PASSと分離して、390px/desktopの実ブラウザ、Android Chrome、Web Speech API実音声、Chrome標準読み上げ、実際の章切替・出典更新・画面OFFはすべて**NOT_VERIFIED** |
+
+重大な逆意味の新しい確証はC/Dが調べた範囲では未検出。ただしP1として `security-identity-proofing-authn-authz` の本人確認範囲、`security-sessions-federation-oauth-oidc-saml` のトークン・audience・失効の適用条件、`security-cloud-shared-responsibility-iam-config` の責任分界と出典の直結性などが残る。規格・勧告の一次資料は主張別に一部照合しただけで、全文の保証ではない。
+
+### 8.3 Vercel実配信とprivate/public境界
+
+- 対象 project `rsvp-learning` / `prj_7yYGl5D3Q7UwQgQuXaGmOYLkTzbu`。E開始時のproduction `dpl_CYHqCXPTCoEqH3r9QDK66XLiy5fN` はREADYでsource SHAは `fd003b63b816799dd8f1f1eac0de4fd70db32da9`。
+- 上記検査済みmain `1142d8090dff27516fd73385770478e91b49412a`を明示してproduction Git deployment **`dpl_BMKjt1iTZN5EGxUJT8RJWpoe1VVf`** を作成。Vercel APIで **READY / target production / githubCommitSha一致**を確認。`get_deployment`でalias `rsvp-learning-kappa.vercel.app` を確認し、`get_alias` でこのhostnameが同deployment IDに割り当てられていることを再確認。
+- 本番ビルドと配信先割当てのPASSは実ブラウザ画面・Android・音声のPASSではない。Dが旧sourceで実施したHTTP確認を新sourceの実操作検証へ流用しない。
+- RSVP LearningのGitHub repositoryはprivate。公開Chrome標準読み上げ用100スロットは別public `Josh-Temple/instant-radio` 所管。RSVP GitHub Pages、公開同期、既存Vercelアクセス保護設定は変更していない。旧Draft #6・別件 #29はmergeしない。
+
+### 8.4 Course V V-1/V-2と次Wave
+
+- V-1 `security-secure-by-design-default` = **HOLD**。V-2 `security-input-output-injection` = **HOLD**。既存準備資料の講義試案・架空ケース・問題は未登録。MD/JSON/Learn/Catalogの一体実装・独立審査・ブラウザ品質のゲートを満たしていないため、DRAFT/COMPLETE/配信と申告しない。Course V〜VIIIは計画30章のまま。
+- **P1 A→B→C / #102**: threat-modelingの本文9は権限だけに限定しない信頼境界へ、phishing-resistantの本文20はNIST SP 800-63B-4 §3.2.5のverifier binding等の条件へ修正しMD/JSON同期。MITRE手法と旧NISTガイドの個別出典を精査。確定A headからLearn新4章をBが制作しCがそのheadを独立再審査。ここまで#102はHOLD。
+- **P1 B→C**: `security-identity-proofing-authn-authz`、`security-sessions-federation-oauth-oidc-saml`、`security-cloud-shared-responsibility-iam-config` の限定・根拠を追加レビュー。#105の変更後主張と問題もCが新mainで再審査。20問の学習者評価・採点再現性は実測するまでNOT_VERIFIED。
+- **P1 D+利用者/E**: `https://rsvp-learning-kappa.vercel.app/` の新source `1142d80…` をAndroid Chrome実機でテスト。RSVP単章、Learn単章とCourse I/III/IV通し再生、章間遷移、章別出典、速度・音声切替、最終停止。ブラウザ内Web Speech APIとChrome標準読み上げ、画面OFFは試験ごとに区別。未実施はNOT_VERIFIED。
+- **P2 E**: 合格範囲に限り30章残件表を更新。V-1/V-2は上記内容・動作ゲートがそろうまでHOLDを維持。既存入門8章、status、カタログ、個人localStorage、公開境界を保全。
+
+**E最終判定: PARTIAL_WITH_GAPS。** CI success、内容部分PASS、静的HTTP PASS、deployment READYはそれぞれ根拠範囲を限定し、実機・学習効果への外挿をしない。
