@@ -26,236 +26,224 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "共通言語として使えます。",
+      "text": "組織間の共通言語になります。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "tacticは攻撃者の目的です。",
+      "text": "tacticは攻撃者の目的を表します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "techniqueは目的を達成する方法です。",
+      "text": "techniqueは行動の方法です。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "sub-techniqueもあります。",
+      "text": "sub-techniqueは細分化した方法です。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "tacticは固定手順ではありません。",
+      "text": "項目名は攻撃順序を定めません。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "全攻撃が同じ順序では進みません。",
+      "text": "全ての段階が現れるとは限りません。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "全tacticが必ず現れるわけでもありません。",
+      "text": "Enterpriseと他領域を区別します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "偵察があります。",
+      "text": "環境ごとに適用範囲が違います。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "攻撃用資源の準備があります。",
+      "text": "架空の行政サービスを考えます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "初期アクセスがあります。",
+      "text": "職員に偽の通知が届きます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "実行があります。",
+      "text": "職員は不審メールを報告します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "永続化があります。",
+      "text": "これだけでは侵害は未確定です。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "権限昇格があります。",
+      "text": "次に異常なログインを想定します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "隠蔽があります。",
+      "text": "正規アカウントの悪用を疑います。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "防御機能の弱体化があります。",
+      "text": "Valid Accountsが分類候補です。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "資格情報へのアクセスがあります。",
+      "text": "成功ログだけで断定しません。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "環境把握があります。",
+      "text": "通常の勤務や端末を照合します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "横展開があります。",
+      "text": "新しい権限付与も観測します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "情報収集があります。",
+      "text": "権限変更の記録を確認します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "外部制御があります。",
+      "text": "異常な探索行動も調べます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "情報持ち出しがあります。",
+      "text": "Discoveryとの関係を考えます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "影響を与える段階があります。",
+      "text": "別サービスへのアクセスも調べます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "分類は観測整理に使います。",
+      "text": "Lateral Movementも候補です。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "攻撃を再現する目的ではありません。",
+      "text": "外部への転送量を確認します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "仮想シナリオで考えます。",
+      "text": "Exfiltrationの可能性を考えます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "職員へのフィッシングを想定します。",
+      "text": "通常の連携通信かもしれません。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "資格情報が盗まれたとします。",
+      "text": "分類と攻撃確定は別の作業です。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "有効なアカウントとして使われます。",
+      "text": "複数の証拠を時系列で結びます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "環境を調べる場合があります。",
+      "text": "メール報告と認証ログを照合します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "高権限を狙う場合があります。",
+      "text": "端末とクラウドの記録も使います。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "別サービスへ移る場合があります。",
+      "text": "観測不能な区間を明記します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "情報を集めます。",
+      "text": "データの未収集は無事の証拠ではありません。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "外部へ持ち出す場合があります。",
+      "text": "各行動に予防策を対応させます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "最後に影響が出る場合があります。",
+      "text": "各行動に検知方法も対応させます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "ただし別の流れもあります。",
+      "text": "封じ込めの判断条件を整理します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "途中で検知できる点を探します。",
+      "text": "失効すべき認証情報を確認します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "メール報告が一つの観測点です。",
+      "text": "担当者が判断を記録します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "Identityログも観測点です。",
+      "text": "仮説に反する証拠も探します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "端末ログも観測点です。",
+      "text": "分類済みなら検知済みとは限りません。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "ネットワークログも観測点です。",
+      "text": "検知ルール数は網羅率ではありません。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "クラウド監査ログも使います。",
+      "text": "対象ログが届くか確かめます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "行動ごとにCoverageを見ます。",
+      "text": "模擬イベントで警告を確認します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "検知ルールの数だけで判断しません。",
+      "text": "検知までの遅れも記録します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "重要シナリオを覆うか確認します。",
+      "text": "誤検知の理由も調べます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "管理策との対応も見ます。",
+      "text": "観測点が欠ければ限界を示します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "予防できる点を探します。",
+      "text": "新しい行動を脅威情報で確認します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "検知できる点を探します。",
+      "text": "ATT&CKはリスク得点表ではありません。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "封じ込めできる点も探します。",
+      "text": "資産と業務影響を別に評価します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "復旧できる点も考えます。",
+      "text": "組織に重要な行動を優先します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "ATT&CKだけでリスク順位を決めません。",
+      "text": "手法一覧を埋めても安全ではありません。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "資産と影響をCourse Iで評価します。",
+      "text": "模擬ケースの条件を変更します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "業界や環境で重要行動は変わります。",
+      "text": "対象が端末からSaaSへ変わります。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "自組織に関係する行動を選びます。",
+      "text": "必要なログや検知点も変わります。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "脅威情報で更新します。",
+      "text": "攻撃の再現ではなく防御を検証します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "インシデントからも更新します。",
+      "text": "学んだ欠落を改善計画へ戻します。",
       "duration_multiplier": 1.15
-    },
-    {
-      "text": "演習で検知Coverageを確かめます。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "未観測領域を記録します。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "ATT&CKを防御改善へつなげます。",
-      "duration_multiplier": 1.4
     }
   ]
 }

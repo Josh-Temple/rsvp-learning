@@ -47,3 +47,31 @@
 - チャンクを統合した箇所は、従来2画面分の表示時間を保つように`duration_multiplier`を合算（最大3.0以内）。2画面のままの本人確認の説明は従来値を保持した。
 - **限界:** 機械検査の合格は、全ての日本語境界・専門用語の正確性、実際の読解速度、Learn HTML・音声・Android Chromeでの自然さを保証しない。実機確認は`NOT_VERIFIED`。変更に伴う専門語の言い換え（特にEmergency rotation）はB/Cに意味の確認を依頼する。AはLearn HTMLを変更していない。
 - 追加テストは修正より前にブランチへ保存。CI / `npm run check`の実行結果およびPRのmergeは、実際に確認できた状態に従い別途判定する。
+
+
+## 2026-10-09 Worker A — 4章の深度改稿・RSVP同期（独立審査待ち）
+
+- 指示: Library `/RSVP Learning/Work Instructions/2026-10-09_security_learning_independent_validation_and_depth_expansion_wave_instructions.md` のAのみ。
+- 開始時GitHub main: `fd003b63b816799dd8f1f1eac0de4fd70db32da9`（2026-10-09 JST、fresh read）。open PRは旧Draft #6と別スコープ #29。GitHub Test [37783095016](https://github.com/Josh-Temple/rsvp-learning/actions/runs/37783095016) は開始時mainでsuccess。Scheduled Vercel deploy [37784613603](https://github.com/Josh-Temple/rsvp-learning/actions/runs/37784613603) はsuccess。これらは今回の変更後のCI結果ではない。
+- 初期候補4章を維持。現行C監査のP1対象であり、前WaveのLearn改稿済み8章とは別。Lesson statusとCatalog、Learn HTML、Course順序、private公開境界は変更しない。
+
+| Lesson | チャンク数（旧→新） | 追加した説明・架空ケース・検証 | 分類 |
+|---|---:|---|---|
+| `security-threat-modeling` | 55→55 | 範囲と信頼境界→架空の申請閲覧認可欠落→APIでの拒否試験・ログ→設計変更で再評価 | A原稿/JSON同期・C主張審査待ち |
+| `security-mitre-attack-scenarios` | 59→56 | tactic/techniqueの違い→架空のメール・認証・権限・転送ログ→反証・観測欠落→防御の検証 | A原稿/JSON同期・C主張審査待ち |
+| `security-password-mfa-phishing-resistant` | 50→59 | OTPと耐フィッシング認証の違い→高権限職員の架空例→認証器の回復・記録・検証→NISTの適用境界 | A原稿/JSON同期・C主張審査待ち |
+| `security-firewall-proxy-waf-ids-ips` | 51→56 | 装置ごとの観測対象→WAFとアプリ認可の境界→架空データでの拒否試験→迂回・誤検知・運用 | A原稿/JSON同期・C主張審査待ち |
+
+### 一次資料と限界（2026-10-09）
+
+- `security-threat-modeling`: OWASP Threat Modeling Cheat Sheet（Overview、System Modeling、Threat Identification、Response and Mitigations、Review and Validation）を2026-10-09に取得。工程とモデル更新を照合。
+- `security-mitre-attack-scenarios`: MITRE ATT&CK Enterprise Matrix（2026-10-09取得、tactics・techniques・対象platform）を照合。継続更新のため個別項目の版固定・完全性はCの審査待ち。
+- `security-password-mfa-phishing-resistant`: NIST SP 800-63B-4（§2/§3.2.5/§4/§5/Appendix B、2026-10-09取得）を照合。適用は特定の米国行政向け枠組みに限定して説明。
+- `security-firewall-proxy-waf-ids-ips`: NIST SP 800-41 Rev.1（2009、公式CSRC公開情報）、NIST SP 800-94（2007、公式CSRC公開情報）、CIS Controls v8.1公開ページを2026-10-09に確認。NISTの本文PDF各節・製品別挙動は未照合。
+
+- 本文で扱う住民申請、行政サービス、職員用システム、WAF付きAPIは**全て教育用の架空ケース**。実システムの侵入や悪用の実演ではない。
+- Aの同一JSONチャンクとMarkdown番号付き本文は一対一に生成した。各24文字以内・末尾を助詞のまま残さないこと・既存出典との同期を生成時に機械点検。検査は意味や学習効果を認定しない。
+- 既知7件の境界を修正した他6章は今回編集しない。前Wave回帰試験を維持する。今回のFirewall旧文にあった `Cloud security group` / `も似た役割があります。` は、助詞単独の文節をなくす表現へ改稿した。英単語途中分割とは別の読みやすさの問題。
+- GitHub Actionsの今回headに対する `npm run check`、手動自然さ、C独立審査、BのLearn HTML同期、Android実機・音声、学習者理解は**このA原稿の作成だけではPASSとしない**。
+- **Bへの引継ぎ**: 上記4章のLearn HTMLは旧本文を対象としている可能性がある。Aの確定PR headを取得し、各架空ケース・否定/例外・検証方法を音声講義へ再構成すること。AはHTMLを変更しない。
+- **Cへの引継ぎ**: 特に①OWASPの工程、②MITRE技法名と行動推定の境界、③WebAuthnの耐フィッシング性と復旧手順、④WAF/アプリ認可の区別を、新headで独立審査すること。NIST SP 800-41/94の未照合PDF本文を確認済み扱いしない。

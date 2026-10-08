@@ -127,3 +127,19 @@ test("all 30 security-deep lessons have no undocumented Japanese boundary review
   }
   assert.deepEqual(outstanding, [], "Human-review boundaries must be corrected or justified: " + outstanding.join("; "));
 });
+
+test("2026-10-09 A: four revised security lessons retain complete chunks and scenarios", async () => {
+  const expected = {
+    "security-threat-modeling": ["架空の住民申請サービスを考えます。", "API側でも権限を確認します。", "試験結果も記録して確認します。"],
+    "security-mitre-attack-scenarios": ["Valid Accountsが分類候補です。", "分類と攻撃確定は別の作業です。", "対象ログが届くか確かめます。"],
+    "security-password-mfa-phishing-resistant": ["OTPも偽サイトへ渡り得ます。", "認証先の名前にも結び付けます。", "回復の成否を模擬試験します。"],
+    "security-firewall-proxy-waf-ids-ips": ["WAFはアプリ修正の代替ではありません。", "API側の認可が必要です。", "迂回経路があれば効果は限定的です。"],
+  };
+  for (const [id, required] of Object.entries(expected)) {
+    const lesson = JSON.parse(await fs.readFile(path.join(root, "lessons/security-deep", id + ".json"), "utf8"));
+    const items = lesson.chunks.map((item) => item.text);
+    for (const phrase of required) assert.ok(items.includes(phrase), id + " lost: " + phrase);
+    assert.ok(items.every((item) => [...item].length <= 24), id + ": overlong chunk");
+    assert.deepEqual(inspectRsvpChunkBoundaries(lesson.chunks), [], id + ": boundary review finding");
+  }
+});
