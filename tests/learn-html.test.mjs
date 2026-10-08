@@ -155,7 +155,7 @@ test("continuous Learn course shows current chapter sources outside the speech t
     "security-email-spf-dkim-dmarc"
   ]) {
     const html = await fs.readFile(new URL("../learn/" + id + ".html", import.meta.url), "utf8");
-    assert.match(html, /<\/article><section class="sources"/, id + ": citations should be available outside the spoken article");
+    assert.match(html, /<\/article>\s*<section class="sources"/, id + ": citations should be available outside the spoken article");
     assert.match(html, /<section class="sources"[\s\S]*?<a href="https:\/\//, id + ": source links absent");
   }
 });
