@@ -90,3 +90,40 @@ test("content validator rejects broken Latin words in new security-deep lessons"
   assert.notEqual(result.status, 0);
   assert.match(result.stderr, /専門用語の分割疑い/);
 });
+
+test("compound particles and dangling predicates are review findings, not universal errors", () => {
+  const compound = inspectRsvpChunkBoundaries(chunks("登録に", "も誤りがあります。"));
+  assert.equal(compound.length, 1);
+  assert.equal(compound[0].code, "POSSIBLE_COMPOUND_PARTICLE_SPLIT");
+  assert.equal(compound[0].severity, "REVIEW");
+
+  for (const [left, right] of [
+    ["OAuthの範囲を", "確認します。"],
+    ["署名とは", "異なります。"],
+    ["緊急更新も", "訓練します。"],
+    ["負荷分散装置で", "終端できます。"],
+  ]) {
+    const result = inspectRsvpChunkBoundaries(chunks(left, right));
+    assert.equal(result.length, 1, left + " / " + right);
+    assert.equal(result[0].severity, "REVIEW");
+  }
+  assert.deepEqual(inspectRsvpChunkBoundaries(chunks("登録します。", "権限も見直します。")), []);
+});
+
+test("all 30 security-deep lessons have no undocumented Japanese boundary review findings", async () => {
+  const index = JSON.parse(await fs.readFile(path.join(root, "lessons/index.json"), "utf8"));
+  const entries = index.lessons.filter((meta) => /^\.\/lessons\/security-deep\//.test(meta.path));
+  assert.equal(entries.length, 30, "scope changed: re-audit before expanding the test");
+  // Accepted exceptions require an ID, boundary location, and documented rationale.
+  const accepted = new Set();
+  const outstanding = [];
+  for (const meta of entries) {
+    const lesson = JSON.parse(await fs.readFile(path.join(root, meta.path), "utf8"));
+    for (const issue of inspectRsvpChunkBoundaries(lesson.chunks)) {
+      if (issue.severity !== "REVIEW") continue;
+      const key = meta.id + "@" + issue.index;
+      if (!accepted.has(key)) outstanding.push(key + ": " + issue.left + " / " + issue.right);
+    }
+  }
+  assert.deepEqual(outstanding, [], "Human-review boundaries must be corrected or justified: " + outstanding.join("; "));
+});
