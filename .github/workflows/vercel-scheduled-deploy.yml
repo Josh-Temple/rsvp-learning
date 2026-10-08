@@ -3,7 +3,7 @@ name: Scheduled Vercel production deploy
 on:
   schedule:
     - cron: "17 */6 * * *"
-  # Updating this workflow on main also provides an intentional immediate-deploy path. Trigger: EIO-Agents Daily Paper Listen 2026-10-08.
+  # Updating this workflow on main also provides an intentional immediate-deploy path. Trigger: AutoSella Daily Paper Listen 2026-10-08.
   push:
     branches: [main]
     paths:
