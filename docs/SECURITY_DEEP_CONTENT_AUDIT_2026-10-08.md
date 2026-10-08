@@ -363,3 +363,51 @@ Course間の役割は、I=守る対象・リスク判断、II=攻撃の観測と
 #### 8.6 後続のproduction API fresh確認（同日・監査保存後）
 
 本節8冒頭の「このCではVercel APIを新規操作していない」は**監査文書初回作成時の状態**。その後同日にVercel連携APIで同一project `prj_7yYGl5D3Q7UwQgQuXaGmOYLkTzbu` のproduction deployment一覧をfresh取得し、最新表示は `dpl_CYHqCXPTCoEqH3r9QDK66XLiy5fN`、`target=production`、`state=READY`、`meta.githubCommitSha=fd003b63b816799dd8f1f1eac0de4fd70db32da9` と確認した。inspector: https://vercel.com/josh-temples-projects/rsvp-learning/CYHqCXPTCoEqH3r9QDK66XLiy5fN 。前Waveの `0a168c…` はその時点の旧配信ソースにすぎない。**ドメインaliasの現割当て、アクセス保護、ページ取得・表示、再生、実音声、Android実機について本Cは確認していない（NOT_VERIFIED）**。D/Eの実利用ゲートを代替しない。
+
+---
+
+## 9. 2026-10-09 Worker C — 新提出A/B head SHAへの独立追補審査
+
+この節は第8節の開始時snapshotより後に提出された **PR #101 / #102 の現物をfresh取得した後続snapshot**。開始時「A/B新head未取得」をこの節で更新する。古いmainのレビューを新headへ流用した判定ではない。
+
+- B [PR #101](https://github.com/Josh-Temple/rsvp-learning/pull/101): head **f8216e0bbb6fce7cd2155a00f28318b65ec989cc** / base **fd003b63b816799dd8f1f1eac0de4fd70db32da9**。4ファイル変更：Learn HTML 2章、quiz補足資料、概念fixture。
+- A [PR #102](https://github.com/Josh-Temple/rsvp-learning/pull/102): head **198df1210b176d880225b59e121c3953268f2b50** / base同上。10ファイル変更：4章Markdown・RSVP JSONの各2件、境界監査資料、chunk単体検査。
+- C [PR #103](https://github.com/Josh-Temple/rsvp-learning/pull/103): 本文書のみ。A/Bの所有ファイルを直接変更していない。
+- 各headに対するGitHub Actions Test：B **run 37856323514 success**、A **run 37856299497 success**。C自身の最終head **5863a2b8bcf3755ebac6e728f22fcd08aa06fb0d** は **run 37856495559 success**。CI成功を内容・音声の合格と混同しない。
+
+### 9.1 A新4章のMD/RSVPをheadの内容で読み直した結果
+
+Aのheadで4章のMarkdownを取得して全文を読み、同じheadの対応JSONのchunksと番号付き本文を再比較した。全4章で**番号・文章・順序が一致**。順に threat-modeling **55/55**、mitre-attack-scenarios **56/56**、password-mfa-phishing-resistant **59/59**、firewall-proxy-waf-ids-ips **56/56**。24文字とSchemaの機械検査はAのCIの範囲でPASS、本Cは独立したローカルnpmを実行していない。
+
+| A Lesson / 出典の限定照合 | 実際にheadで確認した改善 | 継続する問題と再審査条件 | 判定 |
+|---|---|---|---|
+| `security-threat-modeling` — [OWASP Threat Modeling Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Threat_Modeling_Cheat_Sheet.html)、data-flow / trust-boundaryの説明 | 架空申請、境界→他人の申請の閲覧条件→サーバ側認可→拒否試験→ログ・未確認事項が一つのケースへ連結。以前の列挙より実質的に改善 | 本文9「**権限が変わる信頼境界**」は、信頼境界を権限変更だけへ狭めて誤解させ得る。異なる主体・信頼水準・管理領域間でデータが移る境界も示す。ケースが1系統のため別分野での汎化は未測定。BのLearnを新稿へ同期 | **NEEDS_REVISION** / source **partial** |
+| `security-mitre-attack-scenarios` — [MITRE ATT&CK Enterprise](https://attack.mitre.org/matrices/enterprise/)、分類名称の一般参照 | 架空のメール・ログイン・権限変更・SaaS側の観測を連結。Valid Accounts等は「候補」、ログ欠損・代替仮説・誤検知・リスク順位の別評価を明示 | MITREサイトの今回の動的表示では分類ページの**各行本文を再取得できず**、個々の technique 対応を項目単位にsource_verifiedとしていない。観測事象→技法分類と対策の厳密な対応表をさらに点検。BのLearn同期後に再判定 | **NEEDS_REVISION** / source **partial・個別対応not_verified** |
+| `security-password-mfa-phishing-resistant` — [NIST SP 800-63B-4 §3.2.5](https://pages.nist.gov/800-63-4/sp800-63b.html#phishing-resistance)、[Appendix B](https://pages.nist.gov/800-63-4/sp800-63b.html#appB) | OTP/SMSとWebAuthn、verifier name、同期可能パスキー、紛失・回復、AALの適用範囲を条件付きで対比。架空の管理者と回復試験が入った | 本文20「**フィッシング耐性は入力値の転送を防ぐ性質**」はNISTの「偽の検証者への認証秘密/有効な出力の開示を、利用者の注意に依存せず防ぐ」より狭く、手入力の有無との混同に注意。**verifier name binding / channel bindingと偽検証者への転送を防ぐ仕組み**へ言い換える。NISTのAAL2/AAL3とsyncable/non-exportableの条件を主張別に確認しBへ同期 | **NEEDS_REVISION** / source **partial** |
+| `security-firewall-proxy-waf-ids-ips` — [NIST SP 800-41 Rev.1（2009）](https://csrc.nist.gov/pubs/sp/800/41/r1/final)、[SP 800-94（2007）](https://csrc.nist.gov/pubs/sp/800/94/final) | WAF配置済みでも申請APIの認可不備が残る架空ケース。拒否テストとWAF/API双方のログ、暗号化/迂回/誤遮断/障害時の挙動を対比 | NIST2文書が2009/2007年の古い技術ガイドであると注記している点は妥当。最新製品の検査範囲やTLS構成への適用は未照合。バイパス・fail-openなどは製品/構成に依存することを維持し、B Learnへ同期 | **NEEDS_REVISION** / source **partial** |
+
+**新Aの正式受入と公開の判定ではない**。4章の原稿・RSVP同期は確認できた一方、重要な2表現の限定修正提案、出典の個別節検証不足、**Bの新4章Learn HTMLがこの時点で未提出**なので、4章すべて内容PASSへの昇格は保留。Cが扱うのは「A headにある原稿」の独立レビューであり、「将来の修正版」の審査済み判定ではない。
+
+### 9.2 B新headのHTMLと20問ルーブリックの再審査
+
+B headで `learn/security-malware-ransomware.html`、`learn/security-credential-session-attacks.html`、`docs/SECURITY_LEARN_PILOT_2026-10-08.md` の追補、概念fixtureの差分を取得。**既存8章のうち実際にHTML変更したのは2章**、ほか6章は第8節のmain版のまま。
+
+- **ランサムウェア**：HTMLのlead/meta descriptionから「侵害の最終段階」という無条件な読みを除去し、「後半に現れる場合もあるが必ずとは限らない」と限定。**B headの修正部はPASS（該当表現のみ）**。しかし `lessons/security-deep/security-malware-ransomware.json` の `summary` は依然「侵害の最終段階として見る」と書いてあり、**媒体間の導入の矛盾は未修復**。A/EにJSON summaryの調整を依頼。修復前にLesson全体をPASSにしない。
+- **資格情報とPassword Spraying**：B headは漏えい組合せの再利用と「少数の同じ候補を多数IDへ試す」分布を分離。失敗件数だけで攻撃確定とはせず、模擬ログとの突合も維持。**変更箇所の説明はPASS**、Cookie・token失効などサービスごとの条件と全原典照合は引き続きpartial。
+- **20問採点補強**：Bの新補足表の**20/20行**を独立再読。各問2点の二要素、1点の部分点、0点の危険な誤理解、成立し得る別解を明記した点は改善。Risk Q3では変更なしの証明、Session Q3ではRP側の実測、Ransom Q1では封じ込めの比例性、Credential Q2では代替仮説などを評価する。**構造・採点条件の明示は20/20でPASS（監査対象の狭い範囲）**。ただし元の「メール Q1：Fromが正しい」は改題されておらず、RFC5322.FromとSPF/DKIM alignmentを直接問う表現にするP1は残存。採点者の再現性と学習効果はnot_verified。
+- Bの新headで8章すべてのHTMLや原典を**最初から全文再読した**わけではない。変更なし6章は第8節の全文確認結果を維持し、**変更された2章と追補の20問は新headで差分・本文を再読**した。A新4章に対応するLearnはBのこのheadに含まれない。
+
+**Cの追補判定**：Bの2か所のピンポイント修正は部分PASS、20問の採点条件は構造上の改善としてPASS。ただし既存8章は専門的な深度・媒体間整合の総合判定では**引き続き8/8 NEEDS_REVISION**、Aの新4章も**4/4 NEEDS_REVISION**。C自身のPRは監査文書のみを更新し、教材改稿はA/Bへ引き渡す。**A/B PRがさらに更新されたときは、上記head SHAへの確認をそのまま新headの合格証拠に用いない**。
+
+### 9.3 E向け優先引渡し
+
+| 優先度 | 担当 | 実務上の指摘 | Eが受入前に求める証拠 |
+|---|---|---|---|
+| P1 | A + B | `security-password-mfa-phishing-resistant` の本文20がフィッシング耐性を狭く説明 | NIST 800-63B-4 §3.2.5に合わせ原稿/RSVP・Learnを条件付き修正 |
+| P1 | A + B | `security-threat-modeling` 本文9の信頼境界の範囲 | OWASP等と合わせ権限以外の境界の説明を補足 |
+| P1 | B/A | `security-malware-ransomware` のJSON summaryがB修正HTMLと一致しない | summary修正後、HTMLの条件付き表現と対比 |
+| P1 | B | メール Q1は採点基準を補足したが質問文が曖昧 | RFC5322.Fromのdomain alignmentに明示的に限定して改題 |
+| P1 | B→C | A新4章のLearn | Aの**改稿確定SHA**を元にHTMLを再構成し、Cがその新headを別途監査 |
+| P2 | D/E | Android/production/browser/実音声 | 実ブラウザ・実端末の試験記録を取得。現時点はNOT_VERIFIED |
+
+第9節の独立追加レビューで扱ったのは明記したPR headと対象差分まで。20問がクイズUIで出題されている、学習者が理解した、音声で自然に聞けたという主張はしない。
