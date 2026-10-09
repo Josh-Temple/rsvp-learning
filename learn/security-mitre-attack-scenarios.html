@@ -2,83 +2,26 @@
 <html lang="ja">
 <head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta name="description" content="MITRE ATT&CKのtacticとtechniqueを攻撃手順書ではなく共通言語として使い、脅威シナリオ、検知、管理策、リスク評価をつなげます。" /><meta name="theme-color" content="#f2efe8" /><title>MITRE ATT&CKと攻撃シナリオ — Learn</title><link rel="stylesheet" href="./learn.css" /><script src="./learn.js" defer></script></head>
 <body><div class="shell"><header class="top"><a href="../index.html">RSVPに戻る</a><span class="mode">LEARN · 情報セキュリティ</span></header><main>
-<section class="reader" id="speech-reader" aria-label="読み上げプレイヤー"><div class="reader-row"><button id="speech-play" type="button" aria-label="読み上げを開始">▶</button><button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button><button id="speech-stop" type="button" aria-label="停止" disabled>■</button><select id="speech-voice" aria-label="読み上げ音声"></select><label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label></div><div id="speech-status" class="reader-status" role="status">読み上げ準備中</div></section>
-<article id="learn-article"><h1>MITRE ATT&CKと攻撃シナリオ</h1><p class="lead">MITRE ATT&CKのtacticとtechniqueを攻撃手順書ではなく共通言語として使い、脅威シナリオ、検知、管理策、リスク評価をつなげます。</p>
-<h2>tacticとtechniqueを区別する</h2>
-<p>MITRE ATT&CKは、実際に観測されてきた攻撃行動を整理する知識ベースです。tacticは攻撃者が達成しようとする目的、techniqueはその目的を達成するための方法を表します。さらに細かなsub-techniqueもあります。</p>
-<p>ATT&CKは攻撃を一つの固定手順へ押し込むものではありません。全ての攻撃が同じ順番で進むわけでも、全てのtacticが必ず現れるわけでもありません。</p>
-<h2>Enterprise tacticsを地図として使う</h2>
-<p>Enterprise ATT&CKでは、偵察、攻撃用資源の準備、初期アクセス、実行、永続化、権限昇格、隠蔽、防御機能の弱体化、資格情報へのアクセス、環境把握、横展開、情報収集、外部制御、情報持ち出し、影響などの目的で行動を整理しています。</p>
-<p>この分類は攻撃を実行する手順書ではなく、観測した行動や想定シナリオを同じ言葉で説明するための地図として使います。</p>
-<h2>一つの仮想シナリオへつなげる</h2>
-<p>例えば、職員へのフィッシングから資格情報が盗まれ、有効なアカウントとして利用され、環境把握、権限拡大、別サービスへの移動、情報収集、外部への持ち出しへ進むシナリオを考えられます。</p>
-<p>これは代表的な一例であり、実際の攻撃経路は異なります。重要なのは各段階で何を観測でき、どこで止められるかを考えることです。</p>
-<h2>Coverageはログの種類をまたいで見る</h2>
-<p>メール報告、Identityログ、端末ログ、ネットワークログ、クラウド監査ログなど、異なる観測点を行動へ対応付けます。検知ルールの数が多いことより、重要な脅威シナリオを実際に観測できることが重要です。</p>
-<p>予防、検知、封じ込め、復旧の管理策も合わせて、どの段階に穴があるかを確認します。</p>
-<h2>ATT&CKとリスク評価を混同しない</h2>
-<p>ATT&CKに載っているtechniqueの数だけで組織の優先順位は決まりません。守る資産、発生条件、既存対策、影響をCourse Iのリスクアセスメントで評価し、自組織に重要な行動へ重点を置きます。</p>
-<p>脅威情報、実際のインシデント、演習結果からCoverageを更新し、未観測の領域を明示して防御改善へつなげます。</p>
-<h2>要点の再確認</h2>
-<p>ATT&CKは攻撃行動の知識ベースです。</p>
-<p>共通言語として使えます。</p>
-<p>tacticは攻撃者の目的です。</p>
-<p>techniqueは目的を達成する方法です。</p>
-<p>sub-techniqueもあります。</p>
-<p>tacticは固定手順ではありません。</p>
-<p>全攻撃が同じ順序では進みません。</p>
-<p>全tacticが必ず現れるわけでもありません。</p>
-<p>偵察があります。</p>
-<p>攻撃用資源の準備があります。</p>
-<p>初期アクセスがあります。</p>
-<p>実行があります。</p>
-<p>永続化があります。</p>
-<p>権限昇格があります。</p>
-<p>隠蔽があります。</p>
-<p>防御機能の弱体化があります。</p>
-<p>資格情報へのアクセスがあります。</p>
-<p>環境把握があります。</p>
-<p>横展開があります。</p>
-<p>情報収集があります。</p>
-<p>外部制御があります。</p>
-<p>情報持ち出しがあります。</p>
-<p>影響を与える段階があります。</p>
-<p>分類は観測整理に使います。</p>
-<p>攻撃を再現する目的ではありません。</p>
-<p>仮想シナリオで考えます。</p>
-<p>職員へのフィッシングを想定します。</p>
-<p>資格情報が盗まれたとします。</p>
-<p>有効なアカウントとして使われます。</p>
-<p>環境を調べる場合があります。</p>
-<p>高権限を狙う場合があります。</p>
-<p>別サービスへ移る場合があります。</p>
-<p>情報を集めます。</p>
-<p>外部へ持ち出す場合があります。</p>
-<p>最後に影響が出る場合があります。</p>
-<p>ただし別の流れもあります。</p>
-<p>途中で検知できる点を探します。</p>
-<p>メール報告が一つの観測点です。</p>
-<p>Identityログも観測点です。</p>
-<p>端末ログも観測点です。</p>
-<p>ネットワークログも観測点です。</p>
-<p>クラウド監査ログも使います。</p>
-<p>行動ごとにCoverageを見ます。</p>
-<p>検知ルールの数だけで判断しません。</p>
-<p>重要シナリオを覆うか確認します。</p>
-<p>管理策との対応も見ます。</p>
-<p>予防できる点を探します。</p>
-<p>検知できる点を探します。</p>
-<p>封じ込めできる点も探します。</p>
-<p>復旧できる点も考えます。</p>
-<p>ATT&CKだけでリスク順位を決めません。</p>
-<p>資産と影響をCourse Iで評価します。</p>
-<p>業界や環境で重要行動は変わります。</p>
-<p>自組織に関係する行動を選びます。</p>
-<p>脅威情報で更新します。</p>
-<p>インシデントからも更新します。</p>
-<p>演習で検知Coverageを確かめます。</p>
-<p>未観測領域を記録します。</p>
-<p>ATT&CKを防御改善へつなげます。</p>
-<h3>この教材の扱う範囲</h3><p class="endnote">ATT&CKは脅威行動の知識ベースであり、組織固有のリスクを自動的に決めるフレームワークではありません。Course Iのリスク評価と組み合わせて使います。</p></article>
+<section class="reader" id="speech-reader" aria-label="読み上げプレイヤー"><div class="reader-row"><button id="speech-play" type="button" aria-label="読み上げを開始">▶</button><button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button><button id="speech-stop" type="button" aria-label="停止" disabled>■</button><select id="speech-voice" aria-label="読み上げ音声"></select><label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label></div><div id="speech-status" class="reader-status" role="status">読み上げ準備中</div><p><a href="https://attack.mitre.org/techniques/T1078/">MITRE ATT&CK Valid Accounts (T1078)</a></p></section>
+<article id="learn-article">
+<h1>MITRE ATT&CKと攻撃シナリオ</h1>
+<p class="lead">MITRE ATT&CKは、観測した行動を整理し、検知と防御の不足を話し合うための知識ベースです。攻撃の手順を暗記するためではなく、架空のログから何が分かり、何がまだ分からないかを判断するために使います。</p>
+<h2>目的と方法を分ける</h2>
+<p>ATT&CKのtacticは、攻撃者が何を達成しようとするかという目的です。techniqueは、その目的に使う行動の方法で、より細かなsub-techniqueもあります。Enterprise ATT&CKは企業などの環境で観測された行動を整理します。対象が変われば適用する知識ベースや必要な記録も変わります。</p>
+<p>この分類は攻撃を決まった順序で説明するものではありません。すべての事案で同じ段階が現れるわけでもありません。あるtechniqueに似た記録が見つかっても、攻撃者がその方法を使ったと確定することはできません。</p>
+<h2>架空の行動を記録と突き合わせる</h2>
+<p>架空の行政サービスで、職員が不審なメールを報告したとします。この時点では、そのメールにより侵害が成立したかどうかは分かりません。その後に普段と異なるログインが見つかったら、正規アカウントの悪用を示すValid Accounts、識別子T1078が候補になります。ただし成功ログだけで悪用を断定せず、本人の勤務、使用端末、認証時刻などと照らします。</p>
+<p>さらに権限の付与記録や環境を調べる操作があれば、権限変更の理由やDiscoveryとの関係を調査します。別サービスへのアクセスはLateral Movementの候補かもしれません。外部への大量転送はExfiltrationを疑う材料ですが、正規のデータ連携だった可能性も残ります。メール、認証、端末、クラウドの記録を時系列に並べ、各段階について観測事実と推測を区別します。</p>
+<h2>分類した事実と検知できた事実は違う</h2>
+<p>調査後に行動をATT&CKへ対応付けられても、当時の監視が自動で検知していたとは限りません。検知ルールの件数だけでは、重要な行動を観測できる範囲も分かりません。必要なログが収集されているか、検知条件に合う許可された模擬イベントで警告が出るか、通知までどれほど遅れるかを確認します。</p>
+<p>ログが記録されていない時間帯があれば、その区間では何が起きたか判断できません。検出結果に誤検知が含まれる場合もあります。正常な勤務や通信という代替仮説を調べ、判断した人、理由、保留事項、追加調査を記録します。特定のtechniqueがないという結論も、必要な観測がそろってから限定的に述べます。</p>
+<h2>対象環境が変われば対策も変わる</h2>
+<p>重要なのは、分類を実務の改善へつなげることです。対象資産や業務影響が大きい行動について、予防策、観測ログ、検知ルール、封じ込め、復旧を一つずつ確認します。例えば対象が職員端末からSaaSに移れば、必要な監査ログ、設定権限、利用できる検知手段も変わります。以前の端末向けルールが有効だと自動で推測しないことが重要です。</p>
+<p>ATT&CK自体は組織のリスク点数を決めません。実際の優先順位は、資産の重要性、脅威が成立する条件、既存対策、影響、対応可能性と照らして決めます。ここで使うのは架空の観測例であり、実際の侵害を再現する演習ではありません。</p>
+<h2>短い振り返り</h2>
+<p>ATT&CKの分類は、目的と行動を共通の言葉にするために役立ちます。しかし、分類候補を挙げること、攻撃を確定すること、検知が有効だったと示すことは別です。複数のログと代替仮説を照合し、観測できない範囲を残したまま、検証可能な改善につなげます。</p>
+<h3>この教材の扱う範囲</h3>
+<p class="endnote">ATT&CK項目は固定の攻撃順序や自組織の優先順位を保証しません。個別手法の現行定義はMITREの原典と対象環境に照らして確認します。</p>
+</article>
 <section class="sources" aria-labelledby="sources-title"><h2 id="sources-title">出典</h2><p><a href="https://attack.mitre.org/tactics/">MITRE ATT&CK Enterprise Tactics</a></p><p><a href="https://attack.mitre.org/matrices/enterprise/">MITRE ATT&CK Enterprise Matrix</a></p><p><a href="https://www.ipa.go.jp/shiken/syllabus/henkou/2026/20260630.html">IPA 新試験制度のシラバス案について</a></p></section>
 </main></div></body></html>
