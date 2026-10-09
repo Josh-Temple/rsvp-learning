@@ -168,3 +168,22 @@ test("2026-10-09 A: original claims are corrected and Markdown/RSVP stays aligne
   assert.doesNotMatch(await fs.readFile(path.join(root, "lessons/security-deep/security-threat-modeling.md"), "utf8"), /権限が変わる信頼境界を示します/);
   assert.doesNotMatch(await fs.readFile(path.join(root, "lessons/security-deep/security-password-mfa-phishing-resistant.md"), "utf8"), /入力値の転送を防ぐ性質です/);
 });
+
+test("identity proofing distinguishes resolution, evidence validation and applicant verification across MD/RSVP", async () => {
+  const id = "security-identity-proofing-authn-authz";
+  const md = await fs.readFile(path.join(root, "lessons/security-deep", id + ".md"), "utf8");
+  const data = JSON.parse(await fs.readFile(path.join(root, "lessons/security-deep", id + ".json"), "utf8"));
+  const numbered = [...md.matchAll(/^(\d+)\. (.+)$/gm)];
+  assert.equal(numbered.length, data.chunks.length);
+  for (let i = 0; i < numbered.length; i++) {
+    assert.equal(Number(numbered[i][1]), i + 1);
+    assert.equal(numbered[i][2], data.chunks[i].text);
+    assert.ok([...data.chunks[i].text].length <= 24);
+  }
+  for (const phrase of [
+    "主張された身元の実在性を調べます。",
+    "証拠の真正性と属性を確かめます。",
+    "証拠と申請者の結び付きを確かめます。",
+  ]) assert.ok(data.chunks.some(c => c.text === phrase), "missing proofing stage: " + phrase);
+  assert.deepEqual(inspectRsvpChunkBoundaries(data.chunks), []);
+});
