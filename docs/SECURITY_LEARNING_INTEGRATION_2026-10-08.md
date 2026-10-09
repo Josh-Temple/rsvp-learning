@@ -242,7 +242,7 @@ Aの重要表現・4章Learnの限られた取得は、一次資料原典に基�
 | ATT&CK | [MITRE T1078](https://attack.mitre.org/techniques/T1078/): Valid Accountsがtechniqueであることを確認。成功ログは確証ではなく候補、Discovery等のtacticとの区別を維持 | T1078限定PASS。他techniqueと全体系はpartial |
 | Firewall/IDS | [NIST SP 800-41 Rev.1](https://csrc.nist.gov/pubs/sp/800/41/r1/final)（2009）/ [SP 800-94](https://csrc.nist.gov/pubs/sp/800/94/final)（2007）の概要・版を再確認。SP800-94 Rev.1は草案が破棄されfinalではない | 出典の時点整合PASS。旧PDFの個別節と現代装置のTLS・障害挙動はpartial/not_verified |
 | 本人確認 | [NIST SP 800-63A-4 §2](https://pages.nist.gov/800-63-4/sp800-63a/proofing/): resolution, validation, verificationを確認 | 新原稿の個別主張限定PASS。別Workerによる最終審査待ち |
-| OAuth/OIDC | [RFC 10017 §1](https://www.rfc-editor.org/rfc/rfc10017.html) は組織が同一でもクライアントとサーバ役割を区別。[OIDC Core Errata2 §3.1.3.7](https://openid.net/specs/openid-connect-core_1_0-errata2.html) に沿いID tokenのaud/iss等の説明を比較 | 重要区別の限定PASS。RPごとの失効・全実装条件はpartial |
+| OAuth/OIDC | [RFC 10017 §1](https://www.rfc-editor.org/rfc/rfc10017.html) は組織が同一でもクライアントとサーバ役割を区別。[OIDC Core Errata2 §3.1.3.7](https://openid.net/specs/openid-connect-core-1_0-errata2.html) に沿いID tokenのaud/iss等の説明を比較 | 重要区別の限定PASS。RPごとの失効・全実装条件はpartial |
 | Cloud | [AWS責任共有モデル](https://aws.amazon.com/jp/compliance/shared-responsibility-model/) は利用者の責任がAWSのサービスと設定に依存することを明記。MD/JSON/LearnにAWS固有の例として対応付け | 特定AWSの資料照合PASS。他事業者とCISA TRA本文はpartial |
 
 ### 10.2 残ゲート・次の行動（順序固定）
