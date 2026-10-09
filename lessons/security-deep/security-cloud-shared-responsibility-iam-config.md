@@ -68,7 +68,7 @@ Providerが守る範囲と利用組織が設定・運用する範囲を説明し
 
 ## 出典
 
-- [CISA Cloud Security Technical Reference Architecture v2](https://www.cisa.gov/topics/cybersecurity-best-practices/executive-order-improving-nations-cybersecurity)
+- [AWS 責任共有モデル（AWSのサービス固有例）](https://aws.amazon.com/jp/compliance/shared-responsibility-model/)
 - [NIST SP 800-207 Zero Trust Architecture](https://csrc.nist.gov/pubs/sp/800/207/final)
 - [CIS Critical Security Controls v8.1](https://www.cisecurity.org/controls/v8-1)
 - [IPA 新試験制度のシラバス案について](https://www.ipa.go.jp/shiken/syllabus/henkou/2026/20260630.html)

@@ -74,7 +74,7 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "SSOは一度の認証を共有します。",
+      "text": "SSOは複数サービスで再認証を減らします。",
       "duration_multiplier": 1.15
     },
     {
@@ -122,7 +122,7 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "第三者へ限定アクセスを与えます。",
+      "text": "自組織のAPI認可にも使われます。",
       "duration_multiplier": 1.15
     },
     {
