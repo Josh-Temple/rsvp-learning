@@ -182,3 +182,30 @@ test("four new security Learn lectures retain A-head cases, limits, and separate
   assert.ok(mitre.includes('href="https://attack.mitre.org/techniques/T1078/"'), "T1078 primary source missing");
   assert.ok(firewall.includes('href="https://csrc.nist.gov/pubs/sp/800/94/final"'), "IDPS reference missing");
 });
+
+test("critical identity, federation and cloud conditions remain in their Learn lectures", async () => {
+  const cases = {
+    "security-identity-proofing-authn-authz": ["本人確認は証拠と申請者の結び付きも評価", "認証器の制御と身元の再証明は別"],
+    "security-sessions-federation-oauth-oidc-saml": ["アクセス用トークンの受け取り先検証", "RPの既存セッションは構成依存"],
+    "security-cloud-shared-responsibility-iam-config": ["IaaSとSaaSで契約に依存する責任", "証拠のない責任分界は判断保留"]
+  };
+  for (const [id, labels] of Object.entries(cases)) {
+    const html = await fs.readFile(new URL("../learn/" + id + ".html", import.meta.url), "utf8");
+    const start = '<article id="learn-article">';
+    assert.ok(html.includes(start) && html.includes("</article>"), id + ": article missing");
+    const article = html.split(start)[1].split("</article>")[0];
+    const paragraphs = article.split("<p").slice(1).map((fragment) => textOf("<p" + fragment.split("</p>")[0] + "</p>"));
+    const gates = pilotCoverage[id]?.gates ?? [];
+    for (const label of labels) {
+      const gate = gates.find((candidate) => candidate.label === label);
+      assert.ok(gate && gate.within_paragraph, id + ": conditional gate missing: " + label);
+      assert.ok(hasCoverage(textOf(article), gate, paragraphs), id + ": condition absent: " + label);
+    }
+    assert.ok(!article.includes("要点の再確認"), id + ": verbatim recap returned");
+  }
+  const cloud = await fs.readFile(new URL("../learn/security-cloud-shared-responsibility-iam-config.html", import.meta.url), "utf8");
+  assert.ok(cloud.includes('href="https://www.cisa.gov/sites/default/files/2023-02/cloud_security_technical_reference_architecture_2.pdf"'));
+  assert.ok(cloud.includes('href="https://aws.amazon.com/jp/compliance/shared-responsibility-model/"'));
+});
+
+
