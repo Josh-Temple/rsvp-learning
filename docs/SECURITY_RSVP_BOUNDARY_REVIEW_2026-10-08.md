@@ -47,3 +47,51 @@
 - チャンクを統合した箇所は、従来2画面分の表示時間を保つように`duration_multiplier`を合算（最大3.0以内）。2画面のままの本人確認の説明は従来値を保持した。
 - **限界:** 機械検査の合格は、全ての日本語境界・専門用語の正確性、実際の読解速度、Learn HTML・音声・Android Chromeでの自然さを保証しない。実機確認は`NOT_VERIFIED`。変更に伴う専門語の言い換え（特にEmergency rotation）はB/Cに意味の確認を依頼する。AはLearn HTMLを変更していない。
 - 追加テストは修正より前にブランチへ保存。CI / `npm run check`の実行結果およびPRのmergeは、実際に確認できた状態に従い別途判定する。
+
+
+## 2026-10-09 Worker A — 4章の深度改稿・RSVP同期（独立審査待ち）
+
+- 指示: Library `/RSVP Learning/Work Instructions/2026-10-09_security_learning_independent_validation_and_depth_expansion_wave_instructions.md` のAのみ。
+- 開始時GitHub main: `fd003b63b816799dd8f1f1eac0de4fd70db32da9`（2026-10-09 JST、fresh read）。open PRは旧Draft #6と別スコープ #29。GitHub Test [37783095016](https://github.com/Josh-Temple/rsvp-learning/actions/runs/37783095016) は開始時mainでsuccess。Scheduled Vercel deploy [37784613603](https://github.com/Josh-Temple/rsvp-learning/actions/runs/37784613603) はsuccess。これらは今回の変更後のCI結果ではない。
+- 初期候補4章を維持。現行C監査のP1対象であり、前WaveのLearn改稿済み8章とは別。Lesson statusとCatalog、Learn HTML、Course順序、private公開境界は変更しない。
+
+| Lesson | チャンク数（旧→新） | 追加した説明・架空ケース・検証 | 分類 |
+|---|---:|---|---|
+| `security-threat-modeling` | 55→55 | 範囲と信頼境界→架空の申請閲覧認可欠落→APIでの拒否試験・ログ→設計変更で再評価 | A原稿/JSON同期・C主張審査待ち |
+| `security-mitre-attack-scenarios` | 59→56 | tactic/techniqueの違い→架空のメール・認証・権限・転送ログ→反証・観測欠落→防御の検証 | A原稿/JSON同期・C主張審査待ち |
+| `security-password-mfa-phishing-resistant` | 50→59 | OTPと耐フィッシング認証の違い→高権限職員の架空例→認証器の回復・記録・検証→NISTの適用境界 | A原稿/JSON同期・C主張審査待ち |
+| `security-firewall-proxy-waf-ids-ips` | 51→56 | 装置ごとの観測対象→WAFとアプリ認可の境界→架空データでの拒否試験→迂回・誤検知・運用 | A原稿/JSON同期・C主張審査待ち |
+
+### 一次資料と限界（2026-10-09）
+
+- `security-threat-modeling`: OWASP Threat Modeling Cheat Sheet（Overview、System Modeling、Threat Identification、Response and Mitigations、Review and Validation）を2026-10-09に取得。工程とモデル更新を照合。
+- `security-mitre-attack-scenarios`: MITRE ATT&CK Enterprise Matrix（2026-10-09取得、tactics・techniques・対象platform）を照合。継続更新のため個別項目の版固定・完全性はCの審査待ち。
+- `security-password-mfa-phishing-resistant`: NIST SP 800-63B-4（§2/§3.2.5/§4/§5/Appendix B、2026-10-09取得）を照合。適用は特定の米国行政向け枠組みに限定して説明。
+- `security-firewall-proxy-waf-ids-ips`: NIST SP 800-41 Rev.1（2009、公式CSRC公開情報）、NIST SP 800-94（2007、公式CSRC公開情報）、CIS Controls v8.1公開ページを2026-10-09に確認。NISTの本文PDF各節・製品別挙動は未照合。
+
+- 本文で扱う住民申請、行政サービス、職員用システム、WAF付きAPIは**全て教育用の架空ケース**。実システムの侵入や悪用の実演ではない。
+- Aの同一JSONチャンクとMarkdown番号付き本文は一対一に生成した。各24文字以内・末尾を助詞のまま残さないこと・既存出典との同期を生成時に機械点検。検査は意味や学習効果を認定しない。
+- 既知7件の境界を修正した他6章は今回編集しない。前Wave回帰試験を維持する。今回のFirewall旧文にあった `Cloud security group` / `も似た役割があります。` は、助詞単独の文節をなくす表現へ改稿した。英単語途中分割とは別の読みやすさの問題。
+- GitHub Actionsの今回headに対する `npm run check`、手動自然さ、C独立審査、BのLearn HTML同期、Android実機・音声、学習者理解は**このA原稿の作成だけではPASSとしない**。
+- **Bへの引継ぎ**: 上記4章のLearn HTMLは旧本文を対象としている可能性がある。Aの確定PR headを取得し、各架空ケース・否定/例外・検証方法を音声講義へ再構成すること。AはHTMLを変更しない。
+- **Cへの引継ぎ**: 特に①OWASPの工程、②MITRE技法名と行動推定の境界、③WebAuthnの耐フィッシング性と復旧手順、④WAF/アプリ認可の区別を、新headで独立審査すること。NIST SP 800-41/94の未照合PDF本文を確認済み扱いしない。
+
+---
+
+## 2026-10-09 Worker A — 4章品質是正Wave追補（12:38 JST開始）
+
+- 指示書: `/RSVP Learning/Work Instructions/2026-10-09_security_learning_four_lesson_closure_and_real_use_validation_wave_instructions.md`。
+- 実行開始時main: `1bb69060843d8ddb7d7126f094e79a5670e64713`。PR #102はDraft、元head `198df1210b176d880225b59e121c3953268f2b50`、旧base `fd003b63b816799dd8f1f1eac0de4fd70db32da9`。base→main差分は8ファイルでA所有のMD/JSON/テスト/境界資料と非重複。GitHub報告mergeable=true。mainへの直接統合は禁止。
+- 既存章数、chunk数（55/56/59/56）、順序、duration、Catalog、status、Learn HTML、学習履歴、公開境界は保全。
+
+| Lesson | 本文番号 | 旧→新の重要な意味・BへのLearn追従点 | 根拠と限界 |
+| --- | --- | --- | --- |
+| `security-threat-modeling` | 9,10,45 | 「権限が変わる信頼境界」を、主体・管理領域・信頼水準をまたぐ境界へ修正。架空の申請のサーバ側認可は、その一例として分ける | OWASP **Threat Modeling Cheat Sheet / System Modeling**: data flows, trust boundaries, external entities |
+| `security-mitre-attack-scenarios` | 16,17,39 | `T1078 Valid Accounts` は行動分類の候補であり、成功ログだけで攻撃確定せず、正常操作の反証を考える | MITRE **Valid Accounts T1078** Version 3.0、2026-05-12更新の公式個別ページ。他のtechniqueの節はpartial |
+| `security-password-mfa-phishing-resistant` | 19,20,22,23 | 「入力値の転送防止」だけでなく、偽検証者への秘密・有効な出力の開示を利用者の警戒心によらず防ぐ性質と検証者名結合を区別する。OTP・WebAuthn、同期鍵/回復の条件も保持 | NIST **SP 800-63B-4 §3.2.5**、Channel Binding、Verifier Name Binding、Appendix B。AAL3は非輸出鍵が必要。全組織へ法的義務を一般化しない |
+| `security-firewall-proxy-waf-ids-ips` | 19,48,49 | 復号しないTLSの観測限界、装置障害時の通過動作・Fail open判断の構成依存を明確化。架空APIのWAFとサーバ側認可の独立性を維持 | NIST **SP 800-41 Rev.1 (2009)**／**SP 800-94 (2007)** はCSRC公開概要のみ確認、PDF本文各節や最新製品挙動はnot_verified |
+
+- 主張単位の原典照合: OWASP System Modeling、MITRE T1078、NIST SP 800-63B-4 §3.2.5 は公式本文の該当範囲で確認。上記以外は `partial/not_verified` を維持。
+- 編集時に4章の全Markdown番号付き本文とJSON chunkの一致・各24文字以内を機械点検。回帰テストで旧2表現再混入、各重要主張、全件一致を追加し旧テストは削除しない。
+- `npm run check`、新headのGitHub Test結果は実際の実行後に別途確認。自動テストがPASSでも内容の独立審査や実音声・Android・学習者理解のPASSにはならない。
+- **依存:** Bはこの新A headで4章のLearnを同期、CはA/Bの最新headで原典・意味・否定・例外を独立再監査。Eが形式横断の統合PRを判断するまで #102はDraft/HOLD。AはHTML、C独立監査、D QAを変更しない。
