@@ -255,3 +255,42 @@ LessonのMarkdown原稿・RSVP JSON・Catalog ID・status・source URLは本Work
 - クラウドの個別事業者契約、OIDC/SAML全文、IPA/CISA等の個別節、音声の聞きやすさは本Workerによる再照合・実測の対象外。**独立の `source_verified` はCが判定する**。
 
 **依存・受入**: Aが新優先4章のMarkdown/RSVPを確定したPR headを引き渡すまで、その4章のLearn改稿は `HOLD`。Aの確定後に4章のLearnを改稿し、Cが**Bの新head**で主張・20問・4章を再審査する。DによるAndroid Chromeや実音声確認も未取得であり `NOT_VERIFIED`。本WorkerのHTML・問題資料の保存と静的テストだけで専門教育の `PASS` や配信完了を宣言しない。
+
+
+---
+
+## 第4Wave: Worker B — 既存8章のP1精密化と新4章の依存管理（2026-10-09 JST）
+
+**状態: PARTIAL_WITH_GAPS（B担当の部分成果）。** 指示書: Library `2026-10-09_security_learning_four_lesson_closure_and_real_use_validation_wave_instructions.md` §4。作業開始時にprivate repository `Josh-Temple/rsvp-learning` の `main` = `1bb69060843d8ddb7d7126f094e79a5670e64713` をfresh read。Bブランチ `content/security-learn-p1-evidence-20261009-b` は同SHAから作成。着手時のA #102はDraft、head `198df1210b176d880225b59e121c3953268f2b50`、base SHA `fd003b63b816799dd8f1f1eac0de4fd70db32da9`。前C第9節が指摘した信頼境界とフィッシング耐性の重要2表現のA修正headは、B作業開始時に引き渡されていなかった。
+
+### B所有のLearn HTML変更と根拠
+
+| Lesson | 新Learnで修正・追加した意味 | 本main側と残る不一致 / 独立審査 |
+| --- | --- | --- |
+| `security-identity-proofing-authn-authz` | 本人確認の身元の整理・証拠検証・申請者と証拠の結び付き、登録後の認証器の制御との違い、回復と異動後の拒否試験を架空ケースで説明 | Markdown/RSVPの本文8「本人確認は実在性を確かめます」は狭いまま。A/E側でMD/JSONを同期修正する必要がある。NIST SP 800-63A-4のproofing overview／resolution, validation, verification参照 |
+| `security-sessions-federation-oauth-oidc-saml` | SSOは利用者体験であってRPセッション同一性の保証ではないこと、API用アクセストークンとOIDC IDトークンの宛先・検証、IdP停止後のRPごとの失効を架空ケースで区別 | Markdown/RSVP本文11「一度の認証を共有」、本文23「第三者へ限定アクセス」は限定が不足。A/E側でMD/JSONを同期修正する必要がある。OIDC Core 1.0 §3.1.3.7（ID Token Validation）、RFC 9700、NIST 800-63C-4の適用をCが再照合 |
+| `security-cloud-shared-responsibility-iam-config` | SaaS/IaaS/PaaSの契約・機能別に、IAM、OS更新、鍵、ログ、復旧の主体と証拠を確認。確かめられないときは判断を保留する架空ケースへ整理 | 旧出典URLはCISAのTRAへつながる案内ページで、直接PDFではない。Learnでは旧URLのラベルを正確化し、CISA/USDS/FedRAMP Cloud Security TRA v2.0（2022）の直接PDFを追加。ただしMarkdown/JSONの引用名と出典URLの不一致はBの所有外なので継続し、A/Eへ是正依頼 |
+
+根拠URLの今回の確認範囲:
+- NIST SP 800-63A-4（2025）[Identity Proofing Overview](https://pages.nist.gov/800-63-4/sp800-63a/proofing/)：実在性、証拠の有効性と本人への結び付きの説明。個別IALの法的適用は未判定。
+- [OpenID Connect Core 1.0 incorporating errata set 2](https://openid.net/specs/openid-connect-core-1_0.html) §3.1.3.7：`iss` / `aud` 等を含むIDトークン検証。全OAuth/OIDC実装・Logout方式を包括検証したわけではない。
+- [CISA Cloud Security Technical Reference Architecture v2.0 PDF](https://www.cisa.gov/sites/default/files/2023-02/cloud_security_technical_reference_architecture_2.pdf)：文書の直接URL・版と、旧URLが案内ページであることを確認。PDF全節・個別クラウド事業者の契約本文は未精読のため主張別 `source_verified` としない。
+
+### Learn回帰、旧8章と理解確認20問
+
+- `tests/fixtures/security-learn-coverage.json` の上記3章に、主張と条件を**同一段落**に要求する6つのgateを追記。本人確認の結び付き、認証と身元の違い、APIトークンの宛先、IdPとRPの失効境界、責任分界の契約依存、証拠不足時の保留を確認する。
+- `tests/learn-html.test.mjs` に、当該gateが消えていないこと、CISA TRAのPDFへの直接リンクが残ることを検査する回帰を追加。既存回帰は削除しない。
+- 残る旧8章のうち `security-risk-assessment` / `security-email-spf-dkim-dmarc` / `security-social-engineering-bec-phishing` / `security-malware-ransomware` / `security-credential-session-attacks` は、このBブランチでの本文変更なし。特にE #105のランサムウェアJSON summaryとメールDMARC Q1は変更せず、Cの**現mainを対象とした独立再審査**へ渡す。
+- 理解確認20問は前節の採点案を維持し、新しい問題本文・UI・localStorageは変更しない。危険な別解を無条件に許容しないという既存の2/1/0点の基準は保持。ただし20問の学習者実測、採点者間一致、Cの再査読は `NOT_VERIFIED`。
+- 以前の第3Waveの主張（20問の構造レビュー）は履歴として保持。今回のB変更によって理解確認20問全部の意味的妥当性が新たに独立検証されたわけではない。
+
+### 新優先4章の依存と未着手ゲート
+
+`security-threat-modeling` / `security-mitre-attack-scenarios` / `security-password-mfa-phishing-resistant` / `security-firewall-proxy-waf-ids-ips` は、Aが**修正後head SHA・重要表現・MD/JSON同期・根拠・テストを引き渡してから**Learn講義4件を最終化する。本Bの作成中はそのheadが未提供。旧mainのこれら4件に残る機械的逐語再掲を改修済みとして扱わない。4章のLearn最終化・4章各2〜3問・最新版の媒体対照表は**HOLD**。C独立再審査とEの統合PRも別途必要。
+
+### 自動検査・実利用・次の受入条件
+
+- ローカル `npm run check`: **NOT_RUN**（GitHub connector上の編集でローカルcheckoutなし）。PR head CIは実run IDと結論が得られるまで **NOT_VERIFIED** とする。
+- Desktop/390px GUI、Android Chrome、Web Speech API実音声、Chrome標準読み上げ、学習者の実際の理解：**すべてNOT_VERIFIED**。CI成功やVercel READYは代替しない。
+- 保全: 既存入門8章、Course/Catalog/status、共通player、クイズUI、localStorage、private repo / public Instant Radioの境界に変更なし。
+- **次の受入順序**: ①Bのこの3章HTMLと概念gateをCが新headで評価、②A修正headを固定してBの新4章講義・条件変更問題・原典対照表を作成、③CがA/B各最新headを独立再審査、④EがA+Bの内容を半完成のままmainへ出さず統合する。Markdown/JSON側の上記3件の残差はA/Eに委譲する。B単独では内容PASSを宣言しない。
