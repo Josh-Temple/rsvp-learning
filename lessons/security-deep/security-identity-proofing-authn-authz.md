@@ -67,3 +67,10 @@ Created: 2026-10-08
 ## 注意
 
 本人確認の具体的手段や保証レベルは用途とリスクで変わります。NISTの保証レベルを全組織共通の法的義務として扱いません。
+
+## 出典
+
+- [NIST SP 800-63-4 Digital Identity Guidelines](https://csrc.nist.gov/pubs/sp/800/63/4/final)
+- [NIST SP 800-63A-4 Identity Proofing and Enrollment](https://csrc.nist.gov/pubs/sp/800/63/a/4/final)
+- [NIST SP 800-63B-4 Authentication and Authenticator Management](https://csrc.nist.gov/pubs/sp/800/63/b/4/final)
+- [IPA 新試験制度のシラバス案について](https://www.ipa.go.jp/shiken/syllabus/henkou/2026/20260630.html)
