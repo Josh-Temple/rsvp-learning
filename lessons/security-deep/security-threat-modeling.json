@@ -54,11 +54,11 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "権限が変わる信頼境界を示します。",
+      "text": "主体や管理領域をまたぐ境界を示します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "管理用の経路も確認します。",
+      "text": "信頼水準が変わる経路も確かめます。",
       "duration_multiplier": 1.15
     },
     {
@@ -198,7 +198,7 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "境界とデータの流れを再確認します。",
+      "text": "権限以外の境界も再確認します。",
       "duration_multiplier": 1.15
     },
     {

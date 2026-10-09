@@ -24,8 +24,8 @@ ATT&CKの項目数を埋めることを目的にせず、観測した行動を�
 13. これだけでは侵害は未確定です。
 14. 次に異常なログインを想定します。
 15. 正規アカウントの悪用を疑います。
-16. Valid Accountsが分類候補です。
-17. 成功ログだけで断定しません。
+16. 正規IDの悪用はT1078の候補です。
+17. 成功ログだけで手法を確定しません。
 18. 通常の勤務や端末を照合します。
 19. 新しい権限付与も観測します。
 20. 権限変更の記録を確認します。
@@ -47,7 +47,7 @@ ATT&CKの項目数を埋めることを目的にせず、観測した行動を�
 36. 封じ込めの判断条件を整理します。
 37. 失効すべき認証情報を確認します。
 38. 担当者が判断を記録します。
-39. 仮説に反する証拠も探します。
+39. 正常操作などの代替仮説も調べます。
 40. 分類済みなら検知済みとは限りません。
 41. 検知ルール数は網羅率ではありません。
 42. 対象ログが届くか確かめます。
@@ -74,4 +74,5 @@ ATT&CKの項目数を埋めることを目的にせず、観測した行動を�
 
 - [MITRE ATT&CK Enterprise Tactics](https://attack.mitre.org/tactics/)
 - [MITRE ATT&CK Enterprise Matrix](https://attack.mitre.org/matrices/enterprise/)
+- [MITRE ATT&CK Valid Accounts (T1078)](https://attack.mitre.org/techniques/T1078/)
 - [IPA 新試験制度のシラバス案について](https://www.ipa.go.jp/shiken/syllabus/henkou/2026/20260630.html)

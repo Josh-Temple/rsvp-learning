@@ -98,7 +98,7 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "暗号化で内容が見えない場合があります。",
+      "text": "復号しない暗号化通信は中身を検査できません。",
       "duration_multiplier": 1.15
     },
     {
@@ -214,11 +214,11 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "障害時の通過動作を確認します。",
+      "text": "障害時の通過動作は構成次第です。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "Fail openは常に許容できません。",
+      "text": "Fail openの可否は影響で判断します。",
       "duration_multiplier": 1.15
     },
     {
