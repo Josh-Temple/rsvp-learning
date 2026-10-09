@@ -186,3 +186,27 @@ test("critical identity, federation and cloud conditions remain in their Learn l
   assert.ok(cloud.includes('href="https://www.cisa.gov/sites/default/files/2023-02/cloud_security_technical_reference_architecture_2.pdf"'));
   assert.ok(cloud.includes("大統領令関連資料（Cloud Security TRAへの案内ページ）"));
 });
+
+
+test("four new security Learn lectures retain A-head cases, limits, and separate source sections", async () => {
+  const ids = [
+    "security-threat-modeling",
+    "security-mitre-attack-scenarios",
+    "security-password-mfa-phishing-resistant",
+    "security-firewall-proxy-waf-ids-ips"
+  ];
+  for (const id of ids) {
+    const html = await fs.readFile(new URL("../learn/" + id + ".html", import.meta.url), "utf8");
+    const article = html.split('<article id="learn-article">')[1]?.split("</article>")[0];
+    assert.ok(article, id + ": article missing");
+    assert.ok(article.includes("<h2>短い振り返り</h2>"), id + ": contextual recap missing");
+    assert.ok(!article.includes("<h2>要点の再確認</h2>"), id + ": old verbatim list remains");
+    assert.ok(html.indexOf("</article>") < html.indexOf('<section class="sources"'), id + ": sources in speech track");
+    const gates = pilotCoverage[id]?.gates ?? [];
+    assert.ok(gates.length >= 6 && gates.some((gate) => gate.within_paragraph), id + ": conditional coverage absent");
+  }
+  const mitre = await fs.readFile(new URL("../learn/security-mitre-attack-scenarios.html", import.meta.url), "utf8");
+  const firewall = await fs.readFile(new URL("../learn/security-firewall-proxy-waf-ids-ips.html", import.meta.url), "utf8");
+  assert.ok(mitre.includes('href="https://attack.mitre.org/techniques/T1078/"'), "T1078 primary source missing");
+  assert.ok(firewall.includes('href="https://csrc.nist.gov/pubs/sp/800/94/final"'), "IDPS reference missing");
+});
