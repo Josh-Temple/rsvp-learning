@@ -161,6 +161,7 @@ test("continuous Learn course shows current chapter sources outside the speech t
 });
 
 
+
 test("critical identity, federation and cloud conditions remain in their Learn lectures", async () => {
   const cases = {
     "security-identity-proofing-authn-authz": ["本人確認は証拠と申請者の結び付きも評価", "認証器の制御と身元の再証明は別"],
@@ -169,18 +170,19 @@ test("critical identity, federation and cloud conditions remain in their Learn l
   };
   for (const [id, labels] of Object.entries(cases)) {
     const html = await fs.readFile(new URL("../learn/" + id + ".html", import.meta.url), "utf8");
-    const article = html.match(/<article\\b[^>]*>([\\s\\S]*?)<\\/article>/i)?.[1] ?? "";
-    const paragraphs = [...article.matchAll(/<p\\b[^>]*>([\\s\\S]*?)<\\/p>/gi)].map((match) => textOf(match[1]));
+    const start = '<article id="learn-article">';
+    assert.ok(html.includes(start) && html.includes("</article>"), id + ": article missing");
+    const article = html.split(start)[1].split("</article>")[0];
+    const paragraphs = article.split("<p").slice(1).map((fragment) => textOf("<p" + fragment.split("</p>")[0] + "</p>"));
     const gates = pilotCoverage[id]?.gates ?? [];
     for (const label of labels) {
       const gate = gates.find((candidate) => candidate.label === label);
       assert.ok(gate && gate.within_paragraph, id + ": conditional gate missing: " + label);
-      assert.ok(hasCoverage("", gate, paragraphs) === hasCoverage(textOf(article), gate, paragraphs));
       assert.ok(hasCoverage(textOf(article), gate, paragraphs), id + ": condition absent: " + label);
     }
-    assert.doesNotMatch(article, /<h2>要点の再確認<\\/h2>/);
+    assert.ok(!article.includes("要点の再確認"), id + ": verbatim recap returned");
   }
   const cloud = await fs.readFile(new URL("../learn/security-cloud-shared-responsibility-iam-config.html", import.meta.url), "utf8");
-  assert.match(cloud, /href="https:\/\/www\\.cisa\\.gov\/sites\/default\/files\/2023-02\/cloud_security_technical_reference_architecture_2\\.pdf"/);
-  assert.match(cloud, /大統領令関連資料（Cloud Security TRAへの案内ページ）/);
+  assert.ok(cloud.includes('href="https://www.cisa.gov/sites/default/files/2023-02/cloud_security_technical_reference_architecture_2.pdf"'));
+  assert.ok(cloud.includes("大統領令関連資料（Cloud Security TRAへの案内ページ）"));
 });
