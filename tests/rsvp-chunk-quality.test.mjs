@@ -127,3 +127,44 @@ test("all 30 security-deep lessons have no undocumented Japanese boundary review
   }
   assert.deepEqual(outstanding, [], "Human-review boundaries must be corrected or justified: " + outstanding.join("; "));
 });
+
+test("2026-10-09 A: four revised security lessons retain complete chunks and scenarios", async () => {
+  const expected = {
+    "security-threat-modeling": ["架空の住民申請サービスを考えます。", "API側でも権限を確認します。", "試験結果も記録して確認します。"],
+    "security-mitre-attack-scenarios": ["正規IDの悪用はT1078の候補です。", "分類と攻撃確定は別の作業です。", "対象ログが届くか確かめます。"],
+    "security-password-mfa-phishing-resistant": ["OTPも偽サイトへ渡り得ます。", "認証先の名前と暗号的に結び付けます。", "回復の成否を模擬試験します。"],
+    "security-firewall-proxy-waf-ids-ips": ["WAFはアプリ修正の代替ではありません。", "API側の認可が必要です。", "迂回経路があれば効果は限定的です。"],
+  };
+  for (const [id, required] of Object.entries(expected)) {
+    const lesson = JSON.parse(await fs.readFile(path.join(root, "lessons/security-deep", id + ".json"), "utf8"));
+    const items = lesson.chunks.map((item) => item.text);
+    for (const phrase of required) assert.ok(items.includes(phrase), id + " lost: " + phrase);
+    assert.ok(items.every((item) => [...item].length <= 24), id + ": overlong chunk");
+    assert.deepEqual(inspectRsvpChunkBoundaries(lesson.chunks), [], id + ": boundary review finding");
+  }
+});
+
+test("2026-10-09 A: original claims are corrected and Markdown/RSVP stays aligned", async () => {
+  const expected = {
+    "security-threat-modeling": ["主体や管理領域をまたぐ境界を示します。", "信頼水準が変わる経路も確かめます。"],
+    "security-mitre-attack-scenarios": ["正規IDの悪用はT1078の候補です。", "正常操作などの代替仮説も調べます。"],
+    "security-password-mfa-phishing-resistant": ["耐性は利用者の注意に依存しません。", "偽の検証者に秘密や有効な出力を渡しません。", "認証先の名前と暗号的に結び付けます。"],
+    "security-firewall-proxy-waf-ids-ips": ["復号しない暗号化通信は中身を検査できません。", "障害時の通過動作は構成次第です。"]
+  };
+  for (const [id, required] of Object.entries(expected)) {
+    const directory = path.join(root, "lessons/security-deep");
+    const markdown = await fs.readFile(path.join(directory, id + ".md"), "utf8");
+    const data = JSON.parse(await fs.readFile(path.join(directory, id + ".json"), "utf8"));
+    const numbered = [...markdown.matchAll(/^(\d+)\. (.+)$/gm)];
+    assert.equal(numbered.length, data.chunks.length, id + ": count");
+    for (let i = 0; i < numbered.length; i++) {
+      assert.equal(+numbered[i][1], i+1, id + ": numbering");
+      assert.equal(numbered[i][2], data.chunks[i].text, id + ": MD/JSON");
+      assert.ok([...data.chunks[i].text].length <= 24, id + ": length");
+    }
+    for (const phrase of required) assert.ok(data.chunks.some(c => c.text === phrase), id + ": missing " + phrase);
+    assert.deepEqual(inspectRsvpChunkBoundaries(data.chunks), [], id + ": boundary");
+  }
+  assert.doesNotMatch(await fs.readFile(path.join(root, "lessons/security-deep/security-threat-modeling.md"), "utf8"), /権限が変わる信頼境界を示します/);
+  assert.doesNotMatch(await fs.readFile(path.join(root, "lessons/security-deep/security-password-mfa-phishing-resistant.md"), "utf8"), /入力値の転送を防ぐ性質です/);
+});
