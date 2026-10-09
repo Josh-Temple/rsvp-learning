@@ -159,3 +159,68 @@ Vercelのproject設定ではSSO protectionが一部環境に有効。アクセ�
 - **非所有**: AのMarkdown/RSVP、BのLearn HTML、Cの専門内容審査、Eのmerge・デプロイ、Course V実装は本Dで行わない。
 
 **保存運用:** 本snapshotを旧QA報告に追記し、既存の当時の観測/判定を変更しない。対象PRの差分・head SHAと保存本文をreadbackしてEへ引き継ぐ。
+
+
+---
+
+## 7. 2026-10-09 JST — 4章品質是正・媒体横断審査Wave / Worker D 実利用QA後続snapshot
+
+**実施時刻:** 2026/10/9 12:42:34 JST（UTC 2026-10-09T03:42:34.480Z）  
+**対象指示:** Library \`/RSVP Learning/Work Instructions/2026-10-09_security_learning_four_lesson_closure_and_real_use_validation_wave_instructions.md\` §6。  
+**作業開始時main:** \`1bb69060843d8ddb7d7126f094e79a5670e64713\`。本記録はDの独立snapshotであり、以前の第1〜6節の当時の証拠・不具合発見を変更しない。  
+**D総合:** **PARTIAL_WITH_GAPS**。静的配信・一部コード整合の証拠は取得できたが、デスクトップGUI、390px実画面、Android Chrome実機、Web Speech API実音声、Chrome標準読み上げ、画面OFFは**NOT_VERIFIED**。
+
+### 7.1 Fresh read／配信版と公開境界
+
+- GitHub \`Josh-Temple/rsvp-learning\`: private、default main \`1bb69060843d8ddb7d7126f094e79a5670e64713\`。開始時・文書作成前の再取得で同SHA。open PR: #102 Draft（head \`198df1210b176d880225b59e121c3953268f2b50\`、base \`fd003b63b816799dd8f1f1eac0de4fd70db32da9\`）、別件 #29、旧Draft #6。今回Dはいずれにも変更を加えない。**#102のA改稿4章は本番mainに未統合**。B新4章・Cの新版審査を本番PASSとして記録しない。
+- GitHub Actions: \`Test\` [37858048812](https://github.com/Josh-Temple/rsvp-learning/actions/runs/37858048812) = **success** on \`1bb69060843d8ddb7d7126f094e79a5670e64713\`、\`Scheduled Vercel production deploy\` [37858892849](https://github.com/Josh-Temple/rsvp-learning/actions/runs/37858892849) = **success** on同SHA。これは今回のローカル \`npm run check\` 実行を意味しない（**NOT_RUN**）。
+- Vercel project \`rsvp-learning\` / \`prj_7yYGl5D3Q7UwQgQuXaGmOYLkTzbu\`、production deployment \`dpl_DNLnA1qKULfgvJQbLyGXrGvFufFE\`。Vercel API: \`READY\`、\`target=production\`、\`meta.githubCommitSha=1bb69060843d8ddb7d7126f094e79a5670e64713\`。alias APIで \`rsvp-learning-kappa.vercel.app\` が同deployment IDに結び付くことを確認。現時点で配信ソースSHAとmainは一致。
+- Project設定: \`ssoProtection.enabled=true\`、\`deploymentType=all_except_custom_domains\`。この設定と代理HTTP成功のみから、匿名利用者の到達性・認証経路を保証しない。変更していない。
+- 公開境界の正本 \`docs/PUBLIC_LISTENING_BOUNDARY_2026-10-08.md\` を再取得。RSVP教材はprivate、public Chrome読み上げの100スロットは独立した \`Josh-Temple/instant-radio\`、公開は明示的な操作のみ。Pages再有効化、公開設定変更、データ同期なし。
+
+### 7.2 テスト環境と実測マトリクス
+
+**基準URL:** \`https://rsvp-learning-kappa.vercel.app/\`。以下のHTTP応答は**認可済みVercel連携による代理取得**であり、匿名デスクトップChrome/Android ChromeのHTTP観測ではない。端末・画面幅・Chrome版は本番GUI試験に使用できなかったためN/A。
+
+| test_id | 環境・操作／期待 | 実測・証拠 | 判定 |
+| --- | --- | --- | --- |
+| D4-01 | GitHub/API・main/PR/CIをfresh read | main SHA、open #102/#29/#6、Test success、deploy workflow successを取得 | **PASS（APIメタデータ）** |
+| D4-02 | Vercel API・production/alias/source/保護設定 | deployment READY・source SHA一致、alias割当て一致、既存SSO設定を確認 | **PASS（配信設定）** |
+| D4-03 | HTTP代理・トップ \`/\` | **200**。RSVP UI、Learn導線、Course player関連要素の配信本文を取得 | **PASS（静的HTTP）** |
+| D4-04 | HTTP代理・\`/app.js\`、\`/learn/learn.js\`、\`/learn/course-player.js\` | **3/3が200**。それぞれGitHub \`1bb69060843d8ddb7d7126f094e79a5670e64713\` のファイル本文と**全文一致** | **PASS（静的配信とソース一致）** |
+| D4-05 | HTTP代理・\`/courses/index.json\`、\`/lessons/index.json\` | **2/2が200**、JSON parse成功（course catalog全体24コース、lesson catalog全体158件。全体件数と専門4コース30章を混同しない） | **PASS（静的取得・構文）** |
+| D4-06 | HTTP代理・既改稿8章の単章Learn本文/音声操作UI/出典 | **8/8が200**、8/8で \`#learn-article\`、\`#speech-play\`、\`section.sources\` が存在。各HTMLの外部出典リンク数は3/6/4/4/4/4/4/4 | **PASS（8ページ静的構造）** |
+| D4-07 | HTTP代理・\`/learn/security-threat-modeling.html\` | **200**、既存の単章HTML・出典要素を取得。ただし未統合のA #102に対応する新B講義とは認定しない | **PASS（配信）／新版の対応NOT_VERIFIED** |
+| D4-08 | GitHub＋本番の連続再生ロジック | \`parseArticle()\` が \`section.sources\` を取得、\`loadChapter()\` が \`#learn-course-sources\` のHTMLを置換し、空ならhiddenにする。章末 \`finishChapter()\`、最終章 \`state=idle\`、前後章 \`moveChapter()\`、戻る・速度・音声変更用イベントを確認。本番JSはmainと一致 | **PASS（静的な実装経路）／操作はNOT_VERIFIED** |
+| D4-09 | GitHub＋本番のRSVP単章制御 | \`app.js\` にチャンク進行、再生/一時停止、速度、章・出典描画の処理を確認。本番コードとmain一致 | **PASS（静的な実装経路）／クリックはNOT_VERIFIED** |
+| D4-10 | ローカルChromiumで本番画面を操作（desktop/390px） | Chromiumバイナリ存在。しかしこの実行環境では本番ドメインのDNS解決に失敗し、画面描画・スクリーンショット・タップ/クリック試験に到達できなかった。汎用Webアクセスでも対象URLは利用不可 | **NOT_VERIFIED** |
+| D4-11 | Android Chrome実機、画面幅・横はみ出し・タップ | Android端末へ接続していない。機種/OS/Chrome版、表示幅、実タップは未取得 | **NOT_VERIFIED** |
+| D4-12 | Android Chrome Web Speech API（単章/コース通し・停止/速度/音声） | 音声エンジン、発話イベント、聞きやすさを聴取・記録していない。JSが存在するだけではPASSにしない | **NOT_VERIFIED** |
+| D4-13 | Chrome標準「このページを読み上げ」、画面OFF/バックグラウンド | 実Chromeメニュー、画面OFF中の継続音声等を試していない。ページ内Web Speech APIと別軸 | **NOT_VERIFIED** |
+| D4-14 | Course I/III/IVの章末自動遷移、出典更新、最終停止、戻る | JavaScriptに必要な制御経路が存在する。**実ブラウザでの操作・章遷移・出典リンククリックは未観測** | **NOT_VERIFIED（実操作）** |
+| D4-15 | 公開境界 | private GitHubと正本方針を照合。Pages/Instant Radio自動同期の追加操作なし。匿名到達性の実測・Pages管理設定は未確認 | **PASS（設定変更なし・方針照合）／匿名アクセスNOT_VERIFIED** |
+
+8件のLearn URLは順に \`security-risk-assessment\`（3）、\`security-sessions-federation-oauth-oidc-saml\`（6）、\`security-cloud-shared-responsibility-iam-config\`（4）、\`security-email-spf-dkim-dmarc\`（4）、\`security-social-engineering-bec-phishing\`（4）、\`security-malware-ransomware\`（4）、\`security-credential-session-attacks\`（4）、\`security-identity-proofing-authn-authz\`（4）で、すべて \`learn/<lesson-id>.html\`。リンク数は根拠の版・節・主張との一致を保証しない。
+
+### 7.3 静的レビュー上の注意と再試験条件
+
+- 旧P1「連続再生で出典が消える」は #99修正後の実装が本番で配信されることを今回再確認。**旧FAILを消さず、実操作での出典切替PASSにも昇格しない**。
+- コース読み上げ速度は \`rateInput\` の値を**発話を新規作成したとき**に適用する構造。読み上げ中の現在発話への即時反映はこの観測だけでは確認できない。実機で途中変更した際の挙動を測ること。
+- 現在の本番は #102 の新原稿や未完成の新B Learnを配信済みとは言えない。A/B/C依存がEにより統合され、新productionが作成された場合は、**新source SHA・aliasのfresh readから再試験**が必要。
+- 新たなP0/P1ブラウザ不具合の確証は今回の静的取得範囲にはない。これは実ブラウザ、音声、操作に不具合がないという保証ではない。教材の原典・否定・条件の独立審査はCの責任範囲。
+
+### 7.4 Android実機提供者への最小操作手順
+
+1. Android Chromeで上記本番URLを開き、**JST時刻・端末機種・Android/Chromeバージョン・画面幅・アクセス可否**を記録。ログイン情報や認証トークンは記録・共有しない。横スクロールや操作ボタンの重なりも確認。
+2. RSVP \`security-risk-assessment\` を選び、再生→一時停止→前/次チャンク→速度変更→停止→出典。期待と実測を操作別に書く。
+3. 同章の単章Learnで ▶ / 一時停止 / 停止、速度/声の切替を試し、声が実際に聞こえたか・自然かを記録。Chrome標準「このページを読み上げ」は**別試験**にする。
+4. Learn Course I \`security-foundations-risk\`、Course III \`security-identity-crypto\`、Course IV \`security-network-cloud\` の代表初章・中間・最終章で、通し再生→自動遷移→章別出典の入替→前後章→最終章停止→一覧戻りを確認。
+5. 画面OFFとバックグラウンドの音声は試した場合のみ結果を記載。不具合は \`test_id / time JST / deployed SHA / URL / environment / device / browser version / operation / expected / observed / evidence / verdict\` で報告。録音、Cookie、学習履歴、個人情報、シークレットはGitHubへアップロードしない。
+
+### 7.5 Eへの引継ぎ
+
+- **D = PARTIAL_WITH_GAPS**。配信API・HTTP静的整合は限定PASS。実GUI/390px/Android Chrome/Web Speech API実音声/Chrome標準読み上げ/画面OFF・章末遷移はNOT_VERIFIED。
+- **P1 / E**: 新A/B実装のC独立審査・CI合格・SHA固定統合の後、本番sourceとaliasを再取得。Dの旧ソースの静的PASSを新ソースのPASSとして流用しない。
+- **P1 / D+実機提供者**: 7.4の端末試験で実測を埋める。特に出典切替と、読み上げ速度変更・連続再生最終停止を観測。実機なしならNOT_VERIFIED維持。
+- **P0 / E**: Private RSVPとpublic Instant Radioの境界を維持。DはHTML/Markdown/JSON、localStorage、Pages、Vercel設定、他Worker成果物に変更を加えない。
+- 本記録のGitHub PRは**Eが差分・CI・依存と競合を確認してから統合判定**する。静的PASSやPR提出だけでWave完了、ユーザー理解のPASSを宣言しない。
