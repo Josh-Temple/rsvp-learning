@@ -686,3 +686,51 @@ PR #111 headの以下7章について、それぞれMarkdown全番号本文・RS
 C受入後はEが新しいmain/head/CI/diffをfresh readし、重複を避けて**#117単一PRのみ**統合、main Test後に明示SHAでVercel productionを配信。配信SHA/alias・HTTP・Android/音声は別々に検証。既存Course V V-1/V-2はHOLD。20問rubricは文書審査のみ、利用者の採点・理解度はNOT_VERIFIED。private RSVP/public Instant Radio境界、Catalog/status、localStorage/既存学習履歴は変更しない。
 
 **Overall:** `PARTIAL_WITH_GAPS`。分離・静的品質・preview PASS、独立C最終受入と実利用/学習者有効性は未達。
+
+
+---
+
+## 14. 2026-10-10 Worker C — PR #117 の独立再査読と受入ゲート
+
+**監査の独立性と射程:** 本チャットは3章の原稿やLearnを編集しておらず、既存A/B/Eの審査結論に依存せず、PR #117の現headからMD/JSON/Learn全文を新規取得し、公開一次資料の本文と照合した。別担当としての査読記録であり、人的独立性の第三者認証ではない。この監査記録をmainへmergeしても、教材の受入・配信完了とはみなさない。
+
+### 14.1 Fresh readと機械検査
+
+- 再取得日: 2026-10-10 JST。開始main: d028fe12658423aa4408058048e2d6545ad78893。対象[Draft PR #117](https://github.com/Josh-Temple/rsvp-learning/pull/117) はopen/unmerged、head: 2699e1171ed35ccc2c2e583271c8fba62e1e92d1、元base: 07045f861e7e4dbc7e2adf03b03ef997b77939e3。取得時のGitHub mergeable=trueだが、統合時は再取得を要する。
+- PR #117の変更は12ファイル（対象3章×MD/JSON/Learn、2テスト、1 fixture）。既公開4章・Catalog・status・入門8章・localStorage・公開境界は変更しない。
+- 今回、3章のMD/JSON/Learn現物とPR差分12ファイルを再取得。MD番号付き本文とJSON chunksの一致: 本人確認54/54、Federation50/50、Cloud52/52、合計156/156。最大24文字、24文字超過0。Learnの重要限定、反例、架空ケース、article外の出典節をテキストで確認。実音声の専門語発音と聞きやすさはNOT_VERIFIED。
+- headと一致する[GitHub Test #37957514039](https://github.com/Josh-Temple/rsvp-learning/actions/runs/37957514039) = success（取得）。C自身のローカル npm run check はNOT_RUN。production/preview HTTP、desktop GUI、390px、Android Chrome、Web Speech API、Chrome標準読み上げ、Course連続再生と理解度はCではNOT_VERIFIED。
+
+### 14.2 主張別の根拠対照表
+
+| 対象 / 今回読んだ主張 | 公式資料の版・節と確認範囲 | source判定 | 独立C判断 |
+| --- | --- | --- | --- |
+| III-1 MD 8–11・Learnのresolution / validation / verification | [NIST SP 800-63A-4 Final, July 2025](https://csrc.nist.gov/pubs/sp/800/63/a/4/final)、[Identity Proofing Overview: Core Attributes / Identity Resolution / Identity Evidence and Attribute Validation / Identity Verification](https://pages.nist.gov/800-63-4/sp800-63a/proofing/)。resolutionは対象集団内で固有の身元を区別するために必要な最小限の証拠・属性を集める作業、validationは証拠の真正性等、verificationは証拠と申請者の結び付きを確認する作業 | partial | **P1-IP-01:** MD 9「主張された身元の実在性を調べます」とLearn冒頭「名乗った身元が実在するか」はresolutionを実在性の確認だけで説明する印象を与え、対象集団内で他と区別する条件が伝わらない。Learnの後段「身元を識別できるよう情報を整理」も一意性の説明が弱い。要是正 |
+| III-1 偽書類・他人の本物書類、認証/認可/回復、異動後の拒否 | 同 NIST SP 800-63A-4 Identity Evidence Validation / Verification。認証器・回復手順の詳細およびIAL別義務までは未照合 | partial | 偽物と他人の本物の証拠を別失敗とする、後に強い認証器を登録しても初回誤登録は直らない、異動後の拒否試験と付与記録を照合する、というLearnの説明は妥当。プライバシーとIALの網羅性は未認定 |
+| III-3 OAuthは第三者委任に限定されず、access token所持は本人認証の根拠でない | [RFC 10017, August 2026, §1 Introduction](https://www.rfc-editor.org/rfc/rfc10017.html) はクライアント/認可サーバ/資源サーバが同一運営者でも独立役割と明記。同一ドメイン構成ではOAuthを利用しない選択もある。[RFC 9700, January 2025, §§2.1,2.2](https://www.rfc-editor.org/rfc/rfc9700.html) でリダイレクト・PKCE・token安全性を確認 | source_verified（限定命題） | MD23の修正は正しい。Learnの前半は外部アプリ例だが後半に自組織API利用を明記。access tokenとログイン状態の証拠を区別。P0/P1なし |
+| III-3 OIDC ID tokenのissuer / audience / expiry / nonceとAPI用token、IdP停止とRPセッション | [OIDC Core 1.0 incorporating errata set 2, §§2, 3.1.3.7, 3.1.3.8](https://openid.net/specs/openid-connect-core-1_0-errata2.html)：iss一致、audにclient ID、期限、nonce送信時の一致確認等。特定RPの失効の仕組みは未実測 | source_verified（ID token用途と検証） / partial（API token形式と各RP失効） | LearnはID tokenをAPIアクセス用と混同せず、各RPの独立した既存セッションが即時に失効しない場合と観測証拠を説明。P0/P1なし |
+| III-3 SAML Assertion・署名・相手先・metadata | [OASIS SAML V2.0 Technical Overview, Committee Draft 02, 25 March 2008, §§2–3](https://docs.oasis-open.org/security/saml/Post2.0/sstc-saml-tech-overview-2.0.html) の概説とmetadata説明。規範的Core/Profiles全文は未照合 | partial | 概念説明は妥当。ただし非規範のTechnical OverviewをSAML全実装要件の根拠にしない |
+| IV-7 利用サービスで責任が異なることとIAM・OS・公開設定・実復旧 | [AWS Shared Responsibility Model, Overview / Security of the Cloud / Security in the Cloud](https://aws.amazon.com/jp/compliance/shared-responsibility-model/) の公式本文。EC2ゲストOS、Security Group等の利用者責任、サービス選択での分担変更を確認 | source_verified（AWS） / partial（他社や個別SaaS契約） | MD/JSON/LearnはAWS固有の資料へ更新済み。Learnは契約・サービス仕様による差を明示し、SaaSに関して「場合がある」と限定。IAM権限・公開範囲・IaCドリフト・ログ・バックアップと実復旧を区別。P0/P1なし |
+| IV-7 CISA TRA v2、NIST SP800-207、CIS Controls | Learnの出典節には[CISA/USDS/FedRAMP TRA v2 PDF](https://www.cisa.gov/sites/default/files/2023-02/cloud_security_technical_reference_architecture_2.pdf)等のリンクがあるが、このC監査では該当本文節を再照合していない | not_verified（各文献からの未照合の個別主張） | 他社の契約責任や具体的制御を未確認資料で断定しない。参考資料としての掲載は今回のP1遮断ではない |
+
+**重要な限界:** 確認した範囲でP0の逆意味を確認していないことは、未読の原典や全30章に重大誤りが存在しないという保証ではない。
+
+### 14.3 章別判定・是正・統合条件
+
+| Lesson | #117の重点改稿の判定 | 残P0/P1 | 必須対応 |
+| --- | --- | --- | --- |
+| security-identity-proofing-authn-authz | **NEEDS_REVISION** | P1-IP-01 1件 | AがMD9とJSONを24文字内で修正し、身元を対象集団内で区別するresolutionをvalidation/verificationと混同せず説明する。BはLearn冒頭と「本人確認の三つの作業」で同じ意味を保持する。新headをCが再受入 |
+| security-sessions-federation-oauth-oidc-saml | **PASS（重点改稿の射程に限定）** | 観察範囲0件 | OIDC/SAMLの全プロファイルやRP実装ごとの実失効はpartial / NOT_VERIFIED。仕様の全範囲の実装保証には転用しない |
+| security-cloud-shared-responsibility-iam-config | **PASS（AWSと契約依存の重点改稿に限定）** | 観察範囲0件 | 各社サービス契約、CISA TRA個別節、実際の設定・復旧試験はpartial/not_verified。AWS例を一般義務に拡張しない |
+
+**PR #117はHOLD**: P1-IP-01の未是正時点でEは3章をmainへ統合・本番配信しない。A/Bは指摘点に限定して改稿し、Cは必ず新しいhead SHAの3形式・否定・一次資料・Actions Testを再査読する。記録PRを先にmergeしても#117の受入ではない。mainとbaseのdrift・mergeability・変更12ファイルの安全性はEが統合直前に再取得する。
+
+### 14.4 20問・30章・Course Vの境界
+
+- 最新mainの docs/SECURITY_LEARN_PILOT_2026-10-08.md を再取得し、最初の12問（4領域×各3）と拡張8問（4領域×各2）の**合計20問の問い**、20行の採点補助表（2点要素／条件付き1点別解／重大な逆意味は0点）を読んで照合した。**20/20 quiz_reviewed（文書構造のみ）**。新4章追加8問の提案と混同しない。
+- 特に連携Q1（access token=ログイン証明）、連携Q3（IdP停止で全RP即失効）、クラウドQ1（SaaSは利用者責任ゼロ）、本人確認Q1（認証強化だけで初回誤登録修復）、本人確認Q2（ボタン非表示でAPI認可成立）を0点となる危険な逆意味として維持。メールQ1はSPF/DKIM認証成功とFrom alignmentを分けた新版を確認。
+- 受講者回答・採点者間一致・Web Speech/Chrome標準読み上げでの理解・採点UIの動作は**NOT_VERIFIED**。文章審査を採点機能や学習効果の実測に読み替えない。
+- 今回の新しい全文監査は**3章のみ**。残り27章と本番公開済み重点4章の新たな全文C査読は本節では行っていない。過去の全30章の専門深度「NEEDS_REVISION」は継続的な深度ゲートとして扱い、#117の**重点差分PASS**と区別する。
+- Course V-1 security-secure-by-design-default / V-2 security-input-output-injection = **HOLD**。Cは両章を実装・受入していない。private RSVP / public instant-radio、既存入門8章、Catalog/status、学習履歴・localStorageは未変更。
+
+**最終引渡し:** このCの総合は **PARTIAL_WITH_GAPS**。今回の独立主張監査と20問の文書再点検は実施、#117はP1-IP-01のためHOLD、修正後は新headで再査読。実機・実音声・学習者の理解はNOT_VERIFIED。
