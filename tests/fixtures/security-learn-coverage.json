@@ -98,6 +98,25 @@
             "失効",
             "ログアウト"
           ]
+        },
+        {
+          "label": "アクセス用トークンの受け取り先検証",
+          "terms": [
+            "アクセストークン",
+            "API",
+            "トークン"
+          ],
+          "within_paragraph": true
+        },
+        {
+          "label": "RPの既存セッションは構成依存",
+          "terms": [
+            "IdP",
+            "RP",
+            "失効",
+            "実装"
+          ],
+          "within_paragraph": true
         }
       ]
     },
@@ -152,6 +171,24 @@
           "terms": [
             "復旧"
           ]
+        },
+        {
+          "label": "IaaSとSaaSで契約に依存する責任",
+          "terms": [
+            "IaaS",
+            "SaaS",
+            "契約"
+          ],
+          "within_paragraph": true
+        },
+        {
+          "label": "証拠のない責任分界は判断保留",
+          "terms": [
+            "責任分界",
+            "契約",
+            "判断を保留"
+          ],
+          "within_paragraph": true
         }
       ]
     },
@@ -457,6 +494,24 @@
           "terms": [
             "NIST SP 800-63-4",
             "法定義務"
+          ],
+          "within_paragraph": true
+        },
+        {
+          "label": "本人確認は証拠と申請者の結び付きも評価",
+          "terms": [
+            "証拠の真正性",
+            "申請者本人",
+            "結び付き"
+          ],
+          "within_paragraph": true
+        },
+        {
+          "label": "認証器の制御と身元の再証明は別",
+          "terms": [
+            "認証器",
+            "画面の前",
+            "証明ではありません"
           ],
           "within_paragraph": true
         }
