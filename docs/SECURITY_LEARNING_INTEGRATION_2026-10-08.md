@@ -174,3 +174,50 @@ Overall result: **PARTIAL_WITH_GAPS**（統合と自動検査は完了。教材�
 - **P2 E**: 合格範囲に限り30章残件表を更新。V-1/V-2は上記内容・動作ゲートがそろうまでHOLDを維持。既存入門8章、status、カタログ、個人localStorage、公開境界を保全。
 
 **E最終判定: PARTIAL_WITH_GAPS。** CI success、内容部分PASS、静的HTTP PASS、deployment READYはそれぞれ根拠範囲を限定し、実機・学習効果への外挿をしない。
+
+
+---
+
+## 9. 第4Wave E統合・4章閉鎖ゲート・実利用検証判定（2026-10-09 JST、後続snapshot）
+
+対象: Library `/RSVP Learning/Work Instructions/2026-10-09_security_learning_four_lesson_closure_and_real_use_validation_wave_instructions.md` §7。第8節以前は各当時の歴史的記録として保持する。今回の総合判定は **PARTIAL_WITH_GAPS**（2026-10-09 JST）。「4章完成」「音声での実利用PASS」「30章専門品質PASS」ではない。
+
+### 9.1 E開始時の正本・PR head・安全な統合
+
+- E開始時GitHub `Josh-Temple/rsvp-learning` (private)、main full SHA = `1bb69060843d8ddb7d7126f094e79a5670e64713`。open対象をfresh取得して確認。既統合 #101/#103/#104/#105/#106 を再mergeしていない。旧Draft #6 / 別案件 #29 も対象外。
+- A [#102](https://github.com/Josh-Temple/rsvp-learning/pull/102): Draft/HOLD。最新head `1d7aaf0aa16733cd49b46ff503437d38efadffd4`、PR表示base `fd003b63b816799dd8f1f1eac0de4fd70db32da9`（E開始時mainと異なる）。[Test 37880535899](https://github.com/Josh-Temple/rsvp-learning/actions/runs/37880535899) = success。4章MD/JSONを修正、重要2表現は現headから直接取得（threat-modeling本文9「主体や管理領域をまたぐ境界」／phishing-resistant本文20「偽の検証者に秘密や有効な出力を渡しません」・22「認証先の名前と暗号的に結び付けます」）。RSVP 24字や内容の完全な意味保証をEが独立再監査したわけではない。
+- B [#107](https://github.com/Josh-Temple/rsvp-learning/pull/107): Draft/HOLD。head `f21672b940af4f00a4bc352d7b884ed999096a7a`、base `1bb69060843d8ddb7d7126f094e79a5670e64713`、[Test 37880900728](https://github.com/Josh-Temple/rsvp-learning/actions/runs/37880900728) = success。A修正head `1d7aaf0...` を明示した新4章LearnのHTML 4件、既存3章のP1表現、fixture/テスト、8件の条件変更問題案を提出。4件のHTMLとA現headの該当MD/JSONをEが取得し、存在と重要2表現・出典節の構造を限定確認。**CによるB現headの独立意味審査は未実施**。
+- C [#109](https://github.com/Josh-Temple/rsvp-learning/pull/109): head `15b03ea3469cb8fb964ab7308d91bda5eb4ca1b4`、[Test 37880543079](https://github.com/Josh-Temple/rsvp-learning/actions/runs/37880543079) = success。**C第10節はA旧head `198df1210b176d880225b59e121c3953268f2b50` の監査**であり、A修正head `1d7aaf0...` とB現head `f21672b...` の審査ではない。#105後mainのランサムsummary・メールQ1の局所PASS、旧A headの4章MD/JSON同期、既存20問の採点構造20/20 reviewed、30章の継続判定という明示的な範囲だけを受理。変更は既存監査文書への149行の追記のみ、削除0行。Eはheadを固定してsquash merge → main `328a76e5bc0b559e7082e0f07c27bab9498a4f95`。[main Test 37918446422](https://github.com/Josh-Temple/rsvp-learning/actions/runs/37918446422) = success。
+- D [#108](https://github.com/Josh-Temple/rsvp-learning/pull/108): head `6766cc186eeefc6b46c51274d946db8714608da1`、[Test 37880520305](https://github.com/Josh-Temple/rsvp-learning/actions/runs/37880520305) = success。既存QA文書へ65行のみ追記、削除0行。文書限定と保全を確認後、Draftからレビュー可能へ変更してhead固定squash merge → main `ea0f20a9fd4618cd8e4b49c0e66914e2e314ca09`。[main Test 37918542679](https://github.com/Josh-Temple/rsvp-learning/actions/runs/37918542679) = success。
+- **教材4章は一体統合用PRをまだ作成しない**。原因はC監査がA/B現headに追い付いていないこと。A単独またはB単独をmainへmergeするとMD/JSON/HTMLの改稿版が混在するため、両PRともDraft/HOLD。上記mainの進行は監査・QA記録のみであり、教材の新4章はmain/本番未反映。
+- 今回Eのローカル `npm run check` は **NOT_RUN**。各head/mainのGitHub Test run URLと判定を別途記録した。テストsuccessから実際の学習効果・自然な音声・一次資料全件確認は推定しない。
+
+### 9.2 媒体横断・専門品質の分離ゲート
+
+| 対象 | 今回受け入れた証拠 | 判定・次の必須条件 |
+|---|---|---|
+| A新優先4章 | 旧Cの指摘2件に対し現A headのMD本文9/20/22が変更されたこと、現head CI成功、MD/JSON 4組の提出 | 修正実装 **あり**。Cによる `1d7aaf0...` の最新head主張・原典/版/節・条件・MD/JSON再審査が**未完了**。内容 **NEEDS_REVISION/HOLD** |
+| B新優先4章Learn | 新HTML4件と出典節、fixture、A版固定の対照表、現B head CI成功 | **実装あり・横断内容PASS未認定**。Cによる `f21672b...` の新Learn全文とA現headとの意味・否定・例外・出典照合が必須 |
+| 既改稿8章のP1 | Bは本人確認/SSO・OAuth・クラウドのLearn表現を補足。Cは旧mainの原稿と第105号修正、20問の採点構造を局所審査 | 現mainのMD/JSON: `security-identity-proofing-authn-authz` 本文8、`security-sessions-federation-oauth-oidc-saml` 本文11/23、`security-cloud-shared-responsibility-iam-config` のCISA参照先のずれが残る。3形式の修復、原典対照、C再審査が必要。**8/8 NEEDS_REVISION** |
+| クイズ20問 / 新提案8問 | 20/20はCの採点構造reviewed。Bの4章追加8問は提案 | 学習者回答0・採点者間一致0。問題の形式審査と実学習 **NOT_VERIFIED** を区別。新8問は未正式実装 |
+| 30章深度 | C第10.6節: 既存main8章の局所再確認、旧A Draft4章のレビュー、残18章の前回判定継続 | 30章すべての新規全文監査と誤称しない。形式上 `COMPLETE v0.1` でも専門内容 **30/30 NEEDS_REVISION** を維持 |
+
+Aの重要表現・4章Learnの限られた取得は、一次資料原典に基づく全主張の `source_verified` でも、実音声による聴取PASSでもない。MITRE tactic/technique区別、NIST SP 800-63B-4 §3.2.5、OWASP trust boundary、旧NIST SP 800-41 Rev.1/800-94の現代機器への適用には、Cの版・節単位再判定が必要。現時点で新しい実証済P0逆意味の追加確定なし。ただし重大誤りが存在しないとの保証ではない。
+
+### 9.3 本番・利用者環境・公開境界
+
+- E確認のVercel production: `rsvp-learning`、deployment `dpl_DNLnA1qKULfgvJQbLyGXrGvFufFE`、**READY / target=production**、source `1bb69060843d8ddb7d7126f094e79a5670e64713`。alias一覧で `rsvp-learning-kappa.vercel.app` の同deploymentへの割当てを確認。Eのmain `328a76e...` / `ea0f20a...` は文書のみの変更であり、教材・コードを含む新productionは作成していない。
+- D第7節の許可済みHTTP代理: JS 3/3本文一致、Catalog 2/2構文、既改稿Learn 8/8構造、トップ等は限定PASS。**現状本番はA/B新4章を配信していない**。改稿が将来配信された際には新SHAで再取得する。
+- GUI desktop / 390px、Android Chrome実機、Web Speech APIの**実音声**、Chrome標準「このページを読み上げ」、画面OFF、Course I/III/IVの章移動・出典更新・最終停止の**実操作**、利用者の理解獲得は**すべてNOT_VERIFIED**。Vercel READY、HTTP 200、JSロジックの存在を実操作PASSにしない。
+- private `rsvp-learning`、学習履歴/localStorage、Catalog/status、既存入門8章、公開境界 `docs/PUBLIC_LISTENING_BOUNDARY_2026-10-08.md` を維持。Chrome標準読み上げ用public 100スロットは別repo `instant-radio`。Pages再有効化・自動公開同期・認証設定変更なし。
+
+### 9.4 Course Vと次Waveに引き継ぐブロッカー（受入条件）
+
+- **V-1 `security-secure-by-design-default` = HOLD、V-2 `security-input-output-injection` = HOLD**。mainのCourse/Catalogに両IDは未登録、既存準備文書は制作案。A/Bの最新head独立審査、必要な実利用観測、両新LessonのMD/JSON/Learn/出典節/架空ケース/条件変更問題/CI/統合検査の全ゲートがそろうまで `IMPLEMENTED` にしない。Course V〜VIII計画30章も未実装。
+- **P1 / C**: A #102 `1d7aaf0...` の重要修正とB #107 `f21672b...` の4章Learnを実headで独立審査し、主張ごと `source_verified/partial/not_verified`、LessonごとのP0/P1・否定・条件・実例を記録。C #109の旧head結論の機械的使い回しは禁止。
+- **P1 / Aまたは原稿担当＋B＋C**: 既存8章のうち本人確認本文8・SSO/OAuth本文11/23・Cloud出典根拠をMD/JSON/HTMLで修正し、Cの最新版再審査を受ける。20問の構造と新8提案の根拠も条件付きで更新。
+- **P1 / E**: C審査が新A/Bの具体的headに対して合格し、P0が解消した後のみ、最新mainをbaseに**A+Bを1統合PR**として作成（HTMLだけ/原稿だけの一時露出は禁止）。差分・24字・出典・否定・旧入門/学習履歴保全を検査、head Test success後SHA固定merge→新main Test再確認。必要なコード/教材配信変更が成立した場合に限り、CI済みSHAをVercel productionへ配信してREADY/source/aliasをreadback。
+- **P1 / D＋Android実機提供者**: 本番SHA付き操作表で単章RSVP、Learn、Course I/III/IVの自動章移動・出典切替・最後の停止、Web Speech APIとChrome標準読み上げを**別試験**。端末情報・時刻・期待/実測と再現記録を取得し、未観測はNOT_VERIFIED。
+- **P2 / C・教材担当**: 上記P1解消後、残18章を含む30章深度の未改稿部分を前提・反例・判断・観測証拠に基づき優先改稿。Course Vは独立ゲート合格後に再審査。
+
+**E最終判定: `PARTIAL_WITH_GAPS`。** 今回安全にmainへ取り込んだのは#109監査記録と#108実利用QA記録のみ。内容完成や新4章本番配信の主張はしない。この第9節のE文書は別PRで審査・CI・readbackし、文書コミットによるmain進行と本番教材ソースSHAを区別して最終確認する。
