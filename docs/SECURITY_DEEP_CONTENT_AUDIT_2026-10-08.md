@@ -411,3 +411,152 @@ B headで `learn/security-malware-ransomware.html`、`learn/security-credential-
 | P2 | D/E | Android/production/browser/実音声 | 実ブラウザ・実端末の試験記録を取得。現時点はNOT_VERIFIED |
 
 第9節の独立追加レビューで扱ったのは明記したPR headと対象差分まで。20問がクイズUIで出題されている、学習者が理解した、音声で自然に聞けたという主張はしない。
+
+
+---
+
+## 10. 2026-10-09 Worker C — 第4Wave・#105後mainとA Draft現行headの独立再審査
+
+この節は以前の第8・9節を改変せず追加した新たなsnapshotである。**担当Cの成果は監査記録のみ**であり、AのMarkdown/RSVP、BのLearn、学習履歴、Catalog、private/public設定、productionを編集・認定しない。
+
+### 10.1 対象版・新規取得・判定境界
+
+- 着手時および書込み前fresh GitHub比較: `1bb69060843d8ddb7d7126f094e79a5670e64713` = 最新 `main`（比較 `identical`、ahead/behind 0/0）。確認日: **2026-10-09 JST**。#105（summaryとメールQ1修正）・#106の統合後mainである。
+- 新優先4章A: [PR #102](https://github.com/Josh-Temple/rsvp-learning/pull/102)、**Draft/open/unmerged**、head `198df1210b176d880225b59e121c3953268f2b50`、PR参照base `fd003b63b816799dd8f1f1eac0de4fd70db32da9`。本Cはこの**実在するhead**を読み直した。旧baseを現在のmainと混同しない。
+- B: `#101`は前Waveの**既存8章**の修正で統合済み。**A改稿4章に追従する新Learn 4本の提出head/PRを現時点で確認できない**ため、Bの新4章を再審査したことにはできない。今回の新4章のMD/JSON/HTML一体合格は `HOLD`。
+- open PRに #102（当件Draft）、#6（旧教材Draft）、#29（別案件PoC）。#6/#29は本監査の編集対象外。Eは並行Workerによる新PR・head変化を統合直前に改めてfresh確認する。
+- A headのGitHub [Test run 37856299497](https://github.com/Josh-Temple/rsvp-learning/actions/runs/37856299497) は `success`（PR headへのCI）。Cによるチェックは**GitHubコネクタ経由の独立ファイル取得・構造照合**。ローカル `npm run check` = `NOT_RUN`。同CIは本C文書PRのCIでも、意味の正しさ・音声の品質でもない。
+- 審査単位は「#105後mainの修正箇所」「#102 headの4章MD/RSVP」「mainの既存8章のP1」「20問の採点条件」「30章の状態」。**30章の全形式全文を今回再読したわけではない**。実ブラウザ・Android Chrome・Web Speech API・Chrome標準読み上げ・学習効果は各 `NOT_VERIFIED`（D/利用者の別ゲート）。
+
+### 10.2 #105後mainの先行独立再審査
+
+| 対象（main） | 新規取得した現物と整合確認 | 独立判定 |
+| --- | --- | --- |
+| `security-malware-ransomware` / `lessons/security-deep/security-malware-ransomware.json` の `summary` | 「暗号化や恐喝は侵害が進んでから現れる場合がありますが、必ずそうとは限りません」。現行 `learn/security-malware-ransomware.html` 導入も同じ限定。Markdown本文19「暗号化発覚は後半の場合があります」。**「常に侵害の最終段階」へ一般化していない** | **該当P1是正部分 PASS**。Lesson全体の専門的深度 `NEEDS_REVISION`、CISA資料との細部 `partial` |
+| `docs/SECURITY_LEARN_PILOT_2026-10-08.md` のメールQ1 | 設問が「SPFとDKIMの認証が成功しただけで、**RFC5322.Fromのドメイン**とのDMARCアライメントが成立したと判断できるか」と限定。模範解答は「判断できない。**少なくともSPFまたはDKIMの片方の認証PASSとFrom整合**を要する」。RFC 9989 `4.4/`5（認証IDとAlignment、評価）を区別 | **設問の意味修正 PASS**。メールLesson全体の出典照合 `partial`、学習者未検証 |
+
+両局所修正にP0逆意味は再発していないと判断する。ただし他の内容すべてに重大誤りがないという保証ではない。
+
+### 10.3 A現head（4章）の独立取得、Markdown/RSVP同期と内容判定
+
+Cは `#102` headの各 `lessons/security-deep/<id>.md` と `.json` を**改めて直接取得**し、番号付き本文と `chunks[].text` の全順序・文字列を照合した。GitHubコネクタ上のコードによるテキスト照合結果:
+
+| Lesson ID | 番号付き本文 = JSON chunks | 最大文字数 | duration値検査（>0, ≤3） | 内容 / 出典 |
+| --- | ---: | ---: | --- | --- |
+| `security-threat-modeling` | **55 = 55**、不一致0 | 20 | 全件範囲内 | **NEEDS_REVISION / partial** |
+| `security-mitre-attack-scenarios` | **56 = 56**、不一致0 | 24 | 全件範囲内 | **NEEDS_REVISION / partial（個別技法は追加検証）** |
+| `security-password-mfa-phishing-resistant` | **59 = 59**、不一致0 | 20 | 全件範囲内 | **NEEDS_REVISION / partial** |
+| `security-firewall-proxy-waf-ids-ips` | **56 = 56**、不一致0 | 23 | 全件範囲内 | **NEEDS_REVISION / partial（旧技術ガイドの範囲限定）** |
+
+本表のPASS相当は**チャンク構造と文字列同期の限定結果**。JSON Schemaのフル実行・音声での区切りの自然さ・全原典の全文対応は未実施。MDとJSONが同じ誤説明を持つこともあるため、**同期一致は内容PASSではない**。
+
+| ID / 本文番号 | 観測事実と教材としての改善 | 主張根拠・版・限界 | 是正条件・独立判定 |
+| --- | --- | --- | --- |
+| `security-threat-modeling` 9（P1） | 現文「**権限が変わる信頼境界を示します。**」。一方、同章21〜45には架空の申請閲覧・認可欠落・API拒否試験・観測ログ・再評価までの因果がある | [OWASP Threat Modeling Cheat Sheet, System Modeling / DFD](https://cheatsheetseries.owasp.org/cheatsheets/Threat_Modeling_Cheat_Sheet.html) は外部主体・データフロー・データ格納域・process・trust boundaryを含むモデルを求め、信頼境界を「権限が変わる場所」だけに限定しない | 主体・管理領域・信頼水準・データ流通を含む説明にMD/JSONを修正、Learnでも認可境界との違いを説明。**NEEDS_REVISION / source partial** |
+| `security-mitre-attack-scenarios` 16, 22, 24, 26（P1深度） | `Valid Accounts` を「候補」としログイン成功だけでは断定しない点は妥当。`Discovery`、`Lateral Movement`、`Exfiltration`を候補・可能性として扱い、代替仮説とログ欠落を区別 | [MITRE ATT&CK T1078 Valid Accounts](https://attack.mitre.org/techniques/T1078/) は**technique**。`Discovery` / `Lateral Movement` / `Exfiltration` は**tacticの分類**。この三者を個別techniqueと同じ扱いにしない。動的Enterprise全技法の逐条照合・版固定は本Cでは未実施 | 模擬観測→tacticとtechniqueの別々の分類→反証と検知・防御を対応表に記録。候補は確証と区別。**NEEDS_REVISION / source partial（個別技法全体not_verified）** |
+| `security-password-mfa-phishing-resistant` 20〜24（P1） | 現文20「**入力値の転送を防ぐ性質です。**」。21〜24に公開鍵・認証先の名前に結び付ける説明、25〜54に同期型・回復/AALの適用境界があり、構成は改善 | [NIST SP 800-63B-4 `3.2.5](https://pages.nist.gov/800-63-4/sp800-63b.html#phishing-resistance) は、偽検証者への認証秘密・**有効な認証出力**の開示を、利用者の注意に依存せず防ぐ性質とし、**channel binding** と **verifier name binding** を区別。OTPの手入力値は対象Sessionへ結び付かず耐フィッシングとしない。`2/Appendix BでAALおよび同期可能認証器の条件を区別 | 20を認証プロトコルの仕組み（偽検証者への有効な結果の中継を防ぐ）へ訂正。22〜24と自然に接続し、同期型/端末固定型・回復・保証水準をLearnへ正確に同期。**NEEDS_REVISION / source partial** |
+| `security-firewall-proxy-waf-ids-ips` 13〜20, 22〜49（P1保留） | WAF稼働中でもAPIの申請別認可不備が残る**架空ケース**と、拒否テスト/ログ/迂回/誤遮断/障害時の挙動を区別。WAFは認可の代替でない点は妥当 | [NIST SP 800-41 Rev.1（2009）](https://csrc.nist.gov/pubs/sp/800/41/r1/final) / [SP 800-94（2007）](https://csrc.nist.gov/pubs/sp/800/94/final)。**旧世代の技術ガイド**。今回両本文PDFの個別節、製品固有のTLS復号やfail-open設定までは照合せず | 配置・製品・TLS終端条件をケースに固定、アプリ側認可と通信監視を分けLearnへ反映。旧版から現代の機器への無条件一般化不可。**NEEDS_REVISION / source partial** |
+
+**P0判定（今回の確認対象のみ）**: 誤認可を推奨する／OTPを全面的に耐フィッシングと断定する、といった**実証された明示的逆意味P0は現headの確認文には未検出**。しかし上記`9/`20のP1は修正必須であり、#102をDraft/HOLD維持。Aに再改稿headの提出を求め、Cは**改稿したheadを再度**審査する。**この同一headの再読を「Aが是正完了」と誤表記しない**。
+
+### 10.4 B新4章は審査不可。既存8章の重要残件
+
+- **Bの新4章Learn（threat-modeling、mitre-attack-scenarios、password-mfa-phishing-resistant、firewall-proxy-waf-ids-ips）**: Aの修正版を基にする新しいHTML headが現時点で提示されていない。**MD/JSON/HTML横断審査 = NOT_VERIFIED、4/4 HOLD**。既存main HTMLや過去の#101を新講義と見なさない。
+- `security-identity-proofing-authn-authz`: main Markdown本文8「**本人確認は実在性を確かめます。**」。[NIST SP 800-63A-4 `Introduction / `2 / `3](https://pages.nist.gov/800-63-4/sp800-63a.html) はEvidence収集・検証・**申請者と名乗る本人の結び付き**を区別。登録、回復、認証、認可の各段階の例と共にMD/JSON・Learnを揃えるまでは **NEEDS_REVISION / partial**。
+- `security-sessions-federation-oauth-oidc-saml`: main Markdown本文11「**SSOは一度の認証を共有します。**」および23「**第三者へ限定アクセスを与えます。**」はSSOの利用者体験／各RP SessionとOAuthのユースケースを狭く読ませ得る。Learnは認証/認可、Access/ID Token、iss/aud/exp、ログアウト非連動の区別があるが[OIDC Core `3.1.3.7](https://openid.net/specs/openid-connect-core-1_0.html#IDTokenValidation)等の条件をMD/JSONとケースで補うまでは **NEEDS_REVISION / partial**。
+- `security-cloud-shared-responsibility-iam-config`: main Markdown本文3/7/8と注意書きはサービス・契約依存を維持。だが「CISA Cloud Security Technical Reference Architecture v2」と表記する出典リンクは**広域CISA案内URL**で、主張の文書・節に直達しない。実際のCISA TRA v2文書・節とサービスの契約/SaaS-PaaS-IaaS/IAM・鍵・ログ・復旧責任を対応させるまで **NEEDS_REVISION / partial**。**当該文書の本文を今回取得し全節照合したわけではない**。
+- `security-risk-assessment`、`security-email-spf-dkim-dmarc`、`security-social-engineering-bec-phishing`、`security-malware-ransomware`、`security-credential-session-attacks`も既存の総合品質ゲート **NEEDS_REVISION**。#105のランサム局所修正/メールQ1局所修正のみPASS、本文全行の原典照合・学習効果の合格へ拡張しない。
+- 各8章の元MDとRSVPの文字列同期は前回`8/`9の限定検査を**継承**する。今回改めて8章全てのJSON・HTMLを一斉全文再取得して照合したとの主張はしない。特に本人確認・連携・クラウドの新P1は未修正の**現行main表現**を新規取得して確認した。
+
+### 10.5 20問の採点条件 — 独立ルーブリック再監査
+
+問題出典: `docs/SECURITY_LEARN_PILOT_2026-10-08.md`。既存12問（4領域×各3問）と拡張8問（4領域×各2問）を区別し、**補助採点表20行の2点必要要素・1点別解条件・0点の重大誤解をそれぞれ点検**。基本配点は条件を2要素満たせば2点、一方が正しく逆意味が支配しなければ1点、重大誤解が判断を支配する場合は0点。**別解には表に書かれた観測・実証条件が必要**で、危険な即断を許容しない。
+
+| 問題 | 具体的に監査した成立条件 | 0点とすべき誤解 | 判定 |
+| --- | --- | --- | --- |
+| リスク Q1 | 同点でも影響・対象期間・代替策で優先度を条件付き比較 | 同点＝同優先は0点 | quiz_reviewed（採点構造を確認） / user_learning_not_verified |
+| リスク Q2 | MFAの導入台帳と適用範囲・有効性の実証を分離 | 台帳登録＝リスク低減を確証は0点 | quiz_reviewed（採点構造を確認） / user_learning_not_verified |
+| リスク Q3 | 委託先追加の差分・信頼境界・再評価を証拠で示す | 事故なし＝見直し不要は0点 | quiz_reviewed（採点構造を確認） / user_learning_not_verified |
+| 連携 Q1 | OAuth Access Tokenの資源アクセスと利用者認証を区別 | トークン所有＝本人認証は0点 | quiz_reviewed（採点構造を確認） / user_learning_not_verified |
+| 連携 Q2 | SSOは利用体験・Federationは信頼域間の連携 | 両者完全同義は0点 | quiz_reviewed（採点構造を確認） / user_learning_not_verified |
+| 連携 Q3 | IdP停止とRPの残存Session/Token失効を別々に証明 | IdP無効化で全RP即失効は0点 | quiz_reviewed（採点構造を確認） / user_learning_not_verified |
+| クラウド Q1 | SaaSのIAM/共有設定と契約・委託上の責任を区別 | 提供者が全責任は0点 | quiz_reviewed（採点構造を確認） / user_learning_not_verified |
+| クラウド Q2 | 暗号化と復号後の共有・アクセス権限を区別 | 暗号化済み＝公開も安全は0点 | quiz_reviewed（採点構造を確認） / user_learning_not_verified |
+| クラウド Q3 | 承認済みIaCと実環境ドリフトを証拠で突合 | IaC承認だけで環境一致は0点 | quiz_reviewed（採点構造を確認） / user_learning_not_verified |
+| メール Q1 | RFC5322.FromとSPF/DKIM認証識別子のalignmentが別条件 | 両方式の認証PASSだけでDMARC成立は0点 | quiz_reviewed（採点構造を確認） / user_learning_not_verified |
+| メール Q2 | 強制Policy前の正規送信経路、転送、誤配送を検討 | p=rejectなら絶対誤配送なしは0点 | quiz_reviewed（採点構造を確認） / user_learning_not_verified |
+| メール Q3 | メール認証と送金依頼の業務上承認を分離 | DMARC PASSだけで変更承認は0点 | quiz_reviewed（採点構造を確認） / user_learning_not_verified |
+| BEC Q1 | 保留・既知の独立経路・承認記録を確認 | メール内容が自然なら即実行は0点 | quiz_reviewed（採点構造を確認） / user_learning_not_verified |
+| BEC Q2 | クリック率だけでなく被害防止の運用・手順を検証 | クリック率低下＝全対策完成は0点 | quiz_reviewed（採点構造を確認） / user_learning_not_verified |
+| ランサム Q1 | 誤検知の代替仮説と状況に応じた封じ込め・保全 | 暗号化待ち/単一警告で確定は0点 | quiz_reviewed（採点構造を確認） / user_learning_not_verified |
+| ランサム Q2 | 復元試験、整合、復旧時間と侵害原因の除去を検証 | バックアップ成功ログ＝復旧保証は0点 | quiz_reviewed（採点構造を確認） / user_learning_not_verified |
+| 資格情報 Q1 | 残るSession/TokenとMFA/回復経路・端末を調査 | パスワード再変更だけで必ず解決は0点 | quiz_reviewed（採点構造を確認） / user_learning_not_verified |
+| 資格情報 Q2 | 少数PW×多数IDの仮説と業務誤設定など反証 | 分布だけで攻撃断定は0点 | quiz_reviewed（採点構造を確認） / user_learning_not_verified |
+| 本人確認 Q1 | 登録時の本人確認証拠と回復の両経路を照合 | 認証強化だけで登録時の誤認を解消は0点 | quiz_reviewed（採点構造を確認） / user_learning_not_verified |
+| 本人確認 Q2 | 異動後の権限更新とAPI/サーバ側拒否テストを確認 | ボタン非表示で認可成立は0点 | quiz_reviewed（採点構造を確認） / user_learning_not_verified |
+
+**20/20 = quiz_reviewed（問題と補助採点条件の構造審査）**。**0件**の実受講者回答・採点者間一致・音声理解。したがって問題UIの採点動作、正答率、実際の理解獲得、採点再現性は**すべてNOT_VERIFIED**。#105後メールQ1の改題は意味上改善しているが、全20問が専門的学習の実測PASSに昇格したわけではない。
+
+### 10.6 30章トラッキング（今回の新再審査 vs 過去判定の継続）
+
+30章のうち、main既存8章は今回のP1・#105関連部分を限定再確認、優先4章は**mainではなくA Draft headの現物**を個別再審査。**残り18章は前回`8.4の判定・受入条件をそのまま継続**、今回は新たに全ファイルを再読していない。以下の「NEEDS_REVISION」は専門品質判定であり、`COMPLETE v0.1`という形式状態とは独立。
+
+| Course | Lesson ID | 今回の判定範囲・結果 | 次に必要な受入証拠 |
+| --- | --- | --- | --- |
+| I | security-purpose-principles | main: 前回継続 NEEDS_REVISION（今回未再読） | CIA等の衝突ケースと判断根拠 |
+| I | security-assets-dependencies | main: 前回継続 NEEDS_REVISION（今回未再読） | 資産依存・信頼境界の模擬フロー |
+| I | security-threats-vulnerabilities | main: 前回継続 NEEDS_REVISION（今回未再読） | 同弱点でも露出条件で優先度が変化 |
+| I | security-risk-assessment | main: 今回限定再確認 NEEDS_REVISION | 評価基準・架空の全工程をMD/JSONに同期 |
+| I | security-risk-treatment | main: 前回継続 NEEDS_REVISION（今回未再読） | 費用・承認者・残存リスクの比較 |
+| I | security-threat-modeling | main: 継続 NEEDS_REVISION / Draft A: 今回再審査 NEEDS_REVISION | 脅威→対策→証拠を1フローで再現 |
+| I | security-defense-in-depth | main: 前回継続 NEEDS_REVISION（今回未再読） | 共通原因故障と有効性テスト |
+| II | security-adversaries-initial-access | main: 前回継続 NEEDS_REVISION（今回未再読） | 入口ごとの観測と反証 |
+| II | security-social-engineering-bec-phishing | main: 今回限定再確認 NEEDS_REVISION | BEC業務承認の分岐と採点 |
+| II | security-malware-ransomware | main: 今回限定再確認 NEEDS_REVISION | 侵害段階の限定表現・復旧条件 |
+| II | security-credential-session-attacks | main: 今回限定再確認 NEEDS_REVISION | Session失効を実証するケース |
+| II | security-post-compromise-movement | main: 前回継続 NEEDS_REVISION（今回未再読） | 模擬ログで権限と横展開を比較 |
+| II | security-c2-exfiltration-stealth | main: 前回継続 NEEDS_REVISION（今回未再読） | 正常通信との対比・偽陽性 |
+| II | security-mitre-attack-scenarios | main: 継続 NEEDS_REVISION / Draft A: 今回再審査 NEEDS_REVISION | 手法・観測点・防御を連結 |
+| III | security-identity-proofing-authn-authz | main: 今回限定再確認 NEEDS_REVISION | 本人確認の定義精密化と権限拒否試験 |
+| III | security-password-mfa-phishing-resistant | main: 継続 NEEDS_REVISION / Draft A: 今回再審査 NEEDS_REVISION | OTP/Passkey/回復・失敗条件 |
+| III | security-sessions-federation-oauth-oidc-saml | main: 今回限定再確認 NEEDS_REVISION | Audience、Session、SSOの境界をケース化 |
+| III | security-rbac-abac-privileged-access | main: 前回継続 NEEDS_REVISION（今回未再読） | 異動・ABAC遅延・非常権限 |
+| III | security-symmetric-public-key-hash-mac | main: 前回継続 NEEDS_REVISION（今回未再読） | Hash/MAC/署名の保証の対比 |
+| III | security-signatures-pki-certificates | main: 前回継続 NEEDS_REVISION（今回未再読） | 期限・検証・鍵流出の区別 |
+| III | security-key-secret-credential-lifecycle | main: 前回継続 NEEDS_REVISION（今回未再読） | 流出後の失効・依存先・順序 |
+| III | security-data-classification-encryption-retention | main: 前回継続 NEEDS_REVISION（今回未再読） | 廃棄・バックアップ・保存義務 |
+| IV | security-communication-path-boundaries | main: 前回継続 NEEDS_REVISION（今回未再読） | TLS終端/経路の信頼境界 |
+| IV | security-dns-tls-https | main: 前回継続 NEEDS_REVISION（今回未再読） | 名前検証と終端後区間 |
+| IV | security-firewall-proxy-waf-ids-ips | main: 継続 NEEDS_REVISION / Draft A: 今回再審査 NEEDS_REVISION | WAFを通る権限外操作の拒否証拠 |
+| IV | security-segmentation-vpn-zero-trust | main: 前回継続 NEEDS_REVISION（今回未再読） | VPN侵害後の権限・端末状態 |
+| IV | security-email-spf-dkim-dmarc | main: 今回限定再確認 NEEDS_REVISION | 3ドメインの検証・ヘッダ模擬例 |
+| IV | security-endpoint-hardening-edr-mdm | main: 前回継続 NEEDS_REVISION（今回未再読） | 管理外端末の証拠と限界 |
+| IV | security-cloud-shared-responsibility-iam-config | main: 今回限定再確認 NEEDS_REVISION | サービス個別契約/設定/検証表 |
+| IV | security-container-serverless-saas-iot | main: 前回継続 NEEDS_REVISION（今回未再読） | 4方式の責任分界・検知・更新 |
+
+次の深度拡充候補は `security-assets-dependencies`（主体・信頼境界が複数の模擬フロー）、`security-risk-treatment`（残存リスクと承認・代替比較）、`security-post-compromise-movement`（ログと権限を結ぶ別仮説）、`security-dns-tls-https`（名前の検証とTLS終端後の経路）で、いずれも**今回修正・合格したものではない**。優先4章と既存8章のP1を先に閉じる。
+
+### 10.7 Cの引渡し・最終判定・次の独立受入条件
+
+| 軸 | 今回の結論 | 次の合格証拠・担当 |
+| --- | --- | --- |
+| #105後mainのランサム`summary`とメールQ1局所修正 | **該当箇所PASS** | B/E: 他の媒体での意味保持を継続、実受講者評価は別 |
+| 4章MD/RSVPチャンク同期 | **限定PASS（55/56/59/56、最大24文字以内）** | A: 重要2表現を修正し新head提示、GitHub Test。Cは新SHAを独立再審査 |
+| 4章の専門内容 | **4/4 NEEDS_REVISION / source partial** | A: OWASP/NIST版・節の条件是正、MITRE個別技法、FW/IDS旧文献・構成限界 |
+| 新4章Learnとの横断審査 | **NOT_VERIFIED / HOLD** | B: 修正Aの正確なheadから4HTML作成、主張対照表・差分・CIをCへ |
+| 既存8章の専門品質 | **8/8 NEEDS_REVISION（新たな局所修正のみPASS）** | B/A: 本人確認本文8、SSO本文11/23、Cloud直接出典、深度・採点の残件を修復 |
+| 20問の補助採点表 | **20/20 quiz_reviewed（構造限定）** | B/C/D: 実受講者、採点者間一致・別解の成否、音声での理解の実測 |
+| GitHub Test / ローカル `npm run check` | A head **success** / Cローカル **NOT_RUN** | E: 統合用PRのGitHub Testと固定head・main readback |
+| 静的HTTP / GUI / Android / 実音声 / 学習効果 | **今回Cではいずれも NOT_VERIFIED** | D/利用者: 配信SHAと端末・操作・観測証拠を明示 |
+
+**Cの総合 = PARTIAL_WITH_GAPS**。**現在の #102 を完成としてmergeしない**。本CはA/Bの内容修正を代行せず、監査の新snapshotをPRとしてEに渡す。Eは新しいA/Bの**実際のhead**とC再審査・D実利用結果をそろえてから統合/配信判断する。今回はprivate RSVP/public Instant Radioの境界、旧8章、Catalog、学習履歴、Course Vを変更していない。
+
+監査の一次資料（今回本文の該当節を照合した範囲）:
+- [OWASP Threat Modeling Cheat Sheet, System Modeling / Data Flow Diagrams](https://cheatsheetseries.owasp.org/cheatsheets/Threat_Modeling_Cheat_Sheet.html)
+- [NIST SP 800-63B-4 `3.2.5 Phishing Resistance / `2 / Appendix B](https://pages.nist.gov/800-63-4/sp800-63b.html#phishing-resistance)
+- [NIST SP 800-63A-4 Identity Proofing / Identity Verification](https://pages.nist.gov/800-63-4/sp800-63a.html)
+- [IETF RFC 9989, DMARC](https://www.rfc-editor.org/rfc/rfc9989.html)
+- [MITRE ATT&CK T1078 Valid Accounts](https://attack.mitre.org/techniques/T1078/)
+- [OpenID Connect Core 1.0 `3.1.3.7](https://openid.net/specs/openid-connect-core-1_0.html#IDTokenValidation)
+
+確認の限界: これらの根拠は明記した個別主張に限り `source_verified` 相当。各Lessonの出典全リスト、個別technique全項目、旧NIST製品マニュアル、クラウド契約の根拠は `partial` または `not_verified`。機械的同一文字列の保証やCI合格を主張の真実性へ読み替えない。
