@@ -610,3 +610,41 @@ PR #111 headの以下7章について、それぞれMarkdown全番号本文・RS
 - Course V-1/V-2は `HOLD`。private RSVP/public Instant Radioの境界、既存入門・Catalog/status・localStorageは変更しない。
 
 **結論:** 今回の対象に限る独立の読取・原典照合とCI結果を保存したが、ユーザーが指定した厳格なC→E統合条件はまだ完全に閉じていない。`PASS`は上記個別主張と機械的な形式だけの判定であり、**PR #111の本番マージ可否はHOLD**。
+
+
+---
+
+## 12. 2026-10-09 C相当の最新7章・原典・20問再照合（23時台JST、限定レビュー）
+
+**監査対象・版を固定:** 現在main `0c40044b3e87e02cbc3ba1c3d18a0f7bd8a2f5b3`、統合Draft [#111](https://github.com/Josh-Temple/rsvp-learning/pull/111) head `061a85a4fcc604101c79b768ffd870147ec24bcd`。当該headの4新章と既存重要3章についてMarkdown、RSVP JSON、Learn HTMLをそれぞれ現物再取得した。統合元A #102 `1d7aaf0aa16733cd49b46ff503437d38efadffd4`、B #107 `f21672b940af4f00a4bc352d7b884ed999096a7a` はいずれも独立Draft、個別main統合をしない。GitHub Testは[#37934076379](https://github.com/Josh-Temple/rsvp-learning/actions/runs/37934076379) **success**。ローカル `npm run check` は **NOT_RUN**。
+
+**査読の独立性に関する重要な留保:** 本回はA/B執筆者の説明を引用して合格とするのではなく、対象headから本文を再読し、第三者が参照可能な公式一次資料と主張単位で照合したレビューである。一方、この対話の過去工程でEが既存3章のMarkdown/JSONを直接修正したため、**その3章について実装者と完全に異なる別Worker Cが署名した最終審査ではない**。本節をもって指示書の「真に独立したC受入」を装うことは禁止。内容上の局所是正判定と、組織的な別担当レビューのゲートを分離する。
+
+### 12.1 現行7章の内容・主張・媒体・受入判定
+
+| Lesson ID | Markdown/RSVP | Learnの論理・反例と主張照合 | 原典・合格範囲 | 専門深度 |
+| --- | --- | --- | --- | --- |
+| `security-threat-modeling` | 55/55、最大20字 | trust boundary≠権限変化だけ。住民申請でサーバ側認可、模擬拒否試験、ログ欠損の反例 | [OWASP Threat Modeling Cheat Sheet / Overview and DFD](https://cheatsheetseries.owasp.org/cheatsheets/Threat_Modeling_Cheat_Sheet.html) のDFD、外部主体、信頼境界を実読。重要な境界の訂正は `source_verified` | `NEEDS_REVISION`（体系的な複数ケースや実習の検証は未完了） |
+| `security-mitre-attack-scenarios` | 56/56、最大24字 | T1078をTechnique候補とし、tactic・代替仮説・ログ欠損・実検知と後付け分類を分離 | [MITRE ATT&CK T1078](https://attack.mitre.org/techniques/T1078/) のValid Accounts現行説明を実読。T1078の局所分類 `source_verified`、他技法は `partial` | `NEEDS_REVISION`（技法横断・演習による検証は未完了） |
+| `security-password-mfa-phishing-resistant` | 59/59、最大21字 | OTP中継≠耐フィッシング、verifier名への暗号結合、同期/端末固定、回復・例外を分離 | [NIST SP 800-63B-4 Authenticators §3.2.5](https://pages.nist.gov/800-63-4/sp800-63b/authenticators/) を実読。手入力OTPとname/channel bindingの該当主張は `source_verified`。AAL・同期器具詳細は `partial` | `NEEDS_REVISION`（保証水準・回復の条件をさらに事例で検証要） |
+| `security-firewall-proxy-waf-ids-ips` | 56/56、最大23字 | FW/Proxy/WAF/IDS/IPSの配置依存、TLS復号限界、WAF≠API認可、fail-open/closedの構成依存 | [NIST SP 800-41 Rev.1](https://csrc.nist.gov/pubs/sp/800/41/r1/final) は2009年final、[NIST SP 800-94](https://csrc.nist.gov/pubs/sp/800/94/final) は2007年final（Rev.1 draftは撤回）。年代と内容射程を確認。PDF全文や現代機能は `partial/not_verified` | `NEEDS_REVISION`（製品依存や厳密な観測条件の実測は未了） |
+| `security-identity-proofing-authn-authz` | 54/54、最大24字 | resolution / validation / verification、Enrollment、認証と認可、異動と回復をLearnで区別 | [NIST SP 800-63A-4 Identity Proofing Overview §2](https://pages.nist.gov/800-63-4/sp800-63a/proofing/) の3段階本文を実読。本文8〜11、Learnの同義説明は `source_verified`。具体的IAL別保証要件は `partial` | `NEEDS_REVISION`（E加筆部分に別Workerによる完全独立審査なし） |
+| `security-sessions-federation-oauth-oidc-saml` | 50/50、最大24字 | SSO≠全サービスの同一セッション、access token≠ID token、IdP停止≠全RP即失効、aud/iss等の条件 | [RFC 10017 Introduction §1](https://datatracker.ietf.org/doc/html/rfc10017)（2026-08正式BCP）を実読。同一組織でもOAuth独立役割あり。[OpenID Core Errata2](https://openid.net/specs/openid-connect-core-1_0-errata2.html) 正式版を確認。SAML詳細は `partial` | `NEEDS_REVISION`（E加筆部分に別Workerによる完全独立審査なし） |
+| `security-cloud-shared-responsibility-iam-config` | 52/52、最大24字 | IaaS/PaaS/SaaSの契約依存、IAM/ログ/復旧/共有設定、設定と実効証拠を分離 | [AWS 公式責任共有モデル](https://aws.amazon.com/jp/compliance/shared-responsibility-model/) を実読。AWS固有例でありクラウド一般の法的断定は不可。CISA TRA本文と他事業者契約は `partial/not_verified` | `NEEDS_REVISION`（E加筆部分に別Workerによる完全独立審査なし） |
+
+上記の対象7章について各Markdown番号本文とRSVP JSONは全件一致（合計**382チャンク**）、全チャンク24文字以下。出典は対応Learn HTMLの読み上げarticleの外側に置かれ、重要な否定・限定と架空ケースも再読した。**確認した重大P0/P1逆意味は0件**。これは「他の未読箇所も誤り0件」「30章内容完成」を意味しない。
+
+### 12.2 #105後main、20問、30章・実利用の境界
+
+- **ランサム:** 最新mainの `security-malware-ransomware.json` のsummaryは、暗号化/恐喝が侵害後半に現れる場合もあるが必然ではないと記載。Learn description、Markdown本文19も同義で整合。局所 `PASS`、全面のソース照合は `partial`。
+- **DMARC Q1:** 現行 `docs/SECURITY_LEARN_PILOT_2026-10-08.md` は、SPF/DKIM成功とRFC5322.Fromとのalignmentを別々の条件としている。模範解答は整合した少なくとも一方の成功を要求し、両方PASSだけでDMARC成功と断定しない。局所 `PASS`。実際の受講者による理解は `NOT_VERIFIED`。
+- **既存20問:** 12問（4分野×3）と拡張8問（4分野×2）にある問い、模範解答、条件を満たす別解、危険な誤答を第10.5節の監査表と再照合。対象は `20/20 quiz_reviewed`（**採点条件の文書監査のみ**）。採点UIへの全実装、採点者間一致、回答実績、音声理解は `NOT_VERIFIED`。新優先4章の追加8問は別の設問案であり上記20問と合算しない。
+- **30章:** 今回新しい本文・HTMLを再取得したのは**7章**。第10.6節の残り23章の `NEEDS_REVISION` は継続判定であり、再読済みと装わない。新4章4件、既存重要3件についても上表どおり専門学習深度の広い意味の `PASS` にはしない。
+- **端末/production:** 旧本番ソースが新PR headの配信済み証拠ではない。実desktop/390px、Android Chrome、Web Speech API、Chrome標準Read Aloud、Course I/III/IVの通し再生/出典切替・終了、ユーザー理解はすべて `NOT_VERIFIED`。
+- **公開境界:** 既存入門8章、Catalog/status、学習履歴、Private RSVPとpublic Instant Radioの分離を変更しない。Course V-1とV-2は `HOLD`。
+
+### 12.3 C→Eリリース判断（fail-closed）
+
+**内容上の局所P0/P1を理由とする新たな遮断は今回確認範囲ではなし。** 一方、別Worker Cによる最新headの受入署名がない以上、**#111のDraft/HOLDは継続**。本節は厳密な独立性の限界を持つため、執筆者の自己点検から合否を水増ししない。最終Cが上表のE加筆3章とsource `partial` の範囲を受入可能と判断し重大P0/P1なしを記録したとき、Eは最新main/head/CI/diffを再取得して単一統合PRとしてmergeできる。必要なmain CI成功の後のみVercelへ配信し、protectedアクセス/alias/配信元SHAをreadback。D実機検証はその後も別軸のまま残る。
+
+**総合:** `PARTIAL_WITH_GAPS`。検証可能な局所誤説明なし、形式とCIはPASS。**真の別担当C受入、実音声とAndroid、実学習者の理解は未達**。
