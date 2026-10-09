@@ -253,3 +253,35 @@ Aの重要表現・4章Learnの限られた取得は、一次資料原典に基�
 4. **Course V**: V-1 `security-secure-by-design-default`、V-2 `security-input-output-injection` は別ゲートが満たされるまで両方HOLD。30章の専門品質全合格を宣言しない。
 
 **保全:** Private RSVP repo、旧入門8章、Catalog/status、学習履歴/localStorage、Public Instant Radioの分離を維持。今回Eは新教材をmainへmerge/production配信していない。
+
+
+---
+
+## 11. 2026-10-09 優先4章限定A/B同時統合・本番配信と残件（E追補）
+
+**総合判定: PARTIAL_WITH_GAPS。優先4章のコード・静的本番配信は完了。** 既存3章の追加修正、30章全体の専門深度、実Android/音声/受講効果は未完了。この節は第9・10節の履歴を変更せず、後続の新たな配信事実を記録する。
+
+### 11.1 正本・差分分離と単一統合
+
+- 作業開始時main: `0c40044b3e87e02cbc3ba1c3d18a0f7bd8a2f5b3`。別担当前提の既存3章へのE追補と新4章が混在する[Draft #111](https://github.com/Josh-Temple/rsvp-learning/pull/111)は、そのままmainに入れない。
+- [独立根拠・詳細追補 #114](https://github.com/Josh-Temple/rsvp-learning/pull/114)を先行merge: `1cb4b35f233bfcd9fd5dfe6a86bdf6e83ec849a5`、元A/Bの4章と既存3章の主張別出典照合、20問構造監査、レビュー担当の独立性の限界を監査文書第12節へ保存。CI [37947405445](https://github.com/Josh-Temple/rsvp-learning/actions/runs/37947405445) success。
+- 4章だけの統合[PR #115](https://github.com/Josh-Temple/rsvp-learning/pull/115): A #102 head `1d7aaf0aa16733cd49b46ff503437d38efadffd4` のMD/JSON 4組、B #107 head `f21672b940af4f00a4bc352d7b884ed999096a7a` のLearn HTML 4件と限定回帰テスト/fixtureのみ。**15ファイル**。Eが既存3章で修正したMD/JSON、Bによる既存3章Learn、Catalog/status・学習履歴・localStorage・公開設定は**変更しない**。
+- PR #115固定head `2b779bc4efc25e9506dbf976b47815872362336f`、[GitHub Test 37947836549](https://github.com/Josh-Temple/rsvp-learning/actions/runs/37947836549) **success**。内容監査上、重点4章のOWASP信頼境界、NISTフィッシング耐性、MITRE T1078、旧NIST装置資料の条件付き説明にP0/P1逆意味を認めない範囲で受入。専門的深度の完全PASSとは別。
+- 2026-10-09 JST、PR #115をsquash merge。新main確定SHA: `0ebf6dd2b06b165c8f51c9ba4e465febd379b0a7`。mainの[GitHub Test 37948094690](https://github.com/Josh-Temple/rsvp-learning/actions/runs/37948094690) **success**（GitHub Actions側で `npm run check`）。Eローカルコマンドは**NOT_RUN**。
+
+### 11.2 Vercel本番と静的QAの実測範囲
+
+- CI成功済みの上記SHAを明示してVercel project `rsvp-learning` に**production**新規デプロイ。deployment `dpl_GVcSNYX8JdzzvSdXPHTmP61154tE`、target `production`、`READY`、source SHA `0ebf6dd2b06b165c8f51c9ba4e465febd379b0a7`。エイリアス `rsvp-learning-kappa.vercel.app` は当該deployment IDを参照し、配信側のデプロイ情報でもalias一致。
+- 既存ProjectのVercel Authentication/SSO Protection は引き続き `enabled=true`（`all_except_custom_domains`）。EはProjectの保護・一般公開・GitHub Pages・Instant Radio同期を変更していない。
+- 権限付きの静的取得で `learn/security-threat-modeling.html`、`learn/security-mitre-attack-scenarios.html`、`learn/security-password-mfa-phishing-resistant.html`、`learn/security-firewall-proxy-waf-ids-ips.html` は**4/4 HTTP 200**、静的articleと読み上げ外のsource sectionを確認。
+- 同じ経路で `learn/learn.js`、`learn/course-player.js`、`courses/index.json`、`lessons/index.json` は**4/4 HTTP 200**、空応答や404でないことを確認。トップURLの静的リクエストはツールの安全チェックで拒否され、この回のHTTP成功は**未確認**。トップ動作/匿名アクセスのPASSに転用しない。
+- **実GUI/390px、Android Chrome、ページ内Web Speech API発声、Chrome標準読み上げ、Course I/III/IVの自動章送り・出典切替・最終停止、画面OFF/学習効果はすべてNOT_VERIFIED**。HTTP 200/READYを実操作成功と混同しない。
+
+### 11.3 次に残るE/C/Dのゲート
+
+1. **既存3章**: [Draft #111](https://github.com/Josh-Temple/rsvp-learning/pull/111) には今回すでにmainへ入った4章と重複するファイルがある。**#111をそのまま再mergeしない。** E加筆した `security-identity-proofing-authn-authz`、`security-sessions-federation-oauth-oidc-saml`、`security-cloud-shared-responsibility-iam-config` のMD/JSONと対応Bの既存3章Learn/fixture/テストだけを、最新main上の重複しない新PRへ分離する。その後、実装者と別のCに最新head独立再審査を依頼し、P0/P1が残らない場合だけ統合する。
+2. **D実利用**: 今回の新配信SHAとデプロイIDで、実GUI・Android Chrome・実音声・Chromeネイティブ読み上げを別々に試験。未アクセスはNOT_VERIFIED。保護ページのため匿名利用可能と断定しない。
+3. **全30章**: 4章の重点是正を30/30専門品質PASSへ拡張しない。20問の採点表は文書上reviewed、実受講者効果は未測定。残22章/既存8章の深度拡充は引き続き段階実施。
+4. **Course V**: V-1 `security-secure-by-design-default`、V-2 `security-input-output-injection` は双方 **HOLD**。必要な原典・ケース・実機・A/B/C/CIとCatalog受入がそろうまでIMPLEMENTEDにしない。
+
+**公開境界:** Private RSVP学習repoとPublic Instant Radio（100スロット）は分離。内容の自動公開・複製は行わず、旧入門教材と個人の学習記録を保持する。
