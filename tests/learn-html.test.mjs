@@ -184,7 +184,7 @@ test("critical identity, federation and cloud conditions remain in their Learn l
   }
   const cloud = await fs.readFile(new URL("../learn/security-cloud-shared-responsibility-iam-config.html", import.meta.url), "utf8");
   assert.ok(cloud.includes('href="https://www.cisa.gov/sites/default/files/2023-02/cloud_security_technical_reference_architecture_2.pdf"'));
-  assert.ok(cloud.includes("大統領令関連資料（Cloud Security TRAへの案内ページ）"));
+  assert.ok(cloud.includes('href="https://aws.amazon.com/jp/compliance/shared-responsibility-model/"'));
 });
 
 
