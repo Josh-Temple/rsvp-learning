@@ -221,3 +221,35 @@ Aの重要表現・4章Learnの限られた取得は、一次資料原典に基�
 - **P2 / C・教材担当**: 上記P1解消後、残18章を含む30章深度の未改稿部分を前提・反例・判断・観測証拠に基づき優先改稿。Course Vは独立ゲート合格後に再審査。
 
 **E最終判定: `PARTIAL_WITH_GAPS`。** 今回安全にmainへ取り込んだのは#109監査記録と#108実利用QA記録のみ。内容完成や新4章本番配信の主張はしない。この第9節のE文書は別PRで審査・CI・readbackし、文書コミットによるmain進行と本番教材ソースSHAを区別して最終確認する。
+
+---
+
+## 10. 2026-10-09 E継続 — PR #111 最新head・原典再照合・統合前停止条件
+
+**総合: PARTIAL_WITH_GAPS。** 第9節の後続snapshot。安全な本番mergeにはCのA/B統合後の最新headに対する、執筆とは独立した最終査読が必要。今回Eは原稿修復、静的形式検査、一次資料の個別照合とCIを実施したが、Cの独立判定、Android/実音声・受講効果は代替しない。
+
+- 着手時最新main: `e9b3638b87ad6bc341ec35f7d60980a8caa42ec2`。PR [#111](https://github.com/Josh-Temple/rsvp-learning/pull/111) は Draft/open、統合元A [#102](https://github.com/Josh-Temple/rsvp-learning/pull/102) head `1d7aaf0aa16733cd49b46ff503437d38efadffd4`、B [#107](https://github.com/Josh-Temple/rsvp-learning/pull/107) head `f21672b940af4f00a4bc352d7b884ed999096a7a`。#102/#107単独mergeなし。
+- Eの4章+既存3章の最新統合候補head: `061a85a4fcc604101c79b768ffd870147ec24bcd`。PR #111内の7章合計382 numbered Markdown paragraphs と対応RSVP JSON chunks の全文一致、各24字以内、duration倍率を別々に確認。MD出典URLのLearn `section.sources` 存在・読み上げarticle外配置も確認。4新Learn講義の正確な発話・Chrome読み上げ/Android操作はNOT_VERIFIED。
+- 既存本人確認 `security-identity-proofing-authn-authz`: 初期補修の『証拠と申請者の結び付き』だけではNIST SP 800-63A-4 §2にある resolution / validation / verification の範囲を十分に示さないため、本文8〜11へ実在性・証拠真正性/属性・申請者との結び付きの区別を明記。Markdown/RSVPは51→54 chunksに同期拡充。`tests/rsvp-chunk-quality.test.mjs`に3段階の存在と同期の回帰を追加。
+- 正本差分で見つかった初回CI failure [37933951489](https://github.com/Josh-Temple/rsvp-learning/actions/runs/37933951489) はMarkdown編集時に既存の `## 出典` sectionを欠落させていたことが原因。必須の出典節・注意書きを旧headからrestoreし、MD/JSON 54件を再照合。修正後の最新統合head [Test 37934076379](https://github.com/Josh-Temple/rsvp-learning/actions/runs/37934076379) は**success**。EのローカルnpmはNOT_RUN。失敗履歴を消さずに記録する。
+
+### 10.1 Eの一次資料照合（合格範囲を限定）
+
+| 論点 | 原典とE確認結果 | 判定境界 |
+| --- | --- | --- |
+| 信頼境界 | [OWASP Threat Modeling Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Threat_Modeling_Cheat_Sheet.html): trust boundaries / data flows / external entities等の対象を確認。新4章に権限の変化以外の主体と管理領域を追記 | 修正主張限定PASS。全手法の専門品質はpartial |
+| 耐フィッシング | [NIST SP 800-63B-4 §3.2.5](https://pages.nist.gov/800-63-4/sp800-63b/authenticators/#phishing-resistance): 偽検証者への秘密・有効なauthenticator outputの開示防止、OTP手入力の非耐性、verifier name bindingを確認 | 限定PASS。AAL各構成/回復の全文監査は未了 |
+| ATT&CK | [MITRE T1078](https://attack.mitre.org/techniques/T1078/): Valid Accountsがtechniqueであることを確認。成功ログは確証ではなく候補、Discovery等のtacticとの区別を維持 | T1078限定PASS。他techniqueと全体系はpartial |
+| Firewall/IDS | [NIST SP 800-41 Rev.1](https://csrc.nist.gov/pubs/sp/800/41/r1/final)（2009）/ [SP 800-94](https://csrc.nist.gov/pubs/sp/800/94/final)（2007）の概要・版を再確認。SP800-94 Rev.1は草案が破棄されfinalではない | 出典の時点整合PASS。旧PDFの個別節と現代装置のTLS・障害挙動はpartial/not_verified |
+| 本人確認 | [NIST SP 800-63A-4 §2](https://pages.nist.gov/800-63-4/sp800-63a/proofing/): resolution, validation, verificationを確認 | 新原稿の個別主張限定PASS。別Workerによる最終審査待ち |
+| OAuth/OIDC | [RFC 10017 §1](https://www.rfc-editor.org/rfc/rfc10017.html) は組織が同一でもクライアントとサーバ役割を区別。[OIDC Core Errata2 §3.1.3.7](https://openid.net/specs/openid-connect-core_1_0-errata2.html) に沿いID tokenのaud/iss等の説明を比較 | 重要区別の限定PASS。RPごとの失効・全実装条件はpartial |
+| Cloud | [AWS責任共有モデル](https://aws.amazon.com/jp/compliance/shared-responsibility-model/) は利用者の責任がAWSのサービスと設定に依存することを明記。MD/JSON/LearnにAWS固有の例として対応付け | 特定AWSの資料照合PASS。他事業者とCISA TRA本文はpartial |
+
+### 10.2 残ゲート・次の行動（順序固定）
+
+1. **C（Eとは別の査読）**: PR #111の `061a85a4fcc604101c79b768ffd870147ec24bcd` の4章+既存3章のMD/JSON/HTML、今回追加の本人確認3段階、クラウド出典、OAuth/SSO、全主要否定/例外をhead固定で再取得し、個別Lessonの `PASS/NEEDS_REVISION/BLOCKED` と source_verified/partial/not_verified、残P0/P1を記録する。少なくとも原稿編集者による自己検査のみを『独立C合格』と呼ばない。
+2. **E**: Cに未解決P0/P1がなく受入可と判断された場合だけ、最新mainとPR #111のhead/base/diff・CIをfresh readし、元A/B二重merge禁止のまま単一統合PRとしてSHA固定merge。mainのTest success確認後にのみVercel productionを明示SHAで配信する。
+3. **D/端末提供者**: 配信後のVercel deployment/alias SHAでHTTP・desktop GUI・390px・Android Chrome・Web Speech API実音声・Chrome標準読み上げ・コース通し/出典更新/最終停止を各別試験で記録。環境がなければNOT_VERIFIED。静的CIとREADYを実操作PASSにしない。
+4. **Course V**: V-1 `security-secure-by-design-default`、V-2 `security-input-output-injection` は別ゲートが満たされるまで両方HOLD。30章の専門品質全合格を宣言しない。
+
+**保全:** Private RSVP repo、旧入門8章、Catalog/status、学習履歴/localStorage、Public Instant Radioの分離を維持。今回Eは新教材をmainへmerge/production配信していない。
