@@ -20,7 +20,11 @@
 <h2>設定した事実と効果を分ける</h2>
 <p>架空の文書保管サービスで、承認済みの設定コードは外部共有を禁止していたとします。しかし、運用担当者が緊急対応で共有設定を変更した場合、コードの審査記録だけでは実際の公開範囲を証明できません。現行のアクセス権、公開設定、変更ログを突き合わせ、差分と変更理由を確認します。</p>
 <p>同じ確認方法でも、IaaSでは仮想サーバーの更新やネットワーク設定が利用者の責任となる場合があり、SaaSでは提供者が管理する場合があります。責任を一般論で決めず、契約とサービス仕様に照らします。バックアップの有無だけでなく、権限を失った場合も別の環境で復旧できるかを試し、結果と制約を残します。</p>
+<h2>責任の一覧は契約と証拠で埋める</h2>
+<p>架空の組織が、職員向けのSaaSと自社管理の仮想サーバーを利用するとします。SaaSでは基盤の更新を事業者が担当する構成でも、利用者の権限付与、外部共有、保存期間の設定は利用組織が担当する場合があります。IaaSでは利用組織がOSの更新や通信経路を管理する場合があります。PaaSでも、何を事業者に任せるかは利用する機能で変わります。契約を確認せず、この分担を一律の規則として決めてはいけません。</p>
+<p>確認する単位は、利用者と自動処理のIAM権限、OSとアプリの更新、鍵の管理、監査ログの取得と保全、障害時の復旧です。各項目について、誰が設定し、誰が点検し、どの証拠が残るのかを、契約、サービス仕様、実際の設定から整理します。事業者による監査報告があっても、自組織の共有設定が適切だという証明にはなりません。</p>
+<p>例えば、責任分界が確認できないまま文書共有を有効にする案があるなら、安全な設定を推測せず、対象機能の契約と管理画面の証拠がそろうまで判断を保留します。暗号化、構成管理、ログ、バックアップは、それぞれ機能の有無と実際の効果を分けて試験します。</p>
 <h2>短い振り返り</h2>
 <p>責任分界はサービスの契約と仕様で確かめます。IAM、公開範囲、暗号化と鍵、構成ドリフト、ログ、復旧まで、設定の有無と有効性の証拠を分けて確認することが大切です。</p>
 <h3>この教材の扱う範囲</h3><p class="endnote">責任分界は事業者とサービスごとに異なります。利用するクラウドの契約・公式責任モデル・サービス仕様を必ず確認します。</p>
-</article><section class="sources" aria-labelledby="sources-title"><h2 id="sources-title">出典</h2><p><a href="https://www.cisa.gov/topics/cybersecurity-best-practices/executive-order-improving-nations-cybersecurity">CISA Cloud Security Technical Reference Architecture v2</a></p><p><a href="https://csrc.nist.gov/pubs/sp/800/207/final">NIST SP 800-207 Zero Trust Architecture</a></p><p><a href="https://www.cisecurity.org/controls/v8-1">CIS Critical Security Controls v8.1</a></p><p><a href="https://www.ipa.go.jp/shiken/syllabus/henkou/2026/20260630.html">IPA 新試験制度のシラバス案について</a></p></section></main></div></body></html>
+</article><section class="sources" aria-labelledby="sources-title"><h2 id="sources-title">出典</h2><p><a href="https://www.cisa.gov/topics/cybersecurity-best-practices/executive-order-improving-nations-cybersecurity">CISA 大統領令関連資料（Cloud Security TRAへの案内ページ）</a></p><p><a href="https://www.cisa.gov/sites/default/files/2023-02/cloud_security_technical_reference_architecture_2.pdf">CISA / USDS / FedRAMP Cloud Security Technical Reference Architecture v2.0（2022）</a></p><p><a href="https://csrc.nist.gov/pubs/sp/800/207/final">NIST SP 800-207 Zero Trust Architecture</a></p><p><a href="https://www.cisecurity.org/controls/v8-1">CIS Critical Security Controls v8.1</a></p><p><a href="https://www.ipa.go.jp/shiken/syllabus/henkou/2026/20260630.html">IPA 新試験制度のシラバス案について</a></p></section></main></div></body></html>
