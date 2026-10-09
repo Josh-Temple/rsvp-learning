@@ -560,3 +560,53 @@ Cは `#102` headの各 `lessons/security-deep/<id>.md` と `.json` を**改め�
 - [OpenID Connect Core 1.0 `3.1.3.7](https://openid.net/specs/openid-connect-core-1_0.html#IDTokenValidation)
 
 確認の限界: これらの根拠は明記した個別主張に限り `source_verified` 相当。各Lessonの出典全リスト、個別technique全項目、旧NIST製品マニュアル、クラウド契約の根拠は `partial` または `not_verified`。機械的同一文字列の保証やCI合格を主張の真実性へ読み替えない。
+
+
+---
+
+## 11. 2026-10-09 統合候補 #111 最新headの追加独立照合（範囲限定）
+
+**対象:** [統合PR #111](https://github.com/Josh-Temple/rsvp-learning/pull/111) head `cbd8cbdc82de2097c075bdb0b56648e6ac2a0ee8`（CI [37931997962](https://github.com/Josh-Temple/rsvp-learning/actions/runs/37931997962) success）。正本main `c08b7354191cf367decdbfdf3aae5eb10c931d2c` との差分を取得。A [#102](https://github.com/Josh-Temple/rsvp-learning/pull/102) `1d7aaf0aa16733cd49b46ff503437d38efadffd4` とB [#107](https://github.com/Josh-Temple/rsvp-learning/pull/107) `f21672b940af4f00a4bc352d7b884ed999096a7a` を個別にmainへ統合せず、新統合PRにまとめた。これは**A/Bの変更版を執筆したWorkerとは別の取得・評価**である。ただし**同一対話でEが追加修正した既存3章については、独立した別Worker Cの最終査読を代替しない**。C第10節の旧A headについての判定を最新版の判定と混同しない。
+
+### 11.1 実際に読み直した範囲と機械検査
+
+PR #111 headの以下7章について、それぞれMarkdown全番号本文・RSVP JSON chunks・対応Learn HTMLを直接取得して照合。文字列一致はすべて全件、各チャンクは最大24文字、duration_multiplierは全件0超・3以下。Markdownの出典URLは対象Learn HTMLの出典節に存在し、`article`外に置かれている。
+
+| 対象 | 番号付きMD = JSON | 最大文字 | Learnの独立講義と注意 |
+|---|---:|---:|---|
+| `security-threat-modeling` | 55/55 | 20 | 信頼境界と認可の違い、架空申請、サーバ拒否試験とログ欠損 |
+| `security-mitre-attack-scenarios` | 56/56 | 24 | tactic/technique、T1078候補、正常操作・観測欠損の反証 |
+| `security-password-mfa-phishing-resistant` | 59/59 | 21 | verifier name binding、OTP中継、回復・同期の適用条件 |
+| `security-firewall-proxy-waf-ids-ips` | 56/56 | 23 | TLS観測、WAFとアプリ認可、迂回・誤遮断・障害動作 |
+| `security-identity-proofing-authn-authz` | 51/51 | 24 | 本人確認証拠と申請者の結合、回復と認可 |
+| `security-sessions-federation-oauth-oidc-saml` | 50/50 | 24 | SSOと個別RPセッション、OAuthの認可範囲とトークン用途 |
+| `security-cloud-shared-responsibility-iam-config` | 52/52 | 24 | AWS固有の一次資料を一般規則としない、契約/構成依存 |
+ 
+**機械的同期 PASSは内容全体の正確性・自然な発話・学習効果のPASSではない。** GitHub Test初回 [37931804817](https://github.com/Josh-Temple/rsvp-learning/actions/runs/37931804817)は35/36成功・旧CISA見出しへのテスト期待で1件失敗。テストを修正した上記最新head [37931997962](https://github.com/Josh-Temple/rsvp-learning/actions/runs/37931997962)はsuccess。ローカル `npm run check` は `NOT_RUN`。
+
+### 11.2 4章の主張別一次資料照合
+
+| Lessonと重要箇所 | 確認した原典と判断 | 限界・判定 |
+|---|---|---|
+| Threat modeling本文9/10とLearn | [OWASP Threat Modeling Cheat Sheet, System Modeling](https://cheatsheetseries.owasp.org/cheatsheets/Threat_Modeling_Cheat_Sheet.html) はDFDがexternal entities, data flows, processes, data stores, trust boundariesを示すことを要求。現headは「権限が変わる境界」だけへの限定を除去 | **重要P1訂正: PASS / source_verified（記載の範囲）**。STRIDEや全出典全文は未照合 |
+| Phishing-resistant本文19–24とLearn | [NIST SP 800-63B-4 §3.2.5](https://pages.nist.gov/800-63-4/sp800-63b.html#phishing-resistance) は偽検証者への秘密・有効な認証出力の開示防止、OTP手入力の非耐性、channel/name bindingを区別。WebAuthnは後者の例 | **重要P1訂正: PASS / source_verified（§3.2.5の該当主張）**。各AAL・同期型・回復をすべて監査済みとは扱わない |
+| MITRE本文16/17/22–28とLearn | [MITRE ATT&CK T1078](https://attack.mitre.org/techniques/T1078/) はValid Accountsというtechnique。Discovery, Lateral Movement, Exfiltrationはtactic。現headはログ候補と事実確定・反証を分離 | **分類と限定: PASS / source_verified（T1078）**、他の個別technique・網羅的適用はpartial |
+| Firewall/Proxy/WAF本文13–21/25–49とLearn | [NIST SP 800-41 Rev.1](https://csrc.nist.gov/pubs/sp/800/41/r1/final) （2009）と[SP 800-94](https://csrc.nist.gov/pubs/sp/800/94/final)（2007）の公式概要・適用範囲を確認。WAFが業務上のAPI認可を保証しないとする架空ケース、TLS復号と障害時の挙動を構成依存として扱う表現を確認 | **明白な逆意味P0未検出**。古い原典PDFの個別節と最新製品挙動は `source partial / not_verified`、専門内容の網羅PASSは保留 |
+
+### 11.3 既存3章のP1・20問・30章判定
+
+- `security-identity-proofing-authn-authz` 本文8は「本人確認では証拠と申請者を結び付けます。」へ修正。[NIST SP 800-63A-4 §2 Identity Proofing and Enrollment](https://pages.nist.gov/800-63-4/sp800-63a.html) にあるresolution/validation/verificationのうち後者を反映。三段階すべてを短文1件で説明したという意味ではなく、Learn講義の追加説明と併せて評価。
+- `security-sessions-federation-oauth-oidc-saml` 本文11/23はSSOの再認証負担軽減と、自組織のAPI認可にも使うOAuthの射程へ訂正。[RFC 10017 §1](https://datatracker.ietf.org/doc/html/rfc10017) は2026年8月の正式BCPでOAuthクライアント・認可サーバ・資源サーバが同一組織の場合も独立した役割と明記。[OIDC Core §3.1.3.7](https://openid.net/specs/openid-connect-core-1_0-errata2.html)によりID tokenのissuer/audience等を区別。IdPでの無効化とRP側既存セッションの失効は実装ごとの確認を残す。
+- `security-cloud-shared-responsibility-iam-config` の誤ったCISA案内URLを[公式AWS Shared Responsibility Model](https://aws.amazon.com/jp/compliance/shared-responsibility-model/)にMD/JSON/Learnの3形式で修正。AWS特有の実例であり全クラウド事業者への一般化を禁止。Learnに別途CISA TRA v2 PDFへのリンクがあるが、その本文節は今回独立照合していないため `partial`。
+- 上記3章は**Eが今回追補したため、別Workerの完全独立査読は未完了**。目立つ概念上の逆意味は確認範囲で認めないが、3章全体の内容PASSにはしない。
+- 既存20問の採点構造reviewは前回第10.5節の判定を継承。新4章に関する8問はBの提案であり、実受講者回答・採点一致・講義を聴いた際の理解は**NOT_VERIFIED**。
+- 専門30章全体は以前の `30/30 NEEDS_REVISION` を維持。今回7章の重要箇所の限定確認を全30章の完全審査へ横滑りさせない。
+
+### 11.4 統合・配信ゲートへの引渡し
+
+- 新4章について、**今回検証した重大P1の訂正と原稿/RSVP/Learnの限定的な整合は確認**。ただし4章全主張・全一次資料の確認、実際の読み上げ、代表利用者の理解は完了していない。
+- **Cの独立受入として未了**: #111現headの「E追補した既存3章」と、全4章の出典/条件を包括する最終受入。したがって#111は**Draft/HOLD**のまま維持し、Cが実際のhead SHAでP0/P1・版/節を再審査した後にEがmerge可否を決める。
+- GUI browser/390px、Android Chrome実機、Web Speech API音声、Chrome標準読み上げ、Course I/III/IVの実際の章遷移と出典更新は `NOT_VERIFIED`。Dの旧本番HTTP成功を新PR動作の証拠としない。
+- Course V-1/V-2は `HOLD`。private RSVP/public Instant Radioの境界、既存入門・Catalog/status・localStorageは変更しない。
+
+**結論:** 今回の対象に限る独立の読取・原典照合とCI結果を保存したが、ユーザーが指定した厳格なC→E統合条件はまだ完全に閉じていない。`PASS`は上記個別主張と機械的な形式だけの判定であり、**PR #111の本番マージ可否はHOLD**。
