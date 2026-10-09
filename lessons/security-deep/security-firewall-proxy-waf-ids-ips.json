@@ -18,47 +18,43 @@
     {
       "title": "IPA 新試験制度のシラバス案について",
       "url": "https://www.ipa.go.jp/shiken/syllabus/henkou/2026/20260630.html"
+    },
+    {
+      "title": "NIST SP 800-94 Guide to Intrusion Detection and Prevention Systems (IDPS)",
+      "url": "https://csrc.nist.gov/pubs/sp/800/94/final"
     }
   ],
   "chunks": [
+    {
+      "text": "通信防御は装置名だけで決まりません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "目的と配置を先に確認します。",
+      "duration_multiplier": 1.15
+    },
     {
       "text": "Firewallは通信を制御します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "Ruleに基づいて許可します。",
+      "text": "送信元や宛先を条件にできます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "送信元を条件にできます。",
+      "text": "通信方向とPortも確認します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "送信先も条件にできます。",
+      "text": "Stateを見る製品もあります。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "ProtocolやPortも使えます。",
+      "text": "端末にも配置できます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "Stateを追う方式もあります。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "Network境界だけに置くとは限りません。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "Host側にも置けます。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "Cloud security group",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "も似た役割があります。",
+      "text": "クラウドの通信制御もあります。",
       "duration_multiplier": 1.15
     },
     {
@@ -66,164 +62,192 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "Forward proxyがあります。",
+      "text": "Forward proxyは利用者側です。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "Client側の通信を仲介します。",
+      "text": "Reverse proxyは提供側の前段です。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "Reverse proxyもあります。",
+      "text": "仲介する通信の範囲を確認します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "Server側の前段に置きます。",
+      "text": "WAFは主にWeb要求を検査します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "認証や記録を追加できます。",
+      "text": "HTTPの条件で判断します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "Content制御にも使えます。",
+      "text": "WAFはアプリ修正の代替ではありません。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "WAFはWeb trafficを対象にします。",
+      "text": "IDSは侵入の兆候を検知します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "HTTPの内容を見て判断します。",
+      "text": "IPSは通信の遮断も扱います。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "Application脆弱性の補完に使えます。",
+      "text": "方式ごとに観測対象は異なります。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "根本修正の代替にはしません。",
+      "text": "復号しない暗号化通信は中身を検査できません。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "IDSは検知を目的にします。",
+      "text": "TLSの終端位置を確認します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "IPSは遮断も行います。",
+      "text": "ログだけで全通信を知れません。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "Network型があります。",
+      "text": "架空の申請APIを考えます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "Host型もあります。",
+      "text": "公開入口にWAFを設置します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "Signature検知があります。",
+      "text": "職員が申請を照会します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "Behavior検知もあります。",
+      "text": "WAFのルールは稼働しています。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "誤検知があります。",
+      "text": "しかし閲覧権限の確認が欠けます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "見逃しもあります。",
+      "text": "WAF稼働だけでは保護できません。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "暗号化で見えにくくなる場合があります。",
+      "text": "API側の認可が必要です。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "TLS終端位置が影響します。",
+      "text": "試験用の他人の申請を用意します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "Ruleの品質が重要です。",
+      "text": "その閲覧要求を安全に試験します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "不要な許可を減らします。",
+      "text": "期待結果はアクセス拒否です。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "Any許可を放置しません。",
+      "text": "WAFの遮断ログも調べます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "期限付きRuleを管理します。",
+      "text": "アプリ側の拒否記録も調べます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "所有者を明確にします。",
+      "text": "ルール設定と有効性は別です。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "Change管理を行います。",
+      "text": "入口を通らない経路も探します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "Logを有効にします。",
+      "text": "内部から直接接続できる場合があります。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "ただし全Logが同価値ではありません。",
+      "text": "迂回経路があれば効果は限定的です。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "重要Ruleを監視します。",
+      "text": "ネットワーク図を更新します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "遮断イベントも調査します。",
+      "text": "許可ルールの所有者を決めます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "Bypass経路を探します。",
+      "text": "不要な許可を整理します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "別Portを使える場合があります。",
+      "text": "例外ルールには期限を付けます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "直接接続できる場合もあります。",
+      "text": "変更前後で通信を検証します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "Cloud経路も確認します。",
+      "text": "正常な業務の誤遮断も見ます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "装置自体も資産です。",
+      "text": "誤検知も見逃しもあります。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "管理画面を強く守ります。",
+      "text": "警告を確認する担当を決めます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "Firmware更新も必要です。",
+      "text": "保存するログの範囲も設計します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "設定Backupも守ります。",
+      "text": "ログ欠損時は結論を保留します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "Fail open条件を理解します。",
+      "text": "障害時の通過動作は構成次第です。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "役割と限界を組み合わせます。",
-      "duration_multiplier": 1.4
+      "text": "Fail openの可否は影響で判断します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "装置停止時の業務影響も考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "管理画面と設定Backupを守ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "更新と権限管理も必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "事前の設定確認だけで終えません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "模擬要求で防御動作を確かめます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "構成変更後には再検証します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "最後に残る脆弱性を記録します。",
+      "duration_multiplier": 1.15
     }
   ]
 }
