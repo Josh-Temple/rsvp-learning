@@ -648,3 +648,41 @@ PR #111 headの以下7章について、それぞれMarkdown全番号本文・RS
 **内容上の局所P0/P1を理由とする新たな遮断は今回確認範囲ではなし。** 一方、別Worker Cによる最新headの受入署名がない以上、**#111のDraft/HOLDは継続**。本節は厳密な独立性の限界を持つため、執筆者の自己点検から合否を水増ししない。最終Cが上表のE加筆3章とsource `partial` の範囲を受入可能と判断し重大P0/P1なしを記録したとき、Eは最新main/head/CI/diffを再取得して単一統合PRとしてmergeできる。必要なmain CI成功の後のみVercelへ配信し、protectedアクセス/alias/配信元SHAをreadback。D実機検証はその後も別軸のまま残る。
 
 **総合:** `PARTIAL_WITH_GAPS`。検証可能な局所誤説明なし、形式とCIはPASS。**真の別担当C受入、実音声とAndroid、実学習者の理解は未達**。
+
+
+---
+
+## 13. 2026-10-10 既存3章のP1分離・最新head検証・C受入待ち（新snapshot）
+
+**Scope:** [Draft #117](https://github.com/Josh-Temple/rsvp-learning/pull/117) head `2699e1171ed35ccc2c2e583271c8fba62e1e92d1`。開始main `07045f861e7e4dbc7e2adf03b03ef997b77939e3`。最新main `e25ac5e6e5591d97e73c0d532672c266430864c6`。Priority 4 A/BはPR #115で既に一体main merge・production配信済み。#117はその4章を一切含まず、**3章×MD/JSON/Learn + tests/fixtures計12ファイル**だけを移設した。旧重複PR #102/#107/#111は、後継PRを説明した上で**closed, unmerged**。原文のA/B作業記録はdocs-only [#118](https://github.com/Josh-Temple/rsvp-learning/pull/118)でappend-only回収、main [Test 37958055191](https://github.com/Josh-Temple/rsvp-learning/actions/runs/37958055191) success、readback済み。Git履歴・ブランチは削除していない。
+
+### 13.1 MD/RSVP/Learn・CI・プレビューの実測
+
+| ID | Markdown番号とJSONの全一致 | Learn講義と出典（読取） | 主張別独立Cの残ゲート |
+|---|---|---|---|
+| `security-identity-proofing-authn-authz` | 54/54、最大24文字 | 本人確認3段階、Enrollment、認証/認可/回復、アカウント異動の架空ケース。source節は読み上げarticle外 | 身元のresolution/validation/verification、回復・IAL・個人情報、Learnに誤った暗示がないか |
+| `security-sessions-federation-oauth-oidc-saml` | 50/50、最大24文字 | SSO/Federation・OAuth access token・OIDC ID token・RP/IdPセッション・失効の別条件を区別。source節はarticle外 | OIDC audience/issuer/nonce、RFC10017とRFC9700適用範囲、SAML信頼とRP通知の例外 |
+| `security-cloud-shared-responsibility-iam-config` | 52/52、最大24文字 | IaaS/PaaS/SaaSの契約/サービス差、IAM、ドリフト・復旧を区別。AWS公式sourceへの差替えがMD/JSON/HTMLで一致 | AWS固有責任範囲と一般化、サービス別契約、CISA TRA古い資料の該当節・独立性 |
+
+各章を**head SHA指定で再取得**して1)番号とJSON chunk全件一致、2)チャンク24文字制約、3)Markdown URLがLearnのsource section内に存在、4)音声article外のsource配置を照合。合計 **156/156 PASS（形式同期）**。Learnを実音声で聴いたか、全文主張の正確性を証明したことを意味しない。
+
+- 専用fixtureでは3章のP1説明の同一段落内条件、proofingの3段階・RSVP同期を追加検査。PR #117 [GitHub Test 37957514039](https://github.com/Josh-Temple/rsvp-learning/actions/runs/37957514039): **success**（head `2699e1171ed35ccc2c2e583271c8fba62e1e92d1`）。ローカル`npm run check`は **NOT_RUN**。
+- Vercel **preview** deployment `dpl_ELSApq3He834BrS2E2FbYfpBUc3c`: `READY`、source=head上記SHA、targetは`null`（productionでない）。本previewの3 `learn/<id>.html` を保護されたMCP HTTP経路で読取、**3/3 HTTP 200**、全件articleとsourcesあり。GUI / Android Chrome / 実音声 / Chrome native Read Aloud は **NOT_VERIFIED**。
+- **本番は変更せず**: 別のmain/production deployment `dpl_GVcSNYX8JdzzvSdXPHTmP61154tE` にpriority 4のsource SHA `0ebf6dd2b06b165c8f51c9ba4e465febd379b0a7`。previewのREADYを本番配信扱いしない。
+
+### 13.2 主張と原典の対応、限定判定
+
+| 対象主張 | 公式一次資料（照合箇所） | 判定 |
+|---|---|---|
+| 身元resolution・証拠validation・申請者verification | [NIST SP 800-63A-4, Identity Proofing Overview / §2](https://pages.nist.gov/800-63-4/sp800-63a/proofing/)・[Finalメタデータ](https://csrc.nist.gov/pubs/sp/800/63/a/4/final)（2025 final、草案と区別） | **source_verified（3段階の射程に限る）**。IAL実装要件/例外全部はpartial |
+| OAuthは組織外の第三者委任に限定しない | [RFC 10017 §1](https://datatracker.ietf.org/doc/html/rfc10017)（2026年8月BCP）。client / AS / RSは同一運営者でも個別の役割とされる | **source_verified（役割の一般条件）**。OIDC/SAMLと各失効プロトコルの全条項はpartial |
+| ID tokenとaccess tokenの用途・audienceの違い | [OIDC Core 1.0 Errata Set 2](https://openid.net/specs/openid-connect-core-1_0-errata2.html)、[RFC 9700](https://datatracker.ietf.org/doc/html/rfc9700) | **partial**。仕様全文と採用flow別条件の完全確認は未了 |
+| クラウド責任共有はサービスと契約で差が出る | [AWS 公式Shared Responsibility Model](https://aws.amazon.com/jp/compliance/shared-responsibility-model/)でサービス固有モデルを確認 | **source_verified（AWS固有例・契約確認の必要性の範囲）**。他事業者・CISA TRA全文はpartial/not_verified |
+
+### 13.3 受入と次アクション（偽装なし）
+
+**P0逆意味の確証なし**（上の確認対象）。一方、**今作業者が既存3章の修正を旧PRから抽出・検査しているため、真に別担当のWorker Cによる最終署名を取得したとはいえない。** したがって#117は**Draft/HOLD**を維持し、Cが必ず同一headの原稿・Learn・sourceを取得して重大P0/P1、条件・例外・部分未検証を再判定し、Lesson単位`PASS/NEEDS_REVISION/BLOCKED`、主張単位`source_verified/partial/not_verified`の決定を残すこと。CIや静的HTTPは意味の受入ではない。
+
+C受入後はEが新しいmain/head/CI/diffをfresh readし、重複を避けて**#117単一PRのみ**統合、main Test後に明示SHAでVercel productionを配信。配信SHA/alias・HTTP・Android/音声は別々に検証。既存Course V V-1/V-2はHOLD。20問rubricは文書審査のみ、利用者の採点・理解度はNOT_VERIFIED。private RSVP/public Instant Radio境界、Catalog/status、localStorage/既存学習履歴は変更しない。
+
+**Overall:** `PARTIAL_WITH_GAPS`。分離・静的品質・preview PASS、独立C最終受入と実利用/学習者有効性は未達。
