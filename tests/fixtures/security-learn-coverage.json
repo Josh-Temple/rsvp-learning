@@ -98,6 +98,25 @@
             "失効",
             "ログアウト"
           ]
+        },
+        {
+          "label": "アクセス用トークンの受け取り先検証",
+          "terms": [
+            "アクセストークン",
+            "API",
+            "トークン"
+          ],
+          "within_paragraph": true
+        },
+        {
+          "label": "RPの既存セッションは構成依存",
+          "terms": [
+            "IdP",
+            "RP",
+            "失効",
+            "実装"
+          ],
+          "within_paragraph": true
         }
       ]
     },
@@ -152,6 +171,24 @@
           "terms": [
             "復旧"
           ]
+        },
+        {
+          "label": "IaaSとSaaSで契約に依存する責任",
+          "terms": [
+            "IaaS",
+            "SaaS",
+            "契約"
+          ],
+          "within_paragraph": true
+        },
+        {
+          "label": "証拠のない責任分界は判断保留",
+          "terms": [
+            "責任分界",
+            "契約",
+            "判断を保留"
+          ],
+          "within_paragraph": true
         }
       ]
     },
@@ -457,6 +494,275 @@
           "terms": [
             "NIST SP 800-63-4",
             "法定義務"
+          ],
+          "within_paragraph": true
+        },
+        {
+          "label": "本人確認は証拠と申請者の結び付きも評価",
+          "terms": [
+            "証拠の真正性",
+            "申請者本人",
+            "結び付き"
+          ],
+          "within_paragraph": true
+        },
+        {
+          "label": "認証器の制御と身元の再証明は別",
+          "terms": [
+            "認証器",
+            "画面の前",
+            "証明ではありません"
+          ],
+          "within_paragraph": true
+        }
+      ]
+    },
+    "security-threat-modeling": {
+      "gates": [
+        {
+          "label": "信頼境界は権限変更だけでない",
+          "terms": [
+            "信頼境界",
+            "主体や管理領域",
+            "権限"
+          ],
+          "within_paragraph": true
+        },
+        {
+          "label": "架空の住民申請の認可",
+          "terms": [
+            "架空の住民申請サービス",
+            "認可"
+          ],
+          "within_paragraph": true
+        },
+        {
+          "label": "認証済みでも全申請への権限ではない",
+          "terms": [
+            "ログイン済み",
+            "閲覧権限"
+          ],
+          "within_paragraph": true
+        },
+        {
+          "label": "実証と設定を分ける",
+          "terms": [
+            "設計書",
+            "拒否処理"
+          ],
+          "within_paragraph": true
+        },
+        {
+          "label": "観測欠損時の限界",
+          "terms": [
+            "監査ログ",
+            "攻撃がなかった"
+          ],
+          "within_paragraph": true
+        },
+        {
+          "label": "設計変化時に再評価",
+          "terms": [
+            "委託先",
+            "境界"
+          ],
+          "within_paragraph": true
+        },
+        {
+          "label": "脅威モデルと他の検証手法",
+          "terms": [
+            "侵入テスト",
+            "コードレビュー"
+          ],
+          "within_paragraph": true
+        }
+      ]
+    },
+    "security-mitre-attack-scenarios": {
+      "gates": [
+        {
+          "label": "tacticとtechniqueの区別",
+          "terms": [
+            "tactic",
+            "technique"
+          ],
+          "within_paragraph": true
+        },
+        {
+          "label": "T1078は確定でなく候補",
+          "terms": [
+            "Valid Accounts",
+            "T1078",
+            "候補"
+          ],
+          "within_paragraph": true
+        },
+        {
+          "label": "メール報告だけで侵害確定しない",
+          "terms": [
+            "不審なメール",
+            "侵害が成立"
+          ],
+          "within_paragraph": true
+        },
+        {
+          "label": "データ転送の代替仮説",
+          "terms": [
+            "Exfiltration",
+            "正規のデータ連携"
+          ],
+          "within_paragraph": true
+        },
+        {
+          "label": "分類と検知の違い",
+          "terms": [
+            "ATT&CK",
+            "自動で検知"
+          ],
+          "within_paragraph": true
+        },
+        {
+          "label": "欠損ログと推測",
+          "terms": [
+            "ログ",
+            "判断できません"
+          ],
+          "within_paragraph": true
+        },
+        {
+          "label": "環境変更時の観測変更",
+          "terms": [
+            "SaaS",
+            "検知手段"
+          ],
+          "within_paragraph": true
+        }
+      ]
+    },
+    "security-password-mfa-phishing-resistant": {
+      "gates": [
+        {
+          "label": "OTPのフィッシング限界",
+          "terms": [
+            "OTP",
+            "偽サイト"
+          ],
+          "within_paragraph": true
+        },
+        {
+          "label": "認証先への暗号的結び付き",
+          "terms": [
+            "認証先の名前",
+            "暗号的"
+          ],
+          "within_paragraph": true
+        },
+        {
+          "label": "耐フィッシングは単なる秘密不送信でない",
+          "terms": [
+            "フィッシング耐性",
+            "入力欄"
+          ],
+          "within_paragraph": true
+        },
+        {
+          "label": "同期型と固定型の違い",
+          "terms": [
+            "同期可能",
+            "端末固定型"
+          ],
+          "within_paragraph": true
+        },
+        {
+          "label": "回復窓口による迂回条件",
+          "terms": [
+            "回復窓口",
+            "弱ければ"
+          ],
+          "within_paragraph": true
+        },
+        {
+          "label": "AALの適用限定",
+          "terms": [
+            "AAL",
+            "適用範囲"
+          ],
+          "within_paragraph": true
+        },
+        {
+          "label": "認証後のセッションと権限",
+          "terms": [
+            "セッション",
+            "別の管理対象"
+          ],
+          "within_paragraph": true
+        }
+      ]
+    },
+    "security-firewall-proxy-waf-ids-ips": {
+      "gates": [
+        {
+          "label": "機器の役割の区別",
+          "terms": [
+            "Firewall",
+            "Proxy",
+            "WAF"
+          ]
+        },
+        {
+          "label": "TLS復号条件",
+          "terms": [
+            "TLS",
+            "復号しない"
+          ],
+          "within_paragraph": true
+        },
+        {
+          "label": "WAFはサーバ認可の代替でない",
+          "terms": [
+            "WAF",
+            "API側",
+            "認可"
+          ],
+          "within_paragraph": true
+        },
+        {
+          "label": "架空データによる拒否試験",
+          "terms": [
+            "模擬アカウント",
+            "拒否"
+          ],
+          "within_paragraph": true
+        },
+        {
+          "label": "迂回経路",
+          "terms": [
+            "直接",
+            "クラウド経路"
+          ],
+          "within_paragraph": true
+        },
+        {
+          "label": "検知の誤り",
+          "terms": [
+            "誤検知",
+            "見逃し"
+          ],
+          "within_paragraph": true
+        },
+        {
+          "label": "障害時の構成依存",
+          "terms": [
+            "Fail open",
+            "Fail closed"
+          ],
+          "within_paragraph": true
+        },
+        {
+          "label": "古い文書の適用限定",
+          "terms": [
+            "NIST SP 800-41 Rev.1",
+            "SP 800-94"
           ],
           "within_paragraph": true
         }

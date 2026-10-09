@@ -255,3 +255,78 @@ LessonのMarkdown原稿・RSVP JSON・Catalog ID・status・source URLは本Work
 - クラウドの個別事業者契約、OIDC/SAML全文、IPA/CISA等の個別節、音声の聞きやすさは本Workerによる再照合・実測の対象外。**独立の `source_verified` はCが判定する**。
 
 **依存・受入**: Aが新優先4章のMarkdown/RSVPを確定したPR headを引き渡すまで、その4章のLearn改稿は `HOLD`。Aの確定後に4章のLearnを改稿し、Cが**Bの新head**で主張・20問・4章を再審査する。DによるAndroid Chromeや実音声確認も未取得であり `NOT_VERIFIED`。本WorkerのHTML・問題資料の保存と静的テストだけで専門教育の `PASS` や配信完了を宣言しない。
+
+
+---
+
+## 第4Wave: Worker B — 既存8章のP1精密化と新4章の依存管理（2026-10-09 JST）
+
+**状態: PARTIAL_WITH_GAPS（B担当の部分成果）。** 指示書: Library `2026-10-09_security_learning_four_lesson_closure_and_real_use_validation_wave_instructions.md` §4。作業開始時にprivate repository `Josh-Temple/rsvp-learning` の `main` = `1bb69060843d8ddb7d7126f094e79a5670e64713` をfresh read。Bブランチ `content/security-learn-p1-evidence-20261009-b` は同SHAから作成。着手時のA #102はDraft、head `198df1210b176d880225b59e121c3953268f2b50`、base SHA `fd003b63b816799dd8f1f1eac0de4fd70db32da9`。前C第9節が指摘した信頼境界とフィッシング耐性の重要2表現のA修正headは、B作業開始時に引き渡されていなかった。
+
+### B所有のLearn HTML変更と根拠
+
+| Lesson | 新Learnで修正・追加した意味 | 本main側と残る不一致 / 独立審査 |
+| --- | --- | --- |
+| `security-identity-proofing-authn-authz` | 本人確認の身元の整理・証拠検証・申請者と証拠の結び付き、登録後の認証器の制御との違い、回復と異動後の拒否試験を架空ケースで説明 | Markdown/RSVPの本文8「本人確認は実在性を確かめます」は狭いまま。A/E側でMD/JSONを同期修正する必要がある。NIST SP 800-63A-4のproofing overview／resolution, validation, verification参照 |
+| `security-sessions-federation-oauth-oidc-saml` | SSOは利用者体験であってRPセッション同一性の保証ではないこと、API用アクセストークンとOIDC IDトークンの宛先・検証、IdP停止後のRPごとの失効を架空ケースで区別 | Markdown/RSVP本文11「一度の認証を共有」、本文23「第三者へ限定アクセス」は限定が不足。A/E側でMD/JSONを同期修正する必要がある。OIDC Core 1.0 §3.1.3.7（ID Token Validation）、RFC 9700、NIST 800-63C-4の適用をCが再照合 |
+| `security-cloud-shared-responsibility-iam-config` | SaaS/IaaS/PaaSの契約・機能別に、IAM、OS更新、鍵、ログ、復旧の主体と証拠を確認。確かめられないときは判断を保留する架空ケースへ整理 | 旧出典URLはCISAのTRAへつながる案内ページで、直接PDFではない。Learnでは旧URLのラベルを正確化し、CISA/USDS/FedRAMP Cloud Security TRA v2.0（2022）の直接PDFを追加。ただしMarkdown/JSONの引用名と出典URLの不一致はBの所有外なので継続し、A/Eへ是正依頼 |
+
+根拠URLの今回の確認範囲:
+- NIST SP 800-63A-4（2025）[Identity Proofing Overview](https://pages.nist.gov/800-63-4/sp800-63a/proofing/)：実在性、証拠の有効性と本人への結び付きの説明。個別IALの法的適用は未判定。
+- [OpenID Connect Core 1.0 incorporating errata set 2](https://openid.net/specs/openid-connect-core-1_0.html) §3.1.3.7：`iss` / `aud` 等を含むIDトークン検証。全OAuth/OIDC実装・Logout方式を包括検証したわけではない。
+- [CISA Cloud Security Technical Reference Architecture v2.0 PDF](https://www.cisa.gov/sites/default/files/2023-02/cloud_security_technical_reference_architecture_2.pdf)：文書の直接URL・版と、旧URLが案内ページであることを確認。PDF全節・個別クラウド事業者の契約本文は未精読のため主張別 `source_verified` としない。
+
+### Learn回帰、旧8章と理解確認20問
+
+- `tests/fixtures/security-learn-coverage.json` の上記3章に、主張と条件を**同一段落**に要求する6つのgateを追記。本人確認の結び付き、認証と身元の違い、APIトークンの宛先、IdPとRPの失効境界、責任分界の契約依存、証拠不足時の保留を確認する。
+- `tests/learn-html.test.mjs` に、当該gateが消えていないこと、CISA TRAのPDFへの直接リンクが残ることを検査する回帰を追加。既存回帰は削除しない。
+- 残る旧8章のうち `security-risk-assessment` / `security-email-spf-dkim-dmarc` / `security-social-engineering-bec-phishing` / `security-malware-ransomware` / `security-credential-session-attacks` は、このBブランチでの本文変更なし。特にE #105のランサムウェアJSON summaryとメールDMARC Q1は変更せず、Cの**現mainを対象とした独立再審査**へ渡す。
+- 理解確認20問は前節の採点案を維持し、新しい問題本文・UI・localStorageは変更しない。危険な別解を無条件に許容しないという既存の2/1/0点の基準は保持。ただし20問の学習者実測、採点者間一致、Cの再査読は `NOT_VERIFIED`。
+- 以前の第3Waveの主張（20問の構造レビュー）は履歴として保持。今回のB変更によって理解確認20問全部の意味的妥当性が新たに独立検証されたわけではない。
+
+### 新優先4章の依存と未着手ゲート
+
+`security-threat-modeling` / `security-mitre-attack-scenarios` / `security-password-mfa-phishing-resistant` / `security-firewall-proxy-waf-ids-ips` は、Aが**修正後head SHA・重要表現・MD/JSON同期・根拠・テストを引き渡してから**Learn講義4件を最終化する。本Bの作成中はそのheadが未提供。旧mainのこれら4件に残る機械的逐語再掲を改修済みとして扱わない。4章のLearn最終化・4章各2〜3問・最新版の媒体対照表は**HOLD**。C独立再審査とEの統合PRも別途必要。
+
+### 自動検査・実利用・次の受入条件
+
+- ローカル `npm run check`: **NOT_RUN**（GitHub connector上の編集でローカルcheckoutなし）。PR head CIは実run IDと結論が得られるまで **NOT_VERIFIED** とする。
+- Desktop/390px GUI、Android Chrome、Web Speech API実音声、Chrome標準読み上げ、学習者の実際の理解：**すべてNOT_VERIFIED**。CI成功やVercel READYは代替しない。
+- 保全: 既存入門8章、Course/Catalog/status、共通player、クイズUI、localStorage、private repo / public Instant Radioの境界に変更なし。
+- **次の受入順序**: ①Bのこの3章HTMLと概念gateをCが新headで評価、②A修正headを固定してBの新4章講義・条件変更問題・原典対照表を作成、③CがA/B各最新headを独立再審査、④EがA+Bの内容を半完成のままmainへ出さず統合する。Markdown/JSON側の上記3件の残差はA/Eに委譲する。B単独では内容PASSを宣言しない。
+
+
+### 第4Wave後続 — A修正済みheadに対応する新4章Learn提出（2026-10-09 JST）
+
+**依存の更新:** 本Wave開始時のA #102 head `198df1210b176d880225b59e121c3953268f2b50` から、Aは4章の重要表現とテストを是正し、head `22d56c19574d23681cdebec7a24344f820336315` へ更新した。ただし同headの[Test 37880471925](https://github.com/Josh-Temple/rsvp-learning/actions/runs/37880471925) は33件成功・1件失敗。失敗は`security-password-mfa-phishing-resistant`の改稿済み文章と古いテスト期待文字列の差（「認証先の名前にも結び付けます。」対「認証先の名前と暗号的に結び付けます。」）。BからA #102へ再同期依頼コメントを送付した。続いてAはテストの期待表現のみを修正し、**head `1d7aaf0aa16733cd49b46ff503437d38efadffd4` / [Test 37880535899](https://github.com/Josh-Temple/rsvp-learning/actions/runs/37880535899) success** を確認。直前headとの差は`tests/rsvp-chunk-quality.test.mjs`の1行変更のみ。以上を起点にBの4章Learnを改稿した。AのPRはDraftを継続し、E統合前のC独立審査は未完了。
+
+| Lesson ID / A本文の核 | B Learn講義での対応表現 | 否定・条件・事実確認の限界 | 出典と概念ゲート |
+| --- | --- | --- | --- |
+| `security-threat-modeling` 本文9–10 / 21–45 | 信頼境界は異なる主体・管理領域・信頼水準にまたがる。架空の住民申請で担当外API閲覧を模擬拒否試験へつなぐ | 権限が変わる箇所だけを信頼境界としない。ログ欠損は侵害不存在の証拠ではない。画面の非表示とAPI認可は異なる | OWASP Threat Modeling Project / Cheat Sheet。7ゲートで境界、反例、証拠、再評価 |
+| `security-mitre-attack-scenarios` 本文10–45 / 52–55 | 不審メール、ログイン、権限変更、転送から、T1078などの**候補**を挙げ、正常業務を代替仮説としてログを突き合わせる | techniqueの候補と攻撃の確定、分類と監視による検知は別。SaaSと端末で観測点も異なる | MITRE Enterprise Matrix、T1078個別ページ。7ゲートで不確実性、別解、ログ欠損、環境変化 |
+| `security-password-mfa-phishing-resistant` 本文14–28 / 29–59 | OTP転送、WebAuthnの認証先名との暗号的結び付き、同期型と固定型の差、管理者の紛失・回復窓口の架空ケースを自然な講義にした | 有効な認証結果を偽の検証者へ渡さない性質を「入力欄への送信禁止」だけに縮小しない。AALの適用・設定・回復を無条件に一般化しない | NIST SP 800-63B-4 §3.2.5中心の主張、CISA MFA。7ゲート |
+| `security-firewall-proxy-waf-ids-ips` 本文13–21 / 22–56 | TLS終端で見える範囲、WAFの検査とサーバ認可の違い、模擬APIの拒否試験、迂回・誤遮断・fail時動作をつなぐ | WAF稼働は個別認可の証拠ではない。TLS内容検査・fail openは装置と構成次第。旧NISTガイドの製品保証はしない | NIST SP 800-41 Rev.1、SP 800-94、CIS v8.1。8ゲート |
+
+**原典確認の境界:** 出典リンクはAのMarkdown/RSVPと照合し、MITRE T1078およびNIST SP 800-94をBのHTML出典節へ追加した。NIST SP 800-63B-4 §3.2.5の概念を講義へ反映したが、今回Bが全出典の版・全節・適用条件を独立に実証したことは意味しない。特にMITRE個別techniqueの記述と旧NISTガイドの具体的適用の `source_verified` 判定は**Cに委譲、現時点partial**。出典は`article`外に残し、連続再生で読み上げ本文へ混ぜない。
+
+#### 4章の理解確認問題案（クイズUI・学習履歴は未変更）
+
+| Lesson | 条件を変えて問う問題 | 2点の条件付き模範解答 / 妥当な別解 | 0点となる誤解 |
+| --- | --- | --- | --- |
+| 脅威モデル Q1 | 職員画面のボタンは非表示だが、APIが申請番号だけで返答する。何を検証するか | APIが職員と申請の対応権限をサーバ側で判定することと、模擬担当外データで拒否を実測すること。承認済み例外権限があれば対象と期限を確認 | 画面非表示かログイン成功だけで認可済み |
+| 脅威モデル Q2 | 申請APIが新委託先を経由するようになった。以前の脅威モデルは十分か | データフローと主体・管理領域の信頼境界を更新し、未確認の委託先の権限・監査ログを確認。変更なしを差分検証できた範囲は維持可能 | 機能名が同じなら再審査不要 |
+| MITRE Q1 | 成功ログインが普段と異なる時間に見つかった。直ちにT1078悪用と断定するか | 正規アカウント悪用は候補。職員の勤務・端末・他ログと照合し、代替仮説を残す。追加証拠で結論を絞ってよい | 異常時刻なら攻撃確定 |
+| MITRE Q2 | 検知ルールを増やした。重要な行動を検知できる証拠になるか | 対象ログ収集と許可された模擬イベントによる警告・遅延の実測が必要。Coverageをログ・行動ごとに示す別解もよい | ルール数だけで検知網羅を証明 |
+| パスキー Q1 | SMS OTPを必須にしている。偽画面へのコード入力に耐えるか | 有効なコードが転送され得る点を説明し、認証先名に結び付く方式と実際の拒否試験を検討 | MFAなら方式を問わずフィッシング耐性あり |
+| パスキー Q2 | 管理者の認証器を失った。誰をどう復旧させるか | 登録・回復を分け、本人確認、復旧権限、記録、時間・代替手段を模擬検証。承認済み非常手順があるなら条件と事後監査を確認 | 強い認証さえあれば回復経路は不要 |
+| ネットワーク Q1 | WAFは稼働しているのに担当外申請が閲覧できた。何が不足か | APIのサーバ側認可不足を確認し、模擬担当外要求の拒否とアプリ側ログを実測 | WAFが全ての業務権限を判断する |
+| ネットワーク Q2 | TLS化してIDSとWAFを置いた。全通信を観測できるか | 各機器のTLS復号・終端位置、迂回経路と観測ログを確認。観測不能な区間は未確認とする | TLS化しただけで全装置が内容を検査できる |
+
+すべて **問題案 / 採点暫定 / user_learning_not_verified**。2点=両条件説明、1点=一条件説明し重大逆意味なし、0点=条件欠落または危険な逆意味。安全な代替解は示された根拠に応じて認める。既存20問の本文・採点表・クイズUI・localStorageは変更なし。
+
+#### 静的回帰・独立審査への引渡し
+
+- 新4章すべての古い `要点の再確認` の逐語短文群を廃し、独立した自然な説明と `短い振り返り` を提供。基礎概念→架空ケース→反例・失敗条件→観測/検証の順で音声だけで追える構造へ改稿。
+- `tests/fixtures/security-learn-coverage.json` に新4章の29ゲート（7/7/7/8）追加。`tests/learn-html.test.mjs` の既存static検査が各gateとMarkdown出典を照合し、追加テストが4章の振り返り・出典分離・A追加ソース（T1078、SP800-94）を確認する。
+- **A参照head `1d7aaf0aa16733cd49b46ff503437d38efadffd4`**。Aが今後再改稿された場合、これらのLearnが自動追従しているとは扱わない。Eの統合PR上でMarkdown/RSVP/HTML/出典を対照し、B latest headをCが**独立レビュー**するまでLessonの内容品質は `NEEDS_REVISION` / 完成ゲート `HOLD`。
+- Bのローカル `npm run check` は`NOT_RUN`。B PR headのGitHub Testが成功したかはrun IDと結論をfresh readして記録する。内容・音声・Android・実利用者理解の判定は自動テストと別であり、デバイス聴取は`NOT_VERIFIED`。
