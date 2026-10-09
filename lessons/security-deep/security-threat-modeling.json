@@ -22,240 +22,224 @@
   ],
   "chunks": [
     {
-      "text": "脅威モデリングは設計判断に使います。",
+      "text": "脅威モデリングは設計を検討する活動です。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "攻撃後だけに考えません。",
+      "text": "狙いは図を作ることだけではありません。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "早い段階から行えます。",
+      "text": "何を守るかから考えます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "最初に対象範囲を決めます。",
+      "text": "最初に対象範囲を定めます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "何を作るかを理解します。",
+      "text": "設計前提と未確定点を記録します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "構成要素を整理します。",
+      "text": "構成要素を洗い出します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "データの流れを整理します。",
+      "text": "データの流れを図にします。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "外部主体も整理します。",
+      "text": "外部の主体も記入します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "信頼境界を示します。",
+      "text": "主体や管理領域をまたぐ境界を示します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "入口と出口を確認します。",
+      "text": "信頼水準が変わる経路も確かめます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "管理経路も確認します。",
+      "text": "次に起こり得る問題を考えます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "前提条件も記録します。",
+      "text": "STRIDEは分類の一例です。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "次に何が起こるか考えます。",
+      "text": "なりすましは主体を偽る問題です。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "攻撃者の視点も使います。",
+      "text": "改ざんは内容を不正に変える問題です。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "事故の可能性も含めます。",
+      "text": "否認は行為の追跡が難しい問題です。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "STRIDEは分類法の一つです。",
+      "text": "情報漏えいは秘密が露出する問題です。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "なりすましを考えます。",
+      "text": "サービス妨害は利用を妨げます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "改ざんを考えます。",
+      "text": "権限昇格は許可範囲を越えます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "否認を考えます。",
+      "text": "分類名だけでは脅威は決まりません。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "情報漏えいを考えます。",
+      "text": "資産と操作の流れに結び付けます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "サービス妨害を考えます。",
+      "text": "架空の住民申請サービスを考えます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "権限昇格を考えます。",
+      "text": "住民が申請を登録します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "分類は発想を助ける道具です。",
+      "text": "職員は担当分だけ閲覧します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "項目を埋めることが目的ではありません。",
+      "text": "申請はデータベースへ保存されます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "Misuse Caseも使えます。",
+      "text": "住民と職員の権限は異なります。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "Attack Treeも方法の一つです。",
+      "text": "他人の申請が見える恐れを検討します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "複数の方法を選べます。",
+      "text": "成立条件は権限確認の欠落です。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "脅威をシナリオへ落とします。",
+      "text": "認証済みでも閲覧権限は別です。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "対象資産を確認します。",
+      "text": "影響は個人情報の不正閲覧です。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "必要条件を確認します。",
+      "text": "対策は申請ごとの認可確認です。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "攻撃経路を確認します。",
+      "text": "画面を隠すだけでは不十分です。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "成功時の影響を考えます。",
+      "text": "API側でも権限を確認します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "既存対策も確認します。",
+      "text": "拒否されるべき要求を試験します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "優先順位を付けます。",
+      "text": "試験は架空の申請データで行います。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "すべてを同じ重さで扱いません。",
+      "text": "期待結果は他人の申請の拒否です。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "次に対策を考えます。",
+      "text": "設定資料は実装の証拠ではありません。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "設計変更で消せる場合があります。",
+      "text": "試験結果も記録して確認します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "権限を減らす場合があります。",
+      "text": "監査ログで不正な試行を追います。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "境界を追加する場合があります。",
+      "text": "ログがない場合は観測が不足します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "検知を追加する場合もあります。",
+      "text": "脅威がないとは判定できません。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "復旧策も検討します。",
+      "text": "担当者と改善期限を決めます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "残るリスクも記録します。",
+      "text": "残るリスクを判断者へ示します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "最後に十分かを確認します。",
+      "text": "審査権限を変えた場合も見直します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "図が最新か確認します。",
+      "text": "委託先のAPI追加でも更新します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "脅威漏れをレビューします。",
+      "text": "権限以外の境界も再確認します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "対策が実装されたか確認します。",
+      "text": "STRIDE以外の方法も選べます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "新しい弱点がないか見ます。",
+      "text": "Misuse Caseも候補です。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "変更時にモデルを更新します。",
+      "text": "Attack Treeも利用できます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "新しいAPIでも見直します。",
+      "text": "手法の選択は目的に従います。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "委託先変更でも見直します。",
+      "text": "脅威モデルは侵入試験とは別です。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "脅威モデルは一度きりではありません。",
+      "text": "コードレビューとも役割が異なります。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "ペネトレーションテストとは違います。",
+      "text": "結果を組み合わせて改善します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "コードレビューとも違います。",
+      "text": "最後に対策が働くか確かめます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "相互に補完できます。",
+      "text": "図と脅威一覧を更新します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "成果物は図だけではありません。",
+      "text": "未検証事項は未検証として残します。",
       "duration_multiplier": 1.15
-    },
-    {
-      "text": "脅威一覧も成果です。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "対策と根拠も成果です。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "未解決事項も残します。",
-      "duration_multiplier": 1.15
-    },
-    {
-      "text": "設計の意思決定へつなげます。",
-      "duration_multiplier": 1.4
     }
   ]
 }
