@@ -2,6 +2,13 @@
   "schema_version": 1,
   "items": [
     {
+      "id": "2026-10-10-learn2play-experience-learning",
+      "title": "AIは失敗を重ねて、本当に新しいルールを学べるか――Learn2Play Bench",
+      "date": "2026-10-10",
+      "category": "research",
+      "path": "./research/2026-10-10-learn2play-experience-learning.html"
+    },
+    {
       "id": "2026-10-08-autosella-molecular-optimization",
       "title": "AIは科学計算のアルゴリズムを改善できるか――AutoSellaの実験と限界",
       "date": "2026-10-08",
