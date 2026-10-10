@@ -514,6 +514,71 @@
             "証明ではありません"
           ],
           "within_paragraph": true
+        },
+        {
+          "label": "Resolutionの対象集団・属性・証拠",
+          "terms": [
+            "identity resolution",
+            "対象とする集団内",
+            "区別",
+            "必要な属性と証拠",
+            "集めます"
+          ],
+          "within_paragraph": true
+        },
+        {
+          "label": "Resolutionは世界唯一性を保証しない",
+          "terms": [
+            "世界全体",
+            "唯一",
+            "保証する作業ではありません"
+          ],
+          "within_paragraph": true
+        },
+        {
+          "label": "Evidence validationは証拠・属性を検査",
+          "terms": [
+            "evidence validation",
+            "証拠の真正性",
+            "属性の正確さ"
+          ],
+          "within_paragraph": true
+        },
+        {
+          "label": "Identity verificationは申請者との結び付き",
+          "terms": [
+            "identity verification",
+            "申請者本人",
+            "結び付き"
+          ],
+          "within_paragraph": true
+        },
+        {
+          "label": "偽書類と他人の真正書類を区別",
+          "terms": [
+            "偽造された証拠",
+            "本物の他人の書類",
+            "書類が真正でも"
+          ],
+          "within_paragraph": true
+        },
+        {
+          "label": "認証器登録では誤った本人確認を修復できない",
+          "terms": [
+            "強い認証器",
+            "最初の本人確認",
+            "取り消されません"
+          ],
+          "within_paragraph": true
+        },
+        {
+          "label": "プライバシーは必要範囲と用途の条件付き",
+          "terms": [
+            "必要な範囲",
+            "個人情報",
+            "用途"
+          ],
+          "within_paragraph": true
         }
       ]
     },
