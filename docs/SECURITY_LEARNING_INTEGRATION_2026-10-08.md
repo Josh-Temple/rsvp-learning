@@ -475,3 +475,42 @@ Eは#117 head **a5ccc9...** のMD/JSON/HTML 3組を別々に再取得。**番号
 4. **E-final:** C・E-2・Dの新しい現物を統合正本へ新節として追記、PR/CI/main/productionを再読して `COMPLETED/PARTIAL_WITH_GAPS/BLOCKED` とrelease gateを改めて判定。
 
 **本E実行終了時:** C正式独立再受入が未成立のため教材release **HOLD**、新3章のmerge・production deploy **なし**。Dの旧本番QA証拠の安全な文書統合とEの停止判定を完了。前Waveより進んだ証拠を保持する一方、独立承認なしの公開成功を報告しない。
+
+
+---
+
+## 17. 2026-10-11 Worker E — 独立C最終受入後の既存3章release・production読戻し・QA未達の統合
+
+**指示:** Library \`/RSVP Learning/Work Instructions/2026-10-11_security_learning_c_final_acceptance_conditional_three_lesson_release_and_production_qa_wave_instructions.md\`。本節はCの独立署名をEが再生成せず、A/Bの対象教材に余計な編集を加えずに実施したE-2とE-finalの時点別証拠を記録する。§14〜§16の歴史的HOLDは当時の判定として維持する。
+
+**E-2:** \`MERGED_AND_PRODUCTION_VERIFIED\`（C受入済み既存3章について）。**対象3章release gate: \`OPEN\`（protected productionに実配信したことの確認）**。**Wave総合: \`PARTIAL_WITH_GAPS\`**。Dによる新版実ブラウザ・Android・発声・継続再生・20問実回答の独立QAは未成立。内容受入、CI、配信、実利用、学習効果を別扱いとする。
+
+### 17.1 exact SHA / PR / CI — 時系列
+
+1. **着手main:** \`a29dcd93ec517aef5d4253143f6b41cb621f39c3\`。旧C #128 §16の \`HOLD\` はE-1確定より前の事前監査として保持し、同一候補の新受入に読み替えない。
+2. **新独立C受入:** [PR #132](https://github.com/Josh-Temple/rsvp-learning/pull/132) におけるappend-only [監査文書](https://github.com/Josh-Temple/rsvp-learning/blob/main/docs/SECURITY_DEEP_CONTENT_AUDIT_2026-10-08.md) §17。C専用head \`c4351f2fa6d8419c258a47935795597924bd3881\` の[Test #38087417632](https://github.com/Josh-Temple/rsvp-learning/actions/runs/38087417632)は \`completed/success\`。Cの \`C_ACCEPTED_EXACT_HEAD\` / \`ACCEPTED_FOR_MERGE\` は教材[PR #117](https://github.com/Josh-Temple/rsvp-learning/pull/117) **exact head \`af3249f19a79727c556945e7d53e6bcb837d8f05\`** に限定し、3章 \`PASS\`、未解消P0=0/P1=0。EはC文書を変更せず、PR #132だけをexpected-head squash mergeし、main \`7591f62a0680a6ee35123637a1c9d08603bf19a8\` と監査本文の署名SHAをreadback。
+3. **教材候補と安全な統合:** #117は署名head不変、旧base \`07045f861e7e4dbc7e2adf03b03ef997b77939e3\`、PR差分12パス（3章のMD/JSON/Learn = 9、RSVP/Learn tests = 2、coverage fixture = 1）。C記録統合後のmainとのcompareは\`diverged\`、ahead=12/behind=15、**実変更パスは許容12件のみ**。GitHub REST実物の \`mergeable=true / mergeable_state=clean\` をreadback。候補[Test #38047457697](https://github.com/Josh-Temple/rsvp-learning/actions/runs/38047457697) \`completed/success\`、\`head_sha=af3249...\` を確認後、#117をreadyにして同じ期待head固定でsquash merge。**教材統合main \`7d1139bf18211d9351170fa37035df4abfbf0e1d\`**。[main push Test #38087884072](https://github.com/Josh-Temple/rsvp-learning/actions/runs/38087884072)は同一SHAで\`completed/success\`。旧#102/#107/#111・重複候補はmergeしていない。
+4. **本番デプロイ:** 新main CI成功後、既存Vercel project \`rsvp-learning\` にGitHub \`main\` の**明示SHA \`7d1139...\`**を指定してproduction新規deployment \`dpl_9gwje3gbgWGjsWoVUGqxLY1ahh4u\` を作成。\`READY/target=production/meta.githubCommitSha=7d1139...\` と \`rsvp-learning-kappa.vercel.app\` aliasをreadback。project SSO \`enabled=true/deploymentType=all_except_custom_domains\` を維持。無断保護解除・public Instant Radio同期なし。
+5. **並行main進行を分離:** その後の別案件[PR #134](https://github.com/Josh-Temple/rsvp-learning/pull/134) のmain \`41e4ad131994dbc7688487bf3f632dc9e4e4d9d3\` は \`7d1139...\` から **\`listen/index.json\` と \`listen/research/2026-10-11-station-open-ended-scientific-discovery.html\` の2パスだけ**進行。新main push [Test #38088006409](https://github.com/Josh-Temple/rsvp-learning/actions/runs/38088006409) \`completed/success\`。後のVercel aliasは **\`dpl_AovNps9UdYuNSoy5UN1xuFqnkXjY\`**、\`READY/production/meta.githubCommitSha=41e4ad...\` に更新された。これは別Listen追加であり、今回の改訂3章・player・Catalog等の差分追加ではない。現在aliasがこのdeploymentを指すこと、SSOが保持されたことを再取得。**教材merge SHAと後続main／現在のproduction source SHAは区別して記録**する。
+
+### 17.2 C内容受入・静的配信の実測
+
+| 対象 | C内容/source verdict（§17の審査範囲） | E形式・release |
+| --- | --- | --- |
+| III-1 \`security-identity-proofing-authn-authz\` | \`PASS\`、P0/P1=0。NIST SP 800-63A-4 Finalのidentity resolution/validation/verificationの重大命題は\`source_verified\`、IAL全規範・回復/プライバシー細目は\`partial\` | C独立比較 **65/65** MD番号付き正文↔RSVP全文一致。Learn意味対応。 |
+| III-3 \`security-sessions-federation-oauth-oidc-saml\` | \`PASS\`、P0/P1=0。RFC 10017、OIDC Coreの重点部分は\`source_verified\`、RFC 9700全条項・個別RP失効/SAML規範全文は\`partial/not_verified\` | **50/50**。access/ID token、RPセッションとIdP停止条件を保持。 |
+| IV-7 \`security-cloud-shared-responsibility-iam-config\` | \`PASS\`、P0/P1=0。AWS公式例は\`source_verified\`、他社契約・CISA TRA個別節・実復旧は\`partial/not_verified\` | **52/52**。AWSと他社を区別。 |
+
+C報告の**合計167/167、24字超過0、Learn source 3件がarticle外**をC独立ゲートの値とする。EはC本人として再署名せず、Cの証拠PR、head CI、変更ファイルおよび本番配信を検証した。
+
+**Eの新版protected production静的照合:** 最初の新deployment \`dpl_9gwje3gbgWGjsWoVUGqxLY1ahh4u\`（source \`7d1139...\`）をaliasが指す時点に、Vercel認証付きGET本文とGitHub \`ref=7d1139...\` の全文を比較し、**22/22がHTTP 200かつ文字列完全一致**。内訳: \`/\`、\`/app.js\`、\`/learn/learn.js\`、\`/learn/course-player.js\`、\`/courses/index.json\`、\`/lessons/index.json\` の6件、3章の \`/learn/{id}.html\` + \`/lessons/security-deep/{id}.md\` + \`/lessons/security-deep/{id}.json\` の9件、既公開章 \`/learn/security-risk-assessment.html\`、\`/learn/security-email-spf-dkim-dmarc.html\`、\`/learn/security-social-engineering-bec-phishing.html\`、\`/learn/security-malware-ransomware.html\`、\`/learn/security-credential-session-attacks.html\` の5件、\`/styles.css\` と \`/learn/learn.css\` の2件。端末/browser/renderingは未実施。
+
+その後aliasが \`dpl_AovNps9UdYuNSoy5UN1xuFqnkXjY\`（source \`41e4ad...\`）へ変化したため、**新alias独自**の重点6件（3章Learn HTMLとRSVP JSON）をGitHub \`ref=41e4...\` で再検査。**5/6件がHTTP 200＋全文一致、1件の本人確認RSVP JSONは取得ツールの安全性ブロックでHTTP status未観測**。\`7d1139...\`→\`41e4...\`のGitHub compareはListen2件のみ、対象9教材に変更なし。よって旧deploymentの22件観測を新aliasの22件実測と誤記しない。ツールブロックは配信404やアプリ障害の証拠ではない。
+
+### 17.3 D新production QAと総合判定
+
+- D [PR #133](https://github.com/Josh-Temple/rsvp-learning/pull/133)の[QA正本](https://github.com/Josh-Temple/rsvp-learning/blob/main/docs/SECURITY_REAL_USE_QA_2026-10-08.md) §11は、**旧production** \`d85c73b47949cf4afbaa3407361edc5fc617f26a\` / \`dpl_FWEfCK8MuLdg5TmLFXjXcxNqNUZh\` の**静的16/16 PASS**に限る。既にmainへ文書専用merge済み。新版に対する**D自身の独立QA節・PRは現時点未取得**。Eの22件・更新alias5件の静的照合をDの実操作・D独立新source判定に転記しない。
+- **新版の実利用:** desktop GUI \`NOT_VERIFIED\`、390px \`NOT_VERIFIED\`、Android Chrome \`NOT_VERIFIED\`、Web Speech実発声 \`NOT_VERIFIED\`、Chrome標準Read Aloud \`NOT_VERIFIED\`、Course I/III/IV初/中/終章の章送り・最終停止 \`NOT_VERIFIED\`、画面OFF/background \`NOT_VERIFIED\`、非認証ブラウザアクセス \`NOT_VERIFIED\`、既存20問の実回答/採点・学習効果 \`NOT_VERIFIED\`。合計9領域が未実証。認証付きHTTP 200は匿名アクセスを保証しない。学習者データ/認証Cookie/音声録音を保存していない。
+- **E-2 \`MERGED_AND_PRODUCTION_VERIFIED\`**。対象3章はCが受け入れた範囲の修正が**protected productionに実配信済み**であり、scope付きrelease gate \`OPEN\`。ただし**Wave総合 \`PARTIAL_WITH_GAPS\`**（独立D新production実機・音声・連続再生/理解度が未成立、更新aliasの1件はツール取得BLOCKED）。
+- **残課題と担当:** Dは現在の本番deployment ID/source/SSOをfresh readして新版URL別QAを独立記録、実端末・実音声を本当に操作した場合のみPASS。EはDの新記録提出後に最終品質受入を改めて統合。20問の文書ルーブリックと実回答は分離し、他27章の専門深度を自動PASSにしない。Course V-1 \`security-secure-by-design-default\` / V-2 \`security-input-output-injection\` は個別HOLD。既存入門8章、既公開重点4章、Catalog/status/course、player、history/localStorage、private RSVPとpublic Instant Radioの境界はEの今回変更対象外。
+- **記録の区別:** このE追補だけを入れた後にGitHub main SHAが進行しても、**教材をreleaseしたsource \`7d1139...\`、現在production source \`41e4ad...\`、文書追補main SHA** を混同しない。旧C HOLDとD旧baselineを改ざんせずappend-only保存する。
