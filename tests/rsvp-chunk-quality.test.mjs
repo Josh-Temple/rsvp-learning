@@ -173,7 +173,7 @@ test("P1-IP-01: identity resolution, evidence validation, applicant verification
   const id = "security-identity-proofing-authn-authz";
   const md = await fs.readFile(path.join(root, "lessons/security-deep", id + ".md"), "utf8");
   const data = JSON.parse(await fs.readFile(path.join(root, "lessons/security-deep", id + ".json"), "utf8"));
-  const numbered = [...md.matchAll(/^(\\d+)\\. (.+)$/gm)];
+  const numbered = [...md.matchAll(/^(\d+)\. (.+)$/gm)];
   const texts = data.chunks.map(c => c.text);
   assert.equal(numbered.length, data.chunks.length);
   for (let i = 0; i < numbered.length; i++) {
