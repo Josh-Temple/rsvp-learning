@@ -803,7 +803,7 @@ C受入後はEが新しいmain/head/CI/diffをfresh readし、重複を避けて
 
 - 同mainの `docs/SECURITY_LEARN_PILOT_2026-10-08.md` にある既存12問+拡張8問=**20問**について、文書の2点（必要な2要素）、条件付き1点（1要素＋重大逆意味なし）、0点（重大逆意味）が保持されることを確認。具体的な危険誤答：access token所持=本人認証、IdP停止=全RP即時失効、SaaSなら利用者責任0、強い認証器だけで初回誤登録修復、UIでボタンを隠せばサーバ認可済み。**20/20は採点文書の軽量確認**であり、Quiz UI実装/学習者回答/採点者間一致/学習効果の測定は `NOT_VERIFIED`。
 - 本Cは教材、player、Catalog、SSO、GitHub設定、Vercel、既存productionには変更を加えていない。残27章の専門的深度の全面C再査読は対象外、Course V-1 `security-secure-by-design-default`、V-2 `security-input-output-injection` は従来の `HOLD`。private RSVPとpublic `instant-radio` を分離する。
-- Desktop/390px GUI、Android実機、Web Speechの実発声、Chrome標準Read Aloud、Course I/III/IVの章送りと最終停止、背景再生、20問実回答、匿名アクセスは**本Cでは実施なし/NOT_VERIFIED**。本番deployment/source/alias/SSOの新C実測は `NOT_VERIFIED`。旧D静的QAやCIを新production PASSには転用しない。
+- Desktop/390px GUI、Android実機、Web Speechの実発声、Chrome標準Read Aloud、Course I/III/IVの章送りと最終停止、背景再生、20問実回答、匿名アクセスは**本Cでは実施なし/NOT_VERIFIED**。Vercel APIの新C readbackでは `rsvp-learning-kappa.vercel.app` → deployment `dpl_FWEfCK8MuLdg5TmLFXjXcxNqNUZh`、`READY` / `target=production`、`meta.githubCommitSha=d85c73b47949cf4afbaa3407361edc5fc617f26a`。project `rsvp-learning` のSSOは `enabled=true / all_except_custom_domains`。旧sourceは#117の署名候補 `af3249...` と**異なる**ため、改訂3章のproduction配信は成立していない。保護設定、alias、deploymentを変更していない。新production HTTPやGUI・実機試験は本Cで `NOT_VERIFIED`。旧D静的QAやCIを新production PASSには転用しない。
 
 ### 17.4 C署名とEへの必要条件
 
