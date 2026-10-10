@@ -740,19 +740,19 @@ C受入後はEが新しいmain/head/CI/diffをfresh readし、重複を避けて
 
 ## 15. 2026-10-10 Worker C — P1修復Wave・最終candidate未成立時の独立再確認とHOLD（追補）
 
-**依頼の指示正本:** Library \`/RSVP Learning/Work Instructions/2026-10-10_security_learning_identity_resolution_p1_repair_independent_reacceptance_and_controlled_release_wave_instructions.md\` §6。**判定: \`HOLD\` / \`NOT_ACCEPTED_FOR_MERGE\`。** 本節は独立した再取得と未成立条件を記録するもので、§14の監査済み旧headを新しい最終headの受入へ読み替えない。教材、Learn、test、catalog、player、productionは変更していない。
+**依頼の指示正本:** Library `/RSVP Learning/Work Instructions/2026-10-10_security_learning_identity_resolution_p1_repair_independent_reacceptance_and_controlled_release_wave_instructions.md` §6。**判定: `HOLD` / `NOT_ACCEPTED_FOR_MERGE`。** 本節は独立した再取得と未成立条件を記録するもので、§14の監査済み旧headを新しい最終headの受入へ読み替えない。教材、Learn、test、catalog、player、productionは変更していない。
 
 ### 15.1 fresh snapshot と工程依存
 
-- 再取得日: **2026-10-10 JST**。開始時のmain: \`23a007f343456ae2e6cca14d3ab849ed07b27deb\`。対象 [PR #117](https://github.com/Josh-Temple/rsvp-learning/pull/117): **open / draft / unmerged**。head: \`2699e1171ed35ccc2c2e583271c8fba62e1e92d1\`、PRのbase SHA: \`07045f861e7e4dbc7e2adf03b03ef997b77939e3\`、GitHubの取得値 \`mergeable=true\`。この値は新しいmain上の実際の統合とCIの保証ではない。
-- 変更12ファイル: 対象3章それぞれの \`lessons/security-deep/*.md\` / \`*.json\` / \`learn/*.html\`（9ファイル）、\`tests/rsvp-chunk-quality.test.mjs\`、\`tests/learn-html.test.mjs\`、\`tests/fixtures/security-learn-coverage.json\`。別案件の旧#102/#107/#111の再統合は禁止。
-- **今回のA→B→E-1が作成すべき修復済み単一candidate headを確認できない。** #117は前Wave C §14が監査した旧headと同一で、MD 9とLearn冒頭のP1表現も現存する。今回のCは教材自体の編集者ではなく、各形式と公開一次資料を新規取得して再確認したが、\`final candidate head acceptance\` の前提を満たさない。独立性は「本作業がA/B教材編集をしていない」範囲であり、外部第三者監査を示すものではない。
-- 旧head固有 [GitHub Actions Test #37957514039](https://github.com/Josh-Temple/rsvp-learning/actions/runs/37957514039): \`completed / success\`、\`head_sha=2699e117...\` をAPIで再取得した。**A/B修正後の新head CIはまだない**。Cのローカル \`npm run check\`: \`NOT_RUN\`。preview \`READY\` と production は別物であり、今回新しいproductionの更新・実機評価は行っていない。
+- 再取得日: **2026-10-10 JST**。開始時のmain: `23a007f343456ae2e6cca14d3ab849ed07b27deb`。対象 [PR #117](https://github.com/Josh-Temple/rsvp-learning/pull/117): **open / draft / unmerged**。head: `2699e1171ed35ccc2c2e583271c8fba62e1e92d1`、PRのbase SHA: `07045f861e7e4dbc7e2adf03b03ef997b77939e3`、GitHubの取得値 `mergeable=true`。この値は新しいmain上の実際の統合とCIの保証ではない。
+- 変更12ファイル: 対象3章それぞれの `lessons/security-deep/*.md` / `*.json` / `learn/*.html`（9ファイル）、`tests/rsvp-chunk-quality.test.mjs`、`tests/learn-html.test.mjs`、`tests/fixtures/security-learn-coverage.json`。別案件の旧#102/#107/#111の再統合は禁止。
+- **今回のA→B→E-1が作成すべき修復済み単一candidate headを確認できない。** #117は前Wave C §14が監査した旧headと同一で、MD 9とLearn冒頭のP1表現も現存する。今回のCは教材自体の編集者ではなく、各形式と公開一次資料を新規取得して再確認したが、`final candidate head acceptance` の前提を満たさない。独立性は「本作業がA/B教材編集をしていない」範囲であり、外部第三者監査を示すものではない。
+- 旧head固有 [GitHub Actions Test #37957514039](https://github.com/Josh-Temple/rsvp-learning/actions/runs/37957514039): `completed / success`、`head_sha=2699e117...` をAPIで再取得した。**A/B修正後の新head CIはまだない**。Cのローカル `npm run check`: `NOT_RUN`。preview `READY` と production は別物であり、今回新しいproductionの更新・実機評価は行っていない。
 
 ### 15.2 旧headの三形式全件比較と主張別判定
 
-- Cが今回再取得した3章の番号付きMD全文とJSON \`chunks[].text\` を**番号・全文・順序・句読点・否定まで機械的に比較**。本人確認 **54/54**、Federation **50/50**、Cloud **52/52**、総計 **156/156 一致**。24文字超過 **0**、最大 **24文字**。これは旧headの形式検査のみであり、修復された新headの判定ではない。
-- 同じ旧headのLearn 3 HTMLを新規取得。3章とも \`<article id="learn-article">\` の外側に \`<section class="sources">\` があることを確認。原稿とLearnの重要な条件・反例・例外の**重点主張**を文書として比較。HTMLを発声したり、GUI・Androidで動かしたりしたわけではない。
+- Cが今回再取得した3章の番号付きMD全文とJSON `chunks[].text` を**番号・全文・順序・句読点・否定まで機械的に比較**。本人確認 **54/54**、Federation **50/50**、Cloud **52/52**、総計 **156/156 一致**。24文字超過 **0**、最大 **24文字**。これは旧headの形式検査のみであり、修復された新headの判定ではない。
+- 同じ旧headのLearn 3 HTMLを新規取得。3章とも `<article id="learn-article">` の外側に `<section class="sources">` があることを確認。原稿とLearnの重要な条件・反例・例外の**重点主張**を文書として比較。HTMLを発声したり、GUI・Androidで動かしたりしたわけではない。
 
 | 範囲・旧headの現物 | 原典（再読した版・節） | source判定 | 内容判定・留保 |
 | --- | --- | --- | --- |
@@ -764,10 +764,10 @@ C受入後はEが新しいmain/head/CI/diffをfresh readし、重複を避けて
 
 ### 15.3 20問・残ゲート・リリース停止条件
 
-- 既存 **20問（12+8）の問題・採点要件・0点となる重大逆意味**について、同じmainの \`docs/SECURITY_LEARN_PILOT_2026-10-08.md\` に文書上の2点/1点/0点ルーブリックが引き続き存在することを確認。前回C §14の「20/20文書構造レビュー」を今回の受講者採点と混同しない。**このCは20問の新規採点実績を作っていない**。実受講・回答分布・学習効果・採点UIは **NOT_VERIFIED**。
+- 既存 **20問（12+8）の問題・採点要件・0点となる重大逆意味**について、同じmainの `docs/SECURITY_LEARN_PILOT_2026-10-08.md` に文書上の2点/1点/0点ルーブリックが引き続き存在することを確認。前回C §14の「20/20文書構造レビュー」を今回の受講者採点と混同しない。**このCは20問の新規採点実績を作っていない**。実受講・回答分布・学習効果・採点UIは **NOT_VERIFIED**。
 - 今回は3章の重点主張に限定。残27章の新たな全文監査、全30章の専門深度保証、Course V-1/V-2の完成・登録は行わない。Course Vの2章は **HOLD**。
 - Desktop/390px GUI、Android Chrome、Web Speech API、Chrome標準読み上げ、コース連続再生、画面OFF/バックグラウンド、匿名アクセス、production SHAの新規配信は**本CでNOT_VERIFIED／未実施**。認証・公開設定やprivate/public境界は不変更。
 
-**最終Cゲート = \`HOLD\`、\`ACCEPTED_FOR_MERGE\` 不可。** 理由は (a) P1-IP-01が旧headのMD/JSON/Learnに残存、(b) A/Bの修復済み新headおよびE-1による最新mainとの単一candidate固定がない、(c) その**同一新head**に対するCの独立受入・head固有CIがないため。**旧2章の限定PASSは、新candidate headの最終PASSを自動保証しない。**
+**最終Cゲート = `HOLD`、`ACCEPTED_FOR_MERGE` 不可。** 理由は (a) P1-IP-01が旧headのMD/JSON/Learnに残存、(b) A/Bの修復済み新headおよびE-1による最新mainとの単一candidate固定がない、(c) その**同一新head**に対するCの独立受入・head固有CIがないため。**旧2章の限定PASSは、新candidate headの最終PASSを自動保証しない。**
 
-**再提出条件:** ① AはNIST原典の対象集団内の区別・最小属性/証拠をMD/JSONに正確に反映、② BはAの保存済みheadを読んだ上でLearn冒頭・三段階説明・架空例を意味同期、③ E-1は最新mainとの差分混入のない単一candidate PR/head/base・変更ファイル・head CIを固定、④ Cは**固定された最終candidate head**の三章すべてのMD/JSON/Learn・主要否定・source適用範囲を再監査し、未解消P0/P1ゼロの場合にだけ別途 \`ACCEPTED_FOR_MERGE\` を署名する。**Eのmerge／production更新はその後**。監査文書のPRをmergeしても教材は合格・公開済みとはならない。
+**再提出条件:** ① AはNIST原典の対象集団内の区別・最小属性/証拠をMD/JSONに正確に反映、② BはAの保存済みheadを読んだ上でLearn冒頭・三段階説明・架空例を意味同期、③ E-1は最新mainとの差分混入のない単一candidate PR/head/base・変更ファイル・head CIを固定、④ Cは**固定された最終candidate head**の三章すべてのMD/JSON/Learn・主要否定・source適用範囲を再監査し、未解消P0/P1ゼロの場合にだけ別途 `ACCEPTED_FOR_MERGE` を署名する。**Eのmerge／production更新はその後**。監査文書のPRをmergeしても教材は合格・公開済みとはならない。
