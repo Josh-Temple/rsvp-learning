@@ -348,3 +348,68 @@ Vercelのproject設定ではSSO protectionが一部環境に有効。アクセ�
 5. **20問・Course V:** 文書に20問と採点条件があることは受講効果ではない。実受講者の回答と成績はNOT_VERIFIED。Course V-1/V-2はHOLD、残27章の専門深度全数再監査なし。RSVP private / Instant Radio public境界は不変更。
 
 **D最終引継ぎ: `PARTIAL_WITH_GAPS`。** 旧本番のVercel API・14静的URL/source一致だけ限定PASS。新#117改訂3章の本番配信、desktop/390px、Android、2種類の読み上げ、連続再生実動作、受講結果は未検証。**本文・player・Catalog・本番配信・公開設定にDは変更を加えない。** 本節はE統合前のbaselineであり、独立C受入・E releaseを代行しない。
+
+
+---
+
+## 10. 2026-10-10 JST — Learn alignment Wave / D current-production baseline
+
+**担当・判定:** Library `/RSVP Learning/Work Instructions/2026-10-10_security_learning_learn_alignment_independent_acceptance_and_release_closure_wave_instructions.md` §8、Worker D。**`PARTIAL_WITH_GAPS`（旧本番静的QAに限定）**。新3章のrelease gateを開いたという意味ではない。今回の連携操作は2026-10-10 **20:06–20:13 JST**のセッション内。APIの個別リクエスト時刻は採取しておらず、表の時間帯は各リクエストの正確な送信時刻を意味しない。
+
+### 10.1 Fresh source / release boundary（同時実行によるSHA変化を分離）
+
+- 着手時のGitHub `main` は `62b63da394ae7b60b234566331d8905dceac4e80`。確認途中に文書のみのPR [#126](https://github.com/Josh-Temple/rsvp-learning/pull/126)が取り込まれ、**20:13 JST頃の再読時 `main=c6869b0231f401a545b5bb551a38e98ef0a27fc3`**、[main Test #38047456642](https://github.com/Josh-Temple/rsvp-learning/actions/runs/38047456642)は `completed/success`。そのコミットの変更は `docs/SECURITY_LEARNING_INTEGRATION_2026-10-08.md` のみ。**mainのSHA進行を新教材の本番反映とはしない**。
+- 対象Draft [PR #117](https://github.com/Josh-Temple/rsvp-learning/pull/117) は着手時head `a5ccc9a442c00b546f6f50f7549f812253b15b29`、後の再読では `af3249f19a79727c556945e7d53e6bcb837d8f05` に進行したが、`open/draft/unmerged`。最終candidate headの独立C受入やE-2の新production配信をDが確認したものではない。旧headへのC判断や旧runの成功を新headへ継承しない。
+- **現行production** は Vercel project `rsvp-learning` / `prj_7yYGl5D3Q7UwQgQuXaGmOYLkTzbu`、alias `rsvp-learning-kappa.vercel.app` → `dpl_7bQrnHpAhNf4dhjLK54Qex5yxf6t`、`READY`、`target=production`、`meta.githubCommitSha=23a007f343456ae2e6cca14d3ab849ed07b27deb`。作業終盤のalias/project再読でも deployment ID は不変。SSO `enabled=true` / `deploymentType=all_except_custom_domains`、password protection disabled。設定は変更していない。
+- 前回D §9の **14/14** は `d028fe12658423aa4408058048e2d6545ad78893` / `dpl_Axx51igvTjRo5JsBYJJDPujV2sp1` への限定結果。今回は異なる**旧本番source `23a007f3…`** を実測した。GitHub compare `23a007f3…62b63da3` は ahead 3、差分は3つの監査・統合・QA文書のみ。さらに `c6869b…` はE統合文書のみの変更。教材本体へのmergeはこの差に含まれない。
+- `docs/PUBLIC_LISTENING_BOUNDARY_2026-10-08.md` をmainから確認。private RSVP / public Instant Radio分離を維持。今回の検証は保護されたVercel連携の一時的な認証経路を利用した取得であり、**匿名ブラウザのアクセス成立・ブラウザGUI動作を検証したものではない**。Cookie、トークン、回答、録音、履歴は保存していない。
+
+### 10.2 URL別 static HTTP / GitHub source一致
+
+**方法:** alias上の各URLをVercelの権限付き `web_fetch_vercel_url` で取得し、当該deploymentの **GitHub source SHA `23a007f3…`** に固定した `fetch_file` の文字列と照合した。表中の相対URLは `https://rsvp-learning-kappa.vercel.app` に連結。トップ `/` は `index.html` と比較。これはレスポンス文字列一致であり、レンダリング・操作・発声・匿名アクセスの合格ではない。ツールの安全審査によるブロックはHTTPの4xx/5xxではない。
+
+| test_id | date_time_JST | environment | device/browser_version | deployment_SHA/ID | URL | operation | expected | observed | evidence | verdict |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| D7-01 | 2026-10-10 20:06–20:13 JST（個別時刻ログなし） | Vercel認証済みHTTP・GUIなし | N/A / N/A | `23a007f343456ae2e6cca14d3ab849ed07b27deb` / `dpl_7bQrnHpAhNf4dhjLK54Qex5yxf6t` | `/` | GETと同一production SHAのGitHub原文比較 | HTTP 200・全文一致 | HTTP 200。GitHub production source全文一致 | Vercel web_fetch連携、GitHub fetch_file(ref=23a007f3…) | **PASS (静的HTTP/sourceのみ)** |
+| D7-02 | 2026-10-10 20:06–20:13 JST（個別時刻ログなし） | Vercel認証済みHTTP・GUIなし | N/A / N/A | `23a007f343456ae2e6cca14d3ab849ed07b27deb` / `dpl_7bQrnHpAhNf4dhjLK54Qex5yxf6t` | `/app.js` | GETと同一production SHAのGitHub原文比較 | HTTP 200・全文一致 | HTTP 200。GitHub production source全文一致 | Vercel web_fetch連携、GitHub fetch_file(ref=23a007f3…) | **PASS (静的HTTP/sourceのみ)** |
+| D7-03 | 2026-10-10 20:06–20:13 JST（個別時刻ログなし） | Vercel認証済みHTTP・GUIなし | N/A / N/A | `23a007f343456ae2e6cca14d3ab849ed07b27deb` / `dpl_7bQrnHpAhNf4dhjLK54Qex5yxf6t` | `/learn/learn.js` | GETと同一production SHAのGitHub原文比較 | HTTP 200・全文一致 | HTTP 200。GitHub production source全文一致 | Vercel web_fetch連携、GitHub fetch_file(ref=23a007f3…) | **PASS (静的HTTP/sourceのみ)** |
+| D7-04 | 2026-10-10 20:06–20:13 JST（個別時刻ログなし） | Vercel認証済みHTTP・GUIなし | N/A / N/A | `23a007f343456ae2e6cca14d3ab849ed07b27deb` / `dpl_7bQrnHpAhNf4dhjLK54Qex5yxf6t` | `/learn/course-player.js` | GETと同一production SHAのGitHub原文比較 | HTTP 200・全文一致 | HTTP 200。GitHub production source全文一致 | Vercel web_fetch連携、GitHub fetch_file(ref=23a007f3…) | **PASS (静的HTTP/sourceのみ)** |
+| D7-05 | 2026-10-10 20:06–20:13 JST（個別時刻ログなし） | Vercel認証済みHTTP・GUIなし | N/A / N/A | `23a007f343456ae2e6cca14d3ab849ed07b27deb` / `dpl_7bQrnHpAhNf4dhjLK54Qex5yxf6t` | `/courses/index.json` | GETと同一production SHAのGitHub原文比較 | HTTP 200・全文一致 | HTTP 200。GitHub production source全文一致 | Vercel web_fetch連携、GitHub fetch_file(ref=23a007f3…) | **PASS (静的HTTP/sourceのみ)** |
+| D7-06 | 2026-10-10 20:06–20:13 JST（個別時刻ログなし） | Vercel認証済みHTTP・GUIなし | N/A / N/A | `23a007f343456ae2e6cca14d3ab849ed07b27deb` / `dpl_7bQrnHpAhNf4dhjLK54Qex5yxf6t` | `/lessons/index.json` | GETと同一production SHAのGitHub原文比較 | HTTP 200・全文一致 | HTTP 200。GitHub production source全文一致 | Vercel web_fetch連携、GitHub fetch_file(ref=23a007f3…) | **PASS (静的HTTP/sourceのみ)** |
+| D7-07 | 2026-10-10 20:06–20:13 JST（個別時刻ログなし） | Vercel認証済みHTTP・GUIなし | N/A / N/A | `23a007f343456ae2e6cca14d3ab849ed07b27deb` / `dpl_7bQrnHpAhNf4dhjLK54Qex5yxf6t` | `/learn/security-identity-proofing-authn-authz.html` | GETと同一production SHAのGitHub原文比較 | HTTP 200・全文一致 | HTTP 200。GitHub production source全文一致。出典 section は article 外 | Vercel web_fetch連携、GitHub fetch_file(ref=23a007f3…) | **PASS (静的HTTP/sourceのみ)** |
+| D7-08 | 2026-10-10 20:06–20:13 JST（個別時刻ログなし） | Vercel認証済みHTTP・GUIなし | N/A / N/A | `23a007f343456ae2e6cca14d3ab849ed07b27deb` / `dpl_7bQrnHpAhNf4dhjLK54Qex5yxf6t` | `/learn/security-sessions-federation-oauth-oidc-saml.html` | GETと同一production SHAのGitHub原文比較 | HTTP 200・全文一致 | HTTP 200。GitHub production source全文一致。出典 section は article 外 | Vercel web_fetch連携、GitHub fetch_file(ref=23a007f3…) | **PASS (静的HTTP/sourceのみ)** |
+| D7-09 | 2026-10-10 20:06–20:13 JST（個別時刻ログなし） | Vercel認証済みHTTP・GUIなし | N/A / N/A | `23a007f343456ae2e6cca14d3ab849ed07b27deb` / `dpl_7bQrnHpAhNf4dhjLK54Qex5yxf6t` | `/learn/security-cloud-shared-responsibility-iam-config.html` | GETと同一production SHAのGitHub原文比較 | HTTP 200・全文一致 | HTTP 200。GitHub production source全文一致。出典 section は article 外 | Vercel web_fetch連携、GitHub fetch_file(ref=23a007f3…) | **PASS (静的HTTP/sourceのみ)** |
+| D7-10 | 2026-10-10 20:06–20:13 JST（個別時刻ログなし） | Vercel認証済みHTTP・GUIなし | N/A / N/A | `23a007f343456ae2e6cca14d3ab849ed07b27deb` / `dpl_7bQrnHpAhNf4dhjLK54Qex5yxf6t` | `/learn/security-risk-assessment.html` | GETと同一production SHAのGitHub原文比較 | HTTP 200・全文一致 | 連携呼出しがツールの安全性審査でブロック。HTTP応答自体は未観測 | Vercel web_fetch連携、GitHub fetch_file(ref=23a007f3…)。ツール安全性ブロック | **BLOCKED** |
+| D7-11 | 2026-10-10 20:06–20:13 JST（個別時刻ログなし） | Vercel認証済みHTTP・GUIなし | N/A / N/A | `23a007f343456ae2e6cca14d3ab849ed07b27deb` / `dpl_7bQrnHpAhNf4dhjLK54Qex5yxf6t` | `/learn/security-email-spf-dkim-dmarc.html` | GETと同一production SHAのGitHub原文比較 | HTTP 200・全文一致 | HTTP 200。GitHub production source全文一致 | Vercel web_fetch連携、GitHub fetch_file(ref=23a007f3…) | **PASS (静的HTTP/sourceのみ)** |
+| D7-12 | 2026-10-10 20:06–20:13 JST（個別時刻ログなし） | Vercel認証済みHTTP・GUIなし | N/A / N/A | `23a007f343456ae2e6cca14d3ab849ed07b27deb` / `dpl_7bQrnHpAhNf4dhjLK54Qex5yxf6t` | `/learn/security-social-engineering-bec-phishing.html` | GETと同一production SHAのGitHub原文比較 | HTTP 200・全文一致 | HTTP 200。GitHub production source全文一致 | Vercel web_fetch連携、GitHub fetch_file(ref=23a007f3…) | **PASS (静的HTTP/sourceのみ)** |
+| D7-13 | 2026-10-10 20:06–20:13 JST（個別時刻ログなし） | Vercel認証済みHTTP・GUIなし | N/A / N/A | `23a007f343456ae2e6cca14d3ab849ed07b27deb` / `dpl_7bQrnHpAhNf4dhjLK54Qex5yxf6t` | `/learn/security-malware-ransomware.html` | GETと同一production SHAのGitHub原文比較 | HTTP 200・全文一致 | 連携呼出しがツールの安全性審査でブロック。HTTP応答自体は未観測 | Vercel web_fetch連携、GitHub fetch_file(ref=23a007f3…)。ツール安全性ブロック | **BLOCKED** |
+| D7-14 | 2026-10-10 20:06–20:13 JST（個別時刻ログなし） | Vercel認証済みHTTP・GUIなし | N/A / N/A | `23a007f343456ae2e6cca14d3ab849ed07b27deb` / `dpl_7bQrnHpAhNf4dhjLK54Qex5yxf6t` | `/learn/security-credential-session-attacks.html` | GETと同一production SHAのGitHub原文比較 | HTTP 200・全文一致 | HTTP 200。GitHub production source全文一致 | Vercel web_fetch連携、GitHub fetch_file(ref=23a007f3…) | **PASS (静的HTTP/sourceのみ)** |
+| D7-15 | 2026-10-10 20:06–20:13 JST（個別時刻ログなし） | Vercel認証済みHTTP・GUIなし | N/A / N/A | `23a007f343456ae2e6cca14d3ab849ed07b27deb` / `dpl_7bQrnHpAhNf4dhjLK54Qex5yxf6t` | `/styles.css` | GETと同一production SHAのGitHub原文比較 | HTTP 200・全文一致 | HTTP 200。GitHub production source全文一致 | Vercel web_fetch連携、GitHub fetch_file(ref=23a007f3…) | **PASS (静的HTTP/sourceのみ)** |
+| D7-16 | 2026-10-10 20:06–20:13 JST（個別時刻ログなし） | Vercel認証済みHTTP・GUIなし | N/A / N/A | `23a007f343456ae2e6cca14d3ab849ed07b27deb` / `dpl_7bQrnHpAhNf4dhjLK54Qex5yxf6t` | `/learn/learn.css` | GETと同一production SHAのGitHub原文比較 | HTTP 200・全文一致 | HTTP 200。GitHub production source全文一致 | Vercel web_fetch連携、GitHub fetch_file(ref=23a007f3…) | **PASS (静的HTTP/sourceのみ)** |
+
+**集計:** 16 URL中 **14 URLでHTTP 200かつsource全文一致**、2 URLはツールの安全性確認で取得がブロックされ**HTTP statusを観測できなかった**。新版3章の3つのLearn HTMLは **旧production版に対する3/3一致**で、3つとも出典sectionがarticle外にある静的構造を確認した。ただし、**PR #117の修正Learnの配信済み証拠ではない**。ブロックされた2 URLのサイト側可否や機能障害は判定しない。旧§9の14/14を今回の16件に加算しない。
+
+### 10.3 実ブラウザ / Android / audio / learner outcomes
+
+| test_id | date_time_JST | environment / device/browser_version | deployment_SHA/ID | URL | operation | expected | observed | evidence | verdict |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| D7-17 | 2026-10-10 20:13 JST（未実施確認時刻） | Desktop GUI / desktop browser 未接続 | `23a007f3…` / `dpl_7bQrn…`（旧本番） | `https://rsvp-learning-kappa.vercel.app/` と対応ページ | トップ→Course→RSVP・速度・前後・一時停止・停止→Learn→出典→一覧復帰 | 実操作・実観測による判定 | 実施なし | 実ブラウザ・端末・受講者証拠なし | **NOT_VERIFIED** |
+| D7-18 | 2026-10-10 20:13 JST（未実施確認時刻） | 390px mobile viewport / browser 未接続 | `23a007f3…` / `dpl_7bQrn…`（旧本番） | `https://rsvp-learning-kappa.vercel.app/` と対応ページ | 横はみ出し・タッチ・画面遷移・コントロール状態 | 実操作・実観測による判定 | 実施なし | 実ブラウザ・端末・受講者証拠なし | **NOT_VERIFIED** |
+| D7-19 | 2026-10-10 20:13 JST（未実施確認時刻） | Desktop/390px / browser 未接続 | `23a007f3…` / `dpl_7bQrn…`（旧本番） | `https://rsvp-learning-kappa.vercel.app/` と対応ページ | Course I/III/IV 初・中・終章連続再生、章毎の出典差替え、最終停止 | 実操作・実観測による判定 | 実施なし | 実ブラウザ・端末・受講者証拠なし | **NOT_VERIFIED** |
+| D7-20 | 2026-10-10 20:13 JST（未実施確認時刻） | Android Chrome / 実機未接続（機種・OS・Chrome版不明） | `23a007f3…` / `dpl_7bQrn…`（旧本番） | `https://rsvp-learning-kappa.vercel.app/` と対応ページ | 表示幅・タッチ・横はみ出し・長時間章送り | 実操作・実観測による判定 | 実施なし | 実ブラウザ・端末・受講者証拠なし | **NOT_VERIFIED** |
+| D7-21 | 2026-10-10 20:13 JST（未実施確認時刻） | Web Speech API / 実発話・聴取なし | `23a007f3…` / `dpl_7bQrn…`（旧本番） | `https://rsvp-learning-kappa.vercel.app/` と対応ページ | 日本語音声・voice・速度・一時停止・停止・ハイライト | 実操作・実観測による判定 | 実施なし | 実ブラウザ・端末・受講者証拠なし | **NOT_VERIFIED** |
+| D7-22 | 2026-10-10 20:13 JST（未実施確認時刻） | Chrome標準読み上げ / 実機未接続 | `23a007f3…` / `dpl_7bQrn…`（旧本番） | `https://rsvp-learning-kappa.vercel.app/` と対応ページ | Chrome『このページを読み上げ』実操作・聴取 | 実操作・実観測による判定 | 実施なし | 実ブラウザ・端末・受講者証拠なし | **NOT_VERIFIED** |
+| D7-23 | 2026-10-10 20:13 JST（未実施確認時刻） | Android Chrome / 画面OFF・背景化の操作なし | `23a007f3…` / `dpl_7bQrn…`（旧本番） | `https://rsvp-learning-kappa.vercel.app/` と対応ページ | 画面OFF/バックグラウンド時の音声継続と復帰 | 実操作・実観測による判定 | 実施なし | 実ブラウザ・端末・受講者証拠なし | **NOT_VERIFIED** |
+| D7-24 | 2026-10-10 20:13 JST（未実施確認時刻） | 匿名ブラウザ / 未接続 | `23a007f3…` / `dpl_7bQrn…`（旧本番） | `https://rsvp-learning-kappa.vercel.app/` と対応ページ | SSO下の匿名アクセス可否 | 実操作・実観測による判定 | 実施なし | 実ブラウザ・端末・受講者証拠なし | **NOT_VERIFIED** |
+| D7-25 | 2026-10-10 20:13 JST（未実施確認時刻） | 実受講者 / 回答データなし | `23a007f3…` / `dpl_7bQrn…`（旧本番） | `https://rsvp-learning-kappa.vercel.app/` と対応ページ | 既存20問の回答・採点分布・理解度 | 実操作・実観測による判定 | 実施なし | 実ブラウザ・端末・受講者証拠なし | **NOT_VERIFIED** |
+
+**解釈:** URL/APIの静的PASSは上記実動作のPASSではない。実ブラウザとAndroid実機、Web Speech、Chrome標準の読み上げ、最終章停止、20問の実回答は今セッションでは実測していない。SSO配下で標準読み上げが利用可能かも未試行のため`NOT_VERIFIED`。HTTPを取得できたことから匿名利用可能と断定しない。
+
+### 10.4 Eへのhandoffと再実行条件
+
+1. **現時点の新production QAは条件不成立:** A/Bの意味同期、E-1の固定candidate、**同一head**へのC独立`ACCEPTED_FOR_MERGE`、E-2のexpected-head merge /新main head固有Test success /本番 `READY`・`target=production`・source/alias/SSO readbackが先行条件。新headが変われば旧C署名は使えない。
+2. E-2が配信した場合に限り、Dは **新production deployment ID・source full SHA** を再取得し、上記 D7-01〜D7-16 を**新版sourceと照合して再実行**。2件の安全ツールブロックは再評価が必要だが、回避策としてSSO・サイト保護を無断変更しない。旧本番のHTTP成功を移植しない。
+3. 実ブラウザが利用できる場合はdesktopおよび390pxでトップ→Course選択→RSVP再生/停止・速度・前後→Learn 3章/出典→Course I/III/IVの初・中・終章連続再生/出典差替え/最終停止→一覧復帰を操作し、URL・version・時刻・スクリーンショット（機微情報なし）を別行で記録。Androidは機種・Android/Chrome版・表示幅・タッチ・画面OFF・背景再生、Web Speech実発声とChrome標準読み上げを**別検査**として記録。
+4. 20問のドキュメント・設問監査を実回答や学習効果と混同しない。Course V-1 / V-2は引き続きHOLD。RSVP private / public Instant Radioは不変更。
+
+**D終了判定:** `PARTIAL_WITH_GAPS`（現行旧本番の静的HTTP/source 14 PASS + 2 BLOCKED、GUI/端末/音声/受講結果は NOT_VERIFIED）。**現行本番に新3章は未反映**。Dは教材・テスト・player・Catalog・localStorage・Vercelデプロイ・SSOを変更しない。本節はE/Cの受入・merge/deployを代行しない。
