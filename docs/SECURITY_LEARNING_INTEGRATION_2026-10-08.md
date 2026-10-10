@@ -443,3 +443,35 @@ Eは#117 head **a5ccc9...** のMD/JSON/HTML 3組を別々に再取得。**番号
 - **他27章の専門深度、20問の実回答と採点一致:** 今回未検証。Course V-1 \`security-secure-by-design-default\` とV-2 \`security-input-output-injection\` はそれぞれ**HOLD**。既存4章、旧入門8章、course/Catalog/status、player/history/localStorage、private/public境界はEにより変更なし。
 
 **この時点の総合: \`PARTIAL_WITH_GAPS\`、release gate \`HOLD\`。** P1対応のB新headと構造的・限定意味対応は成立したが、独立C最終受入とproduction/source整合が成立するまではWaveをCOMPLETEDとしない。C結果が出たら最新head・現在main・Run・Vercelを再取得してE-2以降を別記録に追加する。
+
+
+---
+
+## 16. 2026-10-10 E — C独立受入未成立・D静的QA統合後の最終再判定（21時台JST）
+
+**指示正本:** Library `/RSVP Learning/Work Instructions/2026-10-10_security_learning_learn_alignment_independent_acceptance_and_release_closure_wave_instructions.md`。この節は前節§15のE-1確定後に、C独立署名とD現物を新たに照合した時点の追補。§14の旧a5 head HOLD、§15のaf3249 E-1をいずれも履歴として保存する。
+
+**総合: `PARTIAL_WITH_GAPS` / 改訂3章release gate: `HOLD` / E-2: `BLOCKED`（必須C署名未成立）。** E-1の `CANDIDATE_READY_FOR_C` と、Cの `ACCEPTED_FOR_MERGE` は別のゲート。前者は成立、後者は未成立。教材PR #117のmerge、改訂3章のproduction反映は実施していない。
+
+### 16.1 Fresh source, C, CI, D
+
+- 今回E開始時GitHub `main`: `d85c73b47949cf4afbaa3407361edc5fc617f26a`（§15保存済み）。今回Eが[Dの静的QA証拠PR #130](https://github.com/Josh-Temple/rsvp-learning/pull/130)を**文書1ファイルへの追加65行・削除0・head GitHub Test success**と確認し、expected head `8d22c92ce289b25c75715bf22347e400d0614adf` にてsquash merge。merge後 `main`: **`c74d0f1657be7bb0ed5cfb17dcfd9359485159a0`**。main push [Test #38054020609](https://github.com/Josh-Temple/rsvp-learning/actions/runs/38054020609) はこのfull SHAに対して `completed/success`。**#130はQA文書だけの取り込みであり、教材リリースではない**。
+- 候補[PR #117](https://github.com/Josh-Temple/rsvp-learning/pull/117)は引き続き`open/draft/unmerged`、固定content head **`af3249f19a79727c556945e7d53e6bcb837d8f05`**、原PRの旧base `07045f861e7e4dbc7e2adf03b03ef997b77939e3`、全差分12ファイル（対象3章のMD/JSON/Learn、2 test、1 fixture）。E-1§15で同headの **65+50+52=167/167一致、上限24文字、Learn出典article外、本人確認P1文面の改善、[Test #38047457697](https://github.com/Josh-Temple/rsvp-learning/actions/runs/38047457697) success** を確認済み。今回のEで教材・fixture/testには変更なし。GitHubの `mergeable` は一時的に値が動くため、merge開始条件では毎回実diffとの整合をfresh readする。
+- Cの[監査PR #128](https://github.com/Josh-Temple/rsvp-learning/pull/128) は**open/draft/unmerged**、head `9efa278149b7a12ac25a3a31d12d28657a2b684e`、[Test #38047676455](https://github.com/Josh-Temple/rsvp-learning/actions/runs/38047676455) success。監査文書§16は候補 `af3249...` の修正を重点再読し、本人確認のP1旧表現改善、3章167/167、原典確認の射程を明記したが、**E-1の固定提出前に行った事前監査として `HOLD / NOT_ACCEPTED_FOR_MERGE`** を明記。本文は最終3章それぞれ `BLOCKED：最終候補未確定`。これは最新headに対する正式な `ACCEPTED_FOR_MERGE`、未解消P0/P1=0の独立署名ではない。Eがこの文書を勝手にPASSへ変更したり、Cを代行したりしない。
+- Eはその後、E-1固定full SHAと根拠を[PR #117の引渡しコメント](https://github.com/Josh-Temple/rsvp-learning/pull/117#issuecomment-6096893330)、統合正本§15、[C側PR #128への依存解消通知](https://github.com/Josh-Temple/rsvp-learning/pull/128#issuecomment-6096915559)に保存。**依存解消後の新規C最終判定はまだない**。Cの旧HOLDを遡及変更せず、別のappend-only C再審査が必要。
+- D [PR #130](https://github.com/Josh-Temple/rsvp-learning/pull/130)の§10は、当時のproduction `23a007f343456ae2e6cca14d3ab849ed07b27deb` / `dpl_7bQrnHpAhNf4dhjLK54Qex5yxf6t` に対する、認証済み16 URLの静的HTTP/source照合。**14件HTTP 200かつGitHub原文一致、2件は取得ツール側でブロック（HTTP status未観測）**。これは**当時の旧本番**の限定結果であり、候補 `af3249...` の本番配信、現在の新alias sourceの静的再試験、実GUI等のPASSではない。Eによる追加の16件URL実測なし。
+
+### 16.2 現productionとreleaseの区別
+
+- 今回API再照合時、`rsvp-learning-kappa.vercel.app` → Vercel deployment **`dpl_FWEfCK8MuLdg5TmLFXjXcxNqNUZh`**、`READY` / `target=production`、source **`d85c73b47949cf4afbaa3407361edc5fc617f26a`**。現main `c74d0f...` はさらにQA文書のみ1ファイル進んだ。GitHub compare `d85c73...`→`c74d0f...` は `docs/SECURITY_REAL_USE_QA_2026-10-08.md` **のみ**。#117改訂3章のファイルはproduction sourceにない。Vercel project `rsvp-learning` は `ssoProtection.enabled=true / all_except_custom_domains`。SSOとalias、private/public分離は変更していない。
+- **配信と実用の区別:** production READYとGitHub Test successはブラウザGUI、390px、Android Chrome、Web Speech APIの実発声、Chrome標準読み上げ、コース初/中/終章連続再生・出典差替え・最終停止、画面OFF/背景化、匿名アクセス、20問の実回答・理解度を実測した根拠ではない。これらは新版について一律 `NOT_VERIFIED`。Dの旧source結果も移植しない。
+- **対象外の保全:** 他27章の専門深度全件再審査なし、20問は文書上の評価基準と実回答を分離。Course V-1 `security-secure-by-design-default` とV-2 `security-input-output-injection` は個別に `HOLD`。既公開重点4章、旧入門8章、Catalog/status/course並び、player、学習履歴/localStorage、public `instant-radio`の配信には手を加えない。
+
+### 16.3 次の安全な直列工程（未実施を明記）
+
+1. **C:** §15の固定head `af3249f19a79727c556945e7d53e6bcb837d8f05` と直近mainとの差分・CIをfresh read。NIST SP 800-63A-4 Final、RFC 10017、RFC 9700、OIDC Core、AWS責任共有などを主張・節単位で照合。3章別PASS/NEEDS_REVISION/BLOCKED、原典ごとのsource_verified/partial/not_verified、未解消P0/P1、独立性と正確なfull SHAを**新節**にappend-onlyで記録。条件成立時のみ明示的に `ACCEPTED_FOR_MERGE`、不足なら `HOLD`。
+2. **E-2:** C署名がこれから統合するPR headと**完全一致**し、P0/P1=0、head Test success、変更パス許容、現在mainとの差分と統合可能性、private/public境界が新取得で成立した場合のみ、expected head SHA固定で**PR #117を一度だけ**merge。旧#102/#107/#111や代替PRの二重取り込みをしない。新main push Test success後に限り、production SHA、deployment ID/READY/target/alias/SSOを新取得。満たさなければdeploy禁止。
+3. **D:** E-2の新production sourceを確定した場合のみURL別HTTP/source照合と実ブラウザ/390px/Android/実音声・最終停止・20問実回答を別々に記録。実測不能なら `NOT_VERIFIED` を維持。
+4. **E-final:** C・E-2・Dの新しい現物を統合正本へ新節として追記、PR/CI/main/productionを再読して `COMPLETED/PARTIAL_WITH_GAPS/BLOCKED` とrelease gateを改めて判定。
+
+**本E実行終了時:** C正式独立再受入が未成立のため教材release **HOLD**、新3章のmerge・production deploy **なし**。Dの旧本番QA証拠の安全な文書統合とEの停止判定を完了。前Waveより進んだ証拠を保持する一方、独立承認なしの公開成功を報告しない。
