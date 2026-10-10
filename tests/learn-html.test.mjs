@@ -182,3 +182,78 @@ test("four new security Learn lectures retain A-head cases, limits, and separate
   assert.ok(mitre.includes('href="https://attack.mitre.org/techniques/T1078/"'), "T1078 primary source missing");
   assert.ok(firewall.includes('href="https://csrc.nist.gov/pubs/sp/800/94/final"'), "IDPS reference missing");
 });
+
+
+test("P1-IP-01 Learn: three proofing steps, limitations, and regression counterexamples", async () => {
+  const html = await fs.readFile(new URL("../learn/security-identity-proofing-authn-authz.html", import.meta.url), "utf8");
+  const article = html.match(/<article\b[^>]*>([\s\S]*?)<\/article>/i)?.[1];
+  assert.ok(article, "identity proofing article missing");
+  const checks = [
+    ["resolution", ["identity resolution", "対象とする集団内", "区別", "必要な属性と証拠", "集めます"]],
+    ["world uniqueness limit", ["世界全体", "唯一", "保証する作業ではありません"]],
+    ["validation", ["evidence validation", "証拠の真正性", "属性の正確さ"]],
+    ["verification", ["identity verification", "申請者本人", "結び付き"]],
+    ["counterfeit versus genuine-other", ["偽造された証拠", "本物の他人の書類", "書類が真正でも"]],
+    ["strong authenticator cannot repair initial proofing", ["強い認証器", "最初の本人確認", "取り消されません"]],
+    ["privacy and use limits", ["必要な範囲", "個人情報", "用途"]]
+  ];
+  const check = (speechArticle) => {
+    const paragraphs = [...speechArticle.matchAll(/<p\b[^>]*>([\s\S]*?)<\/p>/gi)].map((match) => textOf(match[1]));
+    const opening = textOf(speechArticle.split("<h2>Identityを段階に分ける</h2>")[1]?.split("</p>")[0] ?? "");
+    assert.ok(opening.includes("実在性を調べるだけで終わりません") &&
+      opening.includes("対象とする集団") && opening.includes("属性と証拠") &&
+      opening.includes("区別"), "intro must not reduce proofing to existence only");
+    assert.doesNotMatch(textOf(speechArticle), /名乗った身元が実在するか、提出された証拠が妥当か/);
+    for (const [label, terms] of checks) {
+      assert.ok(paragraphs.some((p) => terms.every((term) => p.includes(term))),
+        "P1-IP-01 " + label + ": one contextual paragraph is required");
+    }
+  };
+  check(article);
+  const mutations = [
+    ["intro", "本人確認は名乗った身元の実在性を調べるだけで終わりません。サービスが対象とする集団の中で身元を区別するための属性と証拠を集め、証拠と属性を確かめ、申請者とその証拠の結び付きを確認します。",
+     "本人確認は、名乗った身元が実在するか、提出された証拠が妥当かを確かめます。", "intro"],
+    ["resolution", "サービスが対象とする集団内で主張された身元を区別できるよう、本人確認に必要な属性と証拠を集めます。",
+     "主張された身元が実在するか調べます。", "resolution"],
+    ["validation", "続くevidence validationでは、証拠の真正性、有効性、属性の正確さを確かめます。",
+     "続いて書類を調べます。", "validation"],
+    ["verification", "最後のidentity verificationでは、申請者本人と提示された証拠の結び付きを確かめます。",
+     "最後は登録を進めます。", "verification"],
+    ["authenticator", "認証器の使用が確認されても、最初の本人確認の誤りは取り消されません。",
+     "認証器の使用が確認されれば、過去の本人確認の誤りも解消します。", "strong authenticator"],
+    ["privacy", "高い保証が必要でも、本人確認に必要な範囲を超えて個人情報を集めれば別のリスクを作ります。",
+     "本人確認では多くの情報を集めます。", "privacy"]
+  ];
+  for (const [name, original, replacement, expected] of mutations) {
+    assert.ok(article.includes(original), name + ": mutation source phrase has drifted");
+    assert.throws(() => check(article.replace(original, replacement)),
+      new RegExp(expected), name + ": downgrade went unnoticed");
+  }
+});
+
+test("critical identity, federation and cloud conditions remain in their Learn lectures", async () => {
+  const cases = {
+    "security-identity-proofing-authn-authz": ["本人確認は証拠と申請者の結び付きも評価", "認証器の制御と身元の再証明は別"],
+    "security-sessions-federation-oauth-oidc-saml": ["アクセス用トークンの受け取り先検証", "RPの既存セッションは構成依存"],
+    "security-cloud-shared-responsibility-iam-config": ["IaaSとSaaSで契約に依存する責任", "証拠のない責任分界は判断保留"]
+  };
+  for (const [id, labels] of Object.entries(cases)) {
+    const html = await fs.readFile(new URL("../learn/" + id + ".html", import.meta.url), "utf8");
+    const start = '<article id="learn-article">';
+    assert.ok(html.includes(start) && html.includes("</article>"), id + ": article missing");
+    const article = html.split(start)[1].split("</article>")[0];
+    const paragraphs = article.split("<p").slice(1).map((fragment) => textOf("<p" + fragment.split("</p>")[0] + "</p>"));
+    const gates = pilotCoverage[id]?.gates ?? [];
+    for (const label of labels) {
+      const gate = gates.find((candidate) => candidate.label === label);
+      assert.ok(gate && gate.within_paragraph, id + ": conditional gate missing: " + label);
+      assert.ok(hasCoverage(textOf(article), gate, paragraphs), id + ": condition absent: " + label);
+    }
+    assert.ok(!article.includes("要点の再確認"), id + ": verbatim recap returned");
+  }
+  const cloud = await fs.readFile(new URL("../learn/security-cloud-shared-responsibility-iam-config.html", import.meta.url), "utf8");
+  assert.ok(cloud.includes('href="https://www.cisa.gov/sites/default/files/2023-02/cloud_security_technical_reference_architecture_2.pdf"'));
+  assert.ok(cloud.includes('href="https://aws.amazon.com/jp/compliance/shared-responsibility-model/"'));
+});
+
+
