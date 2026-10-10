@@ -280,3 +280,71 @@ Vercelのproject設定ではSSO protectionが一部環境に有効。アクセ�
 5. 受講者理解確認20問の**問題の採点構造**はC/B、**実際の回答分布・学習効果**は新たな模擬受講データがなければ未検証。private教材、Cookie、トークン、個人の学習履歴・録音等は提出・公開しない。
 
 **今回のDの終了条件:** 静的API/HTTP観測をappend-onlyで保存しreadback。post-merge本番・実GUI・Android・音声・受講効果は**NOT_VERIFIEDのまま**。D単独ではmain/本番/公開設定/教材内容を変更しない。
+
+
+---
+
+## 9. 2026-10-10 JST — identity-resolution P1 repair Wave / D baseline
+
+**指示:** Library `/RSVP Learning/Work Instructions/2026-10-10_security_learning_identity_resolution_p1_repair_independent_reacceptance_and_controlled_release_wave_instructions.md` §8。**D判定 = PARTIAL_WITH_GAPS（旧productionの静的証拠に限定）**。観測時刻の範囲は2026-10-10 **11:13–11:19 JST**。GitHub/Vercel認証付き連携のHTTP取得であり、ブラウザGUI・実音声・Android実機を実行していない。検査対象に変更があればfresh readが必要。
+
+### 9.1 開始時のfresh readと工程境界
+
+- GitHub private `Josh-Temple/rsvp-learning` / `main = 23a007f343456ae2e6cca14d3ab849ed07b27deb`（GitHub `git/ref/heads/main` とcommit一覧で検証）。このmainの [GitHub Actions Test #38006381537](https://github.com/Josh-Temple/rsvp-learning/actions/runs/38006381537) は **completed/success**。本Dのローカル `npm run check` は **NOT_RUN**。
+- 改訂対象の [Draft PR #117](https://github.com/Josh-Temple/rsvp-learning/pull/117) は **open/draft/unmerged**。着手時head `2699e1171ed35ccc2c2e583271c8fba62e1e92d1` から、作業中に **`a5ccc9a442c00b546f6f50f7549f812253b15b29`** へ進行。新headは12変更ファイルを持ち、[Test #38016442442](https://github.com/Josh-Temple/rsvp-learning/actions/runs/38016442442) **completed/success**（確認時）。**A/B/C/Eの新candidate合格もmerge済みも意味しない**。headが動いた以上、最終C受入は最新head固有に必要。
+- Vercel project `rsvp-learning` / `prj_7yYGl5D3Q7UwQgQuXaGmOYLkTzbu`。本番alias `rsvp-learning-kappa.vercel.app` → `dpl_Axx51igvTjRo5JsBYJJDPujV2sp1`、**READY / target=production / `meta.githubCommitSha=d028fe12658423aa4408058048e2d6545ad78893`**。新#117を反映した新版production **ではない**。
+- GitHub compare `d028fe12…23a007f3` は `ahead_by=3`、変更は `docs/SECURITY_DEEP_CONTENT_AUDIT_2026-10-08.md`、`docs/SECURITY_REAL_USE_QA_2026-10-08.md`、`docs/SECURITY_LEARNING_INTEGRATION_2026-10-08.md` の**文書3ファイルのみ**。mainとproductionのSHAが異なっても、今回の14個の公開配信ファイルはproduction sourceと文字列全文一致。
+- Vercel projectの `ssoProtection.enabled=true` / `deploymentType=all_except_custom_domains`、passwordProtection `false`。保護設定は変更していない。HTTPの200は権限を持つ連携での取得であり、匿名アクセス確認ではない。
+- `docs/PUBLIC_LISTENING_BOUNDARY_2026-10-08.md` を再読。RSVP private / public Instant Radio は別。private教材のPages公開やinstant-radio転写は本Dでは実施しない。既存QA §8、既存E §12、現行Test workflowも再読した。
+
+### 9.2 旧productionのURL別静的HTTPテスト
+
+**検証方法:** 各URLを権限のあるVercel連携で実取得し、同じパスのGitHub `ref=d028fe12658423aa4408058048e2d6545ad78893` のファイル正文と完全一致するか比較。トップ `/` だけGitHub `index.html` に対応。ファイルの単純な文字列全文一致であり、DOMレンダリング、操作、発話、APIの継続稼働保証ではない。以下の相対URLはすべて `https://rsvp-learning-kappa.vercel.app/` に連結して取得。
+
+| test_id | date_time_JST | environment | deployment_SHA/ID | URL | operation | expected | observed | evidence | verdict |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| D6-01 | 2026-10-10 11:13–11:19 JST | Vercel authenticated HTTP, no GUI / browser N/A | `d028fe12658423aa4408058048e2d6545ad78893` / `dpl_Axx51igvTjRo5JsBYJJDPujV2sp1` | `/` | GET URL; read against GitHub production SHA | HTTP 200 and identical source bytes | HTTP **200**; GitHub source file text **exact match** | Vercel authorized fetch + GitHub `fetch_file(ref=d028fe12…)` | **PASS (HTTP/source only)** |
+| D6-02 | 2026-10-10 11:13–11:19 JST | Vercel authenticated HTTP, no GUI / browser N/A | `d028fe12658423aa4408058048e2d6545ad78893` / `dpl_Axx51igvTjRo5JsBYJJDPujV2sp1` | `/app.js` | GET URL; read against GitHub production SHA | HTTP 200 and identical source bytes | HTTP **200**; GitHub source file text **exact match** | Vercel authorized fetch + GitHub `fetch_file(ref=d028fe12…)` | **PASS (HTTP/source only)** |
+| D6-03 | 2026-10-10 11:13–11:19 JST | Vercel authenticated HTTP, no GUI / browser N/A | `d028fe12658423aa4408058048e2d6545ad78893` / `dpl_Axx51igvTjRo5JsBYJJDPujV2sp1` | `/learn/learn.js` | GET URL; read against GitHub production SHA | HTTP 200 and identical source bytes | HTTP **200**; GitHub source file text **exact match** | Vercel authorized fetch + GitHub `fetch_file(ref=d028fe12…)` | **PASS (HTTP/source only)** |
+| D6-04 | 2026-10-10 11:13–11:19 JST | Vercel authenticated HTTP, no GUI / browser N/A | `d028fe12658423aa4408058048e2d6545ad78893` / `dpl_Axx51igvTjRo5JsBYJJDPujV2sp1` | `/learn/course-player.js` | GET URL; read against GitHub production SHA | HTTP 200 and identical source bytes | HTTP **200**; GitHub source file text **exact match** | Vercel authorized fetch + GitHub `fetch_file(ref=d028fe12…)` | **PASS (HTTP/source only)** |
+| D6-05 | 2026-10-10 11:13–11:19 JST | Vercel authenticated HTTP, no GUI / browser N/A | `d028fe12658423aa4408058048e2d6545ad78893` / `dpl_Axx51igvTjRo5JsBYJJDPujV2sp1` | `/courses/index.json` | GET URL; read against GitHub production SHA | HTTP 200 and identical source bytes | HTTP **200**; GitHub source file text **exact match** | Vercel authorized fetch + GitHub `fetch_file(ref=d028fe12…)` | **PASS (HTTP/source only)** |
+| D6-06 | 2026-10-10 11:13–11:19 JST | Vercel authenticated HTTP, no GUI / browser N/A | `d028fe12658423aa4408058048e2d6545ad78893` / `dpl_Axx51igvTjRo5JsBYJJDPujV2sp1` | `/lessons/index.json` | GET URL; read against GitHub production SHA | HTTP 200 and identical source bytes | HTTP **200**; GitHub source file text **exact match** | Vercel authorized fetch + GitHub `fetch_file(ref=d028fe12…)` | **PASS (HTTP/source only)** |
+| D6-07 | 2026-10-10 11:13–11:19 JST | Vercel authenticated HTTP, no GUI / browser N/A | `d028fe12658423aa4408058048e2d6545ad78893` / `dpl_Axx51igvTjRo5JsBYJJDPujV2sp1` | `/learn/security-identity-proofing-authn-authz.html` | GET URL; read against GitHub production SHA | HTTP 200 and identical source bytes | HTTP **200**; GitHub source file text **exact match** | Vercel authorized fetch + GitHub `fetch_file(ref=d028fe12…)` | **PASS (HTTP/source only)** |
+| D6-08 | 2026-10-10 11:13–11:19 JST | Vercel authenticated HTTP, no GUI / browser N/A | `d028fe12658423aa4408058048e2d6545ad78893` / `dpl_Axx51igvTjRo5JsBYJJDPujV2sp1` | `/learn/security-sessions-federation-oauth-oidc-saml.html` | GET URL; read against GitHub production SHA | HTTP 200 and identical source bytes | HTTP **200**; GitHub source file text **exact match** | Vercel authorized fetch + GitHub `fetch_file(ref=d028fe12…)` | **PASS (HTTP/source only)** |
+| D6-09 | 2026-10-10 11:13–11:19 JST | Vercel authenticated HTTP, no GUI / browser N/A | `d028fe12658423aa4408058048e2d6545ad78893` / `dpl_Axx51igvTjRo5JsBYJJDPujV2sp1` | `/learn/security-cloud-shared-responsibility-iam-config.html` | GET URL; read against GitHub production SHA | HTTP 200 and identical source bytes | HTTP **200**; GitHub source file text **exact match** | Vercel authorized fetch + GitHub `fetch_file(ref=d028fe12…)` | **PASS (HTTP/source only)** |
+| D6-10 | 2026-10-10 11:13–11:19 JST | Vercel authenticated HTTP, no GUI / browser N/A | `d028fe12658423aa4408058048e2d6545ad78893` / `dpl_Axx51igvTjRo5JsBYJJDPujV2sp1` | `/learn/security-risk-assessment.html` | GET URL; read against GitHub production SHA | HTTP 200 and identical source bytes | HTTP **200**; GitHub source file text **exact match** | Vercel authorized fetch + GitHub `fetch_file(ref=d028fe12…)` | **PASS (HTTP/source only)** |
+| D6-11 | 2026-10-10 11:13–11:19 JST | Vercel authenticated HTTP, no GUI / browser N/A | `d028fe12658423aa4408058048e2d6545ad78893` / `dpl_Axx51igvTjRo5JsBYJJDPujV2sp1` | `/learn/security-email-spf-dkim-dmarc.html` | GET URL; read against GitHub production SHA | HTTP 200 and identical source bytes | HTTP **200**; GitHub source file text **exact match** | Vercel authorized fetch + GitHub `fetch_file(ref=d028fe12…)` | **PASS (HTTP/source only)** |
+| D6-12 | 2026-10-10 11:13–11:19 JST | Vercel authenticated HTTP, no GUI / browser N/A | `d028fe12658423aa4408058048e2d6545ad78893` / `dpl_Axx51igvTjRo5JsBYJJDPujV2sp1` | `/learn/security-social-engineering-bec-phishing.html` | GET URL; read against GitHub production SHA | HTTP 200 and identical source bytes | HTTP **200**; GitHub source file text **exact match** | Vercel authorized fetch + GitHub `fetch_file(ref=d028fe12…)` | **PASS (HTTP/source only)** |
+| D6-13 | 2026-10-10 11:13–11:19 JST | Vercel authenticated HTTP, no GUI / browser N/A | `d028fe12658423aa4408058048e2d6545ad78893` / `dpl_Axx51igvTjRo5JsBYJJDPujV2sp1` | `/learn/security-malware-ransomware.html` | GET URL; read against GitHub production SHA | HTTP 200 and identical source bytes | HTTP **200**; GitHub source file text **exact match** | Vercel authorized fetch + GitHub `fetch_file(ref=d028fe12…)` | **PASS (HTTP/source only)** |
+| D6-14 | 2026-10-10 11:13–11:19 JST | Vercel authenticated HTTP, no GUI / browser N/A | `d028fe12658423aa4408058048e2d6545ad78893` / `dpl_Axx51igvTjRo5JsBYJJDPujV2sp1` | `/learn/security-credential-session-attacks.html` | GET URL; read against GitHub production SHA | HTTP 200 and identical source bytes | HTTP **200**; GitHub source file text **exact match** | Vercel authorized fetch + GitHub `fetch_file(ref=d028fe12…)` | **PASS (HTTP/source only)** |
+
+- 14/14 URLがHTTP 200、14/14ファイルが対応する**旧production sourceのGitHub内容と全文一致**。HTML `/` に `#play-pause`、`#learn-course-player`、`#learn-course-sources` があり、8件のLearn HTMLに `#learn-article`、`#speech-play`、`section.sources` があることを文字列ベースで確認。
+- `/courses/index.json`、`/lessons/index.json` はJSON解析成功。`lessons`配列に158件あるが、新しい専門30章の受入や採点・実操作を意味しない。Course I〜IVの全遷移・旧入門8章の操作はこの実測範囲外。
+- `learn/course-player.js` には `section.sources`、`learn-course-sources`、`finishChapter`、`loadChapter` の実装参照がある。**章ごとの出典差替えや最終停止が実動作した証拠はない**。
+- 本番の本人確認・Federation・Cloudの3HTMLは**旧source**と一致。これらのHTTP 200を新#117候補の配信済み証拠にはしない。
+
+### 9.3 本番実利用・GUI・音声（未試行は未試行）
+
+| test_id | date_time_JST | environment / device/browser_version | deployment_SHA/ID | URL | operation | expected | observed | evidence | verdict |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| D6-15 | 2026-10-10 11:19 JST | Desktop GUI / desktop browser N/A | prod `d028fe12…` / `dpl_Axx…` | `https://rsvp-learning-kappa.vercel.app/` + relevant path | top → Course → RSVP/速度/停止 → Learn/source → 一覧 | GUI操作と描画が正しい | 実操作なし; DOM/JS静的照合のみ | no real-device/browser/learner evidence; test NOT_RUN | **NOT_VERIFIED** |
+| D6-16 | 2026-10-10 11:19 JST | 390px GUI / mobile viewport/browser N/A | prod `d028fe12…` / `dpl_Axx…` | `https://rsvp-learning-kappa.vercel.app/` + relevant path | 390px幅で横はみ出し/タッチ/ボタン状態 | 表示と操作が正常 | レンダリング・スクリーンショットなし | no real-device/browser/learner evidence; test NOT_RUN | **NOT_VERIFIED** |
+| D6-17 | 2026-10-10 11:19 JST | Course I/III/IV transitions / browser N/A | prod `d028fe12…` / `dpl_Axx…` | `https://rsvp-learning-kappa.vercel.app/` + relevant path | 初章→中章→終章の連続再生、章末自動切替、出典更新、最後で停止 | 章遷移と出典更新・最終停止 | JSに `finishChapter`・`loadChapter`・`section.sources` の文字列はあるが実動作なし | no real-device/browser/learner evidence; test NOT_RUN | **NOT_VERIFIED** |
+| D6-18 | 2026-10-10 11:19 JST | Android Chrome / Android device N/A | prod `d028fe12…` / `dpl_Axx…` | `https://rsvp-learning-kappa.vercel.app/` + relevant path | モデル/OS/Chrome/表示幅/タップ/横はみ出し | 実機で操作が成立 | Android端末未接続; バージョン不明 | no real-device/browser/learner evidence; test NOT_RUN | **NOT_VERIFIED** |
+| D6-19 | 2026-10-10 11:19 JST | Web Speech API / Android or desktop real audio N/A | prod `d028fe12…` / `dpl_Axx…` | `https://rsvp-learning-kappa.vercel.app/` + relevant path | 単章/コースの日本語発話、声/速度/停止/ハイライト | 実際に聴取できる | 発話・音声聴取なし | no real-device/browser/learner evidence; test NOT_RUN | **NOT_VERIFIED** |
+| D6-20 | 2026-10-10 11:19 JST | Chrome Read Aloud / Android Chrome native feature N/A | prod `d028fe12…` / `dpl_Axx…` | `https://rsvp-learning-kappa.vercel.app/` + relevant path | Chromeメニュー「このページを読み上げ」 | 機能利用と音声確認 | Chrome標準読み上げの操作なし | no real-device/browser/learner evidence; test NOT_RUN | **NOT_VERIFIED** |
+| D6-21 | 2026-10-10 11:19 JST | Screen-off/background / Android Chrome N/A | prod `d028fe12…` / `dpl_Axx…` | `https://rsvp-learning-kappa.vercel.app/` + relevant path | 画面OFF/バックグラウンドで音声継続 | 期待挙動を実測 | 画面状態・バックグラウンド試行なし | no real-device/browser/learner evidence; test NOT_RUN | **NOT_VERIFIED** |
+| D6-22 | 2026-10-10 11:19 JST | Anonymous access / anonymous browser N/A | prod `d028fe12…` / `dpl_Axx…` | `https://rsvp-learning-kappa.vercel.app/` + relevant path | 未ログインでURLアクセス | 公開境界に沿うアクセス制御 | Vercel認証済み代理取得のみ。匿名ブラウザ未試行 | no real-device/browser/learner evidence; test NOT_RUN | **NOT_VERIFIED** |
+| D6-23 | 2026-10-10 11:19 JST | Comprehension / real learners N/A | prod `d028fe12…` / `dpl_Axx…` | `https://rsvp-learning-kappa.vercel.app/` + relevant path | 20問の実回答・採点/分布 | 測定可能な回答結果 | ユーザー回答/音声学習結果を収集していない | no real-device/browser/learner evidence; test NOT_RUN | **NOT_VERIFIED** |
+
+未接続Androidの機種・OS/Chrome版を推測記入しない。録音、閲覧履歴、Cookie、トークン、学習者の回答等を採取していない。**実機のNOT_VERIFIEDは静的PASSを取り消さない一方、静的PASSから実操作PASSを推測しない。**
+
+### 9.4 Dのリリース依存と追試
+
+1. **新production検証は未着手（理由: E-2 release未実施）。** #117最新版のP1修正→BのLearn意味同期→E-1候補の固定→Cの候補head固有の独立受入→E-2期待head固定merge・新main Test成功→Vercel production/alias/source/SSOの読戻し、の後にのみDが新版を測定する。今回旧本番の検証が済んでもrelease gateは開かない。
+2. **新本番が出た場合:** 本番の新 `main full SHA`・deployment ID・target・READY・alias・SSOと保護設定をfresh readし、D6-01〜14を**新production sourceに対し全URL再実行**。改訂3章でLearnの本文と出典が表示できることを個別に確認し、旧版PASSを継承しない。
+3. **GUI操作の最小手順:** desktopと390pxでトップ→Course選択→RSVP再生/一時停止/前後・速度/停止→対象3章Learn単章→出典リンク→Course I/III/IVの初・中・終章の自動遷移・章別出典差替え→最終停止→一覧へ戻る。URLと時刻、source SHA、端末/ブラウザ版、期待・観測・スクリーンショット（機微情報除外）を別行記録。
+4. **Android最小手順:** Android Chromeで表示幅・機種・OS/Chrome版を記録し、Web Speech APIの**実際の日本語発話・音声変更・速度変更・停止・ハイライト**とChrome標準「このページを読み上げ」を**別試験**。保護ページで標準読み上げが使えなければ、その状況をBLOCKED/NOT_VERIFIEDとして記載。画面OFF/バックグラウンド、横はみ出し、タッチ操作、出典・章末停止を実測したものだけ採用。
+5. **20問・Course V:** 文書に20問と採点条件があることは受講効果ではない。実受講者の回答と成績はNOT_VERIFIED。Course V-1/V-2はHOLD、残27章の専門深度全数再監査なし。RSVP private / Instant Radio public境界は不変更。
+
+**D最終引継ぎ: `PARTIAL_WITH_GAPS`。** 旧本番のVercel API・14静的URL/source一致だけ限定PASS。新#117改訂3章の本番配信、desktop/390px、Android、2種類の読み上げ、連続再生実動作、受講結果は未検証。**本文・player・Catalog・本番配信・公開設定にDは変更を加えない。** 本節はE統合前のbaselineであり、独立C受入・E releaseを代行しない。
