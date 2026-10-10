@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f2efe8">
+  <meta name="description" content="未知の規則を経験から学ぶAIを検証するLearn2Play Bench。20ゲーム、記憶方式、人間、ハーネス比較と研究の限界を原論文に基づいて解説。">
+  <title>AIは失敗を重ねて、本当に新しいルールを学べるか――Learn2Play Bench</title>
+  <style>
+    :root{color-scheme:light;--bg:#f2efe8;--ink:#121722;--muted:#73766f;--line:#cbc8bf;--blue:#5d7487}
+    html[data-theme="dark"]{color-scheme:dark;--bg:#11151a;--ink:#edf0eb;--muted:#959b97;--line:#343a3e;--blue:#7892a6}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Hiragino Sans","Noto Sans JP",sans-serif;line-height:1.9}
+    .shell{width:min(760px,100%);margin:0 auto;padding:max(18px,env(safe-area-inset-top)) 20px max(42px,env(safe-area-inset-bottom))}
+    .topbar{min-height:52px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+    .icon{width:42px;height:42px;display:grid;place-items:center;border:0;background:transparent;color:var(--muted);text-decoration:none;font:inherit}
+    .meta{margin:28px 0 8px;color:var(--muted);font-size:.75rem}
+    h1{font-size:clamp(2rem,8vw,3.4rem);line-height:1.12;letter-spacing:-.04em;margin:.2em 0 .8em}
+    h2{margin:2.2em 0 .6em;font-size:1.2rem}
+    p{margin:0 0 1.25em}
+    article>*{transition:background-color .15s ease}
+    .is-speaking{background:color-mix(in srgb,var(--blue) 16%,transparent)}
+    .player{position:sticky;bottom:0;margin:32px -6px 0;padding:12px 6px;background:color-mix(in srgb,var(--bg) 94%,transparent);border-top:1px solid var(--line);backdrop-filter:blur(8px)}
+    .speed{display:grid;grid-template-columns:48px 1fr 42px;gap:10px;align-items:center;margin-top:10px;font-size:.78rem;color:var(--muted)}
+    input{width:100%}
+    .sources{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}
+    .sources a{color:var(--ink)}
+    .mode-nav{display:inline-flex;align-items:center;gap:4px}
+    .mode-icon{width:42px;height:42px;display:grid;place-items:center;color:var(--muted);text-decoration:none;opacity:.5}
+    .mode-icon.is-active{color:var(--ink);opacity:1}
+    .mode-icon svg{width:20px;height:20px;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+    .brand-mark{width:22px;height:14px;display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+    .brand-mark i{display:block}
+    .brand-mark i:nth-child(1){background:#a85248}
+    .brand-mark i:nth-child(2){background:#5d7487}
+    .brand-mark i:nth-child(3){background:#c2a653}
+    .transport{display:grid;grid-template-columns:repeat(5,48px);justify-content:center;gap:8px}
+    .transport button,.section-nav button,.voice-row select{min-height:42px;border:1px solid var(--line);background:transparent;color:var(--ink);font:inherit}
+    .transport button{width:48px}
+    .section-nav{display:grid;grid-template-columns:48px 1fr 48px;align-items:center;gap:8px;margin-top:10px}
+    .section-nav button:disabled{opacity:.25}
+    #section-label{min-width:0;overflow:hidden;color:var(--muted);font-size:.78rem;text-align:center;white-space:nowrap;text-overflow:ellipsis}
+    .voice-row{margin-top:10px}
+    .voice-row select{width:100%;padding:0 8px}
+    .mode-icon:focus-visible,.transport button:focus-visible,.section-nav button:focus-visible,.voice-row select:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+  </style>
+</head>
+<body>
+<main class="shell">
+  <header class="topbar">
+    <nav class="mode-nav" aria-label="モード切替">
+      <a class="mode-icon" href="../../index.html" aria-label="RSVPへ移動" title="RSVP">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      </a>
+      <a class="mode-icon" href="../../index.html?library=learn" aria-label="Learnへ移動" title="Learn">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 5.5c2.6-.8 5.3-.4 8 1.2v12c-2.7-1.6-5.4-2-8-1.2v-12Z" />
+          <path d="M20 5.5c-2.6-.8-5.3-.4-8 1.2v12c2.7-1.6 5.4-2 8-1.2v-12Z" />
+        </svg>
+      </a>
+      <a class="mode-icon is-active" href="../../index.html?library=listen" aria-label="Listen一覧へ移動" aria-current="page" title="Listen">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 13v-1a8 8 0 0 1 16 0v1" />
+          <path d="M4 13h3v7H5a1 1 0 0 1-1-1v-6Zm16 0h-3v7h2a1 1 0 0 0 1-1v-6Z" />
+        </svg>
+      </a>
+    </nav>
+    <button id="theme" class="icon" type="button" aria-label="テーマ切替">☾</button>
+  </header>
+
+
+
+
+
+
+
+  <article id="article">
+    <p class="meta">情報基準日 2026年10月10日・原論文初版 2026年10月6日・改訂 2026年10月8日・査読前プレプリント</p>
+    <h1>AIは失敗を重ねて、本当に新しいルールを学べるか――Learn2Play Bench</h1>
+
+    <h2>今回の研究で何が面白いのか</h2>
+    <p>今回取り上げるのは、シンガポール国立大学の研究者らが2026年10月6日に公開した「Learn2Play Bench」です。言語モデルを使うAIエージェントが、初めて出会う環境で行動し、その結果から新しいルールを学べるかを測る研究です。8日に改訂された原論文と付録を確認します。</p>
+    <p>AIが繰り返し作業をするうちに高得点になっても、新しいことを学んだとは限りません。もともと知っていた解き方を思い出したのかもしれません。単に同じ手順に慣れた可能性もあります。研究の中心は、過去の知識を使った成功と、経験から得た知識を使った成功をできるだけ区別することです。</p>
+    <p>研究者らは、一般常識が通用しない隠れたルールを持つ文字ゲームを二十種類設計しました。AIはゲームの内部プログラムを読めません。行動を選び、結果を観察し、次の行動を決めます。そしてゲームを何度も繰り返して、前の経験が役立つかを調べます。</p>
+    <p>先に結論を言うと、経験を短い教訓へ圧縮する方法が、必ずしも優れてはいませんでした。元の行動記録を残すだけの方法が、複雑な記憶方式を上回った比較があります。また、同じ基盤モデルでも、エージェントを動かす実行環境を変えると、成績が大きく変わりました。</p>
+    <p>人間との比較では、各ゲームの最上位プレイヤーはAIより高い最高得点に達しました。ただし、平均的な人間がAIより高成績だったという意味ではありません。この区別も含め、今回は実験方法、数字、失敗例、解釈できる範囲を順番に確認します。</p>
+
+    <h2>何を「経験から学ぶ」と呼べるのか</h2>
+    <p>AIエージェントの自己改善では、過去の失敗を振り返り、短い反省文を記録する方法があります。成功した操作から再利用できる手順書を作る方法もあります。別の課題で役立ちそうな経験を検索して読み返す方法も研究されています。</p>
+    <p>ところが、多くの既存評価では、課題の背景となる知識がモデルの事前学習に含まれている可能性があります。プログラミングのエラーを直す場面なら、コードの書き方も典型的な修正方法も、モデルはすでに知っているかもしれません。二回目に成功したという事実だけでは、新たな規則を発見したとは分かりません。</p>
+    <p>著者らはこの問題を避けるため、独自に考案した規則をゲームへ埋め込みました。例えば架空の会社で、まじめに働くよりも同僚の昼食を盗むほうが昇進しやすいという設定です。現実の職場で望ましい行動を示す例ではありません。常識がかえって正解を妨げる実験条件です。</p>
+    <p>もっとも、独自の規則を作っただけで事前知識の影響が消えるわけではありません。論理的に試す方法、記録を比較する方法、仮説を絞り込む方法などは、モデルがもともと持つ能力です。研究は、それらを使って隠れたルールを発見し、後の挑戦で使えるかを調べています。</p>
+    <p>もう一つ区別したいのは、優れた結果と学習の速さです。最初から高得点を取るモデルもあれば、最初は失敗し、繰り返して改善するモデルもあります。最高得点だけを見ていては、この違いが分かりません。そこで研究者らは、結果の水準と改善の軌跡を別々に測りました。</p>
+
+    <h2>二十種類のゲームとその仕組み</h2>
+    <p>二十のゲームは、研究者が手作業で考案したひな型です。それぞれのゲームは複数の場面を生成できます。プレイヤーには目標と選べる操作が文字で表示されます。操作をすると、ゲーム側から文字で結果が返ります。一連の操作が終わると得点が計算されます。</p>
+    <p>例えばPoisonerでは、王に提供する料理を選びます。料理には味、温度、肉や野菜といった属性があり、隠れた好みによって結果が変わります。料理の並び順だけを覚えるやり方と、どの属性が結果を左右したかを調べるやり方では、後の場面で使える知識が異なります。</p>
+    <p>ゲームの結果は決定的です。同じ条件で同じ操作を選べば、同じ結果が返ります。これにより、偶然の成功を減らし、行動履歴を後から再確認できます。評価も人間の印象による採点ではなく、各ゲームに実装された自動採点を利用します。</p>
+    <p>十種類のゲームでは、毎回同じ場面が繰り返されます。残る十種類では、登場人物や物体の配置などが挑戦ごとに変わります。ただし、根本の規則は変わりません。これにより、画面の位置を覚えたのか、規則を理解して異なる場面へ適用したのかを区別しようとしています。</p>
+    <p>五種類は難しい挑戦課題として設定され、十回のエピソードで評価します。残り十五種類は五回のエピソードです。各ゲームにつき、三つの独立試行を実施します。別の試行へ記憶は引き継ぎません。一つの試行で過去の経験を保持できるかは、試したエージェントの構成によって決まります。</p>
+    <p>エージェントにゲームのソースコードや正答用プログラムを直接読ませないことも条件です。外から見える操作とフィードバックから規則を推定させます。ただし実験は、現実のブラウザや業務システムとは異なる文字中心の環境です。この違いは、結果を一般化するときに重要になります。</p>
+
+    <h2>成績は四つの指標で確かめる</h2>
+    <p>論文は、Max、Mean、Learning Gain、Learning Slopeという四つの指標を使います。Maxは各試行で達成した最高得点を基にした集約値です。Meanは期間を通じた平均得点です。一度うまくできたことと、繰り返して安定してできたことを分けています。</p>
+    <p>Learning Gainは、最初の数回と最後の数回の平均得点の差です。Learning Slopeは、途中も含む全体の得点推移に直線を当て、その傾きを調べたものです。短期的な上下があっても、評価期間を通じて改善したかを確かめます。</p>
+    <p>各ゲームには別々の得点範囲があるため、著者らは正規化した得点を使っています。難しい五種類には三倍の重みを付け、十五種類の通常課題と五種類の挑戦課題が、集約値の中で半分ずつを占めます。表の数値は、すべてのゲームの生の得点を単純平均した値ではありません。</p>
+    <p>この仕組みにより、成績の高さと改善の速さを比較できます。しかし、Learning Gainが正だからといって、その変化の全部が新しい知識の獲得とは限りません。実行の安定化や偶然も影響します。論文は行動記録の分析を加え、数値の意味を考えています。</p>
+    <p>また、基盤モデル、記憶方式、実行環境を混ぜて順位を論じるのは危険です。どの条件を同じにした比較なのかによって、答えられる問いが違います。ここからは、それぞれの比較を分けて紹介します。</p>
+
+    <h2>基盤モデルを固定条件で比較する</h2>
+    <p>まず、OpenCodeという共通のエージェント実行環境で十一の基盤モデルを比較しました。操作の方法や記憶の形式をそろえ、モデルを変えた場合にどのような成績になるか調べます。ここでの数値を各社の一般向けアプリの成績と同一視してはいけません。</p>
+    <p>最高得点の集約指標Maxは、Claude Opus 5.5が80.1、GPT-6 Astraが76.2、Claude Opus 5が74.5、Qwen 3.8 Maxが72.5でした。一方、GPT-5 Miniは34.0です。未知の規則を含むゲームに対して、モデルの選択が大きく影響することが分かります。</p>
+    <p>ただし学習の傾きでは順序が異なります。Claude Opus 5.5のLearning Slopeは5.22で、Qwen 3.8 Maxは6.30です。最高得点が最も高かったモデルが、必ずしも改善の傾きまで最大とは限りません。高い能力で初めからうまくできることと、経験後にどれだけ伸びるかは別の観点です。</p>
+    <p>著者らが調べた一つの行動履歴では、料理の番号を繰り返し選び、結果から規則を絞り込めないモデルがいました。別のモデルは料理の属性と結果を照らし合わせ、どの特徴を次に試せばよいかを考えています。単に操作を実行できることと、フィードバックから次の試行を設計できることは違います。</p>
+    <p>この順位は対象の二十ゲーム、指定された操作環境、採点方法に限定されます。他のモデル、異なる乱数の場面、実務の課題でも同じ順位になるとは確認されていません。どの条件で得られた結果かを残す必要があります。</p>
+
+    <h2>経験の保存方法を変えた比較</h2>
+    <p>次は、モデルを固定して経験の保存方法を変える実験です。NAIVEは次のエピソードの前に過去の経験を捨てます。MEMORYは過去の操作と環境からの応答を、そのまま累積して次の挑戦へ渡します。ただし文脈の上限を超える場合は古い記録を落とします。</p>
+    <p>これに対し、Reflexionは前のエピソードを振り返り、短い教訓を作ります。ReasoningBankは再利用できる推論上の学びを蓄積します。Agent Workflow Memoryは成功した操作列から手順を取り出します。EvoTestは過去の行動と結果から、次の行動を導く設定を改良します。</p>
+    <p>直感的には長いログを短いルールへ変換するほうが便利に思えます。しかしKimi K3を固定した比較では、MEMORYのMaxが63.3、Meanが48.0、Learning Gainがプラス16.9でした。四つの指標すべてで、比較した経験利用方法の中で最も良い結果です。</p>
+    <p>同じKimi K3で、過去を捨てるNAIVEはMaxが54.7、Meanが31.9、Learning Gainがプラス0.3でした。経験を利用することには意味がありそうですが、複雑な加工を加えれば必ず良くなるわけではないという結果です。</p>
+    <p>ただしMEMORYがすべてのモデル、すべての指標で勝ったわけではありません。Claude Opus 5では、EvoTestのMaxが66.1となり、MEMORYの60.9を上回りました。一方、Learning GainはReflexionがプラス11.6、MEMORYがプラス11.4、EvoTestがプラス9.4です。比較の仕方次第で評価が変わります。</p>
+    <p>著者らの説明では、加工した教訓は便利である一方、初期の誤った推測を固定する危険があります。未確認の条件まで禁止するようなルールを保存すれば、次の挑戦で有望な選択肢を自分から除いてしまうかもしれません。</p>
+    <p>したがって「要約は悪い」という結論でも、「全文ログを永久に保持すべき」という結論でもありません。元の証拠を失わず、必要なときに結論を修正できる仕組みが重要なのではないか、という研究上の示唆です。</p>
+
+    <h2>GemForgeで起きた、誤った教訓の固定</h2>
+    <p>GemForgeは材料を組み合わせて宝石を作るゲームです。著者らが確認した行動履歴では、ある材料の組み合わせが一回失敗した後、EvoTestを使うエージェントが、別の未検証の組み合わせまで避けるような指示を自分の記憶に作りました。</p>
+    <p>実際に観測されたのは、特定の条件で特定の組み合わせが失敗したという事実だけです。それにもかかわらず、その観察を広い禁止規則に変えると、まだ試していない成功の可能性まで消してしまいます。ここでは、学習のための仕組み自体が探索を妨げました。</p>
+    <p>別の行動履歴でも、何度か失敗したAIが、より価値の高い宝石は作れないと早合点し、既知の作り方を繰り返しました。既に得られた一定の得点を守る行動が、新しい可能性を試す行動に勝ってしまったと読めます。</p>
+    <p>元の行動とフィードバックを残しておけば、禁止規則を作った根拠までさかのぼれます。もっとも、記録があるだけでAIが自動的に誤りを直すとは限りません。観察と、その観察から導いた推測を分けることが重要だというのが、ここから得られる分析です。</p>
+    <p>これに似た状況は、AIがエラーを記憶して業務へ再挑戦する場合にも考えられます。一回の入力失敗から、ある申請方法は常に使えないと覚えれば、条件が少し違うだけで成功できたはずの処理を避けるかもしれません。ただし、この実務上の例は論文で検証されたものではありません。</p>
+
+    <h2>規則を覚えても計画できない場合</h2>
+    <p>Haunted Innというゲームでは、宿泊客ごとに泊まってはいけない部屋の条件があります。部屋を順番に割り当てるだけでは、後から来る客に安全な部屋が残らない場合があります。先の制約を見越した計画が必要です。</p>
+    <p>あるClaude Opus 5の行動履歴では、エージェントは部屋についての禁止条件を言葉で説明できていました。しかし、目の前の客に使える部屋を順番に割り当てたため、後から来た客のための部屋を残せず失敗しました。</p>
+    <p>次の挑戦では、選べる部屋が少ない客のために選択肢を確保する方針へ変えました。つまり、隠れた規則を発見していたことと、それを使って良い計画を立てられたことは別でした。</p>
+    <p>AIの記憶を調べるとき、正しい説明が出せるかだけを見ても足りません。前の失敗から新しい規則を推定できるか、その規則を今の行動で守れるか、さらに先の制約を踏まえて計画できるかを分ける必要があります。</p>
+    <p>この事例は個別の記録です。すべてのエージェントが同じように失敗することを示しません。しかし、最高得点の集計だけでは見えない失敗の種類を理解するうえで価値があります。</p>
+
+    <h2>実行環境が変わると同じモデルでも別物になる</h2>
+    <p>ここからは、ハーネスと呼ばれる実行環境の比較です。ハーネスとは、モデルに指示を渡し、道具を呼び出し、操作結果を読み、次の行動を選ぶ仕組みのことです。同じモデルを使っていても、こうした構成が違えば、実際のエージェントの挙動も変わります。</p>
+    <p>Claude Opus 5を固定したとき、OpenCodeではMaxが74.5、Meanが53.8でした。Claude Codeに変えるとMaxは81.8、Meanは62.3です。Learning Gainもプラス21.3からプラス27.1へ、Learning Slopeは5.13から6.59へ上がりました。</p>
+    <p>GPT-5.6-SOLでも、OpenCodeではMaxが57.0、Meanが41.1でしたが、CodexではMaxが74.3、Meanが54.8でした。同じ基盤モデルであっても、使うハーネスが違えば比較結果が大きく動くことが分かります。</p>
+    <p>著者らは、モデルが特定のハーネスと組み合わせて調整されていることや、環境側の仕組みがモデルの能力に適していることを、考えられる説明として挙げています。しかし、この実験だけで、差の何割が特定の機能によるものかを確定したわけではありません。</p>
+    <p>OpenCodeは、必要なら過去の観察を見直し、計算し、計画を確かめてから行動できます。一方、一部の自己改善方式は毎回の行動や記憶の更新手順が比較的固定されています。異常が起きた後に自由に調べ直せるかも、結果へ影響した可能性があります。</p>
+    <p>モデルのランキングだけを読んで業務用エージェントを選ぶことには、ここで明確な限界が見えます。どんなツールを使えるか、履歴をどう扱うか、どんな順番で再試行するかまで含めたシステム全体の評価が必要です。</p>
+
+    <h2>人間との比較で見えたこと</h2>
+    <p>著者らは大学生にも同じ二十ゲームを遊んでもらいました。各ゲームの参加者は二十一人から三十人です。参加者はプレイ中にAIツールやプログラムを使わず、参加報酬と高得点者への追加報酬を受け取りました。</p>
+    <p>ここで大切なのは、Human Top-1という数値の定義です。人間参加者の平均ではありません。ゲームごとに最も高いMaxを出した人の記録を選んで、集約した値です。Top-3、Top-5もそれぞれ上位の記録で、一般的な参加者の代表値ではありません。</p>
+    <p>Human Top-1のMaxは84.3でした。OpenCodeで最上位のClaude Opus 5.5の80.1も、Claude CodeとOpus 5の組み合わせの81.8も上回っています。上位の人間が、一度はより高い得点へ到達できたことを示します。</p>
+    <p>しかし、人間の全参加記録を平均するとMaxは43.6、Meanは31.2です。またHuman Top-1のMeanは53.5で、Claude CodeとOpus 5の62.3より低い数値です。「平均的な人間はAIより成績が良い」とは言えません。高い到達点と継続的な実行能力は別です。</p>
+    <p>行動も比較しました。場面が固定されたゲームで、隣り合うエピソードの操作列の類似度は、人間の選抜記録で約0.54、エージェントで約0.66でした。人間は異なる手段を試すことが多く、エージェントは同じ行動を繰り返すことが多かったという観察結果です。</p>
+    <p>得点がいったん下がった後、次の挑戦で自己最高得点を更新した割合は、人間が約33％、エージェントが約22％でした。人間の該当例は39回の低下のうち13回、エージェントでは238回のうち52回です。繰り返し観測された試行は独立とは限らないため、探索意欲の因果的な違いを証明する数字ではありません。</p>
+    <p>新しい組み合わせを発見するGemForgeなどでは上位の人間が強みを示しました。他方、長い手順を正しく進めるRedEyeや、プログラムで数理的な規則を推定するModel Auditorでは、一部のAIが良い結果を出しました。得意な作業の違いを考える材料ですが、人間とAIの普遍的な分業原則を証明するものではありません。</p>
+
+    <h2>場面が変わっても学んだ規則を使えるか</h2>
+    <p>ゲームの見た目だけが変わる条件も評価しました。同じ人物、同じ並びが続けば、正しいボタン番号を覚えるだけでも成功できます。ところが登場人物や選択肢の位置が変われば、前の操作をそのまま繰り返しても正解にはなりません。</p>
+    <p>研究者らは、同じゲームの場面を固定した条件と、挑戦ごとに並び替えた条件を用意し、学習の傾きを比べました。核となる規則はどちらも同じです。この比較は、具体的な場面への慣れと規則の転用を分ける試みです。</p>
+    <p>Claude Opus 5をOpenCodeで使ったとき、Learning Slopeは4.10から3.51へ低下しました。Claude Sonnet 5では4.90から2.23へ下がりました。表面上の変化が、一部のモデルには大きな障害になることが分かります。</p>
+    <p>ただし例外もあります。Qwen 3.8 Maxは3.16から3.57へ、CodexとGPT-5.6-SOLでは2.51から2.71へ上がりました。したがって、場面を変えればどのエージェントも必ず悪化するという話ではありません。</p>
+    <p>SynergyCorpの一つの記録では、前の上司について発見した規則を、新しい上司にも使うエージェントがいました。別のエージェントは、相手が変わるたびに最初から好みを探り直しました。何が場面固有で何が共通の規則かを分けられるかが重要になります。</p>
+    <p>実務への類推なら、同じ画面の操作を覚えることと、画面が変わっても業務要件を理解して処理することの差に似ています。ただし、現実には画面と一緒に適用規則自体が変わる場合もあります。その問題はこの実験とは別に検証する必要があります。</p>
+
+    <h2>費用はモデルの単価だけでは決まらない</h2>
+    <p>この論文は、性能と一エピソード当たりの推定推論費用も比較しています。モデルの入力や出力のトークン単価が高くても、呼び出し回数が少なければ総費用は安くなる可能性があります。毎回どれだけ長い記録を送り直すかも影響します。</p>
+    <p>OpenCodeを使った比較では、Kimi K3はClaude Sonnet 5よりトークン単価が高いにもかかわらず、推定総費用が低く、成績が高い結果になりました。平均トークン数は一エピソード当たり約56万と約73万でした。</p>
+    <p>OpenCodeでは、一度のモデル応答で複数の操作を進めたり、重複するゲームの応答を取り除いたりできます。対して、行動のたびにモデルを呼び、過去の記録を繰り返し入力する方法は、入力トークン数や生成トークン数が膨らむことがあります。</p>
+    <p>ただし著者らの費用はモデル価格を使った推定です。企業ごとの契約価格、キャッシュ、待ち時間、開発・保守費用、事故対応まで含めた費用ではありません。実際の業務で安くなると断定せず、呼び出し方まで含めて測るべきだという示唆にとどめます。</p>
+
+    <h2>この結果をどこまで信頼できるか</h2>
+    <p>長所は、未知の規則を測る目的に合わせて課題を作り、決定的な応答と自動採点を採用したことです。基盤モデル、記憶方式、実行環境を分け、行動記録を調べた点も評価できます。単に一回の得点を比べるより、何が起きたかを詳しく追えます。</p>
+    <p>一方、対象は研究者が設計した二十の文字ゲームです。曖昧な自然言語の依頼、多数の人が関わる業務、アクセス権限、予期しない外部障害など、現実のエージェント運用に特有の条件を全面的に再現しているわけではありません。</p>
+    <p>モデル比較には、各ゲームで一つの固定シードを使い、三つの独立試行を実施するという条件があります。ゲームの設計者や乱数、指示文を変えても同じ順位になるかは、この数値だけでは確かめられません。</p>
+    <p>人間との比較では、上位プレイヤーの記録を選ぶことで最高到達点を測っています。人間全員の平均との違いを忘れずに読む必要があります。類似度や失敗後の回復も観察された行動の集計で、心理的な動機まで因果的に測ったものではありません。</p>
+    <p>ゲームごとの正規化の基準にも注意が必要です。論文の付録には、参考得点の一部を推定値として扱った条件が記載されています。基準の選び方は、複数ゲームをまとめた数値に影響し得ます。小さな得点差を絶対的な優劣として扱うべきではありません。</p>
+    <p>この研究は情報基準日である2026年10月10日時点では、arXivに公開された査読前のプレプリントとして扱います。著者らは二十ゲームのコードを公開していますが、こちらで全実験を再実行したわけではありません。コードがあることと、独立した再現が成功したことは異なります。</p>
+    <p>さらに、ここでの経験学習はモデルの重みを変更しない方法です。新たな知識を長期間保存して自己改変し続けるAIの安全性、あるいは実世界の自律改善まで実証したわけではありません。この境界を超えて結論を広げないことが重要です。</p>
+
+    <h2>AIを仕事に使うときの示唆</h2>
+    <p>ここからは論文の結果そのものではなく、実務へどう応用して考えられるかという分析です。第一に、記憶した教訓だけでなく、その根拠となった操作と応答へ戻れる仕組みが重要です。初期の一回の失敗から作った断定を、すべての将来の作業へ適用する危険があるためです。</p>
+    <p>たとえば業務エージェントが申請の入力エラーに遭遇した場合、「この申請書は使えない」とだけ保存するより、どの入力項目が、どの条件で、どんなエラーを返したかを残すほうが、後で判断を見直しやすいと考えられます。ただしこれは研究のゲームから考えた応用例で、業務での効果を直接測ったものではありません。</p>
+    <p>第二に、モデルだけでなく、実行環境の構成を評価対象へ含めることです。同じモデルでもハーネスを変えると成績が変わりました。ツールを呼ぶ方法、履歴の保持、失敗時の再試行、利用できる操作を固定しなければ、原因の分からない比較になりやすいでしょう。</p>
+    <p>第三に、一回の最高得点と、安定した平均成績と、経験による改善速度を分けることです。現実の重要業務では、最高得点より失敗率や再現性を優先する場合もあります。どの能力が必要かによって、評価指標と受け入れ基準を変える必要があります。</p>
+    <p>第四に、同じ画面を繰り返す試験に加えて、担当者名、ファイル名、項目の並びを変えた試験を設計することです。特定のボタン番号を覚えるだけのエージェントと、規則に基づいて対応できるエージェントを分けて調べられる可能性があります。</p>
+    <p>最後に、探索と実行を分けて考えることです。研究の一部のゲームでは、人間の上位記録は新しい戦略を探す場面に、AIは長い操作や計算に強みを見せました。これは特定の実験での観察ですが、未知の問題を調べる仕事と、確認済みの手順を正確に繰り返す仕事を別々に設計する理由になります。</p>
+    <p>ただし、こうした提案が安全に機能することは今回の論文からは保証されません。実務に導入するなら、権限設定、監査、停止条件、人間による承認、障害からの復旧を含めた独立の検証が必要です。</p>
+
+    <h2>最後に残したいこと</h2>
+    <p>Learn2Play Benchが問うたのは、繰り返して得点が上がったAIが、実際には何を学んだのかという問題です。未知の規則を持つゲームを作り、事前知識だけで解く場合と、操作から新たな手がかりを得る場合を、できるだけ区別しようとしました。</p>
+    <p>結果は、複雑な教訓への圧縮が常に有利とは限らないこと、基盤モデルが同じでも実行環境で成績が変わること、上位の人間とエージェントでは探索の仕方に違いが観察されたことを示しました。ただし、人間全体の優劣や実務の安全性までは証明していません。</p>
+    <p>仕事へ持ち帰るなら、AIが保存した結論をそのまま信じず、根拠の操作記録へ戻れるようにすること。そしてモデル名だけではなく、道具、記憶、再試行を含む仕組み全体を試験すること。この二点が、今回の研究から考えたい実践上の要点です。</p>
+  </article>
+
+  <section class="player" aria-label="読み上げ操作">
+    <div class="transport">
+      <button id="prev-block" type="button" aria-label="前の読み上げ単位へ">←</button>
+      <button id="play" type="button" aria-label="再生">▶</button>
+      <button id="pause" type="button" aria-label="一時停止">Ⅱ</button>
+      <button id="stop" type="button" aria-label="停止">■</button>
+      <button id="next-block" type="button" aria-label="次の読み上げ単位へ">→</button>
+    </div>
+    <div class="section-nav" aria-label="章移動">
+      <button id="prev-section" type="button" aria-label="前の章へ">‹</button>
+      <span id="section-label">導入</span>
+      <button id="next-section" type="button" aria-label="次の章へ">›</button>
+    </div>
+    <div class="voice-row">
+      <select id="voice" aria-label="日本語音声"></select>
+    </div>
+    <div class="speed"><span>速度</span><input id="rate" type="range" min="0.7" max="4" step="0.1" value="1"><span id="rateValue">1.0×</span></div>
+  </section>
+
+
+
+
+
+
+
+  <section class="sources" aria-label="出典">
+    <strong>出典</strong>
+    <p><a href="https://arxiv.org/abs/2610.08215">arXiv — Learn2Play Bench 原論文・本文・付録（v2）</a></p>
+    <p><a href="https://www.alphaxiv.org/abs/2610.08215">alphaXiv — 論文閲覧ページ</a></p>
+    <p><a href="https://github.com/liushiliushi/Learn2Play-Bench">GitHub — 著者公開の20ゲーム実装</a></p>
+    <p><a href="https://huggingface.co/papers/2610.08215">Hugging Face — Daily Papers掲載ページ</a></p>
+  </section>
+</main>
+<script>
+(() => {
+  const synth = window.speechSynthesis;
+  const blocks = [...document.querySelectorAll("#article h1,#article h2,#article h3,#article p")];
+  const sectionStarts = [...new Set([0, ...blocks.map((node, i) => node.tagName === "H2" ? i : -1).filter(i => i >= 0)])];
+  const play = document.querySelector("#play");
+  const pause = document.querySelector("#pause");
+  const stop = document.querySelector("#stop");
+  const prevBlock = document.querySelector("#prev-block");
+  const nextBlock = document.querySelector("#next-block");
+  const prevSection = document.querySelector("#prev-section");
+  const nextSection = document.querySelector("#next-section");
+  const sectionLabel = document.querySelector("#section-label");
+  const voice = document.querySelector("#voice");
+  const rate = document.querySelector("#rate");
+  const rateValue = document.querySelector("#rateValue");
+  const theme = document.querySelector("#theme");
+  let index = 0, playing = false, paused = false, selectedVoice = "", generation = 0;
+  let wakeLock = null, wakeLockWanted = false;
+
+  async function requestWakeLock() {
+    const wakeLockApi = window.navigator?.wakeLock;
+    wakeLockWanted = true;
+    if (!wakeLockApi?.request || wakeLock) return;
+    try {
+      const lock = await wakeLockApi.request("screen");
+      if (!wakeLockWanted) {
+        await lock.release();
+        return;
+      }
+      wakeLock = lock;
+      wakeLock.addEventListener?.("release", () => { wakeLock = null; });
+    } catch {
+      wakeLock = null;
+    }
+  }
+
+  async function releaseWakeLock() {
+    wakeLockWanted = false;
+    const current = wakeLock;
+    wakeLock = null;
+    if (!current) return;
+    try {
+      await current.release();
+    } catch {
+      // Wake Lock is best-effort; speech playback must continue to work.
+    }
+  }
+
+  function voices() {
+    const previous = selectedVoice || voice.value;
+    const items = synth.getVoices().filter(v => /^ja(?:-|_)/i.test(v.lang));
+    voice.replaceChildren();
+    for (const v of items) {
+      const o = document.createElement("option");
+      o.value = v.voiceURI;
+      o.textContent = v.name;
+      voice.append(o);
+    }
+    if (items.some(v => v.voiceURI === previous)) voice.value = previous;
+    selectedVoice = voice.value;
+  }
+
+  function clearHighlight() {
+    blocks.forEach(node => node.classList.remove("is-speaking"));
+  }
+
+  function sectionPosition() {
+    let pos = 0;
+    for (let i = 0; i < sectionStarts.length; i += 1) {
+      if (sectionStarts[i] <= index) pos = i;
+      else break;
+    }
+    return pos;
+  }
+
+  function updateNavigation() {
+    prevBlock.disabled = index <= 0;
+    nextBlock.disabled = index >= blocks.length - 1;
+
+    const pos = sectionPosition();
+    const start = sectionStarts[pos] ?? 0;
+    const previousTargetExists = index > start || pos > 0;
+    prevSection.disabled = !previousTargetExists;
+    nextSection.disabled = pos >= sectionStarts.length - 1;
+
+    const startNode = blocks[start];
+    sectionLabel.textContent = startNode?.tagName === "H2" ? startNode.textContent : "導入";
+  }
+
+  function showCurrent() {
+    clearHighlight();
+    const current = blocks[index];
+    if (!current) return;
+    current.classList.add("is-speaking");
+    current.scrollIntoView({ block: "center", behavior: "smooth" });
+    updateNavigation();
+  }
+
+  function speakCurrent() {
+    if (!playing || paused || index >= blocks.length) {
+      if (index >= blocks.length) {
+        playing = false;
+        paused = false;
+        clearHighlight();
+        void releaseWakeLock();
+      }
+      updateNavigation();
+      return;
+    }
+
+    showCurrent();
+    const localGeneration = ++generation;
+    const utterance = new SpeechSynthesisUtterance(blocks[index].textContent);
+    utterance.lang = "ja-JP";
+    utterance.rate = Number(rate.value);
+    const selected = synth.getVoices().find(item => item.voiceURI === voice.value);
+    if (selected) utterance.voice = selected;
+
+    utterance.onend = () => {
+      if (localGeneration !== generation || !playing || paused) return;
+      index += 1;
+      speakCurrent();
+    };
+
+    utterance.onerror = event => {
+      if (localGeneration !== generation) return;
+      if (event.error !== "canceled" && event.error !== "interrupted") {
+        playing = false;
+        paused = false;
+        clearHighlight();
+        void releaseWakeLock();
+        updateNavigation();
+      }
+    };
+
+    synth.speak(utterance);
+  }
+
+  function jumpTo(target) {
+    const next = Math.max(0, Math.min(blocks.length - 1, target));
+    const resume = playing && !paused;
+    const keepPaused = paused;
+
+    generation += 1;
+    synth.resume?.();
+    synth.cancel();
+    index = next;
+
+    if (resume) {
+      playing = true;
+      paused = false;
+      void requestWakeLock();
+      speakCurrent();
+      return;
+    }
+
+    playing = keepPaused;
+    paused = keepPaused;
+    showCurrent();
+    if (keepPaused) void requestWakeLock();
+  }
+
+  function jumpSection(delta) {
+    const pos = sectionPosition();
+    let targetPos;
+
+    if (delta < 0 && index > sectionStarts[pos]) targetPos = pos;
+    else targetPos = pos + delta;
+
+    if (targetPos < 0 || targetPos >= sectionStarts.length) return;
+    jumpTo(sectionStarts[targetPos]);
+  }
+
+  play.addEventListener("click", () => {
+    if (paused) {
+      generation += 1;
+      synth.resume?.();
+      synth.cancel();
+      paused = false;
+      playing = true;
+      void requestWakeLock();
+      speakCurrent();
+      return;
+    }
+    if (playing) return;
+    if (index >= blocks.length) index = 0;
+    playing = true;
+    void requestWakeLock();
+    speakCurrent();
+  });
+
+  pause.addEventListener("click", () => {
+    if (!playing || paused) return;
+    synth.pause();
+    paused = true;
+  });
+
+  stop.addEventListener("click", () => {
+    generation += 1;
+    synth.resume?.();
+    synth.cancel();
+    playing = false;
+    paused = false;
+    index = 0;
+    clearHighlight();
+    updateNavigation();
+    void releaseWakeLock();
+  });
+
+  prevBlock.addEventListener("click", () => jumpTo(index - 1));
+  nextBlock.addEventListener("click", () => jumpTo(index + 1));
+  prevSection.addEventListener("click", () => jumpSection(-1));
+  nextSection.addEventListener("click", () => jumpSection(1));
+
+  voice.addEventListener("change", () => {
+    selectedVoice = voice.value;
+    if (playing && !paused) {
+      generation += 1;
+      synth.cancel();
+      speakCurrent();
+    }
+  });
+
+  rate.addEventListener("input", () => {
+    rateValue.textContent = Number(rate.value).toFixed(1) + "×";
+  });
+
+  theme.addEventListener("click", () => {
+    const dark = document.documentElement.dataset.theme === "dark";
+    document.documentElement.dataset.theme = dark ? "light" : "dark";
+    theme.textContent = dark ? "☾" : "☀";
+    localStorage.setItem("rsvp:theme", dark ? "light" : "dark");
+  });
+
+  document.documentElement.dataset.theme =
+    localStorage.getItem("rsvp:theme") ||
+    (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  theme.textContent = document.documentElement.dataset.theme === "dark" ? "☀" : "☾";
+
+  voices();
+  synth.addEventListener?.("voiceschanged", voices);
+  updateNavigation();
+
+  document.addEventListener?.("visibilitychange", () => {
+    if (document.visibilityState === "visible" && (playing || paused)) {
+      void requestWakeLock();
+    }
+  });
+
+  addEventListener("pagehide", () => {
+    generation += 1;
+    synth.cancel();
+    void releaseWakeLock();
+  });
+})();
+</script>
+</body>
+</html>
