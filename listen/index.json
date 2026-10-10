@@ -2,6 +2,13 @@
   "schema_version": 1,
   "items": [
     {
+      "id": "2026-10-11-station-open-ended-scientific-discovery",
+      "title": "採点できない科学研究を、AIはどこまで進められるか――Stationの検証",
+      "date": "2026-10-11",
+      "category": "research",
+      "path": "./research/2026-10-11-station-open-ended-scientific-discovery.html"
+    },
+    {
       "id": "2026-10-10-learn2play-experience-learning",
       "title": "AIは失敗を重ねて、本当に新しいルールを学べるか――Learn2Play Bench",
       "date": "2026-10-10",
