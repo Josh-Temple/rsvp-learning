@@ -169,21 +169,48 @@ test("2026-10-09 A: original claims are corrected and Markdown/RSVP stays aligne
   assert.doesNotMatch(await fs.readFile(path.join(root, "lessons/security-deep/security-password-mfa-phishing-resistant.md"), "utf8"), /入力値の転送を防ぐ性質です/);
 });
 
-test("identity proofing distinguishes resolution, evidence validation and applicant verification across MD/RSVP", async () => {
+test("P1-IP-01: identity resolution, evidence validation, applicant verification and limits stay aligned", async () => {
   const id = "security-identity-proofing-authn-authz";
   const md = await fs.readFile(path.join(root, "lessons/security-deep", id + ".md"), "utf8");
   const data = JSON.parse(await fs.readFile(path.join(root, "lessons/security-deep", id + ".json"), "utf8"));
-  const numbered = [...md.matchAll(/^(\d+)\. (.+)$/gm)];
+  const numbered = [...md.matchAll(/^(\\d+)\\. (.+)$/gm)];
+  const texts = data.chunks.map(c => c.text);
   assert.equal(numbered.length, data.chunks.length);
   for (let i = 0; i < numbered.length; i++) {
     assert.equal(Number(numbered[i][1]), i + 1);
-    assert.equal(numbered[i][2], data.chunks[i].text);
-    assert.ok([...data.chunks[i].text].length <= 24);
+    assert.equal(numbered[i][2], texts[i]);
+    assert.ok([...texts[i]].length <= 24, "overlong identity chunk " + i);
+  }
+  const requiredInOrder = [
+    "第一はIdentity resolution。",
+    "サービスが対象とする集団内で、",
+    "主張する身元を区別できるよう、",
+    "必要最小限の属性と証拠を集めます。",
+    "世界全体の一意性は保証しません。",
+    "第二は証拠と属性のvalidationです。",
+    "証拠の真正性と属性を確かめます。",
+    "第三は身元のverificationです。",
+    "証拠と申請者の結び付きを確かめます。",
+    "実在性だけでは本人確認は終わりません。"
+  ];
+  let prior = -1;
+  for (const phrase of requiredInOrder) {
+    const index = texts.indexOf(phrase);
+    assert.ok(index > prior, "missing or reordered proofing claim: " + phrase);
+    prior = index;
   }
   for (const phrase of [
-    "主張された身元の実在性を調べます。",
-    "証拠の真正性と属性を確かめます。",
-    "証拠と申請者の結び付きを確かめます。",
-  ]) assert.ok(data.chunks.some(c => c.text === phrase), "missing proofing stage: " + phrase);
+    "偽の証拠を受け入れる場合があります。",
+    "本物の他人の書類でも誤認は起きます。",
+    "真正性だけで申請者本人とはいえません。",
+    "強い認証器を後から登録しても、",
+    "誤った本人確認は修復されません。",
+    "認証成功と認可は別です。",
+    "個人情報を過剰収集しません。",
+    "リスクに応じた保証を選びます。"
+  ]) assert.ok(texts.includes(phrase), "missing proofing limit: " + phrase);
+  assert.ok(texts.indexOf("本物の他人の書類でも誤認は起きます。") > texts.indexOf("偽の証拠を受け入れる場合があります。"));
+  assert.ok(texts.indexOf("誤った本人確認は修復されません。") > texts.indexOf("強い認証器を後から登録しても、"));
+  assert.doesNotMatch(md, /主張された身元の実在性を調べます。/);
   assert.deepEqual(inspectRsvpChunkBoundaries(data.chunks), []);
 });
