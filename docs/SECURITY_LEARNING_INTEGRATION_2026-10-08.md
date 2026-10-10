@@ -415,3 +415,31 @@ Eは#117 head **a5ccc9...** のMD/JSON/HTML 3組を別々に再取得。**番号
 7. **後続:** 残27章の専門深度と20問の実回答は未検証。Course V-1 \`security-secure-by-design-default\`、V-2 \`security-input-output-injection\` はいずれも**HOLD**。追加登録・配信なし。
 
 **この節を保存する文書専用PRやmainの移動は、新教材の独立C承認・merge・本番反映を一切意味しない。** E実行はB未完の停止ゲートを守って終了し、将来のhead変化後には改めて全ゲートをfresh readする。
+
+
+---
+
+## 15. 2026-10-10 E — B新head受領とC候補固定（§14に続く後続snapshot、20時台JST）
+
+**本節は§14の早期HOLD直後に到着した新headを、別の時点として追加で記録する。** 過去記録を消さず、B未同期という§14時点の事実を新たなheadの現在判定へ転用しない。
+
+### 15.1 E-1再照合・単一候補
+
+- **現main（E-1確定時）** \`c6869b0231f401a545b5bb551a38e98ef0a27fc3\`（Eの§14追補文書[PR #126](https://github.com/Josh-Temple/rsvp-learning/pull/126)だけをsquash mergeしたもの）。#126 head \`0982ec77974b22cec347f0ff4eaf782969acc88c\` の[Test #38047419752](https://github.com/Josh-Temple/rsvp-learning/actions/runs/38047419752)はsuccess。main pushの[Test #38047456642](https://github.com/Josh-Temple/rsvp-learning/actions/runs/38047456642)もsuccess。**これらは教材本番配信ではない**。
+- **A修正の保全・B後続実体:** [PR #117](https://github.com/Josh-Temple/rsvp-learning/pull/117)のheadが§14の \`a5ccc9...\` から **\`af3249f19a79727c556945e7d53e6bcb837d8f05\`** に進行。増分は本人確認Learn HTML、Learn coverage fixture、Learn testの3ファイル。内容実体と[Test #38047457697](https://github.com/Josh-Temple/rsvp-learning/actions/runs/38047457697) **completed/success（\`af3249...\` 固有）** をEがreadback。A側MD/RSVPの主要修正は保持。B担当の正式な自己終了署名に代えず、EがB成果の**実体を検証した事実**を記録する。
+- Eの今回同一head取得による **MD numbered正文⇔JSON全文・順序一致: 本人確認65/65、Federation50/50、Cloud52/52、計167/167（不一致0）**。全chunkの最大長24文字（JavaScript code points とUTF-16両方）、3 HTMLとも出典 \`section.sources\` は読み上げ \`article\` の外。これはEの静的検証でありC監査/実発声PASSではない。
+- 本人確認Learnでは旧「名乗った身元が実在するか」型の冒頭を**「実在性だけで終わらない」**説明に差し替え、対象集団内の識別、必要な属性と証拠、resolution/validation/verificationを明示。世界全体の一意性は保証しないこと、偽造証拠と他人の真正書類、強い認証器登録で過去の誤本人確認が修復されないこと、プライバシー/用途/認可/回復の限界をLearn本文の文脈内で保持。fixtureは段落内の共同出現を検査し、Learnテストは旧説明・三段階・認証器・プライバシーの**6つの意味劣化を故意に与える回帰**を追加。機械テストだけで意味・出典の独立受入を宣言しない。
+- FederationとCloudのLearnには、前Waveが守った重要条件を残す。FederationのOAuth/OIDCトークン用途・IdPとRPセッション、CloudのIaaS/SaaS契約差・未検証時判断保留は**C再査読対象**。現候補headではCの原典主張別署名はまだない。
+- #117は**open/draft/unmerged**、旧base \`07045f861e7e4dbc7e2adf03b03ef997b77939e3\` とmainは分岐。GitHub compareではheadは現mainに対し**ahead 12 / behind 9**、actual diffは許可された12ファイルだけ、PR \`mergeable=true\`。安全側の条件を満たすためEは**新たな重複PRを作らず、#117の\`af3249...\`を単一candidateとして固定してCへ提出**。固定とはこのSHAだけを監査対象とすることで、GitHub上でbranchの変更を技術的に禁止した意味ではない。追加コミットがあればC署名対象を再設定する。
+
+### 15.2 E-1判定・独立C受入ゲート
+
+**E-1: \`CANDIDATE_READY_FOR_C\`（正確なfull SHA \`af3249f19a79727c556945e7d53e6bcb837d8f05\`）**。GitHub [#117のE-1引渡しコメント](https://github.com/Josh-Temple/rsvp-learning/pull/117#issuecomment-6096893330)へmain、全差分、167/167、head Test、保留事項、Cが読むべき原典、C署名headを明示して共有済み。独立Cはまだ今回headについて \`ACCEPTED_FOR_MERGE\` を発行していない。
+
+- **C最終head独立レビュー:** \`NOT_VERIFIED\`。前回C §15（旧head \`2699e117...\`）のHOLDは引き続き歴史的記録であり、最新B headへ自動転用しない。
+- **E-2教材merge:** \`HOLD\`。同一headで独立C \`ACCEPTED_FOR_MERGE\` / P0/P1ゼロ / 原典射程 / CI / fresh main / full diff が必要。C未合格のため教材は**未merge**。
+- **production:** \`HOLD\`。今回新sourceのdeployは行わず、alias \`rsvp-learning-kappa.vercel.app\` の既存deployment \`dpl_7bQrnHpAhNf4dhjLK54Qex5yxf6t\` / source \`23a007f343456ae2e6cca14d3ab849ed07b27deb\` / READY / target=production とSSO保護を維持。旧previewが \`af3249...\` の配信証拠ではない。
+- **D新production QA:** \`NOT_VERIFIED\`。Desktop GUI/390px、Android、Web Speech、Chrome native reading、長時間連続再生、最終停止、画面OFF、匿名アクセス、20問実回答の新候補による検証は行っていない。旧14/14 HTTPを新候補のPASSにしない。
+- **他27章の専門深度、20問の実回答と採点一致:** 今回未検証。Course V-1 \`security-secure-by-design-default\` とV-2 \`security-input-output-injection\` はそれぞれ**HOLD**。既存4章、旧入門8章、course/Catalog/status、player/history/localStorage、private/public境界はEにより変更なし。
+
+**この時点の総合: \`PARTIAL_WITH_GAPS\`、release gate \`HOLD\`。** P1対応のB新headと構造的・限定意味対応は成立したが、独立C最終受入とproduction/source整合が成立するまではWaveをCOMPLETEDとしない。C結果が出たら最新head・現在main・Run・Vercelを再取得してE-2以降を別記録に追加する。
