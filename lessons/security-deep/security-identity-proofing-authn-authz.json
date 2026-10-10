@@ -54,11 +54,31 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "本人確認では主張された身元を調べます。",
+      "text": "本人確認は三段階で進めます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "主張された身元の実在性を調べます。",
+      "text": "第一はIdentity resolution。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "サービスが対象とする集団内で、",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "主張する身元を区別できるよう、",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "必要最小限の属性と証拠を集めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "世界全体の一意性は保証しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "第二は証拠と属性のvalidationです。",
       "duration_multiplier": 1.15
     },
     {
@@ -66,7 +86,15 @@
       "duration_multiplier": 1.15
     },
     {
+      "text": "第三は身元のverificationです。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "証拠と申請者の結び付きを確かめます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "実在性だけでは本人確認は終わりません。",
       "duration_multiplier": 1.15
     },
     {
@@ -179,6 +207,22 @@
     },
     {
       "text": "別人を登録する場合もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "本物の他人の書類でも誤認は起きます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "真正性だけで申請者本人とはいえません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "強い認証器を後から登録しても、",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "誤った本人確認は修復されません。",
       "duration_multiplier": 1.15
     },
     {
