@@ -186,7 +186,7 @@ test("four new security Learn lectures retain A-head cases, limits, and separate
 
 test("P1-IP-01 Learn: three proofing steps, limitations, and regression counterexamples", async () => {
   const html = await fs.readFile(new URL("../learn/security-identity-proofing-authn-authz.html", import.meta.url), "utf8");
-  const article = html.match(/<article\\b[^>]*>([\\s\\S]*?)<\\/article>/i)?.[1];
+  const article = html.match(/<article\b[^>]*>([\s\S]*?)<\/article>/i)?.[1];
   assert.ok(article, "identity proofing article missing");
   const checks = [
     ["resolution", ["identity resolution", "対象とする集団内", "区別", "必要な属性と証拠", "集めます"]],
@@ -198,7 +198,7 @@ test("P1-IP-01 Learn: three proofing steps, limitations, and regression countere
     ["privacy and use limits", ["必要な範囲", "個人情報", "用途"]]
   ];
   const check = (speechArticle) => {
-    const paragraphs = [...speechArticle.matchAll(/<p\\b[^>]*>([\\s\\S]*?)<\\/p>/gi)].map((match) => textOf(match[1]));
+    const paragraphs = [...speechArticle.matchAll(/<p\b[^>]*>([\s\S]*?)<\/p>/gi)].map((match) => textOf(match[1]));
     const opening = textOf(speechArticle.split("<h2>Identityを段階に分ける</h2>")[1]?.split("</p>")[0] ?? "");
     assert.ok(opening.includes("実在性を調べるだけで終わりません") &&
       opening.includes("対象とする集団") && opening.includes("属性と証拠") &&
