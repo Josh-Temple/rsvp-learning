@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f2efe8">
+  <meta name="description" content="採点基準がない科学研究をAIが進めるStationの実験を解説。3つの再発見課題、監督と振り返り、比較条件、研究判断の限界を確認。">
+  <title>採点できない科学研究を、AIはどこまで進められるか――Stationの検証</title>
+  <style>
+    :root{color-scheme:light;--bg:#f2efe8;--ink:#121722;--muted:#73766f;--line:#cbc8bf;--blue:#5d7487}
+    html[data-theme="dark"]{color-scheme:dark;--bg:#11151a;--ink:#edf0eb;--muted:#959b97;--line:#343a3e;--blue:#7892a6}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Hiragino Sans","Noto Sans JP",sans-serif;line-height:1.9}
+    .shell{width:min(760px,100%);margin:0 auto;padding:max(18px,env(safe-area-inset-top)) 20px max(42px,env(safe-area-inset-bottom))}
+    .topbar{min-height:52px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+    .icon{width:42px;height:42px;display:grid;place-items:center;border:0;background:transparent;color:var(--muted);text-decoration:none;font:inherit}
+    .meta{margin:28px 0 8px;color:var(--muted);font-size:.75rem}
+    h1{font-size:clamp(2rem,8vw,3.4rem);line-height:1.12;letter-spacing:-.04em;margin:.2em 0 .8em}
+    h2{margin:2.2em 0 .6em;font-size:1.2rem}
+    p{margin:0 0 1.25em}
+    article>*{transition:background-color .15s ease}
+    .is-speaking{background:color-mix(in srgb,var(--blue) 16%,transparent)}
+    .player{position:sticky;bottom:0;margin:32px -6px 0;padding:12px 6px;background:color-mix(in srgb,var(--bg) 94%,transparent);border-top:1px solid var(--line);backdrop-filter:blur(8px)}
+    .speed{display:grid;grid-template-columns:48px 1fr 42px;gap:10px;align-items:center;margin-top:10px;font-size:.78rem;color:var(--muted)}
+    input{width:100%}
+    .sources{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}
+    .sources a{color:var(--ink)}
+    .mode-nav{display:inline-flex;align-items:center;gap:4px}
+    .mode-icon{width:42px;height:42px;display:grid;place-items:center;color:var(--muted);text-decoration:none;opacity:.5}
+    .mode-icon.is-active{color:var(--ink);opacity:1}
+    .mode-icon svg{width:20px;height:20px;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+    .brand-mark{width:22px;height:14px;display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+    .brand-mark i{display:block}
+    .brand-mark i:nth-child(1){background:#a85248}
+    .brand-mark i:nth-child(2){background:#5d7487}
+    .brand-mark i:nth-child(3){background:#c2a653}
+    .transport{display:grid;grid-template-columns:repeat(5,48px);justify-content:center;gap:8px}
+    .transport button,.section-nav button,.voice-row select{min-height:42px;border:1px solid var(--line);background:transparent;color:var(--ink);font:inherit}
+    .transport button{width:48px}
+    .section-nav{display:grid;grid-template-columns:48px 1fr 48px;align-items:center;gap:8px;margin-top:10px}
+    .section-nav button:disabled{opacity:.25}
+    #section-label{min-width:0;overflow:hidden;color:var(--muted);font-size:.78rem;text-align:center;white-space:nowrap;text-overflow:ellipsis}
+    .voice-row{margin-top:10px}
+    .voice-row select{width:100%;padding:0 8px}
+    .mode-icon:focus-visible,.transport button:focus-visible,.section-nav button:focus-visible,.voice-row select:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+  </style>
+</head>
+<body>
+<main class="shell">
+  <header class="topbar">
+    <nav class="mode-nav" aria-label="モード切替">
+      <a class="mode-icon" href="../../index.html" aria-label="RSVPへ移動" title="RSVP">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      </a>
+      <a class="mode-icon" href="../../index.html?library=learn" aria-label="Learnへ移動" title="Learn">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 5.5c2.6-.8 5.3-.4 8 1.2v12c-2.7-1.6-5.4-2-8-1.2v-12Z" />
+          <path d="M20 5.5c-2.6-.8-5.3-.4-8 1.2v12c2.7-1.6 5.4-2 8-1.2v-12Z" />
+        </svg>
+      </a>
+      <a class="mode-icon is-active" href="../../index.html?library=listen" aria-label="Listen一覧へ移動" aria-current="page" title="Listen">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 13v-1a8 8 0 0 1 16 0v1" />
+          <path d="M4 13h3v7H5a1 1 0 0 1-1-1v-6Zm16 0h-3v7h2a1 1 0 0 0 1-1v-6Z" />
+        </svg>
+      </a>
+    </nav>
+    <button id="theme" class="icon" type="button" aria-label="テーマ切替">☾</button>
+  </header>
+
+
+
+
+
+
+
+  <article id="article">
+    <p class="meta">情報基準日 2026年10月11日・原論文公開 2026年10月6日・査読前プレプリント</p>
+    <h1>採点できない科学研究を、AIはどこまで進められるか――Stationの検証</h1>
+
+    <h2>何が新しい研究なのか</h2>
+    <p>今回取り上げるのは、2026年10月6日に公開されたプレプリント「Can AI Agents Make Open-Ended Scientific Discovery? Evidence from Station」です。AIエージェントが、途中で正解を教えてもらえない研究課題に取り組み、過去の科学的発見をどこまで再現できるのかを調べています。</p>
+    <p>プログラムの高速化であれば、実行時間や正答率を測ることで良し悪しを判断できます。しかし科学研究の中には、何を発見すれば価値があるのかが、実験を始める前には決まっていない課題が多数あります。新しい仮説を立て、データを集め、実験を失敗させ、疑問そのものを修正する活動は、単純な得点へ置き換えにくいのです。</p>
+    <p>著者らは、複数のAIがそれぞれ研究テーマを考え、実験し、発見を共有するStationという研究環境を拡張しました。研究を早く切り上げないための監督役と、定期的に科学的価値を振り返る仕組みを導入しています。そのうえで、既存論文の結論を隠した状態で、実験から同じ発見へ到達できるかを調べました。</p>
+    <p>結果は、三つの既存研究の再発見課題で、Stationが著者らの定義した発見の小項目の平均62.7％を再発見したというものでした。比較したCodex Multiagent-v2は15.4％、AI Scientist-v2の三構成は14.4％から20.6％でした。この数字は、研究上の発見を再現できた項目の割合であり、新しい科学の真理を62.7％発見したという意味ではありません。</p>
+    <p>重要なのは、結果の高さだけではありません。著者自身が、比較したシステムではモデルの組合せや研究手順も異なるため、分散型の構造だけが差の原因とは言えないと認めています。さらに、実験の途中では科学的な価値が乏しい方向へ進むことも多くありました。今回は、研究方法と数字を確認し、何を確かめられたかと、まだ確かめられていないことを分けて考えます。</p>
+
+    <h2>そもそも採点できない研究とは</h2>
+    <p>AIを使った自動研究では、評価指標が明確な課題がよく使われます。あるアルゴリズムを速くできたか、計算の誤差を減らせたかといった問題なら、実験するたびに点数が返り、その点数を目標に改善できます。エージェントが何をすればよいかも比較的はっきりしています。</p>
+    <p>一方、ニューラルネットワークが内部でどのように計画を表現しているかを知りたいとします。ある内部表現と行動の相関を見つけても、その分析が本当に計画の仕組みを説明したかは、すぐには分かりません。複数の観測をまとめ、原因と結果を区別し、別の仮説も試す必要があります。</p>
+    <p>論文では、このように途中経過を客観的な点数だけで評価できないものを、オープンエンドな研究課題として扱います。探索するべき問いが途中で増えたり、研究者の専門的判断によって次の調査が決まったりする点が特徴です。</p>
+    <p>著者らは特に二つの障害を挙げます。一つは、AIが自分の成果を科学的に重要だと判断しても、人間の研究者はそう考えない可能性です。もう一つは、簡単に測れることばかりを研究し、測ることは難しいが重要な問いを避ける傾向です。これは論文でストリートライト効果と呼ばれています。</p>
+    <p>たとえば、内部表現の意味を解明するのが目的なのに、モデルの性能指標を少し高める作業へ研究が移ってしまうとします。性能改善自体に価値がないわけではありません。しかし、当初の科学的な問いは未解決のまま残ります。研究の進捗と研究の方向性を分けて考える理由が、ここにあります。</p>
+
+    <h2>Stationはどんな研究環境なのか</h2>
+    <p>Stationは、一つの中央エージェントが全体の細かい研究テーマを決めるのではなく、複数のエージェントがそれぞれ独立に課題を立てて進める環境です。エージェントは異なるモデルや文脈を使い、実験し、発見を発表し、他のエージェントの結果を参照できます。</p>
+    <p>研究者らが狙ったのは、複数の独立した判断を並行して試すことです。一つの中央計画だけに従うと、その最初の計画が外れていた場合に探索全体が行き詰まる可能性があります。独立したエージェントを使えば、同じ問題に対する別々の着眼点が生まれるかもしれません。ただし、この研究だけで、その設計が必ず有利になると証明されたわけではありません。</p>
+    <p>もともとのStationは、明確な評価値を持つアルゴリズム探索にも使われる環境でした。今回の研究では、客観的な途中評価のない研究へ広げるために、新しい役割を加えています。監督役のSupervisor、定期的なMeta Reflection、最後に研究成果をまとめるConsolidation Agentです。</p>
+    <p>監督役を置くと中央管理型になってしまうのでは、という疑問もあります。論文の設計では、各エージェントが研究方向を自分で提案する点は残します。監督役の主な役割は、その方向を一定期間追究させ、すぐ別の問いへ飛び移ることを抑えることです。探索テーマのすべてを中央で指定する仕組みとは異なります。</p>
+    <p>最後のまとめ役は、複数の実験や議論を研究報告書へ統合します。途中で高得点のアルゴリズムを選べないため、実験の根拠を集めて、何が分かったのかを文章で示す必要があります。著者らは約八千語の報告書を最終成果物としました。</p>
+
+    <h2>監督役と定期的な振り返り</h2>
+    <p>Supervisorは、研究エージェントに、取り組む方向、その科学的価値、何回分の作業を継続するかを記した提案を提出させます。研究エージェントは、基本的に約束した方向を追究します。重要なソフトウェアが使えないなどの例外的な場合には、変更の許可を求めることができます。</p>
+    <p>監督役は実験の実行や論文の発表を担当せず、進路の管理に集中します。簡単な結果が出なかったからといってすぐ次の題材に移る行動を減らすのが目的です。新しい仮説には、初期の測定を行った後に、検証方法を改善する時間が必要だからです。</p>
+    <p>Meta Reflectionは、一定の間隔で自分の研究を評価し直す仕組みです。この実験では、五十ティックごとに振り返りを行います。ティックは研究環境内の進行単位であり、そのまま実際の五十秒や五十分を意味するものではありません。</p>
+    <p>振り返りでは、その研究が人間の専門家にとって重要か、既知のことを繰り返していないか、探索を続けるべきかといった問いを投げかけます。振り返りの回答生成には、基盤エージェントのモデルにかかわらずGPT-5.5を使いました。この共通の判断役も、実験結果へ影響する構成要素です。</p>
+    <p>最後にConsolidation Agentが成果を統合します。こちらはGPT-5.5を使うCodexで動かしています。このようにStationは、単に複数のエージェントを並べただけではありません。各研究者役の独立性、継続を促す監督、研究価値の振り返り、最後の証拠統合までを組み合わせたシステムです。</p>
+    <p>これらの役割を分ける設計には明確な狙いがあります。しかしSupervisorとMeta Reflectionのそれぞれが、単独でどれだけ効いたかは、この研究の主要な比較では分離されていません。後で紹介する除去実験も、二つをまとめて外したものです。</p>
+
+    <h2>何を使って本当に発見したと評価したか</h2>
+    <p>主要実験は、過去に人間の研究者が発表した三つの研究を再発見できるかという課題です。著者らは、ICLRという機械学習分野の学会で口頭発表に選ばれた論文をもとに、研究課題を用意しました。研究の問いと、実験に必要なモデルや環境は与えます。しかし元論文で得られた発見そのものは伏せています。</p>
+    <p>対象は、強化学習エージェントの内部に計画が現れる仕組み、言語モデルの出力にある低次元の構造、再帰型ニューラルネットワークが時間情報を保持する仕組みです。いずれも、単純な正答率より、現象を説明できるかが問われる研究です。</p>
+    <p>実験後の報告書を採点するため、研究者らは元の論文の重要な結果を十個前後の小さな発見へ分解しました。単に元論文と似た結論を文章で書いただけでは再発見と認めません。対応する実験的な証拠が報告書に示されていることも条件です。</p>
+    <p>報告書の判定にはGPT-5.5を使う評価エージェントを用い、異なる乱数で複数回評価しています。一つのStation実行から統合報告書を三本作り、それぞれ三回採点し、一実行当たり九つの判定値を平均します。人間の専門家による盲検評価とも高い一致を確認したと報告しています。</p>
+    <p>ただし、評価の枠組みは著者らが重要だと考えた発見を基準にしています。もとの論文に書かれていない優れた発見は、この割合では十分に評価されません。何が主要な発見に当たるかという分解にも判断が入り得ます。著者らは、その分解をStationの実験前に確定し、資料を公開することで偏りを抑えようとしています。</p>
+    <p>つまり、ここでの回復率は研究者全体に対する科学的発見能力の総合点ではありません。あらかじめ定めた重要項目に、実験的根拠付きでどの程度到達できたかを測る指標です。この定義を踏まえて数字を読む必要があります。</p>
+
+    <h2>実験の規模と比較条件</h2>
+    <p>Stationの再発見課題では、三つのGemini 3.1 Proエージェント、一つのGPT-5.5エージェント、二つのClaude Opus 4.8エージェントから始めます。各実行は三百ティックまで進み、インターネット接続を無効にし、人間も途中で介入しません。各研究課題を異なる乱数で三回実行しました。</p>
+    <p>比較対象は、Codex Multiagent-v2の一構成と、AI Scientist-v2の三構成です。AI Scientist-v2ではClaude、Gemini、GPTという異なる基盤モデルの構成を評価しました。それぞれ同じ研究課題と実験用環境を受け取ります。</p>
+    <p>著者らは比較対象に与える累積実験時間をStationへ合わせるように調整しました。ここでの累積実験時間は、複数の実験が同時に走る場合も合計するため、実際の経過時間とは一致しません。論文の補足表では出力トークン数にも相当な差があり、計算資源の全てを同一条件にそろえたわけではありません。</p>
+    <p>また、基盤モデルの組合せも同じではありません。Stationは複数のモデル系列を研究役として組み合わせていますが、比較対象の実装では同じ役割に複数系列を混在させることができなかったと著者らは述べています。従って、この比較が答えるのは、研究システム全体としてどれくらい再発見できたかという問いです。</p>
+    <p>実験全体では五十回の研究実行を行い、累積の実験時間は三千四百時間を超え、生成出力は七億六千万トークンに達したと付録で報告されています。数字の規模は大きいですが、研究設計やシステムの費用対効果を無条件に保証するものではありません。再現には計算資源と実験環境が必要です。</p>
+
+    <h2>主な結果――再発見率をどう読むか</h2>
+    <p>三つの課題を同じ重みで平均した再発見率は、Stationが62.7％でした。Codex Multiagent-v2は15.4％、AI Scientist-v2の三構成は14.4％、17.2％、20.6％でした。各構成の独立実行のばらつきも報告されています。論文の条件では、Stationが比較対象を大きく上回ったことは明確です。</p>
+    <p>ただし三つの課題を一つにまとめると、大きな違いが隠れます。強化学習エージェントの計画を調べる課題では、Stationの再発見率は75.8％でした。言語モデルの出力構造を調べる課題では70.4％です。一方、再帰型ニューラルネットワークの時間表現では41.9％に下がります。</p>
+    <p>さらにStationを三百ティックまで動かした場合の平均62.7％に対し、百ティックの時点では61.2％でした。三百ティックまで続けたことによる平均的な上積みは小さい結果です。長く走らせれば必ず重要な発見が増える、という結果ではありません。</p>
+    <p>実験では、同じ大きな研究課題の中でも、観測しやすい現象とその理由を説明する難しい現象で差が出ました。AIは簡単な規則性を発見できても、そこから因果的な説明へ進む段階で失敗することがあります。</p>
+    <p>したがって、62.7％という値は研究の可能性を示しますが、科学研究が六割以上自動化できたという意味ではありません。対象は三つの選ばれた論文に対応する再発見の小項目であり、実験的な条件と報告書の採点方法の上に成り立つ数字です。</p>
+
+    <h2>一つ目の研究――強化学習の内部計画</h2>
+    <p>最初の課題では、箱を押して移動させるパズルを解く強化学習エージェントが、内部で計画を作っているかを調べます。人間の元論文は、将来の行動や状態に対応する内部表現を見つけ、それらを変化させることで、エージェントの行動へ影響を与えられることを示しました。</p>
+    <p>研究者らは発見を十一の小項目に分けました。表現を検出すること、計画がどう構築・更新されるかを調べること、表現への介入が実際に行動を変えるかを確かめること、という三つの種類に分かれます。</p>
+    <p>Stationは平均で十一項目のうち8.33項目、割合にして75.8％を再発見しました。内部表現を検出する項目では非常に高い割合でしたが、計画の具体的な性質や因果的介入には取りこぼしがありました。</p>
+    <p>例えば元論文が示した、計画が双方向に組み立てられるという仕組みは、Stationでも再発見できませんでした。内部の特徴量と将来の行動が相関することを見つけるのと、どのような過程で計画が生成されるかを説明するのは、違う難しさを持っています。</p>
+    <p>比較対象の再発見率は6.1％から19.2％でした。調査記録を読むと、最初に選んだ分析対象が適切でなかったため、その先の計画分析や介入検証まで進まない例があったと著者らは解釈しています。最初の探索の方向が、その後の研究可能性を狭めることがあるのです。</p>
+
+    <h2>二つ目の研究――言語モデル出力の構造</h2>
+    <p>二つ目は、言語モデルの出力が、実は比較的低い次元の構造で説明できるかという問題です。異なる文章の続きを出力させ、その関係が別の入力でも保たれるか、予測や生成に役立つかを調べます。</p>
+    <p>この課題の元論文の発見は十二項目へ分けられました。出力に低次元の構造があること、それが別の文章の続きにも使えること、さらにその性質を使った予測や生成に意味があること、の三段階です。</p>
+    <p>Stationは十二項目のうち平均8.44項目、70.4％を再発見しました。構造そのものと、異なる文脈でも使える関係の項目では非常に高い回復率でした。しかし、実際の機能上の結果を示す項目では回復率が低く、18.5％にとどまりました。</p>
+    <p>比較対象は33.3％前後から37.0％で、主に低次元の構造を見つける段階へ集中していました。著者らは、Stationのエージェントが初期の発見から追加の問いを立て、関係の再利用を調べるところまで進んだと解釈しています。</p>
+    <p>ここでも、現象を見つけたという成功と、その現象を使って何ができるかを説明した成功は同じではありません。再発見率が高くても、実用的な帰結まで理解できたとは限りません。</p>
+
+    <h2>三つ目の研究――時間情報の記憶</h2>
+    <p>三つ目は、再帰型ニューラルネットワークが時間情報をどのように覚え、何を忘れるかという課題です。モデルの限られた内部容量を、異なる情報と異なる時間の長さへどう配分するかを調べます。</p>
+    <p>この課題では、先の二つと違い、訓練済みのモデルを調べるだけではありません。研究エージェント自身がネットワークを訓練し、内部に形成された表現を分析する必要がありました。そのため、何を測定対象とするかの自由度も高くなります。</p>
+    <p>Stationが再発見したのは十項目のうち平均4.19項目、41.9％でした。線形モデルの時間変化や、容量と保持時間の関係には到達しましたが、非線形モデルで古い情報を急激に抑える仕組みはほとんど再現できませんでした。</p>
+    <p>著者らは、AIが記憶の性能を最適化する方向へ進みやすかったことに注目します。その方向は成果が数値で見えやすい一方、元論文が扱った「内部でなぜそのように忘れるか」という問題とはずれています。</p>
+    <p>性能改善も科学的価値を持ち得るので、研究が無意味だったと断定することはできません。ただし、設定された研究問題とは別の測定しやすい課題へ移ってしまうという障害が、ここでは成績の低下とともに具体的に表れました。</p>
+
+    <h2>二つの仕組みを外すとどうなるか</h2>
+    <p>著者らはSupervisorとMeta Reflectionの効果を確かめるため、強化学習の計画を調べる課題で、二つの仕組みを同時に取り除く実験をしました。結果として再発見率は75.8％から57.9％へ下がりました。特に、内部表現へ介入して行動の変化を確かめる項目で低下が目立ちました。</p>
+    <p>プロジェクト一件当たりの平均継続時間も、67.0ティックから55.5ティックへ短くなりました。一定期間は同じ研究方向を続ける仕組みが、途中で別の話題へ移ることを抑えた可能性を支持する観察です。</p>
+    <p>振り返りの後の行動も分析されています。九十二回のMeta Reflectionのうち、約71.7％では、その後十ティックの間に既存の研究方向を深掘り、または検証する行動が見られました。これは振り返りが役立つ可能性を示す数字ですが、振り返りをしなかった場合との差を単独で測った割合ではありません。</p>
+    <p>実際の一例では、静止した壁や通路についての情報処理だけを調べていたエージェントが、振り返りを受けて、動かせる箱が計画へどう影響するかを調べ始めました。単に長く粘るのではなく、研究の本来の問いに近づく方向転換も起きています。</p>
+    <p>ただし、Supervisorだけを外した場合やMeta Reflectionだけを外した場合は、この主要な除去実験では評価されていません。二つをセットにして加える構成が有効だった可能性は示されていますが、個別の寄与まで確定した結果ではありません。</p>
+
+    <h2>人間の専門家との判断のずれ</h2>
+    <p>Stationの得点が高かったとしても、科学的に価値ある問いを自分で選べるとは限りません。著者らは、強化学習の計画研究について、元論文で示した発見とは重ならないAIの研究提案二十四件を、一人の元論文著者に評価してもらいました。</p>
+    <p>結果は、提案の75％が五点満点中一点または二点でした。専門家は、多くの提案が細かな事柄へ集中し、解決しても中心の科学的問題への理解はあまり進まないと判断しました。</p>
+    <p>これは特に重要な限界です。AIが実験を実施し、数値とグラフを作り、長い報告書を書けるとしても、どの問題に時間を費やす価値があるかを正しく判断できるとは限りません。</p>
+    <p>一方で、この評価は一つの研究課題について、一人の専門家が行ったものです。科学的価値の判断には研究者間の違いもあります。75％という数字を科学研究全般のAIの無価値な提案率とみなすことはできません。</p>
+    <p>研究者らは、人間による軽い方向づけが役立つ可能性に触れています。ただし、人間の判断を毎回必要とするなら、完全自動化の規模拡大は難しくなります。重要な問いの選択と、実験を実行する能力をどう組み合わせるかが残された課題です。</p>
+
+    <h2>未知の発見もあったのか</h2>
+    <p>再発見の三課題とは別に、著者らは、元になる答えの論文を指定しない探索課題を二つ実施しました。一つは、意味的には関係のないデータを通して、モデルの行動の好みが別のモデルへ伝わるというサブリミナル学習の現象です。もう一つは、画像と言語を扱うモデルが事実と違う説明を生成する現象です。</p>
+    <p>サブリミナル学習では、少量の学習用パラメータを追加するLoRAという方法の設定を変えて調べました。適応パラメータの大きさを表すランクを上げれば、伝達が単調に強くなるわけではないという関係を見つけました。この観察は同時期の別の研究と整合していました。</p>
+    <p>さらに、層の一部だけを更新すると、全ての層を更新したときに弱まった性質の伝達が再び強くなる場合がありました。著者らは猫への好みの実験を示し、付録では複数の別の動物の好みに対しても追加の検証を行っています。</p>
+    <p>画像と言語の課題では、モデルの最後の二層の処理を弱めることで、画像内容についての誤った説明を減らせるという介入を見つけました。その仕組みについて、言語側の既存の予想が画像からの証拠を押しのけにくくなったのではないかと説明しています。ただし、これは著者らによる機序の解釈であり、あらゆる画像言語モデルに有効とは限りません。</p>
+    <p>二つの探索課題は、科学的な発見の可能性を示す事例です。しかし、対象の問いを無作為に大量抽出し、成功率を推定した実験ではありません。また、元の研究者による後日の検証や別研究との一致があっても、AIが自律的に未知の科学を広範囲に解決できるとまでは言えません。</p>
+
+    <h2>原論文が示す重要な限界</h2>
+    <p>一番大きな注意点は、訓練データへの事前の接触を完全には除外できないことです。再発見の元論文には2025年4月に公開されたものがあります。使用モデルの知識の区切りは2025年1月から2026年1月までと報告されています。実行時のインターネットを切り、元論文の結果を伏せても、一部の知識が学習済みである可能性は残ります。</p>
+    <p>著者らは、単に結論を言い当てるだけでは採点せず、実験の根拠を要求したと説明しています。比較対象や単発の直接質問で再発見できなかったことも挙げています。それでも、訓練で見た知識が研究方向の選び方を助けたかどうかは、完全には切り分けられません。</p>
+    <p>次に、Stationと比較対象はモデルの構成も研究手順も違います。累積実験時間は合わせていますが、入出力トークン、使ったモデル、探索の自由度などが同じではありません。論文は、分散型の構造が成績差の原因だとは断言していません。</p>
+    <p>三つの再発見課題は人間の研究者が選んだ重要な論文に基づいています。研究問題やモデルのチェックポイントも与えられています。何もないところから価値ある研究テーマを発案し、必要な装置を設計して実行したと同一視するのは誤りです。</p>
+    <p>研究の成功を元論文の発見に照らして測る方法には限界があります。元論文と異なる、もっと重要な発見があった場合でも、採点項目から外れる可能性があります。一方で報告書にもっともらしい説明が書かれていても、独立に再現しなければ正確性を保証できません。</p>
+    <p>著者らは公開コードと研究履歴を提供していますが、今回こちらで全ての長時間実験を再実行したわけではありません。査読前のプレプリントであり、第三者による包括的な再現が済んだと確認できたわけでもありません。数値の大きさと確証の強さは区別して扱います。</p>
+
+    <h2>研究・業務で何を試す価値があるか</h2>
+    <p>ここからは、論文の結果ではなく、研究や業務での運用へ応用して考えられる点です。まず、エージェントを並列化するだけではなく、各エージェントが何を確かめようとしているかを明確にすることです。研究仮説、実験条件、途中の反証、次の問いを残さなければ、活動量が多くても知識が積み上がりません。</p>
+    <p>次に、進捗を点数だけで測らないことです。AIが処理回数やコードの実行数を増やしても、中心の問題について何を説明できるようになったかは別です。問いに対する証拠が増えたか、反対の仮説を検証したかという観点が必要です。</p>
+    <p>一定期間は研究方向を維持する約束と、定期的な振り返りを組み合わせる設計は参考になります。ただし、変更を禁止しすぎると、間違った方向へ時間を使い続ける危険もあります。論文の仕組みは、継続と、理由を明確にした方向転換の両方を意図していました。</p>
+    <p>また、評価で最も重要な論点は、同じ研究テーマと時間制限だけでなく、使うモデル、道具、記憶、計算資源、最終的な判定者をできる限りそろえることです。システム全体の成果比較と、特定の設計要素が原因かを調べる実験は、別々に行う必要があります。</p>
+    <p>人間の役割も、単にAIの完成原稿に承認を出すことだけではありません。何を調べると価値があるか、すでに示された証拠で十分か、新しい実験を何に使うべきかを判断する役割が残っています。この研究で重要な未解決点は、研究の方向づけそのものです。</p>
+    <p>ただし実務への転用の効果は、この研究では測られていません。科学研究以外の行政業務や企業の調査で同じ制度を導入するなら、判断の品質に加え、情報漏えい、費用、誤った推論の連鎖、停止条件、人による承認を個別に検証する必要があります。</p>
+
+    <h2>聞き終えたときの要点</h2>
+    <p>Stationの研究が示したのは、正解の数値が与えられない科学的な問いに対しても、AIエージェントの研究環境を工夫すれば、一定範囲の発見を再現できるということです。三つの既存研究の再発見課題で62.7％という結果は注目に値します。</p>
+    <p>一方、その差を分散型の構造だけで説明することはできません。研究モデルや工程は比較対象と異なり、元論文への事前接触の可能性も残ります。AIは専門家にとって価値の低い問題へ向かい、難しい機序の解明を取りこぼすこともありました。</p>
+    <p>実務や研究へ持ち帰るなら、AIに何度も作業させるだけでなく、問いの価値、根拠の強さ、研究を続ける条件、途中で方向を変える理由まで管理することです。自動研究の重要な課題は、実験を速く実行する能力だけではなく、どの問いを深く掘り下げるべきか判断する能力にあります。</p>
+  </article>
+
+  <section class="player" aria-label="読み上げ操作">
+    <div class="transport">
+      <button id="prev-block" type="button" aria-label="前の読み上げ単位へ">←</button>
+      <button id="play" type="button" aria-label="再生">▶</button>
+      <button id="pause" type="button" aria-label="一時停止">Ⅱ</button>
+      <button id="stop" type="button" aria-label="停止">■</button>
+      <button id="next-block" type="button" aria-label="次の読み上げ単位へ">→</button>
+    </div>
+    <div class="section-nav" aria-label="章移動">
+      <button id="prev-section" type="button" aria-label="前の章へ">‹</button>
+      <span id="section-label">導入</span>
+      <button id="next-section" type="button" aria-label="次の章へ">›</button>
+    </div>
+    <div class="voice-row">
+      <select id="voice" aria-label="日本語音声"></select>
+    </div>
+    <div class="speed"><span>速度</span><input id="rate" type="range" min="0.7" max="4" step="0.1" value="1"><span id="rateValue">1.0×</span></div>
+  </section>
+
+
+
+
+
+
+
+  <section class="sources" aria-label="出典">
+    <strong>出典</strong>
+    <p><a href="https://arxiv.org/abs/2610.08927">arXiv — Can AI Agents Make Open-Ended Scientific Discovery? Evidence from Station（原論文・付録）</a></p>
+    <p><a href="https://www.alphaxiv.org/abs/2610.08927">alphaXiv — 原論文の閲覧ページ</a></p>
+    <p><a href="https://github.com/dualverse-ai/station-open-reseach">GitHub — Station研究用コード・課題環境</a></p>
+    <p><a href="https://github.com/dualverse-ai/station-open-reseach_data">GitHub — 著者公開の実験履歴・評価・報告書</a></p>
+  </section>
+</main>
+<script>
+(() => {
+  const synth = window.speechSynthesis;
+  const blocks = [...document.querySelectorAll("#article h1,#article h2,#article h3,#article p")];
+  const sectionStarts = [...new Set([0, ...blocks.map((node, i) => node.tagName === "H2" ? i : -1).filter(i => i >= 0)])];
+  const play = document.querySelector("#play");
+  const pause = document.querySelector("#pause");
+  const stop = document.querySelector("#stop");
+  const prevBlock = document.querySelector("#prev-block");
+  const nextBlock = document.querySelector("#next-block");
+  const prevSection = document.querySelector("#prev-section");
+  const nextSection = document.querySelector("#next-section");
+  const sectionLabel = document.querySelector("#section-label");
+  const voice = document.querySelector("#voice");
+  const rate = document.querySelector("#rate");
+  const rateValue = document.querySelector("#rateValue");
+  const theme = document.querySelector("#theme");
+  let index = 0, playing = false, paused = false, selectedVoice = "", generation = 0;
+  let wakeLock = null, wakeLockWanted = false;
+
+  async function requestWakeLock() {
+    const wakeLockApi = window.navigator?.wakeLock;
+    wakeLockWanted = true;
+    if (!wakeLockApi?.request || wakeLock) return;
+    try {
+      const lock = await wakeLockApi.request("screen");
+      if (!wakeLockWanted) {
+        await lock.release();
+        return;
+      }
+      wakeLock = lock;
+      wakeLock.addEventListener?.("release", () => { wakeLock = null; });
+    } catch {
+      wakeLock = null;
+    }
+  }
+
+  async function releaseWakeLock() {
+    wakeLockWanted = false;
+    const current = wakeLock;
+    wakeLock = null;
+    if (!current) return;
+    try {
+      await current.release();
+    } catch {
+      // Wake Lock is best-effort; speech playback must continue to work.
+    }
+  }
+
+  function voices() {
+    const previous = selectedVoice || voice.value;
+    const items = synth.getVoices().filter(v => /^ja(?:-|_)/i.test(v.lang));
+    voice.replaceChildren();
+    for (const v of items) {
+      const o = document.createElement("option");
+      o.value = v.voiceURI;
+      o.textContent = v.name;
+      voice.append(o);
+    }
+    if (items.some(v => v.voiceURI === previous)) voice.value = previous;
+    selectedVoice = voice.value;
+  }
+
+  function clearHighlight() {
+    blocks.forEach(node => node.classList.remove("is-speaking"));
+  }
+
+  function sectionPosition() {
+    let pos = 0;
+    for (let i = 0; i < sectionStarts.length; i += 1) {
+      if (sectionStarts[i] <= index) pos = i;
+      else break;
+    }
+    return pos;
+  }
+
+  function updateNavigation() {
+    prevBlock.disabled = index <= 0;
+    nextBlock.disabled = index >= blocks.length - 1;
+
+    const pos = sectionPosition();
+    const start = sectionStarts[pos] ?? 0;
+    const previousTargetExists = index > start || pos > 0;
+    prevSection.disabled = !previousTargetExists;
+    nextSection.disabled = pos >= sectionStarts.length - 1;
+
+    const startNode = blocks[start];
+    sectionLabel.textContent = startNode?.tagName === "H2" ? startNode.textContent : "導入";
+  }
+
+  function showCurrent() {
+    clearHighlight();
+    const current = blocks[index];
+    if (!current) return;
+    current.classList.add("is-speaking");
+    current.scrollIntoView({ block: "center", behavior: "smooth" });
+    updateNavigation();
+  }
+
+  function speakCurrent() {
+    if (!playing || paused || index >= blocks.length) {
+      if (index >= blocks.length) {
+        playing = false;
+        paused = false;
+        clearHighlight();
+        void releaseWakeLock();
+      }
+      updateNavigation();
+      return;
+    }
+
+    showCurrent();
+    const localGeneration = ++generation;
+    const utterance = new SpeechSynthesisUtterance(blocks[index].textContent);
+    utterance.lang = "ja-JP";
+    utterance.rate = Number(rate.value);
+    const selected = synth.getVoices().find(item => item.voiceURI === voice.value);
+    if (selected) utterance.voice = selected;
+
+    utterance.onend = () => {
+      if (localGeneration !== generation || !playing || paused) return;
+      index += 1;
+      speakCurrent();
+    };
+
+    utterance.onerror = event => {
+      if (localGeneration !== generation) return;
+      if (event.error !== "canceled" && event.error !== "interrupted") {
+        playing = false;
+        paused = false;
+        clearHighlight();
+        void releaseWakeLock();
+        updateNavigation();
+      }
+    };
+
+    synth.speak(utterance);
+  }
+
+  function jumpTo(target) {
+    const next = Math.max(0, Math.min(blocks.length - 1, target));
+    const resume = playing && !paused;
+    const keepPaused = paused;
+
+    generation += 1;
+    synth.resume?.();
+    synth.cancel();
+    index = next;
+
+    if (resume) {
+      playing = true;
+      paused = false;
+      void requestWakeLock();
+      speakCurrent();
+      return;
+    }
+
+    playing = keepPaused;
+    paused = keepPaused;
+    showCurrent();
+    if (keepPaused) void requestWakeLock();
+  }
+
+  function jumpSection(delta) {
+    const pos = sectionPosition();
+    let targetPos;
+
+    if (delta < 0 && index > sectionStarts[pos]) targetPos = pos;
+    else targetPos = pos + delta;
+
+    if (targetPos < 0 || targetPos >= sectionStarts.length) return;
+    jumpTo(sectionStarts[targetPos]);
+  }
+
+  play.addEventListener("click", () => {
+    if (paused) {
+      generation += 1;
+      synth.resume?.();
+      synth.cancel();
+      paused = false;
+      playing = true;
+      void requestWakeLock();
+      speakCurrent();
+      return;
+    }
+    if (playing) return;
+    if (index >= blocks.length) index = 0;
+    playing = true;
+    void requestWakeLock();
+    speakCurrent();
+  });
+
+  pause.addEventListener("click", () => {
+    if (!playing || paused) return;
+    synth.pause();
+    paused = true;
+  });
+
+  stop.addEventListener("click", () => {
+    generation += 1;
+    synth.resume?.();
+    synth.cancel();
+    playing = false;
+    paused = false;
+    index = 0;
+    clearHighlight();
+    updateNavigation();
+    void releaseWakeLock();
+  });
+
+  prevBlock.addEventListener("click", () => jumpTo(index - 1));
+  nextBlock.addEventListener("click", () => jumpTo(index + 1));
+  prevSection.addEventListener("click", () => jumpSection(-1));
+  nextSection.addEventListener("click", () => jumpSection(1));
+
+  voice.addEventListener("change", () => {
+    selectedVoice = voice.value;
+    if (playing && !paused) {
+      generation += 1;
+      synth.cancel();
+      speakCurrent();
+    }
+  });
+
+  rate.addEventListener("input", () => {
+    rateValue.textContent = Number(rate.value).toFixed(1) + "×";
+  });
+
+  theme.addEventListener("click", () => {
+    const dark = document.documentElement.dataset.theme === "dark";
+    document.documentElement.dataset.theme = dark ? "light" : "dark";
+    theme.textContent = dark ? "☾" : "☀";
+    localStorage.setItem("rsvp:theme", dark ? "light" : "dark");
+  });
+
+  document.documentElement.dataset.theme =
+    localStorage.getItem("rsvp:theme") ||
+    (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  theme.textContent = document.documentElement.dataset.theme === "dark" ? "☀" : "☾";
+
+  voices();
+  synth.addEventListener?.("voiceschanged", voices);
+  updateNavigation();
+
+  document.addEventListener?.("visibilitychange", () => {
+    if (document.visibilityState === "visible" && (playing || paused)) {
+      void requestWakeLock();
+    }
+  });
+
+  addEventListener("pagehide", () => {
+    generation += 1;
+    synth.cancel();
+    void releaseWakeLock();
+  });
+})();
+</script>
+</body>
+</html>
