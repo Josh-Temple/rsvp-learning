@@ -771,3 +771,39 @@ C受入後はEが新しいmain/head/CI/diffをfresh readし、重複を避けて
 **最終Cゲート = `HOLD`、`ACCEPTED_FOR_MERGE` 不可。** 理由は (a) P1-IP-01が旧headのMD/JSON/Learnに残存、(b) A/Bの修復済み新headおよびE-1による最新mainとの単一candidate固定がない、(c) その**同一新head**に対するCの独立受入・head固有CIがないため。**旧2章の限定PASSは、新candidate headの最終PASSを自動保証しない。**
 
 **再提出条件:** ① AはNIST原典の対象集団内の区別・最小属性/証拠をMD/JSONに正確に反映、② BはAの保存済みheadを読んだ上でLearn冒頭・三段階説明・架空例を意味同期、③ E-1は最新mainとの差分混入のない単一candidate PR/head/base・変更ファイル・head CIを固定、④ Cは**固定された最終candidate head**の三章すべてのMD/JSON/Learn・主要否定・source適用範囲を再監査し、未解消P0/P1ゼロの場合にだけ別途 `ACCEPTED_FOR_MERGE` を署名する。**Eのmerge／production更新はその後**。監査文書のPRをmergeしても教材は合格・公開済みとはならない。
+
+---
+
+## 16. 2026-10-10 Worker C — Learn意味同期Waveの独立事前査読・最終ゲートHOLD
+
+**Library指示:** /RSVP Learning/Work Instructions/2026-10-10_security_learning_learn_alignment_independent_acceptance_and_release_closure_wave_instructions.md §6。
+**本C判定: HOLD / NOT_ACCEPTED_FOR_MERGE。** 本作業はCとして対象教材とテストを編集せず、GitHubの実体と原典を新規に再読した独立事前点検。外部第三者の人的独立性認証ではない。旧C §14・§15を新候補の合格として継承しない。
+
+### 16.1 Source/head/CI chain
+
+- 初期main 62b63da394ae7b60b234566331d8905dceac4e80。Eの文書PR #126が途中でmergeされmainは変化した。記録branch作成時main **c6869b0231f401a545b5bb551a38e98ef0a27fc3**。
+- 対象PR [#117](https://github.com/Josh-Temple/rsvp-learning/pull/117) は open/draft/unmerged。Cが新規に固定読取した新B head **af3249f19a79727c556945e7d53e6bcb837d8f05**、original PR base **07045f861e7e4dbc7e2adf03b03ef997b77939e3**、changed paths 12（対象3章×MD/JSON/Learn、テスト2、fixture1）。本節の記録時に#117に後続headがあれば、そのheadを本Cは受け入れていない。作業時の最新PR headは **af3249f19a79727c556945e7d53e6bcb837d8f05**。
+- Cの照合中に候補がa5ccc9a4（MD/JSONだけP1修正）→8cbd91cd（Learn修正だがTest failure）→**af3249f1**（Learnとテスト修正）に変化した。8cbd head固有 [Test #38047414999](https://github.com/Josh-Temple/rsvp-learning/actions/runs/38047414999) は tests/learn-html.test.mjs:189 の正規表現構文エラーで失敗。**af3249f19a79727c556945e7d53e6bcb837d8f05** head固有 [Test #38047457697](https://github.com/Josh-Temple/rsvp-learning/actions/runs/38047457697) は completed/success とGitHubから確認。CローカルnpmはNOT_RUN。
+- [E-1 PR #126](https://github.com/Josh-Temple/rsvp-learning/pull/126) はa5 headを前提にした旧HOLD記録であり、af3249f1とlatest mainを突き合わせて単一候補head/base/CIを固定した引渡しではない。現PRのmergeable=trueという瞬間値だけでは代用不可。**E-1が固定した最終candidateへの独立受入開始条件は、まだ満たされていない。**
+
+### 16.2 head固定の事前点検
+
+GitHubで af3249f19a79727c556945e7d53e6bcb837d8f05 の対象3章MD/JSON/Learnを取得。番号付きMarkdown本文とJSON chunks.textの完全一致（文字列、番号、順序、句読点、否定）: **本人確認65/65、Federation50/50、Cloud52/52、計167/167一致**。各chunk最大24文字、24字超過0。3章ともLearnのsources sectionはarticle外。専門語の実発話、Android・GUIでの読みやすさはNOT_VERIFIED。
+
+| 章 | 主要主張の確認 | 原典・未確認範囲 | 最終C判定 |
+| --- | --- | --- | --- |
+| III-1 本人確認 | MD/JSONの対象集団内での区別、必要最小属性・証拠、世界的な唯一性非保証、validationとverificationの分離を確認。新Learn冒頭は「実在性を調べるだけで終わりません」に改まり、旧「名乗った身元が実在するか」は消去。三作業・偽造証拠と他人の真正書類・強い認証器でも誤本人確認は自動修復しない点・認証/認可/回復・privacyの限定も文章で確認。P1-IP-01は**このheadの重点表現に関して改善**。 | [NIST SP 800-63A-4 Final](https://csrc.nist.gov/pubs/sp/800/63/a/4/final)および[Identity Proofing Overview: Identity Resolution, Validation, Verification](https://pages.nist.gov/800-63-4/sp800-63a/proofing/)の該当本文を確認。source_verified（三作業の限定命題）、partial（IAL、privacy、回復の全要求）。 | **BLOCKED：最終候補未確定** |
+| III-3 Federation/OIDC/SAML | OAuth認可と本人認証、access/ID tokenの用途、issuer/audience/nonceの条件、IdP停止とRP既存session即失効が同義でない点をMD/JSON/Learnで重点確認。 | [RFC 10017 §1](https://www.rfc-editor.org/rfc/rfc10017.html)、[RFC 9700](https://www.rfc-editor.org/rfc/rfc9700.html)、[OIDC Core Errata2 §3.1.3.7](https://openid.net/specs/openid-connect-core-1_0-errata2.html)主要論点は照合。SAML Core/Profiles全文、実RP失効はnot_verified。全節網羅の再受入ではないためpartial。 | **BLOCKED：最終候補未確定** |
+| IV-7 Cloud責任共有 | サービス/契約依存の責任分界、IAM、公開設定、ログ、構成ドリフト、バックアップと実復旧を混同しない説明を重点確認。 | [AWS Shared Responsibility Model](https://aws.amazon.com/compliance/shared-responsibility-model/)でAWS固有の分担を確認、source_verified（AWSに限定）。他provider・個別契約はpartial、CISA TRA個別節・実復旧はnot_verified。 | **BLOCKED：最終候補未確定** |
+
+**P0/P1:** 本人確認の旧P1-IP-01は新Learn文面では是正の方向を確認したが、この所見を最終candidate 3章すべてのP0/P1=0という独立署名にはしない。形式、意味、出典、CI、candidate固定は別ゲート。
+
+### 16.3 境界・再開条件
+
+- 20問（12+8）の2点必須・条件付き1点・逆意味0点のrubricと、実際の採点UI/回答分布/学習効果を混同しない。実受講はNOT_VERIFIED。残27章の全文専門監査は未実施、Course V-1/V-2はHOLD。
+- production source/alias/SSO、preview、desktop GUI/390px、Android Chrome、Web Speech、Chrome標準読み上げ、コース長時間自動再生、画面OFF/匿名利用は本CではNOT_VERIFIED。private RSVP/public Instant Radioの境界、Catalog/status、旧入門8章、player/history/localStorage/保護設定を編集していない。
+- **E-1:** latest main、修正済みB head、全変更パス、競合、head CIをfresh readし、単一candidate full head/baseをCに固定引渡しする。旧#117と代替PRを二重mergeしない。
+- **C再査読:** E-1確定headに対し、3章の全主張・否定・反例・主要原典版節・専門語境界・test/fixtureとCIを再照合。独立性、P0/P1ゼロ、許容差分を確認できた場合だけ別途ACCEPTED_FOR_MERGE+full SHAを発行。head変更なら旧判定は無効。
+- **E-2:** この監査docs-only PRのmergeは教材の受入やproduction公開の証拠ではない。Cの同一head承認なしには教材merge・production deployを行わない。
+
+**結論: HOLD。** 新B headのLearn改善とGitHub Test成功は確認済み。ただしE-1候補固定・C正式受入を満たすまではrelease gateをOPENにしない。
