@@ -2,6 +2,13 @@
   "schema_version": 1,
   "items": [
     {
+      "id": "2026-10-11-iris-intent-recovery-safety-evaluation",
+      "title": "AIが危険な依頼を断ったのか、理解できなかったのか――IRIS安全性評価",
+      "date": "2026-10-11",
+      "category": "research",
+      "path": "./research/2026-10-11-iris-intent-recovery-safety-evaluation.html"
+    },
+    {
       "id": "2026-10-11-station-open-ended-scientific-discovery",
       "title": "採点できない科学研究を、AIはどこまで進められるか――Stationの検証",
       "date": "2026-10-11",
