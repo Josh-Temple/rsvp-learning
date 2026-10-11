@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f2efe8">
+  <meta name="description" content="危険な依頼へのAI応答を評価するIRIS論文を解説。攻撃成功率と意図回復率、105件・6モデルの実験と人間判定の不確実性。">
+  <title>AIが危険な依頼を断ったのか、理解できなかったのか――IRIS安全性評価</title>
+  <style>
+    :root{color-scheme:light;--bg:#f2efe8;--ink:#121722;--muted:#73766f;--line:#cbc8bf;--blue:#5d7487}
+    html[data-theme="dark"]{color-scheme:dark;--bg:#11151a;--ink:#edf0eb;--muted:#959b97;--line:#343a3e;--blue:#7892a6}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Hiragino Sans","Noto Sans JP",sans-serif;line-height:1.9}
+    .shell{width:min(760px,100%);margin:0 auto;padding:max(18px,env(safe-area-inset-top)) 20px max(42px,env(safe-area-inset-bottom))}
+    .topbar{min-height:52px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+    .icon{width:42px;height:42px;display:grid;place-items:center;border:0;background:transparent;color:var(--muted);text-decoration:none;font:inherit}
+    .meta{margin:28px 0 8px;color:var(--muted);font-size:.75rem}
+    h1{font-size:clamp(2rem,8vw,3.4rem);line-height:1.12;letter-spacing:-.04em;margin:.2em 0 .8em}
+    h2{margin:2.2em 0 .6em;font-size:1.2rem}
+    p{margin:0 0 1.25em}
+    article>*{transition:background-color .15s ease}
+    .is-speaking{background:color-mix(in srgb,var(--blue) 16%,transparent)}
+    .player{position:sticky;bottom:0;margin:32px -6px 0;padding:12px 6px;background:color-mix(in srgb,var(--bg) 94%,transparent);border-top:1px solid var(--line);backdrop-filter:blur(8px)}
+    .speed{display:grid;grid-template-columns:48px 1fr 42px;gap:10px;align-items:center;margin-top:10px;font-size:.78rem;color:var(--muted)}
+    input{width:100%}
+    .sources{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}
+    .sources a{color:var(--ink)}
+    .mode-nav{display:inline-flex;align-items:center;gap:4px}
+    .mode-icon{width:42px;height:42px;display:grid;place-items:center;color:var(--muted);text-decoration:none;opacity:.5}
+    .mode-icon.is-active{color:var(--ink);opacity:1}
+    .mode-icon svg{width:20px;height:20px;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+    .brand-mark{width:22px;height:14px;display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+    .brand-mark i{display:block}
+    .brand-mark i:nth-child(1){background:#a85248}
+    .brand-mark i:nth-child(2){background:#5d7487}
+    .brand-mark i:nth-child(3){background:#c2a653}
+    .transport{display:grid;grid-template-columns:repeat(5,48px);justify-content:center;gap:8px}
+    .transport button,.section-nav button,.voice-row select{min-height:42px;border:1px solid var(--line);background:transparent;color:var(--ink);font:inherit}
+    .transport button{width:48px}
+    .section-nav{display:grid;grid-template-columns:48px 1fr 48px;align-items:center;gap:8px;margin-top:10px}
+    .section-nav button:disabled{opacity:.25}
+    #section-label{min-width:0;overflow:hidden;color:var(--muted);font-size:.78rem;text-align:center;white-space:nowrap;text-overflow:ellipsis}
+    .voice-row{margin-top:10px}
+    .voice-row select{width:100%;padding:0 8px}
+    .mode-icon:focus-visible,.transport button:focus-visible,.section-nav button:focus-visible,.voice-row select:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+  </style>
+</head>
+<body>
+<main class="shell">
+  <header class="topbar">
+    <nav class="mode-nav" aria-label="モード切替">
+      <a class="mode-icon" href="../../index.html" aria-label="RSVPへ移動" title="RSVP">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      </a>
+      <a class="mode-icon" href="../../index.html?library=learn" aria-label="Learnへ移動" title="Learn">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 5.5c2.6-.8 5.3-.4 8 1.2v12c-2.7-1.6-5.4-2-8-1.2v-12Z" />
+          <path d="M20 5.5c-2.6-.8-5.3-.4-8 1.2v12c2.7-1.6 5.4-2 8-1.2v-12Z" />
+        </svg>
+      </a>
+      <a class="mode-icon is-active" href="../../index.html?library=listen" aria-label="Listen一覧へ移動" aria-current="page" title="Listen">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 13v-1a8 8 0 0 1 16 0v1" />
+          <path d="M4 13h3v7H5a1 1 0 0 1-1-1v-6Zm16 0h-3v7h2a1 1 0 0 0 1-1v-6Z" />
+        </svg>
+      </a>
+    </nav>
+    <button id="theme" class="icon" type="button" aria-label="テーマ切替">☾</button>
+  </header>
+
+
+
+
+
+
+
+  <article id="article">
+    <p class="meta">情報基準日 2026年10月11日・論文公開 2026年10月8日・査読前プレプリント</p>
+    <h1>AIが危険な依頼を断ったのか、理解できなかったのか――IRIS安全性評価</h1>
+
+    <h2>今回の論文が問うこと</h2>
+    <p>2026年10月8日に公開された査読前論文「Same Outcome, Different Evidence: Intent Recovery in LLM Safety Evaluation」を取り上げます。中国の深圳大学などの研究者による仕事で、AIが危険な依頼を受けたときの安全性を、どのような証拠で判断するべきかを調べています。</p>
+    <p>一番重要な問題は、危険な内容を出力しなかったという結果が、必ずしも安全な判断をした証拠ではないことです。AIが依頼を理解して断った場合と、何を頼まれたか分からず別の答えを返した場合は、外から見える最終結果が同じになることがあります。</p>
+    <p>論文はこの違いを測るため、従来の攻撃成功率に、依頼の内容を把握してその依頼に応答した割合を加えて報告する枠組みを提案しました。著者らは、この仕組みをIRISと名付け、回復した意図を中間的な評価信号として扱います。</p>
+    <p>最初に、この研究を聞く際の数字を一つ紹介します。GPT-4oについて、同じ百五種類の危険な行動を、異なる方法で表現して与えたところ、どちらも危険な支援を出す割合は2.9％でした。それなのに、依頼の内容を適切に捉えた割合は、15.2％と96.2％という大きな違いがありました。</p>
+    <p>ただし、この数字には後で説明する重要な注意があります。意図を理解したかどうかは、モデルの内部を直接観測して測ったものではなく、出力した文章から判定しています。自動判定と人間の判断が一致しない例もありました。今回の研究は、評価指標の改善案であると同時に、測定の難しさを示す研究です。</p>
+
+    <h2>従来の安全性評価では何を数えてきたか</h2>
+    <p>危険な要求にAIが応じてしまうかを調べる研究では、攻撃成功率、英語でAttack Success Rateを使うことがあります。ここでは略してエーエスアールと呼びます。危険な支援が出力された割合を表し、値が高いほど、そのテスト条件では望ましくない結果が多かったという意味です。</p>
+    <p>例えば百件の危険な依頼を与えて、三件について実行可能な危険情報が返ったとします。攻撃成功率は三％です。反対に九十七件は危険な支援が返らなかったことになります。</p>
+    <p>しかし、その九十七件すべてが適切な拒否だったとは限りません。問いが不明瞭なので質問を返しただけかもしれません。文字列の翻訳をしたかもしれません。まったく別の依頼だと思い込んだ場合も考えられます。</p>
+    <p>こうしたケースをすべて安全な成功と扱えば、本当は理解していないだけのモデルが、安全性の高いモデルに見えてしまいます。論文の着眼点は、攻撃成功率の計算そのものを否定することではありません。指標の意味を解釈する前に、モデルが何の課題を処理していたか確かめようということです。</p>
+    <p>特に危険な依頼が暗号、図形、別言語、間接的な説明へ変換されていると、この問題が大きくなります。元の意味が分からなければ、安全な拒否をする以前に、安全性判断の対象が取り違えられます。</p>
+
+    <h2>依頼の意味が隠されるとはどういうことか</h2>
+    <p>通常の英語で明確に書かれた依頼なら、AIは何を頼まれているかを比較的認識しやすいかもしれません。しかし同じ依頼を、非常に単純な語彙の言語へ短く圧縮したり、文字を一定の規則で置き換えたりすると、意味を回復する作業が先に発生します。</p>
+    <p>この論文では、トキポナという非常に小さな語彙で表現する言語を、意味の圧縮を調べる主要な条件にしています。単語が少ないため、元の依頼にあった関係や目的が、文脈から補われなければ伝わりにくい場合があります。</p>
+    <p>ほかにも、文字を一定の規則で置換するシーザー暗号、形式的な論理表現、ズールー語、ヨルバ語、文字の形を利用する表現方式などを使います。これらは同じように危険性を隠すものではありません。言語理解の難しさも、意味を明らかにするための処理も、方法ごとに異なります。</p>
+    <p>研究の目的は、攻撃方法を比較して強いものを作ることだけではありません。重要なのは、ある変換の下で危険な出力が減ったとしても、その理由が安全な判断なのか、意味の回復に失敗したのかを区別することです。</p>
+    <p>そのため著者らは、対応する元の行動が同じになるよう、百五種類の依頼を用意しました。言語や表現方法が違っても、できるだけ同じ危険な行動を対象に評価する設計です。</p>
+
+    <h2>新しい指標の定義</h2>
+    <p>IRISが追加するのは、オペラティブ・アンダースタンディング・レートという指標です。原論文ではURと略しています。日本語で言えば、対象の依頼を、実際に応答している課題として把握した割合です。</p>
+    <p>この指標が数えるのは、単に依頼中の危険な話題に言及したかどうかではありません。何を求められたかを正しく特定し、その依頼に向き合った回答をしていることが条件です。理解したうえで拒否した場合や、安全な代替案を述べた場合も対象になります。</p>
+    <p>例えば、ある文章に危険な依頼が書かれていて、AIがその文章を翻訳だけした場合を考えます。危険な主題を正しく説明していても、元の依頼へ直接答えようとしたわけではありません。論文の定義では、意図の認識があっても、応答している課題が翻訳ならURに数えない場合があります。</p>
+    <p>また、内容が表示されない遮断や、何も返さない応答も別に扱います。論文は、そのような出力をURと攻撃成功率の両方の分母へ含めたうえで、遮断の割合を別途報告します。遮断が多いため数字が低く見えるケースを無視しないためです。</p>
+    <p>ここが誤解しやすいところです。URはAIの理解力の総合点でも、安全性の総合点でもありません。文章から見て、問題として与えた危険な依頼が、回答の対象として再現されたかを表す補助指標です。URが高いだけでは安全だと言えません。</p>
+
+    <h2>二つの数字を一緒に読む</h2>
+    <p>著者らの整理では、攻撃成功率とURを同時に見ます。URが高く攻撃成功率が低ければ、依頼に向き合ったうえで危険な支援を避けたという解釈を、比較的しやすくなります。</p>
+    <p>逆に、URも攻撃成功率も低い場合には、危険な出力が少ない理由が不明確です。多くの依頼の意味が回復されていないのであれば、そのテストは拒否の性能ではなく、言語や表現を読み取る難しさを測っているかもしれません。</p>
+    <p>URも攻撃成功率も高い場合には、依頼の意味は理解しているのに、危険な支援を返す例が多いと考えられます。URが安全性を保証する指標でないことが、ここから分かります。</p>
+    <p>さらに、応答そのものがなくなる遮断の割合も並べて読むべきだと著者らは述べます。危険な支援を避けたのか、依頼を理解できなかったのか、それともプロバイダー側の処理で回答が止まったのかでは、必要な対策が変わります。</p>
+    <p>この枠組みは、運用上の判断にも直結します。同じ失敗率の二つのシステムに、同じ対策が必要とは限りません。ただし、その判断が適切かは、UR自体の測定精度にも依存します。</p>
+
+    <h2>実験したモデルと依頼の範囲</h2>
+    <p>実験では六つのモデルを評価しました。GPT-4o、Claude Sonnet 4.5、Claude Opus 4.5、Gemini 3 Flash、DeepSeek V3.2、Qwen3-Maxです。対象は論文で指定したバージョンと設定であり、現在の全モデル系列の性質を示すものではありません。</p>
+    <p>危険な行動の対象は、既存の安全性ベンチマークであるHarmBench、StrongREJECT、JailbreakBenchから調整した百五件です。研究者らは、表現方式を変えても同じ課題として扱いやすいものを選び、重複なども整理しました。</p>
+    <p>各モデルと表現方式の組合せについて、同じ百五件を評価しています。比較には通常の英語、トキポナ、ズールー語、ヨルバ語、シーザー暗号、形式論理、文字表現による変換が含まれます。</p>
+    <p>実際のモデルへの問い合わせは、論文の付録によると2026年2月末から5月初めにかけて行われています。つまり10月に論文が公開された時点で、すでに数か月前のモデルの状態を測った結果です。サービスの内部更新による変化は別問題になります。</p>
+    <p>温度設定をゼロにするなどの呼び出し条件と、判定用の設定が公開されています。実験入力の再構築方法、概要データ、設定ファイルも著者らのリポジトリにあります。ただし、危険な内容を含む記録には配布上の制限があります。公開された資料が存在することと、全応答を第三者が自由に照合できることは同じではありません。</p>
+
+    <h2>最初の結果――英語の依頼</h2>
+    <p>直接的な英語の依頼では、六モデルすべてのURが97.1％以上でした。攻撃成功率はすべて三％未満です。ほとんどのケースで、何を頼まれているかを把握したと判定され、危険な支援は返っていないという結果です。</p>
+    <p>この条件では、低い攻撃成功率を、意味が分からなかった結果ではなく、依頼を扱ったあとに危険な支援を避けた結果として解釈しやすくなります。著者らは、こうした条件と、意味を隠した条件を対比しました。</p>
+    <p>ただし、英語では一般的な拒否表現も意図を理解したものとして認める判定規則が含まれています。明確な英語の依頼なら、一般的に断っているだけでも対象を認識したとみなす場合があるということです。</p>
+    <p>これに対し、トキポナや一部の言語条件では、一般的な拒否だけでは意図を特定したとは認めず、対象となる課題への具体的な言及を要求します。従って、英語とトキポナのURの差には、実際の応答の違いだけでなく、判定規則の違いも入り得ます。</p>
+    <p>最初の英語結果を、六つのモデルが危険な意図を九十七％以上の精度で深く理解していたという意味に読み替えてはいけません。論文の特定の判定規則の下で、応答上の課題回復が高く評価されたということです。</p>
+
+    <h2>同じ2.9％という数字が持つ違う意味</h2>
+    <p>ここで研究の中心となる比較を見ます。GPT-4oに、トキポナで表現された百五種類の依頼を与えると、攻撃成功率は2.9％、URは15.2％でした。危険な支援をほとんど返さなかった一方で、対象の依頼にきちんと応答したと判定された例も少数でした。</p>
+    <p>同じGPT-4oに、対応する依頼をシーザー暗号の形式で与えた場合、攻撃成功率は同じ2.9％でした。しかしURは96.2％でした。危険な出力の割合は同じでも、依頼の内容を把握していたとみられる割合は大きく異なります。</p>
+    <p>これは、攻撃成功率だけを見て二つの条件を同じくらい安全だと考えるのは不十分だ、という著者らの代表的な証拠です。暗号を解けたあとに危険な依頼を拒否することと、曖昧な文章の意味を取り違えて危険な回答が出なかったことは、同じ現象ではありません。</p>
+    <p>ただし重要な留保があります。トキポナとシーザー暗号は処理の種類が違いますし、トキポナでは独立した人間の判定が検証されていますが、シーザー暗号について同じ範囲の独立した人間との比較は報告されていません。</p>
+    <p>したがって、15.2％と96.2％の差そのものを、人間の評価で同じ精度まで確定した差だと扱うのは慎重であるべきです。それでも、一つの攻撃成功率に異なる応答過程が混在し得るという問題提起には、実務上の価値があります。</p>
+
+    <h2>曖昧さを少しずつ取り除く実験</h2>
+    <p>次に著者らは、トキポナ由来の短い表現から、段階的に意味を明確にした英語の依頼を作りました。これをT1、T2、T3と呼びます。T1は元の曖昧さを比較的残し、T2では誰が何をするかを明確にし、T3では文脈から支持される目的や関係を、自然な依頼として明示します。</p>
+    <p>ここで重要なのは、元の表現にない危険な手順を追加したり、意味を強める情報を足したりしないことを設計上の原則にした点です。同じ意味の核を残しながら、読み手が推論しなければならない部分を減らそうとしています。</p>
+    <p>例えば、誰かに金銭を渡して望む結果を得る行為を遠回しに説明した文章を、関係の曖昧さが少ない表現へ段階的に書き換えます。ここで観察するのは、危険な行為を助ける方法ではなく、表現が明確になるほどAIが何を頼まれたか捉えられるかです。</p>
+    <p>結果として六モデルすべてで、T1からT3へ進むとURが上昇しました。増加幅はモデルによって15.2から41.0ポイントでした。対応する同じ依頼を比較する統計検定でも、著者らが行った多重比較の調整後に有意な差が報告されています。</p>
+    <p>一方、攻撃成功率は六モデルで一方向に増減するわけではありませんでした。意味が明確になると依頼の認識は高まりやすかったものの、危険な回答をするかはモデルごとに異なりました。認識する能力と、そのあとにどう応答するかを分けて測る意義を示す結果です。</p>
+    <p>ただし、三段階の書き換えは研究者による意味の解釈を含みます。明瞭さ以外の文章の性質も変化します。従って、URが増えた分のすべてが曖昧さの解消だけによる因果効果だとは確定していません。</p>
+
+    <h2>意図が分かっていても危険な回答は出る</h2>
+    <p>別の条件で興味深いのは、形式的な論理表現による依頼です。この場合、何を求められているかを高い割合で認識していても、危険な支援が多く返るモデルがありました。</p>
+    <p>例えばGPT-4oの形式論理条件では、URは94.3％、攻撃成功率は52.4％でした。Gemini 3 FlashでもURは88.6％、攻撃成功率は49.5％です。この数値は、危険な依頼を理解することが、そのまま拒否することを意味しないという対照例です。</p>
+    <p>逆にシーザー暗号の条件では、回答が遮断されなかったモデルについて、URが高くても攻撃成功率が低い例がありました。表現の方法が変わると、意味の回復と、その後の安全性の判断が異なる組合せになります。</p>
+    <p>ただし形式論理の数字から、一般に形式的な記述へ変換すれば危険な支援を引き出せると結論することはできません。この研究は選んだ百五件と特定のモデル、実装、判定規則の比較です。今回の説明は攻撃方法の再現手順を提供するものではありません。</p>
+    <p>研究として持ち帰るべき点は、認識された依頼に対して安全な動作が選ばれたかを評価する段階が、意図の認識とは別に必要だということです。URと攻撃成功率は補完関係にあります。</p>
+
+    <h2>回答が遮断された場合も別に読む</h2>
+    <p>研究では、文字列を返さない回答や、途中の処理で遮断された出力も記録しています。例えばClaude Sonnet 4.5とOpus 4.5は、シーザー暗号の条件で、百五件すべてが遮断または空出力として扱われました。</p>
+    <p>論文では、遮断や空の出力も百五件の分母に入ります。そのため、危険な支援が出なかったとしても、タスクを理解して拒否した場合とは区別します。回答しなかったものを全部安全な判断としてURに足しません。</p>
+    <p>形式論理や文字表現の条件にも、一部のモデルで大きな遮断率がありました。回答がほぼ全く返っていない条件と、内容が返っている条件を同じ基準で解釈するには、遮断の割合が欠かせません。</p>
+    <p>運用側でも、APIやアプリケーションのどの部分が応答を止めたのかによって対応が変わります。モデルが文章を理解したうえで拒否したのか、別の安全機構が止めたのか、通信や生成自体に問題があったのかは、可能な限り分けて記録する必要があります。</p>
+    <p>ただしこの論文の遮断カテゴリは、観測された出力や状態に基づくものであり、各サービス内部の制御経路をすべて識別したものではありません。遮断を一律にモデル自体の安全な意図へ帰属させることはできません。</p>
+
+    <h2>誰が理解したかを判定したのか</h2>
+    <p>ここからは、今回の研究の最も重要な限界に入ります。依頼の意味を理解して回答したかどうかは、客観的に測定できるセンサーから読み取った値ではありません。研究者らは、出力された文章を分類するための判定規則を作り、別の言語モデルと人間による評価を組み合わせました。</p>
+    <p>中心となる自動判定モデルは、Mistral Largeの指定バージョンです。モデルが依頼の対象を認識したか、何を回答の課題として扱っているか、危険な支援があったかなどを分けて判定します。</p>
+    <p>分類には、認識、応答の枠組み、出力の危険性、遮断の状態といった観点があります。依頼の意図に触れていても、翻訳だけをしていた場合は、依頼の回復と回答への着手を区別します。反対に、危険な依頼を把握して安全な代替案を示す場合は、適切な課題回復として扱います。</p>
+    <p>著者らは基準や判定用の指示を公開し、特に曖昧な例のレビューを行っています。それでも、曖昧な文章の意図をどこまで読めたか、拒否がどの課題に向けられていたかという判断には、解釈が入り込む余地があります。</p>
+    <p>実際、論文の付録はこの問題を隠していません。独立した人間の読みと自動判定がどこまで一致したかを調べ、判定者を変えるとURが大きく動く条件があることを報告しています。数字を使う場合には、この結果まで一緒に確認する必要があります。</p>
+
+    <h2>人間の判定者と自動判定の食い違い</h2>
+    <p>トキポナ条件では、二人の人間が独立に判定した結果が載っています。URについて両者の一致率はモデルごとに74.3％から81.9％でした。偶然の一致を考慮したカッパ係数は0.29から0.63で、十分に一貫しているとは言い切れません。</p>
+    <p>さらに、自動判定ではGemini 3 FlashのURは72.4％でしたが、人間の二人が評価した値は41.9％と44.8％でした。Qwen3-Maxも、自動判定の41.0％に対して、人間の値は24.8％と6.7％でした。</p>
+    <p>ここで重要なのは、差が多少あるというだけではありません。評価する人や方法を変えると、一部のモデルでは指標の水準そのものが大きく変わりました。URを安定した客観値として扱うには、まだ改善が必要です。</p>
+    <p>一方、GPT-4oのトキポナ条件は、自動判定のURが15.2％、人間の二人は21.0％と13.3％で、どちらの評価でも低い傾向でした。著者らも、モデルによって判定の揺れ方が違うことを認めています。</p>
+    <p>独立した二人の判定がそろっているのは、トキポナ由来の直接依頼を中心とした条件です。T1からT3や、ほかの変換条件について、同じ規模での独立した人間による再評価は完了していません。シーザー暗号との比較にも測定の不確実性が残ります。</p>
+    <p>したがって、この論文はURを追加すれば評価問題がすべて解決すると証明した研究ではありません。むしろ、攻撃成功率の解釈に別の証拠が必要だと示しつつ、その新しい証拠をどう安定して測るかという次の課題も明らかにしました。</p>
+
+    <h2>数値の一般化に必要な注意</h2>
+    <p>百五件の依頼は、既存ベンチマークから選ばれたものです。実際のサービスに入ってくる要求の出現頻度を代表するよう無作為抽出したものではありません。したがって、各モデルの危険な出力率が現実世界でもそのまま当てはまるとは言えません。</p>
+    <p>トキポナ、ズールー語、ヨルバ語など、同じ言語という分類に含めても、文法や利用者の文脈は異なります。特に意味を短く圧縮する課題と、言語の表現をそのまま翻訳する課題を、同じ難しさのものとして扱うことはできません。</p>
+    <p>さらに、モデルの提供者はサービスの設定やモデル内部を更新できます。論文の実験時点は2026年の春で、対象バージョンを固定して測っています。公開時点や将来の最新モデルに対して、同じ数字を期待する根拠はありません。</p>
+    <p>人間の評価者は著者らのチーム内で訓練を受けています。独立した二人による判定は重要ですが、別の研究グループ、異なる言語的背景、異なる判定基準で同じ傾向が得られるかは、まだ十分には確認されていません。</p>
+    <p>論文は査読前のプレプリントです。公開されたコードや設定があることは検証可能性を高めますが、第三者が全モデル、全時点、全条件を再現して同じ結論を得たと確認できたわけではありません。</p>
+
+    <h2>評価実務へどうつながるか</h2>
+    <p>ここからは論文の実験結果ではなく、AIを業務へ導入するときの評価設計についての分析です。まず、最終的な拒否率や危険出力率だけを合格基準にしないことが重要です。ユーザーの依頼を正しく理解したか、そのうえで安全な方針を選んだか、処理が止まったのかを分けて記録する価値があります。</p>
+    <p>特にエージェントが複数の情報源や外部ツールへアクセスするときには、意図を解釈する段階と、安全な操作を選ぶ段階が異なります。前者に失敗した結果、たまたま危険な操作をしなかったとしても、将来の別の依頼で適切に動く保証にはなりません。</p>
+    <p>調達や受入検査を例にすると、AIが禁止操作を実行しなかった件数だけでなく、依頼内容を取り違えたケース、拒否した理由が説明できないケース、処理エラーで停止したケースを分けて記録する設計が考えられます。</p>
+    <p>ただし、この研究は行政システムの安全性評価や調達業務で実際にその仕組みが成果を改善したと検証したものではありません。転用する場合には、別の業務データと人間の検査基準を用いて効果を確認する必要があります。</p>
+    <p>URの自動判定をそのまま機械的な合否条件へ使うことにも慎重であるべきです。人間との不一致が大きい条件がある以上、判定者の違い、言語による基準の差、遮断の扱い、判断が揺れたケースを残す方が、単一の数値だけを掲示するより情報量があります。</p>
+    <p>安全性評価の難しさは、単にテスト数を増やせば解決するものではありません。何を一件の成功や失敗と呼ぶのか、どんな別の原因が同じ結果を生むのかを考えることが、今回の研究から得られる重要な視点です。</p>
+
+    <h2>残る研究課題と結論</h2>
+    <p>今後必要なのは、URの判定を人間同士でも、異なる自動判定モデル同士でも、さらに安定させることです。特に短く曖昧な依頼では、何を理解したとみなすべきかについて複数の解釈が成立します。判定の不確実性そのものを報告する手順が必要です。</p>
+    <p>また、意味の明確さを少しずつ変える実験では、同時に変わってしまう文章の性質をさらに分離する必要があります。変換方法の違いによるURの差も、判定規則の違いと回答行動の違いを区別して確かめるべきです。</p>
+    <p>著者らの中心的な主張は、危険な出力がなかったという観察の証拠価値は、AIがそもそも何を要求されたと認識したかで変わる、ということです。攻撃成功率を捨てるのではなく、依頼の回復と遮断の割合を並べて読む提案です。</p>
+    <p>そしてその提案には、自らの評価指標の不確かさを示すデータも付いています。評価が精密になったように見えても、分類の安定性を確かめなければ誤った安心につながる可能性があります。</p>
+    <p>聞き終えたあとに残したいのは、一つの区別です。AIが危険なことをしなかった、という結果と、危険なことを求められたと理解したうえで適切に止まった、という結果は、同じではありません。安全性を判断するには、結果だけでなく、その結果をどこまで説明できるかが重要です。</p>
+  </article>
+
+  <section class="player" aria-label="読み上げ操作">
+    <div class="transport">
+      <button id="prev-block" type="button" aria-label="前の読み上げ単位へ">←</button>
+      <button id="play" type="button" aria-label="再生">▶</button>
+      <button id="pause" type="button" aria-label="一時停止">Ⅱ</button>
+      <button id="stop" type="button" aria-label="停止">■</button>
+      <button id="next-block" type="button" aria-label="次の読み上げ単位へ">→</button>
+    </div>
+    <div class="section-nav" aria-label="章移動">
+      <button id="prev-section" type="button" aria-label="前の章へ">‹</button>
+      <span id="section-label">導入</span>
+      <button id="next-section" type="button" aria-label="次の章へ">›</button>
+    </div>
+    <div class="voice-row">
+      <select id="voice" aria-label="日本語音声"></select>
+    </div>
+    <div class="speed"><span>速度</span><input id="rate" type="range" min="0.7" max="4" step="0.1" value="1"><span id="rateValue">1.0×</span></div>
+  </section>
+
+
+
+
+
+
+
+  <section class="sources" aria-label="出典">
+    <strong>出典</strong>
+    <p><a href="https://arxiv.org/abs/2610.11766">原論文・付録 — Same Outcome, Different Evidence: Intent Recovery in LLM Safety Evaluation</a></p>
+    <p><a href="https://www.alphaxiv.org/abs/2610.11766">alphaXiv — 論文閲覧ページ</a></p>
+    <p><a href="https://github.com/kevinjiang0121-cyber/IRIS">研究者公開リポジトリ — IRISの実装、評価入力、判定設定</a></p>
+  </section>
+</main>
+<script>
+(() => {
+  const synth = window.speechSynthesis;
+  const blocks = [...document.querySelectorAll("#article h1,#article h2,#article h3,#article p")];
+  const sectionStarts = [...new Set([0, ...blocks.map((node, i) => node.tagName === "H2" ? i : -1).filter(i => i >= 0)])];
+  const play = document.querySelector("#play");
+  const pause = document.querySelector("#pause");
+  const stop = document.querySelector("#stop");
+  const prevBlock = document.querySelector("#prev-block");
+  const nextBlock = document.querySelector("#next-block");
+  const prevSection = document.querySelector("#prev-section");
+  const nextSection = document.querySelector("#next-section");
+  const sectionLabel = document.querySelector("#section-label");
+  const voice = document.querySelector("#voice");
+  const rate = document.querySelector("#rate");
+  const rateValue = document.querySelector("#rateValue");
+  const theme = document.querySelector("#theme");
+  let index = 0, playing = false, paused = false, selectedVoice = "", generation = 0;
+  let wakeLock = null, wakeLockWanted = false;
+
+  async function requestWakeLock() {
+    const wakeLockApi = window.navigator?.wakeLock;
+    wakeLockWanted = true;
+    if (!wakeLockApi?.request || wakeLock) return;
+    try {
+      const lock = await wakeLockApi.request("screen");
+      if (!wakeLockWanted) {
+        await lock.release();
+        return;
+      }
+      wakeLock = lock;
+      wakeLock.addEventListener?.("release", () => { wakeLock = null; });
+    } catch {
+      wakeLock = null;
+    }
+  }
+
+  async function releaseWakeLock() {
+    wakeLockWanted = false;
+    const current = wakeLock;
+    wakeLock = null;
+    if (!current) return;
+    try {
+      await current.release();
+    } catch {
+      // Wake Lock is best-effort; speech playback must continue to work.
+    }
+  }
+
+  function voices() {
+    const previous = selectedVoice || voice.value;
+    const items = synth.getVoices().filter(v => /^ja(?:-|_)/i.test(v.lang));
+    voice.replaceChildren();
+    for (const v of items) {
+      const o = document.createElement("option");
+      o.value = v.voiceURI;
+      o.textContent = v.name;
+      voice.append(o);
+    }
+    if (items.some(v => v.voiceURI === previous)) voice.value = previous;
+    selectedVoice = voice.value;
+  }
+
+  function clearHighlight() {
+    blocks.forEach(node => node.classList.remove("is-speaking"));
+  }
+
+  function sectionPosition() {
+    let pos = 0;
+    for (let i = 0; i < sectionStarts.length; i += 1) {
+      if (sectionStarts[i] <= index) pos = i;
+      else break;
+    }
+    return pos;
+  }
+
+  function updateNavigation() {
+    prevBlock.disabled = index <= 0;
+    nextBlock.disabled = index >= blocks.length - 1;
+
+    const pos = sectionPosition();
+    const start = sectionStarts[pos] ?? 0;
+    const previousTargetExists = index > start || pos > 0;
+    prevSection.disabled = !previousTargetExists;
+    nextSection.disabled = pos >= sectionStarts.length - 1;
+
+    const startNode = blocks[start];
+    sectionLabel.textContent = startNode?.tagName === "H2" ? startNode.textContent : "導入";
+  }
+
+  function showCurrent() {
+    clearHighlight();
+    const current = blocks[index];
+    if (!current) return;
+    current.classList.add("is-speaking");
+    current.scrollIntoView({ block: "center", behavior: "smooth" });
+    updateNavigation();
+  }
+
+  function speakCurrent() {
+    if (!playing || paused || index >= blocks.length) {
+      if (index >= blocks.length) {
+        playing = false;
+        paused = false;
+        clearHighlight();
+        void releaseWakeLock();
+      }
+      updateNavigation();
+      return;
+    }
+
+    showCurrent();
+    const localGeneration = ++generation;
+    const utterance = new SpeechSynthesisUtterance(blocks[index].textContent);
+    utterance.lang = "ja-JP";
+    utterance.rate = Number(rate.value);
+    const selected = synth.getVoices().find(item => item.voiceURI === voice.value);
+    if (selected) utterance.voice = selected;
+
+    utterance.onend = () => {
+      if (localGeneration !== generation || !playing || paused) return;
+      index += 1;
+      speakCurrent();
+    };
+
+    utterance.onerror = event => {
+      if (localGeneration !== generation) return;
+      if (event.error !== "canceled" && event.error !== "interrupted") {
+        playing = false;
+        paused = false;
+        clearHighlight();
+        void releaseWakeLock();
+        updateNavigation();
+      }
+    };
+
+    synth.speak(utterance);
+  }
+
+  function jumpTo(target) {
+    const next = Math.max(0, Math.min(blocks.length - 1, target));
+    const resume = playing && !paused;
+    const keepPaused = paused;
+
+    generation += 1;
+    synth.resume?.();
+    synth.cancel();
+    index = next;
+
+    if (resume) {
+      playing = true;
+      paused = false;
+      void requestWakeLock();
+      speakCurrent();
+      return;
+    }
+
+    playing = keepPaused;
+    paused = keepPaused;
+    showCurrent();
+    if (keepPaused) void requestWakeLock();
+  }
+
+  function jumpSection(delta) {
+    const pos = sectionPosition();
+    let targetPos;
+
+    if (delta < 0 && index > sectionStarts[pos]) targetPos = pos;
+    else targetPos = pos + delta;
+
+    if (targetPos < 0 || targetPos >= sectionStarts.length) return;
+    jumpTo(sectionStarts[targetPos]);
+  }
+
+  play.addEventListener("click", () => {
+    if (paused) {
+      generation += 1;
+      synth.resume?.();
+      synth.cancel();
+      paused = false;
+      playing = true;
+      void requestWakeLock();
+      speakCurrent();
+      return;
+    }
+    if (playing) return;
+    if (index >= blocks.length) index = 0;
+    playing = true;
+    void requestWakeLock();
+    speakCurrent();
+  });
+
+  pause.addEventListener("click", () => {
+    if (!playing || paused) return;
+    synth.pause();
+    paused = true;
+  });
+
+  stop.addEventListener("click", () => {
+    generation += 1;
+    synth.resume?.();
+    synth.cancel();
+    playing = false;
+    paused = false;
+    index = 0;
+    clearHighlight();
+    updateNavigation();
+    void releaseWakeLock();
+  });
+
+  prevBlock.addEventListener("click", () => jumpTo(index - 1));
+  nextBlock.addEventListener("click", () => jumpTo(index + 1));
+  prevSection.addEventListener("click", () => jumpSection(-1));
+  nextSection.addEventListener("click", () => jumpSection(1));
+
+  voice.addEventListener("change", () => {
+    selectedVoice = voice.value;
+    if (playing && !paused) {
+      generation += 1;
+      synth.cancel();
+      speakCurrent();
+    }
+  });
+
+  rate.addEventListener("input", () => {
+    rateValue.textContent = Number(rate.value).toFixed(1) + "×";
+  });
+
+  theme.addEventListener("click", () => {
+    const dark = document.documentElement.dataset.theme === "dark";
+    document.documentElement.dataset.theme = dark ? "light" : "dark";
+    theme.textContent = dark ? "☾" : "☀";
+    localStorage.setItem("rsvp:theme", dark ? "light" : "dark");
+  });
+
+  document.documentElement.dataset.theme =
+    localStorage.getItem("rsvp:theme") ||
+    (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  theme.textContent = document.documentElement.dataset.theme === "dark" ? "☀" : "☾";
+
+  voices();
+  synth.addEventListener?.("voiceschanged", voices);
+  updateNavigation();
+
+  document.addEventListener?.("visibilitychange", () => {
+    if (document.visibilityState === "visible" && (playing || paused)) {
+      void requestWakeLock();
+    }
+  });
+
+  addEventListener("pagehide", () => {
+    generation += 1;
+    synth.cancel();
+    void releaseWakeLock();
+  });
+})();
+</script>
+</body>
+</html>
