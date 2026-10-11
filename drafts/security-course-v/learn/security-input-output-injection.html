@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="申請データの流れから、入力検証、SQL値バインド、HTML出力、雛形の境界と認可を区別して判断します。" />
+<meta name="theme-color" content="#f2efe8" />
+<base href="../../../learn/" />
+<title>入力・出力・Injection — Learn候補</title>
+<link rel="stylesheet" href="./learn.css" />
+<script src="./learn.js" defer></script>
+</head>
+<body><div class="shell">
+<header class="top"><a href="../index.html">RSVPに戻る</a><span class="mode">LEARN候補 · 情報セキュリティ</span></header>
+<main>
+<p class="endnote" data-publication="HOLD">DRAFT v0.1 / HOLD。独立した新規内容審査前の未公開候補です。<a href="../drafts/security-course-v/QUESTIONS.md#v-2">理解確認・採点基準</a></p>
+<section class="reader" id="speech-reader" aria-label="読み上げプレイヤー"><div class="reader-row"><button id="speech-play" type="button" aria-label="読み上げを開始">▶</button><button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button><button id="speech-stop" type="button" aria-label="停止" disabled>■</button><select id="speech-voice" aria-label="読み上げ音声"></select><label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label></div><div id="speech-status" class="reader-status" role="status">読み上げ準備中</div></section>
+<article id="learn-article">
+<h1>入力・出力・Injection</h1>
+<p id="v2-overview" class="lead">入力欄で文字を検査しただけでは、システムの安全性は判断できません。この章では青波市の架空申請サービスを使い、住民のデータが保存され、検索され、表示される流れをたどります。データが命令へ混ざらない境界と、閲覧する権限の境界を分けて考えます。入力検証、SQLの値バインド、出力先に合う符号化、装飾HTMLのサニタイズは、それぞれ守る目的が違います。</p>
+
+<h2>入口だけでなく解釈する場所を見る</h2>
+<p id="v2-flow">住民のコメントは、提出画面だけでなく、DBに保存した後の職員画面や通知でも使われます。委託先からの応答や添付の内容も、受け取る境界で扱いを決めます。DBにあるから次の処理でも安全ということにはなりません。Injection、インジェクションは、データとして扱うはずの入力が意図しない命令や構文の一部になる問題です。SQLの問い合わせ、ブラウザのHTML、サーバのテンプレートでは解釈する規則が違います。データの入口、保存、変換、出力を追い、どこで命令や文書の構造を組み立てるかを確認します。</p>
+
+<h2>入力検証は業務の期待を守る</h2>
+<p id="v2-validation">入力検証では、必要な型、長さ、範囲、形式を確かめます。提出日と対象期間が矛盾しないかという、関連する値の整合も対象です。検査はサーバ側の信頼できる処理で行います。ブラウザでの確認は操作を助けますが、直接送られた要求を拒否する保証にはなりません。また、巨大な要求をすべて解析してから型を検査しても、解析中の資源枯渇は防げません。本文サイズや解析資源の上限は、その前の段階にも設けます。</p>
+<p id="v2-normalization">引用符を含む氏名は、正当な業務データであり得ます。その記号を一律に削ると住民情報を壊します。業務に必要な表現を認めた上で、各解釈先で安全に扱います。デコードや正規化が必要な項目は、受け付ける表現を先に決め、期待した変換を検証前に一度行います。検証後に再びデコードして意味を変えてはいけません。すべての氏名を一律の規則で変換するという意味ではありません。文字の正規化も、Injection対策の代わりではありません。</p>
+
+<h2>SQLは固定した構造と値を分ける</h2>
+<p id="v2-sql">担当職員が申請を検索するとき、検索語をSQL文字列へ継ぎ足すと、値が問い合わせの構造へ混ざります。固定したSQLを先に用意し、検索値を別の引数で渡すパラメータ化を選びます。実際のDBドライバのバインドAPIを正しく使うことが条件です。入力を既に連結したSQLを後で準備するだけでは分離できません。引用符のある氏名も一つの値として扱い、正常に検索できることと、命令のような文字列で問い合わせの意味が勝手に変わらないことを試します。</p>
+<p id="v2-orm">プログラムのオブジェクトとDBの対応を扱うORMや、DBに保存した手続であるストアドプロシージャを使うという名称だけでは安全性の証拠になりません。ORMで生の問い合わせを連結したり、その問い合わせ言語に入力を継ぎ足したりすると、問題が残る場合があります。ストアドプロシージャも、内部で入力からSQLを組み立てて動的実行するなら安全とは限りません。適切に固定構造と値を分離した手続まで一律に危険とするのではなく、実際に問い合わせを生成する経路を点検します。</p>
+<p id="v2-identifiers">値のプレースホルダを置けば、表名、列名、並び順の構文まで選べるわけではありません。並び順の選択が「受付順」と「更新順」の二つなら、サーバがそれぞれを固定した列と方向へ対応させます。それ以外は拒否します。利用者の文字列をそのまま列名として継ぎ足しません。DBやAPIが構文用の別の仕組みを提供する場合も、値バインドと同じだと決め付けず仕様を確認します。自由な構文を渡す必要があるなら、機能の設計を先に見直します。</p>
+<p id="v2-like">LIKE検索では、値をバインドしてもパーセント等のワイルドカードは働きます。これは命令注入とは別の検索仕様の問題です。パーセントそのものを検索したいなら、DBのLIKE規則に合わせて文字どおりの検索にします。任意一致を認めるなら、それが業務の意図かを確認します。どちらでも認可された範囲、返す件数、負荷の制限は別に必要です。パラメータ化がそれらを自動で保証するわけではありません。</p>
+<p id="v2-sql-limits">HTML用のエスケープを検索語へ施しても、SQLの命令と値は分離できません。SQLの文字を手作業で逃がす方式は、方言、文字コード、設定などに依存するため、本章では正しい値バインドを優先します。DB接続の権限を減らすことも有用ですが、それは被害の範囲を抑える対策で、構造への混入を直す対策とは別です。</p>
+
+<h2>通常の文章はHTMLのコードにしない</h2>
+<p id="v2-html-text">検索結果を表示すると、データはSQLとは別の解釈先へ移ります。出力用の符号化は保存時に一律で行うのではなく、対象の処理系へ渡す直前に行います。通常の文章をサーバからHTML本文へ出すなら、山括弧などを文字として符号化し、タグとして解釈させません。ブラウザが持つ文書構造、DOMで普通の要素へ文字を入れる場合は、textContentへ元の文字列を渡す方法を選べます。このAPIはHTML符号化ではなく文字ノードを作ります。事前にHTML符号化した値を渡す必要はありません。scriptやstyle要素の非信頼内容には同じ安全性を主張できません。innerHTMLはHTMLとして解析するため、普通の文字表示とは目的が違います。</p>
+<p id="v2-html-attributes">属性に入れる場合は、属性名を固定し、その属性が安全な用途かを確認して、属性用の符号化と引用符を使います。イベント属性など、実行可能な文脈にはこの方法を流用しません。JavaScriptやCSSのコードへ非信頼文字列を直接埋め込む設計も避けます。そこではHTML本文の符号化だけでは足りません。表示先を通常の文章へ変えられないかを、先に検討します。</p>
+
+<h2>URLの部品とリンク先を分けて確認する</h2>
+<p id="v2-url">検索語をURLの部品へ入れるなら、その部品に合う符号化を行います。しかし部品を符号化しただけで、URL全体が安全になるわけではありません。外部リンクはURLを解析し、許可する方式と、必要なら接続先を検査します。青波市の比較ケースではHTTPSを許す方針とし、JavaScriptの実行を表すURLは拒否します。HTTPS限定はこのケースの方針であり、全サービスに共通する方式規則ではありません。最後に引用付きのHTML属性へ出すときは、属性文脈の符号化も必要です。URLを解釈する段階とHTML属性を解釈する段階を分けます。</p>
+
+<h2>装飾を許すなら別の要件になる</h2>
+<p id="v2-sanitization">住民の通常コメントに装飾が不要なら、文字として表示する案が適しています。お知らせでHTML装飾を許す場合は、すべてを文字へ符号化すると装飾まで文章として見えてしまいます。そこで許す要素と属性を定め、維持管理されたライブラリでHTMLをサニタイズします。構文を解析して危険な内容を除く処理であり、正規表現でタグらしい文字を削るだけでは同じ保証になりません。サニタイズ後に文字列を変更したり、別の処理が再解釈したりすると保護が崩れる場合があります。採用する版の更新と、最後の出力先までの処理を確認します。ブラウザの読み込みや実行を制限するCSPは追加防御として使えますが、危険な出力を残す理由にはなりません。</p>
+
+<h2>テンプレートの解釈はHTMLより前にある</h2>
+<p id="v2-template">テンプレートでは、雛形の命令を解釈してから、データを差し込んだ文書を生成します。信頼した固定雛形へ、コメントを名前付きの値として渡します。非信頼の入力を雛形ソースへ継ぎ足して評価する方式は選びません。差し込んだ値を二段目でまた雛形として評価する処理も点検します。利用者が指定する雛形名やパスも、許可した選択肢と固定の雛形を対応させる必要があります。</p>
+<p id="v2-autoescape">HTMLの自動エスケープが有効でも、非信頼の雛形ソースを評価するSSTI、サーバ側テンプレートインジェクションの防止にはなりません。雛形の解釈と、生成したHTMLの解釈は別の段階だからです。自動処理が守る出力文脈と設定を確認し、生出力や無効化の箇所も調べます。雛形へ渡す情報と機能も絞り、秘密値や広い権限の操作機能を渡しません。利用者が雛形を作成する機能なら、隔離、資源制限、権限縮小を含む高リスクの別要件として扱います。サンドボックスという名称だけで安全を保証できません。本章は実際の雛形エンジンを試験していません。</p>
+
+<h2>OSの引数と閲覧権限も別に確認する</h2>
+<p id="v2-os">ファイル変換等でOSコマンドを呼ぶ設計は、まず専用ライブラリで代替できないか考えます。呼出しが必要なら、シェル文字列を組み立てず、固定した実行対象と引数を分けます。ただし引数として危険なオプションを渡せる問題は残り得ます。使うコマンド固有の引数規則と権限を確認します。SQL、HTML、OSの逃がし方を一つの汎用関数にまとめて保証することはできません。本教材では外部コマンドを実行しません。</p>
+<p id="v2-authorization">Injection対策と認可も別です。値バインドで問い合わせの構造が正しくても、他人の申請を読む要求なら拒否が必要です。サーバで主体と対象を照合し、一覧の取得範囲にも規則を適用します。表示を符号化しても、既に送った機密情報を取り戻すことはできません。添付取得、一括出力、通知でも、認可と解釈先の境界を別々に確認します。JSONの応答を返した後で、画面がHTMLへ危険に挿入するなら問題は残ります。通知やログへ秘密値を出さない設計も必要で、生の要求本文を障害記録へ複製しません。ログの表示先にも解釈の境界があります。</p>
+
+<h2>正常系と反例を対にして試す</h2>
+<p id="v2-tests">試験は架空データとローカル環境で行い、第三者のシステムへ要求を送りません。SQLでは正当な引用符のある検索が成功し、命令のような文字列も一つの値として扱われる結果を確認します。並び順は許可した二択が成功し、不明な選択肢が拒否されるか試します。LIKEの任意一致と文字どおりの検索も別に試します。通常のHTML文章では元の文字を表示用のデータとして保ち、入力から新しい要素が生まれないことを確認します。ただし、この解析試験だけで全ブラウザの挙動を証明したことにはなりません。</p>
+<p id="v2-test-limits">URL、装飾HTML、雛形、OSの実装は、採用する処理系と版に合う別の試験が必要です。書いていない試験を成功とは記録しません。認可では自分や現在担当の申請を許し、他人や異動後の旧担当の閲覧を拒否する結果を対にします。拒否だけでは正規業務の成功を測れません。経路、出力文脈、期待結果、使用した版、実際の結果を残します。特殊文字を一種類試した結果、WAFの検知件数、エラーの減少だけでは、原因をなくしたことや全経路の安全性を判断できません。</p>
+
+<h2>短い振り返り</h2>
+<p id="v2-reflection">入力検証は業務で受け付けるデータを確認し、値のパラメータ化はSQLの構造との分離を守ります。出力時は解釈先に合わせ、普通の文字表示、URL、装飾、雛形を区別します。最後に、そのデータを要求する権限を独立して確かめます。出力先やライブラリが変わったら、条件と回帰試験も見直します。</p>
+<h3>この教材の扱う範囲</h3>
+<p id="v2-limits" class="endnote">ローカル例はPython標準sqlite3の値バインド、並び順の固定対応、LIKEの仕様差、通常のHTML本文、架空認可の一部を試します。他のDB、実ブラウザDOM、URL処理、リッチHTMLサニタイザ、雛形エンジン、OSコマンド、全取得経路の統合試験は未実施です。自己査読や理解確認問題は実受講者の理解の測定ではなく、独立内容審査も別に必要です。</p>
+</article>
+<section class="sources" aria-labelledby="sources-title"><h2 id="sources-title">出典</h2>
+<p><a href="https://top10.owasp.org/2025/A05_2025-Injection/">OWASP Top 10:2025 A05 Injection</a></p>
+<p><a href="https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html">OWASP SQL Injection Prevention Cheat Sheet</a></p>
+<p><a href="https://cheatsheetseries.owasp.org/cheatsheets/Injection_Prevention_Cheat_Sheet.html">OWASP Injection Prevention Cheat Sheet</a></p>
+<p><a href="https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html">OWASP Cross Site Scripting Prevention Cheat Sheet</a></p>
+<p><a href="https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html">OWASP Input Validation Cheat Sheet</a></p>
+<p><a href="https://cheatsheetseries.owasp.org/cheatsheets/Server_Side_Template_Injection_Prevention_Cheat_Sheet.html">OWASP Server Side Template Injection Prevention Cheat Sheet</a></p>
+<p><a href="https://cheatsheetseries.owasp.org/cheatsheets/OS_Command_Injection_Defense_Cheat_Sheet.html">OWASP OS Command Injection Defense Cheat Sheet</a></p>
+<p><a href="https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html">OWASP Authorization Cheat Sheet</a></p>
+<p><a href="https://github.com/OWASP/ASVS/blob/v5.0.0_release/5.0/en/0x10-V1-Encoding-and-Sanitization.md">OWASP ASVS 5.0.0 stable V1 Encoding and Sanitization</a></p>
+<p><a href="https://github.com/OWASP/ASVS/blob/v5.0.0_release/5.0/en/0x11-V2-Validation-and-Business-Logic.md">OWASP ASVS 5.0.0 stable V2 Validation and Business Logic</a></p>
+<p><a href="https://github.com/OWASP/ASVS/blob/v5.0.0_release/5.0/en/0x17-V8-Authorization.md">OWASP ASVS 5.0.0 stable V8 Authorization</a></p>
+<p><a href="https://www.ipa.go.jp/security/vuln/websecurity/sql.html">IPA 安全なウェブサイトの作り方 改訂第7版 第4刷・1.1</a></p>
+<p><a href="https://www.ipa.go.jp/security/vuln/websecurity/cross-site-scripting.html">IPA 安全なウェブサイトの作り方 改訂第7版 第4刷・1.5</a></p>
+</section>
+<p class="endnote"><a href="../drafts/security-course-v/SOURCE_EVIDENCE.md">版・節・適用条件・未検証事項</a> / <a href="../drafts/security-course-v/FORMAT_MAP.md">3形式の重要命題対応</a></p>
+</main></div></body></html>

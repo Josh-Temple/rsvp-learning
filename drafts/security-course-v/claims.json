@@ -1,0 +1,870 @@
+{
+  "schema_version": 1,
+  "scope": "Author self-reviewed correspondence and explicit regression anchors; not independent C acceptance or general semantic proof",
+  "claims": [
+    {
+      "id": "V1-01",
+      "lesson_id": "security-secure-by-design-default",
+      "title": "設計と安全な初期状態の関係",
+      "markdown_ranges": [
+        [
+          1,
+          30
+        ]
+      ],
+      "source_ids": [
+        "S01"
+      ],
+      "markdown_assertions": [
+        "安全な初期設定は安全な設計の一部です。",
+        "無事故の保証ではありません。",
+        "運用者の責任が消える意味ではありません。"
+      ],
+      "learn_paragraphs": [
+        "v1-principles",
+        "v1-responsibility"
+      ],
+      "learn_assertions": [
+        {
+          "paragraph": "v1-principles",
+          "fragments": [
+            "安全な初期設定は安全な設計の一部",
+            "安全な設計でも欠陥は残り得ます"
+          ]
+        },
+        {
+          "paragraph": "v1-responsibility",
+          "fragments": [
+            "運用者の責任が消えるという意味ではありません"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "V1-02",
+      "lesson_id": "security-secure-by-design-default",
+      "title": "設計・実装・設定の原因と修正",
+      "markdown_ranges": [
+        [
+          1,
+          30
+        ],
+        [
+          153,
+          176
+        ]
+      ],
+      "source_ids": [
+        "S02",
+        "S03"
+      ],
+      "markdown_assertions": [
+        "設計が欠けたまま実装を整えても、必要な制御は生まれません。",
+        "許可対象の誤りを直接は直せません。"
+      ],
+      "learn_paragraphs": [
+        "v1-stages",
+        "v1-remedy"
+      ],
+      "learn_assertions": [
+        {
+          "paragraph": "v1-remedy",
+          "fragments": [
+            "設計の欠落を直します",
+            "実装の適用漏れを直します",
+            "誰に許すかという認可の誤りを直接は直しません"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "V1-03",
+      "lesson_id": "security-secure-by-design-default",
+      "title": "主体・対象・項目・状態と全経路の認可",
+      "markdown_ranges": [
+        [
+          31,
+          79
+        ]
+      ],
+      "source_ids": [
+        "S09",
+        "S12"
+      ],
+      "markdown_assertions": [
+        "対象申請、項目、申請状態も指定します。",
+        "ボタンを隠すだけでも不十分です。",
+        "同じ認可規則が働くか確認します。",
+        "全自治体の共通規則ではありません。"
+      ],
+      "learn_paragraphs": [
+        "v1-case",
+        "v1-delegation",
+        "v1-authorization",
+        "v1-paths"
+      ],
+      "learn_assertions": [
+        {
+          "paragraph": "v1-authorization",
+          "fragments": [
+            "申請の状態も含めます",
+            "ボタンの非表示や推測しにくい申請番号は、認可の代わりではありません"
+          ]
+        },
+        {
+          "paragraph": "v1-paths",
+          "fragments": [
+            "各経路が実際にその処理を呼ぶ証拠が必要"
+          ]
+        },
+        {
+          "paragraph": "v1-case",
+          "fragments": [
+            "全自治体やすべての製品に共通する規則ではありません"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "V1-04",
+      "lesson_id": "security-secure-by-design-default",
+      "title": "最小権限と正規業務、DB層の限界",
+      "markdown_ranges": [
+        [
+          80,
+          105
+        ],
+        [
+          167,
+          176
+        ]
+      ],
+      "source_ids": [
+        "S05",
+        "S09",
+        "S12"
+      ],
+      "markdown_assertions": [
+        "全員を拒否すれば業務を果たせません。",
+        "ただしDB権限を絞っただけでは、住民ごとの閲覧制御は完成しません。",
+        "接続再利用時の分離が必要になります。"
+      ],
+      "learn_paragraphs": [
+        "v1-least-privilege",
+        "v1-models",
+        "v1-options"
+      ],
+      "learn_assertions": [
+        {
+          "paragraph": "v1-least-privilege",
+          "fragments": [
+            "全員を拒否することではありません",
+            "DB権限を絞っただけでは、住民ごとの閲覧制御は完成しません"
+          ]
+        },
+        {
+          "paragraph": "v1-options",
+          "fragments": [
+            "再利用する接続で主体が混ざらないようにする設計が必要"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "V1-05",
+      "lesson_id": "security-secure-by-design-default",
+      "title": "新規導入の設定と業務影響",
+      "markdown_ranges": [
+        [
+          106,
+          126
+        ],
+        [
+          147,
+          152
+        ]
+      ],
+      "source_ids": [
+        "S01",
+        "S02"
+      ],
+      "markdown_assertions": [
+        "追加の手動変更なしで確認します。",
+        "安全性と業務への影響を記録します。",
+        "全製品で同じ値が最適とは限りません。"
+      ],
+      "learn_paragraphs": [
+        "v1-defaults",
+        "v1-setting-impact"
+      ],
+      "learn_assertions": [
+        {
+          "paragraph": "v1-defaults",
+          "fragments": [
+            "追加の手動変更をする前の新規環境",
+            "すべての製品で同じ値が最適だという主張ではありません"
+          ]
+        },
+        {
+          "paragraph": "v1-setting-impact",
+          "fragments": [
+            "安全性と業務への影響",
+            "基準と実際の設定を照合"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "V1-06",
+      "lesson_id": "security-secure-by-design-default",
+      "title": "現在の担当と権限終了、統合試験の限界",
+      "markdown_ranges": [
+        [
+          127,
+          152
+        ]
+      ],
+      "source_ids": [
+        "S09",
+        "S12"
+      ],
+      "markdown_assertions": [
+        "旧権限の継続を許さない要件です。",
+        "判定後の競合を検証できません。",
+        "期限後の拒否と権限の除去まで確認します。"
+      ],
+      "learn_paragraphs": [
+        "v1-revocation",
+        "v1-support"
+      ],
+      "learn_assertions": [
+        {
+          "paragraph": "v1-revocation",
+          "fragments": [
+            "本ケースの機微情報では旧権限の継続を許さず",
+            "分散処理",
+            "競合まで確認したことにはなりません",
+            "既に開示した情報は取り戻せません"
+          ]
+        },
+        {
+          "paragraph": "v1-support",
+          "fragments": [
+            "期限後に拒否され",
+            "不要な権限が除去"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "V1-07",
+      "lesson_id": "security-secure-by-design-default",
+      "title": "判断不能は保護対象を拒否、公開資源は別規則",
+      "markdown_ranges": [
+        [
+          50,
+          79
+        ]
+      ],
+      "source_ids": [
+        "S09"
+      ],
+      "markdown_assertions": [
+        "全機能へのログイン強制を意味しません。",
+        "保護対象への要求は許可しません。",
+        "業務継続も別に設計します。"
+      ],
+      "learn_paragraphs": [
+        "v1-paths",
+        "v1-failure"
+      ],
+      "learn_assertions": [
+        {
+          "paragraph": "v1-paths",
+          "fragments": [
+            "匿名閲覧を明示した別の規則",
+            "全機能にログインを要求するという意味ではありません"
+          ]
+        },
+        {
+          "paragraph": "v1-failure",
+          "fragments": [
+            "保護対象の要求を許可しません",
+            "拒否を続けるだけでは申請業務も止まります"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "V1-08",
+      "lesson_id": "security-secure-by-design-default",
+      "title": "提供者と運用者の責任、例外の終了",
+      "markdown_ranges": [
+        [
+          1,
+          30
+        ],
+        [
+          127,
+          152
+        ],
+        [
+          192,
+          201
+        ]
+      ],
+      "source_ids": [
+        "S01",
+        "S02",
+        "S09"
+      ],
+      "markdown_assertions": [
+        "任せたという事実だけで責任は整理できません。",
+        "常時の全件公開で代用しません。",
+        "単に氏名を消しても安全とは限りません。"
+      ],
+      "learn_paragraphs": [
+        "v1-support",
+        "v1-responsibility"
+      ],
+      "learn_assertions": [
+        {
+          "paragraph": "v1-support",
+          "fragments": [
+            "再識別や秘密値の混入も確認",
+            "常時の全件公開で非常時の手続きを代用しません"
+          ]
+        },
+        {
+          "paragraph": "v1-responsibility",
+          "fragments": [
+            "どの証拠を残すかを明示",
+            "法的な責任や個別契約への適合は、この架空教材では判定していません"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "V1-09",
+      "lesson_id": "security-secure-by-design-default",
+      "title": "意図と動作証拠、許可と拒否",
+      "markdown_ranges": [
+        [
+          177,
+          201
+        ]
+      ],
+      "source_ids": [
+        "S02",
+        "S09"
+      ],
+      "markdown_assertions": [
+        "実際に拒否できた証拠とは異なります。",
+        "自分の申請を許可する試験を対にします。",
+        "実サービス全体の安全性を証明しません。"
+      ],
+      "learn_paragraphs": [
+        "v1-evidence",
+        "v1-limits"
+      ],
+      "learn_assertions": [
+        {
+          "paragraph": "v1-evidence",
+          "fragments": [
+            "自分の申請は取得でき、他人の申請は拒否",
+            "ログがないだけでは事故がないとはいえず"
+          ]
+        },
+        {
+          "paragraph": "v1-limits",
+          "fragments": [
+            "実サービスの全取得経路",
+            "検証していません",
+            "独立受入や実受講者の理解を測った結果とは呼びません"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "V2-01",
+      "lesson_id": "security-input-output-injection",
+      "title": "保存後も解釈先を調べる",
+      "markdown_ranges": [
+        [
+          1,
+          19
+        ]
+      ],
+      "source_ids": [
+        "S04",
+        "S06",
+        "S07"
+      ],
+      "markdown_assertions": [
+        "次の処理で安全な文字列とはいえません。",
+        "解釈する処理系が違えば、必要な対策の条件も違います。"
+      ],
+      "learn_paragraphs": [
+        "v2-flow"
+      ],
+      "learn_assertions": [
+        {
+          "paragraph": "v2-flow",
+          "fragments": [
+            "DBにあるから次の処理でも安全ということにはなりません",
+            "解釈する規則が違います"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "V2-02",
+      "lesson_id": "security-input-output-injection",
+      "title": "業務検証、信頼できる処理、解析前の制限",
+      "markdown_ranges": [
+        [
+          20,
+          43
+        ]
+      ],
+      "source_ids": [
+        "S08",
+        "S12"
+      ],
+      "markdown_assertions": [
+        "直接の要求を拒否する保証にはなりません。",
+        "型を検査しても資源枯渇を防げません。",
+        "必要な文字まで削ると情報を壊します。"
+      ],
+      "learn_paragraphs": [
+        "v2-validation",
+        "v2-normalization"
+      ],
+      "learn_assertions": [
+        {
+          "paragraph": "v2-validation",
+          "fragments": [
+            "サーバ側の信頼できる処理",
+            "直接送られた要求を拒否する保証にはなりません",
+            "解析中の資源枯渇は防げません"
+          ]
+        },
+        {
+          "paragraph": "v2-normalization",
+          "fragments": [
+            "その記号を一律に削ると住民情報を壊します"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "V2-03",
+      "lesson_id": "security-input-output-injection",
+      "title": "デコードは期待した形で検証前、符号化は解釈直前",
+      "markdown_ranges": [
+        [
+          20,
+          43
+        ],
+        [
+          93,
+          117
+        ]
+      ],
+      "source_ids": [
+        "S08",
+        "S12"
+      ],
+      "markdown_assertions": [
+        "期待した変換を検証前に一度行い、検証後の再デコードで意味を変えません。",
+        "すべての氏名を一律に変換する、という意味ではありません。",
+        "対象の処理系へ渡す直前に行います。"
+      ],
+      "learn_paragraphs": [
+        "v2-normalization",
+        "v2-html-text"
+      ],
+      "learn_assertions": [
+        {
+          "paragraph": "v2-normalization",
+          "fragments": [
+            "期待した変換を検証前に一度行います",
+            "検証後に再びデコードして意味を変えてはいけません",
+            "すべての氏名を一律の規則で変換するという意味ではありません"
+          ]
+        },
+        {
+          "paragraph": "v2-html-text",
+          "fragments": [
+            "対象の処理系へ渡す直前に行います"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "V2-04",
+      "lesson_id": "security-input-output-injection",
+      "title": "固定SQLと値引数、正しいAPI",
+      "markdown_ranges": [
+        [
+          44,
+          65
+        ],
+        [
+          199,
+          226
+        ]
+      ],
+      "source_ids": [
+        "S04",
+        "S05",
+        "S12",
+        "S13"
+      ],
+      "markdown_assertions": [
+        "正しいバインドAPIを確認します。",
+        "後で準備するだけでは分離できません。",
+        "命令ではなく一つの値として扱わせます。"
+      ],
+      "learn_paragraphs": [
+        "v2-sql",
+        "v2-tests",
+        "v2-limits"
+      ],
+      "learn_assertions": [
+        {
+          "paragraph": "v2-sql",
+          "fragments": [
+            "実際のDBドライバのバインドAPIを正しく使うことが条件",
+            "後で準備するだけでは分離できません"
+          ]
+        },
+        {
+          "paragraph": "v2-limits",
+          "fragments": [
+            "他のDB",
+            "未実施"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "V2-05",
+      "lesson_id": "security-input-output-injection",
+      "title": "値ではない構文とLIKEの仕様差",
+      "markdown_ranges": [
+        [
+          66,
+          92
+        ]
+      ],
+      "source_ids": [
+        "S05",
+        "S06",
+        "S12"
+      ],
+      "markdown_assertions": [
+        "それ以外は拒否します。",
+        "利用者の文字列を列名として継ぎ足しません。",
+        "命令の注入とは別の検索仕様の問題です。",
+        "自動では保証しません。"
+      ],
+      "learn_paragraphs": [
+        "v2-identifiers",
+        "v2-like"
+      ],
+      "learn_assertions": [
+        {
+          "paragraph": "v2-identifiers",
+          "fragments": [
+            "表名、列名、並び順の構文まで選べるわけではありません",
+            "それ以外は拒否します"
+          ]
+        },
+        {
+          "paragraph": "v2-like",
+          "fragments": [
+            "命令注入とは別の検索仕様の問題",
+            "認可された範囲、返す件数、負荷の制限は別に必要"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "V2-06",
+      "lesson_id": "security-input-output-injection",
+      "title": "ORM・手続も動的生成を点検",
+      "markdown_ranges": [
+        [
+          44,
+          65
+        ]
+      ],
+      "source_ids": [
+        "S04",
+        "S05",
+        "S06"
+      ],
+      "markdown_assertions": [
+        "防止できたとはいえません。",
+        "動的実行するなら安全とは限りません。",
+        "問い合わせが生成される全経路を見ます。"
+      ],
+      "learn_paragraphs": [
+        "v2-orm"
+      ],
+      "learn_assertions": [
+        {
+          "paragraph": "v2-orm",
+          "fragments": [
+            "名称だけでは安全性の証拠になりません",
+            "動的実行するなら安全とは限りません",
+            "適切に固定構造と値を分離した手続まで一律に危険とするのではなく"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "V2-07",
+      "lesson_id": "security-input-output-injection",
+      "title": "通常のHTML本文と文字ノードの限定",
+      "markdown_ranges": [
+        [
+          93,
+          117
+        ],
+        [
+          199,
+          226
+        ]
+      ],
+      "source_ids": [
+        "S07",
+        "S12"
+      ],
+      "markdown_assertions": [
+        "元の文字列を文字ノードとして渡します。",
+        "scriptやstyle要素へ入れる場合は、同じ安全性を主張できません。",
+        "これは全ブラウザの安全性の証明ではありません。"
+      ],
+      "learn_paragraphs": [
+        "v2-html-text",
+        "v2-tests"
+      ],
+      "learn_assertions": [
+        {
+          "paragraph": "v2-html-text",
+          "fragments": [
+            "このAPIはHTML符号化ではなく文字ノードを作ります",
+            "scriptやstyle要素の非信頼内容には同じ安全性を主張できません"
+          ]
+        },
+        {
+          "paragraph": "v2-tests",
+          "fragments": [
+            "全ブラウザの挙動を証明したことにはなりません"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "V2-08",
+      "lesson_id": "security-input-output-injection",
+      "title": "固定属性、URL部品、許可方式の別の条件",
+      "markdown_ranges": [
+        [
+          93,
+          147
+        ]
+      ],
+      "source_ids": [
+        "S07",
+        "S12",
+        "S13"
+      ],
+      "markdown_assertions": [
+        "属性名も利用者に選ばせません。",
+        "それだけでURL全体が安全にはなりません。",
+        "JavaScriptの実行を表すURLは、拒否します。",
+        "全サービス共通の方式規則ではありません。"
+      ],
+      "learn_paragraphs": [
+        "v2-html-attributes",
+        "v2-url"
+      ],
+      "learn_assertions": [
+        {
+          "paragraph": "v2-html-attributes",
+          "fragments": [
+            "イベント属性など、実行可能な文脈にはこの方法を流用しません"
+          ]
+        },
+        {
+          "paragraph": "v2-url",
+          "fragments": [
+            "部品を符号化しただけで、URL全体が安全になるわけではありません",
+            "JavaScriptの実行を表すURLは拒否します",
+            "全サービスに共通する方式規則ではありません"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "V2-09",
+      "lesson_id": "security-input-output-injection",
+      "title": "装飾HTMLのサニタイズと後続変換",
+      "markdown_ranges": [
+        [
+          118,
+          147
+        ]
+      ],
+      "source_ids": [
+        "S07",
+        "S12",
+        "S13"
+      ],
+      "markdown_assertions": [
+        "正規表現でタグを削るだけでは、同じ保証になりません。",
+        "保護が崩れる場合があります。",
+        "危険な出力処理を残す理由にはなりません。"
+      ],
+      "learn_paragraphs": [
+        "v2-sanitization"
+      ],
+      "learn_assertions": [
+        {
+          "paragraph": "v2-sanitization",
+          "fragments": [
+            "維持管理されたライブラリでHTMLをサニタイズ",
+            "正規表現でタグらしい文字を削るだけでは同じ保証になりません",
+            "別の処理が再解釈したりすると保護が崩れる場合があります"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "V2-10",
+      "lesson_id": "security-input-output-injection",
+      "title": "雛形ソースとHTML出力の二段階",
+      "markdown_ranges": [
+        [
+          148,
+          174
+        ]
+      ],
+      "source_ids": [
+        "S07",
+        "S10",
+        "S12"
+      ],
+      "markdown_assertions": [
+        "その雛形を評価してはいけません。",
+        "SSTIの防止にはなりません。",
+        "安全を保証できません。",
+        "雛形エンジンの安全性を試験しません。"
+      ],
+      "learn_paragraphs": [
+        "v2-template",
+        "v2-autoescape"
+      ],
+      "learn_assertions": [
+        {
+          "paragraph": "v2-template",
+          "fragments": [
+            "非信頼の入力を雛形ソースへ継ぎ足して評価する方式は選びません",
+            "二段目でまた雛形として評価する処理も点検"
+          ]
+        },
+        {
+          "paragraph": "v2-autoescape",
+          "fragments": [
+            "防止にはなりません",
+            "雛形の解釈と、生成したHTMLの解釈は別の段階",
+            "本章は実際の雛形エンジンを試験していません"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "V2-11",
+      "lesson_id": "security-input-output-injection",
+      "title": "OS呼出しの回避と引数の意味",
+      "markdown_ranges": [
+        [
+          175,
+          198
+        ]
+      ],
+      "source_ids": [
+        "S06",
+        "S11"
+      ],
+      "markdown_assertions": [
+        "まず専用のライブラリで代替を考えます。",
+        "ただし引数に危険なオプションが渡る、問題は残り得ます。"
+      ],
+      "learn_paragraphs": [
+        "v2-os"
+      ],
+      "learn_assertions": [
+        {
+          "paragraph": "v2-os",
+          "fragments": [
+            "まず専用ライブラリで代替",
+            "引数として危険なオプションを渡せる問題は残り得ます",
+            "本教材では外部コマンドを実行しません"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "V2-12",
+      "lesson_id": "security-input-output-injection",
+      "title": "Injectionと認可、証拠の範囲",
+      "markdown_ranges": [
+        [
+          175,
+          226
+        ]
+      ],
+      "source_ids": [
+        "S09",
+        "S12"
+      ],
+      "markdown_assertions": [
+        "Injection対策と認可も別です。",
+        "表示の符号化は、既に渡した機密データを取り戻せません。",
+        "拒否だけが成功しても業務品質は測れません。",
+        "書いていない試験を成功とは記録しません。"
+      ],
+      "learn_paragraphs": [
+        "v2-authorization",
+        "v2-test-limits",
+        "v2-limits"
+      ],
+      "learn_assertions": [
+        {
+          "paragraph": "v2-authorization",
+          "fragments": [
+            "Injection対策と認可も別です",
+            "既に送った機密情報を取り戻すことはできません"
+          ]
+        },
+        {
+          "paragraph": "v2-test-limits",
+          "fragments": [
+            "書いていない試験を成功とは記録しません",
+            "拒否だけでは正規業務の成功を測れません"
+          ]
+        },
+        {
+          "paragraph": "v2-limits",
+          "fragments": [
+            "独立内容審査も別に必要"
+          ]
+        }
+      ]
+    }
+  ]
+}

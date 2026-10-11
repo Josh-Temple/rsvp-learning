@@ -156,3 +156,53 @@ Injectionとは、本来はデータとして扱うはずの入力が、別の�
 5. `COMPLETE v0.1`の条件が満たされた章だけCatalogとCourseに登録。PRのCI成功と公開ページの実機検証を区別する。
 
 結論: **今回は制作準備を完了、先行2章の公開実装は見送り。全Waveの完了を意味しない。**
+
+---
+
+## 2026-10-11追記：先行2章の一次資料照合と未公開候補の実装
+
+以下はGPT-6.1 Solによる新しい制作記録。旧試案・当時のゲート判定は変更しない。今回の個別指示はDraft PRまでの候補制作であり、既存の「完成済み教材のみLearn化」という通常経路と区別して、Catalog外の `drafts/security-course-v/` に3形式を置く。既存の制作準備がそのまま内容受入になったとは扱わない。
+
+### 着手時の正本と前Waveの範囲
+
+GitHubのmain、開閉PR、Actions、指定のcurriculum / coverage / preparation / audit / integration / quality / format / pilot文書、schema、tests、Catalog、関連I〜IVの実教材をfresh readした。最新mainは **`74ebcac3587650ee83b95438629d1893ba8abfb4`**、#135による既存3章の統合記録。#117は統合済み、#132等の独立C受入は既存3章を対象とする。**Course Vの新規2章の受入・公開には転用しない。** 着手時mainのTest run [38088421490](https://github.com/Josh-Temple/rsvp-learning/actions/runs/38088421490) はsuccess。本候補のCI結果とは別である。開いている#128、#29、旧Draft #6は統合せず、この候補の前提へ無条件採用しない。
+
+専用branchは `content/security-course-v-pilot-20261011-sol`。このmainから開始した候補をDraft PRで保存する。候補full SHA、PR URL、対象SHAのActions結果、push後readbackの確定記録はそのDraft PR本文に保存する。main merge、production deploy、Course V完成登録、public instant-radioへのコピー・同期は今回の範囲に含まれない。
+
+### 一次資料の照合結果
+
+| 対象 | 今回確認した版・範囲 | 判定と留保 |
+|---|---|---|
+| CISA Secure by Design / Default | 共同執筆機関ACSCの公式HTMLで2023年10月改訂共同ガイド。Secure by design / default、原則、初期値、購入者向けの節。 | 当該本文 `source_verified`。CISA直接URLは403で `not_verified / ACCESS_UNAVAILABLE`。最新固有更新の網羅は `partial`。資料不存在としない。 |
+| NIST SSDF | SP 800-218 **1.1 Final**のPDF本文、PW.1.1・1.2、PW.2.1、PW.8.2、PW.9.1・9.2。公式一覧では1.2は2025-12のInitial Public Draft。 | 選んだ1.1タスク `source_verified`。1.2をFinalとして使わず、草案全要求の対応は未実施。 |
+| OWASP Top 10 | **2025 A05 Injection、A06 Insecure Design**の本文。 | 指定のDescription / How to Prevent `source_verified`。2021版番号や統計を本ケースへ流用しない。 |
+| OWASP Cheat Sheet | SQL Injection、Injection、XSS、Input Validation、Authorization、SSTI、OS Commandの公式本文と原稿。 | 選んだ節 `source_verified`。原稿は `cb9fe01e5ddf17b42513d2c53c4b86196c665c45` に固定。個別製品の挙動実測ではない。 |
+| ASVS | **5.0.0 stable**の `v5.0.0_release`、V1・V2・V8の指定要件。 | 選んだID `source_verified`。GitHub latestの開発中生成物は使わない。全ASVS・Level適合とは呼ばない。 |
+| IPA | 改訂第7版、第4刷2021-03-31の公式HTML抜粋1.1・1.5。 | 基本対策 `source_verified`。全PDF未読。過去統計や旧ブラウザ例は現在の保証にしない。 |
+
+版・節・URL、確認した命題、適用条件、一般化できない範囲は [SOURCE_EVIDENCE.md](../drafts/security-course-v/SOURCE_EVIDENCE.md) と [source-registry.json](../drafts/security-course-v/source-registry.json) に保存した。URLの存在だけで検証済みとはしていない。
+
+### 重要命題と成果物
+
+| 章 | 今回深めた判断 | 3形式の対応と自己判定 |
+|---|---|---|
+| V-1 `security-secure-by-design-default` | 設計／実装／初期設定／運用を分ける。安全な初期状態は設計の一部。主体・操作・対象・項目・状態の認可、最小権限、担当変更、期限終了、判断不能、業務への副作用、動作証拠を比較する。 | 正文201チャンク。9重要命題を番号・JSON添字・講義段落へ対応。**READY_FOR_INDEPENDENT_REVIEW / HOLD**。 |
+| V-2 `security-input-output-injection` | 業務入力検証と命令・値の分離を区別。値用APIと構文位置、ORM／動的手続、LIKE仕様、通常HTML本文・属性・URL・装飾、雛形ソースとHTML出力、OS引数、独立した認可を比較する。 | 正文226チャンク。12重要命題を番号・JSON添字・講義段落へ対応。**READY_FOR_INDEPENDENT_REVIEW / HOLD**。 |
+
+両章のMarkdown、RSVP JSON、Learn HTMLは [候補一覧](../drafts/security-course-v/README.md) にリンクした。正文の各番号と `chunks[].text` は全文・順序・句読点・否定まで一致する。24文字上限と英語専門語の途中破断を検査する。Learnは別の連続講義として、全体像、仕組み、架空例、対比、失敗条件、確認へつなぐ。出典はarticleの外に置く。[FORMAT_MAP.md](../drafts/security-course-v/FORMAT_MAP.md) は著者の自己査読用であり、独立C受入ではない。
+
+青波市オンライン申請は、住民本人の申請、現在担当部署の職員、設定管理者、承認済み期限付きの委託診断という前提。申請状態・項目・取得経路・運用責任を具体化した。行政共通の法的義務、全システムの普遍的役割規則としては一般化しない。
+
+### 理解確認と検証
+
+[QUESTIONS.md](../drafts/security-course-v/QUESTIONS.md) に各章5問、合計10問を作成。既存20問と同様、必要な二要素がある2点、一要素が正しく重大な逆意味がない1点、要素を欠くか危険な逆意味が判断を支配する0点を具体化した。測定したい判断、模範解答、典型誤答、条件変更時の評価を記録した。**Quiz UI・自動意味採点・実受講者の理解・学習効果の実測は未実施。**
+
+ローカルの変更前 `npm run check` は38 tests PASS。候補追加後は **60 Node tests / 60 pass / 0 fail**（既存38＋新規22）。新規の1件が安全なPython17件を実行するため、「合計77件」のように加算しない。同期427チャンク、候補静的HTML2ページ、21命題の限定、既存158教材・24コース・141 Learnページの検証もPASS。CatalogのCOMPLETE141 / DRAFT0 / SEED17は変更せず、候補2章はこの集計の外。
+
+変異検査では、初期設定と設計の関係、公開資源の例外、分散失効の限界、textContentのscript / style除外、SSTIと自動エスケープの区別、DB APIの条件、Injectionと認可の独立、正規化の適用条件を消す・逆転する変更が失敗することを確認した。コードはネットワーク、シェル、雛形評価、第三者システム試験を行わない。SQLiteメモリ内の架空データと通常HTML本文を使用する。具体的な実行範囲と限界は [VERIFICATION.md](../drafts/security-course-v/VERIFICATION.md) を参照。**ローカルPASSをGitHub ActionsのPASSとしては記録しない。**
+
+### 残る受入・統合・公開条件
+
+両章とも独立Worker Cによる新規内容受入が未実施なのでHOLD。V-1は認可・責任分界・安全な初期状態と業務影響、V-2はSQL／HTML／雛形等の技術条件を別担当が再照合する。Learnの実音声、Android実機、実受講と採点者間一致も未検証。ローカルモデルは全取得経路、管理者登録、MFA、ログ保護、設定ドリフト、長寿命資格情報・分散失効・競合を実装していない。URL、サニタイザ、雛形エンジン、OS、他DBは採用時に版・設定を固定して別試験が必要。
+
+独立内容受入と後続の統合・公開ゲートが成立するまで、Catalogへ完成Lessonとして登録しない。旧30章の本文・status・学習履歴、player、SSO、アクセス制御、Pages設定は変更しない。残り7章は、版の固定、条件変更を含む作問、意味の限定を落とす変異、正常業務との対の検証、個別処理系の実測範囲の明示を展開する改善案にとどめる。7章の完成や全60章の品質保証は宣言しない。
