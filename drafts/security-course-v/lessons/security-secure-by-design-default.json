@@ -338,6 +338,34 @@
       "duration_multiplier": 1.15
     },
     {
+      "text": "職員と申請の部署が欠落していても、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "同じ担当とは判断しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "空文字や空白も部署の識別子ではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "この例は許可した部署一覧を使い、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "双方の識別子を確認してから照合します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "実際の所属の正しさは別途確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "住民の本人申請は別の規則で許可します。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "自動許可に切り替えて復旧を装いません。",
       "duration_multiplier": 1.15
     },
@@ -767,6 +795,10 @@
     },
     {
       "text": "職員の担当内外と提出前後も変えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "部署の欠落、空文字、空白も変えます。",
       "duration_multiplier": 1.15
     },
     {

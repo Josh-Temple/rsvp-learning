@@ -1,0 +1,24 @@
+test_config_admin_is_not_application_reader (test_municipal_service.AuthorizationTests.test_config_admin_is_not_application_reader) ... ok
+test_current_department_and_review_state (test_municipal_service.AuthorizationTests.test_current_department_and_review_state) ... ok
+test_default_settings_do_not_enable_support_or_public_storage (test_municipal_service.AuthorizationTests.test_default_settings_do_not_enable_support_or_public_storage) ... ok
+test_edit_depends_on_state_and_field (test_municipal_service.AuthorizationTests.test_edit_depends_on_state_and_field) ... ok
+test_empty_departments_do_not_authorize_review (test_municipal_service.AuthorizationTests.test_empty_departments_do_not_authorize_review) ... ok
+test_missing_attributes_and_unknown_protected_operation_deny (test_municipal_service.AuthorizationTests.test_missing_attributes_and_unknown_protected_operation_deny) ... ok
+test_missing_departments_do_not_authorize_read (test_municipal_service.AuthorizationTests.test_missing_departments_do_not_authorize_read) ... ok
+test_own_and_other_application_read_are_distinct (test_municipal_service.AuthorizationTests.test_own_and_other_application_read_are_distinct) ... ok
+test_public_notice_is_an_explicit_separate_rule (test_municipal_service.AuthorizationTests.test_public_notice_is_an_explicit_separate_rule) ... ok
+test_support_grant_scope_expiry_and_raw_data (test_municipal_service.AuthorizationTests.test_support_grant_scope_expiry_and_raw_data) ... ok
+test_bound_order_value_is_not_a_column_identifier (test_municipal_service.DataBoundaryTests.test_bound_order_value_is_not_a_column_identifier) ... ok
+test_command_looking_string_is_one_literal_value (test_municipal_service.DataBoundaryTests.test_command_looking_string_is_one_literal_value) ... ok
+test_invalid_shape_and_missing_trusted_attributes_reject (test_municipal_service.DataBoundaryTests.test_invalid_shape_and_missing_trusted_attributes_reject) ... ok
+test_legitimate_quote_is_preserved_and_searchable (test_municipal_service.DataBoundaryTests.test_legitimate_quote_is_preserved_and_searchable) ... ok
+test_like_pattern_and_literal_have_different_expected_results (test_municipal_service.DataBoundaryTests.test_like_pattern_and_literal_have_different_expected_results) ... ok
+test_markup_looking_text_is_inert_in_this_body_parser (test_municipal_service.DataBoundaryTests.test_markup_looking_text_is_inert_in_this_body_parser) ... ok
+test_ordinary_html_text_preserves_data_without_extra_elements (test_municipal_service.DataBoundaryTests.test_ordinary_html_text_preserves_data_without_extra_elements) ... ok
+test_parameterization_does_not_supply_authorization (test_municipal_service.DataBoundaryTests.test_parameterization_does_not_supply_authorization) ... ok
+test_sort_is_a_fixed_choice_and_unknown_choice_denies (test_municipal_service.DataBoundaryTests.test_sort_is_a_fixed_choice_and_unknown_choice_denies) ... ok
+
+----------------------------------------------------------------------
+Ran 19 tests in 0.004s
+
+OK

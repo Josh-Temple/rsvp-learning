@@ -1,0 +1,57 @@
+{
+  "date": "2026-10-12 JST / 2026-10-11 UTC",
+  "baseline_full_sha": "edc183742163cb3bc355b2ee4b6dd177366acc8f",
+  "audit_full_sha": "2ef5ee94619a8faff0f60f9313e10b86af009a00",
+  "red_exit_code": 1,
+  "green_exit_code": 0,
+  "red_tests": 19,
+  "red_failures": 2,
+  "green_tests": 19,
+  "python_tests": 41,
+  "node_tests": 67,
+  "counts_note": "Python is also invoked by one Node test; do not add the counts. subTests are not counted separately.",
+  "baseline_model": {
+    "sha256": "0c6c832b5e9b1db3dc159fd115b1c1940d9ca2692c03c9910c285d6aea5f5647",
+    "git_blob_sha": "aa31d51050bbceb0f38d29a2848b1430a0e886a3",
+    "bytes": 5449
+  },
+  "current_sources": {
+    "drafts/security-course-v/examples/municipal_service.py": {
+      "sha256": "d7afe38efa055b006b2420de2a6cdfd48b010c0303b4ce7d6a426ea3b2180b67",
+      "git_blob_sha": "312c8744b18521d9215ebba0a106c21797fc4851",
+      "bytes": 8117
+    },
+    "drafts/security-course-v/examples/test_municipal_service.py": {
+      "sha256": "e52a17268475b811a82219b55a0870d91c547d0a5acc3983800654cc384772b4",
+      "git_blob_sha": "3c09fcb8a124bc31f365541bb415b451175c5032",
+      "bytes": 9812
+    }
+  },
+  "logs": {
+    "additional-counterexamples.json": {
+      "sha256": "0e2dafcb4f38d978be4ba9459ef0c5b260215f5c15e908b543fa5f1913fb6b26",
+      "git_blob_sha": "81c57007e237f5e79800b5b4d3b720b7b46a4f63",
+      "bytes": 1853
+    },
+    "f01-green.txt": {
+      "sha256": "09a6b1af4dfdd96041589462d1f70c9b820f9e2156f7586456b96442f205ec37",
+      "git_blob_sha": "9cdf4d0b4ecd2b79512f95f889b98a667091c848",
+      "bytes": 3001
+    },
+    "f01-red.txt": {
+      "sha256": "c10decd9d3e32b6e88cf4a853733df451bcb92d59b278e000fc150cc8e744fb8",
+      "git_blob_sha": "9ab5955818ce0fa542fffb642c3b32f50210c797",
+      "bytes": 4233
+    },
+    "npm-check-final.txt": {
+      "sha256": "3a6f10354359067e9d9385096532456dd4b04f2e031ed445a1882d56ada61635",
+      "git_blob_sha": "369207628bd15261519d9419dd5de10a7f51b6ef",
+      "bytes": 9558
+    },
+    "python-final.txt": {
+      "sha256": "56a7c0827d8fd8f16d9e30d569a2bf0559556e234558669a2258fd40e7a11f91",
+      "git_blob_sha": "17add3ad324bae2b7a22627b917e6670d864c6e7",
+      "bytes": 6203
+    }
+  }
+}

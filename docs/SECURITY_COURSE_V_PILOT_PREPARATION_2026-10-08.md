@@ -206,3 +206,15 @@ GitHubのmain、開閉PR、Actions、指定のcurriculum / coverage / preparatio
 両章とも独立Worker Cによる新規内容受入が未実施なのでHOLD。V-1は認可・責任分界・安全な初期状態と業務影響、V-2はSQL／HTML／雛形等の技術条件を別担当が再照合する。Learnの実音声、Android実機、実受講と採点者間一致も未検証。ローカルモデルは全取得経路、管理者登録、MFA、ログ保護、設定ドリフト、長寿命資格情報・分散失効・競合を実装していない。URL、サニタイザ、雛形エンジン、OS、他DBは採用時に版・設定を固定して別試験が必要。
 
 独立内容受入と後続の統合・公開ゲートが成立するまで、Catalogへ完成Lessonとして登録しない。旧30章の本文・status・学習履歴、player、SSO、アクセス制御、Pages設定は変更しない。残り7章は、版の固定、条件変更を含む作問、意味の限定を落とす変異、正常業務との対の検証、個別処理系の実測範囲の明示を展開する改善案にとどめる。7章の完成や全60章の品質保証は宣言しない。
+
+---
+
+## 2026-10-12 JST追記：独立監査F-01〜F-07の修正候補
+
+2026-10-11の独立監査 [PR #137](https://github.com/Josh-Temple/rsvp-learning/pull/137)、full SHA `2ef5ee94619a8faff0f60f9313e10b86af009a00` は、候補 `edc183742163cb3bc355b2ee4b6dd177366acc8f` の両章をNEEDS_REVISIONとした。上記の初回制作記録をこの独立判定や新候補の検証に置き換えない。監査全文は改変せず、既存Draft [PR #136](https://github.com/Josh-Temple/rsvp-learning/pull/136)へ修正を追加する。
+
+制作担当はF-01の欠落部署照合と職員検索scopeを修正し、固定部署台帳・型・ID・flag・期限の入力契約と適用限界を記載した。正式な独立反例2件は修正前19件中2失敗を確認後、同じ19件が成功。監査12条件の再構成と追加10試験を含むPython41件が成功した。Nodeは全体67件成功、Nodeから呼ぶPython41を加算しない。
+
+F-02〜07はSQLの時間順序、OS引数の意味境界、HTMLソース生成と安全なDOM属性設定の区別・妥当な採点別解、Learnの文と列挙、CSPの名称・役割、制作メタ情報のarticle外配置を修正。正文はV-1 209、V-2 241、合計450チャンクへ更新し、JSON、Learn、21命題、10問、変更に関係する原典節を再照合した。教育モデルの技術境界は保持する。
+
+修正前後表・ログ・12条件・追加反証・未検証事項・再審査条件は [REVISION_2026-10-12.md](../drafts/security-course-v/REVISION_2026-10-12.md)。新候補full SHA、対象headのActionsと全文readbackはPR #136のreceiptへ確定値を保存する。制作担当提出判定は **READY_FOR_INDEPENDENT_REACCEPTANCE / DRAFT / HOLD**。これは新しい独立Worker C受入ではなく、実音声・Android実機・実受講者の学習効果も未検証のまま。main merge、完成登録、公開、production deployは行わない。

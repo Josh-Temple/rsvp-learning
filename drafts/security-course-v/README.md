@@ -1,13 +1,15 @@
 # Course V先行2章：独立内容審査への候補
 
-Status: DRAFT / HOLD — 2026-10-11
+Status: DRAFT / HOLD — 2026-10-12（F-01〜F-07修正候補）
 
 | 章 | 内容制作の自己判定 | 公開・登録 | 正本・同期版・連続講義 |
 |---|---|---|---|
-| V-1 `security-secure-by-design-default` | **READY_FOR_INDEPENDENT_REVIEW** | **HOLD** | [Markdown](lessons/security-secure-by-design-default.md) / [RSVP JSON](lessons/security-secure-by-design-default.json) / [Learn HTML](learn/security-secure-by-design-default.html) |
-| V-2 `security-input-output-injection` | **READY_FOR_INDEPENDENT_REVIEW** | **HOLD** | [Markdown](lessons/security-input-output-injection.md) / [RSVP JSON](lessons/security-input-output-injection.json) / [Learn HTML](learn/security-input-output-injection.html) |
+| V-1 `security-secure-by-design-default` | **READY_FOR_INDEPENDENT_REACCEPTANCE** | **HOLD** | [Markdown](lessons/security-secure-by-design-default.md) / [RSVP JSON](lessons/security-secure-by-design-default.json) / [Learn HTML](learn/security-secure-by-design-default.html) |
+| V-2 `security-input-output-injection` | **READY_FOR_INDEPENDENT_REACCEPTANCE** | **HOLD** | [Markdown](lessons/security-input-output-injection.md) / [RSVP JSON](lessons/security-input-output-injection.json) / [Learn HTML](learn/security-input-output-injection.html) |
 
 この判定は、確認できた一次資料の範囲で具体的な原稿・同期版・講義・問題・検査を用意したという著者の引渡し判断である。独立Worker Cの受入、実受講による評価、アプリの完成済みLesson、公開許可ではない。CISA直接サイトの取得不能など、残る留保も審査対象に含める。Draft PR本文に候補full SHA・GitHub Actions・readbackの確定記録を保存し、そのSHAを審査対象に固定する。
+
+旧候補 `edc183742163cb3bc355b2ee4b6dd177366acc8f` は、独立監査 [PR #137](https://github.com/Josh-Temple/rsvp-learning/pull/137) の `2ef5ee94619a8faff0f60f9313e10b86af009a00` で両章 **NEEDS_REVISION** とされた。本改稿はそのF-01〜F-07を修正した再提出候補である。監査報告を改変せず、新しい独立C受入も宣言しない。修正前後、Red→Green、再審査条件は [修正報告](REVISION_2026-10-12.md) を参照。
 
 ## 成果物
 
@@ -17,9 +19,10 @@ Status: DRAFT / HOLD — 2026-10-11
 - [QUESTIONS.md](QUESTIONS.md)：各章5問。二要素、模範解答、典型誤答、2・1・0点、条件変更と測定したい判断能力。
 - [examples/municipal_service.py](examples/municipal_service.py) / [実行試験](examples/test_municipal_service.py)：外部接続のない架空認可、SQLite値バインド、通常HTML本文の教育用モデル。
 - [VERIFICATION.md](VERIFICATION.md)：ローカル実行、件数、検証範囲、GitHubの検証記録の読み方。
+- [監査12条件の再構成](examples/test_audit_conditions.py) / [入力契約の追加反例](examples/test_input_contract.py)：制作担当の回帰テスト。独立監査者の新しい受入とは区別する。
 - [新規回帰検査](../../tests/security-course-v-candidates.test.mjs)：同期・意味の限定・HTML・HOLD・安全な実行例を通常の `npm run check` に接続する。
 
-V-1は201チャンク、V-2は226チャンク。番号付き正文と `chunks[].text` は各位置で全文・順序・句読点・否定まで一致する。24文字上限と英語専門語の途中破断禁止を検査する。長さやチャンク件数を教材品質の指標にはしない。
+V-1は209チャンク、V-2は241チャンク、合計450チャンク。番号付き正文と `chunks[].text` は各位置で全文・順序・句読点・否定まで一致する。24文字上限と英語専門語の途中破断禁止を検査する。長さやチャンク件数を教材品質の指標にはしない。
 
 ## 架空サービスの責任と境界
 
@@ -33,6 +36,23 @@ V-1は201チャンク、V-2は226チャンク。番号付き正文と `chunks[].
 | ソフトウェア提供者 | 安全な設計・実装・初期値、更新、説明 | 顧客へ設定負担を丸投げせず、検証可能な成果を作る。作業・証拠の担当は個別契約で明示する。 |
 
 氏名、連絡先、申請理由、添付書類を保護対象とする。匿名公開の一般案内は別の明示規則。これらは教材の前提であり、実在の自治体の規則、法令や個別契約への適合、全システム共通の権限モデルではない。
+
+## 入力契約と適用限界
+
+dataclassの型注釈は実行時の検証ではない。本モデルでは、認可関数と検索関数が、操作に必要な値を使う前に確認する。型や識別子を暗黙に変換せず、不正な認可入力には `False`、検索権限の不正には `PermissionError` を返す。検索語・並び順等の不正なデータには `ValueError` を使う。
+
+| 入力 | この教育用モデルが受け入れる値 | 条件と限界 |
+|---|---|---|
+| 職員・申請の部署 | 通常の `str` で、サーバ側の固定一覧 `DEPARTMENTS` にある `housing` または `welfare` への完全一致 | 読取・審査は主体側と対象側の双方を確認してから等値比較する。`None`、空文字、空白のみ、前後空白、未知名、型不一致は拒否。trimや大文字変換で補正しない。実際の所属・担当・情報の最新性の保証ではない。 |
+| 職員の一覧検索 | 上と同じ有効な主体側部署 | 検査に成功した値だけで固定の部署scopeを作る。対象行はその識別子との完全一致で絞るので、欠落・空白・未知部署の行は職員scopeへ入らない。無効な主体側部署はSQL実行前に拒否する。 |
+| 主体・所有者・grant主体の識別子 | 空でない通常の `str`、ASCII英数字・ハイフン・アンダースコアのみ | 同じ空値や数値同士の一致は本人一致としない。ここでの文字形式は架空IDの規則で、実在利用者の認証や本人性の証明ではない。所有者の確認は住民本人の操作に必要。 |
+| 申請ID・grant対象ID | `bool` を除く正の `int` | `True == 1` のような一致を対象確認に使わない。実DBの参照整合性や全件の実在確認は別途必要。 |
+| 認可取得・活動・支援有効・承認のflag | 通常のboolの `True` を明示した場合 | `1`、`"true"`、`"false"` 等を真偽値へ暗黙変換しない。匿名公開の案内は取得flagに依存しない別規則。 |
+| 住民本人・設定管理者・委託先 | それぞれの役割、対象、項目、状態、期限の規則 | 部署依存でない操作に部署を要求しない。住民は本人の申請を読み、draftだけ編集。管理者は設定だけ。委託先は有効な承認の範囲内で診断メタデータだけ取得。 |
+| 委託期限・現在時刻 | timezoneを持ち、UTC offsetが定義された `datetime` | `now < expires_at` のみ許可。1µs前を許し、同一瞬間の別時差表現を含め期限ちょうど・期限後は拒否する。時計同期と実セッションの失効は実装していない。 |
+| 検索と通常コメント | 検索語は通常の `str`、80 Unicode code pointsまで。コメントは文字列、500まで。並び順は固定の二択、literal指定はbool | これはローカルの受入上限。実HTTPの解析資源、巨大DBの負荷、他DBやブラウザの挙動の保証ではない。 |
+
+入力は現在の信頼できるサーバ側ストアから渡す前提を維持する。その前提は値の有効性を省略する理由にはならない。固定部署一覧・ID形式・flag規則は本教材の入力契約であり、OWASPが自治体の部署名やID形式を指定しているわけではない。DBの各行、利用者登録、属性の更新と失効、すべての取得経路を実環境で確認する工程は残る。
 
 ## 実装位置と再現
 

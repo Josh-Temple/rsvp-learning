@@ -262,11 +262,15 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "入力を受け取る前にSQLへ連結し、",
+      "text": "入力を先にSQLの構造へ連結すると、",
       "duration_multiplier": 1
     },
     {
-      "text": "後で準備するだけでは分離できません。",
+      "text": "後でprepareという準備処理をしても、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "命令と値は分離できません。",
       "duration_multiplier": 1.15
     },
     {
@@ -446,7 +450,7 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "通常の文章をHTML本文に表示するなら、",
+      "text": "HTMLソースへ通常の文章を出すなら、",
       "duration_multiplier": 1
     },
     {
@@ -490,11 +494,27 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "固定した安全な属性へ値を入れるなら、",
+      "text": "HTMLソースの属性へ出力する場合は、",
       "duration_multiplier": 1
     },
     {
-      "text": "属性用の符号化と引用符が必要です。",
+      "text": "安全な属性名を固定し、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "属性用の符号化と引用符を使います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "DOMで通常の文字属性へ設定するなら、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "setAttribute等へ元の値を渡します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "事前のHTML符号化は不要です。",
       "duration_multiplier": 1.15
     },
     {
@@ -502,11 +522,11 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "ただしイベント属性等の、",
+      "text": "イベント属性やHTMLを解釈する属性へ、",
       "duration_multiplier": 1
     },
     {
-      "text": "実行可能な文脈には流用しません。",
+      "text": "同じ方法を流用しません。",
       "duration_multiplier": 1.15
     },
     {
@@ -574,19 +594,27 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "HTML属性へ出力する最後の段階では、",
+      "text": "HTMLソースの属性へ出力する場合は、",
       "duration_multiplier": 1
     },
     {
-      "text": "属性の文脈に合わせて符号化します。",
+      "text": "引用符と属性用の符号化を使います。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "URLの部品とHTML属性という、",
+      "text": "DOMで通常のリンクへ設定するなら、",
       "duration_multiplier": 1
     },
     {
-      "text": "二つの解釈段階を混同しません。",
+      "text": "固定したhrefへ許可済みURLを渡します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "どちらもURLの方式等の検査が必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "URLとHTMLの解釈段階を混同しません。",
       "duration_multiplier": 1.15
     },
     {
@@ -642,11 +670,23 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "読み込み等を制限するCSPは有用ですが、",
+      "text": "コンテンツセキュリティポリシー、",
       "duration_multiplier": 1
     },
     {
-      "text": "危険な出力処理を残す理由にはなりません。",
+      "text": "CSPはブラウザの読み込み等を制限します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "追加の防御として使いますが、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "サニタイズの代わりにはなりません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "危険な出力処理を残す理由にもなりません。",
       "duration_multiplier": 1.15
     },
     {
@@ -778,11 +818,11 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "ただし引数に危険なオプションが渡る、",
+      "text": "ただし引数として危険なオプションを",
       "duration_multiplier": 1
     },
     {
-      "text": "問題は残り得ます。",
+      "text": "渡せる問題は残り得ます。",
       "duration_multiplier": 1.15
     },
     {
@@ -815,6 +855,22 @@
     },
     {
       "text": "一覧の取得範囲にも規則を適用します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "職員の部署が欠落した一覧検索は拒否します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "部署が有効かを照合前に確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "空文字同士の一致も許可の根拠にしません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "本人の申請と公開案内は別の規則で扱います。",
       "duration_multiplier": 1.15
     },
     {
@@ -927,6 +983,10 @@
     },
     {
       "text": "自分や現在の担当の申請は許可します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "部署の欠落や空白では拒否を確かめます。",
       "duration_multiplier": 1.15
     },
     {

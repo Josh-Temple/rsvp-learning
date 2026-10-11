@@ -1,6 +1,8 @@
 # Course V先行2章：検証記録と未検証事項
 
-Status: DRAFT / HOLD — 2026-10-11 JST
+Status: DRAFT / HOLD — 2026-10-12 JST修正候補。新しい独立内容受入は未実施。
+
+**以下の2026-10-11記録は修正前候補の制作履歴。** その後、独立監査PR #137は `edc183742163cb3bc355b2ee4b6dd177366acc8f` の両章をNEEDS_REVISIONとした。初回の17 Python、60 Node、427 chunks、独立審査未実施という記述を新候補の結果として流用しない。末尾の修正検証と [REVISION_2026-10-12.md](REVISION_2026-10-12.md) を現行の制作担当記録とする。
 
 ## 対象と基準
 
@@ -62,3 +64,26 @@ HTMLは固定の通常p要素に文字を符号化し、HTMLParserで入力か�
 | 実受講者の理解・採点一致・学習効果 | 未測定。問題と模範解答の存在は測定結果ではない。Quiz UIも未実装。 |
 | 独立Worker C新規内容受入 | 未実施。両章ともREADY_FOR_INDEPENDENT_REVIEW / HOLD。著者確認とは別。 |
 | 統合・公開・production QA | 今回の範囲外。merge、deploy、完成登録、public instant-radioコピーなし。 |
+
+## 2026-10-12 JST：F-01〜F-07修正検証
+
+監査正本は `2ef5ee94619a8faff0f60f9313e10b86af009a00` の [独立監査全文](https://github.com/Josh-Temple/rsvp-learning/blob/2ef5ee94619a8faff0f60f9313e10b86af009a00/docs/SECURITY_COURSE_V_INDEPENDENT_ACCEPTANCE_2026-10-11.md)。着手時mainは `fa63f8f2571203539269a38d501d50d92cafc1d2`。更新前候補・監査のfull SHA、新候補headのCIとreadbackはPR #136のreceiptに区別して保存する。
+
+| 修正後の実行 | 結果・数え方 |
+|---|---|
+| F-01正式回帰2件のRed | 修正前コードへ追加した同じ19件中17成功・2失敗、exit 1。[失敗ログ](revision-evidence/f01-red.txt) |
+| 同じ回帰のGreen | コード修正後19/19成功、exit 0。[成功ログ](revision-evidence/f01-green.txt) |
+| Python全体 | 41/41成功。元17＋正式2＋監査条件再構成12＋追加10。[全文ログ](revision-evidence/python-final.txt) |
+| 監査12条件の再構成 | 12/12成功。条件・fixture差・結果は修正記録に明記。独立Cの新しい受入ではない。 |
+| npm run check全体 | Node67/67成功、content/status/Learnも成功。元38＋候補29。Node内で実行するPython41を加算しない。[全文ログ](revision-evidence/npm-check-final.txt) |
+| sync / 候補 / 対応表 | V-1 209、V-2 241、合計450 chunks、21命題、2章HOLD。全文・順序・句読点・否定の一致、24文字、英語破断検査。 |
+| Learn / 問題 | 候補2HTML成功。制作注記をarticle外へ移し技術境界を保持。10問、二要素2/1/0と20点を維持、安全なDOM別解を明記。 |
+| 根拠の再照合 | 変更に関係するS05/07/08/09/11、S12 V1/V8、Python3.12 dataclassesの指定節。初回15記録の一括再確認ではない。 |
+
+環境はNode24.19.0 / Python3.12.14。既存158教材、24コース、8518公開側chunks、141Learnページ、COMPLETE141/DRAFT0/SEED17は維持する。候補2章は公開側の集計外。
+
+部署照合の欠落拒否に加え、検索の空文字・空白・未登録部署、本人IDの欠落一致、非boolフラグ等の前後比較を保存した。追加10試験は部署行列や複数assertionを含むが、subTestを件数に加算しない。コードと入力契約の範囲は修正記録・READMEを参照。
+
+MD全文とLearn連続講義は制作担当が改訂後に通読した。機械検査は構造・特定断片を確認し、自然言語全体の意味保証ではない。実音声、Android実機、実受講者、採点者間一致、学習効果は未検証/未測定。実サービス全経路、分散失効、実DOM/URL/サニタイザ/CSP、他DB/ORM/手続、template/OS等の既存留保も維持する。
+
+制作担当判定は **READY_FOR_INDEPENDENT_REACCEPTANCE / HOLD**。今回の制作確認範囲では、F-01〜07の未修正項目・新たに検出した未解消P0/P1/P2はない。重大度ゼロを独立保証せず、新しいfull SHAで独立Worker Cが章別に再判定する。main merge・公開・production deployは行わない。

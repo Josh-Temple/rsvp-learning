@@ -269,5 +269,119 @@
       ],
       "limit": "Official HTML excerpts; full PDF not read; historical statistics and legacy browser examples not generalized"
     }
+  ],
+  "revision_checked_at": "2026-10-12 JST / 2026-10-11 UTC",
+  "revision_scope": "F-01 through F-07 changed assertions only; original source records remain historical. Source verification does not imply implementation or independent acceptance.",
+  "revision_verifications": [
+    {
+      "source_id": "S09",
+      "revision": "cb9fe01e5ddf17b42513d2c53c4b86196c665c45",
+      "blob_sha": "0147e8a8b90849403eb23c422a8a86f301ef5a80",
+      "sections": [
+        "Deny by Default",
+        "Validate the Permissions on Every Request",
+        "Exit Safely when Authorization Checks Fail",
+        "Create Unit and Integration Test Cases for Authorization Logic"
+      ],
+      "findings": [
+        "F-01: 必要属性の不明を許可へ倒さず、正常な許可と拒否を対にする。部署一覧・ID形式は教材の契約で、原典の指定ではない。",
+        "F-05: 許可・拒否、状態、経路、変更、障害の試験条件を保持して文を分けた。"
+      ],
+      "verification": "source_verified"
+    },
+    {
+      "source_id": "S08",
+      "revision": "cb9fe01e5ddf17b42513d2c53c4b86196c665c45",
+      "blob_sha": "eb7ed3acc6c8e9b73fe4ea2d1e2c3c5104e2e207",
+      "sections": [
+        "Input Validation Strategies",
+        "Validate Structured Data",
+        "Common Pitfalls"
+      ],
+      "findings": [
+        "F-01追加探索: 固定選択の完全一致、必須・null・型の契約を明示し、内部由来というだけで有効性を省略しない。自由な氏名やコメントの文字規則へ拡張しない。"
+      ],
+      "verification": "source_verified"
+    },
+    {
+      "source_id": "S05",
+      "revision": "cb9fe01e5ddf17b42513d2c53c4b86196c665c45",
+      "blob_sha": "20499e640284b415d2a0c0cbfa29962c6a10beda",
+      "sections": [
+        "Defense Option 1: Prepared Statements (with Parameterized Queries)",
+        "Safe Java Prepared Statement Example",
+        "Defense Option 2: Stored Procedures",
+        "Safest Use Of Dynamic SQL Generation (DISCOURAGED)"
+      ],
+      "findings": [
+        "F-02: SQL構造を固定して値を別引数で渡す順序。先に入力を構造へ連結したSQLを後でprepareしても分離にならない。",
+        "F-05: ORM・手続の名称を安全性の証拠とせず、動的生成を点検する条件を保持。"
+      ],
+      "verification": "source_verified"
+    },
+    {
+      "source_id": "S11",
+      "revision": "cb9fe01e5ddf17b42513d2c53c4b86196c665c45",
+      "blob_sha": "337e2ae1f2b4c6e97529ea6b824630ffb61e014f",
+      "sections": [
+        "Argument Injection",
+        "Defense Option 1: Avoid calling OS commands directly",
+        "Defense option 3: Parameterization in conjunction with Input Validation"
+      ],
+      "findings": [
+        "F-03: 引数を分けても危険なオプションの意味は残り得る。専用ライブラリと引数規則の確認を保持。"
+      ],
+      "verification": "source_verified"
+    },
+    {
+      "source_id": "S07",
+      "revision": "cb9fe01e5ddf17b42513d2c53c4b86196c665c45",
+      "blob_sha": "65c5a873c91f694e23ef3b927aa50759c4ba088a",
+      "sections": [
+        "Output Encoding for “HTML Attribute Contexts”",
+        "Output Encoding for “URL Contexts”",
+        "Safe Sinks",
+        "HTML Sanitization",
+        "Other Controls"
+      ],
+      "findings": [
+        "F-04: HTMLソースでは引用と属性符号化、通常の安全なDOM属性設定では元値。URLの方式等は両経路で検査し、イベント・HTML・コード属性へ拡張しない。",
+        "F-06: Content Security Policyの名称と追加防御の役割を確認。サニタイズを置き換えるとはしない。"
+      ],
+      "verification": "source_verified"
+    },
+    {
+      "source_id": "S12",
+      "revision": "5cf9b032440be53ce345ab3c130fda46ba1ce7a2",
+      "tag": "v5.0.0_release",
+      "blobs": {
+        "V1": "2a85c331483ab8a17f184fe256fe6ef16ca10f43",
+        "V8": "eef42095545b35a10c83b4dc2d20833c89daf618"
+      },
+      "sections": [
+        "1.2.2",
+        "1.2.4",
+        "8.2.2",
+        "8.2.3",
+        "8.3.1"
+      ],
+      "findings": [
+        "F-01: 信頼層で対象・項目に明示した権限を適用。F-02: 値パラメータ化。F-04: 文脈に合うURL部品処理と安全な方式。選択要件だけを照合し、全ASVS/Level適合を宣言しない。"
+      ],
+      "verification": "source_verified"
+    },
+    {
+      "source_id": "PYTHON_DATACLASSES",
+      "url": "https://docs.python.org/3.12/library/dataclasses.html",
+      "retrieved_title": "dataclasses — Data Classes — Python 3.12.15 documentation",
+      "sections": [
+        "Module contents: @dataclasses.dataclass; field type annotations"
+      ],
+      "findings": [
+        "F-01: dataclass注釈は実行時のフィールド型・必須部署の検証を提供しない。ローカル実行はPython 3.12.14で、資料表示版と区別する。"
+      ],
+      "verification": "source_verified",
+      "limit": "Mutable documentation URL, no immutable blob pin; module-contract paragraph only"
+    }
   ]
 }

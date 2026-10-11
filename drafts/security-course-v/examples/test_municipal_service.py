@@ -47,6 +47,18 @@ class AuthorizationTests(unittest.TestCase):
         self.assertTrue(authorize(self.officer, "review", replace(self.application, state="submitted"), "decision"))
         self.assertFalse(authorize(self.officer, "review", self.application, "decision"))
 
+    def test_missing_departments_do_not_authorize_read(self):
+        # F-01: independent C counterexample at edc1837, True before repair.
+        officer = Actor("officer-c", "officer")
+        application = Application(5, "resident-c", None)
+        self.assertFalse(authorize(officer, "read", application, "comment"))
+
+    def test_empty_departments_do_not_authorize_review(self):
+        # F-01: empty strings are str, but they identify no valid department.
+        officer = Actor("officer-c", "officer", "")
+        application = Application(5, "resident-c", "", "submitted")
+        self.assertFalse(authorize(officer, "review", application, "decision"))
+
     def test_config_admin_is_not_application_reader(self):
         admin = Actor("admin-a", "admin")
         self.assertTrue(authorize(admin, "configure"))

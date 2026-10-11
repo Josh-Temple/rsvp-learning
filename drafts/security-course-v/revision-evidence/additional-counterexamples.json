@@ -1,0 +1,97 @@
+{
+  "baseline_full_sha": "edc183742163cb3bc355b2ee4b6dd177366acc8f",
+  "kind": "author_local_counterexamples_not_independent_acceptance",
+  "conditions": [
+    {
+      "condition": "none_read",
+      "before": true,
+      "after": false
+    },
+    {
+      "condition": "none_review",
+      "before": true,
+      "after": false
+    },
+    {
+      "condition": "none_search",
+      "before": "PermissionError",
+      "after": "PermissionError"
+    },
+    {
+      "condition": "empty_read",
+      "before": true,
+      "after": false
+    },
+    {
+      "condition": "empty_review",
+      "before": true,
+      "after": false
+    },
+    {
+      "condition": "empty_search",
+      "before": [
+        5
+      ],
+      "after": "PermissionError"
+    },
+    {
+      "condition": "spaces_read",
+      "before": true,
+      "after": false
+    },
+    {
+      "condition": "spaces_review",
+      "before": true,
+      "after": false
+    },
+    {
+      "condition": "spaces_search",
+      "before": [
+        5
+      ],
+      "after": "PermissionError"
+    },
+    {
+      "condition": "unknown_read",
+      "before": true,
+      "after": false
+    },
+    {
+      "condition": "unknown_review",
+      "before": true,
+      "after": false
+    },
+    {
+      "condition": "unknown_search",
+      "before": [
+        5
+      ],
+      "after": "PermissionError"
+    },
+    {
+      "condition": "same_valid_read",
+      "before": true,
+      "after": true
+    },
+    {
+      "condition": "different_valid_read",
+      "before": false,
+      "after": false
+    },
+    {
+      "condition": "missing_equal_owner_ids",
+      "before": true,
+      "after": false
+    },
+    {
+      "condition": "string_active_flag",
+      "before": true,
+      "after": false
+    },
+    {
+      "condition": "numeric_availability_flag",
+      "before": true,
+      "after": false
+    }
+  ]
+}

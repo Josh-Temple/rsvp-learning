@@ -188,6 +188,75 @@ test("ten judgement questions include two elements, 2/1/0 rubrics and condition 
 test("safe local executable examples check authorization, SQLite values and ordinary HTML text", () => {
   const result = run("python3", ["-m", "unittest", "discover", "-s", "drafts/security-course-v/examples", "-v"]);
   assert.equal(result.status, 0, result.stderr);
-  assert.match(result.stderr, /Ran 17 tests/);
+  assert.match(result.stderr, /Ran 41 tests/);
+  for (const number of Array.from({ length: 12 }, (_, i) => String(i + 1).padStart(2, "0"))) {
+    assert.match(result.stderr, new RegExp(`test_audit_${number}_[^\\n]+ \\.\\.\\. ok`));
+  }
   assert.match(result.stderr, /\nOK\n/);
+});
+
+test("F-01: missing-department denial and legitimate ownership stay explicit in three formats", () => {
+  const input = fresh(0);
+  replaceCoupled(input, "同じ担当とは判断しません。", "同じ担当と判断します。");
+  validateCoupledText(input.markdown, input.lesson);
+  assert.throws(() => validateMeaning(input.markdown, input.html, input.claims), /V1-0[37]/);
+  const changed = inputs[0].html.replace("欠落した部署同士を同じ担当とは判断しません", "欠落した部署同士を同じ担当と判断します");
+  assert.throws(() => validateMeaning(inputs[0].markdown, changed, inputs[0].claims), /V1-0[37]/);
+});
+
+test("F-02: SQL concatenation before prepare is rejected by the regression anchors", () => {
+  const input = fresh(1);
+  replaceCoupled(input, "入力を先にSQLの構造へ連結すると、", "入力を受け取る前にSQLへ連結し、");
+  validateCoupledText(input.markdown, input.lesson);
+  assert.throws(() => validateMeaning(input.markdown, input.html, input.claims), /V2-04/);
+});
+
+test("F-03: the OS argument condition retains its natural boundary and limitation", () => {
+  const input = fresh(1);
+  const texts = input.lesson.chunks.map((chunk) => chunk.text);
+  const index = texts.indexOf("ただし引数として危険なオプションを");
+  assert.ok(index >= 0);
+  assert.equal(texts[index + 1], "渡せる問題は残り得ます。");
+  replaceCoupled(input, "渡せる問題は残り得ます。", "渡せても問題は残りません。");
+  validateCoupledText(input.markdown, input.lesson);
+  assert.throws(() => validateMeaning(input.markdown, input.html, input.claims), /V2-11/);
+});
+
+test("F-04: attribute source encoding and direct DOM values remain separate", () => {
+  const input = fresh(1);
+  replaceCoupled(input, "事前のHTML符号化は不要です。", "事前のHTML符号化が必要です。");
+  validateCoupledText(input.markdown, input.lesson);
+  assert.throws(() => validateMeaning(input.markdown, input.html, input.claims), /V2-08/);
+  const changed = inputs[1].html.replace("事前のHTML符号化は不要です", "事前のHTML符号化が必要です");
+  assert.throws(() => validateMeaning(inputs[1].markdown, changed, inputs[1].claims), /V2-08/);
+});
+
+test("F-04: V2-Q3 explicitly accepts the safe DOM alternative at full credit", async () => {
+  const questions = await fs.readFile(path.join(repositoryRoot, "drafts/security-course-v/QUESTIONS.md"), "utf8");
+  const q3 = questions.split("### V2-Q3：")[1].split("### V2-Q4：")[0];
+  assert.match(q3, /許可済みURLを固定したhrefへ安全なDOM APIで設定し、要素Bも満たす別解は2点/);
+  assert.match(q3, /事前にHTML符号化していないことを理由に減点しない/);
+  assert.match(q3, /サニタイズ・後続処理/);
+});
+
+test("F-06: CSP introduction retains the sanitizer limitation", () => {
+  const input = fresh(1);
+  replaceCoupled(input, "サニタイズの代わりにはなりません。", "サニタイズの代わりになります。");
+  validateCoupledText(input.markdown, input.lesson);
+  assert.throws(() => validateMeaning(input.markdown, input.html, input.claims), /V2-09/);
+  const changed = inputs[1].html.replace("サニタイズの代わりにはなりません", "サニタイズの代わりになります");
+  assert.throws(() => validateMeaning(inputs[1].markdown, changed, inputs[1].claims), /V2-09/);
+});
+
+test("F-07: production-review metadata stays outside speech, technical limitations remain inside", () => {
+  for (const input of inputs) {
+    const body = input.html.match(/<article id="learn-article">([\s\S]*?)<\/article>/)[1];
+    assert.doesNotMatch(body, /自己査読|独立受入|独立内容審査/);
+    assert.match(body, /実サービスの全取得経路|全取得経路の統合試験/);
+    assert.match(body, /検証していません|未実施/);
+    const outside = input.html.slice(input.html.indexOf("</article>") + "</article>".length);
+    assert.match(outside, /data-candidate-process="review"/);
+    assert.match(outside, /独立内容審査/);
+    assert.match(outside, /実受講者の理解/);
+  }
 });
