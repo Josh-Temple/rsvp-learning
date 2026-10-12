@@ -95,26 +95,26 @@
 
 | 対象 | APIで確認した事実 | 判定の限界 |
 | --- | --- | --- |
-| 教材 #136 | open/draft、現head \`2ceb3bae83dca17f00dcfb84cddfd726c20c92a0\`。head固有Test #38205273101 は completed/success | 審査対象SHAの変更なし。CIのみで利用QAに合格しない |
-| 独立内容受入 | C報告 #146 が同一教材SHAでV-1/V-2をともに \`ACCEPTED_FOR_MERGE\`、未解消P0/P1=0と判定。報告はmainへmerge済み。E統合§20もmainへ収録済み | 教材内容の受入であって、productionリリースや実音声の合格ではない |
-| 新規候補Preview | Vercel project \`rsvp-learning\` にGitHubブランチ \`content/security-course-v-pilot-20261011-sol\` と**full SHAを指定して手動作成**。deployment ID \`dpl_4myzXuZXtjdyRfhRbxJivUCtmQBy\`。API再取得で \`READY\`、\`meta.githubCommitSha\`が教材SHAと一致、\`target=null\`（production指定なし）。URL: \`https://rsvp-learning-16af5j843-josh-temples-projects.vercel.app\` | READYはビルド配備の状態。HTTP応答、認証経路、ページ描画、音声のPASSではない |
-| Previewエイリアス | deployment aliases取得で候補ブランチ用のエイリアス1件。production alias \`rsvp-learning-kappa.vercel.app\` は別deployment \`dpl_F3SC9P4rvt8YUk3MvNSrbJF6MDMU\` を指す | production配信先を変更していない |
-| Vercel SSO | project setting \`ssoProtection.enabled=true\` / \`deploymentType=all_except_custom_domains\`。登録済みproject domainは \`rsvp-learning-kappa.vercel.app\` 1件 | 設定を確認しただけで、Previewや匿名アクセスの実効的な拒否（HTTP 401/403など）は未測定。今回のPreviewにはcustom domainを追加していない |
-| production aliasの保護例外 | 今回の再取得時に \`scope=shareable-link\` の例外**1件**、設定上の期限 **2026-10-13 22:06:06 JST**。旧§7の18:02 JST時点「0件」とは**別の時点の観測** | 過去の例外の再使用か新設か、実際の匿名到達可否、失効処理は未確認。キー・秘密共有リンクは保存しない |
-| リポジトリ設定 | 対象SHAの \`vercel.json\` に \`git.deploymentEnabled=false\` | 自動Git deployに依存せず、今回の候補deploymentはAPI手動作成 |
+| 教材 #136 | open/draft、現head `2ceb3bae83dca17f00dcfb84cddfd726c20c92a0`。head固有Test #38205273101 は completed/success | 審査対象SHAの変更なし。CIのみで利用QAに合格しない |
+| 独立内容受入 | C報告 #146 が同一教材SHAでV-1/V-2をともに `ACCEPTED_FOR_MERGE`、未解消P0/P1=0と判定。報告はmainへmerge済み。E統合§20もmainへ収録済み | 教材内容の受入であって、productionリリースや実音声の合格ではない |
+| 新規候補Preview | Vercel project `rsvp-learning` にGitHubブランチ `content/security-course-v-pilot-20261011-sol` と**full SHAを指定して手動作成**。deployment ID `dpl_4myzXuZXtjdyRfhRbxJivUCtmQBy`。API再取得で `READY`、`meta.githubCommitSha`が教材SHAと一致、`target=null`（production指定なし）。URL: `https://rsvp-learning-16af5j843-josh-temples-projects.vercel.app` | READYはビルド配備の状態。HTTP応答、認証経路、ページ描画、音声のPASSではない |
+| Previewエイリアス | deployment aliases取得で候補ブランチ用のエイリアス1件。production alias `rsvp-learning-kappa.vercel.app` は別deployment `dpl_F3SC9P4rvt8YUk3MvNSrbJF6MDMU` を指す | production配信先を変更していない |
+| Vercel SSO | project setting `ssoProtection.enabled=true` / `deploymentType=all_except_custom_domains`。登録済みproject domainは `rsvp-learning-kappa.vercel.app` 1件 | 設定を確認しただけで、Previewや匿名アクセスの実効的な拒否（HTTP 401/403など）は未測定。今回のPreviewにはcustom domainを追加していない |
+| production aliasの保護例外 | 今回の再取得時に `scope=shareable-link` の例外**1件**、設定上の期限 **2026-10-13 22:06:06 JST**。旧§7の18:02 JST時点「0件」とは**別の時点の観測** | 過去の例外の再使用か新設か、実際の匿名到達可否、失効処理は未確認。キー・秘密共有リンクは保存しない |
+| リポジトリ設定 | 対象SHAの `vercel.json` に `git.deploymentEnabled=false` | 自動Git deployに依存せず、今回の候補deploymentはAPI手動作成 |
 
 ### 8.2 今回実際に検査した／できなかったこと
 
-- **PASS（範囲限定）**：対象教材SHAとdeployment metadataの一致、Vercel \`READY\`、Previewエイリアスの存在、productionエイリアスが候補とは別deploymentを参照、SSO設定の読取、対象SHAのV-1/V-2 Learn HTMLと既存\`learn/learn.js\`のfixed-ref取得。2 Learn HTMLの既存blob SHA（V-1 \`09cc63f5105a71576d64885e9bfeae1d3ed92908\`、V-2 \`e109ff1d9d53bf8eb2f242f332b1401133913588\`）は前回§2の静的QA対象と一致。
+- **PASS（範囲限定）**：対象教材SHAとdeployment metadataの一致、Vercel `READY`、Previewエイリアスの存在、productionエイリアスが候補とは別deploymentを参照、SSO設定の読取、対象SHAのV-1/V-2 Learn HTMLと既存`learn/learn.js`のfixed-ref取得。2 Learn HTMLの既存blob SHA（V-1 `09cc63f5105a71576d64885e9bfeae1d3ed92908`、V-2 `e109ff1d9d53bf8eb2f242f332b1401133913588`）は前回§2の静的QA対象と一致。
 - **UNTESTED**：Preview上の2章のHTTP 200/401/403、ログイン済み利用者の実描画、desktop/390pxレイアウト、再生/一時停止/停止、音声切替、速度1×/2×/4×、Web Speech実発話、Android Chrome標準「このページを読み上げ」、背景化・画面OFF、通常/匿名アクセス、例外リンク・失効後の到達性。今回の実行環境からホストへ接続できなかったため、実ブラウザPASSは出さない。
-- **教材表示文言の新しい静的所見（低優先・非ブロッカー）**：候補Learn 2 HTMLには \`DRAFT / HOLD。独立した新規内容審査前の未公開候補です。\` と表示される。B候補作成当時の注記であり、C #146による内容受入後の現状説明としては古い。正式登録用の新PRで「内容審査済み・公開判定保留」に修正し、新SHAとして必要な受入・回帰を行う。内容のP0/P1とは認定しない。
+- **教材表示文言の新しい静的所見（低優先・非ブロッカー）**：候補Learn 2 HTMLには `DRAFT / HOLD。独立した新規内容審査前の未公開候補です。` と表示される。B候補作成当時の注記であり、C #146による内容受入後の現状説明としては古い。正式登録用の新PRで「内容審査済み・公開判定保留」に修正し、新SHAとして必要な受入・回帰を行う。内容のP0/P1とは認定しない。
 
 ### 8.3 正当なアクセス権のある担当による残りのQA（**未実施の手順**）
 
-1. SSOで許可されたブラウザから、\`https://rsvp-learning-16af5j843-josh-temples-projects.vercel.app/drafts/security-course-v/learn/security-secure-by-design-default.html\` と \`.../security-input-output-injection.html\` を開く。候補SHA・URL・HTTP結果・本文とリンク、390px幅、フォーカス・スクロールを記録。エラーがあれば状態・再現手順を保存する。
-2. 各章のプレイヤーで再生→一時停止→再開→停止、速度1×/2×/4×、声選択、ページ離脱後の停止を実操作し、**画面状態と実際に聞こえた発話を別々に記録**。発話を聞けなければ\`UNTESTED\`か\`FAIL\`の該当するものを選ぶ。
+1. SSOで許可されたブラウザから、`https://rsvp-learning-16af5j843-josh-temples-projects.vercel.app/drafts/security-course-v/learn/security-secure-by-design-default.html` と `.../security-input-output-injection.html` を開く。候補SHA・URL・HTTP結果・本文とリンク、390px幅、フォーカス・スクロールを記録。エラーがあれば状態・再現手順を保存する。
+2. 各章のプレイヤーで再生→一時停止→再開→停止、速度1×/2×/4×、声選択、ページ離脱後の停止を実操作し、**画面状態と実際に聞こえた発話を別々に記録**。発話を聞けなければ`UNTESTED`か`FAIL`の該当するものを選ぶ。
 3. Android Chrome実機でページ表示と標準の「このページを読み上げ」（端末に機能がある場合）を確認し、画面OFF/背景/復帰、専門語、制作HOLD注記・出典が音声に混入するか、章末停止を記録する。テストできない環境をPASSにしない。
 4. **権限のない通常ブラウザ/匿名HTTP**で両ページの保護を確認し、HTTP statusと本文が保護画面か教材本文かを区別。共有例外や認証情報を報告に貼らず、保護設定変更・例外リンク作成は行わない。custom domainや例外の適用は別に検証する。
 5. 候補修正時はhead driftを検出し、#146の独立C署名やこのPreviewの結果を新SHAへ自動流用しない。
 
-**結論**：C内容 \`CONTENT_ACCEPTED_EXACT_SHA\`、D候補QA \`CANDIDATE_QA_WITH_GAPS\`、release **\`RELEASE_HOLD\`** を維持。今回のPreview \`READY\` のみを理由に#136 main merge、Catalog登録、COMPLETE、production deploy/promotion、public Pages/instant-radio移管を実行しない。
+**結論**：C内容 `CONTENT_ACCEPTED_EXACT_SHA`、D候補QA `CANDIDATE_QA_WITH_GAPS`、release **`RELEASE_HOLD`** を維持。今回のPreview `READY` のみを理由に#136 main merge、Catalog登録、COMPLETE、production deploy/promotion、public Pages/instant-radio移管を実行しない。
