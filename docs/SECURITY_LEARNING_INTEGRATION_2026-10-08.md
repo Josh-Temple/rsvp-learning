@@ -575,3 +575,67 @@ GitHub compare `fa63...` → `57b0...` は `diverged`、ahead=6/behind=1、共�
 ### 18.5 E保存境界
 
 このE追補は監査・統合の**文書だけ**を新しいDraft PRに提案し、mainには自動反映しない。#136教材、C #137/#139、D #140を改変しない。E文書のGitHub readback、head、Actions結論は保存後に独立確認し、本節のsource snapshot値に自動混入させない。
+
+
+---
+
+## 19. 2026-10-12 Worker E — Course V F-08最終整合後のexact-SHAゲート統合（B確定・C/D再審査待ち）
+
+**記録時点:** 2026-10-12 JST。**判定：`CONTENT_HOLD / RELEASE_HOLD / PARTIAL_WITH_GAPS`。** この節は旧§18の後続snapshotであり、旧判定・旧SHA・旧証拠を書き換えない。対象はprivate `Josh-Temple/rsvp-learning` のCourse V-1 `security-secure-by-design-default`、V-2 `security-input-output-injection`（Catalog未登録、DRAFT/HOLD）。指示書：Library `/RSVP Learning/Work Instructions/2026-10-12_security_course_v_f08_final_alignment_exact_sha_acceptance_private_qa_and_release_gate_wave_instructions.md`。これはEの統合・公開前判断であり、Worker Cの独立内容審査やWorker Dの実利用QAを代行しない。
+
+### 19.1 GitHubの実体・固定SHAと時系列
+
+| 区分 | GitHub/API確認済みの証拠 | ゲート上の位置 |
+| --- | --- | --- |
+| 最新`main` | `fa63f8f2571203539269a38d501d50d92cafc1d2`。GitHub `main`のcommit refから再取得。 | 現production sourceと一致。教材候補は未merge |
+| 教材PR [#136](https://github.com/Josh-Temple/rsvp-learning/pull/136) | open/draft/unmerged。**B最終候補head `2ceb3bae83dca17f00dcfb84cddfd726c20c92a0`**。表示上の旧PR baseは`74ebcac3587650ee83b95438629d1893ba8abfb4`であり、現mainと別。 | Aの`57b0...`から1 commit進行。旧C/D report headとの一致を推定しない |
+| A技術引渡し | PR #136のA保存済みコメント、[F08_REPAIR](https://github.com/Josh-Temple/rsvp-learning/blob/57b0cc89931483115eec654be37e2bafbd2f18e3/drafts/security-course-v/F08_REPAIR_2026-10-12.md)。A head `57b0cc89931483115eec654be37e2bafbd2f18e3`、[Test #38196790680](https://github.com/Josh-Temple/rsvp-learning/actions/runs/38196790680) success、Node67/67、Node経由のPython50メソッド。 | `F08_CODE_READY_FOR_B`。制作担当によるコード・正式回帰であり独立C判定ではない |
+| Bの媒体最終整合 | PR #136のWorker Bコメントと[VERIFICATION.md（最終候補ref）](https://github.com/Josh-Temple/rsvp-learning/blob/2ceb3bae83dca17f00dcfb84cddfd726c20c92a0/drafts/security-course-v/VERIFICATION.md)。B headの[Test #38205273101](https://github.com/Josh-Temple/rsvp-learning/actions/runs/38205273101)はcompleted/success、[job #114667262265](https://github.com/Josh-Temple/rsvp-learning/actions/runs/38205273101/job/114667262265)全ステップsuccess。 | **`READY_FOR_INDEPENDENT_REACCEPTANCE`相当（制作者・CIゲート）**。Cの合格ではない |
+| Cの直近[予備報告 #142](https://github.com/Josh-Temple/rsvp-learning/pull/142) | 報告PR head `baf65e12a640749ae0c7cd5aa73a10abd9c6ffc7`。**対象はB以前のA head `57b0...`**。C自身の結論は `C_HOLD / BLOCKED`、V-1/V-2とも最終判定`BLOCKED`。 | B後の`2ceb...`に対する独立試験・`ACCEPTED_FOR_MERGE`ではない |
+| Dの直近[予備QA #143](https://github.com/Josh-Temple/rsvp-learning/pull/143) | 報告PR head `5635ef59139c81f06ec81f80615c846b9e783f26`、[報告文書](https://github.com/Josh-Temple/rsvp-learning/blob/5635ef59139c81f06ec81f80615c846b9e783f26/docs/SECURITY_COURSE_V_D_PRIVATE_QA_2026-10-12.md)。**対象は旧A head `57b0...`**。 `BLOCKED` / 静的preflightのみ。 | B最終headの正式QAではない |
+| 監査履歴 | 初回 C #137 `2ef5ee94619a8faff0f60f9313e10b86af009a00`、旧F-08発見 C #139 `a78ebccc42d01ca7c78a96a441d7a63305abcf79`、旧D #140 `cc94f8d876585d5254246f8c38ba128dd05c1ecb`、前E #141 `bb40a81933903f35cbcc97c5d4b70f50e809e46e`。 | すべて時点・署名対象を保存し、新候補のPASSと混同しない |
+
+B最終コミットはA headからの**1コミット・変更12ファイル**（削除なし、既存ファイルの更新）。V-1のMD/JSON/Learn、V1-Q4、根拠、claims/map、README、検証記録、Nodeの教材回帰などに限定。GitHub compare `57b0cc89931483115eec654be37e2bafbd2f18e3...2ceb3bae83dca17f00dcfb84cddfd726c20c92a0` はahead=1 / behind=0。AのPython認可モデルはBが触れていないとBのfixed-ref readbackコメントが報告している。E自身が全ファイルをローカルで再実行・全数機械比較したものではない。
+
+**B head固有のCI：Node 68/68 pass、0 fail。** うち1件のNode testがPython unittest 50メソッドを実行し成功を要求する。68と50は独立の同種テストとして加算しない。既存Content/Status-Catalog/Learn検査もCI success。旧Aの67/67、C旧反証1,419比較、Bの68/68はそれぞれ別SHA・別単位。Cが`2ceb...`で独立反証したとの証拠は現時点でない。
+
+### 19.2 F-08・内容・評価の分離
+
+- **F-08**：Aの実コードはaware datetimeを条件に`astimezone(timezone.utc)`を使う実時間順序比較へ修正。NY 2026-11-01の`fold=1`現在01:10（06:10Z）/ `fold=0`期限01:50（05:50Z）は期限後なので拒否、逆の現在01:50（05:50Z）/期限01:10（06:10Z）はその他の認可条件成立時に許可。期限一致は拒否。同じ瞬間はoffset表示によらず同一判断。AのRed/GreenとPython50正式回帰に含まれる。正規許可の維持、Berlin、±1μs、naive/不正入力とF-01旧部署欠落等は制作側の試験証拠。旧C #139の独立1,419件（1,417成功・2失敗）は修正前`0cff...`専用で、B headに移植しない。
+- **B最終教材**：V-1 **215 chunks**、V-2 **241 chunks**、合計**456**（旧§18の450からV-1に6増）、重要命題**21件**（V-1 9/V-2 12）、理解確認**10問**（各章5、各2/1/0、総20点）。BはMD番号付き本文⇔RSVP JSONの全文/順序/句読点/否定、24文字上限、英文専門語の破断、2 Learn、形式マップ・出典の整合、GitHub固定ref **16ファイルreadback**を報告。これは制作者の証拠であり、Eの独立全文照合ではない。
+- **V1-Q4**：正常期限内の許可、期限一致/期限後の拒否、時差表現が異なる同一瞬間、NYの2逆転反例を評価。期限後の拒否のみの答案を2点にしないBの修正を`QUESTIONS.md`で確認。V-2はInjection対策と認可を別に扱う既存本文を保全したとのB報告。F-01〜F-07修正済みの最終内容判定は次のCが新headで行う。
+- **一次資料**：BはPython 3.12 `datetime` / `zoneinfo` の仕様節・時刻扱いをSOURCE_EVIDENCE/registryへ追記。Python規範の直接の裏付けと、教育用認可モデルや実サービス全体の安全証明を混同しない。既存15原典、CISA原文、SSDF・ASVS全体、分散失効等の網羅的再検証は行われていない。
+- **内容ゲート**：B final `2ceb3bae83dca17f00dcfb84cddfd726c20c92a0` と完全に同じ現候補headについて、**別セッションのCがV-1/V-2両方`ACCEPTED_FOR_MERGE`、未解消P0/P1=0を署名した新報告がない**。したがって`CONTENT_HOLD`。C #142の事前`BLOCKED`は旧head・B未完時の履歴であり、B完了後の新審査判定へ自動転用しない。
+
+### 19.3 D非公開QA・Vercel・公開境界
+
+D #143の対象は旧`57b0...`。二つのLearn HTMLに対し`article`・HOLD注記・sources、相対`base`、共有`learn.js`/CSS、操作ID、速度UIの**静的preflight**を報告したが、BはV-1 Learn HTMLを更新しているため、旧blobの静的PASSを新headのものとして再利用しない。Dの正式`CANDIDATE_QA_PASS_SCOPED`/同head QAは**未成立**。
+
+Vercel read-only再取得：project `rsvp-learning`の`ssoProtection.enabled=true`、`deploymentType=all_except_custom_domains`。alias `rsvp-learning-kappa.vercel.app` → **`dpl_Ernw8TuvgPPXg1TBRLrJCgorNRBR`**、deployment `READY` / target`production` / git source **`fa63f8f2571203539269a38d501d50d92cafc1d2`**。これはCourse V候補`2ceb...`の配信ではない。B headに絞ったdeployment照会で候補deployは発見されなかった（検索範囲外の存在までは否定しない）。
+
+aliasに`scope=shareable-link`の保護例外設定がある。D #143は設定上の期限を2026-10-12 19:31:32 JSTと記録。ただし通常匿名アクセス・例外リンク経由の到達可能性・適用範囲・失効後の実HTTPは**NOT_VERIFIED**。例外があるだけでは漏えいと断定しない。秘密値、共有URL、認証Cookieは記録しない。
+
+B headの保護Previewと実ブラウザ、desktop/390px描画・操作、Web Speech実発声、Android Chrome標準読み上げ、1x/2x/4xの聴取、章間移動、再生/停止/長文、学習者理解・採点一致は**UNTESTED / NOT_MEASURED**。旧静的検査やproduction READYを実操作の合格へ転用しない。匿名公開または重大操作不具合が疑われても実測せずに安全と宣言しない。
+
+### 19.4 最小の登録・リリース設計（本節では**実行しない**）
+
+GitHub現mainのschemaは`courses/index.json`が`courses[]`の`id/title/chapters[]`を持ち、`lessons/index.json`が`lessons[]`の`id/title/topic/path/status/learn_path`等を持つ。**次の別承認Waveの設計案に限り**、①B/Cが確定した2章の`drafts/security-course-v/lessons/*.md`・`*.json`を`lessons/security-deep/`等の正規配置へ、2つのLearnを`learn/`へ写す最小差分、②`lessons/index.json`への一意ID/status/learn_path/sourceと`courses/index.json`内のCourse Vの順序・ナビゲーション整合、③Catalog/既存導線とCourse playerの回帰を検討する。曖昧なcourse id・course order・source pathは次Waveで現行schemaと方針を確認して確定し、今Waveでは新規に登録しない。
+
+既存**158教材、24コース、141 Learn**、既存30章、旧入門8章、player/history/localStorage、MD/JSON/HTML、既存教材への不意の影響を回帰対象とする。登録後に候補headが変われば旧C署名は新commitの受入ではなく、**新SHAの独立C受入が必要**。Releaseは①C exact SHA独立受入/P0-P1ゼロ、②新登録候補PRのCI、③保護PreviewでのD実ブラウザQAと匿名/共有例外のアクセス検証、④ユーザーによる**別個の明示承認**、⑤対象SHAを固定したmain merge→main CI→protected private production deploy→deployment/source/alias/SSO readback→実操作QAの順。公開Pages、public `instant-radio`へのコピーは含まない。
+
+**停止・復旧の設計条件：** F-08期限後の誤許可/期限前の誤拒否、正常許可喪失、P0/P1、本文・rubric逆意味、公式根拠の重要相違、CI失敗、C署名後のhead drift、匿名到達性/SSO例外が未検証または想定外、重要なブラウザ/音声不具合で停止。Aはモデル、Bは教材/採点、Cは再審査、Dは実操作/公開境界を担当。新productionの重大不具合が判明した場合は配信元SHA、現alias、承認済み直前のdeployment ID/SSO状態を再取得し、復旧の権限とユーザー承認を確認してからrollback/promotionを行う。今Waveでは切戻し操作を行わない。
+
+### 19.5 Eの判断・人的承認事項・変更境界
+
+| ゲート | 結論 | 解除条件 |
+| --- | --- | --- |
+| A技術 | **成立（制作者＋Green CI）** | Aの記録`57b0...`とB headで認可モデル不変を保持 |
+| B教材 | **提出成立（B`2ceb...`、CI success、readback報告）** | A/B編集を止め、同headをC/Dへ渡す |
+| C内容（V-1/V-2個別） | **`CONTENT_HOLD`。新headは両章未審査/未受入** | Cが`2ceb...`を独立反証し、新専用報告PRで両章`ACCEPTED_FOR_MERGE`・P0/P1=0を証拠付きで署名。別headなら再C |
+| D候補QA | **`BLOCKED`（直近は旧A head preflight）** | DがBと同一full SHAで再実施。保護Preview/実ブラウザ/Android/実音声/公開境界は実測範囲を区別 |
+| release | **`RELEASE_HOLD`** | C exact-head合格・D重大問題なし・匿名/SSO例外の保護確認後に、ユーザーが別リリースWaveを承認 |
+| Wave | **`PARTIAL_WITH_GAPS`** | C/D最終報告が未成立であるため`COMPLETED`とは記録しない |
+
+**次の人的判断:** まずCの新SHA独立再受入とDの同SHA非公開QAを再実行・結果保存する。安全な認証済みPreview/隔離ブラウザ、Android Chrome/実音声の試験環境を用意するかを決める。現段階でCatalog/COMPLETE/main merge/private productionの承認を求めたり、実施したりしない。
+
+**今回の書込み境界:** Eは本§19をappend-onlyで専用Draft PRに提案するのみ。旧E #141の§18、C #137/#139/#142、D #140/#143、教材#136、main、Vercel、SSO、aliases、public `instant-radio`は変更しない。専用E PRは#141の報告専用branchをbaseとするstacked Draftであり、**#141もmainにも自動mergeしない**。report PR自身のheadと教材候補headは別物として記録。将来C/D証拠が増えれば時点を分けて新たに追記する。
