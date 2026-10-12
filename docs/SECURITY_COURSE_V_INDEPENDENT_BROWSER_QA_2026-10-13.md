@@ -77,3 +77,36 @@ production aliasのshareable-link例外は1件、expires=1791896766（2026-10-13
 - 共有リンク型例外/失効とcustom domainの適用範囲を確認し、未確認の公開境界を承認済みにしないこと。
 - 最新mainに対する統合影響と別個の教材merge/release承認を確認すること。vercel.jsonのgit.deploymentEnabled=falseのみで全production影響を保証しない。
 今回#136は変更もmergeもしない。報告のみCIと全文readback確認後にmainへ統合する。**RELEASE_HOLD維持**。
+
+
+---
+
+## 追補: Android利用者の実機確認と音声失敗の切り分け（2026-10-13 JST）
+
+**証拠の由来・限界**: 2026-10-13、教材Previewを利用した本人から会話で申告されたチェック結果を記録する。これは**利用者自己申告の実機確認**であり、Workの独立QA・自動計測・画面録画・端末ログを代替しない。既存のCloud Browser QAと匿名HTTP実測の原本は変更しない。
+
+- 対象教材: PR #136、固定full SHA `2ceb3bae83dca17f00dcfb84cddfd726c20c92a0`。報告時も#136はopen/draft、head一致。プレビューdeployment `dpl_4myzXuZXtjdyRfhRbxJivUCtmQBy`はVercel APIでREADY、metadata SHA一致。利用者の端末で読み込んだHTMLバイトhashは取得していないため、**端末での配信バイト同一性は未証明**。
+- 利用者が明示的にチェックしたこと: (1) AndroidでV-1を開き本文が正常表示、(2) V-1の▶から日本語音声が実際に聞こえた、(3) 読み上げの一時停止・再開・停止ができた、(4) 2倍・4倍へ変更して読み上げられた、(5) V-2の▶から音声が実際に聞こえた。利用者の回答は**「音声が聞こえた」**、補足なし。
+- 申告により確認できた範囲: **V-1とV-2の実機発声が成功**。再生の一時停止・再開・停止および2倍・4倍の実機成功も申告あり。ただし、操作を両章それぞれで全項目繰り返したかどうかは報告に記載されていないため、章別全組合せPASSにはしない。
+- 端末モデル・Android/Chrome版、実viewport幅・390px再現、音声種別・声切替、章末までの完走、画面消灯・背景化・復帰、リンク全件、離脱後の音声停止、CSSフォーカス・アクセシビリティ、通常Chrome標準「このページを読み上げ」は申告対象外／UNTESTED。
+
+### QA-01の原因切り分け（旧判定を置換しない）
+
+Cloud Browser上のV-1/V-2は速度1/2/4倍すべてで`読み上げを開始できませんでした`と観測された。一方、利用者のAndroid端末ではV-1/V-2が実発声に成功した。よって**「本教材の音声がどの環境でも開始不能」という仮説は反証された**。Cloud Browser固有の音声合成エンジン、音声デバイス、voice availability、実行権限などの制約が原因である可能性が高まるが、`SpeechSynthesisUtterance.onerror`の具体的error codeや環境トレースが未取得のため原因は**UNKNOWN**。Cloud Browserでの実測FAILは消去せず、**環境依存・原因未特定の再現**として管理する。実機の正常再生を理由に製品コードを推測で変更しない。
+
+### リリース再判定（追加証拠が解消した範囲のみ）
+
+| ゲート | 現在の証拠 | 再判定 |
+| --- | --- | --- |
+| 教材内容 | 独立C #146両章受入、head CI成功 | `CONTENT_ACCEPTED_EXACT_SHA`維持 |
+| 利用者Android発声 | V-1/V-2で実際に音声が聞こえたとの自己申告 | `USER_DEVICE_AUDIO_PASS_REPORTED`（独立QAとは別） |
+| 再生・停止・速度 | pause/resume/stopおよび2x/4xを利用者が確認 | `USER_DEVICE_CONTROLS_PASS_REPORTED`（章別全組合せ未確認） |
+| Cloud Browser音声 | #152でV-1/V-2、1x/2x/4xの6回失敗、イベント詳細なし | `ENVIRONMENT_SPECIFIC_FAILURE_POSSIBLE / ROOT_CAUSE_UNKNOWN` |
+| 通常の匿名アクセス | #152で両ページの初期302→Vercel login、教材articleなし | `ANONYMOUS_NORMAL_PATH_REJECTED_OBSERVED`（例外経路を含まない） |
+| モバイル表示・実機継続 | 本文表示は実機報告。実390px、背景化/画面OFF、離脱時停止など未実施 | `PARTIAL` |
+| 共有リンク型保護例外・公開境界 | #152観測時はproduction aliasに例外1件。今回のAPI再読時は0件。観測時点が異なり、失効・再発行・実効範囲は未実測 | `NOT_VERIFIED`（設定上の0件を完全な匿名遮断証明とみなさない） |
+| #136統合・リリース | Draftのまま、配信への影響・登録変更の検証・別個のmerge/release承認が未了 | `RELEASE_HOLD`維持 |
+
+**次の最小アクション**: (A) Androidの実表示幅と背景化/画面OFF/復帰・ページ離脱時停止、(B) 認証・shareable-link例外の実効範囲（秘密を保存しない）、(C) mainとの差分と配信影響を確認し、(D) 教材#136の統合とproductionを分離して明示的に判断する。今回の追補は**ログ提出や新たな音声バグ修正の必須化を意味しない**。残存リスクを承認可能とするかは後続のE/リリース所管の判断。教材コード、#136のhead、production、SSO、alias、Catalogは一切変更しない。
+
+**結論**: 内容受入維持、ユーザー実機での音声成功を追加、Cloud Browser失敗の原因は未確定、`RELEASE_HOLD`を維持。音声の成功を適切に認めつつ、未検証の公開境界までPASSへ引き上げない。
