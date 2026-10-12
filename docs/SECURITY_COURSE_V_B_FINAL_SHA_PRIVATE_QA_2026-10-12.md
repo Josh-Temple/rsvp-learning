@@ -77,3 +77,10 @@
 - Cの新SHA両章正式受入、保護された同SHA Previewもしくは隔離ローカル実ブラウザ、Android/Web Speech実聴取、SSO/custom domain/共有例外の匿名到達性が未確認。Eはこれらを成功として合算せず、`CONTENT_HOLD / RELEASE_HOLD` と区別して評価すること。
 - **変更許可範囲:** 本報告専用の新branch/Draft PRへ文書1ファイルのみ。#136の候補、Catalog、Course V登録、`main`、既存#140/#143、C/E報告、production/Preview/alias/SSO、public Pagesやinstant-radioには書き込まない。
 - 報告PRのhead full SHA / CI / fixed-ref readback /変更ファイル数は作成後に確認し、結果をPR本文またはGitHubコメントへ追記する。報告CIは教材候補CIとは別の対象である。
+
+## 7. 追補: Vercel alias保護例外の取得間で状態変化（18:02 JST）
+
+- **初回読取（17時台）**: `rsvp-learning-kappa.vercel.app` のalias metadataに `protectionBypass` 内の `scope=shareable-link` エントリー **1件**。設定上の `expires=2026-10-12 19:31:32 JST` を確認（本報告§3はこの取得時点の事実）。
+- **再取得（18:02 JST）**: 同じaliasの `protectionBypass` はキーが存在するが **エントリー0件**。aliasの `updatedAt` は **2026-10-12 17:59:21.021 JST**。再取得でも0件。つまり**現時点で例外が残っているとは主張できない**。
+- Dはalias、例外、SSOなどを書き換えておらず、差の理由（別セッションによる変更、API仕様、時刻処理等）は**未確認**。このAPI値だけで匿名遮断の実効性、既発行URLの失効、漏えい不存在を証明しない。未認証HTTPでの検証は依然 **NOT_VERIFIED**。production aliasの指すdeployment、READY、source `fa63f8f2571203539269a38d501d50d92cafc1d2` は再読時も一致。
+- Eは初回の「1件」と再取得の「0件」を時系列の別観測として扱うこと。`RELEASE_HOLD` は不変。秘密キー・Cookie・共有URLを保存しない。
