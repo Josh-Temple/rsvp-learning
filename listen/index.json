@@ -2,6 +2,13 @@
   "schema_version": 1,
   "items": [
     {
+      "id": "2026-10-12-research-world-models-experiment-selection",
+      "title": "AIは実験する前に、どの研究が有望か見極められるか――Research World Models",
+      "date": "2026-10-12",
+      "category": "research",
+      "path": "./research/2026-10-12-research-world-models-experiment-selection.html"
+    },
+    {
       "id": "2026-10-11-iris-intent-recovery-safety-evaluation",
       "title": "AIが危険な依頼を断ったのか、理解できなかったのか――IRIS安全性評価",
       "date": "2026-10-11",
