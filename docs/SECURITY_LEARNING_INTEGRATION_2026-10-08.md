@@ -639,3 +639,69 @@ GitHub現mainのschemaは`courses/index.json`が`courses[]`の`id/title/chapters
 **次の人的判断:** まずCの新SHA独立再受入とDの同SHA非公開QAを再実行・結果保存する。安全な認証済みPreview/隔離ブラウザ、Android Chrome/実音声の試験環境を用意するかを決める。現段階でCatalog/COMPLETE/main merge/private productionの承認を求めたり、実施したりしない。
 
 **今回の書込み境界:** Eは本§19をappend-onlyで専用Draft PRに提案するのみ。旧E #141の§18、C #137/#139/#142、D #140/#143、教材#136、main、Vercel、SSO、aliases、public `instant-radio`は変更しない。専用E PRは#141の報告専用branchをbaseとするstacked Draftであり、**#141もmainにも自動mergeしない**。report PR自身のheadと教材候補headは別物として記録。将来C/D証拠が増えれば時点を分けて新たに追記する。
+
+---
+
+## 20. 2026-10-12 Worker E — B最終SHAの独立C受入・D非公開QA・リリース停止判定
+
+**今回の判定（2026-10-12 JST、GitHub/Vercel再取得）:** 内容 **`CONTENT_ACCEPTED_EXACT_SHA`**、リリース **`RELEASE_HOLD`**、Wave全体 **`PARTIAL_WITH_GAPS`**。対象はCourse V-1 `security-secure-by-design-default`、V-2 `security-input-output-injection`。両章とも教材内容の独立受入は成立したが、正式登録・main merge・protected Preview・実端末・実音声・匿名保護確認は未成立。教材は `DRAFT / HOLD` を維持する。§18のA完了前、§19のC/D未了という当時の歴史的判定を書換えず、本節で新たな時点の証拠と判断を記録する。
+
+指示書：ChatGPT Library `/RSVP Learning/Work Instructions/2026-10-12_security_course_v_b_final_sha_independent_reacceptance_private_qa_and_release_gate_closure_wave_instructions.md`。EはC・Dの既存独立報告に基づく統合であり、Cのfixtureを自ら再実行したわけでも、D未試験領域を代行して検証したわけでもない。
+
+### 20.1 固定SHAと独立した証拠の保管先
+
+| 対象 | 2026-10-12のfresh read | 意味 |
+| --- | --- | --- |
+| 現行`main` | `fa63f8f2571203539269a38d501d50d92cafc1d2` | Course V候補未反映、report-only branchesも未merge |
+| 教材 [Draft #136](https://github.com/Josh-Temple/rsvp-learning/pull/136) | 現head **`2ceb3bae83dca17f00dcfb84cddfd726c20c92a0`**、open/draft/unmerged。PR表示base `74ebcac3587650ee83b95438629d1893ba8abfb4` | C・Dが評価した**教材**の唯一の固定SHA。旧PR本文の`0cff...`ではない |
+| A最終技術baseline | `57b0cc89931483115eec654be37e2bafbd2f18e3`、Red [38196523862](https://github.com/Josh-Temple/rsvp-learning/actions/runs/38196523862) → Green [38196790680](https://github.com/Josh-Temple/rsvp-learning/actions/runs/38196790680) | UTCで期限比較するF-08コード修正。A側Node 67/67、Python50。B以降の別SHA CIではない |
+| B最終候補CI | [Test #38205273101](https://github.com/Josh-Temple/rsvp-learning/actions/runs/38205273101)、head=`2ceb3bae83dca17f00dcfb84cddfd726c20c92a0`、completed/success、job `114667262265`成功 | 作者側Node **68/68**、Nodeの1件からPython unittest **50メソッド**。68+50を加算しない |
+| C独立審査 [Draft #146](https://github.com/Josh-Temple/rsvp-learning/pull/146) | **報告head** `8a20edaa094ca6fe089bc091899688d86dd3a21f`、[報告本文](https://github.com/Josh-Temple/rsvp-learning/blob/8a20edaa094ca6fe089bc091899688d86dd3a21f/docs/SECURITY_COURSE_V_B_FINAL_SHA_INDEPENDENT_REACCEPTANCE_2026-10-12.md)、報告headの[Test #38228500042](https://github.com/Josh-Temple/rsvp-learning/actions/runs/38228500042) success | 審査**対象教材SHAは上記`2ceb3bae83dca17f00dcfb84cddfd726c20c92a0`**。V-1/V-2とも`ACCEPTED_FOR_MERGE`、P0/P1=0、P2=1 |
+| D同SHA QA [Draft #145](https://github.com/Josh-Temple/rsvp-learning/pull/145) | **報告head** `0d3551bbaf4bfe4b37dd800ecaf485406e840551`、[報告本文](https://github.com/Josh-Temple/rsvp-learning/blob/0d3551bbaf4bfe4b37dd800ecaf485406e840551/docs/SECURITY_COURSE_V_B_FINAL_SHA_PRIVATE_QA_2026-10-12.md)、報告headの[Test #38227371636](https://github.com/Josh-Temple/rsvp-learning/actions/runs/38227371636) success | 対象教材は同じ`2ceb3bae83dca17f00dcfb84cddfd726c20c92a0`。静的PASS限定、D全体`CANDIDATE_QA_WITH_GAPS` |
+| E過去報告 | [#141](https://github.com/Josh-Temple/rsvp-learning/pull/141) head `bb40a81933903f35cbcc97c5d4b70f50e809e46e`（§18）、[#144](https://github.com/Josh-Temple/rsvp-learning/pull/144) head **`26738c73ff15b2531c207dab2f5c19aa1f8dbed5`**（§19、CI [38205929754](https://github.com/Josh-Temple/rsvp-learning/actions/runs/38205929754) success） | #144は#141をbaseとするstacked Draft。履歴を改ざん・重複取り込みしない |
+| 旧C/D監査 | #137（旧F-01）、#139（旧F-08、独立1,419比較中2失敗）、#142/#143（B以前の`57b0...`事前HOLD）、#140（旧静的予備QA） | いずれも現B最終SHAの新C/D結果とは別の履歴 |
+
+E確認時点でC/Dの報告専用PRはともにopen/draft・変更文書1ファイル。#136の教材headはC審査対象と一致し、C署名後のhead driftは確認されなかった。C/D報告head・本E報告head・#136教材head・現mainを混同しない。
+
+### 20.2 内容ゲート — Cの独立反証の射程
+
+**内容 `CONTENT_ACCEPTED_EXACT_SHA`。** 根拠はC #146が同一の現行候補full SHAについて両章を`ACCEPTED_FOR_MERGE`とし、**未解消P0=0/P1=0**と署名したこと、B候補head固有CIが成功していること。Cは固定blobをPython 3.13.5で実行、**新規独立1,371比較：PASS1,371 / FAIL0 / SKIP0**。部署・認可の行列1,152、NY/Berlin fold 128、±1μs×4 offset 48、その他43（ログ内分類は1,153/128/48/42）であり、旧監査代表12条件は別途12/12 PASSだが重複するため加算しない。
+
+F-08はNY 2026-11-01の「現在01:10 fold=1 / 06:10Z、期限01:50 fold=0 / 05:50Z」を**拒否**し、逆転した期限前条件を**許可**。Berlin 2026-10-25の同型の逆転、期限の1μs前は許可・一致/後は拒否、異offsetの同一瞬間は同結果。認可の正常許可、F-01の欠落部署の不許可、検索前の部署scope確認、住民本人/公開案内/管理者、SQL・HTMLの基礎反例を別々に確認。**旧#139の1,419件fixtureは復元・再実行していない**ため、その値を新反証として表示しない。
+
+CによるMD番号付き正文↔RSVP JSONの全数検査：**V-1 215/215、V-2 241/241、計456/456一致**。24文字超過0、英文のASCII途中分断0、重要命題21（V-1 9/V-2 12）、Learn講義2本、採点10問（各2/1/0・満点20）を対象SHAで審査。特にV1-Q4は正常な期限前許可・期限一致/後拒否・同瞬間別offsetの判定を必要条件とし、V2-Q3は安全なDOM経路の妥当な別解を認める。学習者実回答・採点者間一致・学習効果は`NOT_MEASURED`。
+
+原典についてCが再参照した射程はPython 3.12 datetime/zoneinfoの該当仕様、OWASPの認可・SQL/HTML/XSS・Injection/設計関連の該当説明、NIST SSDF 1.1の公式公開情報等。**15件全節の再読ではない**。CISA直接本文`not_verified`、SSDF 1.2草案`partial`、ASVS 5.0全文・IPA原典全文`not_verified`。教育用架空モデルの署名であり、実運用の本人認証・失効伝播・全規格適合の証明ではない。
+
+新規**C-P2-01（V-1のみ・非ブロッカー）**：任意の独自tzinfoで`utcoffset()`が例外を投げると認可のaware_datetime検査からRuntimeErrorが伝播する。True誤許可は観測されず、ネットワーク入力で任意Python tzinfoを受ける機構もこの教材にはない。Aが将来、入力契約を信頼済みtzinfoに限定するか例外処理を定義する。新しいP0/P1が再現された場合、または候補SHAを変更する場合は内容受入を自動継承せず、新headでCの独立再受入が必要。
+
+### 20.3 Dの限定QAとVercelの実際の境界
+
+D #145は同じ教材`2ceb3bae83dca17f00dcfb84cddfd726c20c92a0`の固定refで、2 Learn HTMLのDOM構造・article外のHOLD注記/出典、共有`learn.js`/`learn.css`参照、操作ID、MD/JSON 456/456一致を**静的に確認**。V-1のarticle音声対象要素31件、V-2は33件。読み上げ部品と再生/停止等の関数の存在は確認したが、描画/音声が動くと実証したわけではない。静的な新規確定P0/P1は未発見（不存在の証明ではない）。D全体は**`CANDIDATE_QA_WITH_GAPS`**。
+
+今回EもVercelをfresh readした。project `rsvp-learning` は`ssoProtection.enabled=true` / `deploymentType=all_except_custom_domains`。教材`2ceb3bae83dca17f00dcfb84cddfd726c20c92a0`に絞ったdeployment検索は**0件**で、同SHAのprotected Previewを取得できなかった。alias `rsvp-learning-kappa.vercel.app`→ **`dpl_Ernw8TuvgPPXg1TBRLrJCgorNRBR`**、`READY/production`、source **`fa63f8f2571203539269a38d501d50d92cafc1d2`**。この本番はCourse V候補ではない。
+
+保護例外は時点を区別する：Dの17時台のalias読取で`scope=shareable-link` **1件**、設定上の期限 **2026-10-12 19:31:32 JST**。Dが18:02 JSTに再取得した時点で例外エントリー**0件**、alias metadata更新時刻17:59:21.021 JST。今回Eが再取得したalias `protectionBypass={}`も**0件**。変更理由・以前発行された共有URLの実効性・失効前後の匿名HTTP到達性は**未検証**。現在例外0件という設定の読取を`PROTECTED_VERIFIED`や漏えい不存在の証明としない。custom domainの適用範囲と匿名拒否も`NOT_VERIFIED`。秘密URL/キー・Cookie・tokenは記録しない。
+
+**実ブラウザdesktop、390px、再生/一時停止/再開/停止、1×/2×/4×、Web Speech実発話、Android Chrome標準読み上げ、画面OFF/背景化、章間移動、匿名HTTP**は`UNTESTED / NOT_VERIFIED`。実受講者の理解・採点一致は`NOT_MEASURED`。D報告§5のAndroid手動手順は未実施であり、今後の条件付き作業指示にとどまる。protected Previewなしに既存productionや静的検証を代替PASS扱いしない。
+
+### 20.4 次Release Waveの設計（今Waveでは作業禁止）
+
+**現行schema再読**：GitHub mainの`lessons/index.json`は`lessons[]`各項目の`id/title/topic/path/status/learn_path`、`courses/index.json`は`courses[]`の`id/title/chapters[]`を持つ。前§19記録の**158教材、24コース、141 Learn、既存30章と旧入門8章**を現在の実運用で保全する回帰基準とし、release実行時に再計数する。
+
+別途承認された後続作業の最小設計は、(1)固定受入済みV-1/V-2の`drafts/security-course-v/lessons/`のMD/JSON各2件を`lessons/security-deep/`等の正式構造へ、Learn HTML各2件を`learn/`へ登録する差分を作成、(2)Catalog `lessons/index.json` の両ID・出典・status・path・learn_path、`courses/index.json` のCourse V追加位置/順序/ナビゲーションを現schema/方針で具体化、(3)Lesson player、Course player、history/localStorage、既存教材・24コース・141 Learnの回帰を検査、(4)登録後の**新候補full SHA**に対するC独立受入とCI、(5)同SHA protected PreviewでDの実ブラウザ/端末/実音声/SSO・匿名・例外検証。今Waveではどのファイルも登録・移動・更新しない。
+
+停止条件は新P0/P1、期限前正常許可喪失・期限一致/後誤許可、rubric/正文逆意味、CI失敗、C署名後head drift、重大な操作/音声欠陥、想定外匿名到達、SSO/custom domain/共有例外の重大な未検証。発見時は`RELEASE_HOLD`維持、A（モデル）/B（教材）へ再現可能な差戻し、C新head独立受入、D影響範囲再QAを要求する。
+
+**別個に必要な人的承認**：(a)正当なアクセス権を用いるprotected Previewの作成・Android/音声・匿名保護の検証環境と作業、(b)登録/merge/productionを含むリリースWave実行の承認。現時点では(b)を実施するゲートは開かない。将来(a)等が解消し、再受入済みの登録候補に対する承認が出た場合だけ、`main merge → main CI → private protected production deploy → deployment ID/source/alias/SSO readback → 実操作QA`。失敗時は直前に承認されたdeployment ID/source/aliasと保護設定を再取得し、追加承認を経て復旧する。public GitHub Pages/instant-radio複製や一般公開は**さらに別判断**。
+
+### 20.5 Eの結論・保存境界
+
+| 判定対象 | 今回の結論 | 理由 |
+| --- | --- | --- |
+| 内容 | **`CONTENT_ACCEPTED_EXACT_SHA`** | C #146両章受入・P0/P1=0、#136固定head一致、B固有CI success |
+| D候補QA | **`CANDIDATE_QA_WITH_GAPS`** | 同SHAの静的確認あり。protected Preview、実ブラウザ、Android、音声、匿名HTTP未検証 |
+| リリース | **`RELEASE_HOLD`** | SSO/custom-domain/過去の共有例外の匿名実効性と実利用が未確定。個別承認なし |
+| Wave | **`PARTIAL_WITH_GAPS`** | C/D報告の保存とE内容統合は達成。実利用QA・公開境界・release gateは未了 |
+
+本§20は**新しい報告専用branchから#144をbaseとするstacked Draft PRへappend-onlyで提案**し、§18/§19を変更しない。旧#141/#144やC/D文書・教材候補・Catalog・main・Vercel・alias・SSO・private/public境界は書換えない。report-only PRをmergeして教材が受入・公開されたと表示しない。報告専用commit/head/CI/readbackはPRのメタデータまたは追記コメントで別途記録する。
