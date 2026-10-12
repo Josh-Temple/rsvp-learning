@@ -9,7 +9,7 @@ This is not an authentication system, production service, or rich-HTML sanitizer
 """
 
 from dataclasses import dataclass
-from datetime import datetime
+from datetime import datetime, timezone
 from html import escape
 import sqlite3
 
@@ -108,7 +108,8 @@ def authorize(actor, operation, application=None, field=None, *,
                 and valid_application_id(grant.application_id)
                 and grant.actor_id == actor.actor_id
                 and grant.application_id == application.application_id
-                and now < grant.expires_at
+                # Same-ZoneInfo datetime comparison ignores fold. Compare instants.
+                and now.astimezone(timezone.utc) < grant.expires_at.astimezone(timezone.utc)
                 and field in {"request_id", "event_code"})
     if actor.role == "resident":
         if (not valid_identifier(application.owner_id)
