@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f2efe8">
+  <meta name="description" content="AI研究の実験結果を実行前に予測するResearch World Models。2653件の実験記録、順位予測、実験選択、転用条件と重要な限界を解説。">
+  <title>AIは実験する前に、どの研究が有望か見極められるか――Research World Models</title>
+  <style>
+    :root{color-scheme:light;--bg:#f2efe8;--ink:#121722;--muted:#73766f;--line:#cbc8bf;--blue:#5d7487}
+    html[data-theme="dark"]{color-scheme:dark;--bg:#11151a;--ink:#edf0eb;--muted:#959b97;--line:#343a3e;--blue:#7892a6}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Hiragino Sans","Noto Sans JP",sans-serif;line-height:1.9}
+    .shell{width:min(760px,100%);margin:0 auto;padding:max(18px,env(safe-area-inset-top)) 20px max(42px,env(safe-area-inset-bottom))}
+    .topbar{min-height:52px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+    .icon{width:42px;height:42px;display:grid;place-items:center;border:0;background:transparent;color:var(--muted);text-decoration:none;font:inherit}
+    .meta{margin:28px 0 8px;color:var(--muted);font-size:.75rem}
+    h1{font-size:clamp(2rem,8vw,3.4rem);line-height:1.12;letter-spacing:-.04em;margin:.2em 0 .8em}
+    h2{margin:2.2em 0 .6em;font-size:1.2rem}
+    p{margin:0 0 1.25em}
+    article>*{transition:background-color .15s ease}
+    .is-speaking{background:color-mix(in srgb,var(--blue) 16%,transparent)}
+    .player{position:sticky;bottom:0;margin:32px -6px 0;padding:12px 6px;background:color-mix(in srgb,var(--bg) 94%,transparent);border-top:1px solid var(--line);backdrop-filter:blur(8px)}
+    .speed{display:grid;grid-template-columns:48px 1fr 42px;gap:10px;align-items:center;margin-top:10px;font-size:.78rem;color:var(--muted)}
+    input{width:100%}
+    .sources{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}
+    .sources a{color:var(--ink)}
+    .mode-nav{display:inline-flex;align-items:center;gap:4px}
+    .mode-icon{width:42px;height:42px;display:grid;place-items:center;color:var(--muted);text-decoration:none;opacity:.5}
+    .mode-icon.is-active{color:var(--ink);opacity:1}
+    .mode-icon svg{width:20px;height:20px;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+    .brand-mark{width:22px;height:14px;display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+    .brand-mark i{display:block}
+    .brand-mark i:nth-child(1){background:#a85248}
+    .brand-mark i:nth-child(2){background:#5d7487}
+    .brand-mark i:nth-child(3){background:#c2a653}
+    .transport{display:grid;grid-template-columns:repeat(5,48px);justify-content:center;gap:8px}
+    .transport button,.section-nav button,.voice-row select{min-height:42px;border:1px solid var(--line);background:transparent;color:var(--ink);font:inherit}
+    .transport button{width:48px}
+    .section-nav{display:grid;grid-template-columns:48px 1fr 48px;align-items:center;gap:8px;margin-top:10px}
+    .section-nav button:disabled{opacity:.25}
+    #section-label{min-width:0;overflow:hidden;color:var(--muted);font-size:.78rem;text-align:center;white-space:nowrap;text-overflow:ellipsis}
+    .voice-row{margin-top:10px}
+    .voice-row select{width:100%;padding:0 8px}
+    .mode-icon:focus-visible,.transport button:focus-visible,.section-nav button:focus-visible,.voice-row select:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+  </style>
+</head>
+<body>
+<main class="shell">
+  <header class="topbar">
+    <nav class="mode-nav" aria-label="モード切替">
+      <a class="mode-icon" href="../../index.html" aria-label="RSVPへ移動" title="RSVP">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      </a>
+      <a class="mode-icon" href="../../index.html?library=learn" aria-label="Learnへ移動" title="Learn">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 5.5c2.6-.8 5.3-.4 8 1.2v12c-2.7-1.6-5.4-2-8-1.2v-12Z" />
+          <path d="M20 5.5c-2.6-.8-5.3-.4-8 1.2v12c2.7-1.6 5.4-2 8-1.2v-12Z" />
+        </svg>
+      </a>
+      <a class="mode-icon is-active" href="../../index.html?library=listen" aria-label="Listen一覧へ移動" aria-current="page" title="Listen">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 13v-1a8 8 0 0 1 16 0v1" />
+          <path d="M4 13h3v7H5a1 1 0 0 1-1-1v-6Zm16 0h-3v7h2a1 1 0 0 0 1-1v-6Z" />
+        </svg>
+      </a>
+    </nav>
+    <button id="theme" class="icon" type="button" aria-label="テーマ切替">☾</button>
+  </header>
+
+
+
+
+
+
+
+  <article id="article">
+    <p class="meta">情報基準日 2026年10月12日・原論文公開 2026年10月8日・査読前プレプリント</p>
+    <h1>AIは実験する前に、どの研究が有望か見極められるか――Research World Models</h1>
+
+    <h2>今回の研究は何を変えようとしているのか</h2>
+    <p>今回取り上げるのは、2026年10月8日に公開された「Language Models as AI Research World Models」です。Amazonと米国の複数大学の研究者が、言語モデルを実験結果の予測装置として使い、限られた計算資源を有望な実験へ集中させられるかを調べました。論文本文と付録に沿って紹介します。</p>
+    <p>AIを使う研究エージェントは、改善案を次々に考えることができます。しかし、その案が本当に良いか確かめるには、モデルを学習し直したり、何時間も評価を回したりする必要があります。研究案を生成する費用と、実験を実行する費用には、大きな差があるのです。</p>
+    <p>例えば学習率の変化、データの組合せ、最適化手法の変更など、十六個の改善案があるとします。すべて試す計算資源がなければ、実行前に三個を選ぶ必要があります。どれを選ぶかによって、同じ予算でも達成できる改善が変わります。</p>
+    <p>著者らは、研究環境の説明、候補となる変更内容、過去の実験記録を言語モデルへ渡して、変更による性能の増減を予測させました。この役割をリサーチ・ワールド・モデル、略してRWMと呼びます。実験の代わりになる真実の装置ではなく、何を先に実験するか判断するための予測器です。</p>
+    <p>結果は、同じ研究環境の過去記録から将来の候補を予測する精度が改善し、一部の異なる環境の記録も役立ったというものでした。もっとも、論文が示したのは特定の環境における比較であり、未知の科学の発見が保証されたということではありません。</p>
+
+    <h2>なぜ実験結果の予測が難しいのか</h2>
+    <p>実験で何かを変えたとき、必ず同じ方向へ性能が動くとは限りません。あるモデルの学習率を変えると良くなっても、別のモデルや別の訓練手順では効果が弱くなったり、逆に悪くなったりします。</p>
+    <p>改善案の文章だけを見て判断するのは簡単ではありません。元のモデルの大きさ、データ、学習手順、使われている最適化技術などが相互に影響するからです。例えば、すでに特定の最適化手法を使っている環境へ同じ手法を追加しても、元の環境とは違う結果になります。</p>
+    <p>従来も性能予測を使って実験を選ぶ研究はありました。ベイズ最適化や、近くの過去事例から性能を推測する方法などです。今回の新しい問いは、言語モデルがコードと研究条件の意味を理解し、別の研究環境で行われた実験からも情報を取り出せるかという点です。</p>
+    <p>著者らが言う研究ワールドモデルは、映像を生成する世界モデルとは少し違います。研究の操作が実行されたあとの環境全体を忠実に再現するのではなく、まずは測定される性能の増減を予測することに範囲を絞っています。</p>
+    <p>したがって今回の研究では、科学的な因果関係を完全に理解しているかではなく、次に実験すべき案を選ぶのに役立つ、定量的な予測ができるかが中心になります。</p>
+
+    <h2>研究環境、操作、利得という三つの要素</h2>
+    <p>この論文を理解するうえで、研究環境、介入、利得という三つの言葉が重要です。研究環境は、モデルの種類や学習方法、データ、評価基準などを一まとまりにした実験条件です。</p>
+    <p>介入は、その研究環境へ加える具体的な変更です。学習方法の設定を変えたり、訓練に使う情報を変更したり、推論を高速化する方法を取り入れたりします。著者らは、単なるアイデアの名前だけでなく、実行可能な変更内容を対象にしています。</p>
+    <p>利得は、その変更によって元の設定と比べて性能がどれだけ良くなったかを表します。精度や処理速度が増えれば正の利得です。モデルの予測損失のように小さいほど良い指標なら、元の値から変更後の値を引いて、改善が正になるようそろえます。</p>
+    <p>同じ設定で実験を何度も行うと、乱数や環境によって結果が変わり得ます。研究者らがRWMに予測させる対象は、この実験結果の分布の中央値に相当する利得です。実験のすべての出力を生成するわけではありません。</p>
+    <p>過去の記録には、どの環境で何を変え、どんな測定結果になったかという情報が含まれます。言語モデルはそれを文章として受け取り、まだ実行していない別の介入の利得を数値で答えます。今回の主要実装は、重みを再学習するのではなく、入力に実験記録を加えるインコンテキスト学習です。</p>
+
+    <h2>使ったデータと実験の規模</h2>
+    <p>著者らは、九つの研究環境から二千六百五十三件の実験記録を集めました。これらを作るための計算量は、合計十七万千八百六十二H100 GPU時間と報告されています。H100は高性能な計算用半導体であり、数字はGPUが使われた時間の合計を表します。実際の時計の経過時間とは異なります。</p>
+    <p>研究対象は大きく三種類に分かれます。一つ目はモデルの事前学習です。OLMo、Marin、Nanochat、Qwenなどの比較的小さなモデルを含みます。二つ目は数学的な課題への蒸留学習やコード生成の強化学習といった事後学習です。三つ目は推論サーバーの処理能力を上げる最適化です。</p>
+    <p>九つの環境のすべてで、同一環境内の予測と環境間の転用を両方検証したわけではありません。自分の環境の記録を使う予測は五環境で評価し、別の環境の記録の転用は、事前学習の五環境に絞って評価しました。</p>
+    <p>例えばコードの強化学習や推論サーバー高速化へ、別環境の知識が広く移るかどうかは、今回の環境間転用の実験だけでは確認できません。この区別は、論文の主張が届く範囲を判断するうえで重要です。</p>
+    <p>また、実験記録を蓄積するにも大きな計算費用がかかっています。すでにある記録を使う場面で予測により実験を節約できたとしても、最初から記録を集める総費用まで差し引いて効率が良いことは、別に検証する必要があります。</p>
+
+    <h2>三つの予測条件を比較する</h2>
+    <p>一番基本となる比較は、言語モデルへ過去の実験記録を与えない条件です。これを論文ではゼロ履歴条件とします。モデルは研究環境と変更案の説明を受けますが、実際の過去の試行結果は渡されません。</p>
+    <p>二つ目は、これから予測する研究環境と同じ環境の記録を渡す条件です。例えばOLMoのある学習設定について予測するなら、その設定で過去に試した別の変更の結果を参考にします。これを同一環境内の予測と呼びます。</p>
+    <p>三つ目は、これから予測する環境の実験記録を使わず、ほかの環境の実験記録を渡す条件です。例えばQwenのある設定を調べるとき、別の事前学習モデルについて得られた経験を参考にします。こちらが環境間の転用です。</p>
+    <p>著者らは、記録の有無を比べる際、RWMとして使用する基盤モデルと推論設定を固定しました。これにより、同じモデルが実験記録を読めることの効果を、ある程度分けて測れます。</p>
+    <p>比較対象には、似ている過去事例を探して数値を予測する近傍回帰と、特徴量を使うリッジ回帰も置きました。どちらも許可された過去記録と候補情報を使えるようにしています。言語モデルでなければ同じ成果を得られないのかを確かめるためです。</p>
+
+    <h2>予測をどのように採点するか</h2>
+    <p>予測の評価には二つの主な数値を使います。一つは平均絶対誤差で、予測した利得と実際に測られた利得がどれほど離れているかを表します。小さいほどよい指標です。</p>
+    <p>もう一つはスピアマンの順位相関です。これは、どの介入の利得が大きいかという順位を、予測と実測でどの程度そろえられたかを測ります。値が一に近いほど順位が一致し、ゼロ付近なら一致が弱いという意味です。</p>
+    <p>研究上の意思決定では、利得が小数点以下で正確に何点になるかより、十六案のうち最も良さそうな三案を選べるかの方が重要な場面があります。そのため著者らは、予測数値そのものと、順位の良さを両方見ました。</p>
+    <p>実験の正解には、著者らが過去に実行して測定した変更案の結果を使います。評価用に取っておいた変更の結果は、予測するモデルには与えません。環境間転用では、ほぼ同じ変更の記録が別環境側から漏れないよう、類似する変更の組も除く設計です。</p>
+    <p>こうして過去の記録を使って予測し、その後に保留していた実測値へ照らし合わせます。重要なのは、既知の記録を分割して評価した部分と、現実に新しい未知の研究を実施した部分を混同しないことです。</p>
+
+    <h2>同じ環境内の記録はどれだけ役に立つか</h2>
+    <p>同一環境内の五つの予測課題では、ゼロ履歴の言語モデルの平均順位相関はおよそ0.506でした。そこへ過去の実験記録を渡すと、約0.774になりました。改善幅は約0.27です。これは順位相関係数の差であり、予測精度が27％向上したという意味ではありません。</p>
+    <p>個別に見ると、OLMoの事前学習では順位相関が0.62から0.90に改善しました。拡散型の言語モデルの環境では0.46から0.78、数学の蒸留学習では0.43から0.70、コードの強化学習では0.48から0.62、推論高速化では0.54から0.88になりました。</p>
+    <p>平均絶対誤差も、実験記録を使うRWMの方が、比較したゼロ履歴、近傍回帰、リッジ回帰より、五つすべての環境で小さいと報告されています。これは単に順位を当てるだけでなく、利得の大きさの予測も改善したことを示しています。</p>
+    <p>ただし、評価では環境ごとに一つの固定された訓練用記録と保留用記録の分割を使っています。無数の未知の問題や別の時期のデータに対する平均的な性能を推定したわけではありません。</p>
+    <p>それでも、同じ基盤モデルに過去の記録を渡す比較によって、実験経験が新しい変更の予測に役立つという研究の中心的な仮説は、今回の条件で支持されました。</p>
+
+    <h2>異なる研究環境の経験は転用できるか</h2>
+    <p>次に著者らは、ある研究環境で蓄積した知識が、別の環境での実験選択にも使えるかを調べました。対象は五つの自己回帰型言語モデルの事前学習環境です。各環境を一つずつ予測対象とし、残る環境からの実験記録を渡します。</p>
+    <p>この評価では、対象環境の記録は使いません。別環境の二百四十四件の実験記録を参考にして、対象環境でまだ結果を教えていない七十一の変更の効果を予測します。同じ変更や非常に似た変更が履歴から紛れ込まないよう除外します。</p>
+    <p>五環境の順位相関の平均は、記録なしの約0.63から、環境間の記録を渡すことで約0.73になりました。改善幅は約0.10です。同一環境内の改善幅0.27より小さいものの、別環境の経験も予測に貢献する可能性を示しています。</p>
+    <p>一方、近傍回帰の平均順位相関は0.36、リッジ回帰は0.25でした。単に似た実験の数値を持ってくる方法では、元の研究環境が変わったときにうまく一般化しないケースがあります。</p>
+    <p>例えばNanochatでは、元から使っている最適化手法との関係で、別環境では良かった変更が逆効果になる例が報告されています。研究者らは、過去事例の文章的な類似性だけでなく、対象環境の条件を考慮することが重要だと解釈しています。</p>
+
+    <h2>順位の改善を実験選択の価値へ変える</h2>
+    <p>順位相関が改善したとしても、最上位の候補を選べなければ実験資源の節約にはつながりません。そこで著者らは、十六の候補から三つだけ実行できる場面を作り、どの予測器が良い候補を選ぶかを調べました。</p>
+    <p>すべての候補について実際に測られた結果が既知のデータを用い、評価する側だけがその答えを参照します。候補の組合せを二百通りに分け、予測器が上位に選んだ三つがどれだけ良いかを比較しました。</p>
+    <p>実験選択の評価にはリグレットという指標を使います。ここでは、選べた三つのうち最良の成果と、候補全体の最良の成果との差を表します。差が小さければ、限られた枠をうまく使えたということです。</p>
+    <p>同じ環境の記録を利用すると、ゼロ履歴に比べたリグレットの相対的な減少率は、五環境の平均で58.2％でした。環境間の記録では、五つの事前学習環境の平均で52.2％減少しました。ここでの割合は実験選択の後悔の大きさが減ったという意味で、GPUの実際の請求費用が同じ割合だけ減ったわけではありません。</p>
+    <p>特にQwen3の評価では、別環境から得た記録を利用して選ぶ方法が、記録なしの場合と比べてリグレットを約78％減らしました。論文の要約に登場する目立つ数字ですが、五つの環境すべてに一律に当てはまる改善ではありません。</p>
+    <p>実際、Marinという環境では、環境間の記録で順位相関は改善しても、上位三件を選ぶリグレットは必ずしも改善しませんでした。予測順位全体が良くなれば、予算内で選ぶ最上位が必ず良くなるわけではないことが分かります。</p>
+
+    <h2>何度も研究する場合をどう検証したか</h2>
+    <p>研究は一回だけの実験選択で終わりません。新しい候補が現れ、その中からいくつかを試し、結果を参考にして次の候補を選びます。論文は、これに近い多段階の選択も評価しています。</p>
+    <p>OLMoの一つの事前学習環境について、八回の研究ラウンドを設定しました。各回には十六個の新しい候補が現れ、利用可能な候補から三個を選びます。八回合計で二十四件しか選べない条件です。</p>
+    <p>ゼロ履歴、同一環境の記録、別環境の記録、そして比較用の回帰モデルについて、各ラウンドで同じ候補が与えられます。試した結果は次の選択へ反映されます。この評価は、実際の変更の測定記録がそろった候補を使う、予算制約付きの再生評価です。</p>
+    <p>著者らは五つの評価系列を用いて、最終的に見つけられた最良の利得と、途中でどれだけ早く良い案へ到達したかを比べました。記録を使わない条件に比べ、同一環境の記録を最初に与えると最終的な最良利得が平均15.8％、別環境の記録では11.6％上がりました。</p>
+    <p>早い段階での発見を含む指標も改善しました。ただし、この評価はすべての研究エージェントが新たな実験コードを独立に構築して大規模研究を継続した結果ではありません。既存の候補と測定済み結果の範囲で、どの順に実行すると良い結果へ達するかを比べたものです。</p>
+    <p>この違いは大きな意味を持ちます。実際の研究には、思いついた案が実装できないこと、失敗した実験の原因が不明なこと、次の候補そのものが悪いことなど、選択以外の問題もあるからです。</p>
+
+    <h2>モデルを賢くするより記録が重要だったのか</h2>
+    <p>さらに研究者らは、実験記録を与えることと、基盤モデルを変えたり推論を長くしたりすることを比べました。対象はOLMoの一つの予測課題です。十三の異なる言語モデルをRWMとして使い、記録の有無で順位相関を測りました。</p>
+    <p>実験記録を渡さないとき、十三モデルの順位相関はマイナス0.362から0.621の間でした。記録を渡すと0.638から0.896の間に上がりました。今回の対象では、記録ありで最も低いモデルでも、記録なしで最も高いモデルを上回っています。</p>
+    <p>またClaude Opus 5の推論努力を段階的に変える比較では、記録なしの低い推論努力で順位相関0.609、最大の推論努力でも0.648でした。一方、低い推論努力のまま記録を追加すると0.892となりました。</p>
+    <p>これは、考える時間を伸ばすことより、必要な実験記録へアクセスできることの方が大きな改善をもたらした、という著者らの主張を支持します。ただし、単一の予測課題を中心とする結果であり、すべての知的作業に同じ順序が成立すると言ってはいけません。</p>
+    <p>また、研究記録が存在しない環境では、当然ながら同じ方法で記録の効果を得られません。最初の記録をどう安全かつ効率的に集めるかという問題は残ります。</p>
+
+    <h2>本当に費用を下げる方法なのか</h2>
+    <p>研究者らは、RWMを使うための費用も試算しています。論文で使用した基盤モデルと推論設定では、十六の候補を一件ずつ評価する費用は平均で約6.3ドルでした。</p>
+    <p>一方、対象とした九環境について、実験一回当たりの平均計算時間の中央値は42.3 H100 GPU時間であり、GPU一時間を三ドルと仮定すると約127ドルになります。予測による選別費用は、この代表的な一実験の費用の約5％と計算されます。</p>
+    <p>この比較は、実験を事前に選別する経済的な可能性を示しています。すべての案を本当に実行する必要がある場合と、予測で優先案を絞り込める場合とでは、費用の構造が異なるからです。</p>
+    <p>ただし6.3ドルと127ドルは、異なる方法で求められた代表値の比較です。実験記録を蓄積した十七万時間以上のGPU費用は、予測一回の費用へ均等に計上されていません。実験を実装する人件費、モデルの問い合わせ料金の変化、外れた予測の損失もすべて含めた計算ではありません。</p>
+    <p>論文は、研究の総費用が現実の運用でどれだけ下がるかについて、すでに決着した結果とは扱っていません。効果を見るなら、一定期間の研究で得られた改善、実験回数、予測費用、保守費用を合わせて測る必要があります。</p>
+
+    <h2>この研究は本当に新しいのか</h2>
+    <p>予測した実験結果を使って探索を効率化する考え方自体は、以前からあります。機械学習のハイパーパラメータ最適化や、過去事例から性能を予測する研究は長く続いてきました。</p>
+    <p>言語モデルを使って、まだ試していない実験の成果を予測する先行研究もあります。今回の論文が焦点を当てたのは、複数の研究環境で実際に測定された変更の効果を、環境内と環境間に分けて比較し、予測精度だけでなく実験選択への価値までつなげた点です。</p>
+    <p>特に別の事前学習モデルで得た経験を、新しい事前学習モデルの候補選択へ転用できたことは、研究記録を再利用可能な知識として整備する価値を示しています。単なる成功例の文章的な蓄積ではなく、変更内容、環境、利得の組合せが重要です。</p>
+    <p>ただし今回のRWMは専用の大規模な予測モデルを新たに訓練したものではありません。実験の経験を長い入力として言語モデルへ渡し、その場の推論を改善する方法を検証したものです。著者らも、将来的に多数の記録から専用モデルを学習する構想を、今後の研究として位置付けています。</p>
+    <p>従って、これを自己改善するAIが完成した実証や、科学的な未知の法則を自動的に学んだ証拠と表現するのは適切ではありません。限られた実験予算の下で、研究上の選択を改善する予測手法の検証です。</p>
+
+    <h2>論文自身が示す限界</h2>
+    <p>第一に、異なる環境への転用を実際に調べた範囲は、自己回帰型言語モデルの事前学習環境に限られます。事後学習、推論最適化、医学や物理学の研究へ同じ精度で知識が移るかは、この研究では確かめられていません。</p>
+    <p>第二に、対象の変更は事前に定義された実験候補であり、実験条件や基準となるモデルの設定も定められています。予測器は候補を考案する部分や、候補が実装可能か保証する部分を評価されているわけではありません。</p>
+    <p>第三に、環境内の予測では環境ごとに固定された記録の分割を使っています。また多段階の評価は一つのOLMo環境を中心にした五系列です。全く異なる研究課題へ移した場合の安定性や、失敗の頻度まで見通せる結果ではありません。</p>
+    <p>第四に、言語モデルを使う予測は商用APIに依存し、同じ呼び出しを繰り返しても完全にビット単位で同じ回答になるわけではありません。論文は設定や集計を記録していますが、第三者の全面的な再現を完了したとは示していません。</p>
+    <p>第五に、実験記録を保存・共有する際には、データの来歴、再現手順、ライセンスや安全性の確認が必要です。論文の再現可能性に関する記載はありますが、すべての実験記録が完全公開され、誰でも独立検証できる状態だと無条件に考えることはできません。</p>
+    <p>第六に、この成果は査読前プレプリントです。著者が示した数値、著者による説明、Listen作成者の応用可能性の判断を分けて受け取る必要があります。</p>
+
+    <h2>実務や研究運用への含意</h2>
+    <p>ここからは、論文で直接確かめた事実ではなく、ほかの研究や業務へ応用する場合の分析です。まず、AIへ次の実験を提案させるだけでなく、過去の失敗と成功の条件を、将来の判断で使える形に残すことが重要です。</p>
+    <p>残すべき情報は、実験の名前や成功したかどうかだけではありません。どのモデル、どのデータ、どんな設定の下で、何を変更し、評価がどの程度変わったのかという一連の情報です。これがあれば、同じ変更でも別の条件では失敗するかもしれない、と検討できます。</p>
+    <p>次に、予測そのものと実験の実行を切り分けることです。RWMがある案を有望だと評価しても、それはまだ証拠の強さが限られる予測です。費用や危険性を考慮し、実行を許可する判断と、実行結果を正式に採用する判断は別に必要です。</p>
+    <p>また、予測が外れた記録も蓄積する価値があります。成功した実験だけを保存すると、次の予測器は失敗の条件を学べません。どの仮説がどんな条件で悪くなったかという否定的な結果も重要な知識です。</p>
+    <p>こうした設計は、業務改善案の優先順位づけや、モデルの設定変更を検討する運用へ着想を与えます。ただし論文は、行政機関の業務や一般企業の業務改善でRWMの有効性を実証したものではありません。実務で採用するなら、業務固有の基準と独立した評価が必要です。</p>
+    <p>最終的に大切なのは、AIが賢そうな予測をしたかどうかではなく、同じ費用と時間で、実際に検証された改善へより早く到達できたかです。その結果を記録し、予測と現実の差を繰り返し評価する運用が必要になります。</p>
+
+    <h2>聞き終えたときの要点</h2>
+    <p>今日の研究が示したのは、AI研究の価値が、思いつく案の数だけで決まるわけではないということです。実験が高価なら、過去の経験から結果を予測し、限られた予算でどの案を試すかを選ぶ能力が重要になります。</p>
+    <p>二千六百五十三件の実験記録を使った評価では、同じ環境の経験を与えると順位相関が約0.51から0.77へ改善しました。異なる事前学習環境の経験も一部は役立ち、多段階の選択でより良い利得を早く見つける結果が得られました。</p>
+    <p>ただし、効果は限られた研究環境での結果です。外れた予測や、経験を集めるための費用がなくなるわけではありません。完全自動の科学発見や、研究費用削減の一般的な保証は、まだ示されていません。</p>
+    <p>研究上の示唆は、成功例だけでなく失敗例も含め、環境、変更、結果を比較できる形で保存することです。AIに長く考えさせる前に、何をすでに実験で確認しているかを渡す。今回の論文は、その方法が次の研究判断へ影響することを具体的に測りました。</p>
+  </article>
+
+  <section class="player" aria-label="読み上げ操作">
+    <div class="transport">
+      <button id="prev-block" type="button" aria-label="前の読み上げ単位へ">←</button>
+      <button id="play" type="button" aria-label="再生">▶</button>
+      <button id="pause" type="button" aria-label="一時停止">Ⅱ</button>
+      <button id="stop" type="button" aria-label="停止">■</button>
+      <button id="next-block" type="button" aria-label="次の読み上げ単位へ">→</button>
+    </div>
+    <div class="section-nav" aria-label="章移動">
+      <button id="prev-section" type="button" aria-label="前の章へ">‹</button>
+      <span id="section-label">導入</span>
+      <button id="next-section" type="button" aria-label="次の章へ">›</button>
+    </div>
+    <div class="voice-row">
+      <select id="voice" aria-label="日本語音声"></select>
+    </div>
+    <div class="speed"><span>速度</span><input id="rate" type="range" min="0.7" max="4" step="0.1" value="1"><span id="rateValue">1.0×</span></div>
+  </section>
+
+
+
+
+
+
+
+  <section class="sources" aria-label="出典">
+    <strong>出典</strong>
+    <p><a href="https://arxiv.org/abs/2610.12235">原論文・付録 — Language Models as AI Research World Models（arXiv）</a></p>
+    <p><a href="https://www.alphaxiv.org/abs/2610.12235">alphaXiv — 論文全文の閲覧ページ</a></p>
+  </section>
+</main>
+<script>
+(() => {
+  const synth = window.speechSynthesis;
+  const blocks = [...document.querySelectorAll("#article h1,#article h2,#article h3,#article p")];
+  const sectionStarts = [...new Set([0, ...blocks.map((node, i) => node.tagName === "H2" ? i : -1).filter(i => i >= 0)])];
+  const play = document.querySelector("#play");
+  const pause = document.querySelector("#pause");
+  const stop = document.querySelector("#stop");
+  const prevBlock = document.querySelector("#prev-block");
+  const nextBlock = document.querySelector("#next-block");
+  const prevSection = document.querySelector("#prev-section");
+  const nextSection = document.querySelector("#next-section");
+  const sectionLabel = document.querySelector("#section-label");
+  const voice = document.querySelector("#voice");
+  const rate = document.querySelector("#rate");
+  const rateValue = document.querySelector("#rateValue");
+  const theme = document.querySelector("#theme");
+  let index = 0, playing = false, paused = false, selectedVoice = "", generation = 0;
+  let wakeLock = null, wakeLockWanted = false;
+
+  async function requestWakeLock() {
+    const wakeLockApi = window.navigator?.wakeLock;
+    wakeLockWanted = true;
+    if (!wakeLockApi?.request || wakeLock) return;
+    try {
+      const lock = await wakeLockApi.request("screen");
+      if (!wakeLockWanted) {
+        await lock.release();
+        return;
+      }
+      wakeLock = lock;
+      wakeLock.addEventListener?.("release", () => { wakeLock = null; });
+    } catch {
+      wakeLock = null;
+    }
+  }
+
+  async function releaseWakeLock() {
+    wakeLockWanted = false;
+    const current = wakeLock;
+    wakeLock = null;
+    if (!current) return;
+    try {
+      await current.release();
+    } catch {
+      // Wake Lock is best-effort; speech playback must continue to work.
+    }
+  }
+
+  function voices() {
+    const previous = selectedVoice || voice.value;
+    const items = synth.getVoices().filter(v => /^ja(?:-|_)/i.test(v.lang));
+    voice.replaceChildren();
+    for (const v of items) {
+      const o = document.createElement("option");
+      o.value = v.voiceURI;
+      o.textContent = v.name;
+      voice.append(o);
+    }
+    if (items.some(v => v.voiceURI === previous)) voice.value = previous;
+    selectedVoice = voice.value;
+  }
+
+  function clearHighlight() {
+    blocks.forEach(node => node.classList.remove("is-speaking"));
+  }
+
+  function sectionPosition() {
+    let pos = 0;
+    for (let i = 0; i < sectionStarts.length; i += 1) {
+      if (sectionStarts[i] <= index) pos = i;
+      else break;
+    }
+    return pos;
+  }
+
+  function updateNavigation() {
+    prevBlock.disabled = index <= 0;
+    nextBlock.disabled = index >= blocks.length - 1;
+
+    const pos = sectionPosition();
+    const start = sectionStarts[pos] ?? 0;
+    const previousTargetExists = index > start || pos > 0;
+    prevSection.disabled = !previousTargetExists;
+    nextSection.disabled = pos >= sectionStarts.length - 1;
+
+    const startNode = blocks[start];
+    sectionLabel.textContent = startNode?.tagName === "H2" ? startNode.textContent : "導入";
+  }
+
+  function showCurrent() {
+    clearHighlight();
+    const current = blocks[index];
+    if (!current) return;
+    current.classList.add("is-speaking");
+    current.scrollIntoView({ block: "center", behavior: "smooth" });
+    updateNavigation();
+  }
+
+  function speakCurrent() {
+    if (!playing || paused || index >= blocks.length) {
+      if (index >= blocks.length) {
+        playing = false;
+        paused = false;
+        clearHighlight();
+        void releaseWakeLock();
+      }
+      updateNavigation();
+      return;
+    }
+
+    showCurrent();
+    const localGeneration = ++generation;
+    const utterance = new SpeechSynthesisUtterance(blocks[index].textContent);
+    utterance.lang = "ja-JP";
+    utterance.rate = Number(rate.value);
+    const selected = synth.getVoices().find(item => item.voiceURI === voice.value);
+    if (selected) utterance.voice = selected;
+
+    utterance.onend = () => {
+      if (localGeneration !== generation || !playing || paused) return;
+      index += 1;
+      speakCurrent();
+    };
+
+    utterance.onerror = event => {
+      if (localGeneration !== generation) return;
+      if (event.error !== "canceled" && event.error !== "interrupted") {
+        playing = false;
+        paused = false;
+        clearHighlight();
+        void releaseWakeLock();
+        updateNavigation();
+      }
+    };
+
+    synth.speak(utterance);
+  }
+
+  function jumpTo(target) {
+    const next = Math.max(0, Math.min(blocks.length - 1, target));
+    const resume = playing && !paused;
+    const keepPaused = paused;
+
+    generation += 1;
+    synth.resume?.();
+    synth.cancel();
+    index = next;
+
+    if (resume) {
+      playing = true;
+      paused = false;
+      void requestWakeLock();
+      speakCurrent();
+      return;
+    }
+
+    playing = keepPaused;
+    paused = keepPaused;
+    showCurrent();
+    if (keepPaused) void requestWakeLock();
+  }
+
+  function jumpSection(delta) {
+    const pos = sectionPosition();
+    let targetPos;
+
+    if (delta < 0 && index > sectionStarts[pos]) targetPos = pos;
+    else targetPos = pos + delta;
+
+    if (targetPos < 0 || targetPos >= sectionStarts.length) return;
+    jumpTo(sectionStarts[targetPos]);
+  }
+
+  play.addEventListener("click", () => {
+    if (paused) {
+      generation += 1;
+      synth.resume?.();
+      synth.cancel();
+      paused = false;
+      playing = true;
+      void requestWakeLock();
+      speakCurrent();
+      return;
+    }
+    if (playing) return;
+    if (index >= blocks.length) index = 0;
+    playing = true;
+    void requestWakeLock();
+    speakCurrent();
+  });
+
+  pause.addEventListener("click", () => {
+    if (!playing || paused) return;
+    synth.pause();
+    paused = true;
+  });
+
+  stop.addEventListener("click", () => {
+    generation += 1;
+    synth.resume?.();
+    synth.cancel();
+    playing = false;
+    paused = false;
+    index = 0;
+    clearHighlight();
+    updateNavigation();
+    void releaseWakeLock();
+  });
+
+  prevBlock.addEventListener("click", () => jumpTo(index - 1));
+  nextBlock.addEventListener("click", () => jumpTo(index + 1));
+  prevSection.addEventListener("click", () => jumpSection(-1));
+  nextSection.addEventListener("click", () => jumpSection(1));
+
+  voice.addEventListener("change", () => {
+    selectedVoice = voice.value;
+    if (playing && !paused) {
+      generation += 1;
+      synth.cancel();
+      speakCurrent();
+    }
+  });
+
+  rate.addEventListener("input", () => {
+    rateValue.textContent = Number(rate.value).toFixed(1) + "×";
+  });
+
+  theme.addEventListener("click", () => {
+    const dark = document.documentElement.dataset.theme === "dark";
+    document.documentElement.dataset.theme = dark ? "light" : "dark";
+    theme.textContent = dark ? "☾" : "☀";
+    localStorage.setItem("rsvp:theme", dark ? "light" : "dark");
+  });
+
+  document.documentElement.dataset.theme =
+    localStorage.getItem("rsvp:theme") ||
+    (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  theme.textContent = document.documentElement.dataset.theme === "dark" ? "☀" : "☾";
+
+  voices();
+  synth.addEventListener?.("voiceschanged", voices);
+  updateNavigation();
+
+  document.addEventListener?.("visibilitychange", () => {
+    if (document.visibilityState === "visible" && (playing || paused)) {
+      void requestWakeLock();
+    }
+  });
+
+  addEventListener("pagehide", () => {
+    generation += 1;
+    synth.cancel();
+    void releaseWakeLock();
+  });
+})();
+</script>
+</body>
+</html>
