@@ -1,5 +1,5 @@
 # Course V — 独立Cloud Browser QAとE統合判定（2026-10-13）
-実測時刻: 07:56–08:05 JST頃。Repository: Josh-Temple/rsvp-learning。
+実測時刻: 07:56–08:00 JST頃。Repository: Josh-Temple/rsvp-learning。
 教材対象: PR #136 / 2ceb3bae83dca17f00dcfb84cddfd726c20c92a0。
 開始時main: a5561275041d7e04278d51be5b0fdd924d13aae0。
 
