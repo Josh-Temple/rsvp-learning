@@ -634,6 +634,30 @@
       "duration_multiplier": 1.15
     },
     {
+      "text": "期限前の瞬間なら正常に許可します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "期限ちょうどと期限後は拒否します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "夏時間の切替で時計が戻るときも、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "現地の時刻表示順だけに頼らず、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "UTCに換算した瞬間の順で比べます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "同じ瞬間なら別の時差でも結果は同じです。",
+      "duration_multiplier": 1.15
+    },
+    {
       "text": "非常時の特別権限が必要なら、",
       "duration_multiplier": 1
     },

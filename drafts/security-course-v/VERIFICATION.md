@@ -87,3 +87,15 @@ HTMLは固定の通常p要素に文字を符号化し、HTMLParserで入力か�
 MD全文とLearn連続講義は制作担当が改訂後に通読した。機械検査は構造・特定断片を確認し、自然言語全体の意味保証ではない。実音声、Android実機、実受講者、採点者間一致、学習効果は未検証/未測定。実サービス全経路、分散失効、実DOM/URL/サニタイザ/CSP、他DB/ORM/手続、template/OS等の既存留保も維持する。
 
 制作担当判定は **READY_FOR_INDEPENDENT_REACCEPTANCE / HOLD**。今回の制作確認範囲では、F-01〜07の未修正項目・新たに検出した未解消P0/P1/P2はない。重大度ゼロを独立保証せず、新しいfull SHAで独立Worker Cが章別に再判定する。main merge・公開・production deployは行わない。
+
+
+## 2026-10-12 JST：Worker B / F-08 教材最終同期の検証範囲
+
+既存F-01〜F-07検証およびWorker AのF-08実装修正・Green [Test 38196790680](https://github.com/Josh-Temple/rsvp-learning/actions/runs/38196790680) は過去のheadの履歴として保持する。BはAの認可コードを変更せず、V-1本文、同期JSON、Learn、V1-Q4 rubric、命題マップ、Python公式仕様の根拠・入力契約を同じ候補に揃える。V-2の本文・JSON・Learn・設問は正しい認可独立性を維持し無変更とする。
+
+- 新V-1 215 chunks、V-2 241 chunks、合計456。番号付きMarkdownとJSON全文同期・順序・句読点・否定・24文字上限・英語の破断を対象SHAで検査する。
+- 重要命題21件（V-1 9、V-2 12）と設問10件（各章5問・2/1/0・総20点）は維持。V1-Q4は期限前正常許可、期限一致と期限後の拒否、別時差での同一瞬間とfoldの反例を評価する。
+- Python公式datetime/zoneinfoの確認節を根拠表とregistryへ追加。従来15原典の一括再検証、C独立1,419比較、実音声、Android、実受講者理解、配信確認を実施したとは扱わない。
+- 最終head固有のGitHub Actions、readback、C/Dへ渡す固定40桁SHAはPR #136のWorker Bコメントに保存する。CI完了前はREADYではない。
+
+本節は制作側Bの記録であり、独立Cの内容受入でも公開許可でもない。

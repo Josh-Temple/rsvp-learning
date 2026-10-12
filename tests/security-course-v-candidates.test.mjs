@@ -266,3 +266,22 @@ test("F-07: production-review metadata stays outside speech, technical limitatio
     assert.match(outside, /実受講者の理解/);
   }
 });
+
+
+test("F-08: synchronized teaching and V1-Q4 rubric retain positive and negative deadline cases", async () => {
+  const questions = await fs.readFile(path.join(repositoryRoot, "drafts/security-course-v/QUESTIONS.md"), "utf8");
+  const q4 = questions.split("### V1-Q4：")[1]?.split("### V1-Q5：")[0];
+  assert.ok(q4, "V1-Q4 exists");
+  for (const phrase of ["期限前", "期限ちょうど", "期限後", "同じ瞬間", "UTC", "2点", "1点例", "0点例"]) {
+    assert.ok(q4.includes(phrase), `F-08 rubric missing ${phrase}`);
+  }
+  assert.match(q4, /期限後の拒否だけでは2点としない/);
+  for (const phrase of ["期限前の瞬間なら正常に許可します。", "期限ちょうどと期限後は拒否します。",
+                        "UTCに換算した瞬間の順で比べます。", "同じ瞬間なら別の時差でも結果は同じです。"]) {
+    assert.ok(inputs[0].markdown.includes(phrase), `F-08 Markdown missing ${phrase}`);
+    assert.ok(inputs[0].lesson.chunks.some(chunk => chunk.text === phrase), `F-08 RSVP missing ${phrase}`);
+  }
+  assert.match(inputs[0].html, /同じ瞬間なら別の時差表現でも結果を変えません/);
+  assert.match(inputs[0].html, /分散環境の失効や資格情報の破棄まで確認したものではありません/);
+  assert.match(inputs[1].markdown, /Injection対策と認可も別です。/);
+});

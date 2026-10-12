@@ -92,3 +92,18 @@ S05・S07・S08・S09・S11は初回と同じ固定commit `cb9fe01e5ddf17b42513d
 - 実装に採用するDB／ドライバ、URL処理、HTMLサニタイザ、雛形エンジン、OS／プロセスAPIの版と実設定。採用していない処理系を本候補のPASS対象へ含めない。
 - 全取得経路、MFA、初回管理者登録、設定ドリフト、並行更新・分散失効、ログの権限・保持期間、業務継続の統合試験。
 - 耳だけでの実受講、用語の音声、条件変更問題の採点一致、独立Worker Cの新規内容受入。公開時の実機確認は後続ゲート。
+
+## 2026-10-12：F-08夏時間終了時の期限比較（B教材同期）
+
+本節は既存15件の一括再検証ではない。F-08に関係するPython 3.12公式仕様の以下の記述を照合した。
+
+- [datetime objects — order comparison / astimezone()](https://docs.python.org/3.12/library/datetime.html#datetime-objects)：awareな二つのdatetimeが同じtzinfo属性を持つ場合、大小比較ではtzinfoとfoldを無視して現地時計の数値を比較する。一方、astimezone(timezone.utc)は表す瞬間を変えずにUTCへ変換する。
+- [zoneinfo — Using ZoneInfo](https://docs.python.org/3.12/library/zoneinfo.html#using-zoneinfo)：夏時間終了時に同じ現地時刻が重複し、fold=0とfold=1で異なるUTC offsetを表す。固定offsetの時刻とZoneInfoの時刻は、同じ瞬間の表現であれば診断結果が一致する必要がある。
+
+| 関連命題 | 教材への反映と検証範囲 | 一般化できない範囲 |
+|---|---|---|
+| V1-06（原則S09・S12、実装仕様Python 3.12） | UTCの瞬間を比較。期限前で他の認可条件がすべて有効ならallow、期限一致・期限後はdeny。2026-11-01 New Yorkの現地時計順と実時間順が逆転する二方向、別UTC offsetで同じ瞬間、fold、BerlinをAの9正式Pythonメソッドで回帰対象にした。Bは教材本文・講義・採点基準に対応を追加した。 | 原則S09/S12はPythonのfold仕様を定義した資料ではない。日時比較の言語仕様はPython公式資料、ローカル実装結果はAのテストとして別に扱う。分散失効・資格情報破棄・実サービス全取得経路・他言語のdatetime挙動は未検証。 |
+| V2-12 | SQL等のInjection対策と、主体・操作・対象・項目・時刻に対する認可は異なる制御。V-2の既存本文・講義・出題は維持し、V-1の期限判定修正だけでInjection防止を達成したとは主張しない。 | 一つの制御の成功から全経路の保護を推論しない。 |
+
+基準となる具体例：同じNew Yorkタイムゾーンで、現在01:10 UTC−5（06:10Z）、期限01:50 UTC−4（05:50Z）は**期限後につき拒否**。現在01:50 UTC−4（05:50Z）、期限01:10 UTC−5（06:10Z）は**期限前につき、他の認可条件がそろえば許可**。期限と同一瞬間は拒否。Pythonのreplace(tzinfo=timezone.utc)を「UTCへの換算」として扱わない。Aの修正コード・回帰の詳細は[F08_REPAIR](F08_REPAIR_2026-10-12.md)に保存済み。Bの自己検証は独立Cの受入ではない。
+

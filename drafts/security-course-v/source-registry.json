@@ -383,5 +383,32 @@
       "verification": "source_verified",
       "limit": "Mutable documentation URL, no immutable blob pin; module-contract paragraph only"
     }
+  ],
+  "f08_checked_at": "2026-10-12 JST",
+  "f08_scope": "Only Python 3.12 datetime ordering and ZoneInfo fold/UTC conversion passages relevant to F-08; previous 15 sources not bulk-refetched",
+  "f08_verifications": [
+    {
+      "id": "PYTHON_DATETIME",
+      "url": "https://docs.python.org/3.12/library/datetime.html#datetime-objects",
+      "version": "Python 3.12 documentation (read 2026-10-12)",
+      "verification": "source_verified",
+      "sections": [
+        "aware datetime ordering with the same tzinfo ignores tzinfo and fold",
+        "datetime.astimezone() preserves the same UTC instant",
+        "datetime.replace() does not convert an instant"
+      ],
+      "limit": "Python 3.12 semantics, not distributed authorization assurance"
+    },
+    {
+      "id": "PYTHON_ZONEINFO",
+      "url": "https://docs.python.org/3.12/library/zoneinfo.html#using-zoneinfo",
+      "version": "Python 3.12 zoneinfo documentation (read 2026-10-12)",
+      "verification": "source_verified",
+      "sections": [
+        "Using ZoneInfo",
+        "fold=0 and fold=1 across daylight saving transition"
+      ],
+      "limit": "Python time-zone representation, not other runtimes or deployed databases"
+    }
   ]
 }
