@@ -514,3 +514,64 @@ C報告の**合計167/167、24字超過0、Learn source 3件がarticle外**をC�
 - **E-2 `MERGED_AND_PRODUCTION_VERIFIED`**。対象3章はCが受け入れた範囲の修正が**protected productionに実配信済み**であり、scope付きrelease gate `OPEN`。ただし**Wave総合 `PARTIAL_WITH_GAPS`**（独立D新production実機・音声・連続再生/理解度が未成立、更新aliasの1件はツール取得BLOCKED）。
 - **残課題と担当:** Dは現在の本番deployment ID/source/SSOをfresh readして新版URL別QAを独立記録、実端末・実音声を本当に操作した場合のみPASS。EはDの新記録提出後に最終品質受入を改めて統合。20問の文書ルーブリックと実回答は分離し、他27章の専門深度を自動PASSにしない。Course V-1 `security-secure-by-design-default` / V-2 `security-input-output-injection` は個別HOLD。既存入門8章、既公開重点4章、Catalog/status/course、player、history/localStorage、private RSVPとpublic Instant Radioの境界はEの今回変更対象外。
 - **記録の区別:** このE追補だけを入れた後にGitHub main SHAが進行しても、**教材をreleaseしたsource `7d1139...`、現在production source `41e4ad...`、文書追補main SHA** を混同しない。旧C HOLDとD旧baselineを改ざんせずappend-only保存する。
+
+
+---
+
+## 18. 2026-10-12 Worker E — Course V F-08 Wave統合判定（A修正後・B/C/D最終ゲート未成立）
+
+**この節は2026-10-12 JSTのGitHub/Vercel取得時点のsnapshotである。** 既存§1〜§17を変更しない。指示：Library `/RSVP Learning/Work Instructions/2026-10-12_security_course_v_f08_dst_repair_independent_reacceptance_and_release_readiness_wave_instructions.md`。対象はCourse V-1 `security-secure-by-design-default` とV-2 `security-input-output-injection`。以前の既存3章のrelease (§17)とは別の候補であり、既存3章の受入をこの2章に転用しない。
+
+**E結論：内容 `CONTENT_HOLD`、release readiness `RELEASE_HOLD`、Wave全体 `PARTIAL_WITH_GAPS`。** 本Waveの対象2章は `DRAFT / HOLD` のまま。`CONTENT_ACCEPTED_EXACT_SHA` および `READY_FOR_SEPARATE_RELEASE_DECISION` は未成立。AのF-08修正と対象SHA固有の自動検査は確認したが、Bによる最終の3形式・評価引渡し、Cによる当該SHAの独立再受入、Dの最終候補QAは未成立。main merge、Catalog登録、COMPLETE、production deploy、公開、SSO変更はいずれも実施しない。
+
+### 18.1 source identities / SHA drift / 対象PR
+
+| 対象 | fresh read事実 | 判定境界 |
+| --- | --- | --- |
+| 最新main | `fa63f8f2571203539269a38d501d50d92cafc1d2` | 既存production sourceと一致。E文書PR作成後の独立main進行とは区別 |
+| 教材候補 [#136](https://github.com/Josh-Temple/rsvp-learning/pull/136) | 現head `57b0cc89931483115eec654be37e2bafbd2f18e3`、open / draft / unmerged。PRの表示base `74ebcac3587650ee83b95438629d1893ba8abfb4` | **A修正記録まで**。B最終提出の新head・引渡し判定はまだ取得していない |
+| 初回監査 [#137](https://github.com/Josh-Temple/rsvp-learning/pull/137) | 報告head `2ef5ee94619a8faff0f60f9313e10b86af009a00`。対象教材 `edc183742163cb3bc355b2ee4b6dd177366acc8f` | 旧F-01/P1の旧head監査であり現候補の受入でない |
+| 前回再監査 [#139](https://github.com/Josh-Temple/rsvp-learning/pull/139) | 報告head `a78ebccc42d01ca7c78a96a441d7a63305abcf79`。対象教材 `0cff8396277cbc8f19cae32df6344ea4a138b2cf`、V-1/V-2とも `NEEDS_REVISION`、F-08/P1 | F-01〜F-07の解消は当時の独立結果。F-08の1,419比較中1,417成功/2失敗も**旧head限定** |
+| A中間修正とreceipt | Red `4f94551c7f217b52dc6c83c3a09afee24a8f5dfe` →実装修正 `8dda9d7d0dc55a7f860a6bf5a9d953cd381bdb92` →runner修正 `7df66575e2f42ce587f99cb68de7f93554e82cf3` →A報告head `57b0cc89931483115eec654be37e2bafbd2f18e3` | 最後の増分は `drafts/security-course-v/F08_REPAIR_2026-10-12.md` **新規1ファイル**。Aは本文・MD/JSON/Learn/設問を編集していない |
+| D [#140](https://github.com/Josh-Temple/rsvp-learning/pull/140) | 報告head `cc94f8d876585d5254246f8c38ba128dd05c1ecb`、新規文書1件、`BLOCKED` | 旧 `0cff...` の静的予備検証と途中 `8dda...` のblob同一確認のみ。B最終headの正式D判定ではない |
+
+GitHub検索で確認した当日新規PRは #139 と #140。**現在の #136 `57b0...` を審査対象としてV-1/V-2両方 `ACCEPTED_FOR_MERGE` と独立署名する新C報告PRは取得できない。** 当日以降に新たな報告/commitが作成された場合は、直近headを再取得し、本節を過去snapshotとして扱う。#136のPR本文には旧 `0cff...` のREADY_FOR_INDEPENDENT_REACCEPTANCE記録が残るが、現headのC合格とは読まない。
+
+GitHub compare `fa63...` → `57b0...` は `diverged`、ahead=6/behind=1、共通祖先は `74eb...`、実差分32ファイル。main側の1コミットはListenの2ファイルであり、現時点で差分の内容衝突を確定したわけではない。**C署名後の再baseや候補更新でheadが変われば再度C受入が必要**。Eは再base/mergeを実施していない。
+
+### 18.2 F-08実装、CI、教材と評価の証拠境界
+
+- 教育用 `drafts/security-course-v/examples/municipal_service.py` の実コードはaware datetime確認後に `now.astimezone(timezone.utc) < grant.expires_at.astimezone(timezone.utc)` で期限比較する。時差ラベルの付替えではなく実際の瞬間を比較する。Aの[修正報告](https://github.com/Josh-Temple/rsvp-learning/blob/57b0cc89931483115eec654be37e2bafbd2f18e3/drafts/security-course-v/F08_REPAIR_2026-10-12.md)にNew YorkのDST終了時の2反例・旧Red/新Green・実行対象を記録。
+- 旧モデルでは現在時刻 `2026-11-01 01:10 fold=1 / 06:10Z`、期限 `01:50 fold=0 / 05:50Z` の期限後を**誤許可**、逆方向の期限前を**誤拒否**。Aの正式回帰ではUTC比較修正後に期限後拒否／期限前許可を確認したと報告。元41＋追加9で**Python 50メソッド**。期限一致拒否・±1µs・異なるoffsetとfold・Berlin・正規許可と主体/対象/承認不一致拒否を含む。
+- Red SHA `4f94551...` の[Test #38196523862](https://github.com/Josh-Temple/rsvp-learning/actions/runs/38196523862)はfailure。修正SHA `8dda9d7...` の[Test #38196597430](https://github.com/Josh-Temple/rsvp-learning/actions/runs/38196597430)はPython 50成功だがNode側の旧41件ハーネス期待値不一致でfailure。runner修正SHA `7df6657...` の[Test #38196664783](https://github.com/Josh-Temple/rsvp-learning/actions/runs/38196664783)がsuccess。
+- **現 #136 head `57b0cc89931483115eec654be37e2bafbd2f18e3` 固有の [Test #38196790680](https://github.com/Josh-Temple/rsvp-learning/actions/runs/38196790680) は `completed/success`。test job `114641122879` は全ステップsuccess、`npm run check` のNode **67/67 pass、0 fail**とcontent/status/Learn validator PASSをログで確認。Python 50はNodeの1テスト経由であり**67+50の単純加算はしない**。このCIは制作担当の回帰でありC独立審査ではない。
+- 旧F-01の欠落部署、旧監査12条件、F-02〜F-07の既設回帰はAのGreen CIが対象。**旧Cの1,419比較を修正後 `57b0...` でE/Cが独立再実行した証拠はない**。新たな未解消P0/P1=0との判定も未成立。F-08はA実装ゲートのみGreen、独立検証ゲート `NOT_VERIFIED`。
+- Aが変更していない教材は旧C監査時のV-1 **209**、V-2 **241**、計 **450** RSVP chunks／21重要命題／10問／20点を継承。現head CIでは候補2章の同期・24文字上限・HOLD、Learn静的検証および10問の構造テストがPASS。Eは450チャンク全件の新たな独立意味比較・2つのLearn通読・全原典再取得を行っていない。BはF-08に関するV1-Q4、期限前の正常許可・期限後拒否・異表現同一瞬間、3形式と根拠の整合を最終提出し、Cが再査読する必要がある。
+- 現headの既存公開側validatorログは**158 Lesson / COMPLETE 141・DRAFT 0・SEED 17 / 141 Learn**。Course V候補2章はCatalog外・`DRAFT/HOLD`。以前の24コースと他30章の回帰も登録Waveで改めて確認する。現CIの数値は配信済み候補2章の件数ではない。
+
+### 18.3 Worker D / production / 認証境界
+
+- D [#140](https://github.com/Josh-Temple/rsvp-learning/pull/140)はB最終SHA前の**予備QA**。旧候補の2つのLearnで静的HTML/相対パス/HOLD/出典article外、共有playerの配線は限定確認。ただし最終 `57b0...` の正式D QA、実Preview/browser、390px描画、Web Speech発声、Android Chrome標準読み上げ、章間移動/速度操作、未認証アクセスは `BLOCKED / UNTESTED / NOT_VERIFIED`。C審査の代替ではない。
+- Vercel APIのfresh readでproduction alias `rsvp-learning-kappa.vercel.app` はdeployment `dpl_Ernw8TuvgPPXg1TBRLrJCgorNRBR` を参照し、deployment一覧では `READY / target=production / githubCommitSha=fa63f8f2571203539269a38d501d50d92cafc1d2`。**#136候補 `57b0...` のproduction配信ではない**。`57b0...` に絞ったdeployment一覧は0件だが、これだけで全環境の不存在を証明しない。
+- プロジェクト設定 `ssoProtection.enabled=true / deploymentType=all_except_custom_domains` を取得。alias設定上には**shareable-link型の保護バイパス設定**が存在する。バイパス用の秘密値・URLを本報告へ保存しない。この設定の許可対象と期限、SSO保護の例外範囲は公開境界監査で別確認が必要。SSO設定が有効なことだけから無認証の全経路遮断を実測済みとしない。
+- 既存productionはCourse Vとは無関係の過去に受入済み教材を配信し、public `instant-radio` は別リポジトリ。本Waveにおいて両者、alias、SSO、history/localStorage、利用者データ収集の設定は**変更していない**。候補のpublic/保護済み配信実体は `NOT_VERIFIED`。
+
+### 18.4 独立ゲート・差戻し・次Waveのリリース条件（今Waveは未実施）
+
+| ゲート | 今回の判定 | 次の担当・必要証拠 |
+| --- | --- | --- |
+| A実コード修正・正式CI | `F08_CODE_READY_FOR_B`相当の実装・CI証拠あり。Aの記録はreadback/CI条件付き | **A→B**：A final head、Red/Green、50 Python方法、67 Node、旧12条件をBが取得 |
+| B媒体整合と評価 | **未提出／HOLD** | **B**：A保存済みSHAからMD/JSON/Learn/設問・根拠を必要最小限で整合。全数・21命題・10問・V1-Q4の正常/失効境界、最終**40桁full SHA**・CI・readbackを提出。同一branchへの同時push禁止 |
+| C独立受入（内容） | **`CONTENT_HOLD`**。旧#139の両章 `NEEDS_REVISION` は旧head履歴。新headは `NOT_ACCEPTED` | **C（独立セッション）**：B最終headと完全一致する対象を固定、NY折返し2件と時差/境界/旧F-01〜07、正常許可、独立反証、3形式、Learn通読、21命題/10問を再審査。新しい専用Draft PRに各章 `ACCEPTED_FOR_MERGE` か否か、P0/P1と未検証を署名 |
+| D非公開候補QA | **`BLOCKED`（正式対象未確定）**、旧head静的予備QAのみ | **D**：B最終headで相対参照・HOLD・Preview/SSO・未認証境界を再検査。アクセス可能な保護Previewでdesktop/390px、再生・停止・速度・章遷移を実測。Android/音声ができなければ `UNTESTED` と残す。aliasのshareable-link例外設定は別確認 |
+| Release readiness | **`RELEASE_HOLD`** | **E＋ユーザー**：C両章 `ACCEPTED_FOR_MERGE` / P0=P1=0、現在head一致、対象CI success、B/D正式証拠、保護境界、原典核心が成立してから別Waveでrelease決定 |
+
+次の登録・限定release **設計案**：①最新mainとC署名headの厳密な差分・競合を確認する（旧baseの単純流用はしない）。②別の候補登録PRで `drafts/security-course-v/lessons/` の両MD/JSONを通常のLesson置場（現構造の `lessons/security-deep/` 等）へ、2つのLearn HTMLを正規 `learn/` 配下へ移し、`lessons/index.json` と該当Courseデータ・`courses/index.json` へのCourse Vと順序・status・source/navigationを整合的に追加する。実際の配置・ID・course orderは次Waveの現行schemaをfresh readして決める。③既存158教材、24コース、141 Learn、既存30章、player/history、出典と公開境界を回帰。④同じ最終候補headで再C受入が必要な変更を行ったなら、その新headの独立受入を再取得。⑤**保護されたprivate Preview**でDが操作・公開境界を実測。⑥別のユーザー承認後に限り、検証済みSHAでmain merge、main CI、private production配信、alias/source/SSO readback、公開経路の確認に進む。今Waveで①〜⑥を実行したことを意味しない。
+
+停止条件は、新P0/P1、期限後誤許可/期限前誤拒否、正常許可消失、候補head drift、CI失敗、C判定と対象head不一致、根拠核心不足、Learn/評価不一致、D重大な操作不良、Preview/production/SSO・shareable-linkの公開境界不明。問題があれば該当担当A（モデル）・B（教材）・C（再受入）・D（実機/境界）へ差し戻す。既存productionへの影響を検出した場合、切戻し対象deployment/sourceと操作権限を確認し**別途承認**を得て復旧する。自動rollbackはしない。
+
+**次に必要な人的判断:** （1）B最終候補と独立C再審査の実施継続、（2）Dの保護Previewと実Android/Web Speech QAの担当・実機環境の供給、（3）C合格後に別のRelease WaveでCatalog/COMPLETE/private本番反映を承認するか、一般公開とは分けて判断。**現時点で（3）の承認を求める段階ではない。**
+
+### 18.5 E保存境界
+
+このE追補は監査・統合の**文書だけ**を新しいDraft PRに提案し、mainには自動反映しない。#136教材、C #137/#139、D #140を改変しない。E文書のGitHub readback、head、Actions結論は保存後に独立確認し、本節のsource snapshot値に自動混入させない。
