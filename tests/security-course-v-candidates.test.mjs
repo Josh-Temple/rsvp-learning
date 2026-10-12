@@ -188,7 +188,13 @@ test("ten judgement questions include two elements, 2/1/0 rubrics and condition 
 test("safe local executable examples check authorization, SQLite values and ordinary HTML text", () => {
   const result = run("python3", ["-m", "unittest", "discover", "-s", "drafts/security-course-v/examples", "-v"]);
   assert.equal(result.status, 0, result.stderr);
-  assert.match(result.stderr, /Ran 41 tests/);
+  // 41 existing methods + 9 F-08 methods; Python is invoked by ONE Node test.
+  assert.match(result.stderr, /Ran 50 tests/);
+  for (const name of ["test_f08_red_a_expired_fall_back_denies",
+                      "test_f08_red_b_unexpired_fall_back_allows",
+                      "test_berlin_fall_back_handles_both_directions"]) {
+    assert.match(result.stderr, new RegExp(`${name}[^\\n]+ \\.\\.\\. ok`));
+  }
   for (const number of Array.from({ length: 12 }, (_, i) => String(i + 1).padStart(2, "0"))) {
     assert.match(result.stderr, new RegExp(`test_audit_${number}_[^\\n]+ \\.\\.\\. ok`));
   }
