@@ -1,0 +1,991 @@
+{
+  "anonymous-http": [
+    {
+      "started_at_utc": "2026-10-13T03:18:55.531511+00:00",
+      "url": "https://rsvp-learning-kappa.vercel.app/",
+      "method": "GET",
+      "credentials": "no Cookie, Authorization, SSO state, or shareable query; fresh opener per hop",
+      "initial_status": 200,
+      "final_status": 200,
+      "hops": [
+        {
+          "host": "rsvp-learning-kappa.vercel.app",
+          "status": 200,
+          "redirect_host": null,
+          "content_type": "text/html; charset=utf-8",
+          "body_bytes": 8213,
+          "body_sha256": "cd0b477492224d39b9f869e19e5d1a6df2d7b530d56b094e3578b58f0eda3800",
+          "git_blob_sha1": "1f3b4d488dd07872e5335a87e962cd483c7307d4",
+          "is_auth_page": false,
+          "has_article": true,
+          "site_rsvp_marker": true,
+          "course_v_marker": false,
+          "vercel_cache": "HIT"
+        }
+      ],
+      "source_blob_sha1": "1f3b4d488dd07872e5335a87e962cd483c7307d4",
+      "response_matches_source": true,
+      "deployment_id": "dpl_4qF1Boso4eQCQLB3tD7jVgL3m6Pp",
+      "source_sha": "8d1164f577b32b575e4ef43291511b020b243e93"
+    },
+    {
+      "started_at_utc": "2026-10-13T03:18:55.532117+00:00",
+      "url": "https://rsvp-learning-kappa.vercel.app/learn/security-authentication-access-control.html",
+      "method": "GET",
+      "credentials": "no Cookie, Authorization, SSO state, or shareable query; fresh opener per hop",
+      "initial_status": 200,
+      "final_status": 200,
+      "hops": [
+        {
+          "host": "rsvp-learning-kappa.vercel.app",
+          "status": 200,
+          "redirect_host": null,
+          "content_type": "text/html; charset=utf-8",
+          "body_bytes": 5894,
+          "body_sha256": "5c340f401f0be6d9816e94c66e7450d89e525d9956c09e4521aa74d7ea7aba4c",
+          "git_blob_sha1": "8f66405f4dd16b7d507c48fe8fa6930e70a4c17f",
+          "is_auth_page": false,
+          "has_article": true,
+          "site_rsvp_marker": true,
+          "course_v_marker": false,
+          "vercel_cache": "MISS"
+        }
+      ],
+      "source_blob_sha1": "8f66405f4dd16b7d507c48fe8fa6930e70a4c17f",
+      "response_matches_source": true,
+      "deployment_id": "dpl_4qF1Boso4eQCQLB3tD7jVgL3m6Pp",
+      "source_sha": "8d1164f577b32b575e4ef43291511b020b243e93"
+    },
+    {
+      "started_at_utc": "2026-10-13T03:18:55.534018+00:00",
+      "url": "https://rsvp-learning-kappa.vercel.app/learn/learn.js",
+      "method": "GET",
+      "credentials": "no Cookie, Authorization, SSO state, or shareable query; fresh opener per hop",
+      "initial_status": 200,
+      "final_status": 200,
+      "hops": [
+        {
+          "host": "rsvp-learning-kappa.vercel.app",
+          "status": 200,
+          "redirect_host": null,
+          "content_type": "application/javascript; charset=utf-8",
+          "body_bytes": 11203,
+          "body_sha256": "4971ffdc7b62a3feb2c9f57a0d397a251addf71fb5bd7421f5f5bd771f21d50a",
+          "git_blob_sha1": "22642c66e45a7bf85ea4fa6f0cfe9b10b4d7fd1e",
+          "is_auth_page": false,
+          "has_article": false,
+          "site_rsvp_marker": true,
+          "course_v_marker": false,
+          "vercel_cache": "HIT"
+        }
+      ],
+      "source_blob_sha1": "22642c66e45a7bf85ea4fa6f0cfe9b10b4d7fd1e",
+      "response_matches_source": true,
+      "deployment_id": "dpl_4qF1Boso4eQCQLB3tD7jVgL3m6Pp",
+      "source_sha": "8d1164f577b32b575e4ef43291511b020b243e93"
+    },
+    {
+      "started_at_utc": "2026-10-13T03:18:55.536000+00:00",
+      "url": "https://rsvp-learning-kappa.vercel.app/lessons/index.json",
+      "method": "GET",
+      "credentials": "no Cookie, Authorization, SSO state, or shareable query; fresh opener per hop",
+      "initial_status": 200,
+      "final_status": 200,
+      "hops": [
+        {
+          "host": "rsvp-learning-kappa.vercel.app",
+          "status": 200,
+          "redirect_host": null,
+          "content_type": "application/json; charset=utf-8",
+          "body_bytes": 50601,
+          "body_sha256": "7972d627c8f69aadc83aa13138d1a0a9f8bdeac70d3a2b70a1235524ea1b9164",
+          "git_blob_sha1": "787410259ed2c6eb7a6ee36ecd5593f25386504b",
+          "is_auth_page": false,
+          "has_article": false,
+          "site_rsvp_marker": true,
+          "course_v_marker": false,
+          "vercel_cache": "HIT"
+        }
+      ],
+      "source_blob_sha1": "787410259ed2c6eb7a6ee36ecd5593f25386504b",
+      "response_matches_source": true,
+      "deployment_id": "dpl_4qF1Boso4eQCQLB3tD7jVgL3m6Pp",
+      "source_sha": "8d1164f577b32b575e4ef43291511b020b243e93"
+    },
+    {
+      "started_at_utc": "2026-10-13T03:19:05.463153+00:00",
+      "url": "https://rsvp-learning-kappa.vercel.app/courses/index.json",
+      "method": "GET",
+      "credentials": "no Cookie, Authorization, SSO state, or shareable query; fresh opener per hop",
+      "initial_status": 200,
+      "final_status": 200,
+      "hops": [
+        {
+          "host": "rsvp-learning-kappa.vercel.app",
+          "status": 200,
+          "redirect_host": null,
+          "content_type": "application/json; charset=utf-8",
+          "body_bytes": 9532,
+          "body_sha256": "3fc0bbf7f3f62e89a35dc86d5c7ac3be0b15c640b55774e64bbef891c3a2b12b",
+          "git_blob_sha1": "2bed763f393e8c3feeba58c790fe7ca80c5b501b",
+          "is_auth_page": false,
+          "has_article": false,
+          "site_rsvp_marker": true,
+          "course_v_marker": false,
+          "vercel_cache": "HIT"
+        }
+      ],
+      "source_blob_sha1": "2bed763f393e8c3feeba58c790fe7ca80c5b501b",
+      "response_matches_source": true,
+      "deployment_id": "dpl_4qF1Boso4eQCQLB3tD7jVgL3m6Pp",
+      "source_sha": "8d1164f577b32b575e4ef43291511b020b243e93"
+    },
+    {
+      "started_at_utc": "2026-10-13T03:19:05.472392+00:00",
+      "url": "https://rsvp-learning-kappa.vercel.app/drafts/security-course-v/learn/security-secure-by-design-default.html",
+      "method": "GET",
+      "credentials": "no Cookie, Authorization, SSO state, or shareable query; fresh opener per hop",
+      "initial_status": 404,
+      "final_status": 404,
+      "hops": [
+        {
+          "host": "rsvp-learning-kappa.vercel.app",
+          "status": 404,
+          "redirect_host": null,
+          "content_type": "text/plain; charset=utf-8",
+          "body_bytes": 79,
+          "body_sha256": "c86a61f472b329df0d92e05a82adf22d1f19eb0622edfd96248a326f4f359c61",
+          "git_blob_sha1": "fb02eb5da56459c1eea2162b5b7d830181a62978",
+          "is_auth_page": false,
+          "has_article": false,
+          "site_rsvp_marker": false,
+          "course_v_marker": false,
+          "vercel_cache": null
+        }
+      ],
+      "source_blob_sha1": null,
+      "response_matches_source": null,
+      "deployment_id": "dpl_4qF1Boso4eQCQLB3tD7jVgL3m6Pp",
+      "source_sha": "8d1164f577b32b575e4ef43291511b020b243e93"
+    },
+    {
+      "started_at_utc": "2026-10-13T03:19:05.498472+00:00",
+      "url": "https://rsvp-learning-kappa.vercel.app/drafts/security-course-v/learn/security-input-output-injection.html",
+      "method": "GET",
+      "credentials": "no Cookie, Authorization, SSO state, or shareable query; fresh opener per hop",
+      "initial_status": 404,
+      "final_status": 404,
+      "hops": [
+        {
+          "host": "rsvp-learning-kappa.vercel.app",
+          "status": 404,
+          "redirect_host": null,
+          "content_type": "text/plain; charset=utf-8",
+          "body_bytes": 79,
+          "body_sha256": "73a13c79ff769f76fd67a5b02e7bd15b4d55bea4eb0a7c1ca90750fdb4de7bc3",
+          "git_blob_sha1": "40b0b6ce4a40a11343607f3257bc54006e122161",
+          "is_auth_page": false,
+          "has_article": false,
+          "site_rsvp_marker": false,
+          "course_v_marker": false,
+          "vercel_cache": null
+        }
+      ],
+      "source_blob_sha1": null,
+      "response_matches_source": null,
+      "deployment_id": "dpl_4qF1Boso4eQCQLB3tD7jVgL3m6Pp",
+      "source_sha": "8d1164f577b32b575e4ef43291511b020b243e93"
+    },
+    {
+      "started_at_utc": "2026-10-13T03:19:05.613169+00:00",
+      "url": "https://rsvp-learning-josh-temples-projects.vercel.app/",
+      "method": "GET",
+      "credentials": "no Cookie, Authorization, SSO state, or shareable query; fresh opener per hop",
+      "initial_status": 302,
+      "final_status": 200,
+      "hops": [
+        {
+          "host": "rsvp-learning-josh-temples-projects.vercel.app",
+          "status": 302,
+          "redirect_host": "vercel.com",
+          "content_type": "text/plain",
+          "body_bytes": 263,
+          "body_sha256": "078d44efe538819a52deef2d03cc221b5b81ea1ae1f577dc80710db061c3766f",
+          "git_blob_sha1": "9ec4daf840fc9c19eff0ede77a23b3bac18d1124",
+          "is_auth_page": false,
+          "has_article": false,
+          "site_rsvp_marker": false,
+          "course_v_marker": false,
+          "vercel_cache": null
+        },
+        {
+          "host": "vercel.com",
+          "status": 307,
+          "redirect_host": "vercel.com",
+          "content_type": null,
+          "body_bytes": 0,
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+          "is_auth_page": false,
+          "has_article": false,
+          "site_rsvp_marker": false,
+          "course_v_marker": false,
+          "vercel_cache": "MISS"
+        },
+        {
+          "host": "vercel.com",
+          "status": 200,
+          "redirect_host": null,
+          "content_type": "text/html; charset=utf-8",
+          "body_bytes": 334045,
+          "body_sha256": "ae9d5a2a0856105ce2378ffa565214a0eb99e258ec776f602cca231207bc5442",
+          "git_blob_sha1": "1864143d448f9e2696fe25b545d6360049c14e0a",
+          "is_auth_page": true,
+          "has_article": false,
+          "site_rsvp_marker": false,
+          "course_v_marker": false,
+          "vercel_cache": "HIT"
+        }
+      ],
+      "deployment_id": "dpl_4qF1Boso4eQCQLB3tD7jVgL3m6Pp",
+      "source_sha": "8d1164f577b32b575e4ef43291511b020b243e93"
+    },
+    {
+      "started_at_utc": "2026-10-13T03:19:11.905821+00:00",
+      "url": "https://rsvp-learning-git-main-josh-temples-projects.vercel.app/",
+      "method": "GET",
+      "credentials": "no Cookie, Authorization, SSO state, or shareable query; fresh opener per hop",
+      "initial_status": 302,
+      "final_status": 200,
+      "hops": [
+        {
+          "host": "rsvp-learning-git-main-josh-temples-projects.vercel.app",
+          "status": 302,
+          "redirect_host": "vercel.com",
+          "content_type": "text/plain",
+          "body_bytes": 263,
+          "body_sha256": "078d44efe538819a52deef2d03cc221b5b81ea1ae1f577dc80710db061c3766f",
+          "git_blob_sha1": "9ec4daf840fc9c19eff0ede77a23b3bac18d1124",
+          "is_auth_page": false,
+          "has_article": false,
+          "site_rsvp_marker": false,
+          "course_v_marker": false,
+          "vercel_cache": null
+        },
+        {
+          "host": "vercel.com",
+          "status": 307,
+          "redirect_host": "vercel.com",
+          "content_type": null,
+          "body_bytes": 0,
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+          "is_auth_page": false,
+          "has_article": false,
+          "site_rsvp_marker": false,
+          "course_v_marker": false,
+          "vercel_cache": "MISS"
+        },
+        {
+          "host": "vercel.com",
+          "status": 200,
+          "redirect_host": null,
+          "content_type": "text/html; charset=utf-8",
+          "body_bytes": 334077,
+          "body_sha256": "a22885ed091f5767238117f01f8ce97cddbd549551b6d439f8d076b92a47d88e",
+          "git_blob_sha1": "617ea7d572e80213608dea2d19124a8aaa86c508",
+          "is_auth_page": true,
+          "has_article": false,
+          "site_rsvp_marker": false,
+          "course_v_marker": false,
+          "vercel_cache": "HIT"
+        }
+      ],
+      "deployment_id": "dpl_4qF1Boso4eQCQLB3tD7jVgL3m6Pp",
+      "source_sha": "8d1164f577b32b575e4ef43291511b020b243e93"
+    },
+    {
+      "started_at_utc": "2026-10-13T03:19:11.929176+00:00",
+      "url": "https://rsvp-learning-ga0ob6410-josh-temples-projects.vercel.app/",
+      "method": "GET",
+      "credentials": "no Cookie, Authorization, SSO state, or shareable query; fresh opener per hop",
+      "initial_status": 302,
+      "final_status": 200,
+      "hops": [
+        {
+          "host": "rsvp-learning-ga0ob6410-josh-temples-projects.vercel.app",
+          "status": 302,
+          "redirect_host": "vercel.com",
+          "content_type": "text/plain",
+          "body_bytes": 263,
+          "body_sha256": "078d44efe538819a52deef2d03cc221b5b81ea1ae1f577dc80710db061c3766f",
+          "git_blob_sha1": "9ec4daf840fc9c19eff0ede77a23b3bac18d1124",
+          "is_auth_page": false,
+          "has_article": false,
+          "site_rsvp_marker": false,
+          "course_v_marker": false,
+          "vercel_cache": null
+        },
+        {
+          "host": "vercel.com",
+          "status": 307,
+          "redirect_host": "vercel.com",
+          "content_type": null,
+          "body_bytes": 0,
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+          "is_auth_page": false,
+          "has_article": false,
+          "site_rsvp_marker": false,
+          "course_v_marker": false,
+          "vercel_cache": "MISS"
+        },
+        {
+          "host": "vercel.com",
+          "status": 200,
+          "redirect_host": null,
+          "content_type": "text/html; charset=utf-8",
+          "body_bytes": 334085,
+          "body_sha256": "212edd6a765ddc8ad8fd4e873c04e0aab35b56b7db3a956ed031ba58816dc2b4",
+          "git_blob_sha1": "6ca4b66ef9081556b27bf42e01906e77fb8cf670",
+          "is_auth_page": true,
+          "has_article": false,
+          "site_rsvp_marker": false,
+          "course_v_marker": false,
+          "vercel_cache": "HIT"
+        }
+      ],
+      "deployment_id": "dpl_4qF1Boso4eQCQLB3tD7jVgL3m6Pp",
+      "source_sha": "8d1164f577b32b575e4ef43291511b020b243e93"
+    },
+    {
+      "started_at_utc": "2026-10-13T03:19:12.114098+00:00",
+      "url": "https://rsvp-learning-16af5j843-josh-temples-projects.vercel.app/drafts/security-course-v/learn/security-secure-by-design-default.html",
+      "method": "GET",
+      "credentials": "no Cookie, Authorization, SSO state, or shareable query; fresh opener per hop",
+      "initial_status": 302,
+      "final_status": 200,
+      "hops": [
+        {
+          "host": "rsvp-learning-16af5j843-josh-temples-projects.vercel.app",
+          "status": 302,
+          "redirect_host": "vercel.com",
+          "content_type": "text/plain",
+          "body_bytes": 263,
+          "body_sha256": "078d44efe538819a52deef2d03cc221b5b81ea1ae1f577dc80710db061c3766f",
+          "git_blob_sha1": "9ec4daf840fc9c19eff0ede77a23b3bac18d1124",
+          "is_auth_page": false,
+          "has_article": false,
+          "site_rsvp_marker": false,
+          "course_v_marker": false,
+          "vercel_cache": null
+        },
+        {
+          "host": "vercel.com",
+          "status": 307,
+          "redirect_host": "vercel.com",
+          "content_type": null,
+          "body_bytes": 0,
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+          "is_auth_page": false,
+          "has_article": false,
+          "site_rsvp_marker": false,
+          "course_v_marker": false,
+          "vercel_cache": "MISS"
+        },
+        {
+          "host": "vercel.com",
+          "status": 200,
+          "redirect_host": null,
+          "content_type": "text/html; charset=utf-8",
+          "body_bytes": 334439,
+          "body_sha256": "885ad8e6acd32441cc05d61cbe300cb55fe44a7f76d9d2bb3f5fb0ccc62b6d34",
+          "git_blob_sha1": "af3b7af2bf61bd1db3b9c2ba2e8014a20e53ddbe",
+          "is_auth_page": true,
+          "has_article": false,
+          "site_rsvp_marker": false,
+          "course_v_marker": false,
+          "vercel_cache": "HIT"
+        }
+      ],
+      "deployment_id": "dpl_4myzXuZXtjdyRfhRbxJivUCtmQBy",
+      "source_sha": "2ceb3bae83dca17f00dcfb84cddfd726c20c92a0"
+    },
+    {
+      "started_at_utc": "2026-10-13T03:19:21.442339+00:00",
+      "url": "https://rsvp-learning-16af5j843-josh-temples-projects.vercel.app/drafts/security-course-v/learn/security-input-output-injection.html",
+      "method": "GET",
+      "credentials": "no Cookie, Authorization, SSO state, or shareable query; fresh opener per hop",
+      "initial_status": 302,
+      "final_status": 200,
+      "hops": [
+        {
+          "host": "rsvp-learning-16af5j843-josh-temples-projects.vercel.app",
+          "status": 302,
+          "redirect_host": "vercel.com",
+          "content_type": "text/plain",
+          "body_bytes": 263,
+          "body_sha256": "078d44efe538819a52deef2d03cc221b5b81ea1ae1f577dc80710db061c3766f",
+          "git_blob_sha1": "9ec4daf840fc9c19eff0ede77a23b3bac18d1124",
+          "is_auth_page": false,
+          "has_article": false,
+          "site_rsvp_marker": false,
+          "course_v_marker": false,
+          "vercel_cache": null
+        },
+        {
+          "host": "vercel.com",
+          "status": 307,
+          "redirect_host": "vercel.com",
+          "content_type": null,
+          "body_bytes": 0,
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+          "is_auth_page": false,
+          "has_article": false,
+          "site_rsvp_marker": false,
+          "course_v_marker": false,
+          "vercel_cache": "MISS"
+        },
+        {
+          "host": "vercel.com",
+          "status": 200,
+          "redirect_host": null,
+          "content_type": "text/html; charset=utf-8",
+          "body_bytes": 334431,
+          "body_sha256": "f5c1416b6314868106adb5b478caa76c51a9bfa5f0c7074e701510006b5284a3",
+          "git_blob_sha1": "12c7152248e099140d7190c4464aa0ac64e3ee6f",
+          "is_auth_page": true,
+          "has_article": false,
+          "site_rsvp_marker": false,
+          "course_v_marker": false,
+          "vercel_cache": "HIT"
+        }
+      ],
+      "deployment_id": "dpl_4myzXuZXtjdyRfhRbxJivUCtmQBy",
+      "source_sha": "2ceb3bae83dca17f00dcfb84cddfd726c20c92a0"
+    }
+  ],
+  "browser-qa": {
+    "evidence_type": "Cloud Browser live DOM and UI observations, existing authenticated session; not an anonymous browser context",
+    "candidate_source_sha": "2ceb3bae83dca17f00dcfb84cddfd726c20c92a0",
+    "preview_deployment_id": "dpl_4myzXuZXtjdyRfhRbxJivUCtmQBy",
+    "pages": [
+      {
+        "chapter": "V-1",
+        "path": "/drafts/security-course-v/learn/security-secure-by-design-default.html",
+        "article_chars": 4645,
+        "document_client_width": 1348,
+        "document_scroll_width": 1348,
+        "speech_start_status": "読み上げを開始できませんでした",
+        "speed_change": {
+          "value": "2",
+          "label": "2.0×"
+        },
+        "voice_options": [
+          "端末の標準音声"
+        ],
+        "pause_disabled_after_error": true,
+        "stop_disabled_after_error": true,
+        "desktop_keyboard": "Tab from focused speed slider moved to the next source link; visual focus styling not fully tested"
+      },
+      {
+        "chapter": "V-2",
+        "path": "/drafts/security-course-v/learn/security-input-output-injection.html",
+        "article_chars": 5120,
+        "document_client_width": 1348,
+        "document_scroll_width": 1348,
+        "reader_rect": {
+          "left": 294,
+          "right": 1054,
+          "width": 760,
+          "top": 170.359375,
+          "bottom": 274.078125
+        },
+        "speech_start_status": "読み上げを開始できませんでした",
+        "speed_change": {
+          "value": "4",
+          "label": "4.0×"
+        },
+        "voice_options": [
+          "端末の標準音声"
+        ],
+        "pause_disabled_after_error": true,
+        "stop_disabled_after_error": true
+      }
+    ],
+    "existing_learn_control": {
+      "path": "/learn/security-authentication-access-control.html",
+      "title": "認証・認可・アクセス制御 — Learn",
+      "document_client_width": 1348,
+      "document_scroll_width": 1348,
+      "speech_start_status": "読み上げを開始できませんでした",
+      "voice_options": [
+        "端末の標準音声"
+      ],
+      "shared_js_git_blob_sha1": "22642c66e45a7bf85ea4fa6f0cfe9b10b4d7fd1e"
+    },
+    "speech_inference": "Same start failure on both candidate chapters and an existing production Learn page weakens a Course-V-only failure hypothesis. Existing Android success is retained. Shared reader bug versus cloud engine/device limitation is not conclusively separated; concrete onerror error code and a standalone live Web Speech control were not obtained. No speculative code change.",
+    "root_cause": "UNKNOWN",
+    "viewport_390px": {
+      "status": "NOT_VERIFIED",
+      "reason": "Supported Cloud Browser API has no viewport/context-resize operation. Ctrl+Shift+I did not expose DevTools or change the measured 1348px document viewport. No CSS-only or cropped-image substitution was made."
+    },
+    "touch": "UNTESTED",
+    "mobile_focus_layout": "UNTESTED",
+    "android_audio": {
+      "status": "USER_DEVICE_AUDIO_PASS_REPORTED",
+      "source": "merged PR #153 and user report",
+      "v1_audible": true,
+      "v2_audible": true,
+      "pause_resume_stop_and_2x_4x_reported": true,
+      "per_chapter_all_control_combinations": "NOT_SPECIFIED",
+      "screen_off_background_resume_page_leave": "UNTESTED for these candidate chapters"
+    },
+    "version_limit": "Deployment metadata matches candidate SHA; browser received byte hashes were not captured. Anonymous production HTTP byte hashes were independently matched for five existing files."
+  },
+  "deployment-provenance": {
+    "run_id": 38328288827,
+    "job_id": 115071973403,
+    "event": "schedule",
+    "source_sha": "8d1164f577b32b575e4ef43291511b020b243e93",
+    "conclusion": "success",
+    "workflow_blob": "e6d19e19f6d8363e6c51955ffd144fc35cca84ef",
+    "excerpts": [
+      "2026-10-13T00:39:08.5517190Z 8d1164f577b32b575e4ef43291511b020b243e93",
+      "2026-10-13T00:39:08.5866968Z 8d1164f577b32b575e4ef43291511b020b243e93",
+      "2026-10-13T00:39:17.3436263Z Create deployment: HTTP 200",
+      "2026-10-13T00:39:17.3982674Z Created deployment dpl_4qF1Boso4eQCQLB3tD7jVgL3m6Pp",
+      "2026-10-13T00:39:23.3400277Z Vercel deployment state: READY"
+    ]
+  },
+  "integration-merge": {
+    "source_shas": {
+      "base": "74ebcac3587650ee83b95438629d1893ba8abfb4",
+      "main": "8d1164f577b32b575e4ef43291511b020b243e93",
+      "candidate": "2ceb3bae83dca17f00dcfb84cddfd726c20c92a0"
+    },
+    "verified_blobs": 609,
+    "snapshot_tree_sha1": {
+      "base": "3418c0e97759380639ecb767f3c3ef13dc2ba016",
+      "main": "6edb5f414e975b512906de96af617ee60682bb60",
+      "candidate": "79b5296c6c92b14891d489e3acc7e46e01b96800"
+    },
+    "local_snapshot_commits": {
+      "base": "5e18d17d576a2571517b79fad00034daae277809",
+      "main": "4a4e582dbe698a7cb00f39090f7e133c10cb9ef8",
+      "candidate": "25cf318dc912888a37e51368871653a60f75f217"
+    },
+    "integration_tree_sha1": "2440df988f295c74e8896bbd78af90743f1a2155",
+    "git_merge_exit": 0,
+    "git_merge_stdout": "",
+    "git_merge_stderr": "Automatic merge went well; stopped before committing as requested\n",
+    "staged_diff": "M\tdocs/SECURITY_COURSE_V_PILOT_PREPARATION_2026-10-08.md\nA\tdrafts/security-course-v/F08_REPAIR_2026-10-12.md\nA\tdrafts/security-course-v/FORMAT_MAP.md\nA\tdrafts/security-course-v/QUESTIONS.md\nA\tdrafts/security-course-v/README.md\nA\tdrafts/security-course-v/REVISION_2026-10-12.md\nA\tdrafts/security-course-v/SOURCE_EVIDENCE.md\nA\tdrafts/security-course-v/VERIFICATION.md\nA\tdrafts/security-course-v/claims.json\nA\tdrafts/security-course-v/examples/municipal_service.py\nA\tdrafts/security-course-v/examples/test_audit_conditions.py\nA\tdrafts/security-course-v/examples/test_f08_dst_expiry.py\nA\tdrafts/security-course-v/examples/test_input_contract.py\nA\tdrafts/security-course-v/examples/test_municipal_service.py\nA\tdrafts/security-course-v/learn/security-input-output-injection.html\nA\tdrafts/security-course-v/learn/security-secure-by-design-default.html\nA\tdrafts/security-course-v/lessons/security-input-output-injection.json\nA\tdrafts/security-course-v/lessons/security-input-output-injection.md\nA\tdrafts/security-course-v/lessons/security-secure-by-design-default.json\nA\tdrafts/security-course-v/lessons/security-secure-by-design-default.md\nA\tdrafts/security-course-v/render-map.mjs\nA\tdrafts/security-course-v/revision-evidence/additional-counterexamples.json\nA\tdrafts/security-course-v/revision-evidence/evidence-manifest.json\nA\tdrafts/security-course-v/revision-evidence/f01-green.txt\nA\tdrafts/security-course-v/revision-evidence/f01-red.txt\nA\tdrafts/security-course-v/revision-evidence/npm-check-final.txt\nA\tdrafts/security-course-v/revision-evidence/python-final.txt\nA\tdrafts/security-course-v/source-registry.json\nA\tdrafts/security-course-v/sync-rsvp.mjs\nA\tdrafts/security-course-v/validate-candidates.mjs\nA\tdrafts/security-course-v/validate-html.py\nA\ttests/security-course-v-candidates.test.mjs\n",
+    "unmerged_entries": "",
+    "scope": "Native three-way Git merge of byte-verified remote tree snapshots. Local commit IDs are synthetic and do not claim to be remote commit history. No remote branch, candidate or deployment changed."
+  },
+  "local-http-and-impact": {
+    "scope": "Loopback HTTP on isolated merged tree; not Vercel production or 390px browser proof",
+    "changed_paths": [
+      {
+        "path": "docs/SECURITY_COURSE_V_PILOT_PREPARATION_2026-10-08.md",
+        "status": 200,
+        "content_type": "text/markdown",
+        "body_sha256": "97d31ffe082bdf0e75442b91cc891c27c2987372084a516fdb4e1ba9a9e1598f",
+        "matches_merged_file": true
+      },
+      {
+        "path": "drafts/security-course-v/F08_REPAIR_2026-10-12.md",
+        "status": 200,
+        "content_type": "text/markdown",
+        "body_sha256": "330e47b5c903efe626f8ab1ef0f794f7752b65c6287c5d02f696f311fd3ecfbf",
+        "matches_merged_file": true
+      },
+      {
+        "path": "drafts/security-course-v/FORMAT_MAP.md",
+        "status": 200,
+        "content_type": "text/markdown",
+        "body_sha256": "61905871fc53c061276f81d39d7a50d4b44821bc27ec246d5fbb6acd7c77e290",
+        "matches_merged_file": true
+      },
+      {
+        "path": "drafts/security-course-v/QUESTIONS.md",
+        "status": 200,
+        "content_type": "text/markdown",
+        "body_sha256": "22e0c80d9e17766fe9451c9acc943c3f2320a8f1dded55b43a67a3cc5b9acf19",
+        "matches_merged_file": true
+      },
+      {
+        "path": "drafts/security-course-v/README.md",
+        "status": 200,
+        "content_type": "text/markdown",
+        "body_sha256": "f51229f852ad29986ef45ea09d520a58a35ca6547815adc744a172f0c3449774",
+        "matches_merged_file": true
+      },
+      {
+        "path": "drafts/security-course-v/REVISION_2026-10-12.md",
+        "status": 200,
+        "content_type": "text/markdown",
+        "body_sha256": "d8f33c22e1ffff54f537e3a7a7594dd31b9313590a5efdba6ccc137c1c8eefa1",
+        "matches_merged_file": true
+      },
+      {
+        "path": "drafts/security-course-v/SOURCE_EVIDENCE.md",
+        "status": 200,
+        "content_type": "text/markdown",
+        "body_sha256": "2104f779a11fb8b6892f368b1f3281c75885efee6622557f8201e89eb2c0e9d5",
+        "matches_merged_file": true
+      },
+      {
+        "path": "drafts/security-course-v/VERIFICATION.md",
+        "status": 200,
+        "content_type": "text/markdown",
+        "body_sha256": "eb8c4c64f34ee08d44eda6275ecac745816c34fdd06d771fc20a8e4abd47845b",
+        "matches_merged_file": true
+      },
+      {
+        "path": "drafts/security-course-v/claims.json",
+        "status": 200,
+        "content_type": "application/json",
+        "body_sha256": "2a90200c0fd1bba79bfbf73b38319dc65d8096a88c31e7c5059154881bb4821d",
+        "matches_merged_file": true
+      },
+      {
+        "path": "drafts/security-course-v/examples/municipal_service.py",
+        "status": 200,
+        "content_type": "text/x-python",
+        "body_sha256": "0929ec335f8487ef2f808c0578953e7b4ac8e9673ba977c53c0014f32902d83e",
+        "matches_merged_file": true
+      },
+      {
+        "path": "drafts/security-course-v/examples/test_audit_conditions.py",
+        "status": 200,
+        "content_type": "text/x-python",
+        "body_sha256": "7de6ae69fa10593da7cb5148756a0c0688c1e6e52406522ec2fb4b2a7ad57263",
+        "matches_merged_file": true
+      },
+      {
+        "path": "drafts/security-course-v/examples/test_f08_dst_expiry.py",
+        "status": 200,
+        "content_type": "text/x-python",
+        "body_sha256": "e027c6318a318cc220f26a1cec121f124faa66953d7bfa258ba1b421e9f359c3",
+        "matches_merged_file": true
+      },
+      {
+        "path": "drafts/security-course-v/examples/test_input_contract.py",
+        "status": 200,
+        "content_type": "text/x-python",
+        "body_sha256": "7a9af3277a2e96fa658f84238938d6aabbb7ada2dc7152ca25403e170732f752",
+        "matches_merged_file": true
+      },
+      {
+        "path": "drafts/security-course-v/examples/test_municipal_service.py",
+        "status": 200,
+        "content_type": "text/x-python",
+        "body_sha256": "e52a17268475b811a82219b55a0870d91c547d0a5acc3983800654cc384772b4",
+        "matches_merged_file": true
+      },
+      {
+        "path": "drafts/security-course-v/learn/security-input-output-injection.html",
+        "status": 200,
+        "content_type": "text/html",
+        "body_sha256": "366ef4dbb971d909cd5e88e26885a9fe6e55ac72e0341689069acf82b4ea6afb",
+        "matches_merged_file": true
+      },
+      {
+        "path": "drafts/security-course-v/learn/security-secure-by-design-default.html",
+        "status": 200,
+        "content_type": "text/html",
+        "body_sha256": "1a595f1611d27c26ad9ade6e01fac0e92a921e3d6952601880fa552fae782294",
+        "matches_merged_file": true
+      },
+      {
+        "path": "drafts/security-course-v/lessons/security-input-output-injection.json",
+        "status": 200,
+        "content_type": "application/json",
+        "body_sha256": "9fa4bfa4e28e9826c3a0fdf814d5b4bfe4ad41fe6df2d40712c2895ca5873f7a",
+        "matches_merged_file": true
+      },
+      {
+        "path": "drafts/security-course-v/lessons/security-input-output-injection.md",
+        "status": 200,
+        "content_type": "text/markdown",
+        "body_sha256": "567031347fce11f6b35bf5292084c23a9f78c2fc924017f0a6833e0e56a620bc",
+        "matches_merged_file": true
+      },
+      {
+        "path": "drafts/security-course-v/lessons/security-secure-by-design-default.json",
+        "status": 200,
+        "content_type": "application/json",
+        "body_sha256": "ec519f7656b04813e073c990cd7ab17904df78857d5d8aaeac0ddf94b6074603",
+        "matches_merged_file": true
+      },
+      {
+        "path": "drafts/security-course-v/lessons/security-secure-by-design-default.md",
+        "status": 200,
+        "content_type": "text/markdown",
+        "body_sha256": "19eaf3c0f38c59de39dd44cae195f3b3f5a9777b0c7cc1d854f72167555a43c1",
+        "matches_merged_file": true
+      },
+      {
+        "path": "drafts/security-course-v/render-map.mjs",
+        "status": 200,
+        "content_type": "text/javascript",
+        "body_sha256": "3438e027d088f33e3da937855d35fa64a9c8bdc824df98e0d635f4694dcf31b1",
+        "matches_merged_file": true
+      },
+      {
+        "path": "drafts/security-course-v/revision-evidence/additional-counterexamples.json",
+        "status": 200,
+        "content_type": "application/json",
+        "body_sha256": "0e2dafcb4f38d978be4ba9459ef0c5b260215f5c15e908b543fa5f1913fb6b26",
+        "matches_merged_file": true
+      },
+      {
+        "path": "drafts/security-course-v/revision-evidence/evidence-manifest.json",
+        "status": 200,
+        "content_type": "application/json",
+        "body_sha256": "3c5f850657dc18016919576d0dd3d69b4459b669706ec640f810ea8fdaa4e295",
+        "matches_merged_file": true
+      },
+      {
+        "path": "drafts/security-course-v/revision-evidence/f01-green.txt",
+        "status": 200,
+        "content_type": "text/plain",
+        "body_sha256": "09a6b1af4dfdd96041589462d1f70c9b820f9e2156f7586456b96442f205ec37",
+        "matches_merged_file": true
+      },
+      {
+        "path": "drafts/security-course-v/revision-evidence/f01-red.txt",
+        "status": 200,
+        "content_type": "text/plain",
+        "body_sha256": "c10decd9d3e32b6e88cf4a853733df451bcb92d59b278e000fc150cc8e744fb8",
+        "matches_merged_file": true
+      },
+      {
+        "path": "drafts/security-course-v/revision-evidence/npm-check-final.txt",
+        "status": 200,
+        "content_type": "text/plain",
+        "body_sha256": "3a6f10354359067e9d9385096532456dd4b04f2e031ed445a1882d56ada61635",
+        "matches_merged_file": true
+      },
+      {
+        "path": "drafts/security-course-v/revision-evidence/python-final.txt",
+        "status": 200,
+        "content_type": "text/plain",
+        "body_sha256": "56a7c0827d8fd8f16d9e30d569a2bf0559556e234558669a2258fd40e7a11f91",
+        "matches_merged_file": true
+      },
+      {
+        "path": "drafts/security-course-v/source-registry.json",
+        "status": 200,
+        "content_type": "application/json",
+        "body_sha256": "f106478233f33157fed82c35ddeee00ddb77da892caefe3c7f071502afd5db51",
+        "matches_merged_file": true
+      },
+      {
+        "path": "drafts/security-course-v/sync-rsvp.mjs",
+        "status": 200,
+        "content_type": "text/javascript",
+        "body_sha256": "01a7f9f8bc7d2cc9c2638a5466a734df938b3c08cc36c8a413ce719a32d7055d",
+        "matches_merged_file": true
+      },
+      {
+        "path": "drafts/security-course-v/validate-candidates.mjs",
+        "status": 200,
+        "content_type": "text/javascript",
+        "body_sha256": "2c23b48ebf28db6011ac11b79f4fdff122c643accd6c4550bb019ad32e00f080",
+        "matches_merged_file": true
+      },
+      {
+        "path": "drafts/security-course-v/validate-html.py",
+        "status": 200,
+        "content_type": "text/x-python",
+        "body_sha256": "aa173dffc7648aa1e769e11bcf7320da19a087784357ac7e5c746a37c45c4428",
+        "matches_merged_file": true
+      },
+      {
+        "path": "tests/security-course-v-candidates.test.mjs",
+        "status": 200,
+        "content_type": "text/javascript",
+        "body_sha256": "e015ac29b3f38bbf0038616516ea447b3841984ee35b1a30cd0be8b3cf62bce3",
+        "matches_merged_file": true
+      }
+    ],
+    "unchanged_core_files": [
+      {
+        "path": "lessons/index.json",
+        "git_blob_sha1": "787410259ed2c6eb7a6ee36ecd5593f25386504b",
+        "unchanged_from_main": true
+      },
+      {
+        "path": "courses/index.json",
+        "git_blob_sha1": "2bed763f393e8c3feeba58c790fe7ca80c5b501b",
+        "unchanged_from_main": true
+      },
+      {
+        "path": "app.js",
+        "git_blob_sha1": "17d6442e14cd811da84d42ff841e1e72e470d793",
+        "unchanged_from_main": true
+      },
+      {
+        "path": "index.html",
+        "git_blob_sha1": "1f3b4d488dd07872e5335a87e962cd483c7307d4",
+        "unchanged_from_main": true
+      },
+      {
+        "path": "learn/learn.js",
+        "git_blob_sha1": "22642c66e45a7bf85ea4fa6f0cfe9b10b4d7fd1e",
+        "unchanged_from_main": true
+      },
+      {
+        "path": "learn/learn.css",
+        "git_blob_sha1": "8e0a6f1a17e2de3774c88ea19dd4526e09340399",
+        "unchanged_from_main": true
+      },
+      {
+        "path": "listen/index.html",
+        "git_blob_sha1": "d7c8c05ffdbfaf509a33f9bb6fd94f2cb380ba0d",
+        "unchanged_from_main": true
+      },
+      {
+        "path": "listen/index.json",
+        "git_blob_sha1": "5ea05f6d0a5e43902d9a19bff44c0830abaef26a",
+        "unchanged_from_main": true
+      },
+      {
+        "path": "sw.js",
+        "git_blob_sha1": "490eb178e28acf646ceaafac9f6713bfb6329bb9",
+        "unchanged_from_main": true
+      },
+      {
+        "path": "vercel.json",
+        "git_blob_sha1": "87056607badcfceb2dddb95864942180b10c438f",
+        "unchanged_from_main": true
+      },
+      {
+        "path": ".github/workflows/vercel-scheduled-deploy.yml",
+        "git_blob_sha1": "e6d19e19f6d8363e6c51955ffd144fc35cca84ef",
+        "unchanged_from_main": true
+      }
+    ],
+    "course_v_catalog_registered": false,
+    "course_v_course_registered": false
+  },
+  "npm-check-result": {
+    "command": [
+      "npm",
+      "run",
+      "check"
+    ],
+    "cwd": "/workspace/scratch/37b8f142d34c/integration",
+    "exit_code": 0,
+    "duration_seconds": 2.838,
+    "stdout_sha256": "87fa65913129315cf8a78d8053a522b1b25bc28ece6534567a5880afe05b5855",
+    "stderr_sha256": "3e4dc9098e93243cae453c2a209caf47f6de19808fffe9b896c85598d97964f6"
+  },
+  "python-regression-result": {
+    "command": [
+      "python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "drafts/security-course-v/examples",
+      "-p",
+      "test_*.py",
+      "-v"
+    ],
+    "cwd": "/workspace/scratch/37b8f142d34c/integration",
+    "exit_code": 0,
+    "duration_seconds": 0.094,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "d124850acabe33f77441fdb6627226b9339b5266c058f33cefce87128ccf4cfd"
+  },
+  "vercel-sanitized": {
+    "checked_date_utc": "2026-10-13T03:29:49.670Z",
+    "project": {
+      "id": "prj_7yYGl5D3Q7UwQgQuXaGmOYLkTzbu",
+      "team": "team_imvRFeaSa1LmNpMJkFiMwNmB",
+      "name": "rsvp-learning",
+      "ssoProtection": {
+        "enabled": true,
+        "deploymentType": "all_except_custom_domains"
+      },
+      "plan": {
+        "value": "Hobby",
+        "evidence": "Cloud Browser billing page 'Hobby Plan'; API normalized team response omitted billing plan"
+      },
+      "git_repository": {
+        "value": "Josh-Temple/rsvp-learning",
+        "evidence": "Cloud Browser Git settings: Connected Git Repository"
+      },
+      "deploy_hooks": {
+        "count": 0,
+        "evidence": "Git settings: This project does not have any deploy hooks"
+      }
+    },
+    "production": {
+      "id": "dpl_4qF1Boso4eQCQLB3tD7jVgL3m6Pp",
+      "url": "rsvp-learning-ga0ob6410-josh-temples-projects.vercel.app",
+      "target": "production",
+      "state": "READY",
+      "source_sha": "8d1164f577b32b575e4ef43291511b020b243e93",
+      "aliases": [
+        "rsvp-learning-kappa.vercel.app",
+        "rsvp-learning-josh-temples-projects.vercel.app",
+        "rsvp-learning-git-main-josh-temples-projects.vercel.app"
+      ]
+    },
+    "preview": {
+      "id": "dpl_4myzXuZXtjdyRfhRbxJivUCtmQBy",
+      "url": "rsvp-learning-16af5j843-josh-temples-projects.vercel.app",
+      "target": null,
+      "state": "READY",
+      "source_sha": "2ceb3bae83dca17f00dcfb84cddfd726c20c92a0",
+      "aliases": [
+        "rsvp-learning-git-content-security-e6c688-josh-temples-projects.vercel.app"
+      ]
+    },
+    "production_alias_exception": {
+      "host": "rsvp-learning-kappa.vercel.app",
+      "count": 1,
+      "entries": [
+        {
+          "scope": "shareable-link",
+          "expires": 1791896766,
+          "createdAt": 1791813966187
+        }
+      ],
+      "access_test": "NOT_VERIFIED: no secret link used; no exception created, modified, revoked or bypassed"
+    },
+    "spec_sources": [
+      {
+        "url": "https://vercel.com/docs/deployment-protection",
+        "claim": "All Deployments available on all plans; Standard Protection excludes production domains"
+      },
+      {
+        "url": "https://vercel.com/changelog/protect-production-deployments-for-free-on-every-plan",
+        "date": "2026-09-09",
+        "claim": "Production Vercel Authentication available at no additional cost on every plan"
+      }
+    ]
+  },
+  "executed_commands": [
+    "python3 anonymous_http.py",
+    "git ls-remote https://git.chatgpt-team.site/Josh-Temple/rsvp-learning.git refs/heads/main refs/heads/content/security-course-v-pilot-20261011-sol (exit 128: no CLI credential; switched to connected GitHub fixed-SHA APIs)",
+    "python3 materialize_and_merge.py (native Git tree/three-way merge; source blobs verified)",
+    "npm install --ignore-scripts --no-audit --no-fund (exit 0)",
+    "npm run check (exit 0)",
+    "python3 -m unittest discover -s drafts/security-course-v/examples -p 'test_*.py' -v (exit 0)",
+    "git diff --cached --stat (32 files, 6578 insertions, 0 deletions)",
+    "python3 local_http_check.py (32 changed paths HTTP 200 on loopback)"
+  ],
+  "log_sha256": {
+    "npm-check.stderr.txt": "3e4dc9098e93243cae453c2a209caf47f6de19808fffe9b896c85598d97964f6",
+    "npm-check.stdout.txt": "87fa65913129315cf8a78d8053a522b1b25bc28ece6534567a5880afe05b5855",
+    "python-regression.stderr.txt": "d124850acabe33f77441fdb6627226b9339b5266c058f33cefce87128ccf4cfd",
+    "python-regression.stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}
