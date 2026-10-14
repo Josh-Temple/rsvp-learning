@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f2efe8">
+  <meta name="description" content="BioStudyBench：AIが公開生物医学データを取得し論文の統計結果を再現できるか。25課題・8モデルの比較、データの効果と方法論上の限界を解説。">
+  <title>AIは医学論文の結果を、データから自分で再現できるか――BioStudyBench</title>
+  <style>
+    :root{color-scheme:light;--bg:#f2efe8;--ink:#121722;--muted:#73766f;--line:#cbc8bf;--blue:#5d7487}
+    html[data-theme="dark"]{color-scheme:dark;--bg:#11151a;--ink:#edf0eb;--muted:#959b97;--line:#343a3e;--blue:#7892a6}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Hiragino Sans","Noto Sans JP",sans-serif;line-height:1.9}
+    .shell{width:min(760px,100%);margin:0 auto;padding:max(18px,env(safe-area-inset-top)) 20px max(42px,env(safe-area-inset-bottom))}
+    .topbar{min-height:52px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+    .icon{width:42px;height:42px;display:grid;place-items:center;border:0;background:transparent;color:var(--muted);text-decoration:none;font:inherit}
+    .meta{margin:28px 0 8px;color:var(--muted);font-size:.75rem}
+    h1{font-size:clamp(2rem,8vw,3.4rem);line-height:1.12;letter-spacing:-.04em;margin:.2em 0 .8em}
+    h2{margin:2.2em 0 .6em;font-size:1.2rem}
+    p{margin:0 0 1.25em}
+    article>*{transition:background-color .15s ease}
+    .is-speaking{background:color-mix(in srgb,var(--blue) 16%,transparent)}
+    .player{position:sticky;bottom:0;margin:32px -6px 0;padding:12px 6px;background:color-mix(in srgb,var(--bg) 94%,transparent);border-top:1px solid var(--line);backdrop-filter:blur(8px)}
+    .speed{display:grid;grid-template-columns:48px 1fr 42px;gap:10px;align-items:center;margin-top:10px;font-size:.78rem;color:var(--muted)}
+    input{width:100%}
+    .sources{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}
+    .sources a{color:var(--ink)}
+    .mode-nav{display:inline-flex;align-items:center;gap:4px}
+    .mode-icon{width:42px;height:42px;display:grid;place-items:center;color:var(--muted);text-decoration:none;opacity:.5}
+    .mode-icon.is-active{color:var(--ink);opacity:1}
+    .mode-icon svg{width:20px;height:20px;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+    .brand-mark{width:22px;height:14px;display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+    .brand-mark i{display:block}
+    .brand-mark i:nth-child(1){background:#a85248}
+    .brand-mark i:nth-child(2){background:#5d7487}
+    .brand-mark i:nth-child(3){background:#c2a653}
+    .transport{display:grid;grid-template-columns:repeat(5,48px);justify-content:center;gap:8px}
+    .transport button,.section-nav button,.voice-row select{min-height:42px;border:1px solid var(--line);background:transparent;color:var(--ink);font:inherit}
+    .transport button{width:48px}
+    .section-nav{display:grid;grid-template-columns:48px 1fr 48px;align-items:center;gap:8px;margin-top:10px}
+    .section-nav button:disabled{opacity:.25}
+    #section-label{min-width:0;overflow:hidden;color:var(--muted);font-size:.78rem;text-align:center;white-space:nowrap;text-overflow:ellipsis}
+    .voice-row{margin-top:10px}
+    .voice-row select{width:100%;padding:0 8px}
+    .mode-icon:focus-visible,.transport button:focus-visible,.section-nav button:focus-visible,.voice-row select:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+  </style>
+</head>
+<body>
+<main class="shell">
+  <header class="topbar">
+    <nav class="mode-nav" aria-label="モード切替">
+      <a class="mode-icon" href="../../index.html" aria-label="RSVPへ移動" title="RSVP">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      </a>
+      <a class="mode-icon" href="../../index.html?library=learn" aria-label="Learnへ移動" title="Learn">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 5.5c2.6-.8 5.3-.4 8 1.2v12c-2.7-1.6-5.4-2-8-1.2v-12Z" />
+          <path d="M20 5.5c-2.6-.8-5.3-.4-8 1.2v12c2.7-1.6 5.4-2 8-1.2v-12Z" />
+        </svg>
+      </a>
+      <a class="mode-icon is-active" href="../../index.html?library=listen" aria-label="Listen一覧へ移動" aria-current="page" title="Listen">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 13v-1a8 8 0 0 1 16 0v1" />
+          <path d="M4 13h3v7H5a1 1 0 0 1-1-1v-6Zm16 0h-3v7h2a1 1 0 0 0 1-1v-6Z" />
+        </svg>
+      </a>
+    </nav>
+    <button id="theme" class="icon" type="button" aria-label="テーマ切替">☾</button>
+  </header>
+
+
+
+
+
+
+
+  <article id="article">
+    <p class="meta">情報基準日 2026年10月14日・原論文公開 2026年10月6日・NeurIPS 2026 workshop採択・arXivプレプリント</p>
+    <h1>AIは医学論文の結果を、データから自分で再現できるか――BioStudyBench</h1>
+
+    <h2>この研究を取り上げる理由</h2>
+    <p>今日のListenでは、2026年10月6日に発表された「BioStudyBench: Evaluating Agents on Post-Cutoff Biomedical Studies」を取り上げます。ウォータールー大学とAtlas Discoveryの研究者らが、AIエージェントは公表済みの生物医学研究について、公開データから実際に分析をやり直し、論文の結果へ到達できるかを調べた仕事です。</p>
+    <p>今回は、AIの一般的な知能の点数よりも、大学や研究所での使い方が重要です。医学・公衆衛生の論文を読むと、年齢、病気、生活習慣、薬の副作用などについて、データを分析した結果が載っています。その結論を検証するには、元のデータを探し、変数の意味を理解し、集計や統計モデルを実行する必要があります。</p>
+    <p>AIが単に論文の要約を答えるだけなら、研究を再現したとは言えません。論文の結論を知っていたり、検索で見つけたり、よくある結果を推測したりするだけでも、正しい答えに見えることがあります。そこで研究者らは、論文の結論を渡さず、AI自身にデータを集めて分析させる課題を用意しました。</p>
+    <p>八つのモデルで、データや道具を与えずに答えさせた場合と、データを探して計算させた場合を比較しました。平均すると、データとツールへのアクセスによって、元論文の結果と一致した割合が四十七ポイント高くなりました。これは研究の作業に実際のデータが役立ったことを示す、重要な観察です。</p>
+    <p>ただし、論文の筆者らは、正しい結果へ到達したことと、正しい分析を行ったことを区別しています。今回は、その差を詳しく説明します。研究活動へのAIの応用を評価するとき、どこまで任せられ、どこから人間が検証すべきかを考える材料になります。</p>
+
+    <h2>生物医学の論文を再分析する仕事</h2>
+    <p>生物医学の研究には、患者や住民を新たに募集して測定するものだけでなく、すでに公開された調査や記録を再分析するものがあります。後者では、外部の研究者も同じデータにアクセスできる可能性があります。そのため、コンピュータによる再分析の対象にしやすいのです。</p>
+    <p>例えば米国の健康栄養調査、略してエヌヘインズには、栄養、健康状態、検査値などに関する公開データがあります。一方、医薬品の有害事象報告データベースであるFAERSでは、薬が使われた後に報告された出来事の集計を調べられます。</p>
+    <p>ただしデータファイルを入手すれば、そのまま論文の数字になるわけではありません。対象となる年齢、調査年、欠測値の扱い、複数のファイルの結合、統計モデルに入れる調整変数などを決める必要があります。大規模調査には標本の偏りを補正するための重みがあり、正しく扱わなければ代表値が変わります。</p>
+    <p>論文の結論の一行の背後には、多くの分析上の判断があります。例えばある健康指標と動脈の石灰化の関連を調べる場合、どの項目を説明変数とし、どの年齢を対象にし、何を調整した結果なのかで数字が異なります。</p>
+    <p>そのような作業を研究エージェントが実行できれば、研究者は既存の発見を独立に確かめたり、研究方法の理解を補助したりできるかもしれません。今回の論文は、将来の可能性の話にとどまらず、実際に公表された研究を課題として、どの程度まで到達したかを測りました。</p>
+
+    <h2>なぜ正答だけでは能力を測れないのか</h2>
+    <p>従来の研究エージェントの評価には、論文に書かれた結論を再現できるかを問うものがあります。しかし、AIの学習済み知識や検索可能な資料に正解が含まれていれば、実際には分析しなくても答えを知っていた可能性があります。</p>
+    <p>さらに、正解を知らなくても、研究の問いから結果を推測できることがあります。例えば、多くの研究で調べられてきた健康リスクと疾患の関係であれば、どちらの方向へ関連しそうかを予想しやすい場合があります。それが偶然に元論文と一致することもあります。</p>
+    <p>著者らは課題作成の途中で、最近の論文二千百三十一件について、研究の質問だけを見せる盲目的な推測実験を行いました。GPT-6 Solは多くの結果を知らないと述べながら、統計的にゼロではない発見について、方向と有意性の組合せを高い割合で当てました。</p>
+    <p>この数字は、AIが将来の医学研究を予知したという証拠ではありません。公表された研究のうち、方向性が予測しやすい問いが多いことや、既存の知識と研究の発表傾向が関係している可能性があります。</p>
+    <p>そこで今回のベンチマークでは、AIがデータなしでも当てやすい課題をできるだけ避けました。元の論文の結果を検索で読み取らせない条件も設けました。単に数字が合ったという事実の背景を、従来より丁寧に調べようとした点が特徴です。</p>
+
+    <h2>四十万件から二十五件を選んだ方法</h2>
+    <p>研究者らは2026年7月から9月に最初に公開されたPubMedの研究記録、四十万四千十九件から選定を始めました。ここにはレビュー、症例報告、新しい実験データを集めた研究など、多様な論文が混ざっています。</p>
+    <p>最初に、既存の公開データを使った分析研究に対象を絞りました。レビューや、データを公開していない研究は、そのままではAIに再分析させにくいためです。さらに、評価可能な結果が明記され、データの所在が確かめられる論文へ絞り込みます。</p>
+    <p>この選別を経て、二千百三十一件の候補が残りました。そこから研究質問だけを見たAIの推測が当たりやすいものや、結果が十分に堅固でないものを避け、三十五件へ絞りました。次に科学的な理由による除外を経て三十三件とし、必要なデータを実際に入手できる二十五件が最終的に残りました。</p>
+    <p>この過程は、膨大な医学文献の中から研究エージェントが取り組める課題を作る方法として興味深い一方、評価対象が選ばれていることも意味します。公衆衛生や医学の論文すべてを無作為に代表した二十五件ではありません。</p>
+    <p>むしろ、結果が明確で、研究質問が極端に予測しやすくなく、データも公開されているという条件が重なった問題です。ベンチマークの成績を一般の医学研究全体へ広げるときには、この選定上の偏りを意識する必要があります。</p>
+
+    <h2>AIには具体的に何を渡したのか</h2>
+    <p>本番の分析課題で、AIに渡されるのは中立的な研究質問と、回答の形式です。元論文そのもの、そこに書かれた結果、分析用の完成したデータファイルは与えられません。課題には使うべき公開データの出典が指定され、AIはそこから必要なファイルを探します。</p>
+    <p>AIはシェルやPythonを使うことができ、変数表や調査票に相当するコードブックを読み、ファイルをダウンロードします。複数年の調査を結合したり、数値を再符号化したり、必要な重みを付けたりして、統計量を計算します。</p>
+    <p>資料の検索には、PubMed、Europe PMC、OpenAlex、Crossrefなどの文献サービスや、公開データの取得先へのアクセスを用意しました。一般的な無制限のWeb検索を許したわけではありません。論文の答えを検索で見つけることを難しくするためです。</p>
+    <p>研究の結論はエージェントから隠され、最後に所定の形式で回答させます。著者らはその回答を、対象になった元論文の報告値と比較します。分析の過程と最終回答を区別して評価するための設計です。</p>
+    <p>一課題当たり最大三百回のやり取り、実行時間は最大九十分という制限があります。これは、短い質問応答ではなく、データ探しから集計まで何段階もある長い作業を扱っていることを示します。ただし時間の制限で止まった場合も、成功には数えられません。</p>
+
+    <h2>未来の論文から答えが漏れないようにする</h2>
+    <p>今回の研究では、モデルの知識の期限、いわゆる知識カットオフを活用しています。評価に使う論文は2026年7月から9月の公開で、使用するモデルの開発元が示した知識期限のうち最も新しいものは2026年6月でした。</p>
+    <p>また、論文は掲載誌で公開されるより先に、プレプリントとして配布されていることがあります。その場合、掲載日のみを見ると、本当はAIがすでに知っている論文を新しいものと誤認します。著者らはプレプリントやオンライン先行公開の日付も確認し、最初に公になった日で判定しました。</p>
+    <p>それでも検索ツールを使えば、研究結果が書かれた元論文へたどり着く可能性があります。そこで対象論文の識別番号や掲載先をブロックし、検索で取得できる文献の日付もモデルごとに制限しました。</p>
+    <p>著者らの記録では、検索など合計一万七千四百二十九回のツール呼び出しがあり、返された八千七十一件の文献記録について、期限を過ぎた日付のものはゼロ件でした。これは日付の制限を実際に調べた結果です。</p>
+    <p>ただし、日付を制限しても絶対に答えが漏れないとは言い切れません。古い資料に同じ結論が載っている可能性や、データの配布先が結果を含んでいる可能性が残ります。また、開発元が公表した知識期限は、すべての事後学習データを完全に示す保証ではありません。</p>
+    <p>そのため、今回の結果は情報漏れの危険を低くする努力がなされた比較として読むべきで、成功例がすべて未知の科学的結論を自力で発見したと断定することはできません。</p>
+
+    <h2>同じ課題を二つの条件で試す</h2>
+    <p>評価したのは八つの言語モデルです。GPT-6 Astra、Gemini 3.8 Flash、Claude Opus 5.5、GPT-6 Lunaに加え、公開された重みを利用できる四つのモデルを含みます。条件の違いだけでなく、モデルごとの違いも見ています。</p>
+    <p>一つ目の条件では、データや計算ツールを与えず、研究質問だけを見せて数字を回答させます。これは、学習済み知識や一般的な推測でどこまで答えに近づくかを測るための対照条件です。</p>
+    <p>二つ目では、データの検索と取得、Pythonなどによる解析を認めます。研究の課題と回答形式は同じです。この二つの結果を比べることで、データアクセスと道具の利用によってどの程度成績が変化したかを調べます。</p>
+    <p>八モデルについて二十五課題を両条件で三回ずつ実行しました。同じ問題でも実行ごとに途中の行動や結果が変わり得るため、三回の平均とばらつきを報告しています。</p>
+    <p>研究者らは、途中で時間切れになった場合や回答形式を満たせない場合も不合格としました。最終的な正答率は、実際に解析を完了できたケースだけで計算し直した割合ではありません。データを探す段階で失敗することも、研究を行う能力の一部として評価した設計です。</p>
+
+    <h2>何をもって正しい結果としたか</h2>
+    <p>論文の採点は、元論文の報告結果との一致を見る方法です。結果が数値として示されている場合には、AIの答えが元論文の九十五％信頼区間に入るかを確認します。</p>
+    <p>信頼区間は、標本の不確かさを表す区間としてよく使われます。元論文の推定値とAIの推定値が小数点以下まで完全に同じでなくても、所定の範囲なら一致とみなす仕組みです。</p>
+    <p>一方、統計的な関連があるかという方向性中心の研究では、プラスかマイナスかという方向と、統計的に有意かという判定が合っているかを見ます。使う採点方法は、課題の種類によって違います。</p>
+    <p>この自動採点は、結果の比較を明快にする利点があります。しかし、AIが異なる対象集団や間違った分析方法を使い、たまたま元論文の区間に入る可能性は排除できません。反対に、元論文と少し違うものの科学的には十分に妥当な方法が、不合格になる場合もあります。</p>
+    <p>したがって、ここでの合格率は研究方法の完全な再現率でも、正しい医学判断の割合でもありません。元論文の報告値に、指定した基準でどれだけ一致したかという指標です。この前提を置いて成績を確認します。</p>
+
+    <h2>主要結果――データを使うとどれほど変わったか</h2>
+    <p>データも道具もない条件では、八モデルの合格率は二十四％から約五十一％でした。これに対してデータとツールを許すと、約五十六％から九十五％へ上がりました。各モデルでの上昇幅は三十二ポイントから五十五ポイントで、八モデル平均では約四十七ポイントでした。</p>
+    <p>GPT-6 Astraは、データなしの50.7％から、データありで94.7％になりました。Gemini 3.8 Flashも、40.0％から94.7％です。Claude Opus 5.5は46.7％から93.3％、GPT-6 Lunaは24.0％から74.7％でした。</p>
+    <p>これらの割合は二十五件を三回ずつ実行した平均です。94.7％という数字は、一回の試験で二十五件のうちきっちり同じ個数が正解だったという意味ではありません。繰り返しごとの結果には変動があり、論文の表には標準偏差も示されています。</p>
+    <p>公開された重みを持つモデルでも改善が確認されました。GLM 5.3はデータなし26.7％からデータあり81.3％、DeepSeek V4.1 Flashは25.3％から76.0％、MiMo V2.6 Proは26.7％から66.7％、Qwen3.8 27Bは24.0％から56.0％でした。</p>
+    <p>この比較から分かるのは、どのモデルについても、数字を記憶や推測だけで出すより、公開データを使って分析できる状態の方が元論文の結果に近づきやすかったことです。単に一般的な知識が豊富なモデルを選ぶだけでなく、現実の資料と計算環境を与える意味があるといえます。</p>
+    <p>ただし、結果が高いモデルでも、研究手順の独立した全面監査で九割以上の分析が正しかったという結果ではありません。数字の一致率と方法の信頼性は分けて考えます。</p>
+
+    <h2>実際に扱った学術研究の例</h2>
+    <p>課題の内容をもう少し具体的にします。一つは、米国の健康栄養調査を使い、体脂肪に関係する指標と腹部大動脈の石灰化の関連を調べる研究です。AIは公開された調査年のデータから、対象者を絞り、必要な変数を取り出して統計量を推定しなければなりません。</p>
+    <p>別の課題では、ある更年期症状の治療に使われる医薬品について、有害事象報告データベース上の特定の検査値異常との関連を調べます。ここで使うFAERSは、報告された副作用らしき出来事を調べる資料です。報告が多いことだけで、その薬が出来事を引き起こしたと証明できるわけではありません。</p>
+    <p>さらに、病院の経費の中で管理的な費用がどのくらいを占めるかを分析する課題もあります。こちらでは病院の費用報告データを取り出し、どの費目をどう集計するかが重要になります。</p>
+    <p>論文の図では、最初の二つの課題について、データを使わずに出した答えと、実際に分析したあとに出した答えが、元論文の推定値へ近づく様子を示しています。一方、病院経費の課題では、データを使っても元論文との差が十分には縮まらない例がありました。</p>
+    <p>同じ公開データを使う研究であっても、健康調査の重み付け、医薬品報告の集計、会計報告の費目定義は別の知識を要求します。AIが汎用的なPythonを使えるだけでは足りず、研究分野ごとのデータの意味を正しく理解する必要があることが分かります。</p>
+
+    <h2>データがあっても失敗した理由</h2>
+    <p>著者らが調べた失敗例は、大きく三つに分けられます。一つ目は、元論文が分析上の細かい選択をすべて説明しておらず、AIが別の方法を選んでしまう場合です。研究を読む人間でも同じ問題に直面することがあります。</p>
+    <p>例えばデータの中から特定の対象者をどう除外したか、複数の費用項目のどれを合算したか、どの調整変数を使ったかといった判断です。元論文が曖昧なら、AIが論理的にもっともらしい方法を採用しても、数値は一致しない可能性があります。</p>
+    <p>二つ目は、推定値そのものが元論文に近いのに、最終的な説明や回答の形式を間違える場合です。例えば関連の方向や統計的な結論を文章へ変換する際に誤りが入ることがあります。計算できることと、計算した意味を正しく伝えることは、別々の能力です。</p>
+    <p>三つ目は、データの取得元に問題が起きたとき、別の配布経路を探せずに停止する場合です。研究ではデータの公開先が変更されたり、一つのファイルだけが入手できなかったりします。研究エージェントには、そうした状況への対応も必要です。</p>
+    <p>このような失敗は、数学的な推論能力が足りないという一つの理由では説明できません。データ入手、調査設計の理解、計算手法の選択、結論の記述、障害からの回復という複数の工程に分けて改善する必要があります。</p>
+
+    <h2>なぜデータなしでも正解できるのか</h2>
+    <p>もう一つ見逃せないのは、データを与えなくても二十四％から五十一％という合格率が出たことです。これは、実際に調べなくても、一部の医学研究の結論は過去の知識や一般的な傾向から推測できることを意味します。</p>
+    <p>著者らが課題を絞る前の二千百三十一件について実施した確認では、GPT-6 Solは結果を知らないと述べた論文が多かったにもかかわらず、ゼロではない結果について、方向と有意性をかなりの割合で言い当てました。</p>
+    <p>一方、統計的な差が確認されなかった研究、つまり帰無結果については、推測の成績が低くなりました。付録では、実際には有意な効果がない論文に対して、モデルが有意な効果を予測する傾向も示されています。</p>
+    <p>この偏りには、学術論文がどのような発見を多く報告するかという背景も関係し得ます。いわゆる出版バイアスでは、統計的に明確な効果があるという結果が目立ちやすくなります。モデルがそうしたパターンを学習していれば、研究質問だけから正解らしい答えを作ることがあります。</p>
+    <p>したがって、AIに公開前の研究課題だけを渡して正解したからといって、現実のデータを解析したことにはなりません。検証するなら、データに触れたか、どの資料から何を計算したか、データを使わない対照条件との差があるかを確かめる必要があります。</p>
+
+    <h2>知識期限による対策が永続しない理由</h2>
+    <p>この研究では、評価に使う論文がモデルの公表された知識期限より新しいことを重視しました。しかし、モデルが更新され、その知識期限が2026年9月を超えると、同じ二十五課題はもはや同じ条件の評価にはなりません。</p>
+    <p>研究者らは、だからこそ一度だけの固定された問題集より、新しい論文と公開データから課題を作り直す仕組みが必要だと説明します。これは研究にAIを導入するときにも参考になる考え方です。</p>
+    <p>研究支援の能力を継続的に調べるなら、モデルの更新、文献データベースの更新、コードブックの変更、配布先の変更を記録する必要があります。古い課題の成績が上がったからといって、新しい未知の研究を進める能力が上がったと単純には判断できません。</p>
+    <p>また、知識期限が古くても、その後の学習やプロンプトの違いによって回答が変わる可能性があります。実験用の文献検索で過去の日付しか返さない設計も、完全な情報遮断を保証しません。</p>
+    <p>評価の鮮度と情報源の管理を含めて、学術研究のAI利用は継続した検証を要する、という点がこの研究の運用上の含意です。</p>
+
+    <h2>研究者がAIに任せる作業と残すべき判断</h2>
+    <p>ここからは原論文で直接実証された結果ではなく、学術研究でAIを使う際の示唆です。最初に任せやすいのは、公開データの所在を調べ、変数表を整理し、基本的な統計スクリプトを作り、元論文の表へ近づくところまで試行する作業です。</p>
+    <p>しかし、標本をどう選ぶか、因果効果と相関をどう区別するか、使う統計モデルが適切かという判断は、科学的な妥当性の中心です。元論文の数字へ一致しただけで、その判断を省略してよいことにはなりません。</p>
+    <p>研究の再現を依頼するときは、最終回答の数字だけでなく、データの取得先と取得日時、変数の定義、除外基準、実行したコード、途中のエラー、計算結果の保存先を要求する設計が考えられます。結果が一致しなければ、どの段階から違ったかを調べやすくするためです。</p>
+    <p>また、元論文と違う数値になった場合も、ただのAIの失敗とは限りません。元論文の記述が足りない可能性や、別の妥当な分析が存在する可能性もあります。人間の研究者による判断が必要な理由の一つです。</p>
+    <p>こうした運用で、AIは研究を丸ごと代替するものというより、再現と検証の作業を支援し、研究者の確認できる分析記録を増やす存在として位置付けられるかもしれません。ただし実際に研究時間や費用をどれだけ節約できるかは、この論文では独立に測定されていません。</p>
+
+    <h2>研究での利用に必要な安全策</h2>
+    <p>医学や公衆衛生での研究では、データへのアクセス権と、研究対象者のプライバシーも重要です。今回のベンチマークは公開されているデータを使う構成ですが、実際の研究には非公開の患者情報や、利用許諾のある研究データが含まれる場合があります。</p>
+    <p>その場合、AIが便利だからといって外部サービスへ機密情報を送ってよいことにはなりません。情報の持ち出し範囲、実行環境、ログの保全、生成したコードの権限、個人情報の取り扱いを研究計画に含める必要があります。</p>
+    <p>統計結果を再現できたように見えても、薬の効能や副作用の因果関係を証明したとは限りません。特に観察研究の結果は、交絡、偏り、報告の選択などの影響を受けます。AIの回答を治療方針や政策判断へ直結させるのは適切ではありません。</p>
+    <p>さらに、研究成果を発表するときには、分析に使ったAIとツールの版、生成したコードを人間がどこまで確認したか、第三者が追試できる資料があるかを説明することが重要です。これは論文から推測できる運用上の提案であり、今回の研究が医学研究全般の標準手順を制定したわけではありません。</p>
+    <p>最終的な責任は、研究の問いと方法、得られた結果の意味を判断し、根拠を示す研究者と組織に残ります。</p>
+
+    <h2>まだ言えないこと</h2>
+    <p>この研究は、二十五件の選ばれた課題を用いています。学術分野全体や、すべての医学研究でAIが九割以上成功するとは言えません。新たな患者を募集する臨床研究、細胞や動物を使う実験、厳密な因果推論、未公開のデータ解析などへの一般化は未確認です。</p>
+    <p>評価対象の論文は結論がすでに存在しているため、AIがその研究で未知だった科学的事実を新たに発見したと証明するものでもありません。あくまで既存研究の報告結果へ、限定された情報条件で到達できたかという実験です。</p>
+    <p>論文はNeurIPS 2026の生物学的発見に関するワークショップで採択された研究として公開されていますが、学術誌での査読済み検証と同一視してはいけません。主要な内容はプレプリントの本文と付録で確認したものです。</p>
+    <p>著者ら自身が、異なる分析でもたまたま答えが合う可能性と、科学的には妥当な別の分析が不合格になる可能性を挙げています。判定の仕組みは改善の余地を残しています。</p>
+    <p>また、実際の研究者がAIと協働した際の時間短縮、誤りの防止、研究の新規性の向上については、今回の数字だけで判断できません。実研究の現場で、人間だけの作業とAI支援を比較する試験が必要です。</p>
+
+    <h2>耳に残しておきたい結論</h2>
+    <p>今回のBioStudyBenchは、AIが生物医学論文を読むだけでなく、研究の問いを受け、データを探し、統計分析を組み立て、既存論文の結果へ到達する作業を、かなりの割合で実行できることを示しました。</p>
+    <p>八モデルの比較で、データなしの推測に対して、データとツールへのアクセスは平均四十七ポイントの改善をもたらしました。これは単にモデルを賢くすること以外に、正しい情報源へ到達し、計算を実行できる環境の価値を示しています。</p>
+    <p>一方で、元論文の数字が合っただけで、研究方法が正しいとは言えません。データの入手、対象集団の選び方、統計モデル、結論の解釈を追えることが必要です。今回のベンチマークの合格率は、そのすべてを保証する数字ではありません。</p>
+    <p>学術研究でAIを生かす方向は、数字を即答する便利な検索役から、実際にデータへアクセスし、計算過程を残し、人間が再検証できる研究補助者へ進むことだと考えられます。最後に確認すべきなのは、AIが答えたかではなく、その答えを研究者が根拠に戻って確かめられるかです。</p>
+  </article>
+
+  <section class="player" aria-label="読み上げ操作">
+    <div class="transport">
+      <button id="prev-block" type="button" aria-label="前の読み上げ単位へ">←</button>
+      <button id="play" type="button" aria-label="再生">▶</button>
+      <button id="pause" type="button" aria-label="一時停止">Ⅱ</button>
+      <button id="stop" type="button" aria-label="停止">■</button>
+      <button id="next-block" type="button" aria-label="次の読み上げ単位へ">→</button>
+    </div>
+    <div class="section-nav" aria-label="章移動">
+      <button id="prev-section" type="button" aria-label="前の章へ">‹</button>
+      <span id="section-label">導入</span>
+      <button id="next-section" type="button" aria-label="次の章へ">›</button>
+    </div>
+    <div class="voice-row">
+      <select id="voice" aria-label="日本語音声"></select>
+    </div>
+    <div class="speed"><span>速度</span><input id="rate" type="range" min="0.7" max="4" step="0.1" value="1"><span id="rateValue">1.0×</span></div>
+  </section>
+
+
+
+
+
+
+
+  <section class="sources" aria-label="出典">
+    <strong>出典</strong>
+    <p><a href="https://arxiv.org/abs/2610.07614">BioStudyBench: Evaluating Agents on Post-Cutoff Biomedical Studies（原論文・付録、arXiv）</a></p>
+    <p><a href="https://www.alphaxiv.org/abs/2610.07614">alphaXiv — 原論文の閲覧ページ</a></p>
+    <p>論文で報告された再現率は、元論文の結果との一致率を示す。臨床判断、因果効果、分析手法全体の正しさを保証するものではない。</p>
+  </section>
+</main>
+<script>
+(() => {
+  const synth = window.speechSynthesis;
+  const blocks = [...document.querySelectorAll("#article h1,#article h2,#article h3,#article p")];
+  const sectionStarts = [...new Set([0, ...blocks.map((node, i) => node.tagName === "H2" ? i : -1).filter(i => i >= 0)])];
+  const play = document.querySelector("#play");
+  const pause = document.querySelector("#pause");
+  const stop = document.querySelector("#stop");
+  const prevBlock = document.querySelector("#prev-block");
+  const nextBlock = document.querySelector("#next-block");
+  const prevSection = document.querySelector("#prev-section");
+  const nextSection = document.querySelector("#next-section");
+  const sectionLabel = document.querySelector("#section-label");
+  const voice = document.querySelector("#voice");
+  const rate = document.querySelector("#rate");
+  const rateValue = document.querySelector("#rateValue");
+  const theme = document.querySelector("#theme");
+  let index = 0, playing = false, paused = false, selectedVoice = "", generation = 0;
+  let wakeLock = null, wakeLockWanted = false;
+
+  async function requestWakeLock() {
+    const wakeLockApi = window.navigator?.wakeLock;
+    wakeLockWanted = true;
+    if (!wakeLockApi?.request || wakeLock) return;
+    try {
+      const lock = await wakeLockApi.request("screen");
+      if (!wakeLockWanted) {
+        await lock.release();
+        return;
+      }
+      wakeLock = lock;
+      wakeLock.addEventListener?.("release", () => { wakeLock = null; });
+    } catch {
+      wakeLock = null;
+    }
+  }
+
+  async function releaseWakeLock() {
+    wakeLockWanted = false;
+    const current = wakeLock;
+    wakeLock = null;
+    if (!current) return;
+    try {
+      await current.release();
+    } catch {
+      // Wake Lock is best-effort; speech playback must continue to work.
+    }
+  }
+
+  function voices() {
+    const previous = selectedVoice || voice.value;
+    const items = synth.getVoices().filter(v => /^ja(?:-|_)/i.test(v.lang));
+    voice.replaceChildren();
+    for (const v of items) {
+      const o = document.createElement("option");
+      o.value = v.voiceURI;
+      o.textContent = v.name;
+      voice.append(o);
+    }
+    if (items.some(v => v.voiceURI === previous)) voice.value = previous;
+    selectedVoice = voice.value;
+  }
+
+  function clearHighlight() {
+    blocks.forEach(node => node.classList.remove("is-speaking"));
+  }
+
+  function sectionPosition() {
+    let pos = 0;
+    for (let i = 0; i < sectionStarts.length; i += 1) {
+      if (sectionStarts[i] <= index) pos = i;
+      else break;
+    }
+    return pos;
+  }
+
+  function updateNavigation() {
+    prevBlock.disabled = index <= 0;
+    nextBlock.disabled = index >= blocks.length - 1;
+
+    const pos = sectionPosition();
+    const start = sectionStarts[pos] ?? 0;
+    const previousTargetExists = index > start || pos > 0;
+    prevSection.disabled = !previousTargetExists;
+    nextSection.disabled = pos >= sectionStarts.length - 1;
+
+    const startNode = blocks[start];
+    sectionLabel.textContent = startNode?.tagName === "H2" ? startNode.textContent : "導入";
+  }
+
+  function showCurrent() {
+    clearHighlight();
+    const current = blocks[index];
+    if (!current) return;
+    current.classList.add("is-speaking");
+    current.scrollIntoView({ block: "center", behavior: "smooth" });
+    updateNavigation();
+  }
+
+  function speakCurrent() {
+    if (!playing || paused || index >= blocks.length) {
+      if (index >= blocks.length) {
+        playing = false;
+        paused = false;
+        clearHighlight();
+        void releaseWakeLock();
+      }
+      updateNavigation();
+      return;
+    }
+
+    showCurrent();
+    const localGeneration = ++generation;
+    const utterance = new SpeechSynthesisUtterance(blocks[index].textContent);
+    utterance.lang = "ja-JP";
+    utterance.rate = Number(rate.value);
+    const selected = synth.getVoices().find(item => item.voiceURI === voice.value);
+    if (selected) utterance.voice = selected;
+
+    utterance.onend = () => {
+      if (localGeneration !== generation || !playing || paused) return;
+      index += 1;
+      speakCurrent();
+    };
+
+    utterance.onerror = event => {
+      if (localGeneration !== generation) return;
+      if (event.error !== "canceled" && event.error !== "interrupted") {
+        playing = false;
+        paused = false;
+        clearHighlight();
+        void releaseWakeLock();
+        updateNavigation();
+      }
+    };
+
+    synth.speak(utterance);
+  }
+
+  function jumpTo(target) {
+    const next = Math.max(0, Math.min(blocks.length - 1, target));
+    const resume = playing && !paused;
+    const keepPaused = paused;
+
+    generation += 1;
+    synth.resume?.();
+    synth.cancel();
+    index = next;
+
+    if (resume) {
+      playing = true;
+      paused = false;
+      void requestWakeLock();
+      speakCurrent();
+      return;
+    }
+
+    playing = keepPaused;
+    paused = keepPaused;
+    showCurrent();
+    if (keepPaused) void requestWakeLock();
+  }
+
+  function jumpSection(delta) {
+    const pos = sectionPosition();
+    let targetPos;
+
+    if (delta < 0 && index > sectionStarts[pos]) targetPos = pos;
+    else targetPos = pos + delta;
+
+    if (targetPos < 0 || targetPos >= sectionStarts.length) return;
+    jumpTo(sectionStarts[targetPos]);
+  }
+
+  play.addEventListener("click", () => {
+    if (paused) {
+      generation += 1;
+      synth.resume?.();
+      synth.cancel();
+      paused = false;
+      playing = true;
+      void requestWakeLock();
+      speakCurrent();
+      return;
+    }
+    if (playing) return;
+    if (index >= blocks.length) index = 0;
+    playing = true;
+    void requestWakeLock();
+    speakCurrent();
+  });
+
+  pause.addEventListener("click", () => {
+    if (!playing || paused) return;
+    synth.pause();
+    paused = true;
+  });
+
+  stop.addEventListener("click", () => {
+    generation += 1;
+    synth.resume?.();
+    synth.cancel();
+    playing = false;
+    paused = false;
+    index = 0;
+    clearHighlight();
+    updateNavigation();
+    void releaseWakeLock();
+  });
+
+  prevBlock.addEventListener("click", () => jumpTo(index - 1));
+  nextBlock.addEventListener("click", () => jumpTo(index + 1));
+  prevSection.addEventListener("click", () => jumpSection(-1));
+  nextSection.addEventListener("click", () => jumpSection(1));
+
+  voice.addEventListener("change", () => {
+    selectedVoice = voice.value;
+    if (playing && !paused) {
+      generation += 1;
+      synth.cancel();
+      speakCurrent();
+    }
+  });
+
+  rate.addEventListener("input", () => {
+    rateValue.textContent = Number(rate.value).toFixed(1) + "×";
+  });
+
+  theme.addEventListener("click", () => {
+    const dark = document.documentElement.dataset.theme === "dark";
+    document.documentElement.dataset.theme = dark ? "light" : "dark";
+    theme.textContent = dark ? "☾" : "☀";
+    localStorage.setItem("rsvp:theme", dark ? "light" : "dark");
+  });
+
+  document.documentElement.dataset.theme =
+    localStorage.getItem("rsvp:theme") ||
+    (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  theme.textContent = document.documentElement.dataset.theme === "dark" ? "☀" : "☾";
+
+  voices();
+  synth.addEventListener?.("voiceschanged", voices);
+  updateNavigation();
+
+  document.addEventListener?.("visibilitychange", () => {
+    if (document.visibilityState === "visible" && (playing || paused)) {
+      void requestWakeLock();
+    }
+  });
+
+  addEventListener("pagehide", () => {
+    generation += 1;
+    synth.cancel();
+    void releaseWakeLock();
+  });
+})();
+</script>
+</body>
+</html>
