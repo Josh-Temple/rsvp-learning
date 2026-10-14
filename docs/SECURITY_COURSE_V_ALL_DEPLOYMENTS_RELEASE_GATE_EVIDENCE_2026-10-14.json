@@ -1,0 +1,79 @@
+{
+  "worker": "E",
+  "observed_date_jst": "2026-10-14",
+  "decision": "PARTIAL_WITH_GAPS / HOLD_NO_MERGE",
+  "main_sha_at_integration": "79367aa5952b3ed187efd987e8d973eae14cef7e",
+  "course_pr": 136,
+  "course_head_sha": "2ceb3bae83dca17f00dcfb84cddfd726c20c92a0",
+  "course_acceptance_pr": 146,
+  "course_ci_run_id": 38205273101,
+  "course_ci_conclusion": "success",
+  "course_files_changed": 32,
+  "compare": {
+    "ahead_by": 7,
+    "behind_by": 17,
+    "mergeable": true
+  },
+  "production": {
+    "id": "dpl_rgs2CSAKzGFrYUVSWaFd3vthAx2v",
+    "state": "READY",
+    "source_sha": "79367aa5952b3ed187efd987e8d973eae14cef7e",
+    "sso_enabled": true,
+    "sso_deployment_type": "all",
+    "aliases": [
+      "rsvp-learning-kappa.vercel.app",
+      "rsvp-learning-josh-temples-projects.vercel.app",
+      "rsvp-learning-git-main-josh-temples-projects.vercel.app"
+    ]
+  },
+  "preview": {
+    "id": "dpl_4myzXuZXtjdyRfhRbxJivUCtmQBy",
+    "state": "READY",
+    "source_sha": "2ceb3bae83dca17f00dcfb84cddfd726c20c92a0"
+  },
+  "catalog_registered": false,
+  "scheduled_deploy_cron": "17 */6 * * *",
+  "source_sha256": {
+    "A_github_deployment_readiness_report_2026-10-14.md": "ff4a586776ebdcffa682436f82dedda363467caa9463f276509b0f6451b252d0",
+    "B_authenticated_browser_mobile_qa_report_2026-10-14.md": "57029bb7ca7aa63aa38a9e7baf585cd06861a7614fb73a05145e7cee800eecd1",
+    "C_anonymous_http_retest_report_2026-10-14.md": "a87f955e19362ff715006c224ac69875c55e58751c313449cc1686676c8dfd38",
+    "C_anonymous_http_retest_evidence_2026-10-14.json": "12e81321fb586244cd80aa25d7cf493964faef5c28bf972f4da215df1b7a6abb",
+    "D_post_c_b_independent_reacceptance_report_2026-10-14.md": "463f543c51048d9a085a71e879e558609c80e88429c7cd920cad8af0a7cd2a39",
+    "D_post_c_b_evidence_checks_2026-10-14.json": "d9ab7e5cb4b9017b40b8b4c818c9a9906c9f2b64ca378b0f197840f8a264d1b9"
+  },
+  "c_http_recalculated": {
+    "url_pairs": 26,
+    "get_attempts": 52,
+    "hops": 104,
+    "without_redirects_302": 26,
+    "with_redirects_302_307_200": 26,
+    "application_body_gets_reported": 0,
+    "d_stored_evidence_acceptance": "PASS",
+    "independent_second_http_run_by_E": false
+  },
+  "b": {
+    "report_status": "BLOCKED_AUTH_NETWORK_BLOCKED_BEFORE_SSO",
+    "browser_attempts_reported": 10,
+    "err_blocked_reported": 10,
+    "raw_json": "MISSING_FROM_WAVE_LIBRARY",
+    "desktop": "NOT_VERIFIED_NEW_WAVE",
+    "real_390px": "UNTESTED_390PX",
+    "authenticated": "NOT_VERIFIED",
+    "android": "USER_DEVICE_AUDIO_PASS_REPORTED"
+  },
+  "d": "D_PARTIAL_WITH_GAPS",
+  "bypass_effect": "NOT_VERIFIED",
+  "gates": {
+    "CONTENT_ACCEPTANCE": "PASS",
+    "GIT_MERGE_READINESS": "PARTIAL",
+    "PRODUCTION_AUTH_CONFIGURATION": "PASS",
+    "PRODUCTION_ANONYMOUS_ACCESS": "DENIED_OBSERVED_IN_C",
+    "AUTHENTICATED_BROWSING": "BLOCKED_AUTH",
+    "MOBILE_AND_AUDIO_QA": "PARTIAL",
+    "BYPASS_EFFECT": "NOT_VERIFIED",
+    "MATERIAL_ONLY_MERGE_READINESS": "HOLD",
+    "CATALOG_PUBLICATION_READINESS": "HOLD",
+    "RELEASE_READINESS": "HOLD_NO_MERGE"
+  },
+  "secrets_included": false
+}
