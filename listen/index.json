@@ -2,6 +2,13 @@
   "schema_version": 1,
   "items": [
     {
+      "id": "2026-10-14-biostudybench-biomedical-research-reanalysis",
+      "title": "AIは医学論文の結果を、データから自分で再現できるか――BioStudyBench",
+      "date": "2026-10-14",
+      "category": "research",
+      "path": "./research/2026-10-14-biostudybench-biomedical-research-reanalysis.html"
+    },
+    {
       "id": "2026-10-12-research-world-models-experiment-selection",
       "title": "AIは実験する前に、どの研究が有望か見極められるか――Research World Models",
       "date": "2026-10-12",
