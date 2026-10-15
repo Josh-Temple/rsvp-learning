@@ -2,6 +2,13 @@
   "schema_version": 1,
   "items": [
     {
+      "id": "2026-10-15-ai-brown-fat-clinical-discovery",
+      "title": "AIで褐色脂肪を調べると、健康と薬の新しい手掛かりが見えた――Natureの研究",
+      "date": "2026-10-15",
+      "category": "research",
+      "path": "./research/2026-10-15-ai-brown-fat-clinical-discovery.html"
+    },
+    {
       "id": "2026-10-14-biostudybench-biomedical-research-reanalysis",
       "title": "AIは医学論文の結果を、データから自分で再現できるか――BioStudyBench",
       "date": "2026-10-14",
