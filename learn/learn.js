@@ -145,6 +145,7 @@
         index = 0;
         voiceChangedWhilePaused = false;
         clearHighlight();
+        delete status.dataset.speechError;
         status.textContent = "停止しました";
         updateControls();
       }
@@ -190,6 +191,30 @@
         return replacements.reduce((value, [pattern, spoken]) => value.replace(pattern, spoken), text);
       }
 
+      // Keep speech diagnostics actionable without exposing arbitrary engine messages.
+      // Only known Web Speech error codes may appear in the UI or test attributes.
+      const knownSpeechErrors = new Set([
+        "canceled", "interrupted", "audio-busy", "audio-hardware",
+        "network", "synthesis-unavailable", "synthesis-failed",
+        "language-unavailable", "voice-unavailable", "text-too-long",
+        "invalid-argument", "not-allowed"
+      ]);
+
+      function safeSpeechErrorCode(code) {
+        return typeof code === "string" && knownSpeechErrors.has(code) ? code : "unknown";
+      }
+
+      function showSpeechError(code, hasStarted) {
+        state = "idle";
+        clearHighlight();
+        const safeCode = safeSpeechErrorCode(code);
+        status.dataset.speechError = safeCode;
+        status.textContent = (hasStarted ? "読み上げ中にエラーが発生しました" : "読み上げを開始できませんでした")
+          + `（音声エラー: ${safeCode}）`;
+        void releaseWakeLock();
+        updateControls();
+      }
+
       function speakCurrent(activeRun) {
         if (activeRun !== runId || state !== "playing") return;
 
@@ -205,6 +230,7 @@
         }
 
         const element = items[index];
+        let utteranceStarted = false;
         const utterance = new SpeechSynthesisUtterance(pronunciationText(element.textContent.trim()));
         const voice = selectedVoice();
 
@@ -214,6 +240,7 @@
 
         utterance.onstart = () => {
           if (activeRun !== runId) return;
+          utteranceStarted = true;
           setActive(index);
           status.textContent = `${index + 1} / ${items.length} を読み上げ中`;
           updateControls();
@@ -228,19 +255,23 @@
         utterance.onerror = (event) => {
           if (activeRun !== runId) return;
           if (event.error === "canceled" || event.error === "interrupted") return;
-          state = "idle";
-          clearHighlight();
-          status.textContent = "読み上げを開始できませんでした";
-          void releaseWakeLock();
-          updateControls();
+          showSpeechError(event.error, utteranceStarted);
         };
 
-        synth.speak(utterance);
+        try {
+          synth.speak(utterance);
+        } catch (error) {
+          if (activeRun !== runId) return;
+          // Never put arbitrary exception messages into the document.
+          const safeCode = error?.name === "NotAllowedError" ? "not-allowed" : "unknown";
+          showSpeechError(safeCode, utteranceStarted);
+        }
       }
 
       function startFromCurrent() {
         runId += 1;
         const activeRun = runId;
+        delete status.dataset.speechError;
         synth.cancel();
         state = "playing";
         void requestWakeLock();
