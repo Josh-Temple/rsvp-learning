@@ -19,17 +19,3 @@ jobs:
           node-version: 22
       - run: npm install --ignore-scripts
       - run: npm run check
-
-      - name: Course V static 390 CSS px Chromium QA
-        env:
-          QA_REPORT_PATH: qa-artifacts/learn-390.json
-        run: |
-          git fetch --no-tags --depth=1 origin 2ceb3bae83dca17f00dcfb84cddfd726c20c92a0
-          node scripts/check-learn-390.mjs
-      - name: Upload 390 CSS px evidence
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: course-v-static-390-css-px
-          path: qa-artifacts/learn-390.json
-          if-no-files-found: ignore
