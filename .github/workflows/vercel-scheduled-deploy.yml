@@ -2,12 +2,9 @@ name: Scheduled Vercel production deploy
 
 on:
   schedule:
-    - cron: "17 */6 * * *"
-  # Updating this workflow on main also provides an intentional immediate-deploy path. Trigger: AutoSella Daily Paper Listen 2026-10-08.
-  push:
-    branches: [main]
-    paths:
-      - ".github/workflows/vercel-scheduled-deploy.yml"
+    # Daily at 09:17 Japan time (00:17 UTC); manual workflow_dispatch remains available.
+    - cron: "17 0 * * *"
+  # Production deploys are explicit/scheduled; do not trigger them on workflow-file edits.
   workflow_dispatch:
 
 permissions:
@@ -56,13 +53,39 @@ jobs:
             echo "configured=true" >> "$GITHUB_OUTPUT"
           fi
 
-      - uses: actions/setup-node@v4
+      # The local vercel-production tag can lag behind a successful Vercel deploy.
+      # Query the actual latest READY production deployment to prevent duplicate builds.
+      - name: Check already-deployed production SHA
+        id: production
         if: steps.changed.outputs.changed == 'true' && steps.credentials.outputs.configured == 'true'
+        shell: bash
+        run: |
+          HTTP_CODE="$(curl -sS -o /tmp/vercel-latest-production.json -w "%{http_code}" \
+            -H "Authorization: Bearer $VERCEL_TOKEN" \
+            "https://api.vercel.com/v6/deployments?projectId=$VERCEL_PROJECT_ID&target=production&state=READY&limit=1&teamId=$VERCEL_ORG_ID")"
+          if [ "$HTTP_CODE" != "200" ]; then
+            echo "Cannot verify live production SHA (HTTP $HTTP_CODE); not creating another deployment."
+            exit 1
+          fi
+          LIVE_SHA="$(node -e 'const fs=require("fs"); const x=JSON.parse(fs.readFileSync("/tmp/vercel-latest-production.json","utf8")); process.stdout.write(x.deployments?.[0]?.meta?.githubCommitSha || "")')"
+          if [ -z "$LIVE_SHA" ]; then
+            echo "No attributable READY production deployment SHA; failing closed to prevent duplicates."
+            exit 1
+          fi
+          if [ "$LIVE_SHA" = "$GITHUB_SHA" ]; then
+            echo "Commit is already deployed; skip build/deploy and synchronize the tag."
+            echo "needed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "Production differs from current main; one deployment is needed."
+            echo "needed=true" >> "$GITHUB_OUTPUT"
+          fi
+      - uses: actions/setup-node@v4
+        if: steps.changed.outputs.changed == 'true' && steps.credentials.outputs.configured == 'true' && steps.production.outputs.needed == 'true'
         with:
           node-version: 22
 
       - name: Verify Vercel project access
-        if: steps.changed.outputs.changed == 'true' && steps.credentials.outputs.configured == 'true'
+        if: steps.changed.outputs.changed == 'true' && steps.credentials.outputs.configured == 'true' && steps.production.outputs.needed == 'true'
         shell: bash
         run: |
           HTTP_CODE="$(curl -sS -o /tmp/vercel-project.json -w "%{http_code}" \
@@ -75,15 +98,15 @@ jobs:
           fi
 
       - name: Install dependencies
-        if: steps.changed.outputs.changed == 'true' && steps.credentials.outputs.configured == 'true'
+        if: steps.changed.outputs.changed == 'true' && steps.credentials.outputs.configured == 'true' && steps.production.outputs.needed == 'true'
         run: npm install --ignore-scripts
 
       - name: Test and validate
-        if: steps.changed.outputs.changed == 'true' && steps.credentials.outputs.configured == 'true'
+        if: steps.changed.outputs.changed == 'true' && steps.credentials.outputs.configured == 'true' && steps.production.outputs.needed == 'true'
         run: npm run check
 
       - name: Create Vercel production deployment
-        if: steps.changed.outputs.changed == 'true' && steps.credentials.outputs.configured == 'true'
+        if: steps.changed.outputs.changed == 'true' && steps.credentials.outputs.configured == 'true' && steps.production.outputs.needed == 'true'
         id: vercel_deploy
         shell: bash
         run: |
@@ -133,7 +156,7 @@ jobs:
           echo "Created deployment $DEPLOYMENT_ID"
 
       - name: Wait for Vercel production deployment
-        if: steps.changed.outputs.changed == 'true' && steps.credentials.outputs.configured == 'true'
+        if: steps.changed.outputs.changed == 'true' && steps.credentials.outputs.configured == 'true' && steps.production.outputs.needed == 'true'
         shell: bash
         env:
           DEPLOYMENT_ID: ${{ steps.vercel_deploy.outputs.deployment_id }}
