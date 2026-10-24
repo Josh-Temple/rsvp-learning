@@ -1,0 +1,1029 @@
+{
+  "schema_version": 1,
+  "id": "security-input-output-injection",
+  "title": "入力・出力・Injection",
+  "topic": "情報セキュリティ",
+  "summary": "架空の申請検索と表示から、入力検証、命令と値の分離、出力文脈、雛形の境界、独立した認可と検証限界を判断します。",
+  "created_at": "2026-10-11",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "OWASP Top 10:2025 A05 Injection",
+      "url": "https://top10.owasp.org/2025/A05_2025-Injection/"
+    },
+    {
+      "title": "OWASP SQL Injection Prevention Cheat Sheet",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html"
+    },
+    {
+      "title": "OWASP Injection Prevention Cheat Sheet",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Injection_Prevention_Cheat_Sheet.html"
+    },
+    {
+      "title": "OWASP Cross Site Scripting Prevention Cheat Sheet",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html"
+    },
+    {
+      "title": "OWASP Input Validation Cheat Sheet",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html"
+    },
+    {
+      "title": "OWASP Server Side Template Injection Prevention Cheat Sheet",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Server_Side_Template_Injection_Prevention_Cheat_Sheet.html"
+    },
+    {
+      "title": "OWASP OS Command Injection Defense Cheat Sheet",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/OS_Command_Injection_Defense_Cheat_Sheet.html"
+    },
+    {
+      "title": "OWASP Authorization Cheat Sheet",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html"
+    },
+    {
+      "title": "OWASP ASVS 5.0.0 stable V1 Encoding and Sanitization",
+      "url": "https://github.com/OWASP/ASVS/blob/v5.0.0_release/5.0/en/0x10-V1-Encoding-and-Sanitization.md"
+    },
+    {
+      "title": "OWASP ASVS 5.0.0 stable V2 Validation and Business Logic",
+      "url": "https://github.com/OWASP/ASVS/blob/v5.0.0_release/5.0/en/0x11-V2-Validation-and-Business-Logic.md"
+    },
+    {
+      "title": "OWASP ASVS 5.0.0 stable V8 Authorization",
+      "url": "https://github.com/OWASP/ASVS/blob/v5.0.0_release/5.0/en/0x17-V8-Authorization.md"
+    },
+    {
+      "title": "IPA 安全なウェブサイトの作り方 改訂第7版 第4刷・1.1",
+      "url": "https://www.ipa.go.jp/security/vuln/websecurity/sql.html"
+    },
+    {
+      "title": "IPA 安全なウェブサイトの作り方 改訂第7版 第4刷・1.5",
+      "url": "https://www.ipa.go.jp/security/vuln/websecurity/cross-site-scripting.html"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "入力の入口だけで安全を判定しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "データがどの処理系へ渡るかを追います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "住民のコメントは保存後に、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "職員画面や通知でも使われます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "DBに保存されたという理由だけでは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "次の処理で安全な文字列とはいえません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "委託先の応答や添付の内容も、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "受け取る境界ごとに扱いを決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Injectionはデータが、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "意図しない命令や構文の一部になる問題です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "SQLでは問い合わせの意味が変わり、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "HTMLでは要素や実行可能な内容になり得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "テンプレートでは式として評価され得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "解釈する処理系が違えば、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "必要な対策の条件も違います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "まず入口、保存、変換、出力を図にし、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "命令を組み立てる場所を探します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "信頼するのは文字列の見た目ではなく、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "適用した規則と処理の境界です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "入力検証は業務で必要な型、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "長さ、範囲、形式を確かめます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "提出日と対象期間の整合も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "サーバ側の信頼できる処理で行います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ブラウザの検査は操作を助けますが、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "直接の要求を拒否する保証にはなりません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "型の検証より前にも、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "本文サイズや解析資源の上限が必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "巨大な要求を解析し終えてから、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "型を検査しても資源枯渇を防げません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "氏名に引用符があるだけで、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "不正な住民入力とは判断しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "必要な文字まで削ると情報を壊します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "禁止語の一覧だけに安全を依存しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "検証を通った文字列でも、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "別の出力文脈で構文になり得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "デコードや正規化が必要な項目では、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "どの表現を受け付けるかを先に決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "期待した変換を検証前に一度行い、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "検証後の再デコードで意味を変えません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "すべての氏名を一律に変換する、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "という意味ではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "文字の正規化は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "Injection対策の代わりではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "検索語をSQL文字列へ継ぎ足すと、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "値が問い合わせの構造へ混ざります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "固定したSQL文を用意し、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "検索する値を別の引数で渡します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "これが値のパラメータ化です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "使うDBドライバの、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "正しいバインドAPIを確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "入力を先にSQLの構造へ連結すると、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "後でprepareという準備処理をしても、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "命令と値は分離できません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "引用符を含む検索語でも、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "命令ではなく一つの値として扱わせます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "正常な検索結果が得られることと、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "問い合わせの構造が変わらないことを試します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ORMを使うという名称だけでは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "防止できたとはいえません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "生の問い合わせを文字列連結したり、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ORMの問い合わせ言語へ継ぎ足したりすると、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "問題が残る場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ストアドプロシージャでも同様です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "内部で入力からSQLを組み立て、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "動的実行するなら安全とは限りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "問い合わせが生成される全経路を見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "値用のプレースホルダは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "表名、列名、並び順の構文には使えません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "DBやAPIが別の仕組みを提供する場合も、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "値のバインドと同一視しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "青波市の並び順は二つの選択肢に限定します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "「受付順」を固定の列と方向へ対応させ、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "「更新順」も固定の構文へ対応させます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "それ以外は拒否します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用者の文字列を列名として継ぎ足しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "自由な構文が必要なら、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "機能の設計を先に見直します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "LIKE検索の値をバインドしても、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "パーセント等のワイルドカードは働きます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "命令の注入とは別の検索仕様の問題です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "文字どおりの検索なら、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "DBのLIKE規則に合わせて処理します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "任意一致を認める仕様なら、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "その意図と認可範囲を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "パラメータ化は件数や負荷の上限も、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "自動では保証しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "HTML用のエスケープでは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "SQLの値と命令を分離できません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "SQLの文字を手で逃がす方式は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "方言や文字コードなどに依存します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "本章では値のバインドを優先します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "DB接続の権限縮小は被害を抑えますが、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "構造の混入を直す対策とは別です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "検索結果を表示するときには、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "SQLとは別の処理系へデータを渡します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "出力用の符号化は保存時に一律で行わず、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "対象の処理系へ渡す直前に行います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "HTMLソースへ通常の文章を出すなら、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "HTMLの文字として符号化します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "山括弧等がタグとして解釈されないためです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "DOMで通常の要素へ文章を入れるなら、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "textContent等を選べます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "事前にHTML符号化した値ではなく、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "元の文字列を文字ノードとして渡します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "scriptやstyle要素へ入れる場合は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "同じ安全性を主張できません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "innerHTMLは文字列を、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "HTMLとして解析するため目的が違います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "HTMLソースの属性へ出力する場合は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "安全な属性名を固定し、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "属性用の符号化と引用符を使います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "DOMで通常の文字属性へ設定するなら、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "setAttribute等へ元の値を渡します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "事前のHTML符号化は不要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "属性名も利用者に選ばせません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "イベント属性やHTMLを解釈する属性へ、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "同じ方法を流用しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "JavaScriptやCSSのコードへ、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "非信頼文字列を直接埋め込む設計を避けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "そこではHTML用の符号化だけでは不足します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "表示先を通常の文字表示へ変えられないか、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "先に検討します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "URLには二種類の判断が必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "検索語等をURLの部品に入れるときは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "その部品用に符号化します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "それだけでURL全体が安全にはなりません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "リンク先は解析した方式や、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "必要なら接続先も許可規則で検査します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "本ケースの外部リンクはHTTPSに限定します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "これは本ケースの方針であり、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "全サービス共通の方式規則ではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "JavaScriptの実行を表すURLは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "拒否します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "HTMLソースの属性へ出力する場合は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "引用符と属性用の符号化を使います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "DOMで通常のリンクへ設定するなら、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "固定したhrefへ許可済みURLを渡します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "どちらもURLの方式等の検査が必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "URLとHTMLの解釈段階を混同しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "コメントは通常の文字表示を選びます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "もしお知らせでHTMLの装飾を許すなら、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "すべての符号化では装飾も文字になります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "そこで許す要素と属性を定め、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "維持管理されたライブラリで、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "HTMLをサニタイズします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "構文を解析して危険な内容を除く処理です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "正規表現でタグを削るだけでは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "同じ保証になりません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "サニタイズ後に文字列を変えたり、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "別の処理が再解釈したりすると、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "保護が崩れる場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "更新状況と最後の出力先も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "コンテンツセキュリティポリシー、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "CSPはブラウザの読み込み等を制限します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "追加の防御として使いますが、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "サニタイズの代わりにはなりません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "危険な出力処理を残す理由にもなりません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "テンプレートは雛形の命令を解釈し、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "データを差し込んで文書を生成します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "信頼した固定の雛形へ、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "名前付きの値としてコメントを渡します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "入力文字列を雛形のソースへ継ぎ足し、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "その雛形を評価してはいけません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "差し込んだ値を再び雛形として評価する、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "二段目の処理も点検します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用者が指定する雛形名やパスにも、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "許可した選択肢との対応が必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "自動エスケープは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "対応する出力文脈のXSS対策を助けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ただし非信頼の雛形ソースを評価する、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "SSTIの防止にはなりません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "雛形を解釈する段階と、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "生成したHTMLを解釈する段階は別です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "出力文脈、自動処理の対象と設定、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "生出力や無効化の箇所を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "雛形へ渡す情報と機能も絞ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "秘密値や広い権限の操作機能を渡しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用者が雛形を作る機能なら、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "高リスクの別要件として扱います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "隔離、資源制限、権限縮小等が必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "サンドボックスという名称だけでは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "安全を保証できません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "本章のローカル例は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "雛形エンジンの安全性を試験しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ファイル変換でOSコマンドを呼ぶなら、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "まず専用のライブラリで代替を考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "呼び出しが必要な場合でも、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "シェル文字列を組み立てず、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "固定の実行対象と引数を分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ただし引数として危険なオプションを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "渡せる問題は残り得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "実行対象固有の引数規則と権限を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "SQL、HTML、OSの逃がし方を、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "一つの汎用関数で済ませません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Injection対策と認可も別です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "問い合わせの構造が正しくても、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "他人の申請を読む要求なら拒否が必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "サーバ側で主体と対象を照合し、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "一覧の取得範囲にも規則を適用します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "職員の部署が欠落した一覧検索は拒否します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "部署が有効かを照合前に確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "空文字同士の一致も許可の根拠にしません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "本人の申請と公開案内は別の規則で扱います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "表示の符号化は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "既に渡した機密データを取り戻せません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "添付取得、一括出力、通知でも、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "認可と処理系の境界を別々に確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "JSONの応答でも、その後の画面が、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "HTMLへ危険に挿入すれば問題が残ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "通知やログに秘密値を出さない設計も必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ログの保存先は安全な表示先と限りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "生の要求本文を障害記録へ複製しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "試験は架空データとローカル環境で行います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "第三者のシステムへ要求を送りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "SQLは固定文と別の値引数を使い、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "引用符を含む正当な検索が成功するか試します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "命令のように見える文字列も、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "一つの値として扱われることを確かめます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "並び順の未知の選択肢を拒否し、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "許可した二つの選択肢は成功させます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "LIKEの任意一致を許す場合と、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "文字どおりの一致も分けて試します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "通常のHTML文章の試験では、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "元の文字が表示用のデータとして残り、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "入力から新しい要素が生まれないか確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "これは全ブラウザの安全性の証明ではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "URL、装飾、雛形、OSの実装は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "選ぶ処理系と版で別の試験が必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "書いていない試験を成功とは記録しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "他人の申請と異動後の閲覧も拒否します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "自分や現在の担当の申請は許可します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "部署の欠落や空白では拒否を確かめます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "拒否だけが成功しても業務品質は測れません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "データの経路、出力文脈、期待結果、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "使用した版と実際の結果を残します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "特殊文字を一種類試した結果だけで、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "すべての経路が安全とは判断しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "WAFの検知件数やエラーの減少も、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "原因をなくした証拠とは異なります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "出力先やライブラリを変えたら、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "検証の前提と回帰試験を見直します。",
+      "duration_multiplier": 1.15
+    }
+  ]
+}

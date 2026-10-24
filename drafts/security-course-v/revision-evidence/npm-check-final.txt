@@ -1,0 +1,158 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> check
+> npm run test && npm run validate
+
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> test
+> node --test tests/*.test.mjs
+
+✔ newer course selection wins when chapter responses finish out of order (24.709316ms)
+✔ failure from a stale request does not replace the current lesson with an error (10.861585ms)
+Error: 教材一覧の取得に失敗しました: 500
+    at loadCatalogs (app.js:696:11)
+✔ a failed current course load leaves the previous course selection intact (10.249288ms)
+Error: コースがありません。
+    at loadCatalogs (app.js:727:22)
+✔ opening the library pauses playback and clears the scheduled timer (4.704445ms)
+✔ opening the library invalidates an in-flight autoplay chapter load (6.9724ms)
+Error: コースがありません。
+    at loadCatalogs (app.js:727:22)
+✔ Learn link stays available and follows the selected lesson when possible (3.452931ms)
+✔ lesson catalog requires and accepts current synchronized statuses (2.888757ms)
+✔ complete requires a Learn path and unfinished states cannot declare one (0.518358ms)
+✔ validator accepts a structurally valid fixture (407.957128ms)
+✔ validator rejects duplicate lesson IDs (421.630269ms)
+✔ validator rejects a course reference to an unregistered lesson (476.694446ms)
+✔ validator rejects schema-invalid lesson data (364.766783ms)
+✔ all COMPLETE catalog entries have static Learn HTML independent of RSVP chunk concatenation (484.336054ms)
+✔ pilot coverage gates fail closed when essential explanations are absent (0.963829ms)
+✔ review gates can require claim and limitation in the same paragraph (0.904689ms)
+✔ expanded Learn coverage includes cases, limitations and verification gates (0.2227ms)
+✔ shared Learn player exposes Web Speech API and preserves paused voice-change resume (7.311714ms)
+✔ Learn library exposes course-level continuous playback without replacing single-chapter links (2.066739ms)
+✔ authenticated mail heading does not imply authentication proves safety (2.732616ms)
+✔ continuous Learn course shows current chapter sources outside the speech track (3.308482ms)
+✔ four new security Learn lectures retain A-head cases, limits, and separate source sections (15.635115ms)
+✔ P1-IP-01 Learn: three proofing steps, limitations, and regression counterexamples (15.992284ms)
+✔ critical identity, federation and cloud conditions remain in their Learn lectures (12.754891ms)
+✔ voice list refresh preserves a selected Japanese voice (12.828501ms)
+✔ player reads DOM order and pause voice change resumes the same element with the new voice (7.566515ms)
+✔ registered Listen pages satisfy the minimum read-aloud contract (59.093936ms)
+✔ shared library exposes RSVP, Learn, and Listen modes (15.399705ms)
+✔ rejects split Latin terms even when both chunks are under 24 characters (1.986848ms)
+✔ accepts intact terminology and complete sentence boundaries (0.417298ms)
+✔ possible Japanese particle splits are review findings, not automatic errors (1.520461ms)
+✔ invalid chunks do not crash the boundary check (0.489642ms)
+✔ security-deep catalog lessons contain no adjacent Latin-letter boundaries (70.974668ms)
+✔ content validator rejects broken Latin words in new security-deep lessons (353.490112ms)
+✔ compound particles and dangling predicates are review findings, not universal errors (2.5949ms)
+✔ all 30 security-deep lessons have no undocumented Japanese boundary review findings (57.536231ms)
+✔ 2026-10-09 A: four revised security lessons retain complete chunks and scenarios (10.363325ms)
+✔ 2026-10-09 A: original claims are corrected and Markdown/RSVP stays aligned (17.980141ms)
+✔ P1-IP-01: identity resolution, evidence validation, applicant verification and limits stay aligned (1.717202ms)
+✔ security-secure-by-design-default: schema, exact text, sources, 24-character terms, mapped limitations and HOLD (24.56172ms)
+✔ security-input-output-injection: schema, exact text, sources, 24-character terms, mapped limitations and HOLD (5.705799ms)
+✔ primary source record distinguishes inaccessible CISA, SSDF draft and stable ASVS (0.946242ms)
+✔ RSVP and human format map regenerate without changing reviewed artifacts (353.690268ms)
+✔ candidate HTML uses balanced static DOM and resolves existing player/navigation assets (80.216757ms)
+✔ unbalanced HTML mutation fails standard HTML parser inspection (106.815012ms)
+✔ source section moved into speech article is rejected (9.287669ms)
+✔ RSVP concatenation disguised as a lecture is rejected (1.892702ms)
+✔ COMPLETE promotion and Catalog/Course registration fail the candidate-only gate (5.453976ms)
+✔ a punctuation or negation change in JSON alone fails full text synchronization (8.119217ms)
+✔ an English term split fails even when Markdown and JSON still concatenate identically (2.43191ms)
+✔ the 24-character cap cannot be bypassed by changing both canonical forms (2.290961ms)
+✔ design/default relation reversal fails despite synchronized text and surviving keywords (3.35102ms)
+✔ public-resource exception negation cannot disappear from either canonical or Learn text (5.600425ms)
+✔ removing the distributed-revocation limitation is detected in Learn (1.55597ms)
+✔ textContent safety inversion for script/style is caught in both forms (5.427164ms)
+✔ autoescape-as-SSTI-prevention inversion fails despite retained technical terms (3.019578ms)
+✔ a parameterization claim must retain the correct driver API condition (3.86843ms)
+✔ injection/authorization independence cannot be replaced with a universal safety claim (3.014282ms)
+✔ the field-dependent normalization limitation is preserved (1.12441ms)
+✔ ten judgement questions include two elements, 2/1/0 rubrics and condition changes (15.161686ms)
+✔ safe local executable examples check authorization, SQLite values and ordinary HTML text (209.992379ms)
+✔ F-01: missing-department denial and legitimate ownership stay explicit in three formats (3.233924ms)
+✔ F-02: SQL concatenation before prepare is rejected by the regression anchors (7.018317ms)
+✔ F-03: the OS argument condition retains its natural boundary and limitation (7.016536ms)
+✔ F-04: attribute source encoding and direct DOM values remain separate (2.323759ms)
+✔ F-04: V2-Q3 explicitly accepts the safe DOM alternative at full credit (3.187895ms)
+✔ F-06: CSP introduction retains the sanitizer limitation (2.578607ms)
+✔ F-07: production-review metadata stays outside speech, technical limitations remain inside (0.335351ms)
+ℹ tests 67
+ℹ suites 0
+ℹ pass 67
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1904.052968
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> validate
+> node scripts/validate-content.mjs && node scripts/validate-status-sync.mjs && python3 scripts/validate-learn-html.py
+
+Lessons: 158
+Courses: 24
+Listen items: 26
+Chunks: 8518
+Lessons without sources: 50
+Chunks over 24 chars (warning): 0
+
+Warnings:
+- 出典なし: requirements-basics
+- 出典なし: system-development-overview
+- 出典なし: database-sql-overview
+- 出典なし: web-api-overview
+- 出典なし: information-security-overview
+- 出典なし: cloud-overview
+- 出典なし: project-management-overview
+- 出典なし: business-analysis-overview
+- 出典なし: generative-ai-overview
+- 出典なし: ai-evaluation-operations-overview
+- 出典なし: software-architecture-overview
+- 出典なし: git-cicd-overview
+- 出典なし: statistics-data-analysis-overview
+- 出典なし: ai-governance-overview
+- 出典なし: network-os-infra-overview
+- 出典なし: it-consulting-overview
+- 出典なし: public-dx-govtech-overview
+- 出典なし: healthcare-care-dx-overview
+- 出典なし: rsvp-basics
+- 出典なし: requirements-as-is-to-be
+- 出典なし: requirements-business-system
+- 出典なし: requirements-stakeholders-scope
+- 出典なし: requirements-validation-traceability
+- 出典なし: system-development-lifecycle
+- 出典なし: system-development-design
+- 出典なし: cloud-compute-serverless-containers
+- 出典なし: pm-initiation-scope-wbs
+- 出典なし: pm-schedule-dependencies
+- 出典なし: pm-issues-risks
+- 出典なし: pm-change-quality
+- 出典なし: pm-stakeholders-governance-pmo
+- 出典なし: business-analysis-problem-value
+- 出典なし: business-analysis-process-mapping
+- 出典なし: business-analysis-bottlenecks-waste
+- 出典なし: business-analysis-standardization-exceptions
+- 出典なし: business-analysis-kpi-automation-change
+- 出典なし: genai-llm-context
+- 出典なし: ai-eval-goals-datasets
+- 出典なし: ai-eval-metrics-error-analysis
+- 出典なし: architecture-modules-interfaces
+- 出典なし: architecture-coupling-cohesion-dependencies
+- 出典なし: architecture-state-source-of-truth
+- 出典なし: architecture-sync-async-events-queues
+- 出典なし: integrated-case-problem-framing
+- 出典なし: integrated-case-requirements-scope
+- 出典なし: integrated-case-data-api-architecture
+- 出典なし: integrated-case-security-cloud
+- 出典なし: integrated-case-ai-governance
+- 出典なし: integrated-case-delivery-change
+- 出典なし: integrated-case-outcomes-operations
+
+Content validation: PASS
+Status/catalog validation: PASS (COMPLETE 141, DRAFT 0, SEED 17)
+Learn HTML validation: PASS (141 pages; static DOM and balanced tags)
