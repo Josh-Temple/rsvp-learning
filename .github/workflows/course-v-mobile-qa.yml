@@ -1,0 +1,47 @@
+name: Course V 390px browser QA
+
+on:
+  pull_request:
+    paths:
+      - scripts/check-learn-390.mjs
+      - .github/workflows/course-v-mobile-qa.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  chromium-mobile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Chromium version
+        run: |
+          if command -v google-chrome >/dev/null; then google-chrome --version; else chromium --version; fi
+      - name: Fetch exact, approved Course V draft
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch --no-tags --depth=1 origin refs/pull/136/head:refs/remotes/origin/course-v-candidate
+          actual="$(git rev-parse refs/remotes/origin/course-v-candidate)"
+          expected="2ceb3bae83dca17f00dcfb84cddfd726c20c92a0"
+          echo "Course V candidate: $actual"
+          if [[ "$actual" != "$expected" ]]; then
+            echo "::error::Course V draft SHA changed. Refuse to run against an unreviewed source."
+            exit 1
+          fi
+      - name: Execute Chromium 390 CSS px QA
+        env:
+          QA_REPORT_PATH: qa-artifacts/learn-390.json
+        run: node scripts/check-learn-390.mjs
+      - name: Upload test evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: course-v-static-390-css-px
+          path: qa-artifacts/learn-390.json
+          if-no-files-found: ignore
