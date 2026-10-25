@@ -34,7 +34,7 @@
       "title": "情報セキュリティ概観",
       "topic": "情報セキュリティ",
       "path": "./lessons/information-security/information-security-overview.json",
-      "status": "SEED / 概要のみ"
+      "status": "DRAFT v0.1"
     },
     {
       "id": "cloud-overview",
