@@ -3,170 +3,239 @@
   "id": "information-security-overview",
   "title": "情報セキュリティ概観",
   "topic": "情報セキュリティ",
-  "summary": "情報セキュリティを機密性・完全性・可用性、リスク、認証、暗号、ネットワーク、インシデント対応の観点から眺める入口教材です。",
+  "summary": "機密性・完全性・可用性を架空の予約サービスで区別し、脅威・弱点・リスク、認証・認可、予防・復旧の役割を概観します。",
   "created_at": "2026-09-27",
   "base_duration_ms": 680,
-  "sources": [],
+  "sources": [
+    {
+      "title": "NIST CSRC Glossary — Information Security",
+      "url": "https://csrc.nist.gov/glossary/term/information_security"
+    },
+    {
+      "title": "NIST CSRC Glossary — Authentication",
+      "url": "https://csrc.nist.gov/glossary/term/authentication"
+    },
+    {
+      "title": "NIST CSRC Glossary — Authorization",
+      "url": "https://csrc.nist.gov/glossary/term/authorization"
+    },
+    {
+      "title": "NIST CSRC Glossary — Encryption",
+      "url": "https://csrc.nist.gov/glossary/term/encryption"
+    }
+  ],
   "chunks": [
     {
       "text": "情報セキュリティは、",
-      "duration_multiplier": 1
+      "duration_multiplier": 1.0
     },
     {
-      "text": "情報とシステムを",
-      "duration_multiplier": 1
+      "text": "情報と業務を守る考え方です。",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "適切に守るための",
-      "duration_multiplier": 1
+      "text": "守るのはデータだけではありません。",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "分野です",
-      "duration_multiplier": 1.4
+      "text": "システムや人の業務も対象です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "まず何を守るか明確にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "次に三つの性質を考えます。",
+      "duration_multiplier": 1.15
     },
     {
       "text": "機密性は、",
-      "duration_multiplier": 1
+      "duration_multiplier": 1.0
     },
     {
-      "text": "許可された人だけが",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "情報へアクセスできる",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "状態です",
+      "text": "許可のない開示を防ぎます。",
       "duration_multiplier": 1.15
     },
     {
       "text": "完全性は、",
-      "duration_multiplier": 1
+      "duration_multiplier": 1.0
     },
     {
-      "text": "情報が正確で",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "不正に変更されていない",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "状態です",
+      "text": "情報の正確さと完全さを守ります。",
       "duration_multiplier": 1.15
     },
     {
       "text": "可用性は、",
-      "duration_multiplier": 1
+      "duration_multiplier": 1.0
     },
     {
-      "text": "必要なときに",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "利用できる状態です",
+      "text": "必要なときに使えることです。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "脅威は、",
-      "duration_multiplier": 1
+      "text": "三つは互いに代用できません。",
+      "duration_multiplier": 1.25
     },
     {
-      "text": "損害を起こす原因に",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "なり得るものです",
+      "text": "架空の予約サイトを考えます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "脆弱性は、",
-      "duration_multiplier": 1
+      "text": "予約者の情報が漏れた場合は、",
+      "duration_multiplier": 1.0
     },
     {
-      "text": "攻撃や事故につながる",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "弱点です",
+      "text": "機密性が損なわれます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "リスクは、",
-      "duration_multiplier": 1
+      "text": "予約日時が勝手に変われば、",
+      "duration_multiplier": 1.0
     },
     {
-      "text": "脅威と脆弱性と影響を",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "踏まえて考えます",
+      "text": "完全性が損なわれます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "認証と認可は、",
-      "duration_multiplier": 1
+      "text": "画面が開かず予約できなければ、",
+      "duration_multiplier": 1.0
     },
     {
-      "text": "アクセス制御の",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "基本です",
+      "text": "可用性が損なわれます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "暗号は、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "通信や保存データを",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "守る重要な技術です",
+      "text": "同じサービスでも問題は異なります。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "ネットワーク防御だけでなく、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "人と運用の対策も",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "必要です",
+      "text": "脅威は損害の原因になり得ます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "インシデントでは、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "検知、封じ込め、",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "復旧、再発防止を",
-      "duration_multiplier": 1
-    },
-    {
-      "text": "考えます",
+      "text": "攻撃だけでなく故障も脅威です。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "この章は入口であり、",
-      "duration_multiplier": 1
+      "text": "脆弱性は利用され得る弱点です。",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "IPA範囲を扱う本編は",
-      "duration_multiplier": 1
+      "text": "設定ミスも弱点の一例です。",
+      "duration_multiplier": 1.15
     },
     {
-      "text": "別章で拡張します",
-      "duration_multiplier": 1.4
+      "text": "脅威と弱点を同一視しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "リスクを考えるときは、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "起こりやすさと影響を見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "重要な情報かどうかも関係します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "対策を入れてもリスクは残ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "次にアクセス制御を考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "認証は本人かを確かめます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "認可は操作の権限を判断します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ログインできても、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "閲覧できる情報は権限で決まります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "暗号化は鍵を使い暗号文に変えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "しかし停止そのものは防げません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "バックアップは復旧に役立ちます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "しかし漏えい防止とは別です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一つの対策だけに頼りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "人の確認や運用も重要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "異常を見つける仕組みも要ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "事故が起きたら影響を確かめます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "被害を広げない対応を考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "復旧後は原因と再発防止を見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ここで問いを一つ考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "予約サイトが止まったとき、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "まず損なわれるのは何でしょう。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用できないので可用性です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "情報漏えいも同時に起きたかは、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "別の証拠がなければ分かりません。",
+      "duration_multiplier": 1.25
+    },
+    {
+      "text": "この章は全体像の入口です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "制度や実装の詳細は別章で学びます。",
+      "duration_multiplier": 1.25
     }
   ]
 }
