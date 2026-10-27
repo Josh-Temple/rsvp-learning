@@ -486,24 +486,8 @@ function learnResumePosition() {
   }
 }
 
-function renderLearnLibrary() {
-  const playableCourses = state.courses
-    .map((course) => ({
-      course,
-      entries: course.chapters
-        .map((lessonId) => state.lessonMap.get(lessonId))
-        .filter((item) => item?.learn_path),
-    }))
-    .filter(({ entries }) => entries.length > 0);
-
-  if (!playableCourses.length) {
-    const empty = document.createElement("div");
-    empty.className = "library-empty";
-    empty.textContent = "まだありません";
-    els.libraryContent.append(empty);
-    return;
-  }
-
+function refreshLearnResume(playableCourses) {
+  els.libraryContent.querySelector(".learn-resume")?.remove();
   const saved = learnResumePosition();
   const resumeCourse = playableCourses.find(({ course, entries }) =>
     course.id === saved?.courseId && entries.some((entry) => entry.id === saved.lessonId));
@@ -523,8 +507,30 @@ function renderLearnLibrary() {
     button.dataset.resume = "true";
     button.textContent = "▶ 続きから再開";
     banner.append(label, name, button);
-    els.libraryContent.append(banner);
+    els.libraryContent.prepend(banner);
   }
+
+}
+
+function renderLearnLibrary() {
+  const playableCourses = state.courses
+    .map((course) => ({
+      course,
+      entries: course.chapters
+        .map((lessonId) => state.lessonMap.get(lessonId))
+        .filter((item) => item?.learn_path),
+    }))
+    .filter(({ entries }) => entries.length > 0);
+
+  if (!playableCourses.length) {
+    const empty = document.createElement("div");
+    empty.className = "library-empty";
+    empty.textContent = "まだありません";
+    els.libraryContent.append(empty);
+    return;
+  }
+
+  refreshLearnResume(playableCourses);
 
   const search = document.createElement("input");
   search.type = "search";
@@ -754,6 +760,17 @@ function renderLibrary() {
     renderRsvpLibrary();
   }
 }
+
+// The player saves its position while the library is hidden. Refresh only the
+// resume card on return, preserving the user's search and expanded courses.
+document.querySelector("#learn-course-back")?.addEventListener("click", () => {
+  if (state.libraryView !== "learn") return;
+  const playableCourses = state.courses.map((course) => ({
+    course,
+    entries: course.chapters.map((id) => state.lessonMap.get(id)).filter((item) => item?.learn_path),
+  })).filter(({ entries }) => entries.length > 0);
+  refreshLearnResume(playableCourses);
+});
 
 function setLibraryView(view) {
   state.libraryView = view === "listen" || view === "learn" ? view : "rsvp";
