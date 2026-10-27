@@ -6,6 +6,7 @@ const CORE_ASSETS = [
   "/app.js",
   "/learn/learn.css",
   "/learn/learn.js",
+  "/learn/course-player.js",
   "/manifest.webmanifest",
   "/icon.svg",
   "/lessons/index.json",
