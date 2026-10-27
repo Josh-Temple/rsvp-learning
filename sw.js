@@ -1,4 +1,4 @@
-const CACHE_NAME = "rsvp-learning-pwa-v7";
+const CACHE_NAME = "rsvp-learning-pwa-v8";
 const CORE_ASSETS = [
   "/",
   "/index.html",
