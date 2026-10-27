@@ -3,6 +3,7 @@ const SPEED_KEY = "rsvp:speed";
 const LESSON_KEY = "rsvp:last-lesson";
 const COURSE_KEY = "rsvp:last-course";
 const PROGRESS_KEY = "rsvp:progress:v1";
+const CHUNK_POSITION_KEY = "rsvp:last-chunk:v1";
 
 const savedSpeed = Number(localStorage.getItem(SPEED_KEY));
 
@@ -66,6 +67,24 @@ function loadProgress() {
   } catch {
     return {};
   }
+}
+
+function readChunkPosition() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(CHUNK_POSITION_KEY) || "null");
+    return saved && typeof saved.lessonId === "string" && Number.isInteger(saved.index)
+      && saved.index >= 0 ? saved : null;
+  } catch {
+    return null;
+  }
+}
+
+function saveChunkPosition() {
+  if (!state.lessonId) return;
+  localStorage.setItem(CHUNK_POSITION_KEY, JSON.stringify({
+    lessonId: state.lessonId,
+    index: state.index,
+  }));
 }
 
 function saveProgress() {
@@ -211,6 +230,7 @@ function render() {
   els.speed.value = String(state.speed);
   renderSources();
   renderChapterNav();
+  saveChunkPosition();
 }
 
 function validateLesson(lesson) {
@@ -262,6 +282,7 @@ async function loadChapterAt(
     courseId = state.courseId,
     mode = state.mode,
     sequence = state.sequence,
+    resumeChunk = 0,
   } = {},
 ) {
   const targetSequence = [...sequence];
@@ -291,7 +312,7 @@ async function loadChapterAt(
   state.lesson = lesson;
   state.lessonId = lessonId;
   state.sequenceIndex = sequenceIndex;
-  state.index = 0;
+  state.index = Math.min(lesson.chunks.length - 1, Math.max(0, Number(resumeChunk) || 0));
   state.playCounted = false;
   state.completionCounted = false;
 
@@ -307,7 +328,7 @@ async function loadChapterAt(
   return true;
 }
 
-async function startCourse(courseId, mode = "chapter", lessonId = null) {
+async function startCourse(courseId, mode = "chapter", lessonId = null, resumeChunk = 0) {
   const course = state.courses.find((item) => item.id === courseId);
   if (!course) throw new Error(`コースが見つかりません: ${courseId}`);
 
@@ -323,6 +344,7 @@ async function startCourse(courseId, mode = "chapter", lessonId = null) {
     courseId: course.id,
     mode,
     sequence,
+    resumeChunk,
   });
 
   if (loaded) closeLibrary();
@@ -452,6 +474,18 @@ function listenHref(path) {
   return `./listen/${String(path).replace(/^\.\//, "")}`;
 }
 
+const LEARN_RESUME_KEY = "rsvp:learn-course-position:v1";
+
+function learnResumePosition() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(LEARN_RESUME_KEY) || "null");
+    return saved && typeof saved.courseId === "string" && typeof saved.lessonId === "string"
+      && Number.isInteger(saved.itemIndex) && saved.itemIndex >= 0 ? saved : null;
+  } catch {
+    return null;
+  }
+}
+
 function renderLearnLibrary() {
   const playableCourses = state.courses
     .map((course) => ({
@@ -470,63 +504,119 @@ function renderLearnLibrary() {
     return;
   }
 
+  const saved = learnResumePosition();
+  const resumeCourse = playableCourses.find(({ course, entries }) =>
+    course.id === saved?.courseId && entries.some((entry) => entry.id === saved.lessonId));
+  if (resumeCourse) {
+    const entry = resumeCourse.entries.find((item) => item.id === saved.lessonId);
+    const banner = document.createElement("section");
+    banner.className = "learn-resume";
+    const label = document.createElement("span");
+    label.className = "learn-resume-label";
+    label.textContent = "前回の続き";
+    const name = document.createElement("strong");
+    name.textContent = resumeCourse.course.title + " · " + entry.title;
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "learn-course-play";
+    button.dataset.courseId = resumeCourse.course.id;
+    button.dataset.resume = "true";
+    button.textContent = "▶ 続きから再開";
+    banner.append(label, name, button);
+    els.libraryContent.append(banner);
+  }
+
+  const search = document.createElement("input");
+  search.type = "search";
+  search.className = "learn-library-search";
+  search.placeholder = "コース・教材を検索";
+  search.setAttribute("aria-label", "Learnのコース・教材を検索");
+  els.libraryContent.append(search);
+
+  const blocks = [];
   for (const { course, entries } of playableCourses) {
     const section = document.createElement("section");
     section.className = "learn-course-block";
-
-    const head = document.createElement("div");
-    head.className = "learn-course-head";
+    const details = document.createElement("details");
+    details.className = "library-course-details";
+    const summary = document.createElement("summary");
+    summary.className = "library-course-summary";
 
     const titleWrap = document.createElement("div");
     const title = document.createElement("h2");
     title.className = "learn-course-title";
     title.textContent = course.title;
-
     const meta = document.createElement("span");
     meta.className = "learn-course-meta";
     meta.textContent = String(entries.length) + "章";
-
     titleWrap.append(title, meta);
+    summary.append(titleWrap);
 
+    const actions = document.createElement("div");
+    actions.className = "learn-course-actions";
     const play = document.createElement("button");
     play.type = "button";
     play.className = "learn-course-play";
     play.dataset.courseId = course.id;
-    play.textContent = "▶ コース再生";
-    play.setAttribute("aria-label", course.title + "を連続再生");
-
-    head.append(titleWrap, play);
+    play.textContent = "▶ 最初からコース再生";
+    play.setAttribute("aria-label", course.title + "を最初から連続再生");
+    actions.append(play);
 
     const list = document.createElement("div");
     list.className = "learn-course-list";
-
+    const rows = [];
     entries.forEach((item, index) => {
       const row = document.createElement("a");
       row.className = "library-learn-row";
       row.href = item.learn_path;
       row.setAttribute("aria-label", item.title + "をLearnで開く");
-
       const number = document.createElement("span");
       number.className = "library-learn-number";
       number.textContent = String(index + 1).padStart(2, "0");
-
       const titleText = document.createElement("span");
       titleText.className = "library-learn-title";
       titleText.textContent = item.title;
-
       const arrow = document.createElement("span");
       arrow.className = "library-learn-arrow";
       arrow.setAttribute("aria-hidden", "true");
       arrow.textContent = "›";
-
       row.append(number, titleText, arrow);
       list.append(row);
+      rows.push({ row, item });
     });
-
-    section.append(head, list);
+    details.append(summary, actions, list);
+    section.append(details);
     els.libraryContent.append(section);
+    blocks.push({ section, details, course, rows });
   }
+
+  const noResults = document.createElement("p");
+  noResults.className = "learn-search-empty";
+  noResults.textContent = "一致する教材がありません";
+  noResults.hidden = true;
+  noResults.setAttribute("role", "status");
+  els.libraryContent.append(noResults);
+
+  search.addEventListener("input", () => {
+    const query = search.value.trim().toLocaleLowerCase();
+    let shown = 0;
+    for (const { section, details, course, rows } of blocks) {
+      const titleMatches = course.title.toLocaleLowerCase().includes(query);
+      let visibleRows = 0;
+      for (const { row, item } of rows) {
+        const matches = !query || titleMatches || item.title.toLocaleLowerCase().includes(query);
+        row.hidden = !matches;
+        if (matches) visibleRows += 1;
+      }
+      section.hidden = visibleRows === 0;
+      if (!section.hidden) shown += 1;
+      if (query) details.open = !section.hidden;
+      else details.open = false;
+    }
+    noResults.hidden = shown !== 0;
+  });
 }
+
 function renderListenLibrary() {
   const items = [...state.listenItems].sort((a, b) => b.date.localeCompare(a.date));
 
@@ -548,10 +638,14 @@ function renderListenLibrary() {
     const section = document.createElement("section");
     section.className = "listen-day";
 
-    const heading = document.createElement("h2");
-    heading.className = "listen-day-label";
-    heading.textContent = formatListenDate(date);
-    section.append(heading);
+    const details = document.createElement("details");
+    details.className = "library-course-details";
+    details.open = date === items[0].date;
+    const heading = document.createElement("summary");
+    heading.className = "library-course-summary listen-day-label";
+    heading.textContent = formatListenDate(date) + " · " + entries.length + "件";
+    details.append(heading);
+    section.append(details);
 
     for (const item of entries) {
       const row = document.createElement("a");
@@ -569,7 +663,7 @@ function renderListenLibrary() {
       arrow.textContent = "›";
 
       row.append(listenIcon(item.category), title, arrow);
-      section.append(row);
+      details.append(row);
     }
 
     els.libraryContent.append(section);
@@ -580,64 +674,59 @@ function renderRsvpLibrary() {
   for (const course of state.courses) {
     const block = document.createElement("section");
     block.className = "course-block";
-
-    const head = document.createElement("div");
-    head.className = "course-head";
+    const details = document.createElement("details");
+    details.className = "library-course-details";
+    const summary = document.createElement("summary");
+    summary.className = "library-course-summary";
 
     const titleWrap = document.createElement("div");
     const title = document.createElement("h2");
     title.className = "course-title";
     title.textContent = course.title;
-    titleWrap.append(title);
-    titleWrap.append(masteryMini(courseMastery(course)));
+    titleWrap.append(title, masteryMini(courseMastery(course)));
+    summary.append(titleWrap);
 
     const modes = document.createElement("div");
     modes.className = "library-mode";
-
     const all = document.createElement("button");
     all.type = "button";
     all.textContent = "ALL";
+    all.setAttribute("aria-label", course.title + "を全章再生");
     all.addEventListener("click", () => {
       startCourse(course.id, "all").catch(handleError);
     });
-
     const random = document.createElement("button");
     random.type = "button";
     random.textContent = "RND";
+    random.setAttribute("aria-label", course.title + "をランダム再生");
     random.addEventListener("click", () => {
       startCourse(course.id, "random").catch(handleError);
     });
-
     modes.append(all, random);
-    head.append(titleWrap, modes);
 
     const list = document.createElement("div");
     list.className = "chapter-list";
-
     course.chapters.forEach((lessonId, index) => {
       const meta = state.lessonMap.get(lessonId);
       if (!meta) return;
-
       const row = document.createElement("button");
       row.className = "chapter-row";
       row.type = "button";
       row.addEventListener("click", () => {
         startCourse(course.id, "chapter", lessonId).catch(handleError);
       });
-
       const number = document.createElement("span");
       number.className = "chapter-number";
       number.textContent = String(index + 1).padStart(2, "0");
-
       const text = document.createElement("span");
       text.className = "chapter-title";
       text.textContent = meta.title;
-
       row.append(number, text, masteryMini(getProgress(lessonId).mastery));
       list.append(row);
     });
 
-    block.append(head, list);
+    details.append(summary, modes, list);
+    block.append(details);
     els.libraryContent.append(block);
   }
 }
@@ -730,7 +819,9 @@ async function loadCatalogs() {
     ? savedLesson
     : course.chapters[0];
 
-  await startCourse(course.id, "chapter", lessonId);
+  const savedPosition = readChunkPosition();
+  const resumeChunk = savedPosition?.lessonId === lessonId ? savedPosition.index : 0;
+  await startCourse(course.id, "chapter", lessonId, resumeChunk);
 }
 
 function handleError(error) {

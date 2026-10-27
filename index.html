@@ -139,11 +139,16 @@
           <button id="learn-course-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
           <button id="learn-course-stop" type="button" aria-label="停止" disabled>■</button>
           <button id="learn-course-next" type="button" aria-label="次の章">›</button>
-          <select id="learn-course-voice" aria-label="読み上げ音声"></select>
-          <label class="learn-course-speed">
-            <span id="learn-course-rate-label">1.0×</span>
-            <input id="learn-course-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" />
-          </label>
+          <details class="learn-reader-options">
+            <summary aria-label="読み上げ設定">設定</summary>
+            <div class="learn-reader-options-panel">
+              <select id="learn-course-voice" aria-label="読み上げ音声"></select>
+              <label class="learn-course-speed">
+                <span id="learn-course-rate-label">1.0×</span>
+                <input id="learn-course-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" />
+              </label>
+            </div>
+          </details>
         </div>
         <div id="learn-course-status" class="learn-course-status" role="status" aria-live="polite">コースを選択してください</div>
       </section>

@@ -40,6 +40,53 @@
       const status = document.querySelector("#speech-status");
       const reader = document.querySelector("#speech-reader");
 
+      const controlRow = reader?.querySelector(".reader-row");
+      if (controlRow && voiceSelect && rateInput) {
+        const settings = document.createElement("details");
+        settings.className = "reader-options";
+        const summary = document.createElement("summary");
+        summary.textContent = "設定";
+        summary.setAttribute("aria-label", "読み上げ設定");
+        const panel = document.createElement("div");
+        panel.className = "reader-options-panel";
+        const speed = rateInput.closest(".reader-speed");
+        panel.append(voiceSelect);
+        if (speed) panel.append(speed);
+        settings.append(summary, panel);
+        controlRow.append(settings);
+      }
+
+      const headings = [...article.querySelectorAll("h2, h3")];
+      if (headings.length && reader) {
+        const headingNav = document.createElement("nav");
+        headingNav.className = "learn-heading-nav";
+        headingNav.setAttribute("aria-label", "この教材の見出し");
+        const label = document.createElement("label");
+        label.textContent = "見出しへ移動";
+        const select = document.createElement("select");
+        select.setAttribute("aria-label", "移動する見出しを選択");
+        const placeholder = document.createElement("option");
+        placeholder.value = "";
+        placeholder.textContent = "見出しを選ぶ";
+        select.append(placeholder);
+        headings.forEach((heading, index) => {
+          const option = document.createElement("option");
+          option.value = String(index);
+          option.textContent = (heading.tagName === "H3" ? "　" : "") + heading.textContent.trim();
+          select.append(option);
+        });
+        select.addEventListener("change", () => {
+          if (select.value !== "") headings[Number(select.value)]?.scrollIntoView({
+            block: "start",
+            behavior: "smooth",
+          });
+          select.value = "";
+        });
+        label.append(select);
+        headingNav.append(label);
+        reader.after(headingNav);
+      }
+
       const items = [...article.querySelectorAll("h1, h2, h3, p")]
         .filter((element) => element.textContent.trim().length > 0);
 
