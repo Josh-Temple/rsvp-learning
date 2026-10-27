@@ -24,6 +24,26 @@
   const synth = window.speechSynthesis;
   const RATE_KEY = "rsvp:learn-course-rate";
   const VOICE_KEY = "rsvp:learn-course-voice";
+  const POSITION_KEY = "rsvp:learn-course-position:v1";
+
+  function storedPosition() {
+    try {
+      const saved = JSON.parse(localStorage.getItem(POSITION_KEY) || "null");
+      return saved && typeof saved.courseId === "string" && typeof saved.lessonId === "string"
+        && Number.isInteger(saved.itemIndex) && saved.itemIndex >= 0 ? saved : null;
+    } catch {
+      return null;
+    }
+  }
+
+  function savePosition() {
+    if (!course || !sequence[chapterIndex]) return;
+    localStorage.setItem(POSITION_KEY, JSON.stringify({
+      courseId: course.id,
+      lessonId: sequence[chapterIndex],
+      itemIndex,
+    }));
+  }
 
   let courses = null;
   let lessonMap = null;
@@ -199,6 +219,42 @@
     updateControls();
   }
 
+  const headingNav = document.createElement("nav");
+  headingNav.className = "learn-heading-nav";
+  headingNav.setAttribute("aria-label", "この章の見出し");
+  article.before(headingNav);
+
+  function renderHeadingNav() {
+    headingNav.replaceChildren();
+    const headings = [...article.querySelectorAll("h2, h3")];
+    if (!headings.length) {
+      headingNav.hidden = true;
+      return;
+    }
+    headingNav.hidden = false;
+    const label = document.createElement("label");
+    label.textContent = "見出しへ移動";
+    const select = document.createElement("select");
+    select.setAttribute("aria-label", "移動する見出しを選択");
+    const initial = document.createElement("option");
+    initial.value = "";
+    initial.textContent = "見出しを選ぶ";
+    select.append(initial);
+    headings.forEach((heading, index) => {
+      const option = document.createElement("option");
+      option.value = String(index);
+      option.textContent = (heading.tagName === "H3" ? "　" : "") + heading.textContent.trim();
+      select.append(option);
+    });
+    select.addEventListener("change", () => {
+      const target = headings[Number(select.value)];
+      if (select.value !== "" && target) target.scrollIntoView({ block: "start", behavior: "smooth" });
+      select.value = "";
+    });
+    label.append(select);
+    headingNav.append(label);
+  }
+
   function parseArticle(html) {
     const parsed = new DOMParser().parseFromString(html, "text/html");
     const source = parsed.querySelector("#learn-article");
@@ -220,6 +276,7 @@
 
     const parsed = parseArticle(html);
     article.innerHTML = parsed.body;
+    renderHeadingNav();
     sources.innerHTML = parsed.citations;
     sources.hidden = !parsed.citations.trim();
     items = [...article.querySelectorAll("h1, h2, h3, p")]
@@ -244,6 +301,7 @@
       itemIndex = 0;
       clearHighlight();
       status.textContent = "コース再生が完了しました";
+      localStorage.removeItem(POSITION_KEY);
       await releaseWakeLock();
       updateControls();
       return;
@@ -252,6 +310,7 @@
     try {
       const loaded = await loadChapter(chapterIndex + 1, activeRun);
       if (!loaded || activeRun !== runId || state !== "playing") return;
+      savePosition();
       speakCurrent(activeRun);
     } catch (error) {
       failPlayback(error instanceof Error ? error.message : "次の章を読み込めませんでした");
@@ -275,6 +334,7 @@
     utterance.onstart = () => {
       if (activeRun !== runId) return;
       setActive(itemIndex);
+      savePosition();
       status.textContent = String(chapterIndex + 1) + "章 · " + String(itemIndex + 1) + " / " + String(items.length) + " を読み上げ中";
       updateControls();
     };
@@ -282,6 +342,7 @@
     utterance.onend = () => {
       if (activeRun !== runId || state !== "playing") return;
       itemIndex += 1;
+      savePosition();
       speakCurrent(activeRun);
     };
 
@@ -319,7 +380,7 @@
     updateControls();
   }
 
-  async function startCourse(courseId) {
+  async function startCourse(courseId, resume = false) {
     showPlayer();
     if (!synth || !("SpeechSynthesisUtterance" in window)) {
       failPlayback("このブラウザはページ内読み上げに対応していません");
@@ -344,8 +405,12 @@
       sequence = course.chapters.filter((lessonId) => lessonMap.get(lessonId)?.learn_path);
       if (!sequence.length) throw new Error("このコースにはLearn教材がありません");
       courseTitle.textContent = course.title;
-      const loaded = await loadChapter(0, activeRun);
+      const saved = resume ? storedPosition() : null;
+      const resumeChapter = saved?.courseId === course.id ? sequence.indexOf(saved.lessonId) : -1;
+      const loaded = await loadChapter(resumeChapter >= 0 ? resumeChapter : 0, activeRun);
       if (!loaded || activeRun !== runId || state !== "playing") return;
+      if (resumeChapter >= 0) itemIndex = Math.min(saved.itemIndex, items.length - 1);
+      savePosition();
       speakCurrent(activeRun);
     } catch (error) {
       failPlayback(error instanceof Error ? error.message : "コースを開始できませんでした");
@@ -364,6 +429,7 @@
     try {
       const loaded = await loadChapter(nextIndex, activeRun);
       if (!loaded || activeRun !== runId) return;
+      savePosition();
       if (autoplay) {
         void requestWakeLock();
         speakCurrent(activeRun);
@@ -381,7 +447,7 @@
     if (!button) return;
     const courseId = button.dataset.courseId;
     if (!courseId) return;
-    void startCourse(courseId);
+    void startCourse(courseId, button.dataset.resume === "true");
   });
 
   playButton.addEventListener("click", () => {
