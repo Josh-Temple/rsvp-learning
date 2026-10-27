@@ -205,3 +205,25 @@ button { font: inherit; color: inherit; }
 @media (min-width: 760px) {
   .shell { padding-left: 30px; padding-right: 30px; }
 }
+
+
+/* Show the latest date by default; older Listen entries remain one tap away. */
+.day + .day { margin-top: 0; }
+.day { border-bottom: 1px solid var(--line); }
+.listen-day-details > summary {
+  min-height: 58px;
+  padding: 16px 4px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  color: var(--ink);
+  font-size: 0.88rem;
+  cursor: pointer;
+  list-style: none;
+}
+.listen-day-details > summary::-webkit-details-marker { display: none; }
+.listen-day-details > summary::after { content: "＋"; color: var(--muted); font-size: 1.12rem; }
+.listen-day-details[open] > summary::after { content: "−"; }
+.listen-day-details > summary:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
