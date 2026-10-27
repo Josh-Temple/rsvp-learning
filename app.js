@@ -3,6 +3,7 @@ const SPEED_KEY = "rsvp:speed";
 const LESSON_KEY = "rsvp:last-lesson";
 const COURSE_KEY = "rsvp:last-course";
 const PROGRESS_KEY = "rsvp:progress:v1";
+const CHUNK_POSITION_KEY = "rsvp:last-chunk:v1";
 
 const savedSpeed = Number(localStorage.getItem(SPEED_KEY));
 
@@ -66,6 +67,24 @@ function loadProgress() {
   } catch {
     return {};
   }
+}
+
+function readChunkPosition() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(CHUNK_POSITION_KEY) || "null");
+    return saved && typeof saved.lessonId === "string" && Number.isInteger(saved.index)
+      && saved.index >= 0 ? saved : null;
+  } catch {
+    return null;
+  }
+}
+
+function saveChunkPosition() {
+  if (!state.lessonId) return;
+  localStorage.setItem(CHUNK_POSITION_KEY, JSON.stringify({
+    lessonId: state.lessonId,
+    index: state.index,
+  }));
 }
 
 function saveProgress() {
@@ -211,6 +230,7 @@ function render() {
   els.speed.value = String(state.speed);
   renderSources();
   renderChapterNav();
+  saveChunkPosition();
 }
 
 function validateLesson(lesson) {
@@ -262,6 +282,7 @@ async function loadChapterAt(
     courseId = state.courseId,
     mode = state.mode,
     sequence = state.sequence,
+    resumeChunk = 0,
   } = {},
 ) {
   const targetSequence = [...sequence];
@@ -291,7 +312,7 @@ async function loadChapterAt(
   state.lesson = lesson;
   state.lessonId = lessonId;
   state.sequenceIndex = sequenceIndex;
-  state.index = 0;
+  state.index = Math.min(lesson.chunks.length - 1, Math.max(0, Number(resumeChunk) || 0));
   state.playCounted = false;
   state.completionCounted = false;
 
@@ -307,7 +328,7 @@ async function loadChapterAt(
   return true;
 }
 
-async function startCourse(courseId, mode = "chapter", lessonId = null) {
+async function startCourse(courseId, mode = "chapter", lessonId = null, resumeChunk = 0) {
   const course = state.courses.find((item) => item.id === courseId);
   if (!course) throw new Error(`コースが見つかりません: ${courseId}`);
 
@@ -323,6 +344,7 @@ async function startCourse(courseId, mode = "chapter", lessonId = null) {
     courseId: course.id,
     mode,
     sequence,
+    resumeChunk,
   });
 
   if (loaded) closeLibrary();
@@ -797,7 +819,9 @@ async function loadCatalogs() {
     ? savedLesson
     : course.chapters[0];
 
-  await startCourse(course.id, "chapter", lessonId);
+  const savedPosition = readChunkPosition();
+  const resumeChunk = savedPosition?.lessonId === lessonId ? savedPosition.index : 0;
+  await startCourse(course.id, "chapter", lessonId, resumeChunk);
 }
 
 function handleError(error) {
