@@ -55,10 +55,14 @@ function render(items) {
     const section = document.createElement("section");
     section.className = "day";
 
-    const heading = document.createElement("h2");
+    const details = document.createElement("details");
+    details.className = "listen-day-details";
+    details.open = date === items[0].date;
+    const heading = document.createElement("summary");
     heading.className = "day-label";
-    heading.textContent = formatDate(date);
-    section.append(heading);
+    heading.textContent = formatDate(date) + " · " + entries.length + "件";
+    details.append(heading);
+    section.append(details);
 
     for (const item of entries) {
       const row = document.createElement("a");
@@ -80,7 +84,7 @@ function render(items) {
       arrow.textContent = "›";
 
       row.append(kind, title, arrow);
-      section.append(row);
+      details.append(row);
     }
 
     list.append(section);
