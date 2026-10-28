@@ -25,6 +25,17 @@
   const RATE_KEY = "rsvp:learn-course-rate";
   const VOICE_KEY = "rsvp:learn-course-voice";
   const POSITION_KEY = "rsvp:learn-course-position:v1";
+  // Web Speech error codes are standardized but arbitrary engine messages are not.
+  // Expose only known codes; never render raw exception messages.
+  const SPEECH_ERROR_CODES = new Set([
+    "canceled", "interrupted", "audio-busy", "audio-hardware",
+    "network", "synthesis-unavailable", "synthesis-failed",
+    "language-unavailable", "voice-unavailable", "text-too-long",
+    "invalid-argument", "not-allowed",
+  ]);
+  function safeSpeechError(code) {
+    return typeof code === "string" && SPEECH_ERROR_CODES.has(code) ? code : "unknown";
+  }
 
   function storedPosition() {
     try {
@@ -214,7 +225,19 @@
   function failPlayback(message) {
     state = "idle";
     clearHighlight();
+    delete status.dataset.speechError;
     status.textContent = message;
+    void releaseWakeLock();
+    updateControls();
+  }
+
+  function failSpeech(code, started) {
+    state = "idle";
+    clearHighlight();
+    const safeCode = safeSpeechError(code);
+    status.dataset.speechError = safeCode;
+    status.textContent = (started ? "読み上げ中にエラーが発生しました" : "読み上げを開始できませんでした")
+      + "（音声エラー: " + safeCode + "）";
     void releaseWakeLock();
     updateControls();
   }
@@ -324,35 +347,43 @@
       return;
     }
 
-    const element = items[itemIndex];
-    const utterance = new SpeechSynthesisUtterance(pronunciationText(element.textContent.trim()));
-    const voice = selectedVoice();
-    utterance.lang = voice?.lang || "ja-JP";
-    utterance.voice = voice;
-    utterance.rate = Number(rateInput.value);
+    let utteranceStarted = false;
+    try {
+      const element = items[itemIndex];
+      const utterance = new SpeechSynthesisUtterance(pronunciationText(element.textContent.trim()));
+      const voice = selectedVoice();
+      utterance.lang = voice?.lang || "ja-JP";
+      utterance.voice = voice;
+      utterance.rate = Number(rateInput.value);
 
-    utterance.onstart = () => {
+      utterance.onstart = () => {
+        if (activeRun !== runId || state !== "playing") return;
+        utteranceStarted = true;
+        delete status.dataset.speechError;
+        setActive(itemIndex);
+        savePosition();
+        status.textContent = String(chapterIndex + 1) + "章 · " + String(itemIndex + 1) + " / " + String(items.length) + " を読み上げ中";
+        updateControls();
+      };
+
+      utterance.onend = () => {
+        if (activeRun !== runId || state !== "playing") return;
+        itemIndex += 1;
+        savePosition();
+        speakCurrent(activeRun);
+      };
+
+      utterance.onerror = (event) => {
+        if (activeRun !== runId || state === "idle") return;
+        if (event?.error === "canceled" || event?.error === "interrupted") return;
+        failSpeech(event?.error, utteranceStarted);
+      };
+
+      synth.speak(utterance);
+    } catch (error) {
       if (activeRun !== runId) return;
-      setActive(itemIndex);
-      savePosition();
-      status.textContent = String(chapterIndex + 1) + "章 · " + String(itemIndex + 1) + " / " + String(items.length) + " を読み上げ中";
-      updateControls();
-    };
-
-    utterance.onend = () => {
-      if (activeRun !== runId || state !== "playing") return;
-      itemIndex += 1;
-      savePosition();
-      speakCurrent(activeRun);
-    };
-
-    utterance.onerror = (event) => {
-      if (activeRun !== runId) return;
-      if (event.error === "canceled" || event.error === "interrupted") return;
-      failPlayback("読み上げを開始できませんでした");
-    };
-
-    synth.speak(utterance);
+      failSpeech(error?.name === "NotAllowedError" ? "not-allowed" : "unknown", utteranceStarted);
+    }
   }
 
   function startFromCurrent() {
@@ -361,6 +392,7 @@
     const activeRun = runId;
     synth.cancel();
     state = "playing";
+    delete status.dataset.speechError;
     voiceChangedWhilePaused = false;
     void requestWakeLock();
     status.textContent = "読み上げを開始します";
@@ -370,8 +402,9 @@
 
   function resetCurrentChapter() {
     runId += 1;
-    synth.cancel();
+    synth?.cancel();
     state = "idle";
+    delete status.dataset.speechError;
     itemIndex = 0;
     voiceChangedWhilePaused = false;
     clearHighlight();
@@ -392,6 +425,7 @@
     synth.cancel();
     state = "playing";
     completed = false;
+    delete status.dataset.speechError;
     clearHighlight();
     status.textContent = "コースを読み込み中";
     updateControls();
@@ -425,6 +459,7 @@
     const activeRun = runId;
     synth.cancel();
     state = autoplay ? "playing" : "idle";
+    delete status.dataset.speechError;
     clearHighlight();
     try {
       const loaded = await loadChapter(nextIndex, activeRun);
