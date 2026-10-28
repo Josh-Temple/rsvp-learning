@@ -195,3 +195,15 @@ test("back navigation works even without any Web Speech API", () => {
   assert.equal(p.els["#learn-course-player"].hidden, true);
   assert.equal(p.els["#library-overlay"].hidden, false);
 });
+
+test("delayed or duplicated speech events cannot overwrite failure", async () => {
+  const p = makePage(); p.start(); await settle();
+  const u = p.spoken[0];
+  u.onerror({ error: "voice-unavailable" });
+  u.onstart();
+  u.onerror({ error: "audio-hardware" });
+  u.onend();
+  assert.equal(p.error(), "voice-unavailable");
+  assert.match(p.status(), /開始できませんでした.*voice-unavailable/);
+  assert.equal(p.state(), "idle");
+});
