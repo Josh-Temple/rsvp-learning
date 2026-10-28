@@ -357,7 +357,7 @@
       utterance.rate = Number(rateInput.value);
 
       utterance.onstart = () => {
-        if (activeRun !== runId) return;
+        if (activeRun !== runId || state !== "playing") return;
         utteranceStarted = true;
         delete status.dataset.speechError;
         setActive(itemIndex);
@@ -374,7 +374,7 @@
       };
 
       utterance.onerror = (event) => {
-        if (activeRun !== runId) return;
+        if (activeRun !== runId || state === "idle") return;
         if (event?.error === "canceled" || event?.error === "interrupted") return;
         failSpeech(event?.error, utteranceStarted);
       };
