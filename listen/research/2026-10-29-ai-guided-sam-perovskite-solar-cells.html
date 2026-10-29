@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f2efe8">
+  <meta name="description" content="2026年10月28日Nature Synthesis査読済み論文。AIで9万種類以上から太陽電池界面分子AI-1を選び、実験効率・2000時間の安定性・量産上の限界を一次資料から解説。">
+  <title>AIが9万種類から選んだ分子は、太陽電池の効率と耐久性を両立できるか</title>
+  <style>
+    :root{color-scheme:light;--bg:#f2efe8;--ink:#121722;--muted:#73766f;--line:#cbc8bf;--blue:#5d7487}
+    html[data-theme="dark"]{color-scheme:dark;--bg:#11151a;--ink:#edf0eb;--muted:#959b97;--line:#343a3e;--blue:#7892a6}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Hiragino Sans","Noto Sans JP",sans-serif;line-height:1.9}
+    .shell{width:min(760px,100%);margin:0 auto;padding:max(18px,env(safe-area-inset-top)) 20px max(42px,env(safe-area-inset-bottom))}
+    .topbar{min-height:52px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+    .icon{width:42px;height:42px;display:grid;place-items:center;border:0;background:transparent;color:var(--muted);text-decoration:none;font:inherit}
+    .meta{margin:28px 0 8px;color:var(--muted);font-size:.75rem}
+    h1{font-size:clamp(2rem,8vw,3.4rem);line-height:1.12;letter-spacing:-.04em;margin:.2em 0 .8em}
+    h2{margin:2.2em 0 .6em;font-size:1.2rem}
+    p{margin:0 0 1.25em}
+    article>*{transition:background-color .15s ease}
+    .is-speaking{background:color-mix(in srgb,var(--blue) 16%,transparent)}
+    .player{position:sticky;bottom:0;margin:32px -6px 0;padding:12px 6px;background:color-mix(in srgb,var(--bg) 94%,transparent);border-top:1px solid var(--line);backdrop-filter:blur(8px)}
+    .speed{display:grid;grid-template-columns:48px 1fr 42px;gap:10px;align-items:center;margin-top:10px;font-size:.78rem;color:var(--muted)}
+    input{width:100%}
+    .sources{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}
+    .sources a{color:var(--ink)}
+    .mode-nav{display:inline-flex;align-items:center;gap:4px}
+    .mode-icon{width:42px;height:42px;display:grid;place-items:center;color:var(--muted);text-decoration:none;opacity:.5}
+    .mode-icon.is-active{color:var(--ink);opacity:1}
+    .mode-icon svg{width:20px;height:20px;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+    .brand-mark{width:22px;height:14px;display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+    .brand-mark i{display:block}
+    .brand-mark i:nth-child(1){background:#a85248}
+    .brand-mark i:nth-child(2){background:#5d7487}
+    .brand-mark i:nth-child(3){background:#c2a653}
+    .transport{display:grid;grid-template-columns:repeat(5,48px);justify-content:center;gap:8px}
+    .transport button,.section-nav button,.voice-row select{min-height:42px;border:1px solid var(--line);background:transparent;color:var(--ink);font:inherit}
+    .transport button{width:48px}
+    .section-nav{display:grid;grid-template-columns:48px 1fr 48px;align-items:center;gap:8px;margin-top:10px}
+    .section-nav button:disabled{opacity:.25}
+    #section-label{min-width:0;overflow:hidden;color:var(--muted);font-size:.78rem;text-align:center;white-space:nowrap;text-overflow:ellipsis}
+    .voice-row{margin-top:10px}
+    .voice-row select{width:100%;padding:0 8px}
+    .mode-icon:focus-visible,.transport button:focus-visible,.section-nav button:focus-visible,.voice-row select:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+  </style>
+</head>
+<body>
+<main class="shell">
+  <header class="topbar">
+    <nav class="mode-nav" aria-label="モード切替">
+      <a class="mode-icon" href="../../index.html" aria-label="RSVPへ移動" title="RSVP">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      </a>
+      <a class="mode-icon" href="../../index.html?library=learn" aria-label="Learnへ移動" title="Learn">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 5.5c2.6-.8 5.3-.4 8 1.2v12c-2.7-1.6-5.4-2-8-1.2v-12Z" />
+          <path d="M20 5.5c-2.6-.8-5.3-.4-8 1.2v12c2.7-1.6 5.4-2 8-1.2v-12Z" />
+        </svg>
+      </a>
+      <a class="mode-icon is-active" href="../../index.html?library=listen" aria-label="Listen一覧へ移動" aria-current="page" title="Listen">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 13v-1a8 8 0 0 1 16 0v1" />
+          <path d="M4 13h3v7H5a1 1 0 0 1-1-1v-6Zm16 0h-3v7h2a1 1 0 0 0 1-1v-6Z" />
+        </svg>
+      </a>
+    </nav>
+    <button id="theme" class="icon" type="button" aria-label="テーマ切替">☾</button>
+  </header>
+
+
+
+
+
+
+
+  <article id="article">
+    <p class="meta">情報基準日 2026年10月29日・原論文公開 2026年10月28日・Nature Synthesis査読済み論文</p>
+    <h1>AIが9万種類から選んだ分子は、太陽電池の効率と耐久性を両立できるか</h1>
+
+    <h2>今回の研究の面白さ</h2>
+    <p>今回は、2026年10月28日にネイチャー・シンセシスに掲載された、「AI-guided discovery of self-assembled monolayers combining synthetic accessibility and interfacial stability for perovskite solar cells」を取り上げます。太陽電池の材料を、人工知能と量子化学、さらに化学者の知識を組み合わせて設計した研究です。</p>
+    <p>研究の中心は、いくら計算上の性能が良い分子でも、実際に合成できなかったり、太陽電池の内部で壊れたりしては役に立たない、という問題です。研究チームは最初から、合成しやすさと、電荷の運びやすさと、界面での安定性を同時に考えました。</p>
+    <p>三百八種類の分子の断片から九万種類を超える候補を作り、約三百候補へ絞り込み、複数の指標で順位を付けました。第一候補として選ばれた分子を、論文ではAI-1と呼びます。</p>
+    <p>AI-1は実際に合成され、これを組み込んだペロブスカイト太陽電池で、研究室測定の光電変換効率二十七点二パーセントが報告されました。さらに六十五度で動かし続ける試験では、二千時間後も初期効率の九十五パーセントを超えて維持したと報告されています。</p>
+    <p>ただし、これをAIが太陽電池の世界記録を更新し、長寿命の実用製品を完成させたと読むのは適切ではありません。小型セルの条件、比較対象、独立認証と研究室測定の違い、実用化に残る問題まで見ることが、この研究を聞く価値につながります。</p>
+
+    <h2>そもそもペロブスカイト太陽電池とは</h2>
+    <p>ペロブスカイト太陽電池は、光を吸収して電気を作る薄い結晶性の材料を使う太陽電池です。高い変換効率を目指せることなどから研究が進んでいますが、材料内部や接触する層の安定性が課題となります。</p>
+    <p>光を吸収すると、結晶の中で電子と、電子が抜けた穴のような状態である正孔が生まれます。この二つをうまく別々の電極へ運び、外部の回路へ取り出せれば、光を電気へ変換できます。</p>
+    <p>逆に、電子と正孔が途中で再結合してしまうと、その分のエネルギーが電気として取り出せません。特に異なる材料が接する境界、つまり界面では、原子の結び付きが不完全な場所などが再結合を引き起こす可能性があります。</p>
+    <p>研究チームが注目したのは、光を吸う結晶そのものより、その結晶と電極側の材料が接する部分でした。ここをほんの薄い分子層で調整することで、電荷の取り出しやすさや安定性を変えられます。</p>
+    <p>太陽電池の性能を上げるというと厚い材料の改良を思いがちですが、原子や分子の単位に近い薄い境界が性能を左右することがあります。今回のAI設計は、その境界に使う分子を探すものでした。</p>
+
+    <h2>自発的に並ぶ単分子膜の役割</h2>
+    <p>この研究の主人公は、自己組織化単分子膜と呼ばれる材料です。英語ではセルフ・アセンブルド・モノレイヤー、略してサム、SAMと表記します。特定の性質を持つ分子が基板の表面に結び付き、非常に薄い層を作ります。</p>
+    <p>この膜はただの接着剤ではありません。膜を作る分子の電子状態によって、太陽電池で正孔を取り出しやすいか、逆に不要な電荷の動きを抑えられるかが変わります。</p>
+    <p>また、結晶の表面にある不完全な結合を補い、電荷が失われる原因を減らせる可能性もあります。この働きを欠陥の不活性化、パッシベーションと呼びます。</p>
+    <p>しかし単分子膜に使う分子は、電気的な性能だけで選べません。合成できるか、均一に膜になるか、熱や光を受けたときに変化しないかなど、多くの条件が関わります。</p>
+    <p>研究チームは、特定の環状分子であるカルバゾールを含む骨格と、表面に固定するためのホスホン酸を含む分子群を対象にしました。初めから全ての有機分子を無制限に探したわけではありません。この探索範囲の限定が、後の結果を評価するうえで重要です。</p>
+
+    <h2>なぜ候補分子が多すぎるのか</h2>
+    <p>材料開発では、一つの骨格の一部を別の原子の集まりへ取り替えるだけでも、多数の分子候補が生まれます。候補を全部実験で作って試すのは、時間も費用もかかりすぎます。</p>
+    <p>以前から、候補の電子状態を計算で予測し、有望そうな分子を選ぶ方法はありました。しかし計算上のエネルギー準位だけを見ても、現実の合成に必要な反応工程が複雑すぎれば、研究室で候補を確かめることが難しくなります。</p>
+    <p>さらに、一つの指標を最大にすれば、ほかの指標が悪くなることがあります。電荷が流れやすいことと、表面にしっかり結び付くこと、耐久性が高いことは、必ずしも同じ分子で成立しません。</p>
+    <p>今回の研究では、単純に分子を発生させるAIだけでなく、作れる見込みを調べる逆合成予測と、量子化学計算による物性評価を組み合わせています。逆合成とは、完成させたい分子から出発して、どんな原料と化学反応を使えば作れるかを考える方法です。</p>
+    <p>人間の化学者もこの過程に参加しています。したがって、AIが候補を無条件に発明し、完全自動で製造した研究ではありません。機械による大量探索と、化学的な制約を同じ作業へ組み合わせた研究です。</p>
+
+    <h2>三百八の断片から九万以上の分子へ</h2>
+    <p>研究チームは、既知のカルバゾール系の化合物などを出発点に、三百八種類の化学的な断片を集めました。それらを組み合わせることで、九万種類を超える分子構造の候補を作りました。</p>
+    <p>ここで出てくる九万という数字は、九万種類の分子を実際に合成したという意味ではありません。計算機上で候補を生成した数です。化学的に考えられる候補と、現実に作って性能を試した候補は、明確に区別する必要があります。</p>
+    <p>次に、逆合成予測や化学的な選別を組み込み、約三百候補へ縮小しました。計算の対象とできる数まで絞ったあと、それぞれについて電子の状態や分子の構造的な特徴を調べます。</p>
+    <p>研究者らは、分子の持つ複数の性質を一つにまとめて順位を付けました。評価軸は八項目で、電子状態だけでなく、合成できる見込みや分子の特徴も含んでいます。</p>
+    <p>大量の候補を絞る工程には人間の化学者の知識も使われています。そのため、この手法が、専門家なしで未知の化学構造をどこまでも調べられると結論付けることはできません。</p>
+
+    <h2>グラフニューラルネットワークの使い方</h2>
+    <p>今回のAIの一つは、分子をグラフとして扱うニューラルネットワークです。分子を構成する原子を点、原子間の結合を線と考えると、分子全体をネットワークとして表現できます。</p>
+    <p>こうした表現を使うと、原子の種類と結合の組合せを情報として渡し、化学反応の前後に必要な分子のつながりを考えることができます。論文では、メッセージ・パッシングと呼ばれるグラフニューラルネットワークを、逆合成の予測に組み込みました。</p>
+    <p>逆合成の予測が良ければ、材料の物性が魅力的でも作り方が極端に難しい候補を、比較的早い段階で見分けられます。材料探索を単なる理論計算で終わらせないための工程です。</p>
+    <p>ただし逆合成モデルが合成可能と予測したからといって、必要な試薬が安価で、反応が高い収率で進み、量産できることまで保証されるわけではありません。作れる見込みと実際に作れたという事実は別です。</p>
+    <p>研究チームはAI-1について、反応工程と途中の化合物の分析結果を補足資料へ詳しく示しています。候補の第一位を紙の上の分子で終わらせず、実際の合成につなげた点は研究の強みです。</p>
+
+    <h2>量子化学によるもう一段の選別</h2>
+    <p>AIで候補を絞った後、研究チームは密度汎関数理論、略してDFTという量子化学計算を利用しました。分子の電子がどのような状態にあるかを、量子力学の近似計算で調べる方法です。</p>
+    <p>調べた性質には、電子が入りやすい準位と出やすい準位、イオン化エネルギー、正孔の移動に関係する再配向エネルギーなどがあります。分子構造の芳香環や、硫黄、窒素、酸素といった炭素以外の原子についての情報も使っています。</p>
+    <p>正孔の再配向エネルギーは、分子が電荷を受け取る前後で構造を変えるために必要なエネルギーに関係します。小さければ電荷が運ばれやすい可能性がありますが、それだけで太陽電池全体の効率は決まりません。</p>
+    <p>今回の補足資料では、B3LYPという計算手法と6-311Gという基底関数系などを使った分子の量子化学計算が説明されています。これらは分子を評価する方法であり、完成した太陽電池の構造全体を原子レベルで再現した計算ではありません。</p>
+    <p>査読では、気相で計算した分子の電子状態と、固体の界面での実際の状態を区別すべきだという指摘もありました。研究者らは、計算の限界を認めています。数値がよく見える候補でも、実験を通じた確認が欠かせない理由です。</p>
+
+    <h2>八つの指標を一つの順位にする</h2>
+    <p>この研究で特徴的なのは、一つの最適化指標だけで分子を選ばなかったことです。八つの指標を組み合わせた評価を用い、合成可能性、電子的な性質、分子の構造的な特徴を同時に考慮しました。</p>
+    <p>補足資料の一覧では、選ばれた分子AI-1の総合評価は百点で、AI-2は約九十四点六、AI-3は約九十四点でした。比較に使った従来材料2PACzは約七十一点三という評価になっています。</p>
+    <p>ただし、この百点という数字は、AI-1が太陽電池で百パーセントの効率を出すことでも、長い寿命を百パーセントの確率で保証することでもありません。研究者らが定めた八指標の重み付けに基づく順位のための数字です。</p>
+    <p>査読者は、計算上の順位と、実際の発電効率や高温での寿命に、十分強い相関があると示せているのか疑問を呈しています。実験で上位候補が良い性能を出したことと、あらゆる候補で順位が正しいことは別の問題です。</p>
+    <p>また、この仕組みは太陽電池の発電効率や使用寿命を直接学習して予測するモデルではありません。あくまで、物理的に意味があると考えられた複数の分子指標を使って、研究する順番を決める仕組みです。</p>
+
+    <h2>AI-1は実際に合成されたのか</h2>
+    <p>候補の第一位となったAI-1について、研究チームは実際に化学合成を行いました。複数の反応工程を経て分子を作り、核磁気共鳴や質量分析などを使って、得られた化合物を確かめています。</p>
+    <p>補足実験資料には、AI-1の最終段階で得られた収率や、中間体の測定結果まで記載されています。少なくとも、この候補が計算機の中にしか存在しない架空の分子ではないという証拠です。</p>
+    <p>AI-1には、硫黄を含むメチルチオ基という部分が組み込まれています。論文では、この部分が太陽電池の内部にある鉛を含む結晶との結び付きや、界面の安定性に関わる可能性を重視しています。</p>
+    <p>しかし、AI-1を合成できたことから、全ての上位候補が同じように容易に合成できるとは言えません。また、実験室で数百ミリグラム程度の生成物を得ることと、工業製品のために大量製造できることも別です。</p>
+    <p>この研究を材料科学の応用例として評価する場合、合成の成功は重要な一歩ですが、それだけでは製造費用や大面積での膜の均一性、長期の量産品質を示したことにはなりません。</p>
+
+    <h2>二十七点二パーセントという数字</h2>
+    <p>研究チームは、AI-1を使った小型ペロブスカイト太陽電池を作り、研究室の測定で最大二十七点二パーセントの光電変換効率を報告しています。これは入ってきた光のエネルギーのうち、どの程度が電力に変換されたかを示す指標です。</p>
+    <p>別に、外部の測定機関による認証記録も補足資料にあります。そこではAI-1を使った一つの小型セルについて、瞬間的な効率が二十六点九五パーセントと示されています。</p>
+    <p>さらに、最大電力を取り出す条件で三百秒間測定する安定化効率は、二十六点四三パーセントでした。研究室測定の二十七点二、認証された瞬間値の二十六点九五、安定化測定の二十六点四三は、それぞれ別の条件の数字です。</p>
+    <p>最も大きい数字だけを取り上げると、試験方法の違いが見えなくなります。査読記録によると、認証された小型セルの有効測定面積は約零点零五二平方センチメートルで、非常に小さい研究用の試料です。</p>
+    <p>この結果は学術研究として高い性能を示していますが、実際の住宅用パネルと同じ面積、同じ製造方法、同じ環境条件で二十七点二パーセントを実現したという意味ではありません。</p>
+
+    <h2>比較材料との違いも確認する</h2>
+    <p>新しい材料の性能を評価するには、比較する相手が重要です。研究では、2PACzという広く利用されている自己組織化単分子膜を対照材料に選びました。同じような構成の太陽電池へ、異なる分子を使って性能を比較します。</p>
+    <p>補足資料には、より広いバンドギャップの別条件で、2PACzを使ったセルの変換効率が二十二点四パーセント、AI-1を使ったセルが二十四点二四パーセントとなる測定例も掲載されています。</p>
+    <p>この比較は、新しい分子を使ったセルが、一定の条件で従来材料より良い結果を得たことを示します。しかし、全ての最新の自己組織化単分子膜に勝ったと証明するものではありません。</p>
+    <p>公開された査読記録では、2PACzは最先端の材料ではなく、これに勝つだけでは研究の優位性を十分に示せないという厳しい指摘がありました。著者らも、2PACzを世界最高の対照材料だとは扱わず、分子骨格が近く比較しやすい参照材料だと説明を修正しました。</p>
+    <p>このやり取りは、研究論文の読み方として価値があります。何かより良いという主張を聞いたら、何と比べたのか、同じ測定条件だったのか、もっと強い比較候補はないか、と考える必要があります。</p>
+
+    <h2>大きくしたときも性能が出るか</h2>
+    <p>小型セルで良い結果が出ても、太陽電池を大きくすると性能が落ちることがあります。分子の膜が広い範囲で均一にならないことや、複数のセルをつなぐと電気抵抗などの影響が大きくなることが理由です。</p>
+    <p>この点についても査読で質問がありました。研究チームは、六センチメートル四方の小型モジュールを作り、開口面積二十一点一二平方センチメートルの試料で比較した結果を補足資料へ追加しています。</p>
+    <p>この条件では、従来材料2PACzの変換効率が十九点二九パーセント、AI-1のものが二十一点三二パーセントでした。つまり、小型セルだけでなく、より大きい試料でも改善が示されています。</p>
+    <p>ただし、二十一点三二パーセントと二十七点二パーセントは異なる面積の試料の結果であり、同一条件での直接対決として読み替えられません。大きくしたときに効率が落ちるという、実際の材料開発の難しさも残っています。</p>
+    <p>今回のモジュールは、家庭の屋根に設置する商用パネルと比べればまだ小さいものです。規模を拡大しても、長い期間にわたり同じ性能と品質を保てるかは、さらに検証が必要です。</p>
+
+    <h2>二千時間の耐久試験は何を示すか</h2>
+    <p>太陽電池の材料開発では、高い効率が一瞬だけ出ても十分ではありません。太陽電池は長い期間、光と熱にさらされるからです。ペロブスカイトの材料や界面は、時間とともに劣化することがあります。</p>
+    <p>今回の論文では、AI-1を組み込んだデバイスを六十五度に保ち、最大出力を得る動作条件で長時間運転しました。その結果、二千時間後にも初期変換効率の九十五パーセントを超えて保持したと報告しています。</p>
+    <p>ここでいう九十五パーセントは、光を電気へ変換する効率が九十五パーセントになったという意味ではありません。測定を始めた時点の発電性能を、どれだけ保ったかという割合です。</p>
+    <p>補足資料には別に、窒素雰囲気で八十五度に保った熱劣化試験もあり、2PACz、AI-1、AI-2、AI-3などについて、各条件五つの独立したデバイスの結果が示されています。</p>
+    <p>六十五度の連続運転で得られた数字は心強いものですが、屋外の雨、湿度、紫外線、温度変化、日陰、長年の機械的な変形まで全て再現した試験ではありません。試験時間をそのまま商用パネルの寿命年数に換算することはできません。</p>
+
+    <h2>隠れた界面で何が変わるのか</h2>
+    <p>論文の著者らは、AI-1の効果の理由として、ペロブスカイトと単分子膜が接する、外から見えない界面に注目しています。そこでの原子の結び付きが、電荷の再結合と材料の安定性へ関わるという説明です。</p>
+    <p>特に硫黄を含むメチルチオ基が、鉛を含む部分と相互作用し、界面の結び付きを強めていると解釈しています。界面にある欠陥の悪影響を抑える働きと、化学的に壊れにくくする働きが両立するという見立てです。</p>
+    <p>補足資料には、X線を利用して元素の化学状態を調べる測定、核磁気共鳴、表面の電位を測る方法、光を当てたあとに発光が減衰する時間を測る実験などが含まれています。</p>
+    <p>例えば発光が減衰する時間が長いことは、電子と正孔が失われる過程が弱まっている可能性を示します。しかし、特定の測定一つで、硫黄と鉛の結合の詳細な機構を完全に証明したと断定してはいけません。</p>
+    <p>実際、査読者の一人は硫黄と鉛の相互作用を示す根拠の読み取り方について疑問を呈しました。したがって、界面を強化するという説明は著者らの実験に支えられた解釈ですが、あらゆる分子レベルの結合経路が確定したという話ではありません。</p>
+
+    <h2>査読で浮かんだ限界</h2>
+    <p>今回の論文は査読済みですが、公開された査読記録には重要な懸念も残っています。第一は、比較対象にした2PACzが、最新の高性能材料を代表しているとは限らない点です。</p>
+    <p>第二は、AIの順位の正しさです。評価点が高い分子が、実際に高い発電効率や長い寿命を持つと一般的に証明されているわけではありません。検証した分子の数や化学的な範囲が限られているためです。</p>
+    <p>第三は、計算に用いた分子の電子状態と、現実の太陽電池の薄膜構造の違いです。実際の界面には分子の並び方や膜の形態など、単独の分子計算だけでは扱いきれない要素があります。</p>
+    <p>第四は、長期安定性と実用性です。研究チームは日陰によって逆方向の電圧が加わる場合の比較も査読後に追加しましたが、実際の屋外環境での長期運用や量産は依然として未検証です。</p>
+    <p>著者らは、現行の手法が選んだ分子骨格、断片の集合、指標の重み付けに依存し、分子の並び方や膜の形成状態を明示的には扱っていないと認めています。AI-1がこの探索範囲で有力だったことと、世界中のあらゆる分子の中で最適だという主張は違います。</p>
+
+    <h2>公開コードから分かる再現性の範囲</h2>
+    <p>この研究では、探索の一部を行うためのプログラムがGitHubへ公開されています。そこでは分子の断片を取り出す工程、候補分子を作る工程、量子化学計算用の入力ファイルを生成する工程、分子の評価と順位付けなどが説明されています。</p>
+    <p>ただしコードが公開されていることは、研究の全工程を一つの命令で自動的に再現できることとは違います。研究で使った量子化学計算には別のソフトウェアや計算資源が必要で、実際の分子合成と太陽電池の製造は研究室の装置を要します。</p>
+    <p>補足資料は、実験で作ったAI-1の合成経路、核磁気共鳴などの測定、外部機関による効率認証、より大きい小型モジュールでの測定を公開しています。こうした複数の記録から、論文の中心的な主張を確かめやすくなっています。</p>
+    <p>一方、全ての候補を別の研究室が再度合成して、AIの順位付けがどの程度一般化するかを示したわけではありません。材料探索の再現性には計算の再現と、化学合成と、デバイスの製造と、それぞれ別の段階があります。</p>
+    <p>論文の出版社で公開されている概要、補足資料、査読応答、著者らのコードを組み合わせて今回のListenを構成しています。本文の全ての節を自由に閲覧できるわけではないため、確認できない細部を補って強い結論にすることは避けています。</p>
+
+    <h2>学術研究でのAI利用に何を学ぶか</h2>
+    <p>ここからは研究の数値そのものではなく、ほかの学術分野へ広げたときの考察です。今回の最も参考になる点は、AIが候補を大量に生み出すことと、実験で使える材料を選ぶことが別の仕事だと、最初から設計へ組み込んだことです。</p>
+    <p>材料科学で最良の計算値だけを目指すと、現実には作れない分子や、実験環境で壊れる分子を選んでしまうことがあります。これを防ぐために、候補の生成、合成可能性、物理的な性質、実際の製造と評価を一続きに考える必要があります。</p>
+    <p>さらに研究者が比較方法を丁寧に設計しなければなりません。新しい材料が既知の一つの対照より良かったとしても、最先端の他の候補と比べて最善であるとは限りません。研究で得た改善の範囲を示すことが大切です。</p>
+    <p>AIの順位と実測結果の関係を調べ、予測が外れた候補も保存すれば、次の探索に使えるデータが増える可能性があります。今回の研究がその反復学習の効果を全て実証したわけではありませんが、今後の研究上の重要な方向です。</p>
+    <p>学術研究でAIを使うときに重視すべきなのは、モデルが賢そうな答えを出したかではなく、候補が本当に作れ、独立した測定で良い値を示し、制約条件の下で安定したかです。今回の研究は、そこへ一段進めた例だと考えられます。</p>
+
+    <h2>今回の結論</h2>
+    <p>今回の研究では、人工知能による逆合成予測、量子化学計算、化学者の知識を組み合わせ、九万種類を超える分子候補から、実際に試すべき太陽電池の界面材料を絞り込みました。</p>
+    <p>選ばれたAI-1は実際に合成され、研究室の小型セルで二十七点二パーセントの変換効率を示しました。外部機関の測定では瞬間値二十六点九五パーセント、三百秒の安定化測定では二十六点四三パーセントという、より細かい区別も必要です。</p>
+    <p>さらに、六十五度で二千時間運転した試験では、初期の性能を九十五パーセント以上保ちました。二十一点一二平方センチメートルの小型モジュールでも、AI-1は比較材料より高い効率を示しました。</p>
+    <p>ただし、AIが全ての分子の中で最適なものを見つけたとは言えず、世界最高水準の全材料に対する優位性、量産、屋外の長期寿命を証明したわけでもありません。</p>
+    <p>耳に残しておきたいのは、AIを学術研究で使うなら、予測結果だけで終わらず、作れるか、測れるか、比較に耐えるか、長く動くかという実験の問いまでつなげることです。今回の論文は、その連携を具体的に示しています。</p>
+  </article>
+
+  <section class="player" aria-label="読み上げ操作">
+    <div class="transport">
+      <button id="prev-block" type="button" aria-label="前の読み上げ単位へ">←</button>
+      <button id="play" type="button" aria-label="再生">▶</button>
+      <button id="pause" type="button" aria-label="一時停止">Ⅱ</button>
+      <button id="stop" type="button" aria-label="停止">■</button>
+      <button id="next-block" type="button" aria-label="次の読み上げ単位へ">→</button>
+    </div>
+    <div class="section-nav" aria-label="章移動">
+      <button id="prev-section" type="button" aria-label="前の章へ">‹</button>
+      <span id="section-label">導入</span>
+      <button id="next-section" type="button" aria-label="次の章へ">›</button>
+    </div>
+    <div class="voice-row">
+      <select id="voice" aria-label="日本語音声"></select>
+    </div>
+    <div class="speed"><span>速度</span><input id="rate" type="range" min="0.7" max="4" step="0.1" value="1"><span id="rateValue">1.0×</span></div>
+  </section>
+
+
+
+
+
+
+
+  <section class="sources" aria-label="出典">
+    <strong>出典・検証資料</strong>
+    <p><a href="https://www.nature.com/articles/s44160-026-01203-4">Nature Synthesis — AI-guided discovery of self-assembled monolayers combining synthetic accessibility and interfacial stability for perovskite solar cells（2026年10月28日、論文概要・データ案内）</a></p>
+    <p><a href="https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs44160-026-01203-4/MediaObjects/44160_2026_1203_MOESM1_ESM.pdf">著者らの補足実験資料（合成法・認証測定・比較実験・ミニモジュール・物性）</a></p>
+    <p><a href="https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs44160-026-01203-4/MediaObjects/44160_2026_1203_MOESM3_ESM.pdf">査読報告と著者の応答（比較対象・測定条件・限界）</a></p>
+    <p><a href="https://github.com/pic-ai-robotic-chemistry/AI-SAM">著者の分子探索ワークフロー公開コード — AI-SAM</a></p>
+    <p>本文全文に自由アクセスできることは確認していません。公開された概要・補足実験資料・査読応答・コードを根拠とし、個別の装置条件や結果を補足資料で照合しています。27.2%は研究室測定、26.95%と26.43%は外部認証の異なる測定条件です。</p>
+  </section>
+</main>
+<script>
+(() => {
+  const synth = window.speechSynthesis;
+  const blocks = [...document.querySelectorAll("#article h1,#article h2,#article h3,#article p")];
+  const sectionStarts = [...new Set([0, ...blocks.map((node, i) => node.tagName === "H2" ? i : -1).filter(i => i >= 0)])];
+  const play = document.querySelector("#play");
+  const pause = document.querySelector("#pause");
+  const stop = document.querySelector("#stop");
+  const prevBlock = document.querySelector("#prev-block");
+  const nextBlock = document.querySelector("#next-block");
+  const prevSection = document.querySelector("#prev-section");
+  const nextSection = document.querySelector("#next-section");
+  const sectionLabel = document.querySelector("#section-label");
+  const voice = document.querySelector("#voice");
+  const rate = document.querySelector("#rate");
+  const rateValue = document.querySelector("#rateValue");
+  const theme = document.querySelector("#theme");
+  let index = 0, playing = false, paused = false, selectedVoice = "", generation = 0;
+  let wakeLock = null, wakeLockWanted = false;
+
+  async function requestWakeLock() {
+    const wakeLockApi = window.navigator?.wakeLock;
+    wakeLockWanted = true;
+    if (!wakeLockApi?.request || wakeLock) return;
+    try {
+      const lock = await wakeLockApi.request("screen");
+      if (!wakeLockWanted) {
+        await lock.release();
+        return;
+      }
+      wakeLock = lock;
+      wakeLock.addEventListener?.("release", () => { wakeLock = null; });
+    } catch {
+      wakeLock = null;
+    }
+  }
+
+  async function releaseWakeLock() {
+    wakeLockWanted = false;
+    const current = wakeLock;
+    wakeLock = null;
+    if (!current) return;
+    try {
+      await current.release();
+    } catch {
+      // Wake Lock is best-effort; speech playback must continue to work.
+    }
+  }
+
+  function voices() {
+    const previous = selectedVoice || voice.value;
+    const items = synth.getVoices().filter(v => /^ja(?:-|_)/i.test(v.lang));
+    voice.replaceChildren();
+    for (const v of items) {
+      const o = document.createElement("option");
+      o.value = v.voiceURI;
+      o.textContent = v.name;
+      voice.append(o);
+    }
+    if (items.some(v => v.voiceURI === previous)) voice.value = previous;
+    selectedVoice = voice.value;
+  }
+
+  function clearHighlight() {
+    blocks.forEach(node => node.classList.remove("is-speaking"));
+  }
+
+  function sectionPosition() {
+    let pos = 0;
+    for (let i = 0; i < sectionStarts.length; i += 1) {
+      if (sectionStarts[i] <= index) pos = i;
+      else break;
+    }
+    return pos;
+  }
+
+  function updateNavigation() {
+    prevBlock.disabled = index <= 0;
+    nextBlock.disabled = index >= blocks.length - 1;
+
+    const pos = sectionPosition();
+    const start = sectionStarts[pos] ?? 0;
+    const previousTargetExists = index > start || pos > 0;
+    prevSection.disabled = !previousTargetExists;
+    nextSection.disabled = pos >= sectionStarts.length - 1;
+
+    const startNode = blocks[start];
+    sectionLabel.textContent = startNode?.tagName === "H2" ? startNode.textContent : "導入";
+  }
+
+  function showCurrent() {
+    clearHighlight();
+    const current = blocks[index];
+    if (!current) return;
+    current.classList.add("is-speaking");
+    current.scrollIntoView({ block: "center", behavior: "smooth" });
+    updateNavigation();
+  }
+
+  function speakCurrent() {
+    if (!playing || paused || index >= blocks.length) {
+      if (index >= blocks.length) {
+        playing = false;
+        paused = false;
+        clearHighlight();
+        void releaseWakeLock();
+      }
+      updateNavigation();
+      return;
+    }
+
+    showCurrent();
+    const localGeneration = ++generation;
+    const utterance = new SpeechSynthesisUtterance(blocks[index].textContent);
+    utterance.lang = "ja-JP";
+    utterance.rate = Number(rate.value);
+    const selected = synth.getVoices().find(item => item.voiceURI === voice.value);
+    if (selected) utterance.voice = selected;
+
+    utterance.onend = () => {
+      if (localGeneration !== generation || !playing || paused) return;
+      index += 1;
+      speakCurrent();
+    };
+
+    utterance.onerror = event => {
+      if (localGeneration !== generation) return;
+      if (event.error !== "canceled" && event.error !== "interrupted") {
+        playing = false;
+        paused = false;
+        clearHighlight();
+        void releaseWakeLock();
+        updateNavigation();
+      }
+    };
+
+    synth.speak(utterance);
+  }
+
+  function jumpTo(target) {
+    const next = Math.max(0, Math.min(blocks.length - 1, target));
+    const resume = playing && !paused;
+    const keepPaused = paused;
+
+    generation += 1;
+    synth.resume?.();
+    synth.cancel();
+    index = next;
+
+    if (resume) {
+      playing = true;
+      paused = false;
+      void requestWakeLock();
+      speakCurrent();
+      return;
+    }
+
+    playing = keepPaused;
+    paused = keepPaused;
+    showCurrent();
+    if (keepPaused) void requestWakeLock();
+  }
+
+  function jumpSection(delta) {
+    const pos = sectionPosition();
+    let targetPos;
+
+    if (delta < 0 && index > sectionStarts[pos]) targetPos = pos;
+    else targetPos = pos + delta;
+
+    if (targetPos < 0 || targetPos >= sectionStarts.length) return;
+    jumpTo(sectionStarts[targetPos]);
+  }
+
+  play.addEventListener("click", () => {
+    if (paused) {
+      generation += 1;
+      synth.resume?.();
+      synth.cancel();
+      paused = false;
+      playing = true;
+      void requestWakeLock();
+      speakCurrent();
+      return;
+    }
+    if (playing) return;
+    if (index >= blocks.length) index = 0;
+    playing = true;
+    void requestWakeLock();
+    speakCurrent();
+  });
+
+  pause.addEventListener("click", () => {
+    if (!playing || paused) return;
+    synth.pause();
+    paused = true;
+  });
+
+  stop.addEventListener("click", () => {
+    generation += 1;
+    synth.resume?.();
+    synth.cancel();
+    playing = false;
+    paused = false;
+    index = 0;
+    clearHighlight();
+    updateNavigation();
+    void releaseWakeLock();
+  });
+
+  prevBlock.addEventListener("click", () => jumpTo(index - 1));
+  nextBlock.addEventListener("click", () => jumpTo(index + 1));
+  prevSection.addEventListener("click", () => jumpSection(-1));
+  nextSection.addEventListener("click", () => jumpSection(1));
+
+  voice.addEventListener("change", () => {
+    selectedVoice = voice.value;
+    if (playing && !paused) {
+      generation += 1;
+      synth.cancel();
+      speakCurrent();
+    }
+  });
+
+  rate.addEventListener("input", () => {
+    rateValue.textContent = Number(rate.value).toFixed(1) + "×";
+  });
+
+  theme.addEventListener("click", () => {
+    const dark = document.documentElement.dataset.theme === "dark";
+    document.documentElement.dataset.theme = dark ? "light" : "dark";
+    theme.textContent = dark ? "☾" : "☀";
+    localStorage.setItem("rsvp:theme", dark ? "light" : "dark");
+  });
+
+  document.documentElement.dataset.theme =
+    localStorage.getItem("rsvp:theme") ||
+    (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  theme.textContent = document.documentElement.dataset.theme === "dark" ? "☀" : "☾";
+
+  voices();
+  synth.addEventListener?.("voiceschanged", voices);
+  updateNavigation();
+
+  document.addEventListener?.("visibilitychange", () => {
+    if (document.visibilityState === "visible" && (playing || paused)) {
+      void requestWakeLock();
+    }
+  });
+
+  addEventListener("pagehide", () => {
+    generation += 1;
+    synth.cancel();
+    void releaseWakeLock();
+  });
+})();
+</script>
+</body>
+</html>

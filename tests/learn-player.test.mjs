@@ -19,6 +19,8 @@ function makeElement(textContent = "") {
       contains(name) { return classes.has(name); },
     },
     addEventListener(name, callback) { events.set(name, callback); },
+    // HTMLElement exposes querySelector even when this focused player fixture has no nested row.
+    querySelector() { return null; },
     setAttribute() {},
     replaceChildren(...items) {
       this.options = [...items];
@@ -29,6 +31,8 @@ function makeElement(textContent = "") {
       if (item.selected || (!this.value && this.options.length === 1)) this.value = item.value;
     },
     scrollIntoView() { this.scrollCalls += 1; },
+    // A heading-navigation element can be inserted after the reader in the real DOM.
+    after() {},
     click() { events.get("click")?.({ target: this }); },
     dispatch(name) { events.get(name)?.({ target: this }); },
   };
@@ -42,7 +46,10 @@ async function setupPlayer() {
     return selectors.get(selector);
   };
   const article = get("#learn-article");
-  article.querySelectorAll = () => articleItems;
+  articleItems[0].tagName = "H1";
+  articleItems[1].tagName = "H2";
+  articleItems[2].tagName = "P";
+  article.querySelectorAll = (selector) => selector === "h2, h3" ? [articleItems[1]] : articleItems;
   const voices = [
     { voiceURI: "ja-default", name: "Japanese", lang: "ja-JP" },
     { voiceURI: "ja-alternate", name: "Japanese 2", lang: "ja-JP" },
