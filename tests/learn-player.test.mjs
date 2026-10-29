@@ -19,6 +19,8 @@ function makeElement(textContent = "") {
       contains(name) { return classes.has(name); },
     },
     addEventListener(name, callback) { events.set(name, callback); },
+    // HTMLElement exposes querySelector even when this focused player fixture has no nested row.
+    querySelector() { return null; },
     setAttribute() {},
     replaceChildren(...items) {
       this.options = [...items];
