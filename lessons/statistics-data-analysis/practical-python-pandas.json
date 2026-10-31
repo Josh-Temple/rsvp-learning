@@ -146,11 +146,11 @@
       "duration_multiplier": 1
     },
     {
-      "text": "'部署',dropna=False)を検討します",
+      "text": "'部署',dropna=False)",
       "duration_multiplier": 1
     },
     {
-      "text": "。",
+      "text": "を検討します。",
       "duration_multiplier": 1.15
     },
     {
@@ -310,11 +310,11 @@
       "duration_multiplier": 1
     },
     {
-      "text": "問いと分母を正しく定義する作業までは代行しません",
+      "text": "問いと分母を正しく定義する作業までは",
       "duration_multiplier": 1
     },
     {
-      "text": "。",
+      "text": "代行しません。",
       "duration_multiplier": 1.15
     }
   ]
