@@ -199,7 +199,7 @@ test("P1-IP-01 Learn: three proofing steps, limitations, and regression countere
   ];
   const check = (speechArticle) => {
     const paragraphs = [...speechArticle.matchAll(/<p\b[^>]*>([\s\S]*?)<\/p>/gi)].map((match) => textOf(match[1]));
-    const opening = textOf(speechArticle.split("<h2>Identityを段階に分ける</h2>")[1]?.split("</p>")[0] ?? "");
+    const opening = textOf(speechArticle.match(/<h2\b[^>]*>[^<]+<\/h2>\s*<p\b[^>]*>([\s\S]*?)<\/p>/i)?.[1] ?? "");
     assert.ok(opening.includes("実在性を調べるだけで終わりません") &&
       opening.includes("対象とする集団") && opening.includes("属性と証拠") &&
       opening.includes("区別"), "intro must not reduce proofing to existence only");
@@ -211,7 +211,7 @@ test("P1-IP-01 Learn: three proofing steps, limitations, and regression countere
   };
   check(article);
   const mutations = [
-    ["intro", "本人確認は名乗った身元の実在性を調べるだけで終わりません。サービスが対象とする集団の中で身元を区別するための属性と証拠を集め、証拠と属性を確かめ、申請者とその証拠の結び付きを確認します。",
+    ["intro", "本人確認は名乗った身元の実在性を調べるだけで終わりません。サービスが対象とする集団の中で身元を区別するための属性と証拠を集め、証拠の真正性と属性の正確さを確かめ、申請者本人とその証拠の結び付きを確認します。",
      "本人確認は、名乗った身元が実在するか、提出された証拠が妥当かを確かめます。", "intro"],
     ["resolution", "サービスが対象とする集団内で主張された身元を区別できるよう、本人確認に必要な属性と証拠を集めます。",
      "主張された身元が実在するか調べます。", "resolution"],
