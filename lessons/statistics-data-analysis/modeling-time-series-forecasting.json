@@ -210,7 +210,7 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "補助式は `MAE＝絶対誤差の合計÷評価件数`",
+      "text": "補助式は MAE＝絶対誤差の合計÷評価件数",
       "duration_multiplier": 1
     },
     {
