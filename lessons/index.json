@@ -1246,6 +1246,14 @@
       "path": "./lessons/security-deep/security-container-serverless-saas-iot.json",
       "status": "COMPLETE v0.1",
       "learn_path": "./learn/security-container-serverless-saas-iot.html"
+    },
+    {
+      "id": "analysis-kpi-denominators",
+      "title": "KPI・分母・測定単位",
+      "topic": "データ分析",
+      "path": "./lessons/statistics-data-analysis/analysis-kpi-denominators.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/analysis-kpi-denominators.html"
     }
   ]
 }

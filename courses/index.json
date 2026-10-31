@@ -301,6 +301,13 @@
         "security-cloud-shared-responsibility-iam-config",
         "security-container-serverless-saas-iot"
       ]
+    },
+    {
+      "id": "data-analysis-foundations",
+      "title": "データ分析 I：問い・データの準備",
+      "chapters": [
+        "analysis-kpi-denominators"
+      ]
     }
   ]
 }
