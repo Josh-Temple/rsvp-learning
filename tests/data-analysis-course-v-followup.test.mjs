@@ -12,16 +12,16 @@ test("the three reviewed practical lessons are synchronized and reachable under 
   for(const id of ids){
     const meta=catalog.lessons.find(x=>x.id===id);
     assert.equal(meta?.status,"COMPLETE v0.1");
-    const json=JSON.parse(await read(meta.path.replace(/^\\.\\//,"")));
+    const json=JSON.parse(await read(meta.path.slice(2)));
     const md=await read("lessons/statistics-data-analysis/"+id+".md");
-    const html=await read(meta.learn_path.replace(/^\\.\\//,""));
+    const html=await read(meta.learn_path.slice(2));
     const section=md.split("## 本文")[1].split("## 注意")[0];
-    const lines=[...section.matchAll(/^\\d+\\. (.+)$/gm)].map(x=>x[1]);
+    const lines=[...section.matchAll(/^\d+\. (.+)$/gm)].map(x=>x[1]);
     assert.equal(lines.join(""),json.chunks.map(x=>x.text).join(""),id);
     assert.ok(json.chunks.every(x=>[...x.text].length<=24),id+" long chunk");
     assert.match(html,/<article id="learn-article">/);
     assert.ok(html.indexOf("</article>")<html.indexOf('<section class="sources"'));
-    assert.ok(html.includes("再生")&&html.includes("一時停止"));
+    assert.ok(html.includes('id="speech-play"')&&html.includes('id="speech-pause"'));
     for(const s of json.sources)assert.ok(html.includes(s.url),id+" "+s.url);
     for(const path of [meta.path,meta.learn_path])assert.ok(new URL(path,"https://example.github.io/rsvp-learning/").pathname.startsWith("/rsvp-learning/"));
   }
