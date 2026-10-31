@@ -6,7 +6,7 @@ const ids=["statistics-population-sample-bias","inference-probability-random-var
 test("new inference and modeling lessons are synchronized with their catalog and Pages paths",async()=>{
  const catalog=JSON.parse(await read("lessons/index.json")).lessons;
  const courses=JSON.parse(await read("courses/index.json")).courses;
- assert.deepEqual(courses.find(c=>c.id==="data-analysis-inference").chapters,["inference-probability-random-variables","inference-sampling-error","inference-power-multiple-testing","inference-randomized-experiments","inference-ab-testing"]);
+ assert.deepEqual(courses.find(c=>c.id==="data-analysis-inference").chapters,["statistics-population-sample-bias","inference-probability-random-variables","inference-sampling-error","statistics-estimation-confidence-intervals","statistics-hypothesis-testing-effect-size","inference-power-multiple-testing","inference-randomized-experiments","inference-ab-testing"]);
  assert.deepEqual(courses.find(c=>c.id==="data-analysis-modeling").chapters,["statistics-correlation-regression-causality","modeling-linear-multiple-regression","modeling-regression-assumptions","modeling-classification-metrics","modeling-validation-leakage","modeling-time-series-forecasting","modeling-causal-confounding","modeling-quasi-experiments"]);
  assert.deepEqual(courses.find(c=>c.id==="statistics-data-analysis").chapters,["statistics-data-analysis-overview","statistics-descriptive-distributions","statistics-population-sample-bias","statistics-estimation-confidence-intervals","statistics-hypothesis-testing-effect-size","statistics-correlation-regression-causality"]);
  for(const id of ids){
