@@ -34,11 +34,11 @@
       "duration_multiplier": 1
     },
     {
-      "text": "処理の前後で何が変わるかを説明できることが重要で",
+      "text": "処理の前後で何が変わるかを",
       "duration_multiplier": 1
     },
     {
-      "text": "す。",
+      "text": "説明できることが重要です。",
       "duration_multiplier": 1.15
     },
     {
@@ -126,11 +126,11 @@
       "duration_multiplier": 1
     },
     {
-      "text": "部署が欠損した行をグループのキーとして表示しませ",
+      "text": "部署が欠損した行を",
       "duration_multiplier": 1
     },
     {
-      "text": "ん。",
+      "text": "グループのキーとして表示しません。",
       "duration_multiplier": 1.15
     },
     {
@@ -214,11 +214,11 @@
       "duration_multiplier": 1
     },
     {
-      "text": "一つの問い合わせに複数の対応がある場合に行が増え",
+      "text": "一つの問い合わせに",
       "duration_multiplier": 1
     },
     {
-      "text": "ます。",
+      "text": "複数の対応がある場合に行が増えます。",
       "duration_multiplier": 1.15
     },
     {
@@ -290,11 +290,11 @@
       "duration_multiplier": 1
     },
     {
-      "text": "処理内容、行数の変化、欠損の扱いを一緒に記録しま",
+      "text": "処理内容、行数の変化、",
       "duration_multiplier": 1
     },
     {
-      "text": "す。",
+      "text": "欠損の扱いを一緒に記録します。",
       "duration_multiplier": 1.15
     },
     {

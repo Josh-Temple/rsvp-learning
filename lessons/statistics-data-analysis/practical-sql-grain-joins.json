@@ -118,11 +118,11 @@
       "duration_multiplier": 1
     },
     {
-      "text": "結合条件を見直すなど、設計から修正する必要があり",
+      "text": "結合条件を見直すなど、",
       "duration_multiplier": 1
     },
     {
-      "text": "ます。",
+      "text": "設計から修正する必要があります。",
       "duration_multiplier": 1.15
     },
     {
@@ -142,11 +142,11 @@
       "duration_multiplier": 1
     },
     {
-      "text": "対応する明細を持たない注文が落ちた可能性がありま",
+      "text": "対応する明細を持たない注文が落ちた",
       "duration_multiplier": 1
     },
     {
-      "text": "す。",
+      "text": "可能性があります。",
       "duration_multiplier": 1.15
     },
     {
@@ -254,11 +254,11 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "それだけで金額の正しさが保証されるわけではありま",
+      "text": "それだけで金額の正しさが",
       "duration_multiplier": 1
     },
     {
-      "text": "せん。",
+      "text": "保証されるわけではありません。",
       "duration_multiplier": 1.15
     },
     {
