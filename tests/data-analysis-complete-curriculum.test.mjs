@@ -70,7 +70,7 @@ test("new overview source, RSVP and Learn preserve approved introductory argumen
  const lesson = JSON.parse(await read("lessons/statistics-data-analysis/analysis-overview-complete.json"));
  const html = await read("learn/analysis-overview-complete.html");
  const section = md.split("## 本文")[1]?.split("## 注意")[0] ?? "";
- const chunks = [...section.matchAll(/^\\d+\\. (.+)$/gm)].map(x => x[1]);
+ const chunks = [...section.matchAll(/^\d+\. (.+)$/gm)].map(x => x[1]);
  assert.equal(chunks.join(""), lesson.chunks.map(x => x.text).join(""));
  assert.ok(chunks.length > 30);
  assert.ok(lesson.chunks.every(x => [...x.text].length >= 4 && [...x.text].length <= 24));
