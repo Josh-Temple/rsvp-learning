@@ -1,0 +1,273 @@
+{
+  "schema_version": 1,
+  "id": "practical-privacy-ethics",
+  "title": "個人情報・公平性・データ利用倫理",
+  "topic": "データ分析",
+  "summary": "分析目的に応じた個人情報の取扱いと、公平性の点検を学びます。",
+  "created_at": "2026-10-31",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "個人情報保護委員会：個人情報保護法ガイドライン（行政機関等編）",
+      "url": "https://www.ppc.go.jp/personalinfo/legal/guidelines_administrative/"
+    },
+    {
+      "title": "個人情報保護委員会：同ガイドライン（通則編）",
+      "url": "https://www.ppc.go.jp/personalinfo/legal/guidelines_tsusoku/"
+    },
+    {
+      "title": "個人情報保護委員会：仮名加工情報・匿名加工情報編",
+      "url": "https://www.ppc.go.jp/personalinfo/legal/guidelines_anonymous/"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "データを集めれば、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "何でも分析してよいわけではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用者の行動ログ、申請内容、アンケート回答には、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "単独または他の情報との照合で個人を",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "識別できる情報が含まれる場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "分析の前に、何の判断に使うのか、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "その目的でどの項目が必要なのか、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "誰が扱えるのかを点検します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "架空の自治体が、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "申請処理にかかる日数を知りたいとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "受付日、完了日、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "案件の区分だけで全体の処理日数を集計できるなら、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "氏名、正確な住所、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "本人の病歴まで複製する必要があるか慎重に",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一方、特定の支援が届いていない集団を調べるなら、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "必要な属性を含めた評価設計と権限確認が必要に",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "なることもあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "「属性をすべて消す」だけでも公平性の問題が",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "見えなくなり得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "日本の個人情報保護法では、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "民間事業者向けの通則ガイドラインと、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "行政機関・地方公共団体等に関する行政機関等編が",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "それぞれ整理されています。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "行政機関等編では、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "利用目的の特定と必要な範囲を超える保有の制限が",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "扱われています。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "教材の例だけから、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "特定のデータ利用が適法だと判定することは",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "できません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "主体、対象情報、利用目的、事務の根拠、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "提供先などを現行法令・指針で確かめます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "氏名を受付番号へ置き換えても、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "別に持つ対応表で人物が分かる場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "珍しい属性の組み合わせから個人が推測されることも",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "あります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "仮名加工情報と匿名加工情報は法令上異なる区分と",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "要件を持ち、単に列を削った表を自動的にどちらかと",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "呼べません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "共有する必要がない明細は集計してから渡す、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "アクセス権限を限定する、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "保持期間と削除方法を決めるなど、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "取扱いをデータの流れ全体で考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "件数が小さいグループについて、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "属性と地域を細かく表示すると再識別の手掛かりを",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "増やす場合があるため、表示の粒度も点検します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "窓口の全体平均待ち時間が短縮したとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "しかし、高齢者や日本語に",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "不慣れな利用者だけ待ち時間が",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "長くなっている可能性もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "構成比が変われば全体平均だけでは群別の変化を",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "捉えられません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "属性別に比較するときは、各群の人数、欠損、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "測定方法を確かめ、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "偶然変動や小標本の不確実性を示します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "公平性は一つの統計量で自動判定できません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "何を不利益と考えるか、どの集団を比較するか、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "属性の利用に合理的な根拠と権限があるかを関係者と",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用者の負担を減らすことと、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "知る必要のない個人情報を集めないことを",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "両立させる設計が必要です。",
+      "duration_multiplier": 1.15
+    }
+  ]
+}

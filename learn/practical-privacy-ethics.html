@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="分析目的に応じた個人情報の取扱いと、公平性の点検を学びます。" />
+  <meta name="theme-color" content="#f2efe8" />
+  <title>個人情報・公平性・データ利用倫理 — Learn</title>
+  <link rel="stylesheet" href="./learn.css" />
+  <script src="./learn.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="top">
+      <a href="../index.html">RSVPに戻る</a>
+      <span class="mode">LEARN · データ分析</span>
+    </header>
+    <main>
+      <section class="reader" id="speech-reader" aria-label="読み上げプレイヤー">
+        <div class="reader-row">
+          <button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+          <button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+          <button id="speech-stop" type="button" aria-label="停止" disabled>■</button>
+          <select id="speech-voice" aria-label="読み上げ音声"></select>
+          <label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+        </div>
+        <div id="speech-status" class="reader-status" role="status">読み上げ準備中</div>
+      </section>
+      <article id="learn-article"><h1>個人情報・公平性・データ利用倫理</h1>
+<p class="lead">分析目的に応じた個人情報の取扱いと、公平性の点検を学びます。</p>
+<p>データを集めれば、何でも分析してよいわけではありません。利用者の行動ログ、申請内容、アンケート回答には、単独または他の情報との照合で個人を識別できる情報が含まれる場合があります。分析の前に、何の判断に使うのか、その目的でどの項目が必要なのか、誰が扱えるのかを点検します。</p>
+<h2>目的が先、収集項目は後</h2>
+<p>架空の自治体が、申請処理にかかる日数を知りたいとします。受付日、完了日、案件の区分だけで全体の処理日数を集計できるなら、氏名、正確な住所、本人の病歴まで複製する必要があるか慎重に考えます。一方、特定の支援が届いていない集団を調べるなら、必要な属性を含めた評価設計と権限確認が必要になることもあります。「属性をすべて消す」だけでも公平性の問題が見えなくなり得ます。</p>
+<p>日本の個人情報保護法では、民間事業者向けの通則ガイドラインと、行政機関・地方公共団体等に関する行政機関等編がそれぞれ整理されています。行政機関等編では、利用目的の特定と必要な範囲を超える保有の制限が扱われています。教材の例だけから、特定のデータ利用が適法だと判定することはできません。主体、対象情報、利用目的、事務の根拠、提供先などを現行法令・指針で確かめます。</p>
+<h2>氏名を消すだけでは匿名とは限らない</h2>
+<p>氏名を受付番号へ置き換えても、別に持つ対応表で人物が分かる場合があります。珍しい属性の組み合わせから個人が推測されることもあります。仮名加工情報と匿名加工情報は法令上異なる区分と要件を持ち、単に列を削った表を自動的にどちらかと呼べません。</p>
+<p>共有する必要がない明細は集計してから渡す、アクセス権限を限定する、保持期間と削除方法を決めるなど、取扱いをデータの流れ全体で考えます。件数が小さいグループについて、属性と地域を細かく表示すると再識別の手掛かりを増やす場合があるため、表示の粒度も点検します。</p>
+<h2>全体の改善が、全員の改善とは限らない</h2>
+<p>窓口の全体平均待ち時間が短縮したとします。しかし、高齢者や日本語に不慣れな利用者だけ待ち時間が長くなっている可能性もあります。構成比が変われば全体平均だけでは群別の変化を捉えられません。属性別に比較するときは、各群の人数、欠損、測定方法を確かめ、偶然変動や小標本の不確実性を示します。</p>
+<p>公平性は一つの統計量で自動判定できません。何を不利益と考えるか、どの集団を比較するか、属性の利用に合理的な根拠と権限があるかを関係者と確認します。利用者の負担を減らすことと、知る必要のない個人情報を集めないことを両立させる設計が必要です。</p>
+</article>
+<section class="sources" aria-labelledby="sources-title"><h2 id="sources-title">出典</h2>
+<p><a href="https://www.ppc.go.jp/personalinfo/legal/guidelines_administrative/">個人情報保護委員会：個人情報保護法ガイドライン（行政機関等編）</a></p>
+<p><a href="https://www.ppc.go.jp/personalinfo/legal/guidelines_tsusoku/">個人情報保護委員会：同ガイドライン（通則編）</a></p>
+<p><a href="https://www.ppc.go.jp/personalinfo/legal/guidelines_anonymous/">個人情報保護委員会：仮名加工情報・匿名加工情報編</a></p>
+</section></main></div></body></html>

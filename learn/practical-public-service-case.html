@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="架空の申請サービスを例に、集計から比較・判断までの流れを学びます。" />
+  <meta name="theme-color" content="#f2efe8" />
+  <title>統合ケース：行政サービスの改善評価 — Learn</title>
+  <link rel="stylesheet" href="./learn.css" />
+  <script src="./learn.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="top">
+      <a href="../index.html">RSVPに戻る</a>
+      <span class="mode">LEARN · データ分析</span>
+    </header>
+    <main>
+      <section class="reader" id="speech-reader" aria-label="読み上げプレイヤー">
+        <div class="reader-row">
+          <button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+          <button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+          <button id="speech-stop" type="button" aria-label="停止" disabled>■</button>
+          <select id="speech-voice" aria-label="読み上げ音声"></select>
+          <label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+        </div>
+        <div id="speech-status" class="reader-status" role="status">読み上げ準備中</div>
+      </section>
+      <article id="learn-article"><h1>統合ケース：行政サービスの改善評価</h1>
+<p class="lead">架空の申請サービスを例に、集計から比較・判断までの流れを学びます。</p>
+<p>自治体の申請サービスを改善する架空の案件を考えます。新しい画面を導入した後、申請の処理が早くなったように見えます。しかし、それだけで新画面が原因だとは言えません。ここでは集計から判断までの道筋を通して確認します。登場する件数、日数、組織、結果はすべて学習用に作ったもので、実際の自治体の調査結果ではありません。</p>
+<h2>問いと対象を決める</h2>
+<p>担当者の判断は「新画面を継続し、他部署へ広げるか」です。問いたいのは、単に処理件数が増えたかではなく、申請者にとって処理が早くなり、差戻しや問い合わせが増えていないかです。申請一件を観測単位とし、受付日の後十四日以内に完了した割合を主要な記述指標とします。申請者一人が複数件出すことや、同じ申請が差戻し後に再登録されることも識別できるようにします。</p>
+<p>観測期間の終わりに受け付けた案件は、まだ十四日経っていません。そこで旧画面期間、新画面期間とも、受付から十四日間の追跡が済んだ申請だけを比較する設計とします。完了しなかった案件も分母へ残します。もちろん追跡できない案件は別途示します。</p>
+<h2>数字を集め、まず記述する</h2>
+<p>旧画面の対象が五百件、そのうち十四日以内に完了した案件が三百七十五件だったとします。割合は三百七十五を五百で割り、七十五パーセントです。新画面は五百五十件中四百四十件が完了し、八十パーセントです。差は五パーセントポイントです。これは観測された割合の差であり、画面による効果の推定値と呼ぶには追加の条件が必要です。</p>
+<p>さらに、受付時に申請区分が欠損している件数、差戻し回数、問い合わせ人数を確認します。問い合わせ回数を申請者の人数へ読み替えたり、明細結合によって案件数を膨らませたりしてはいけません。元記録の入力日時、項目定義、分類変更も追跡します。</p>
+<h2>別の説明がないか調べる</h2>
+<p>新画面の時期には、処理の簡単な申請が増えたかもしれません。応援職員が増えた可能性もあります。区分別・部署別の記述を確認し、同じ構成の申請を比較しても結果が保たれるかを調べます。区分をそろえたとしても、未観測の違いは残り得ます。</p>
+<p>可能なら新画面を導入しなかった比較部署を同時期に観測しますが、部署の業務が異なればそのまま対照とはみなせません。無作為割当がなければ、平行トレンドなど評価設計に応じた識別の仮定も検討します。比較が成立しない場合は、因果効果を特定できないと報告します。</p>
+<h2>判断と次の確認を結ぶ</h2>
+<p>現段階の報告には「十四日以内完了率は七十五パーセントから八十パーセントへ上昇」という観測事実を示します。同時に、件数・構成の変化、未追跡の有無、問い合わせや差戻しの副作用、データの限界を添えます。利用者への不利益や情報保護上の問題も確認します。</p>
+<p>施策の全面展開をすぐ決めるのではなく、追加の追跡と比較設計を条件に段階導入するという判断もあります。費用と実施可能性、現場の報告を合わせて決めます。分析は意思決定を支えますが、記述上の差を因果効果へすり替えることはできません。</p>
+</article>
+<section class="sources" aria-labelledby="sources-title"><h2 id="sources-title">出典</h2>
+<p><a href="https://www.gov.uk/government/publications/the-magenta-book">HM Treasury: The Magenta Book</a></p>
+<p><a href="https://analysisfunction.civilservice.gov.uk/support/reproducible-analytical-pipelines/">UK Government Analysis Function: Reproducible Analytical Pipelines</a></p>
+<p><a href="https://www.ppc.go.jp/personalinfo/legal/guidelines_administrative/">個人情報保護委員会：ガイドライン（行政機関等編）</a></p>
+</section></main></div></body></html>

@@ -1254,6 +1254,38 @@
       "path": "./lessons/statistics-data-analysis/analysis-kpi-denominators.json",
       "status": "COMPLETE v0.1",
       "learn_path": "./learn/analysis-kpi-denominators.html"
+    },
+    {
+      "id": "practical-pipelines-validation",
+      "title": "分析手順の再現・品質検査",
+      "topic": "データ分析",
+      "path": "./lessons/statistics-data-analysis/practical-pipelines-validation.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/practical-pipelines-validation.html"
+    },
+    {
+      "id": "practical-privacy-ethics",
+      "title": "個人情報・公平性・データ利用倫理",
+      "topic": "データ分析",
+      "path": "./lessons/statistics-data-analysis/practical-privacy-ethics.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/practical-privacy-ethics.html"
+    },
+    {
+      "id": "practical-report-decisions",
+      "title": "分析報告・不確実性・意思決定",
+      "topic": "データ分析",
+      "path": "./lessons/statistics-data-analysis/practical-report-decisions.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/practical-report-decisions.html"
+    },
+    {
+      "id": "practical-public-service-case",
+      "title": "統合ケース：行政サービスの改善評価",
+      "topic": "データ分析",
+      "path": "./lessons/statistics-data-analysis/practical-public-service-case.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/practical-public-service-case.html"
     }
   ]
 }

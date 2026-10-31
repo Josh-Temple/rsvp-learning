@@ -1,0 +1,249 @@
+{
+  "schema_version": 1,
+  "id": "practical-pipelines-validation",
+  "title": "分析手順の再現・品質検査",
+  "topic": "データ分析",
+  "summary": "入力データの版と変換手順を残し、品質検査と再現性の限界を学びます。",
+  "created_at": "2026-10-31",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "UK Government Analysis Function: Reproducible Analytical Pipelines",
+      "url": "https://analysisfunction.civilservice.gov.uk/support/reproducible-analytical-pipelines/"
+    },
+    {
+      "title": "UK Government Data Quality Framework",
+      "url": "https://www.gov.uk/government/publications/the-government-data-quality-framework/the-government-data-quality-framework-guidance"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "毎月の報告書を手作業で作ると、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "担当者が交代したときにどの抽出条件を",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "使ったか分からなくなることがあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "再現可能な分析手順とは、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "同じ版の入力と明示された処理規則を用い、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "他の担当者も結果を作り直して検査できる状態です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "毎回同じ数字が出るだけで、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "その数字が現実を正しく表すとは限りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "架空の月次問い合わせ報告を考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "第一段階では、入力ファイルの取得日時、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "ファイルの識別情報、データの定義、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "対象期間を残します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "月末時点で抽出したデータと翌月に",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "追記されたデータを混同しないためです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "機密を含むデータなら、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "ファイルを誰でも",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "取得できる場所へ公開するのではなく、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "権限を制御した保管先と検証方法を使います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "第二段階では、日付の型変換、取消記録の扱い、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "重複判定、集計の手順を記録します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "第三段階で出力表と計算結果を作り、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "最後に報告用の図や文章へ渡します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "手作業が残るなら、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "誰が何を変えたかを説明できる記録が必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "コード、使用ライブラリ、設定の版も合わせます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "自動検査では、満たされるべき条件を明示します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "例えば「受付IDは一意」「日付が対象月に",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "収まる」「処理時間は負に",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "ならない」「集計した件数と採用した入力行数が",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "合う」です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "これらはアサーション、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "つまり処理が期待する条件の検査として実装",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "できます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ただし、正当な取消記録や時間の補正で例外が",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "あるなら、例外規則を先に決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "「全数値は正」などの誤った条件は、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "正しいデータを除外してしまいます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "検査は業務定義の代わりになりません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "前月は受付千件、今月は百件だったとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "件数急減を警告する検査は有用ですが、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "入力が壊れたのか、窓口の運用が変わったのか、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "実際の受付が減ったのかは警告だけでは",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "分かりません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "失敗した条件、対象ファイル、発生時刻、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "対応履歴を残し、原因の調査へつなげます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "同じ入力で同じ出力が得られることは",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "再現性の一部です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "元の記録に入力漏れがあれば、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "間違った数字を何度でも再現できます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "別のデータで妥当性を調べること、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "現場の定義と照合すること、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "処理を別担当が見直すことが必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "全手順の完全自動化ができなくても、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "範囲を定めて検査と履歴管理を改善できます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "重要なのは、自動化率を誇ることではなく、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "数字が変わったときに、データ変更、規則変更、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "実際の変化を切り分けられることです。",
+      "duration_multiplier": 1.15
+    }
+  ]
+}

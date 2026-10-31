@@ -1,0 +1,325 @@
+{
+  "schema_version": 1,
+  "id": "practical-public-service-case",
+  "title": "統合ケース：行政サービスの改善評価",
+  "topic": "データ分析",
+  "summary": "架空の申請サービスを例に、集計から比較・判断までの流れを学びます。",
+  "created_at": "2026-10-31",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "HM Treasury: The Magenta Book",
+      "url": "https://www.gov.uk/government/publications/the-magenta-book"
+    },
+    {
+      "title": "UK Government Analysis Function: Reproducible Analytical Pipelines",
+      "url": "https://analysisfunction.civilservice.gov.uk/support/reproducible-analytical-pipelines/"
+    },
+    {
+      "title": "個人情報保護委員会：ガイドライン（行政機関等編）",
+      "url": "https://www.ppc.go.jp/personalinfo/legal/guidelines_administrative/"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "自治体の申請サービスを改善する架空の案件を",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "新しい画面を導入した後、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "申請の処理が早くなったように見えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "しかし、それだけで新画面が原因だとは言えません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ここでは集計から",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "判断までの道筋を通して確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "登場する件数、日数、組織、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "結果はすべて学習用に作ったもので、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "実際の自治体の調査結果ではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "担当者の判断は「新画面を継続し、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "他部署へ広げるか」です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "問いたいのは、単に処理件数が増えたかではなく、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "申請者にとって処理が早くなり、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "差戻しや問い合わせが増えていないかです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "申請一件を観測単位とし、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "受付日の後十四日以内に完了した割合を",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "主要な記述指標とします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "申請者一人が複数件出すことや、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "同じ申請が差戻し後に再登録されることも",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "識別できるようにします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "観測期間の終わりに受け付けた案件は、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "まだ十四日経っていません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "そこで旧画面期間、新画面期間とも、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "受付から十四日間の追跡が済んだ申請だけを",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "比較する設計とします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "完了しなかった案件も分母へ残します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "もちろん追跡できない案件は別途示します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "旧画面の対象が五百件、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "そのうち十四日以内に完了した案件が",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "三百七十五件だったとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "割合は三百七十五÷五百で七十五パーセントです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "新画面は五百五十件中四百四十件が完了し、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "八十パーセント。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "差は五パーセントポイントです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "これは観測された割合の差であり、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "画面による効果の推定値と呼ぶには追加の条件が",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "さらに、受付時に申請区分が欠損している件数、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "差戻し回数、問い合わせ人数を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "問い合わせ回数を申請者の人数へ読み替えたり、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "明細結合によって案件数を膨らませたりしては",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "いけません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "元記録の入力日時、項目定義、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "分類変更も追跡します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "新画面の時期には、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "処理の簡単な申請が増えたかもしれません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "応援職員が増えた可能性もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "区分別・部署別の記述を確認し、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "同じ構成の申請を比較しても結果が保たれるかを",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "調べます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "区分をそろえたとしても、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "未観測の違いは残り得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "可能なら新画面を導入しなかった比較部署を同時期に",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "観測しますが、部署の業務が",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "異なればそのまま対照とはみなせません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "無作為割当がなければ、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "平行トレンドなど評価設計に応じた識別の仮定も",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "検討します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "比較が成立しない場合は、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "因果効果を特定できないと報告します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "現段階の報告には「十四日以内完了率は",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "七十五パーセントから",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "八十パーセントへ上昇」という観測事実を示します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "同時に、件数・構成の変化、未追跡の有無、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "問い合わせや差戻しの副作用、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "データの限界を添えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用者への不利益や情報保護上の問題も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "施策の全面展開をすぐ決めるのではなく、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "追加の追跡と比較設計を条件に",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "段階導入するという判断もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "費用と実施可能性、現場の報告を合わせて決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "分析は意思決定を支えますが、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "記述上の差を因果効果へすり替えることは",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "できません。",
+      "duration_multiplier": 1.15
+    }
+  ]
+}

@@ -1,0 +1,261 @@
+{
+  "schema_version": 1,
+  "id": "practical-report-decisions",
+  "title": "分析報告・不確実性・意思決定",
+  "topic": "データ分析",
+  "summary": "観測結果と解釈を区別し、不確実性を意思決定に伝える方法を学びます。",
+  "created_at": "2026-10-31",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "HM Treasury: The Magenta Book",
+      "url": "https://www.gov.uk/government/publications/the-magenta-book"
+    },
+    {
+      "title": "UK Government Analysis Function: Data visualisation — charts",
+      "url": "https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-charts/"
+    },
+    {
+      "title": "American Statistical Association: Statement on Statistical Significance and P-Values",
+      "url": "https://www.amstat.org/asa/files/pdfs/p-valuestatement.pdf"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "分析の報告書は、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "計算式とグラフを並べるための文書ではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "依頼者が判断すべきことに対して、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "どこまで確かなことが分かり、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "何が分かっていないかを示すものです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "「数字が下がった」と「施策が効いた」は",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "別の主張です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "以下の例は架空の問い合わせ窓口です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "改善の目標は問い合わせの解決を早めることだと",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "新しい案内ページの公開前後で、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "完了した問い合わせの平均処理日数が八日から六日に",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "なりました。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "まず報告できるのは「この条件で",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "集計した完了案件の平均が",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "二日短くなった」という記述です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "未完了案件が対象から外れていれば、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "すべての問い合わせの待ち時間を代表しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "前後で窓口の担当者、問い合わせの難しさ、受付量、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "完了の定義が変わったかもしれません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "そうであれば新しい案内ページだけの因果効果は",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "読み取れません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "報告書には対象期間、分母、集計時点、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "欠損の扱いを記し、重要な条件が不明なら、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "そのまま不明と示します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "標本からの推定なら、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "標本誤差を信頼区間などで示せる場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "しかし、無回答者が偏っている、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "集計定義が変わった、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "別の施策が同時に始まった、という問題は信頼区間を",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "狭くしても解消しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "「統計的に有意だから実務上も重要」「信頼区間が",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "狭いから偏りはない」という結論は誤りです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "効果量の大きさと実務上の重要性も分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "例えば一日短縮の価値は、利用者の負担、費用、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "緊急性、他の業務への影響で異なります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "分析者は価値判断をデータだけに委ねるのではなく、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "判断者が比較できる条件を提示します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "最初に「観測した結果」と「現時点の推奨」を",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "区別して短く置き、その後に対象、方法、主な結果、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "代替説明、限界を続けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "再現に必要なデータ定義や詳細な計算は、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "必要な人が確認できる別の場所へ整理しても",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "かまいません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用者が図を見なくても理解できるように、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "比較値の意味を文章で説明します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "この例なら「平均が短くなったため継続導入を",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "断定する」より、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "「対象と測定方法をそろえて比較し、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "未完了も追跡しながら小規模に",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "継続する」という条件付きの提案が適切な場合が",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "あります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "費用やリスクが大きい決定なら、比較群を置くなど、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "より強い評価設計を求めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "分析報告で大切なのは、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "慎重な言葉を増やすことではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "結論の根拠、分からない点、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "次に何を確かめれば判断が変わるかを、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "相手が追えるようにすることです。",
+      "duration_multiplier": 1.15
+    }
+  ]
+}

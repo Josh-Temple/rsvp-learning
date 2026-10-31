@@ -308,6 +308,16 @@
       "chapters": [
         "analysis-kpi-denominators"
       ]
+    },
+    {
+      "id": "data-analysis-practice",
+      "title": "データ分析 V：実務・説明責任",
+      "chapters": [
+        "practical-pipelines-validation",
+        "practical-privacy-ethics",
+        "practical-report-decisions",
+        "practical-public-service-case"
+      ]
     }
   ]
 }
