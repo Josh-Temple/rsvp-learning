@@ -1,0 +1,289 @@
+{
+  "schema_version": 1,
+  "id": "modeling-time-series-forecasting",
+  "title": "時系列予測と予測誤差",
+  "topic": "データ分析",
+  "summary": "将来情報の漏えいを防ぎ、時系列予測と誤差を検証します。",
+  "created_at": "2026-10-31",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "Hyndman・Athanasopoulos：Forecasting: Principles and Practice, Chapter 5",
+      "url": "https://otexts.com/fpp3/toolbox.html"
+    },
+    {
+      "title": "scikit-learn：Common pitfalls",
+      "url": "https://scikit-learn.org/stable/common_pitfalls.html"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "店舗が来月の需要を見積もり、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "仕入れ量を決めるとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "過去の売上の傾向を説明することと、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "まだ見ていない月の需要を予測することは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "別の課題です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "将来予測では、いつ、何か月先を、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "どの情報で予測するかを固定します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "以下は架空の月次需要の例です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "長期的な増減をトレンド、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "毎年同じ時期などに繰り返す動きを季節性と",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "呼びます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "予測モデルはそれらを手掛かりにしますが、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "将来も同じ関係が続くという条件が伴います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "制度変更や供給停止まで、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "自動的に織り込めるわけではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "直近の値をそのまま次の予測にする方法や、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "前年同月の値を使う季節ナイーブ法は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "比較の基準になります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "複雑な式が、こうした単純な方法を将来データで",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "上回るかを確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "説明変数にも注意が必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "来月の気温の実測値を使って来月の需要を当てても",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "、今月末の予測能力を測ったことにはなりません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "その時点の天気予報を使うなら、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "当時入手できた予報を使って評価します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "後から改訂された統計や確定値にも同じ注意が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "バックテストは、過去の時点までの情報でモデルを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "作り、その先の実績と比べる評価です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "例えば六月末までで七月を予測し、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "次に七月末までで八月を予測するように、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "予測の起点を順に動かします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "学習や前処理には、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "各起点より前に利用可能だった情報だけを入れます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一か月先の仕入れを決めるなら、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "一か月先の誤差を評価します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "三か月先の計画にも使うなら、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "その先までの誤差を別に確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "モデル選択のために繰り返し見た期間と、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "最後の評価期間も区別します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "三つの月の実績が百、百二十、九十個で、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "事前の予測が百十、百、百個だったとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "予測誤差は実績から予測を引くので、マイナス十、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "プラス二十、マイナス十個です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "平均絶対誤差、MAEは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "符号を外した誤差を平均します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "十、二十、十を足して三で割るので、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "約十三点三個です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "補助式は `MAE＝絶対誤差の合計÷評価件数`",
+      "duration_multiplier": 1
+    },
+    {
+      "text": " です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "元の単位で読みやすい反面、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "大きな不足と余剰の負担が違う業務では、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "それぞれの損失も調べます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一点の予測に加え、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "将来の観測値を対象とする予測区間を示します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "これは、母平均などの推定の不確実性を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "表す信頼区間と同じものではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "九十五パーセントの予測区間は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "モデルや計算法の条件の下で、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "その割合の将来値を覆うよう作る幅です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "実際にどれほど区間内へ入ったか、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "幅が運用に使えるかも点検します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "予測が当たっても、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ある施策で需要を増やせるという因果の証拠には",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "なりません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "誤差と前提を示して、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "仕入れや予備在庫の判断へつなげます。",
+      "duration_multiplier": 1.15
+    }
+  ]
+}

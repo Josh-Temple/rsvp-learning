@@ -1454,6 +1454,54 @@
       "path": "./lessons/statistics-data-analysis/descriptive-cohort-segmentation.json",
       "status": "COMPLETE v0.1",
       "learn_path": "./learn/descriptive-cohort-segmentation.html"
+    },
+    {
+      "id": "inference-probability-random-variables",
+      "title": "確率・確率変数・分布",
+      "topic": "データ分析",
+      "path": "./lessons/statistics-data-analysis/inference-probability-random-variables.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/inference-probability-random-variables.html"
+    },
+    {
+      "id": "inference-sampling-error",
+      "title": "標本分布・標準誤差・標本サイズ",
+      "topic": "データ分析",
+      "path": "./lessons/statistics-data-analysis/inference-sampling-error.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/inference-sampling-error.html"
+    },
+    {
+      "id": "inference-power-multiple-testing",
+      "title": "検出力・標本サイズ・多重比較",
+      "topic": "データ分析",
+      "path": "./lessons/statistics-data-analysis/inference-power-multiple-testing.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/inference-power-multiple-testing.html"
+    },
+    {
+      "id": "modeling-linear-multiple-regression",
+      "title": "単回帰・重回帰と係数解釈",
+      "topic": "データ分析",
+      "path": "./lessons/statistics-data-analysis/modeling-linear-multiple-regression.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/modeling-linear-multiple-regression.html"
+    },
+    {
+      "id": "modeling-regression-assumptions",
+      "title": "回帰の前提・残差・診断",
+      "topic": "データ分析",
+      "path": "./lessons/statistics-data-analysis/modeling-regression-assumptions.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/modeling-regression-assumptions.html"
+    },
+    {
+      "id": "modeling-time-series-forecasting",
+      "title": "時系列予測と予測誤差",
+      "topic": "データ分析",
+      "path": "./lessons/statistics-data-analysis/modeling-time-series-forecasting.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/modeling-time-series-forecasting.html"
     }
   ]
 }

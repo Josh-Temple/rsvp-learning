@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="description" content="回帰係数の単位、複数条件の比較と因果の限界を学びます。"/><meta name="theme-color" content="#f2efe8"/>
+<title>単回帰・重回帰と係数解釈 — Learn</title><link rel="stylesheet" href="./learn.css"/><script src="./learn.js" defer></script></head>
+<body><div class="shell"><header class="top"><a href="../index.html">RSVPに戻る</a><span class="mode">LEARN · データ分析</span></header>
+<main><section class="reader" id="speech-reader" aria-label="読み上げプレイヤー"><div class="reader-row">
+<button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+<button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+<button id="speech-stop" type="button" aria-label="停止" disabled>■</button><select id="speech-voice" aria-label="読み上げ音声"></select>
+<label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+</div><div id="speech-status" class="reader-status" role="status">読み上げ準備中</div></section>
+<article id="learn-article">
+<h1>単回帰・重回帰と係数解釈</h1>
+<p class="lead">回帰係数の単位、複数条件の比較と因果の限界を学びます。</p>
+<p>配送時間を距離から見積もるとします。予測したい配送時間が目的変数、入力する距離が説明変数です。説明変数が一つの回帰を単回帰、複数を使う回帰を重回帰と呼びます。以下は式の読み方を学ぶ架空例で、実データに当てはめた推定結果ではありません。</p>
+<p>平均的な配送時間を「二十分に、一キロメートルにつき二分を加える」と表してみます。補助の式は `予測時間＝20＋2×距離` です。距離をキロメートルで入れると、時間は分で出ます。三キロなら二十に六を足して二十六分です。</p>
+<h2>係数には、入力一単位当たりの単位がある</h2>
+<p>距離の係数二は、一キロメートルの違いに対して、予測時間が二分違うというモデル内の関係です。距離をメートルへ変えれば係数の数字も変わります。係数の大小を、単位を確認せず比べないようにします。</p>
+<p>切片の二十は、説明変数がすべて零のときの予測値です。距離零の配送が現実に存在せず、観測範囲からも離れていれば、切片だけに強い意味を持たせません。個々の配送には、モデルに表れていない事情によるずれも残ります。</p>
+<h2>重回帰は、指定した他の条件をそろえて読む</h2>
+<p>混雑時間帯かどうかも入力します。通常時間帯を零、混雑時間帯を一とした変数を作り、`予測時間＝20＋2×距離＋5×混雑` と置きます。三キロなら、通常は二十六分、混雑時は三十一分です。</p>
+<p>距離の係数は、混雑区分が同じという条件での一キロ当たりの違いです。混雑の係数五は、距離が同じなら二つの区分で五分違うという意味です。「他の条件を一定」とは、このモデルに入れた変数についての話で、天候や道路事情まで同じになったという意味ではありません。</p>
+<p>この式では、混雑による違いが距離によらず五分だと置いています。長距離ほど混雑の影響が大きいなら、この形は不十分かもしれません。そのような条件による違いは、交互作用を扱う診断の章で考えます。</p>
+<h2>当てはめ方と、解釈の前提を分ける</h2>
+<p>最小二乗法は、観測値とモデル値のずれを二乗し、その合計が最も小さくなるよう係数を選ぶ方法です。大きなずれは二乗で強く効くため、極端な観測値の影響も確認します。</p>
+<p>線形という名称は、係数が足し算で入る形を指します。距離の二乗を説明変数に加えた曲線でも、係数について線形なモデルは作れます。一方、説明変数同士がほぼ同じ情報なら、個々の係数を安定して分けにくくなることがあります。</p>
+<p>重回帰で調整したからといって、混雑を変えた場合の因果効果が分かるとは限りません。係数を読む際は、変数の単位、固定した条件、使った範囲、残した要因を示します。因果を主張するなら、モデルの適合とは別に比較の妥当性を説明します。</p>
+</article>
+<section class="sources" aria-labelledby="sources-title"><h2 id="sources-title">出典</h2>
+<p><a href="https://www.itl.nist.gov/div898/handbook/pmd/section1/pmd141.htm">NIST：Linear Least Squares Regression</a></p>
+<p><a href="https://www.itl.nist.gov/div898/handbook/pmd/section1/pmd11.htm">NIST：What is process modeling?</a></p>
+<p><a href="https://www.itl.nist.gov/div898/handbook/eda/section3/eda33q.htm">NIST：Scatter Plot</a></p>
+</section></main></div></body></html>

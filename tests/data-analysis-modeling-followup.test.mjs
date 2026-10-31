@@ -7,7 +7,7 @@ const ids=["modeling-classification-metrics","modeling-causal-confounding","mode
 test("accepted modeling chapters retain RSVP, HTML, sources, and course order",async()=>{
  const lessons=JSON.parse(await read("lessons/index.json")).lessons;
  const course=JSON.parse(await read("courses/index.json")).courses.find(c=>c.id==="data-analysis-modeling");
- assert.deepEqual(course.chapters,["modeling-classification-metrics","modeling-validation-leakage","modeling-causal-confounding","modeling-quasi-experiments"]);
+ assert.deepEqual(course.chapters,["modeling-linear-multiple-regression","modeling-regression-assumptions","modeling-classification-metrics","modeling-validation-leakage","modeling-time-series-forecasting","modeling-causal-confounding","modeling-quasi-experiments"]);
  for(const id of ids){
   const meta=lessons.find(l=>l.id===id);assert.equal(meta?.status,"COMPLETE v0.1");
   const json=JSON.parse(await read(meta.path.slice(2)));

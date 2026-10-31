@@ -331,6 +331,9 @@
       "id": "data-analysis-inference",
       "title": "データ分析 III：推測統計・実験",
       "chapters": [
+        "inference-probability-random-variables",
+        "inference-sampling-error",
+        "inference-power-multiple-testing",
         "inference-randomized-experiments",
         "inference-ab-testing"
       ]
@@ -339,8 +342,11 @@
       "id": "data-analysis-modeling",
       "title": "データ分析 IV：回帰・予測・因果推論",
       "chapters": [
+        "modeling-linear-multiple-regression",
+        "modeling-regression-assumptions",
         "modeling-classification-metrics",
         "modeling-validation-leakage",
+        "modeling-time-series-forecasting",
         "modeling-causal-confounding",
         "modeling-quasi-experiments"
       ]

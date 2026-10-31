@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="description" content="検出力と多重比較の誤り率を区別して計画します。"/><meta name="theme-color" content="#f2efe8"/>
+<title>検出力・標本サイズ・多重比較 — Learn</title><link rel="stylesheet" href="./learn.css"/><script src="./learn.js" defer></script></head>
+<body><div class="shell"><header class="top"><a href="../index.html">RSVPに戻る</a><span class="mode">LEARN · データ分析</span></header>
+<main><section class="reader" id="speech-reader" aria-label="読み上げプレイヤー"><div class="reader-row">
+<button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+<button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+<button id="speech-stop" type="button" aria-label="停止" disabled>■</button><select id="speech-voice" aria-label="読み上げ音声"></select>
+<label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+</div><div id="speech-status" class="reader-status" role="status">読み上げ準備中</div></section>
+<article id="learn-article">
+<h1>検出力・標本サイズ・多重比較</h1>
+<p class="lead">検出力と多重比較の誤り率を区別して計画します。</p>
+<p>新しい配送手順で、平均の遅延を十分に減らせるかを調べるとします。「何件あればよいか」を考える前に、どれほどの改善なら費用に見合うかを決めます。ごく小さい差まで見分けるのか、実務上重要な差を見逃しにくくするのかで、必要な設計は変わります。以下は架空の例です。</p>
+<h2>検出力は、特定の差を見つける手続きの性質</h2>
+<p>検出力は、ある具体的な対立仮説が真であるとき、検定が帰無仮説を棄却する確率です。検出力が八十パーセントという計画なら、その差と仮定が成り立つ反復実施で、八割程度は棄却する設計を意味します。「改善が実在する確率が八割」という意味ではありません。</p>
+<p>検出力は、見つけたい差、ばらつき、標本数、有意水準、割当や測定の方法に依存します。同じ件数でも、小さい差や不安定な測定では見逃しやすくなります。有意水準を厳しくすれば、他の条件が同じなら検出力は下がり得ます。</p>
+<p>事前の標本サイズ設計では、意味のある最小の差と、過去の情報などから想定するばらつきを置きます。その想定が不確かなら、複数の値で必要件数の変化を調べます。標本数を増やすことでは、対象の偏りや測定のずれは解消しません。</p>
+<h2>検定を増やすと、偶然の発見も増える</h2>
+<p>配送の二十指標を別々に検定し、一つでもp値が〇点〇五未満なら「改善あり」と報告するとします。すべての帰無仮説が真で、各検定の誤った棄却率がちょうど五パーセント、さらに検定同士が独立なら、少なくとも一つを誤って棄却する確率は約六十四点二パーセントです。</p>
+<p>計算は `1−0.95^20` です。各検定で誤って棄却しない確率〇点九五を二十回掛け、そのすべてで誤らない確率を一から引きます。指標が関連していればこの数値にはなりませんが、一回の有意水準を多数の検定全体の誤り率と同一視できない点は変わりません。</p>
+<p>有限の二十検定について、全体で一つ以上の誤った棄却をする確率を五パーセント以下に抑える単純な方法が、ボンフェローニ補正です。一つの基準を、〇点〇五を二十で割った〇点〇〇二五にします。個々のp値が妥当なら、検定間の独立性はこの保証に不要です。ただし、基準が厳しくなり、差を見つけにくくなることがあります。</p>
+<h2>探索した結果を、そのまま確認済みにしない</h2>
+<p>多数の地域や期間を調べて気になる傾向を探すことは有用です。ただし、その探索で選んだ比較を、初めから唯一の仮説だったように報告してはいけません。調べた範囲と選び方を示し、必要なら別の標本で確かめます。</p>
+<p>確証を目的とする調査では、主要な比較、判断基準、必要件数を先に定めます。結果が出た後は、観測した差と区間を中心に不確実性を示します。検出力の数字を、得られた結論の正しさを証明する点数として使わないようにします。</p>
+</article>
+<section class="sources" aria-labelledby="sources-title"><h2 id="sources-title">出典</h2>
+<p><a href="https://www.itl.nist.gov/div898/handbook/eda/section3/eda35.htm">NIST：Quantitative Techniques</a></p>
+<p><a href="https://www.itl.nist.gov/div898/handbook/prc/section4/prc47.htm">NIST：How can we make multiple comparisons?</a></p>
+<p><a href="https://www.itl.nist.gov/div898/handbook/prc/section4/prc473.htm">NIST：Bonferroni's method</a></p>
+</section></main></div></body></html>

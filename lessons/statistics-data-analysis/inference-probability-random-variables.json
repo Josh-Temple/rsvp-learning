@@ -1,0 +1,313 @@
+{
+  "schema_version": 1,
+  "id": "inference-probability-random-variables",
+  "title": "確率・確率変数・分布",
+  "topic": "データ分析",
+  "summary": "条件付き確率、独立性と確率変数を具体例から学びます。",
+  "created_at": "2026-10-31",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "Hossein Pishro-Nik：Conditional Probability",
+      "url": "https://www.probabilitycourse.com/chapter1/1_4_0_conditional_probability.php"
+    },
+    {
+      "title": "NIST CSRC：Binomial Distribution",
+      "url": "https://csrc.nist.gov/glossary/term/binomial_distribution"
+    },
+    {
+      "title": "NIST：Binomial Distribution",
+      "url": "https://www.itl.nist.gov/div898/handbook/eda/section3/eda366i.htm"
+    },
+    {
+      "title": "NIST：Normal Distribution",
+      "url": "https://www.itl.nist.gov/div898/handbook/eda/section3/eda3661.htm"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "検品前には、次の製品が不良かどうかは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "分かりません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "「不良になる」は事象、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "つまり起こるかどうかを考える出来事です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "確率は、その出来事の起こりやすさを零から一で",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "表します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "二十パーセントは〇点二です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "以下は学習用に仮定した確率や件数で、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "実際の品質データではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "確率〇点二だから、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "五回試すたび必ず一回起きるわけではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "同じ条件で独立な試行を繰り返しても、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "短い区間の回数は変動します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "実際の過去の割合を、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "条件が違う次の製品の確率と見なしてよいかも別に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "検討します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "出荷百件のうち、急ぎの出荷が四十件、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "遅延した出荷が二十件、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "両方に該当するものが十件だったとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "この百件から一件を等しい確率で選ぶ場面を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "急ぎだったという条件の下で遅延した確率は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "四十件のうち十件なので二十五パーセントです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "遅延したという条件の下で急ぎだった確率は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "二十件のうち十件で五十パーセントです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "両方に該当する件数が同じでも、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "条件を逆にすると分母が変わります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "式では「Aの確率、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "Bという条件付き」を `P(A|B)` と",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "書き、AとBの両方が起きる確率を、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "Bが起きる確率で割ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "この式を使うには、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "Bの確率が零より大きいことが必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "式の縦線は「Bという条件で」と読みます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "独立とは、一方が起きたという情報によって、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "もう一方の確率が変わらない関係です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "独立な試行で、不良確率が毎回〇点二なら、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "三個とも不良でない確率は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "〇点八を三回掛けた〇点五一二です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "少なくとも一個が不良である確率は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "一からこれを引き、〇点四八八になります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "同じ不調な機械から続けて作った製品など、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "結果が関連する場合には、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "この掛け算をそのまま使えません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "各回の不良割合が二十パーセントという情報だけで",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "は、三個の結果の関係までは決まらないためです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "確率変数は、偶然の結果に応じて値が決まる数量で",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "す。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "三個の不良個数なら、零、一、二、三を取り得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "各値の確率をまとめたものが、その確率分布です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "先ほどのように独立で確率が一定の二択の試行を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "固定回数繰り返すとき、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "不良個数は二項分布で表せます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "その期待値は、試行回数と不良確率を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "掛けた〇点六個です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "期待値は同じ条件の集計を繰り返したときの平均を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "表すもので、一回の検品で〇点六個の不良が出ると",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "いう意味ではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一方、理想化した重量などの連続的な量は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "区間に入る確率で考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "連続分布の確率密度は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "曲線の高さそのものではなく、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "区間の面積が確率に対応します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "左右対称の釣鐘形をした正規分布は代表例ですが、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "あらゆる測定値が正規分布に従うわけでは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "分布を選ぶときには、値が個数か連続量か、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "試行が独立か、確率が一定かを確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "計算を始める前に、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "置いた条件を言葉で示すことが、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "確率を実務へ使う入口です。",
+      "duration_multiplier": 1.15
+    }
+  ]
+}
