@@ -316,16 +316,17 @@
       ]
     },
     {
-      "id": "data-analysis-practice",
-      "title": "データ分析 V：実務・説明責任",
+      "id": "data-analysis-descriptive",
+      "title": "データ分析 II：記述統計・可視化",
       "chapters": [
-        "practical-sql-grain-joins",
-        "practical-python-pandas",
-        "practical-pipelines-validation",
-        "practical-privacy-ethics",
-        "practical-dashboard-kpi",
-        "practical-report-decisions",
-        "practical-public-service-case"
+        "statistics-descriptive-distributions",
+        "descriptive-aggregation-grouping",
+        "descriptive-distribution-outliers",
+        "descriptive-visualization-choices",
+        "descriptive-rates-normalization",
+        "descriptive-crosstabs-simpson",
+        "descriptive-time-patterns",
+        "descriptive-cohort-segmentation"
       ]
     },
     {
@@ -357,17 +358,16 @@
       ]
     },
     {
-      "id": "data-analysis-descriptive",
-      "title": "データ分析 II：記述統計・可視化",
+      "id": "data-analysis-practice",
+      "title": "データ分析 V：実務・説明責任",
       "chapters": [
-        "statistics-descriptive-distributions",
-        "descriptive-aggregation-grouping",
-        "descriptive-distribution-outliers",
-        "descriptive-visualization-choices",
-        "descriptive-rates-normalization",
-        "descriptive-crosstabs-simpson",
-        "descriptive-time-patterns",
-        "descriptive-cohort-segmentation"
+        "practical-sql-grain-joins",
+        "practical-python-pandas",
+        "practical-pipelines-validation",
+        "practical-privacy-ethics",
+        "practical-dashboard-kpi",
+        "practical-report-decisions",
+        "practical-public-service-case"
       ]
     }
   ]
