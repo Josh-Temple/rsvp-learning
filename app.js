@@ -793,8 +793,8 @@ function closeLibrary() {
 
 async function loadCatalogs() {
   const [lessonResponse, courseResponse, listenResponse] = await Promise.all([
-    fetch("./lessons/index.json"),
-    fetch("./courses/index.json"),
+    fetch("./lessons/index.json", { cache: "no-store" }),
+    fetch("./courses/index.json", { cache: "no-store" }),
     fetch("./listen/index.json", { cache: "no-store" }),
   ]);
 
