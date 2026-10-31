@@ -162,11 +162,11 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "結合相手がない場合、右側の列はNULLになります",
+      "text": "結合相手がない場合、",
       "duration_multiplier": 1
     },
     {
-      "text": "。",
+      "text": "右側の列はNULLになります。",
       "duration_multiplier": 1.15
     },
     {
