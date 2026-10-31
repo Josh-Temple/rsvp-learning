@@ -1,0 +1,329 @@
+{
+  "schema_version": 1,
+  "id": "analysis-cleaning-reproducibility",
+  "title": "前処理・加工履歴・再現性",
+  "topic": "データ分析",
+  "summary": "前処理の判断と変更履歴を残し、再現性と妥当性を区別します。",
+  "created_at": "2026-10-31",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "Government Analysis Function：Reproducible Analytical Pipelines",
+      "url": "https://analysisfunction.civilservice.gov.uk/support/reproducible-analytical-pipelines/"
+    },
+    {
+      "title": "Government Analysis Function：Why take a more sophisticated approach to building your pipeline",
+      "url": "https://analysisfunction.civilservice.gov.uk/support/reproducible-analytical-pipelines/why-take-a-more-sophisticated-approach-to-building-your-pipeline/"
+    },
+    {
+      "title": "GOV.UK：The Government Data Quality Framework: guidance",
+      "url": "https://www.gov.uk/government/publications/the-government-data-quality-framework/the-government-data-quality-framework-guidance"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "架空の販売記録に、金額が負の行と、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "注文番号が同じ行がありました。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "負だから零へ直し、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "重複だから片方を消せばよいでしょうか。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "負の金額は返品かもしれません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "同じ注文番号の行は別の商品明細かもしれません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "前処理は、見た目を整える作業ではなく、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "分析で使う意味を保つための処理です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "クレンジングは、誤りや不整合を確認し、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "決めた規則に従って扱う作業です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "単位の統一、型の変換、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "コードの対応付けなども前処理に含まれます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ただし、値が珍しいという理由だけでは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "誤りとは判断できません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用と保管が許されている範囲で、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "受け取ったデータを直接上書きせず、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "加工用の版を分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "元の値と訂正後の値をたどれるようにし、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "訂正の根拠も残します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "元データの保存も、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "アクセス権や保存期限に従う必要があり、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "無期限に複製してよいという意味ではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "例えば、重量の列に「二キログラム」と",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "「二千グラム」が混在していれば、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "単位を確認して同じ量へ変換できます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "しかし、単位が不明な「二」という値を、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "都合よく推測して直すことはできません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "確認できない行は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "未確認として扱う規則を決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "除外も変更です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "「値が大きいから除外」では、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "分析者ごとに結果が変わります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "対象期間外、テスト用の注文、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "訂正前の重複配信など、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "判断できる条件と根拠を記します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "異常な値を除く場合も、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "残した結果と比べて結論への影響を確かめます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "再現性とは、用いた入力と処理条件をそろえ、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "結果を作り直せることです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "表計算の手作業でも、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "どの列に何をしたか記録できますが、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "毎回のコピーや選択を再現するには注意が要ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "繰り返す加工は、保存した手順やスクリプトへまと",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "める方法があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "必要なのは処理の説明だけではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "入力データの版、抽出した日時と対象、処理の版、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "使ったソフトウェアや設定、出力を対応付けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "乱数を使う処理では乱数の条件も記します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "データが毎日更新されるのに、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "同じファイル名を指定しただけでは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "同じ入力を使ったことになりません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "処理の順番も結果を変えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "返品を含む売上を集計してから欠損を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "確認する場合と、欠損のある行を落とし",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "てから集計する場合では、合計の対象が違い得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "順番と各段階の行数、除外件数、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "未確認件数を残すと、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "結果が変わった場所を探せます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "注文の合計金額を明細ごとに足す誤りをコードに",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "すれば、毎回同じ誤った合計が出ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "自動化や再実行の成功は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "計算の意味の検証を代わりに行うものでは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "小さな記録を人が追って計算した結果と照合し、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "元データの件数や合計との関係も確かめます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "逆に、結果の数字だけを保存しても、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "後で入力の訂正が見つかったときに、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "どこへ影響したかを調べにくくなります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "変更を追える記録があれば、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "必要な範囲をやり直し、以前との差を説明できます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "結果を渡す前に、別の担当者が、使った入力、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "適用した規則、除いた記録、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "再実行の方法を特定できるか確かめます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "前処理の良し悪しは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "きれいな表になったかだけでなく、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "その表を作った判断を追えるかで評価します。",
+      "duration_multiplier": 1.15
+    }
+  ]
+}

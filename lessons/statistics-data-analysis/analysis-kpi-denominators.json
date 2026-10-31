@@ -1,0 +1,353 @@
+{
+  "schema_version": 1,
+  "id": "analysis-kpi-denominators",
+  "title": "KPI・分母・測定単位",
+  "topic": "データ分析",
+  "summary": "指標の目的と分母、測定単位、追跡期間の違いを、問い合わせの架空例で学びます。",
+  "created_at": "2026-10-31",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "CDC：Lesson 3, Section 1, Frequency Measures",
+      "url": "https://archive.cdc.gov/www_cdc_gov/csels/dsepd/ss1978/lesson3/section1.html"
+    },
+    {
+      "title": "GOV.UK：Measuring completion rate",
+      "url": "https://www.gov.uk/service-manual/measuring-success/measuring-completion-rate"
+    },
+    {
+      "title": "Statistics Canada：Guidelines for ensuring data quality",
+      "url": "https://www150.statcan.gc.ca/n1/pub/12-539-x/2019001/ensuring-assurer-eng.htm"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "問い合わせ窓口で「再問い合わせが減った」と",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "報告されました。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "回数が減ったのか、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "再び連絡した人の割合が減ったのかによって、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "意味は変わります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "KPIは、目的に向けた状況を",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "継続して確かめる主要な指標です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "指標名だけでは測り方は決まらないため、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "何を一つと数えるかまで定義します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "以下の件数はすべて学習用の架空値です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ある期間の問い合わせ百件のうち、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "三十件が同じ問題についての二回目以降の",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "連絡だったとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "問い合わせ全体に占める再問い合わせの割合は、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "三十を百で割って百を掛け、三十パーセントです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "割合では、分子に数えた対象が分母にも",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "含まれる必要があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一方、連絡した利用者が六十人で、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "そのうち再び連絡した人が二十人なら、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "利用者に占める再連絡者は約三十三パーセントです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一人が三回以上連絡すれば、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "回数と人数は一致しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "この二つの割合は、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "同じ数字を別の方法で計算したものではなく、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "別の問いへの答えです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "式で補えば「再問い合わせの割合＝二回目以降の",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "問い合わせ件数÷全問い合わせ件数×百」です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "これは回数を単位とする指標です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "分子を三十件のまま、分母だけ六十人へ変えると、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "一人当たり零点五件という別の量になります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "「利用者の五十パーセントが再問い合わせした」とは",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "読めません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "「同じ問題」の判定には、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "問い合わせ番号を引き継ぐのか、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "内容を人が分類するのかという規則が必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "電話とメールを別々に数えるのかも決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "氏名が同じだから同一人物と断定するなど、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "不確かな照合で人数を作らないようにします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "期間も測定の一部です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "月末に初めて問い合わせた人は、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "翌月に再連絡するかもしれません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "当月中の再連絡だけを数えると、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "月初の利用者と追跡時間が違います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "「初回から七日以内」を見るなら、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "七日分を観測できた利用者を対象にし、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "まだ七日たっていない人を再連絡なしと",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "確定しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "七日はこの例の編集上の設定で、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "一般の推奨値ではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "分母が零なら割合は計算できません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "対象者なしと、対象者はいたが再連絡が",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "零だった場合は区別します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "また、確認できなかった連絡を",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "「再連絡なし」へ置き換えると、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "数字だけは良くなり得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "計算対象、除外理由、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "不明件数を結果と一緒に残します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "次の期間に再問い合わせが二十件へ減っても、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "全問い合わせが五十件なら割合は",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "四十パーセントです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "回数は減り、割合は上がっています。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "窓口の総負担と、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "一度で問題が解決したかは違う問いなので、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "どちらか片方を誤りと決めず、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "目的に合わせて読み分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "再問い合わせの少なさも、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "問題解決を直接観測したものではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "連絡しにくくなって諦めた人が増えた場合にも",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "下がり得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一次対応で解決できたかを知りたいなら、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "利用者への確認や未解決の記録も必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "主指標に加え、見落とすと困る負担や不利益を",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "確認する補助指標を置きます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "測定の定義には、目的、数える単位、分子、分母、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "期間、除外と不明の扱い、出所を記します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "途中で電話だけから全経路へ変えたなら、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "同じ「再問い合わせ率」という名前でも連続比較は",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "できません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "旧定義で再計算するか、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "変更点を示して系列を分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "良い指標は数字を一つに絞ることより、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "その数字で何を判断できるかが明確な指標です。",
+      "duration_multiplier": 1.15
+    }
+  ]
+}

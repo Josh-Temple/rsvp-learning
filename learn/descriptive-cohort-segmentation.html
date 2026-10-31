@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="利用開始時期で揃えた追跡と属性別比較の違いを理解します。" /><meta name="theme-color" content="#f2efe8" />
+<title>コホート・セグメントの比較 — Learn</title><link rel="stylesheet" href="./learn.css" /><script src="./learn.js" defer></script></head>
+<body><div class="shell"><header class="top"><a href="../index.html">RSVPに戻る</a><span class="mode">LEARN · データ分析</span></header>
+<main><section class="reader" id="speech-reader" aria-label="読み上げプレイヤー"><div class="reader-row">
+<button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+<button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+<button id="speech-stop" type="button" aria-label="停止" disabled>■</button>
+<select id="speech-voice" aria-label="読み上げ音声"></select>
+<label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+</div><div id="speech-status" class="reader-status" role="status">読み上げ準備中</div></section>
+<article id="learn-article">
+<h1>コホート・セグメントの比較</h1>
+<p class="lead">利用開始時期で揃えた追跡と属性別比較の違いを理解します。</p>
+<p>架空の定期サービスで、一月の登録者より二月の登録者の利用回数が少ないとします。三月末に数えたなら、一月の登録者は二月の登録者より長く利用できたため、累積回数だけでは比べにくくなります。開始から同じ期間をそろえる考え方が、コホート比較の基礎です。</p>
+<p>コホートは、登録月や利用開始月などの共通の条件でまとめ、時間の経過に沿って追う集団です。セグメントは、端末、地域、契約種別などの属性で分けた群です。コホートも広い意味では群分けですが、開始からどれだけ経過したかをそろえて追う用途を区別すると、分析の問いが明確になります。</p>
+<h2>暦の月と、登録後の月を分ける</h2>
+<p>一月登録の百人のうち、翌月の二月に一度以上利用した人が六十人だったとします。翌月利用割合は六十パーセントです。二月登録の二百人では、翌月の三月に百人が利用したので五十パーセントです。ここではどちらも「登録の翌月」を比べています。件数はすべて架空です。</p>
+<p>一月登録者の三月の利用を、二月登録者の三月と比べると、前者は登録から二か月目、後者は一か月目になります。同じ暦の月を比べる意味もありますが、継続の変化を見る問いとは異なります。</p>
+<p>この例の「翌月に利用した」は、毎月途切れず利用したことや、登録から翌月末までに一度でも使ったこととは違います。対象とする行動と期間を定義します。単に継続率という名前だけで、別の集計と同じ数字だと見なさないようにします。</p>
+<h2>まだ観測できない期間を零にしない</h2>
+<p>三月末の時点では、二月登録者が登録から二か月目の四月に使うかは分かりません。その欄へ零を入れると、全員が使わなかったという意味になってしまいます。未観測として残し、同じ長さの追跡ができる部分で比較します。</p>
+<p>同じ問題は、月途中の登録者を「登録後三十日」で評価するときにも起こります。三十日たつ前の人を、三十日以内に利用しなかった人として確定しません。観測が終わった時点と、結果がまだ分からない対象を記録します。</p>
+<h2>集団の違いを、施策の効果へ読み替えない</h2>
+<p>二月の翌月利用割合が低くても、登録画面の変更が原因とは限りません。広告で集まった人の目的、契約内容、季節などが違うかもしれません。開始時期をそろえることは、利用者の条件をすべてそろえることではありません。</p>
+<p>端末別などのセグメントを併用すれば、差がどこにあるかを調べられます。ただし、登録時点の端末か、現在の端末かを区別します。途中で変わる属性を使うと、どの集団を追っているかも変わり得ます。</p>
+<p>現在の有料会員だけを残して過去の利用を見ると、すでに解約した人が除かれます。継続しなかった人を取り除いた集計で、登録者全体の継続を評価することはできません。元の集団の誰が追跡から抜けたかも確かめます。</p>
+<p>コホート比較では、開始条件、各期間の行動の定義、元の人数、観測できた期間を一緒に残します。開始後の同じ時点を比べた差と、集団の構成や施策による差を分けて考えることで、追加で確かめるべき条件が見えてきます。</p>
+</article>
+<section class="sources" aria-labelledby="sources-title"><h2 id="sources-title">出典</h2>
+<p><a href="https://support.google.com/analytics/answer/9670133?hl=en">Google Analytics：Cohort exploration</a></p>
+<p><a href="https://www.gov.uk/service-manual/measuring-success/how-to-set-performance-metrics-for-your-service">GOV.UK：How to set performance metrics for your service</a></p>
+<p><a href="https://www.itl.nist.gov/div898/handbook/apr/section1/apr131.htm">NIST：Censoring</a></p>
+</section></main></div></body></html>

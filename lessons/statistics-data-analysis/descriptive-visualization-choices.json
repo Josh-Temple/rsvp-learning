@@ -1,0 +1,313 @@
+{
+  "schema_version": 1,
+  "id": "descriptive-visualization-choices",
+  "title": "グラフの選択と誤解を招く表示",
+  "topic": "データ分析",
+  "summary": "目的に合うグラフを選び、軸や比較期間による誤解を防ぎます。",
+  "created_at": "2026-10-31",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "Government Analysis Function：Data visualisation: charts",
+      "url": "https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-charts/"
+    },
+    {
+      "title": "NIST：Histogram",
+      "url": "https://www.itl.nist.gov/div898/handbook/eda/section3/eda33e.htm"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "問い合わせ件数が百件から百十件へ増えました。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "棒の縦軸を九十件から始めると、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "見える棒の長さは十と二十になり、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "二倍のように見えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "実際の件数は一割の増加です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "この架空例では、数字が正しくても、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "表示方法によって受け取る大きさが変わります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "グラフは、何を比較したいかに合わせて選びます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "カテゴリ間の大きさなら棒、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "時間の変化なら折れ線、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "数量の分布ならヒストグラム、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "二つの数量の関係なら散布図が基本の候補です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "使い慣れた図へすべてを入れると、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "区別したかった特徴が見えなくなります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "棒グラフは長さで量を比べるため、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "基本的に数値軸を零から始めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "小さな差を詳しく見せたいなら、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "値を点の位置で示す図や表を検討できます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "棒の途中を切って差を強調するより、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "比較の目的に合う表現へ変えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "折れ線グラフは、値の変化を線で追えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "数値軸を必ず零から始める必要はありませんが、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "範囲と単位を明示し、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "拡大によって変化を大きく",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "見せていないか確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "観測していない期間を、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "測定値が連続して存在したようにつなぐことも",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "避けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ヒストグラムの横軸は、数量の区間です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "カテゴリを並べた棒グラフとは違い、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "区間の幅にも意味があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "幅が異なる区間を使うときには、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "棒の高さだけで件数を比較できる表示かを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "確かめます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "面積で頻度を表す設計なら、その読み方も添えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "散布図では、一つの対象について二つの数量を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "一つの点で表します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "点が重なると記録の多さが見えなくなることも",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "あります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "右上がりの並びを見つけても、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "一方が他方の原因だと結論することはできません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "店舗別の問い合わせ件数を比べるなら、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "利用者数が違うことを確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "件数の図は総負担を見るには役立ちますが、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "利用者が問い合わせる起こりやすさとは違います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "割合の図へ変える場合も、分母と件数を示します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "比較期間が違えば、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "棒の高さも単純には比べられません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "今月の途中までと、先月の全日を並べるなら、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "その違いをはっきり示します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "複数の小さな図を並べる場合は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "軸の範囲が共通かどうかも確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "色や面積も意味を持ちます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "数値に比例した半径の円を描くと、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "面積は数値の二乗に比例し、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "見た目の差を拡大します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "面積で量を伝えるなら、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "面積を値に合わせる設計が必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "飾りの立体表現や、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "説明のない色分けが比較を難しくし",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ていないか点検します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "図には、何の値か、単位、対象、期間、出所、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "必要な注意を添えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "「赤い棒が高い」だけでは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "色を見分けにくい人や、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "音声で聞く人に伝わりません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "「問い合わせは百件から百十件へ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "十件増えた」のように、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "比較対象と差を文章でも説明します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "その文章には、図が示していない原因を足しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "伝えたい変化が、軸や除外期間の選び方を変えても",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "成り立つかを確かめると、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "見せ方に引かれた判断を減らせます。",
+      "duration_multiplier": 1.15
+    }
+  ]
+}

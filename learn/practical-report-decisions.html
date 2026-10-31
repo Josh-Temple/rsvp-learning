@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="観測結果と解釈を区別し、不確実性を意思決定に伝える方法を学びます。" />
+  <meta name="theme-color" content="#f2efe8" />
+  <title>分析報告・不確実性・意思決定 — Learn</title>
+  <link rel="stylesheet" href="./learn.css" />
+  <script src="./learn.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="top">
+      <a href="../index.html">RSVPに戻る</a>
+      <span class="mode">LEARN · データ分析</span>
+    </header>
+    <main>
+      <section class="reader" id="speech-reader" aria-label="読み上げプレイヤー">
+        <div class="reader-row">
+          <button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+          <button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+          <button id="speech-stop" type="button" aria-label="停止" disabled>■</button>
+          <select id="speech-voice" aria-label="読み上げ音声"></select>
+          <label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+        </div>
+        <div id="speech-status" class="reader-status" role="status">読み上げ準備中</div>
+      </section>
+      <article id="learn-article"><h1>分析報告・不確実性・意思決定</h1>
+<p class="lead">観測結果と解釈を区別し、不確実性を意思決定に伝える方法を学びます。</p>
+<p>分析の報告書は、計算式とグラフを並べるための文書ではありません。依頼者が判断すべきことに対して、どこまで確かなことが分かり、何が分かっていないかを示すものです。「数字が下がった」と「施策が効いた」は別の主張です。以下の例は架空の問い合わせ窓口です。</p>
+<h2>結論の前に、どんな問いだったかを示す</h2>
+<p>改善の目標は問い合わせの解決を早めることだとします。新しい案内ページの公開前後で、完了した問い合わせの平均処理日数が八日から六日になりました。まず報告できるのは「この条件で集計した完了案件の平均が二日短くなった」という記述です。未完了案件が対象から外れていれば、すべての問い合わせの待ち時間を代表しません。</p>
+<p>前後で窓口の担当者、問い合わせの難しさ、受付量、完了の定義が変わったかもしれません。そうであれば新しい案内ページだけの因果効果は読み取れません。報告書には対象期間、分母、集計時点、欠損の扱いを記し、重要な条件が不明なら、そのまま不明と示します。</p>
+<h2>数値の不確実性と、設計上の弱さを混ぜない</h2>
+<p>標本からの推定なら、標本誤差を信頼区間などで示せる場合があります。しかし、無回答者が偏っている、集計定義が変わった、別の施策が同時に始まった、という問題は信頼区間を狭くしても解消しません。「統計的に有意だから実務上も重要」「信頼区間が狭いから偏りはない」という結論は誤りです。</p>
+<p>効果量の大きさと実務上の重要性も分けます。例えば一日短縮の価値は、利用者の負担、費用、緊急性、他の業務への影響で異なります。分析者は価値判断をデータだけに委ねるのではなく、判断者が比較できる条件を提示します。</p>
+<h2>報告の構成は判断に合わせる</h2>
+<p>最初に「観測した結果」と「現時点の推奨」を区別して短く置き、その後に対象、方法、主な結果、代替説明、限界を続けます。再現に必要なデータ定義や詳細な計算は、必要な人が確認できる別の場所へ整理してもかまいません。利用者が図を見なくても理解できるように、比較値の意味を文章で説明します。</p>
+<p>この例なら「平均が短くなったため継続導入を断定する」より、「対象と測定方法をそろえて比較し、未完了も追跡しながら小規模に継続する」という条件付きの提案が適切な場合があります。費用やリスクが大きい決定なら、比較群を置くなど、より強い評価設計を求めます。</p>
+<p>分析報告で大切なのは、慎重な言葉を増やすことではありません。結論の根拠、分からない点、次に何を確かめれば判断が変わるかを、相手が追えるようにすることです。</p>
+</article>
+<section class="sources" aria-labelledby="sources-title"><h2 id="sources-title">出典</h2>
+<p><a href="https://www.gov.uk/government/publications/the-magenta-book">HM Treasury: The Magenta Book</a></p>
+<p><a href="https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-charts/">UK Government Analysis Function: Data visualisation — charts</a></p>
+<p><a href="https://www.amstat.org/asa/files/pdfs/p-valuestatement.pdf">American Statistical Association: Statement on Statistical Significance and P-Values</a></p>
+</section></main></div></body></html>

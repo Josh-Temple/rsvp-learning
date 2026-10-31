@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ja">
+<head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="集計の単位と重みを見極め、平均や割合の比較を誤らない方法を学びます。" /><meta name="theme-color" content="#f2efe8" />
+<title>集計・層別比較・重み付き平均 — Learn</title><link rel="stylesheet" href="./learn.css" /><script src="./learn.js" defer></script></head>
+<body><div class="shell">
+<header class="top"><a href="../index.html">RSVPに戻る</a><span class="mode">LEARN · データ分析</span></header>
+<main><section class="reader" id="speech-reader" aria-label="読み上げプレイヤー"><div class="reader-row">
+<button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+<button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+<button id="speech-stop" type="button" aria-label="停止" disabled>■</button>
+<select id="speech-voice" aria-label="読み上げ音声"></select>
+<label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+</div><div id="speech-status" class="reader-status" role="status">読み上げ準備中</div></section>
+<article id="learn-article">
+<h1>集計・層別比較・重み付き平均</h1>
+<p class="lead">集計の単位と重みを見極め、平均や割合の比較を誤らない方法を学びます。</p>
+<p>架空の二店舗で、来店者の待ち時間を調べました。店舗Aは十人で平均二分、店舗Bは九十人で平均十分です。二分と十分を足して二で割ると六分ですが、百人全体の平均待ち時間は六分にはなりません。以下はすべて架空の計算例です。</p>
+<p>集計は、目的に合わせてデータをまとめる操作です。店舗ごと、日ごと、商品ごとなどの区分を集計の軸と呼びます。同じ記録でも、軸と数える単位が変われば、結果の意味は変わります。</p>
+<h2>全体平均に、各群の大きさを反映する</h2>
+<p>Aの待ち時間の合計は、二分に十人を掛けた二十分です。Bは十分に九十人を掛けた九百分です。合計九百二十分を百人で割ると、全来店者の平均は九点二分になります。大半の来店者がBを利用しているので、全体平均もBの値に近づきます。</p>
+<p>これが人数で重み付けした平均です。式では「各群の平均×各群の人数」を合計し、全人数で割ります。一般の重み付き平均も、値に重みを掛けて足し、重みの合計で割ります。何を重みとしたかが、平均の意味を決めます。</p>
+<p>六分という単純平均も、計算自体が誤りなのではありません。「各店舗を同じ重さで見た、店舗別平均の平均」への答えです。来店者一人を同じ重さで扱う九点二分とは別です。店舗運営を比べたいのか、利用者全体の待ちを知りたいのかを先に決めます。</p>
+<h2>割合をまとめるときも、元の件数へ戻る</h2>
+<p>同じ百人のうち、Aで八人、Bで四十五人が待ち時間に満足したとします。Aは八十パーセント、Bは五十パーセントです。全体は肯定した五十三人を百人で割り、五十三パーセントです。八十と五十の平均の六十五パーセントを、全来店者の割合として使うと誤ります。</p>
+<p>集計済みの割合しかなく、分母が分からなければ、全体の割合を正しく再構成できない場合があります。群ごとの平均だけを保管して件数を失った場合も同様です。集計結果には、使った件数や合計も添えると、まとめ直すときに確認できます。</p>
+<h2>層別して、集計で隠れた違いを探す</h2>
+<p>層別比較は、条件で分けた群ごとに結果を比べることです。店舗ごとの待ち時間に差があれば、曜日や受付内容などで分けると、差がどこにあるかを調べられます。ただし、分け方を細かくしすぎると、各群の件数が少なくなり、一件の違いで大きく動きます。</p>
+<p>たとえば、一店舗に難しい手続が集中していれば、店舗平均の差は担当者の能力だけを表していません。層別は比較条件の違いに気付く手段ですが、群を分けただけで因果関係が確定するわけではありません。構成の違いで全体の比較が逆転する例は、別の章で扱います。</p>
+<p>また、すでに人数で重み付けされた集計に、もう一度人数を掛けるなど、重みの二重適用にも注意します。単なる件数の重みと、調査で対象集団へ広げるための抽出の重みは目的が違うため、同じものとして扱いません。</p>
+<p>結果をまとめるときは、「誰または何を等しく数えるか」を一文で説明します。全体の平均と群別の結果を併記すれば、全体の経験と、どこを改善するかという二つの判断を分けて考えられます。</p>
+</article>
+<section class="sources" aria-labelledby="sources-title"><h2 id="sources-title">出典</h2>
+<p><a href="https://numpy.org/doc/stable/reference/generated/numpy.average.html">NumPy：numpy.average</a></p>
+<p><a href="https://www.itl.nist.gov/div898/handbook/eda/section3/eda351.htm">NIST：Measures of Location</a></p>
+</section></main></div></body></html>

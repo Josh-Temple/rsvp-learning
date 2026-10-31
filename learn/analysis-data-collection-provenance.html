@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="データの出所と測定定義を確かめ、比較の前提を見極めます。" />
+  <meta name="theme-color" content="#f2efe8" />
+  <title>データ収集・出所・測定誤差 — Learn</title>
+  <link rel="stylesheet" href="./learn.css" />
+  <script src="./learn.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="top"><a href="../index.html">RSVPに戻る</a><span class="mode">LEARN · データ分析</span></header>
+    <main>
+      <section class="reader" id="speech-reader" aria-label="読み上げプレイヤー">
+        <div class="reader-row">
+          <button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+          <button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+          <button id="speech-stop" type="button" aria-label="停止" disabled>■</button>
+          <select id="speech-voice" aria-label="読み上げ音声"></select>
+          <label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+        </div>
+        <div id="speech-status" class="reader-status" role="status">読み上げ準備中</div>
+      </section>
+      <article id="learn-article">
+<h1>データ収集・出所・測定誤差</h1>
+<p class="lead">データの出所と測定定義を確かめ、比較の前提を見極めます。</p>
+<p>問い合わせ窓口の「初回応答までの時間」が短くなったとします。ところが、以前は担当者の返答、現在は自動受付メールを初回応答として記録していました。この架空例では、サービスが速くなったかを考える前に、同じものを測っているか確かめる必要があります。</p>
+<p>出所を確認するとは、誰が、何のために、どの方法で記録を作り、どんな加工をして手元へ届いたかをたどることです。ファイルの保管場所だけを知っていても、値の意味までは分かりません。</p>
+<h2>収集方法によって、見える範囲が違う</h2>
+<p>アンケートなら、質問文と回答方法が測定内容の一部です。「案内の正確さと速さに満足しましたか」と一度に尋ねると、どちらへの評価か分かりません。良い回答を促す表現や、回答者が理解しにくい言葉も影響し得ます。何を答えてほしいかを一つずつ示し、本番前に質問の理解を確かめます。</p>
+<p>業務ログは、処理や管理のための記録です。自動取得でも、利用者が感じた待ち時間をそのまま表すとは限りません。問い合わせ送信後にしか時計を動かさない仕組みなら、送信前に説明を探した時間は含まれません。記録が正しくても、知りたい体験の一部しか測っていない場合があります。</p>
+<p>公的統計も、表題だけで利用を決めません。対象、地域、調査時期、単位、速報か確定値か、改訂の有無などを確認します。今回の目的に合わなければ、信頼できる作成機関の値でも、そのまま比較には使えません。</p>
+<h2>測定誤差と、測るものの変更を区別する</h2>
+<p>測定誤差は、測ろうとした量と、記録した値とのずれです。機器のずれ、質問の誤解、記憶に基づく回答などが原因になります。ずれが偶然に変動する場合と、ある方向へ偏る場合を区別します。件数を増やすだけでは、全員に共通する時計のずれや、誘導的な質問による偏りは直せません。</p>
+<p>一方、冒頭の応答時間は、単なる入力誤りではなく定義が変わった例です。過去の値を一律に訂正すれば済むとは限りません。人の返信日時が新旧両方に残っていれば再集計できますが、残っていなければ、同じ尺度での過去比較はできないと説明します。</p>
+<p>記録の発生時刻と、データへ反映された時刻も分けます。今日取り出した表でも、数日前までの情報しか入っていないことがあります。「取得した日」と「何日時点の現象を表すか」は同じではありません。</p>
+<h2>データに説明を添えて受け渡す</h2>
+<p>メタデータは、データの意味や作られ方を説明する情報です。この例なら、初回応答の定義、対象経路、時間の単位、夜間の扱い、自動返信の扱い、更新頻度、変更日などが該当します。分析者が毎回推測して埋める情報ではありません。</p>
+<p>記録が足りない場合は、作成担当者に確かめ、確認できたことと不明なことを分けて残します。収集後の加工や、外部からの提供条件も記録します。ただし、出所の確認を理由に、分析に不要な個人情報まで複製する必要はありません。</p>
+<p>自動メールも含めた応答時間は、「受信したことを知らせる速さ」を調べるなら有用です。同じ指標が常に悪いわけではなく、目的と意味が合うかが問題です。次の分析者がその違いを判断できる説明まで含めて、データを引き継ぎます。</p>
+      </article>
+      <section class="sources" aria-labelledby="sources-title"><h2 id="sources-title">出典</h2>
+<p><a href="https://aapor.org/standards-and-ethics/best-practices/">AAPOR：Best Practices for Survey Research</a></p>
+<p><a href="https://www150.statcan.gc.ca/n1/pub/12-539-x/2019001/ensuring-assurer-eng.htm">Statistics Canada：Guidelines for ensuring data quality</a></p>
+<p><a href="https://www.gov.uk/government/publications/the-government-data-quality-framework/the-government-data-quality-framework-guidance">GOV.UK：The Government Data Quality Framework: guidance</a></p>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

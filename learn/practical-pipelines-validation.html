@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="入力データの版と変換手順を残し、品質検査と再現性の限界を学びます。" />
+  <meta name="theme-color" content="#f2efe8" />
+  <title>分析手順の再現・品質検査 — Learn</title>
+  <link rel="stylesheet" href="./learn.css" />
+  <script src="./learn.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="top">
+      <a href="../index.html">RSVPに戻る</a>
+      <span class="mode">LEARN · データ分析</span>
+    </header>
+    <main>
+      <section class="reader" id="speech-reader" aria-label="読み上げプレイヤー">
+        <div class="reader-row">
+          <button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+          <button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+          <button id="speech-stop" type="button" aria-label="停止" disabled>■</button>
+          <select id="speech-voice" aria-label="読み上げ音声"></select>
+          <label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+        </div>
+        <div id="speech-status" class="reader-status" role="status">読み上げ準備中</div>
+      </section>
+      <article id="learn-article"><h1>分析手順の再現・品質検査</h1>
+<p class="lead">入力データの版と変換手順を残し、品質検査と再現性の限界を学びます。</p>
+<p>毎月の報告書を手作業で作ると、担当者が交代したときにどの抽出条件を使ったか分からなくなることがあります。再現可能な分析手順とは、同じ版の入力と明示された処理規則を用い、他の担当者も結果を作り直して検査できる状態です。毎回同じ数字が出るだけで、その数字が現実を正しく表すとは限りません。</p>
+<h2>入力を固定し、変換を追えるようにする</h2>
+<p>架空の月次問い合わせ報告を考えます。第一段階では、入力ファイルの取得日時、ファイルの識別情報、データの定義、対象期間を残します。月末時点で抽出したデータと翌月に追記されたデータを混同しないためです。機密を含むデータなら、ファイルを誰でも取得できる場所へ公開するのではなく、権限を制御した保管先と検証方法を使います。</p>
+<p>第二段階では、日付の型変換、取消記録の扱い、重複判定、集計の手順を記録します。第三段階で出力表と計算結果を作り、最後に報告用の図や文章へ渡します。手作業が残るなら、誰が何を変えたかを説明できる記録が必要です。コード、使用ライブラリ、設定の版も合わせます。</p>
+<h2>「壊れたら止める」検査を置く</h2>
+<p>自動検査では、満たされるべき条件を明示します。例えば「受付ID、受付アイディーは一意」「日付が対象月に収まる」「処理時間は負にならない」「集計した件数と採用した入力行数が合う」です。これらはアサーション、つまり処理が期待する条件の検査として実装できます。</p>
+<p>ただし、正当な取消記録や時間の補正で例外があるなら、例外規則を先に決めます。「全数値は正」などの誤った条件は、正しいデータを除外してしまいます。検査は業務定義の代わりになりません。</p>
+<p>前月は受付千件、今月は百件だったとします。件数急減を警告する検査は有用ですが、入力が壊れたのか、窓口の運用が変わったのか、実際の受付が減ったのかは警告だけでは分かりません。失敗した条件、対象ファイル、発生時刻、対応履歴を残し、原因の調査へつなげます。</p>
+<h2>同じ結果、正しい結果、説明できる結果</h2>
+<p>同じ入力で同じ出力が得られることは再現性の一部です。元の記録に入力漏れがあれば、間違った数字を何度でも再現できます。別のデータで妥当性を調べること、現場の定義と照合すること、処理を別担当が見直すことが必要です。</p>
+<p>全手順の完全自動化ができなくても、範囲を定めて検査と履歴管理を改善できます。重要なのは、自動化率を誇ることではなく、数字が変わったときに、データ変更、規則変更、実際の変化を切り分けられることです。</p>
+</article>
+<section class="sources" aria-labelledby="sources-title"><h2 id="sources-title">出典</h2>
+<p><a href="https://analysisfunction.civilservice.gov.uk/support/reproducible-analytical-pipelines/">UK Government Analysis Function: Reproducible Analytical Pipelines</a></p>
+<p><a href="https://www.gov.uk/government/publications/the-government-data-quality-framework/the-government-data-quality-framework-guidance">UK Government Data Quality Framework</a></p>
+</section></main></div></body></html>

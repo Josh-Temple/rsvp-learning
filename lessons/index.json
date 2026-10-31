@@ -1246,6 +1246,270 @@
       "path": "./lessons/security-deep/security-container-serverless-saas-iot.json",
       "status": "COMPLETE v0.1",
       "learn_path": "./learn/security-container-serverless-saas-iot.html"
+    },
+    {
+      "id": "analysis-kpi-denominators",
+      "title": "KPI・分母・測定単位",
+      "topic": "データ分析",
+      "path": "./lessons/statistics-data-analysis/analysis-kpi-denominators.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/analysis-kpi-denominators.html"
+    },
+    {
+      "id": "practical-pipelines-validation",
+      "title": "分析手順の再現・品質検査",
+      "topic": "データ分析",
+      "path": "./lessons/statistics-data-analysis/practical-pipelines-validation.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/practical-pipelines-validation.html"
+    },
+    {
+      "id": "practical-privacy-ethics",
+      "title": "個人情報・公平性・データ利用倫理",
+      "topic": "データ分析",
+      "path": "./lessons/statistics-data-analysis/practical-privacy-ethics.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/practical-privacy-ethics.html"
+    },
+    {
+      "id": "practical-report-decisions",
+      "title": "分析報告・不確実性・意思決定",
+      "topic": "データ分析",
+      "path": "./lessons/statistics-data-analysis/practical-report-decisions.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/practical-report-decisions.html"
+    },
+    {
+      "id": "practical-public-service-case",
+      "title": "統合ケース：行政サービスの改善評価",
+      "topic": "データ分析",
+      "path": "./lessons/statistics-data-analysis/practical-public-service-case.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/practical-public-service-case.html"
+    },
+    {
+      "id": "analysis-problem-framing",
+      "title": "分析課題の定義と意思決定",
+      "topic": "データ分析",
+      "path": "./lessons/statistics-data-analysis/analysis-problem-framing.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/analysis-problem-framing.html"
+    },
+    {
+      "id": "analysis-data-quality-missingness",
+      "title": "データ品質・欠損・非回答",
+      "topic": "データ分析",
+      "path": "./lessons/statistics-data-analysis/analysis-data-quality-missingness.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/analysis-data-quality-missingness.html"
+    },
+    {
+      "id": "inference-randomized-experiments",
+      "title": "無作為化実験・比較群・交絡",
+      "topic": "データ分析",
+      "path": "./lessons/statistics-data-analysis/inference-randomized-experiments.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/inference-randomized-experiments.html"
+    },
+    {
+      "id": "inference-ab-testing",
+      "title": "A/Bテストの運用と意思決定",
+      "topic": "データ分析",
+      "path": "./lessons/statistics-data-analysis/inference-ab-testing.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/inference-ab-testing.html"
+    },
+    {
+      "id": "modeling-validation-leakage",
+      "title": "過学習・検証・データ漏えい",
+      "topic": "データ分析",
+      "path": "./lessons/statistics-data-analysis/modeling-validation-leakage.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/modeling-validation-leakage.html"
+    },
+    {
+      "id": "practical-sql-grain-joins",
+      "title": "分析SQL・JOIN・NULL・重複",
+      "topic": "データ分析",
+      "path": "./lessons/statistics-data-analysis/practical-sql-grain-joins.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/practical-sql-grain-joins.html"
+    },
+    {
+      "id": "practical-python-pandas",
+      "title": "Python・pandasによる探索と集計",
+      "topic": "データ分析",
+      "path": "./lessons/statistics-data-analysis/practical-python-pandas.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/practical-python-pandas.html"
+    },
+    {
+      "id": "practical-dashboard-kpi",
+      "title": "ダッシュボード・KPI監視",
+      "topic": "データ分析",
+      "path": "./lessons/statistics-data-analysis/practical-dashboard-kpi.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/practical-dashboard-kpi.html"
+    },
+    {
+      "id": "modeling-classification-metrics",
+      "title": "分類モデルと評価指標",
+      "topic": "データ分析",
+      "path": "./lessons/statistics-data-analysis/modeling-classification-metrics.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/modeling-classification-metrics.html"
+    },
+    {
+      "id": "modeling-causal-confounding",
+      "title": "交絡・因果図・調整の落とし穴",
+      "topic": "データ分析",
+      "path": "./lessons/statistics-data-analysis/modeling-causal-confounding.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/modeling-causal-confounding.html"
+    },
+    {
+      "id": "modeling-quasi-experiments",
+      "title": "準実験・差の差・回帰不連続",
+      "topic": "データ分析",
+      "path": "./lessons/statistics-data-analysis/modeling-quasi-experiments.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/modeling-quasi-experiments.html"
+    },
+    {
+      "id": "analysis-data-types-grain",
+      "title": "データ型・観測単位・粒度",
+      "topic": "データ分析",
+      "path": "./lessons/statistics-data-analysis/analysis-data-types-grain.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/analysis-data-types-grain.html"
+    },
+    {
+      "id": "analysis-data-collection-provenance",
+      "title": "データ収集・出所・測定誤差",
+      "topic": "データ分析",
+      "path": "./lessons/statistics-data-analysis/analysis-data-collection-provenance.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/analysis-data-collection-provenance.html"
+    },
+    {
+      "id": "analysis-cleaning-reproducibility",
+      "title": "前処理・加工履歴・再現性",
+      "topic": "データ分析",
+      "path": "./lessons/statistics-data-analysis/analysis-cleaning-reproducibility.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/analysis-cleaning-reproducibility.html"
+    },
+    {
+      "id": "descriptive-aggregation-grouping",
+      "title": "集計・層別比較・重み付き平均",
+      "topic": "データ分析",
+      "path": "./lessons/statistics-data-analysis/descriptive-aggregation-grouping.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/descriptive-aggregation-grouping.html"
+    },
+    {
+      "id": "descriptive-distribution-outliers",
+      "title": "探索的分析・分布の形・外れ値",
+      "topic": "データ分析",
+      "path": "./lessons/statistics-data-analysis/descriptive-distribution-outliers.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/descriptive-distribution-outliers.html"
+    },
+    {
+      "id": "descriptive-visualization-choices",
+      "title": "グラフの選択と誤解を招く表示",
+      "topic": "データ分析",
+      "path": "./lessons/statistics-data-analysis/descriptive-visualization-choices.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/descriptive-visualization-choices.html"
+    },
+    {
+      "id": "descriptive-rates-normalization",
+      "title": "割合・率・標準化と構成差",
+      "topic": "データ分析",
+      "path": "./lessons/statistics-data-analysis/descriptive-rates-normalization.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/descriptive-rates-normalization.html"
+    },
+    {
+      "id": "descriptive-crosstabs-simpson",
+      "title": "クロス集計とシンプソンのパラドックス",
+      "topic": "データ分析",
+      "path": "./lessons/statistics-data-analysis/descriptive-crosstabs-simpson.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/descriptive-crosstabs-simpson.html"
+    },
+    {
+      "id": "descriptive-time-patterns",
+      "title": "時系列の記述・季節性・比較期間",
+      "topic": "データ分析",
+      "path": "./lessons/statistics-data-analysis/descriptive-time-patterns.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/descriptive-time-patterns.html"
+    },
+    {
+      "id": "descriptive-cohort-segmentation",
+      "title": "コホート・セグメントの比較",
+      "topic": "データ分析",
+      "path": "./lessons/statistics-data-analysis/descriptive-cohort-segmentation.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/descriptive-cohort-segmentation.html"
+    },
+    {
+      "id": "inference-probability-random-variables",
+      "title": "確率・確率変数・分布",
+      "topic": "データ分析",
+      "path": "./lessons/statistics-data-analysis/inference-probability-random-variables.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/inference-probability-random-variables.html"
+    },
+    {
+      "id": "inference-sampling-error",
+      "title": "標本分布・標準誤差・標本サイズ",
+      "topic": "データ分析",
+      "path": "./lessons/statistics-data-analysis/inference-sampling-error.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/inference-sampling-error.html"
+    },
+    {
+      "id": "inference-power-multiple-testing",
+      "title": "検出力・標本サイズ・多重比較",
+      "topic": "データ分析",
+      "path": "./lessons/statistics-data-analysis/inference-power-multiple-testing.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/inference-power-multiple-testing.html"
+    },
+    {
+      "id": "modeling-linear-multiple-regression",
+      "title": "単回帰・重回帰と係数解釈",
+      "topic": "データ分析",
+      "path": "./lessons/statistics-data-analysis/modeling-linear-multiple-regression.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/modeling-linear-multiple-regression.html"
+    },
+    {
+      "id": "modeling-regression-assumptions",
+      "title": "回帰の前提・残差・診断",
+      "topic": "データ分析",
+      "path": "./lessons/statistics-data-analysis/modeling-regression-assumptions.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/modeling-regression-assumptions.html"
+    },
+    {
+      "id": "modeling-time-series-forecasting",
+      "title": "時系列予測と予測誤差",
+      "topic": "データ分析",
+      "path": "./lessons/statistics-data-analysis/modeling-time-series-forecasting.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/modeling-time-series-forecasting.html"
+    },
+    {
+      "id": "analysis-overview-complete",
+      "title": "データ分析と統計の入口：問いと結論",
+      "topic": "データ分析",
+      "path": "./lessons/statistics-data-analysis/analysis-overview-complete.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/analysis-overview-complete.html"
     }
   ]
 }

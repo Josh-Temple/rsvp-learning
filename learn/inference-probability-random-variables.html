@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="description" content="条件付き確率、独立性と確率変数を具体例から学びます。"/><meta name="theme-color" content="#f2efe8"/>
+<title>確率・確率変数・分布 — Learn</title><link rel="stylesheet" href="./learn.css"/><script src="./learn.js" defer></script></head>
+<body><div class="shell"><header class="top"><a href="../index.html">RSVPに戻る</a><span class="mode">LEARN · データ分析</span></header>
+<main><section class="reader" id="speech-reader" aria-label="読み上げプレイヤー"><div class="reader-row">
+<button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+<button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+<button id="speech-stop" type="button" aria-label="停止" disabled>■</button><select id="speech-voice" aria-label="読み上げ音声"></select>
+<label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+</div><div id="speech-status" class="reader-status" role="status">読み上げ準備中</div></section>
+<article id="learn-article">
+<h1>確率・確率変数・分布</h1>
+<p class="lead">条件付き確率、独立性と確率変数を具体例から学びます。</p>
+<p>検品前には、次の製品が不良かどうかは分かりません。「不良になる」は事象、つまり起こるかどうかを考える出来事です。確率は、その出来事の起こりやすさを零から一で表します。二十パーセントは〇点二です。以下は学習用に仮定した確率や件数で、実際の品質データではありません。</p>
+<p>確率〇点二だから、五回試すたび必ず一回起きるわけではありません。同じ条件で独立な試行を繰り返しても、短い区間の回数は変動します。実際の過去の割合を、条件が違う次の製品の確率と見なしてよいかも別に検討します。</p>
+<h2>条件を付けると、比べる対象が変わる</h2>
+<p>出荷百件のうち、急ぎの出荷が四十件、遅延した出荷が二十件、両方に該当するものが十件だったとします。この百件から一件を等しい確率で選ぶ場面を考えます。</p>
+<p>急ぎだったという条件の下で遅延した確率は、四十件のうち十件なので二十五パーセントです。遅延したという条件の下で急ぎだった確率は、二十件のうち十件で五十パーセントです。両方に該当する件数が同じでも、条件を逆にすると分母が変わります。</p>
+<p>式では「Aの確率、Bという条件付き」を P(A|B) と書き、AとBの両方が起きる確率を、Bが起きる確率で割ります。この式を使うには、Bの確率が零より大きいことが必要です。式の縦線は「Bという条件で」と読みます。</p>
+<h2>独立性は、計算の便利な仮定であって事実の保証ではない</h2>
+<p>独立とは、一方が起きたという情報によって、もう一方の確率が変わらない関係です。独立な試行で、不良確率が毎回〇点二なら、三個とも不良でない確率は、〇点八を三回掛けた〇点五一二です。少なくとも一個が不良である確率は、一からこれを引き、〇点四八八になります。</p>
+<p>同じ不調な機械から続けて作った製品など、結果が関連する場合には、この掛け算をそのまま使えません。各回の不良割合が二十パーセントという情報だけでは、三個の結果の関係までは決まらないためです。</p>
+<h2>起こり得る値を、分布で表す</h2>
+<p>確率変数は、偶然の結果に応じて値が決まる数量です。三個の不良個数なら、零、一、二、三を取り得ます。各値の確率をまとめたものが、その確率分布です。先ほどのように独立で確率が一定の二択の試行を固定回数繰り返すとき、不良個数は二項分布で表せます。</p>
+<p>その期待値は、試行回数と不良確率を掛けた〇点六個です。期待値は同じ条件の集計を繰り返したときの平均を表すもので、一回の検品で〇点六個の不良が出るという意味ではありません。</p>
+<p>一方、理想化した重量などの連続的な量は、区間に入る確率で考えます。連続分布の確率密度は、曲線の高さそのものではなく、区間の面積が確率に対応します。左右対称の釣鐘形をした正規分布は代表例ですが、あらゆる測定値が正規分布に従うわけではありません。</p>
+<p>分布を選ぶときには、値が個数か連続量か、試行が独立か、確率が一定かを確認します。計算を始める前に、置いた条件を言葉で示すことが、確率を実務へ使う入口です。</p>
+</article>
+<section class="sources" aria-labelledby="sources-title"><h2 id="sources-title">出典</h2>
+<p><a href="https://www.probabilitycourse.com/chapter1/1_4_0_conditional_probability.php">Hossein Pishro-Nik：Conditional Probability</a></p>
+<p><a href="https://csrc.nist.gov/glossary/term/binomial_distribution">NIST CSRC：Binomial Distribution</a></p>
+<p><a href="https://www.itl.nist.gov/div898/handbook/eda/section3/eda366i.htm">NIST：Binomial Distribution</a></p>
+<p><a href="https://www.itl.nist.gov/div898/handbook/eda/section3/eda3661.htm">NIST：Normal Distribution</a></p>
+</section></main></div></body></html>

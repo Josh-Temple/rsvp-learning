@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="pandasで入力・集計・結合の前後を確認し、欠損や重複に注意します。" />
+  <meta name="theme-color" content="#f2efe8" />
+  <title>Python・pandasによる探索と集計 — Learn</title>
+  <link rel="stylesheet" href="./learn.css" />
+  <script src="./learn.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="top"><a href="../index.html">RSVPに戻る</a><span class="mode">LEARN · データ分析</span></header>
+    <main>
+      <section class="reader" id="speech-reader" aria-label="読み上げプレイヤー">
+        <div class="reader-row">
+          <button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+          <button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+          <button id="speech-stop" type="button" aria-label="停止" disabled>■</button>
+          <select id="speech-voice" aria-label="読み上げ音声"></select>
+          <label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+        </div>
+        <div id="speech-status" class="reader-status" role="status">読み上げ準備中</div>
+      </section>
+      <article id="learn-article">
+        <h1>Python・pandasによる探索と集計</h1>
+        <p class="lead">pandasで入力・集計・結合の前後を確認し、欠損や重複に注意します。</p>
+<p>Pythonのpandasは、表形式のデータを扱うためのライブラリです。操作名を覚えることより、どの行が何を表し、処理の前後で何が変わるかを説明できることが重要です。ここでは架空の問い合わせ記録を、部署ごとに数える例を使います。</p>
+<h2>入力の意味と型を確かめる</h2>
+<p>一行が問い合わせ一件を表す表に、受付ID、部署、受付日、処理時間が入っています。読み込んだら、総行数、受付IDの重複、部署と処理時間の欠損、日付として読めない値を確認します。日付が文字列のままだと、日付順の並べ替えや期間の抽出を誤ることがあります。受付IDは数字に見えても、足し算する数量ではありません。</p>
+<p>次に、対象期間と対象部署を明示して行を選びます。対象外を落とした件数を控え、処理時間が記録された行だけを使うのか、全問い合わせ件数を使うのかを分けます。加工前の表を書き換えず、入力データの版と変換規則を残します。</p>
+<h2>groupbyの欠損キーに注意する</h2>
+<p>部署A二件、部署B一件、部署未記入一件の計四件があるとします。pandasのgroupby('部署') は、既定の dropna=True では、部署が欠損した行をグループのキーとして表示しません。その結果、部署別の件数を足して三件となっても、原データの四件と一致しません。</p>
+<p>欠損部署も一群として示したいなら groupby('部署', dropna=False) を検討します。ただし、「未記入」を正式な部署へ割り当てたことにはなりません。未記入の一件がどこに属するかは不明です。利用者が知りたいのが問い合わせ総数なら、部署別内訳の欠損群を含めて読みます。</p>
+<p>実際の集計コードは補助として、次のように示せます。この例は四行の架空データを作り、部署が未記入の行も集計に含めます。</p>
+<p>この例の出力は、入力行数が四、集計行数の合計が四、部署未記入が一です。</p>
+<p>この行が返すのはグループ別の行数です。count() は対象列のNULLの扱いによって結果が違うため、目的に合わせて選びます。</p>
+<h2>mergeで表が増える場合</h2>
+<p>問い合わせ一件の表に、対応履歴を結び付けると、一つの問い合わせに複数の対応がある場合に行が増えます。pandasの merge には validate='one_to_one' や validate='one_to_many' などの指定があり、キーの一意性について期待を検査できます。indicator=True なら左だけ、右だけ、両方にある行を区別できます。検査を通過しても、対応履歴の内容が現実を正しく表すとは限りません。</p>
+<p>さらに、pandasのmergeは、左右の結合キーがともに欠損している行を一致させることがあります。通常のSQLでNULL同士を等号で結合する場合とは異なるため、欠損キーを事前に数え、同一対象を意味すると考えてよいかを検討します。必要なら欠損キーの行を別に扱い、結合しなかった件数も残します。</p>
+<p>結果を保存する際は、入力の版、ライブラリの版、処理内容、行数の変化、欠損の扱いを一緒に記録します。複雑な処理を一行で書くより、途中結果を再計算できることが品質の基礎です。pandasは分析を助けますが、問いと分母を正しく定義する作業までは代行しません。</p>
+      </article>
+<section class="code-example" aria-label="画面確認用のコード"><h2>画面で確認する実行例</h2><pre><code>import pandas as pd
+
+df = pd.DataFrame({
+    &quot;受付ID&quot;: [1, 2, 3, 4],
+    &quot;部署&quot;: [&quot;A&quot;, &quot;A&quot;, &quot;B&quot;, None],
+})
+counts = df.groupby(&quot;部署&quot;, dropna=False).size()
+print(&quot;入力行数:&quot;, len(df))
+print(&quot;集計行数の合計:&quot;, int(counts.sum()))
+print(&quot;部署未記入:&quot;, int(counts[counts.index.isna()].iloc[0]))</code></pre>
+<pre><code>入力行数: 4
+集計行数の合計: 4
+部署未記入: 1</code></pre></section>
+
+      <section class="sources" aria-labelledby="sources-title"><h2 id="sources-title">出典</h2>
+<p><a href="https://pandas.pydata.org/docs/user_guide/groupby.html">pandas User Guide: GroupBy, GroupBy dropna</a></p>
+<p><a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.merge.html">pandas API: DataFrame.merge</a></p>
+<p><a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.groupby.html">pandas API: DataFrame.groupby</a></p>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

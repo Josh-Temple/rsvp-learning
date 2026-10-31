@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ja">
+<head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="目的に合うグラフを選び、軸や比較期間による誤解を防ぎます。" /><meta name="theme-color" content="#f2efe8" />
+<title>グラフの選択と誤解を招く表示 — Learn</title><link rel="stylesheet" href="./learn.css" /><script src="./learn.js" defer></script></head>
+<body><div class="shell">
+<header class="top"><a href="../index.html">RSVPに戻る</a><span class="mode">LEARN · データ分析</span></header>
+<main><section class="reader" id="speech-reader" aria-label="読み上げプレイヤー"><div class="reader-row">
+<button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+<button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+<button id="speech-stop" type="button" aria-label="停止" disabled>■</button>
+<select id="speech-voice" aria-label="読み上げ音声"></select>
+<label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+</div><div id="speech-status" class="reader-status" role="status">読み上げ準備中</div></section>
+<article id="learn-article">
+<h1>グラフの選択と誤解を招く表示</h1>
+<p class="lead">目的に合うグラフを選び、軸や比較期間による誤解を防ぎます。</p>
+<p>問い合わせ件数が百件から百十件へ増えました。棒の縦軸を九十件から始めると、見える棒の長さは十と二十になり、二倍のように見えます。実際の件数は一割の増加です。この架空例では、数字が正しくても、表示方法によって受け取る大きさが変わります。</p>
+<p>グラフは、何を比較したいかに合わせて選びます。カテゴリ間の大きさなら棒、時間の変化なら折れ線、数量の分布ならヒストグラム、二つの数量の関係なら散布図が基本の候補です。使い慣れた図へすべてを入れると、区別したかった特徴が見えなくなります。</p>
+<h2>図の形と、比較の意味をそろえる</h2>
+<p>棒グラフは長さで量を比べるため、基本的に数値軸を零から始めます。小さな差を詳しく見せたいなら、値を点の位置で示す図や表を検討できます。棒の途中を切って差を強調するより、比較の目的に合う表現へ変えます。</p>
+<p>折れ線グラフは、値の変化を線で追えます。数値軸を必ず零から始める必要はありませんが、範囲と単位を明示し、拡大によって変化を大きく見せていないか確認します。観測していない期間を、測定値が連続して存在したようにつなぐことも避けます。</p>
+<p>ヒストグラムの横軸は、数量の区間です。カテゴリを並べた棒グラフとは違い、区間の幅にも意味があります。幅が異なる区間を使うときには、棒の高さだけで件数を比較できる表示かを確かめます。面積で頻度を表す設計なら、その読み方も添えます。</p>
+<p>散布図では、一つの対象について二つの数量を一つの点で表します。点が重なると記録の多さが見えなくなることもあります。右上がりの並びを見つけても、一方が他方の原因だと結論することはできません。</p>
+<h2>同じ図の中でも、条件をそろえる</h2>
+<p>店舗別の問い合わせ件数を比べるなら、利用者数が違うことを確認します。件数の図は総負担を見るには役立ちますが、利用者が問い合わせる起こりやすさとは違います。割合の図へ変える場合も、分母と件数を示します。</p>
+<p>比較期間が違えば、棒の高さも単純には比べられません。今月の途中までと、先月の全日を並べるなら、その違いをはっきり示します。複数の小さな図を並べる場合は、軸の範囲が共通かどうかも確認します。</p>
+<p>色や面積も意味を持ちます。数値に比例した半径の円を描くと、面積は数値の二乗に比例し、見た目の差を拡大します。面積で量を伝えるなら、面積を値に合わせる設計が必要です。飾りの立体表現や、説明のない色分けが比較を難しくしていないか点検します。</p>
+<h2>図の結論を、文章でも伝える</h2>
+<p>図には、何の値か、単位、対象、期間、出所、必要な注意を添えます。「赤い棒が高い」だけでは、色を見分けにくい人や、音声で聞く人に伝わりません。「問い合わせは百件から百十件へ十件増えた」のように、比較対象と差を文章でも説明します。</p>
+<p>その文章には、図が示していない原因を足しません。伝えたい変化が、軸や除外期間の選び方を変えても成り立つかを確かめると、見せ方に引かれた判断を減らせます。</p>
+</article>
+<section class="sources" aria-labelledby="sources-title"><h2 id="sources-title">出典</h2>
+<p><a href="https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-charts/">Government Analysis Function：Data visualisation: charts</a></p>
+<p><a href="https://www.itl.nist.gov/div898/handbook/eda/section3/eda33e.htm">NIST：Histogram</a></p>
+</section></main></div></body></html>

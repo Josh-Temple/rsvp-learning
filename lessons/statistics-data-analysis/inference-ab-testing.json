@@ -1,0 +1,293 @@
+{
+  "schema_version": 1,
+  "id": "inference-ab-testing",
+  "title": "A/Bテストの運用と意思決定",
+  "topic": "データ分析",
+  "summary": "実験の指標と停止規則を決め、結果を判断へつなげます。",
+  "created_at": "2026-10-31",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "Johari・Pekelis・Walsh：Always Valid Inference: Continuous Monitoring of A/B Tests",
+      "url": "https://arxiv.org/pdf/1512.04922"
+    },
+    {
+      "title": "GOV.UK：How to set performance metrics for your service",
+      "url": "https://www.gov.uk/service-manual/measuring-success/how-to-set-performance-metrics-for-your-service"
+    },
+    {
+      "title": "ASA：p値に関する声明の公式発表",
+      "url": "https://www.amstat.org/asa/files/pdfs/p-valuestatement.pdf"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "A/Bテストは、二つの案を対象者へ割り当て、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "結果を比べる実験の運用形態です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "無作為割当の原理を、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "実際の画面やサービスで保つ必要があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ここでは架空の予約画面で、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "従来案Aと新案Bを比較します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "まず「利用者が予約を完了できるか」を主要指標に",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "クリック数だけでは、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "迷って何度も押した場合も増えるからです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "障害や問い合わせの増加など、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "改善と引き換えに悪化させたくない結果も",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "監視指標として定めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "対象者の条件、利用者単位の割当、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "同じ人には同じ案を出す規則、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "完了を数える期限を決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "標本サイズは検出したい差とばらつきから計画し、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "曜日の偏りや結果が確定するまでの時間も",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "踏まえて期間を設定します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "数字だけを満たせば、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "いつ終了してもよいとは限りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "運用中は、予定どおり割り当てられているか、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "両案のログが同じ定義で記録されるかを点検します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "割当人数の不自然な偏りや一方だけの記録漏れが",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "あれば、差の解釈を保留して原因を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "正常な割当でも、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "人数が常に完全に同じになるとは限りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "通常の固定標本の検定で、毎日結果を見て、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "都合のよいp値が出た時点を終了日に選ぶと、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "予定した誤り率が保てないことがあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "見ること自体より、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "その結果で検定や停止を選び直すことが問題です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "途中で判断したい場合は、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "逐次観測に対応した方法と停止規則を事前に",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "設計します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "逐次解析とは、情報が増える途中の判断も",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "含めて誤りを管理する手続きです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "単に「途中で見てもよい」と呼ぶだけでは",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "保証されません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "障害や利用者への不利益を監視して中止することは、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "実験運用で必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "その理由と時点を記録し、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "事前に予定した完了時点の確証結果とは",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "区別して報告します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "安全上の停止を、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "成功を選び取る手段に変えないことが大切です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "各案二百人のうち、Aで百二十人、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "Bで百三十人が期限内に完了したとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "完了率は六十パーセントと六十五パーセントで、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "差は五パーセントポイントです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "これは計算を説明する架空例で、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "二百人が十分な標本数だと推奨するものでは",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "ありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "差の区間、不利益側の指標、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "実装費用を確認して採用を判断します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "多数の指標や利用者層から、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "良かったものだけを選べば、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "偶然の差を成果と取り違えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "事前の主要指標と、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "後から見つけた傾向を分けて報告します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "不確実性が大きい場合は、「差がない」と決めず、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "現状を維持する、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "設計を改善して再実験するなどの選択肢を",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "比較します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "期限前の未確定結果を失敗として埋めず、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "同じ観測期間を確保して、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "判断できる範囲を明示します。",
+      "duration_multiplier": 1.15
+    }
+  ]
+}

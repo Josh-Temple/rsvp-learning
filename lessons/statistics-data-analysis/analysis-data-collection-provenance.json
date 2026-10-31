@@ -1,0 +1,329 @@
+{
+  "schema_version": 1,
+  "id": "analysis-data-collection-provenance",
+  "title": "データ収集・出所・測定誤差",
+  "topic": "データ分析",
+  "summary": "データの出所と測定定義を確かめ、比較の前提を見極めます。",
+  "created_at": "2026-10-31",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "AAPOR：Best Practices for Survey Research",
+      "url": "https://aapor.org/standards-and-ethics/best-practices/"
+    },
+    {
+      "title": "Statistics Canada：Guidelines for ensuring data quality",
+      "url": "https://www150.statcan.gc.ca/n1/pub/12-539-x/2019001/ensuring-assurer-eng.htm"
+    },
+    {
+      "title": "GOV.UK：The Government Data Quality Framework: guidance",
+      "url": "https://www.gov.uk/government/publications/the-government-data-quality-framework/the-government-data-quality-framework-guidance"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "問い合わせ窓口の「初回応答までの時間」が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "短くなったとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ところが、以前は担当者の返答、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "現在は自動受付メールを初回応答として記録し",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ていました。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "この架空例では、サービスが速くなったかを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "考える前に、同じものを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "測っているか確かめる必要があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "出所を確認するとは、誰が、何のために、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "どの方法で記録を作り、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "どんな加工をして手元へ届いたかをたどることです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ファイルの保管場所だけを知っていても、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "値の意味までは分かりません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "アンケートなら、質問文と回答方法が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "測定内容の一部です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "「案内の正確さと速さに満足しましたか」と一度に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "尋ねると、どちらへの評価か分かりません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "良い回答を促す表現や、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "回答者が理解しにくい言葉も影響し得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "何を答えてほしいかを一つずつ示し、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "本番前に質問の理解を確かめます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "業務ログは、処理や管理のための記録です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "自動取得でも、利用者が感じた待ち時間を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "そのまま表すとは限りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "問い合わせ送信後にしか時計を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "動かさない仕組みなら、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "送信前に説明を探した時間は含まれません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "記録が正しくても、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "知りたい体験の一部しか測っていない場合が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "あります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "公的統計も、表題だけで利用を決めません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "対象、地域、調査時期、単位、速報か確定値か、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "改訂の有無などを確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "今回の目的に合わなければ、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "信頼できる作成機関の値でも、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "そのまま比較には使えません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "測定誤差は、測ろうとした量と、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "記録した値とのずれです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "機器のずれ、質問の誤解、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "記憶に基づく回答などが原因になります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ずれが偶然に変動する場合と、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ある方向へ偏る場合を区別します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "件数を増やすだけでは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "全員に共通する時計のずれや、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "誘導的な質問による偏りは直せません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一方、冒頭の応答時間は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "単なる入力誤りではなく定義が変わった例です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "過去の値を一律に訂正すれば済むとは限りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "人の返信日時が新旧両方に残っていれば再集計で",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "きますが、残っていなければ、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "同じ尺度での過去比較はできないと説明します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "記録の発生時刻と、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "データへ反映された時刻も分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "今日取り出した表でも、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "数日前までの情報しか入っていないことがあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "「取得した日」と「何日時点の現象を表すか」は",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "同じではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "メタデータは、データの意味や作られ方を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "説明する情報です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "この例なら、初回応答の定義、対象経路、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "時間の単位、夜間の扱い、自動返信の扱い、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "更新頻度、変更日などが該当します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "分析者が毎回推測して埋める情報ではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "記録が足りない場合は、作成担当者に確かめ、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "確認できたことと不明なことを分けて残します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "収集後の加工や、外部からの提供条件も記録します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ただし、出所の確認を理由に、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "分析に不要な個人情報まで複製する必要は",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "自動メールも含めた応答時間は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "「受信したことを知らせる速さ」を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "調べるなら有用です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "同じ指標が常に悪いわけではなく、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "目的と意味が合うかが問題です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "次の分析者がその違いを判断できる説明まで",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "含めて、データを引き継ぎます。",
+      "duration_multiplier": 1.15
+    }
+  ]
+}

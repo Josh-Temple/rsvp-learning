@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ja">
+<head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="交絡因子、媒介変数、コライダーを区別し、因果推論の調整の限界を学びます。" /><meta name="theme-color" content="#f2efe8" />
+<title>交絡・因果図・調整の落とし穴 — Learn</title><link rel="stylesheet" href="./learn.css" /><script src="./learn.js" defer></script></head>
+<body><div class="shell"><header class="top"><a href="../index.html">RSVPに戻る</a><span class="mode">LEARN · データ分析</span></header>
+<main><section class="reader" id="speech-reader" aria-label="読み上げプレイヤー"><div class="reader-row">
+<button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+<button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+<button id="speech-stop" type="button" aria-label="停止" disabled>■</button>
+<select id="speech-voice" aria-label="読み上げ音声"></select>
+<label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+</div><div id="speech-status" class="reader-status" role="status">読み上げ準備中</div></section>
+<article id="learn-article"><h1>交絡・因果図・調整の落とし穴</h1><p class="lead">交絡因子、媒介変数、コライダーを区別し、因果推論の調整の限界を学びます。</p>
+<p>研修を受けた人ほど、後の業務成績が高かったとします。研修前の技能が高い人ほど参加しやすいなら、その違いも結果に混ざります。交絡は、知りたい介入と結果の関係に、共通の原因などを通る別の経路が重なる問題です。以下は仕組みを学ぶための架空の仮定です。</p>
+<p>因果図は、変数を点、直接の因果的な影響の方向を矢印で表した図です。ここで使う有向非巡回グラフは、矢印をたどって出発点へ戻る輪を持ちません。図は相関表から自動的に確定する事実ではなく、時間順や現場の知識に基づく仮定を明示するものです。</p>
+<h2>同じ変数でも、経路上の役割が重要</h2>
+<p>この例では、事前技能が研修参加と事後成績の両方へ影響すると仮定します。また、研修は自信を変え、それを通して成績にも影響するとします。事後の振り返り会への参加は、研修を受けたことと成績の両方に左右されると置きます。</p>
+<p>図を見なくても、三つの役割は次のように区別できます。事前技能は研修と成績へ枝分かれする共通原因、自信は研修から成績へつながる途中の変数、振り返り会への参加は研修と成績の矢印がぶつかる共通の結果です。</p>
+<h2>共通原因と、介入の途中の変数を混同しない</h2>
+<p>事前技能は、この仮定では交絡因子です。技能が同じ範囲の人同士を比較するなど、調整によって研修以外の経路を遮ることを考えます。ただし、意欲などの未測定の共通原因があれば、技能だけでは十分でないかもしれません。</p>
+<p>事後の自信は媒介変数です。研修の総効果、つまり自信を通る分も含めた変化を知りたいのに、自信を固定して比較すると、その経路を取り除いてしまいます。直接の効果を問うなら別の推定対象になりますが、自信を回帰に足すだけで妥当な直接効果が得られるとは限りません。</p>
+<h2>共通の結果で選ぶと、新しい偏りが生まれ得る</h2>
+<p>振り返り会への参加のように、経路上で二つの矢印が入る変数をコライダーと呼びます。参加者だけに絞ると、研修と成績を共通の結果で条件付けるため、もともと閉じていた経路が開き、比較が歪むことがあります。介入後に得た情報を何でも調整するのは危険です。</p>
+<p>調整では、介入と結果の共通原因を通る経路を遮り、必要な因果の経路を残し、コライダーの経路を開かないことを考えます。効果を観測データと仮定から一意に定められることを識別と呼び、回帰の当てはまりのよさとは区別します。</p>
+<p>実務では、介入の内容が同じ意味で定義され、調整する各範囲で比較する両群が存在するかも確認します。図に書かなかった原因がないか、測定や対象選択に問題がないかを検討し、どの仮定の下で何の効果を問うかを説明します。調整項目の数を増やすこと自体を、正しさの証拠にしないようにします。</p>
+</article>
+<section class="visual-supplement" aria-label="因果図の補足"><h2>因果図の対応</h2><p>事前技能から研修参加と事後成績へ向かう共通原因の矢印、研修参加から事後の自信を経て事後成績へ向かう媒介経路、研修参加と事後成績から振り返り会の参加へ向かう二つの矢印を扱います。</p></section>
+<section class="sources" aria-labelledby="sources-title"><h2 id="sources-title">出典</h2>
+<p><a href="https://ftp.cs.ucla.edu/pub/stat_ser/r350.pdf">Pearl：Causal inference in statistics: An overview</a></p>
+</section></main></div></body></html>

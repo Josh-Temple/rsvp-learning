@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="指標の目的と分母、測定単位、追跡期間の違いを、問い合わせの架空例で学びます。" />
+  <meta name="theme-color" content="#f2efe8" />
+  <title>KPI・分母・測定単位 — Learn</title>
+  <link rel="stylesheet" href="./learn.css" />
+  <script src="./learn.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="top">
+      <a href="../index.html">RSVPに戻る</a>
+      <span class="mode">LEARN · データ分析</span>
+    </header>
+    <main>
+      <section class="reader" id="speech-reader" aria-label="読み上げプレイヤー">
+        <div class="reader-row">
+          <button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+          <button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+          <button id="speech-stop" type="button" aria-label="停止" disabled>■</button>
+          <select id="speech-voice" aria-label="読み上げ音声"></select>
+          <label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+        </div>
+        <div id="speech-status" class="reader-status" role="status">読み上げ準備中</div>
+      </section>
+      <article id="learn-article"><h1>KPI・分母・測定単位</h1>
+<p class="lead">指標の目的と分母、測定単位、追跡期間の違いを、問い合わせの架空例で学びます。</p>
+<p>問い合わせ窓口で「再問い合わせが減った」と報告されました。回数が減ったのか、再び連絡した人の割合が減ったのかによって、意味は変わります。KPI、ケーピーアイは、目的に向けた状況を継続して確かめる主要な指標です。指標名だけでは測り方は決まらないため、何を一つと数えるかまで定義します。以下の件数はすべて学習用の架空値です。</p>
+<h2>分母が変わると、答える問いが変わる</h2>
+<p>ある期間の問い合わせ百件のうち、三十件が同じ問題についての二回目以降の連絡だったとします。問い合わせ全体に占める再問い合わせの割合は、三十を百で割って百を掛け、三十パーセントです。割合では、分子に数えた対象が分母にも含まれる必要があります。</p>
+<p>一方、連絡した利用者が六十人で、そのうち再び連絡した人が二十人なら、利用者に占める再連絡者は約三十三パーセントです。一人が三回以上連絡すれば、回数と人数は一致しません。この二つの割合は、同じ数字を別の方法で計算したものではなく、別の問いへの答えです。</p>
+<p>式で補えば「再問い合わせの割合＝二回目以降の問い合わせ件数÷全問い合わせ件数×百」です。これは回数を単位とする指標です。分子を三十件のまま、分母だけ六十人へ変えると、一人当たり零点五件という別の量になります。「利用者の五十パーセントが再問い合わせした」とは読めません。</p>
+<h2>名前と式に、対象と時間を添える</h2>
+<p>「同じ問題」の判定には、問い合わせ番号を引き継ぐのか、内容を人が分類するのかという規則が必要です。電話とメールを別々に数えるのかも決めます。氏名が同じだから同一人物と断定するなど、不確かな照合で人数を作らないようにします。</p>
+<p>期間も測定の一部です。月末に初めて問い合わせた人は、翌月に再連絡するかもしれません。当月中の再連絡だけを数えると、月初の利用者と追跡時間が違います。「初回から七日以内」を見るなら、七日分を観測できた利用者を対象にし、まだ七日たっていない人を再連絡なしと確定しません。七日はこの例の編集上の設定で、一般の推奨値ではありません。</p>
+<p>分母が零なら割合は計算できません。対象者なしと、対象者はいたが再連絡が零だった場合は区別します。また、確認できなかった連絡を「再連絡なし」へ置き換えると、数字だけは良くなり得ます。計算対象、除外理由、不明件数を結果と一緒に残します。</p>
+<h2>指標が改善しても、目的が達成されたとは限らない</h2>
+<p>次の期間に再問い合わせが二十件へ減っても、全問い合わせが五十件なら割合は四十パーセントです。回数は減り、割合は上がっています。窓口の総負担と、一度で問題が解決したかは違う問いなので、どちらか片方を誤りと決めず、目的に合わせて読み分けます。</p>
+<p>再問い合わせの少なさも、問題解決を直接観測したものではありません。連絡しにくくなって諦めた人が増えた場合にも下がり得ます。一次対応で解決できたかを知りたいなら、利用者への確認や未解決の記録も必要です。主指標に加え、見落とすと困る負担や不利益を確認する補助指標を置きます。</p>
+<p>測定の定義には、目的、数える単位、分子、分母、期間、除外と不明の扱い、出所を記します。途中で電話だけから全経路へ変えたなら、同じ「再問い合わせ率」という名前でも連続比較はできません。旧定義で再計算するか、変更点を示して系列を分けます。良い指標は数字を一つに絞ることより、その数字で何を判断できるかが明確な指標です。</p>
+</article>
+<section class="sources" aria-labelledby="sources-title"><h2 id="sources-title">出典</h2>
+<p><a href="https://archive.cdc.gov/www_cdc_gov/csels/dsepd/ss1978/lesson3/section1.html">CDC：Lesson 3, Section 1, Frequency Measures</a></p>
+<p><a href="https://www.gov.uk/service-manual/measuring-success/measuring-completion-rate">GOV.UK：Measuring completion rate</a></p>
+<p><a href="https://www150.statcan.gc.ca/n1/pub/12-539-x/2019001/ensuring-assurer-eng.htm">Statistics Canada：Guidelines for ensuring data quality</a></p>
+</section></main></div></body></html>

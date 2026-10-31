@@ -1,0 +1,277 @@
+{
+  "schema_version": 1,
+  "id": "modeling-linear-multiple-regression",
+  "title": "単回帰・重回帰と係数解釈",
+  "topic": "データ分析",
+  "summary": "回帰係数の単位、複数条件の比較と因果の限界を学びます。",
+  "created_at": "2026-10-31",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "NIST：Linear Least Squares Regression",
+      "url": "https://www.itl.nist.gov/div898/handbook/pmd/section1/pmd141.htm"
+    },
+    {
+      "title": "NIST：What is process modeling?",
+      "url": "https://www.itl.nist.gov/div898/handbook/pmd/section1/pmd11.htm"
+    },
+    {
+      "title": "NIST：Scatter Plot",
+      "url": "https://www.itl.nist.gov/div898/handbook/eda/section3/eda33q.htm"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "配送時間を距離から見積もるとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "予測したい配送時間が目的変数、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "入力する距離が説明変数です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "説明変数が一つの回帰を単回帰、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "複数を使う回帰を重回帰と呼びます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "以下は式の読み方を学ぶ架空例で、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "実データに当てはめた推定結果ではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "平均的な配送時間を「二十分に、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "一キロメートルにつき二分を加える」と表し",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "てみます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "補助の式は 予測時間＝20＋2×距離 です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "距離をキロメートルで入れると、時間は分で出ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "三キロなら二十に六を足して二十六分です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "距離の係数二は、一キロメートルの違いに対して、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "予測時間が二分違うというモデル内の関係です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "距離をメートルへ変えれば係数の数字も変わります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "係数の大小を、単位を確認せず",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "比べないようにします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "切片の二十は、説明変数がすべて零のと",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "きの予測値です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "距離零の配送が現実に存在せず、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "観測範囲からも離れていれば、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "切片だけに強い意味を持たせません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "個々の配送には、モデルに表れていない事情に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "よるずれも残ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "混雑時間帯かどうかも入力します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "通常時間帯を零、混雑時間帯を一とした変数を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "作り、予測時間＝20＋2×距離＋5×混雑",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "と置きます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "三キロなら、通常は二十六分、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "混雑時は三十一分です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "距離の係数は、混雑区分が同じという条件で",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "の一キロ当たりの違いです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "混雑の係数五は、距離が同じなら二つの区分で",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "五分違うという意味です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "「他の条件を一定」とは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "このモデルに入れた変数についての話で、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "天候や道路事情まで同じになったという意味では",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "この式では、混雑による違いが距離に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "よらず五分だと置いています。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "長距離ほど混雑の影響が大きいなら、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "この形は不十分かもしれません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "そのような条件による違いは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "交互作用を扱う診断の章で考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "最小二乗法は、観測値とモデル値のずれを二乗し、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "その合計が最も小さくなるよう係数を選ぶ方法です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "大きなずれは二乗で強く効くため、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "極端な観測値の影響も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "線形という名称は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "係数が足し算で入る形を指します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "距離の二乗を説明変数に加えた曲線でも、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "係数について線形なモデルは作れます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一方、説明変数同士がほぼ同じ情報なら、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "個々の係数を安定して分けにくくなることが",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "あります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "重回帰で調整したからといって、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "混雑を変えた場合の因果効果が分かるとは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "限りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "係数を読む際は、変数の単位、固定した条件、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "使った範囲、残した要因を示します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "因果を主張するなら、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "モデルの適合とは別に比較の妥当性を説明します。",
+      "duration_multiplier": 1.15
+    }
+  ]
+}

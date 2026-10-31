@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="分析SQLで観測単位を保ち、結合・欠損・集計の誤りを見抜きます。" />
+  <meta name="theme-color" content="#f2efe8" />
+  <title>分析SQL・JOIN・NULL・重複 — Learn</title>
+  <link rel="stylesheet" href="./learn.css" />
+  <script src="./learn.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="top"><a href="../index.html">RSVPに戻る</a><span class="mode">LEARN · データ分析</span></header>
+    <main>
+      <section class="reader" id="speech-reader" aria-label="読み上げプレイヤー">
+        <div class="reader-row">
+          <button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+          <button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+          <button id="speech-stop" type="button" aria-label="停止" disabled>■</button>
+          <select id="speech-voice" aria-label="読み上げ音声"></select>
+          <label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+        </div>
+        <div id="speech-status" class="reader-status" role="status">読み上げ準備中</div>
+      </section>
+      <article id="learn-article">
+        <h1>分析SQL・JOIN・NULL・重複</h1>
+        <p class="lead">分析SQLで観測単位を保ち、結合・欠損・集計の誤りを見抜きます。</p>
+<p>分析用SQLでは、構文が正しく実行できたことと、問いに正しい数字を返したことは別です。たとえば注文の実績を求めるとき、「注文一件」を数えるのか「商品明細一行」を数えるのかで答えが変わります。ここではSQLの基本構文は再説明せず、抽出後の数字が何を表すかを確かめます。数値はすべて架空の例です。</p>
+<h2>一行が何を指すかを先に決める</h2>
+<p>三件の注文があり、各注文の明細数が二件、一件、三件だとします。注文テーブルは三行、明細テーブルは六行です。注文IDで内結合すると、注文情報が各明細へ繰り返され、結果は六行になります。COUNT(*) が六を返しても「注文が六件」とは言えません。注文IDが重複した結果を数えるなら、必要な条件を確認したうえで COUNT(DISTINCT 注文ID) を使う方法があります。</p>
+<p>ただし、DISTINCT を付ければ常に正しいわけでもありません。顧客ごとの注文件数、商品ごとの明細数、売上金額では欲しい粒度が違います。注文テーブルの金額を明細との結合後に単純合計すると、注文ごとに明細数の回数だけ重複計上します。正しい集計単位へ先にまとめてから結合する、結合条件を見直すなど、設計から修正する必要があります。</p>
+<h2>結合の欠落と行数の増加を両方調べる</h2>
+<p>一対多の結合では行が増え得ます。一対一を期待しているのに行が増えたなら、左右のキーに想定外の重複がないか確認します。逆に内結合後に注文が減ったなら、対応する明細を持たない注文が落ちた可能性があります。未処理の注文を含む指標では重大です。</p>
+<p>左外部結合は左の注文を残すのに役立ちますが、右側が複数一致すれば行は増えます。結合相手がない場合、右側の列はNULLになります。相手の行があっても、点数などの列だけがNULLのこともあります。両者を区別するには、結合先で必ず値が入る識別子などを確認します。結合後に右側の列へ WHERE 条件をかけると、NULLを含む左側の行が除外され、意図せず内結合に近い結果になる場合もあります。</p>
+<h2>NULLとゼロは、同じ数字ではない</h2>
+<p>NULLは未記録・適用外などを含み得る「値がない」という状態であり、数値のゼロとは違います。PostgreSQLの COUNT(*) は行数を数え、COUNT(対象列) はその列がNULLでない行を数えます。例えば回答五行のうち点数の入力が三行だけなら、回答行数五と点数の観測数三は分けて報告します。平均値を計算する際も欠損二件を勝手にゼロとみなせません。</p>
+<p>抽出条件を変更したときは、対象期間、除外した状態、重複処理、結合後の件数、欠損数を記録します。結合前後のユニークな注文ID数と件数の照合は、異常を見つける検査です。それだけで金額の正しさが保証されるわけではありません。</p>
+<p>同じSQLでも、元データの更新時刻や定義が変われば結果も変わります。数字だけを報告せず、対象、粒度、除外条件、利用データの版を添えると、別の担当者が解釈と再計算を確認できます。</p>
+      </article>
+
+      <section class="sources" aria-labelledby="sources-title"><h2 id="sources-title">出典</h2>
+<p><a href="https://www.postgresql.org/docs/current/queries-table-expressions.html">PostgreSQL 18 Documentation: 7.2.1 Joined Tables</a></p>
+<p><a href="https://www.postgresql.org/docs/current/functions-aggregate.html">PostgreSQL 18 Documentation: 9.21 Aggregate Functions</a></p>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

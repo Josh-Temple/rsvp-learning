@@ -1,0 +1,257 @@
+{
+  "schema_version": 1,
+  "id": "modeling-causal-confounding",
+  "title": "交絡・因果図・調整の落とし穴",
+  "topic": "データ分析",
+  "summary": "交絡因子、媒介変数、コライダーを区別し、因果推論の調整の限界を学びます。",
+  "created_at": "2026-10-31",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "Pearl：Causal inference in statistics: An overview",
+      "url": "https://ftp.cs.ucla.edu/pub/stat_ser/r350.pdf"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "研修を受けた人ほど、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "後の業務成績が高かったとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "研修前の技能が高い人ほど参加しやすいなら、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "その違いも結果に混ざります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "交絡は、知りたい介入と結果の関係に、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "共通の原因などを通る別の経路が重なる問題です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "以下は仕組みを学ぶための架空の仮定です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "因果図は、変数を点、直接の因果的な影響の方向を矢",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "印で表した図です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ここで使う有向非巡回グラフは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "矢印をたどって出発点へ戻る輪を持ちません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "図は相関表から自動的に確定する事実ではなく、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "時間順や現場の知識に基づく仮定を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "明示するものです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "この例では、事前技能が研修参加と事後成績の両方へ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "影響すると仮定します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "また、研修は自信を変え、それを通して成績にも影響",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "するとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "事後の振り返り会への参加は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "研修を受けたことと",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "成績の両方に左右されると置きます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "図を見なくても、三つの役割は",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "次のように区別できます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "事前技能は研修と成績へ枝分かれする共通原因、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "自信は研修から成績へつながる途中の変数、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "振り返り会への参加は研修と成績の矢印がぶつかる共",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "通の結果です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "事前技能は、この仮定では交絡因子です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "技能が同じ範囲の人同士を比較するなど、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "調整によって研修以外の経路を遮ることを考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ただし、意欲などの未測定の共通原因があれば、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "技能だけでは十分でないかもしれません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "事後の自信は媒介変数です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "研修の総効果、つまり自信を通る分も含めた変化を知",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "りたいのに、自信を固定して比較すると、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "その経路を取り除いてしまいます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "直接の効果を問うなら別の推定対象になりますが、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "自信を回帰に足すだけで妥当な直接効果が得られると",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "は限りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "振り返り会への参加のように、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "経路上で二つの矢印が入る変数を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "コライダーと呼びます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "参加者だけに絞ると、研修と成績を共通の結果で条件",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "付けるため、もともと閉じていた経路が開き、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "比較が歪むことがあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "介入後に得た情報を何でも調整するのは危険です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "調整では、介入と結果の共通原因を通る経路を遮り、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "必要な因果の経路を残し、コライダーの経路を開かな",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "いことを考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "効果を観測データと仮定から一意に定められることを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "識別と呼び、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "回帰の当てはまりのよさとは区別します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "実務では、介入の内容が同じ意味で定義され、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "調整する各範囲で",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "比較する両群が存在するかも確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "図に書かなかった原因がないか、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "測定や対象選択に問題がないかを検討し、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "どの仮定の下で何の効果を問うかを説明します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "調整項目の数を増やすこと自体を、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "正しさの証拠にしないようにします。",
+      "duration_multiplier": 1.15
+    }
+  ]
+}

@@ -1,0 +1,317 @@
+{
+  "schema_version": 1,
+  "id": "descriptive-cohort-segmentation",
+  "title": "コホート・セグメントの比較",
+  "topic": "データ分析",
+  "summary": "利用開始時期で揃えた追跡と属性別比較の違いを理解します。",
+  "created_at": "2026-10-31",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "Google Analytics：Cohort exploration",
+      "url": "https://support.google.com/analytics/answer/9670133?hl=en"
+    },
+    {
+      "title": "GOV.UK：How to set performance metrics for your service",
+      "url": "https://www.gov.uk/service-manual/measuring-success/how-to-set-performance-metrics-for-your-service"
+    },
+    {
+      "title": "NIST：Censoring",
+      "url": "https://www.itl.nist.gov/div898/handbook/apr/section1/apr131.htm"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "架空の定期サービスで、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "一月の登録者より二月の登録者の利用回数が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "少ないとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "三月末に数えたなら、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "一月の登録者は二月の登録者より長く利用で",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "きたため、累積回数だけでは比べにくくなります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "開始から同じ期間をそろえる考え方が、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "コホート比較の基礎です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "コホートは、登録月や利用開始月などの共通の条件",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "でまとめ、時間の経過に沿って追う集団です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "セグメントは、端末、地域、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "契約種別などの属性で分けた群です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "コホートも広い意味では群分けですが、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "開始からどれだけ経過したかをそろえて追う用途を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "区別すると、分析の問いが明確になります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一月登録の百人のうち、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "翌月の二月に一度以上利用した人が六十人だったと",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "翌月利用割合は六十パーセントです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "二月登録の二百人では、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "翌月の三月に百人が利用したので",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "五十パーセントです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ここではどちらも「登録の翌月」を比べています。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "件数はすべて架空です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一月登録者の三月の利用を、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "二月登録者の三月と比べると、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "前者は登録から二か月目、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "後者は一か月目になります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "同じ暦の月を比べる意味もありますが、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "継続の変化を見る問いとは異なります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "この例の「翌月に利用した」は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "毎月途切れず利用したことや、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "登録から翌月末までに一度でも使ったこととは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "違います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "対象とする行動と期間を定義します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "単に継続率という名前だけで、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "別の集計と同じ数字だと見なさないようにします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "三月末の時点では、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "二月登録者が登録から二か月目の四月に使うかは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "分かりません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "その欄へ零を入れると、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "全員が使わなかったという意味になってしまいます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "未観測として残し、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "同じ長さの追跡ができる部分で比較します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "同じ問題は、月途中の登録者を「登録後三十日」で",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "評価するときにも起こります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "三十日たつ前の人を、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "三十日以内に利用しなかった人として確定しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "観測が終わった時点と、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "結果がまだ分からない対象を記録します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "二月の翌月利用割合が低くても、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "登録画面の変更が原因とは限りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "広告で集まった人の目的、契約内容、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "季節などが違うかもしれません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "開始時期をそろえることは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "利用者の条件をすべてそろえることではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "端末別などのセグメントを併用すれば、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "差がどこにあるかを調べられます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ただし、登録時点の端末か、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "現在の端末かを区別します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "途中で変わる属性を使うと、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "どの集団を追っているかも変わり得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "現在の有料会員だけを残して過去の利用を見ると、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "すでに解約した人が除かれます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "継続しなかった人を取り除いた集計で、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "登録者全体の継続を評価することはできません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "元の集団の誰が追跡から抜けたかも確かめます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "コホート比較では、開始条件、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "各期間の行動の定義、元の人数、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "観測できた期間を一緒に残します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "開始後の同じ時点を比べた差と、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "集団の構成や施策による差を分けて考えることで、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "追加で確かめるべき条件が見えてきます。",
+      "duration_multiplier": 1.15
+    }
+  ]
+}

@@ -1,0 +1,285 @@
+{
+  "schema_version": 1,
+  "id": "inference-sampling-error",
+  "title": "標本分布・標準誤差・標本サイズ",
+  "topic": "データ分析",
+  "summary": "標本分布と標準誤差を理解し、精密さと偏りを区別します。",
+  "created_at": "2026-10-31",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "Hossein Pishro-Nik：Central Limit Theorem",
+      "url": "https://www.probabilitycourse.com/chapter7/7_1_2_central_limit_theorem.php"
+    },
+    {
+      "title": "NIST：What are confidence intervals?",
+      "url": "https://www.itl.nist.gov/div898/handbook/prc/section1/prc14.htm"
+    },
+    {
+      "title": "Statistics Canada：Selection of a sample",
+      "url": "https://www150.statcan.gc.ca/n1/edu/power-pouvoir/ch13/sample-echantillon/5214900-eng.htm"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "同じ工場で、百個の製品を調べて平均重量を計算し",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ても、別の百個を選べば平均は少し変わります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "標本分布は、このように同じ手順で標本を取り直し",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "たときに、平均などの統計量がどのように",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "変わるかを表す分布です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "百個の重量そのものの分布とは違います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "実務で何度も調査し直せない場合でも、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "抽出の仕組みや確率モデルを使って、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "統計量の変動を評価できます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "実際に反復抽出を観測したことと、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "仮定の下でその変動を計算することは区別します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "以下は架空の数値例です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "標準偏差は、個々の重量などのばらつきです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "標準誤差は、標本を取り直したと",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "きの平均などの統計量のばらつきで、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "統計量の標本分布の標準偏差に当たります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "データのばらつきを測る数と、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "推定の精密さを測る数を混同しないようにします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "独立に同じ分布から取った標本で、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "母集団の標準偏差が十グラムなら、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "百個の標本平均の標準誤差は一グラムです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "十を、百の平方根である十で割ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "式では 標本平均の標準誤差＝母標準偏差÷√標",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "本数 です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "四百個なら、十を二十で割って〇点五グラムです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "標本数を四倍にしても、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "標準誤差は四分の一ではなく半分になります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "母標準偏差が分からない場合は標本の標準偏差で",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "推定しますが、抽出設計に合った計算が必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "同じ担当者の記録や、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "同じ機械の連続した製品のように結果が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "関連する場合、単純な式で標準誤差を評価すると",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "誤ることがあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "抽出率が大きい有限集団や、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "層別・集団単位の抽出でも、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "設計に応じた扱いを確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "中心極限定理の基本形は、独立で同じ分布に従い、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "有限な平均と、零より大きい有限な分散を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "持つ値の標本平均を考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "標本数が増えると、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "平均からのずれを標準誤差でそろえた分布が、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "標準正規分布へ近づくという結果です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "元の製品重量がどんな形でも、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "少数の標本ですぐ正規近似が正確になる、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "という意味ではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "強い歪みやまれな極端値があれば、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "近似に必要な件数も変わります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "「三十件あれば必ず大丈夫」という一律の規則には",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "また、定理は元の観測値の分布そのものを釣鐘形へ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "変えるものでもありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "個々の値が歪んだままでも、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "その平均を取り直したときの分布が近似し",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "やすくなる、という違いを押さえます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "軽い製品だけを選んで平均を求めれば、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "件数を増やすほど、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "偏った対象の平均を細かく測れるだけかもし",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "れません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "標準誤差の小ささは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "抽出や測定が妥当である証拠にはなりません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "報告では、何の統計量の標準誤差か、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "標本をどう選んだか、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "どんな独立性や分布の条件を置いたかを示します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "推定の揺れを評価したうえで、それとは別に、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "母集団とのずれや測定の問題を点検します。",
+      "duration_multiplier": 1.15
+    }
+  ]
+}

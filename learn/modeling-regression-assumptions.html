@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="description" content="残差による回帰診断と、推定・予測の前提を確認します。"/><meta name="theme-color" content="#f2efe8"/>
+<title>回帰の前提・残差・診断 — Learn</title><link rel="stylesheet" href="./learn.css"/><script src="./learn.js" defer></script></head>
+<body><div class="shell"><header class="top"><a href="../index.html">RSVPに戻る</a><span class="mode">LEARN · データ分析</span></header>
+<main><section class="reader" id="speech-reader" aria-label="読み上げプレイヤー"><div class="reader-row">
+<button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+<button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+<button id="speech-stop" type="button" aria-label="停止" disabled>■</button><select id="speech-voice" aria-label="読み上げ音声"></select>
+<label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+</div><div id="speech-status" class="reader-status" role="status">読み上げ準備中</div></section>
+<article id="learn-article">
+<h1>回帰の前提・残差・診断</h1>
+<p class="lead">残差による回帰診断と、推定・予測の前提を確認します。</p>
+<p>作業件数から一日の処理時間を予測する回帰を作ったとします。過去のデータへの当てはまりがよくても、必要な性質をすべて確かめたことにはなりません。診断は、モデルがどこで現象を捉え損ねているかを調べる工程です。以下は架空の作業記録を想定します。</p>
+<p>残差は、観測値から、その観測条件でのモデル値を引いたものです。予測が八十分、観測が九十分なら、残差はプラス十分です。式では 残差＝観測値−モデル値 で、正なら実際のほうが長く、負なら短かったと読めます。</p>
+<h2>残差に残った規則性を探す</h2>
+<p>横軸を予測値、縦軸を残差にした図で、中央付近は負、両端は正という曲がり方があれば、直線だけでは平均的な形を捉え切れていない可能性があります。件数が多いと急に時間が増える、という仕組みがないか考えます。</p>
+<p>予測値が大きいほど残差の幅が広がるなら、誤差の分散が一定という仮定に疑いが生じます。時間順に正の残差が続くなら、同じ日の混雑や設備不調など、観測間の関連を調べます。これらの図は問題の手掛かりで、原因を一意に決める証拠ではありません。</p>
+<p>一つの極端な記録で係数が大きく変わる場合もあります。入力誤りか、珍しいが実在する条件かを確認し、都合のよさで削除しません。含む場合と含まない場合の結果がどれほど違うかも判断材料になります。</p>
+<h2>何に必要な前提かを区別する</h2>
+<p>指定した説明変数の下で平均の形が適切で、誤差の平均が零になるという条件は、係数の解釈を支えます。切片を含む最小二乗回帰で、標本内の残差合計が零になっただけでは、この条件を母集団について確認したことにはなりません。</p>
+<p>誤差の独立性や一定の分散は、通常の標準誤差の計算に関係します。分散が不均一なら、そのことだけで係数が必ず偏るわけではありませんが、通常の区間や検定をそのまま信じるのは適切でない場合があります。設計と目的に合う方法を検討します。</p>
+<p>誤差の正規性は、小標本で通常の検定や区間を厳密に扱う際などに重要です。説明変数や目的変数自体が正規分布でなければ、最小二乗の係数を計算できないという意味ではありません。</p>
+<h2>形がよくても、条件の外へ伸ばさない</h2>
+<p>件数と時間の関係が設備ごとに異なるなら、設備によって傾きが変わる交互作用を考えます。測定機器が件数を誤記していれば、説明変数の誤差が係数を歪めることもあります。</p>
+<p>観測した一日十件から百件の関係を、千件の日へ延ばすのは外挿です。高い決定係数、つまり標本内の変動を多く説明した値があっても、その範囲で正しく使える保証にはなりません。残差、測定方法、利用範囲を併せて診断し、新しい対象での予測検証へ進みます。</p>
+</article>
+<section class="sources" aria-labelledby="sources-title"><h2 id="sources-title">出典</h2>
+<p><a href="https://www.itl.nist.gov/div898/handbook/pmd/section4/pmd44.htm">NIST：How can I tell if a model fits my data?</a></p>
+<p><a href="https://www.itl.nist.gov/div898/handbook/pmd/section2/pmd212.htm">NIST：Means of the random errors are zero</a></p>
+<p><a href="https://www.itl.nist.gov/div898/handbook/pmd/section2/pmd213.htm">NIST：Constant standard deviation</a></p>
+<p><a href="https://www.itl.nist.gov/div898/handbook/pmd/section2/pmd214.htm">NIST：Normal distribution of errors</a></p>
+<p><a href="https://www.itl.nist.gov/div898/handbook/pmd/section2/pmd216.htm">NIST：Explanatory variables observed without error</a></p>
+</section></main></div></body></html>

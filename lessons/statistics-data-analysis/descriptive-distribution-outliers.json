@@ -1,0 +1,321 @@
+{
+  "schema_version": 1,
+  "id": "descriptive-distribution-outliers",
+  "title": "探索的分析・分布の形・外れ値",
+  "topic": "データ分析",
+  "summary": "分布の形と外れ値を調べ、探索的な発見を検証済みの結論と区別します。",
+  "created_at": "2026-10-31",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "NIST：What is EDA?",
+      "url": "https://www.itl.nist.gov/div898/handbook/eda/section1/eda11.htm"
+    },
+    {
+      "title": "NIST：Histogram",
+      "url": "https://www.itl.nist.gov/div898/handbook/eda/section3/eda33e.htm"
+    },
+    {
+      "title": "NIST：Detection of Outliers",
+      "url": "https://www.itl.nist.gov/div898/handbook/eda/section3/eda35h.htm"
+    },
+    {
+      "title": "ASA：Statement on Statistical Significance and P-Values 発表資料",
+      "url": "https://www.amstat.org/asa/files/pdfs/p-valuestatement.pdf"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "工場の製品重量を調べたところ、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "大半は百グラム付近なのに、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "一つだけ千グラムという記録がありました。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "入力ミスでしょうか、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "それとも別の製品が混じったのでしょうか。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "以下は架空の場面です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "平均だけを計算する前に、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "値の並び方や記録の条件を調べます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "探索的データ分析、英字ではEDAは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "データの特徴や想定していなかった構造を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "調べる進め方です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "特定の検定を一度実行することと同じでは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "値を図や要約で確かめ、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "異常や前提の違いを見つけ、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "次に検討する問いを作ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ヒストグラムでは、値をいくつかの区間へ分け、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "各区間に入る件数などを表します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "重量なら、重さの近い製品がどこへ集まるかを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "見られます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "区間の幅や区切り方によって見え方が変わるため、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "一つの設定だけで山の数を断定しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "片側へ長く伸びる部分を裾と呼びます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "重い側へ少数の値が離れていれば、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "右の裾が長い分布になります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "平均と中央値の違いを解釈する手掛かりに",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "なりますが、指標の大小だけで形を決めることは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "避けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "山が二つ見えた場合は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "二種類の製品や機械の記録が混ざっているかもし",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "れません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "製品番号などで分けて確かめます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ただし、山が二つだから機械が二種類ある、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "と原因を確定することはできません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "探索で見える形は、確認すべき候補です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "外れ値は、ほかの観測から",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "大きく離れて見える値です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "入力の桁違い、単位の混在、別集団の混入のほか、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "実際の珍しい現象でも生じます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "千グラムの記録なら、元の測定票、単位、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "製品の種類、機器の状態などへ戻って確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "元の票が百グラムで、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "転記の桁を誤ったと確認できれば、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "根拠を残して訂正できます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "千グラムが本当の測定値なら、目的の対象外か、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "対象内の重大な異常かを考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "異常を発見する分析なのに、その値を消すと、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "知りたかった問題まで消してしまいます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "正規分布を前提とした外れ値の判定法を、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "もともと強く歪んだデータへそのまま使うと、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "正常な裾の値を異常と見なす場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "機械的な基準で候補を探すことと、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "観測を誤りと認定することを分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "重量を曜日、時間帯、機械、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "担当者などで繰り返し分ければ、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "目立つ差が見つかるかもしれません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "その差を見てから仮説を作ったなら、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "「探索から得た仮説」として残します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "初めからその差を確かめる計画だったように",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "書き換えません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "別の期間の記録で確かめる、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "事前に比較方法を決めた検証を行うなど、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "確かめる工程を続けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "検定を何度も試す問題は推測統計で扱いますが、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ここでは、どの探索を行い、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "何を見て問いを選んだかを説明できることが基礎に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "なります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "探索の成果は、きれいな図ができたことだけでは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "混ざっていた条件、確認が必要な記録、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "次に確かめる仮説が分かれば、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "平均だけでは見えなかった分析上の問題を具体化で",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "きます。",
+      "duration_multiplier": 1.15
+    }
+  ]
+}

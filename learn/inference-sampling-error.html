@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="description" content="標本分布と標準誤差を理解し、精密さと偏りを区別します。"/><meta name="theme-color" content="#f2efe8"/>
+<title>標本分布・標準誤差・標本サイズ — Learn</title><link rel="stylesheet" href="./learn.css"/><script src="./learn.js" defer></script></head>
+<body><div class="shell"><header class="top"><a href="../index.html">RSVPに戻る</a><span class="mode">LEARN · データ分析</span></header>
+<main><section class="reader" id="speech-reader" aria-label="読み上げプレイヤー"><div class="reader-row">
+<button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+<button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+<button id="speech-stop" type="button" aria-label="停止" disabled>■</button><select id="speech-voice" aria-label="読み上げ音声"></select>
+<label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+</div><div id="speech-status" class="reader-status" role="status">読み上げ準備中</div></section>
+<article id="learn-article">
+<h1>標本分布・標準誤差・標本サイズ</h1>
+<p class="lead">標本分布と標準誤差を理解し、精密さと偏りを区別します。</p>
+<p>同じ工場で、百個の製品を調べて平均重量を計算しても、別の百個を選べば平均は少し変わります。標本分布は、このように同じ手順で標本を取り直したときに、平均などの統計量がどのように変わるかを表す分布です。百個の重量そのものの分布とは違います。</p>
+<p>実務で何度も調査し直せない場合でも、抽出の仕組みや確率モデルを使って、統計量の変動を評価できます。実際に反復抽出を観測したことと、仮定の下でその変動を計算することは区別します。以下は架空の数値例です。</p>
+<h2>標準偏差と標準誤差は、何のばらつきかが違う</h2>
+<p>標準偏差は、個々の重量などのばらつきです。標準誤差は、標本を取り直したときの平均などの統計量のばらつきで、統計量の標本分布の標準偏差に当たります。データのばらつきを測る数と、推定の精密さを測る数を混同しないようにします。</p>
+<p>独立に同じ分布から取った標本で、母集団の標準偏差が十グラムなら、百個の標本平均の標準誤差は一グラムです。十を、百の平方根である十で割ります。式では 標本平均の標準誤差＝母標準偏差÷√標本数 です。</p>
+<p>四百個なら、十を二十で割って〇点五グラムです。標本数を四倍にしても、標準誤差は四分の一ではなく半分になります。母標準偏差が分からない場合は標本の標準偏差で推定しますが、抽出設計に合った計算が必要です。</p>
+<p>同じ担当者の記録や、同じ機械の連続した製品のように結果が関連する場合、単純な式で標準誤差を評価すると誤ることがあります。抽出率が大きい有限集団や、層別・集団単位の抽出でも、設計に応じた扱いを確認します。</p>
+<h2>中心極限定理は、元の値を正規分布へ変えるものではない</h2>
+<p>中心極限定理の基本形は、独立で同じ分布に従い、有限な平均と、零より大きい有限な分散を持つ値の標本平均を考えます。標本数が増えると、平均からのずれを標準誤差でそろえた分布が、標準正規分布へ近づくという結果です。</p>
+<p>元の製品重量がどんな形でも、少数の標本ですぐ正規近似が正確になる、という意味ではありません。強い歪みやまれな極端値があれば、近似に必要な件数も変わります。「三十件あれば必ず大丈夫」という一律の規則にはしません。</p>
+<p>また、定理は元の観測値の分布そのものを釣鐘形へ変えるものでもありません。個々の値が歪んだままでも、その平均を取り直したときの分布が近似しやすくなる、という違いを押さえます。</p>
+<h2>精密さが上がっても、対象とのずれは残る</h2>
+<p>軽い製品だけを選んで平均を求めれば、件数を増やすほど、偏った対象の平均を細かく測れるだけかもしれません。標準誤差の小ささは、抽出や測定が妥当である証拠にはなりません。</p>
+<p>報告では、何の統計量の標準誤差か、標本をどう選んだか、どんな独立性や分布の条件を置いたかを示します。推定の揺れを評価したうえで、それとは別に、母集団とのずれや測定の問題を点検します。</p>
+</article>
+<section class="sources" aria-labelledby="sources-title"><h2 id="sources-title">出典</h2>
+<p><a href="https://www.probabilitycourse.com/chapter7/7_1_2_central_limit_theorem.php">Hossein Pishro-Nik：Central Limit Theorem</a></p>
+<p><a href="https://www.itl.nist.gov/div898/handbook/prc/section1/prc14.htm">NIST：What are confidence intervals?</a></p>
+<p><a href="https://www150.statcan.gc.ca/n1/edu/power-pouvoir/ch13/sample-echantillon/5214900-eng.htm">Statistics Canada：Selection of a sample</a></p>
+</section></main></div></body></html>

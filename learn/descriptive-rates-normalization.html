@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="率と割合の違い、構成差、直接標準化の条件を理解します。" /><meta name="theme-color" content="#f2efe8" />
+<title>割合・率・標準化と構成差 — Learn</title><link rel="stylesheet" href="./learn.css" /><script src="./learn.js" defer></script></head>
+<body><div class="shell"><header class="top"><a href="../index.html">RSVPに戻る</a><span class="mode">LEARN · データ分析</span></header>
+<main><section class="reader" id="speech-reader" aria-label="読み上げプレイヤー"><div class="reader-row">
+<button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+<button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+<button id="speech-stop" type="button" aria-label="停止" disabled>■</button>
+<select id="speech-voice" aria-label="読み上げ音声"></select>
+<label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+</div><div id="speech-status" class="reader-status" role="status">読み上げ準備中</div></section>
+<article id="learn-article">
+<h1>割合・率・標準化と構成差</h1>
+<p class="lead">率と割合の違い、構成差、直接標準化の条件を理解します。</p>
+<p>工場Aより工場Bの故障件数が多くても、Bの機器が多く、長時間動いていれば、それだけで故障しやすいとは言えません。ここでは架空の機器保守を例に、測った率をどう比較するかを考えます。分母の定義を決める方法は基礎編で学びました。本章では、定義をそろえた後にも残る比較条件を扱います。</p>
+<p>ある期間に一度以上故障した機器を全機器で割れば、機器のうち故障したものの割合です。同じ機器の複数回の故障も数え、稼働時間の合計で割れば、時間当たりの故障の発生率です。後者は百パーセントを上限とする人や機器の割合ではありません。「故障率」という名称だけで両者を入れ替えないようにします。</p>
+<h2>差の示し方をそろえる</h2>
+<p>割合が二十パーセントから二十五パーセントへ変わった場合、差は五パーセントポイントです。もとの二十を基準とした増加率なら、五を二十で割った二十五パーセントになります。五と二十五は同じ変化を別の尺度で表した値です。比較の報告では、どちらの差かを明記します。以下の数値もすべて架空です。</p>
+<h2>全体の率には、対象の構成が入る</h2>
+<p>機器を新しいものと古いものに分けます。Aでは故障した割合が、新しい機器で一パーセント、古い機器で九パーセントとします。Bではそれぞれ三パーセントと七パーセントです。Aがすべての条件で良いわけでも、Bがすべての条件で良いわけでもありません。</p>
+<p>Aの機器の一割が新しく、九割が古いなら、全体の故障割合は八点二パーセントです。一に〇点一、九に〇点九を掛けて足した値です。Bが九割新しく、一割古いなら、三に〇点九、七に〇点一を掛け、三点四パーセントになります。全体の差には、古い機器の多さも入っています。</p>
+<p>実際の故障対応の負担を見るなら、この構成を含む全体の値にも意味があります。しかし、同じ機器構成だったらどう比較されるかを知りたいときには、構成をそろえた集計を別に作ります。</p>
+<h2>共通の重みで比較する</h2>
+<p>直接標準化は、各群の率へ共通の構成比を掛けて足す方法です。この例で新旧を半分ずつにそろえると、Aは一と九の半分ずつで五パーセント、Bも三と七の半分ずつで五パーセントです。現実の構成での八点二と三点四とは、答える問いが違います。</p>
+<p>式なら「標準化した率＝各群の率と共通の構成比を掛けた値の合計」です。重みの合計は一にします。率の単位、群の区分、観測期間をそろえ、各群の率が計算できるだけの情報も必要です。比較する相手ごとに都合のよい重みへ変えてはいけません。</p>
+<p>標準化した五パーセントは、実際に故障した機器の割合そのものではありません。共通構成を仮に置いた比較用の値です。重みを変えると結果も変わり得るので、使った構成を示し、群別の率も残します。</p>
+<p>また、新旧だけをそろえても、負荷、保守方法、機器の型などの違いは残ります。標準化は、選んだ構成差を集計上そろえる方法であって、保守方法の因果効果を自動で取り出す方法ではありません。総負担を見る全体の率、条件別の率、共通構成での比較を、判断の目的に合わせて読み分けます。</p>
+</article>
+<section class="sources" aria-labelledby="sources-title"><h2 id="sources-title">出典</h2>
+<p><a href="https://www.cdc.gov/nchs/hus/sources-definitions/age-adjustment.htm">CDC：Age adjustment</a></p>
+<p><a href="https://archive.cdc.gov/www_cdc_gov/csels/dsepd/ss1978/lesson3/section1.html">CDC：Frequency Measures</a></p>
+</section></main></div></body></html>

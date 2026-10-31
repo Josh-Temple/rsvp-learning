@@ -301,6 +301,74 @@
         "security-cloud-shared-responsibility-iam-config",
         "security-container-serverless-saas-iot"
       ]
+    },
+    {
+      "id": "data-analysis-foundations",
+      "title": "データ分析 I：問い・データの準備",
+      "chapters": [
+        "analysis-overview-complete",
+        "analysis-problem-framing",
+        "analysis-kpi-denominators",
+        "analysis-data-types-grain",
+        "analysis-data-collection-provenance",
+        "analysis-data-quality-missingness",
+        "analysis-cleaning-reproducibility"
+      ]
+    },
+    {
+      "id": "data-analysis-descriptive",
+      "title": "データ分析 II：記述統計・可視化",
+      "chapters": [
+        "statistics-descriptive-distributions",
+        "descriptive-aggregation-grouping",
+        "descriptive-distribution-outliers",
+        "descriptive-visualization-choices",
+        "descriptive-rates-normalization",
+        "descriptive-crosstabs-simpson",
+        "descriptive-time-patterns",
+        "descriptive-cohort-segmentation"
+      ]
+    },
+    {
+      "id": "data-analysis-inference",
+      "title": "データ分析 III：推測統計・実験",
+      "chapters": [
+        "statistics-population-sample-bias",
+        "inference-probability-random-variables",
+        "inference-sampling-error",
+        "statistics-estimation-confidence-intervals",
+        "statistics-hypothesis-testing-effect-size",
+        "inference-power-multiple-testing",
+        "inference-randomized-experiments",
+        "inference-ab-testing"
+      ]
+    },
+    {
+      "id": "data-analysis-modeling",
+      "title": "データ分析 IV：回帰・予測・因果推論",
+      "chapters": [
+        "statistics-correlation-regression-causality",
+        "modeling-linear-multiple-regression",
+        "modeling-regression-assumptions",
+        "modeling-classification-metrics",
+        "modeling-validation-leakage",
+        "modeling-time-series-forecasting",
+        "modeling-causal-confounding",
+        "modeling-quasi-experiments"
+      ]
+    },
+    {
+      "id": "data-analysis-practice",
+      "title": "データ分析 V：実務・説明責任",
+      "chapters": [
+        "practical-sql-grain-joins",
+        "practical-python-pandas",
+        "practical-pipelines-validation",
+        "practical-privacy-ethics",
+        "practical-dashboard-kpi",
+        "practical-report-decisions",
+        "practical-public-service-case"
+      ]
     }
   ]
 }
