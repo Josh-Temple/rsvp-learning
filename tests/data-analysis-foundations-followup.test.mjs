@@ -18,10 +18,10 @@ test("reviewed foundations source, RSVP and Learn stay synchronized",async()=>{
   const json=JSON.parse(await read(meta.path.slice(2)));
   const html=await read(meta.learn_path.slice(2));
   const section=md.split("## 本文")[1].split("## 注意")[0];
-  const chunks=section.split("\n").filter(x=>/^\\d+\\. /.test(x)).map(x=>x.replace(/^\\d+\\. /,""));
+  const chunks=section.split("\n").filter(x=>/^\d+\. /.test(x)).map(x=>x.replace(/^\d+\. /,""));
   assert.equal(chunks.join(""),json.chunks.map(x=>x.text).join(""),id);
   assert.ok(json.chunks.every(x=>x.text.length>0&&x.text.length<=24),id);
-  assert.equal(json.sources.length,(md.split("## 出典")[1].match(/^- \\[/gm)||[]).length);
+  assert.equal(json.sources.length,(md.split("## 出典")[1].match(/^- \[/gm)||[]).length);
   const article=html.split('<article id="learn-article">')[1]?.split("</article>")[0]||"";
   assert.ok(article.includes("<h2>")&&article.includes("<p>"));
   assert.ok(html.indexOf("</article>")<html.indexOf('<section class="sources"'));
