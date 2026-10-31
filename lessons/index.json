@@ -1326,6 +1326,30 @@
       "path": "./lessons/statistics-data-analysis/modeling-validation-leakage.json",
       "status": "COMPLETE v0.1",
       "learn_path": "./learn/modeling-validation-leakage.html"
+    },
+    {
+      "id": "practical-sql-grain-joins",
+      "title": "分析SQL・JOIN・NULL・重複",
+      "topic": "データ分析",
+      "path": "./lessons/statistics-data-analysis/practical-sql-grain-joins.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/practical-sql-grain-joins.html"
+    },
+    {
+      "id": "practical-python-pandas",
+      "title": "Python・pandasによる探索と集計",
+      "topic": "データ分析",
+      "path": "./lessons/statistics-data-analysis/practical-python-pandas.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/practical-python-pandas.html"
+    },
+    {
+      "id": "practical-dashboard-kpi",
+      "title": "ダッシュボード・KPI監視",
+      "topic": "データ分析",
+      "path": "./lessons/statistics-data-analysis/practical-dashboard-kpi.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/practical-dashboard-kpi.html"
     }
   ]
 }

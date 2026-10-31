@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="ダッシュボードの目的と更新条件を明確にし、KPIの変化を適切に読みます。" />
+  <meta name="theme-color" content="#f2efe8" />
+  <title>ダッシュボード・KPI監視 — Learn</title>
+  <link rel="stylesheet" href="./learn.css" />
+  <script src="./learn.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="top"><a href="../index.html">RSVPに戻る</a><span class="mode">LEARN · データ分析</span></header>
+    <main>
+      <section class="reader" id="speech-reader" aria-label="読み上げプレイヤー">
+        <div class="reader-row">
+          <button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+          <button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+          <button id="speech-stop" type="button" aria-label="停止" disabled>■</button>
+          <select id="speech-voice" aria-label="読み上げ音声"></select>
+          <label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+        </div>
+        <div id="speech-status" class="reader-status" role="status">読み上げ準備中</div>
+      </section>
+      <article id="learn-article">
+        <h1>ダッシュボード・KPI監視</h1>
+        <p class="lead">ダッシュボードの目的と更新条件を明確にし、KPIの変化を適切に読みます。</p>
+<p>ダッシュボードは、複数の指標を継続して確認し、必要な判断へつなげる画面です。ただグラフを増やしただけでは、利用者が判断しやすくなるとは限りません。誰が、いつ、何を決めるために見るのかを先に明らかにします。数値や部署名は架空の例です。</p>
+<h2>更新する理由があるときに作る</h2>
+<p>窓口の管理者が毎週、滞留している案件の件数と割合を確認し、人員の配置を考えるとします。ならば毎週更新される画面には意味があります。一方、一度だけ実施したアンケートの結果を説明したいなら、図と文章をまとめた報告書の方が伝わるかもしれません。ダッシュボードは作った後もデータ更新、定義の変更、アクセシビリティ、保守に手間がかかります。</p>
+<p>表示する指標には「対象」「分子と分母」「計測の時点」「集計頻度」「更新日」「所管」を付けます。例えば、年度の開始から週末までに受け付けた案件を対象に、未処理率を「週末時点の未完了案件数／同じ期間の受付案件数」と定義したとします。取消や取下げを除くなら、分子と分母で扱いをそろえます。この数字は、受付が急増した週に上がる可能性があります。しかし、対応が悪化したと直ちに結論できません。案件の経過時間や増減を併せて見ます。</p>
+<h2>警告は、調査を始める合図</h2>
+<p>今週の未処理率が二割から三割へ上がり、警告が表示されたとします。差は十パーセントポイントですが、必ず業務が悪くなったとは限りません。新たな部署のデータが加わった、集計が週末から週初へ変更された、入力が遅延した、といった場合もあります。警告を受けたら更新失敗、データ欠損、定義変更、対象構成を調べ、そのあとに運用の問題を検討します。</p>
+<p>閾値は組織の判断上の基準であり、統計学的有意性を意味しません。閾値を超えたときの担当者、確認期限、対応方法を決めておかなければ、色が変わるだけで改善につながりません。</p>
+<h2>利用者が誤読しない表示へ</h2>
+<p>折れ線で変化を見せるなら、時間軸と観測の欠落を明らかにします。数字が割合なら分母の件数も確認できるようにします。小さい集団の値は一件で大きく動くため、割合だけを強調しません。図が読めない利用者のため、数表や重要な変化を文章でも提供します。</p>
+<p>例えば三か月続けて値が低下しても、季節性や分類の変更があれば、原因を特定したことにはなりません。ダッシュボードは「何が起きているか」の監視に役立ちますが、「なぜ起きたか」や「何をすべきか」を自動的に証明しません。その問いには追加の分析や現場確認が必要です。</p>
+      </article>
+
+      <section class="sources" aria-labelledby="sources-title"><h2 id="sources-title">出典</h2>
+<p><a href="https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-building-and-managing-dashboards/">UK Government Analysis Function: Data visualisation — building and managing dashboards</a></p>
+<p><a href="https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-charts/">UK Government Analysis Function: Data visualisation — charts</a></p>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

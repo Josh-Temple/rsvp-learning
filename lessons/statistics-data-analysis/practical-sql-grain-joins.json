@@ -1,0 +1,285 @@
+{
+  "schema_version": 1,
+  "id": "practical-sql-grain-joins",
+  "title": "分析SQL・JOIN・NULL・重複",
+  "topic": "データ分析",
+  "summary": "分析SQLで観測単位を保ち、結合・欠損・集計の誤りを見抜きます。",
+  "created_at": "2026-10-31",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "PostgreSQL 18 Documentation: 7.2.1 Joined Tables",
+      "url": "https://www.postgresql.org/docs/current/queries-table-expressions.html"
+    },
+    {
+      "title": "PostgreSQL 18 Documentation: 9.21 Aggregate Functions",
+      "url": "https://www.postgresql.org/docs/current/functions-aggregate.html"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "分析用SQLでは、構文が正しく実行できたことと、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "問いに正しい数字を返したことは別です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "たとえば注文の実績を求めるとき、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "「注文一件」を数えるのか「商品明細一行」を数える",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "のかで答えが変わります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ここではSQLの基本構文は再説明せず、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "抽出後の数字が何を表すかを確かめます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "数値はすべて架空の例です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "三件の注文があり、各注文の明細数が二件、一件、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "三件だとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "注文テーブルは三行、明細テーブルは六行です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "注文IDで内結合すると、注文情報が各明細へ繰り返",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "され、結果は六行になります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "COUNT(*)が六を返しても「注文が六件」とは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "言えません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "注文IDが重複した結果を数えるなら、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "必要な条件を確認したうえでCOUNT(",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "DISTINCT注文ID)を使う方法があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ただし、DISTINCTを付ければ常に正しいわけ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "でもありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "顧客ごとの注文件数、商品ごとの明細数、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "売上金額では欲しい粒度が違います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "注文テーブルの金額を明細との結合後に単純合計する",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "と、注文ごとに明細数の回数だけ重複計上します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "正しい集計単位へ先にまとめてから結合する、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "結合条件を見直すなど、設計から修正する必要があり",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一対多の結合では行が増え得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一対一を期待しているのに行が増えたなら、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "左右のキーに想定外の重複がないか確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "逆に内結合後に注文が減ったなら、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "対応する明細を持たない注文が落ちた可能性がありま",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "す。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "未処理の注文を含む指標では重大です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "左外部結合は左の注文を残すのに役立ちますが、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "右側が複数一致すれば行は増えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "結合相手がない場合、右側の列はNULLになります",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "相手の行があっても、点数などの列だけがNULLの",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "こともあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "両者を区別するには、結合先で必ず値が入る識別子な",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "どを確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "結合後に右側の列へWHERE条件をかけると、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "NULLを含む左側の行が除外され、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "意図せず内結合に近い結果になる場合もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "NULLは未記録・適用外などを含み得る「値がない",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "」という状態であり、数値のゼロとは違います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "PostgreSQLのCOUNT(*)は行数を数",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "え、COUNT(対象列)はその列がNULLでない",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "行を数えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "例えば回答五行のうち点数の入力が三行だけなら、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "回答行数五と点数の観測数三は分けて報告します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "平均値を計算する際も欠損二件を勝手にゼロとみなせ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "抽出条件を変更したときは、対象期間、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "除外した状態、重複処理、結合後の件数、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "欠損数を記録します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "結合前後のユニークな注文ID数と件数の照合は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "異常を見つける検査です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "それだけで金額の正しさが保証されるわけではありま",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "せん。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "同じSQLでも、元データの更新時刻や定義が変われ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ば結果も変わります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "数字だけを報告せず、対象、粒度、除外条件、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "利用データの版を添えると、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "別の担当者が解釈と再計算を確認できます。",
+      "duration_multiplier": 1.15
+    }
+  ]
+}

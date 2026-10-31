@@ -315,8 +315,11 @@
       "id": "data-analysis-practice",
       "title": "データ分析 V：実務・説明責任",
       "chapters": [
+        "practical-sql-grain-joins",
+        "practical-python-pandas",
         "practical-pipelines-validation",
         "practical-privacy-ethics",
+        "practical-dashboard-kpi",
         "practical-report-decisions",
         "practical-public-service-case"
       ]

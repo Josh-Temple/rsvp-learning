@@ -1,0 +1,321 @@
+{
+  "schema_version": 1,
+  "id": "practical-python-pandas",
+  "title": "Python・pandasによる探索と集計",
+  "topic": "データ分析",
+  "summary": "pandasで入力・集計・結合の前後を確認し、欠損や重複に注意します。",
+  "created_at": "2026-10-31",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "pandas User Guide: GroupBy, GroupBy dropna",
+      "url": "https://pandas.pydata.org/docs/user_guide/groupby.html"
+    },
+    {
+      "title": "pandas API: DataFrame.merge",
+      "url": "https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.merge.html"
+    },
+    {
+      "title": "pandas API: DataFrame.groupby",
+      "url": "https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.groupby.html"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "Pythonのpandasは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "表形式のデータを扱うためのライブラリです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "操作名を覚えることより、どの行が何を表し、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "処理の前後で何が変わるかを説明できることが重要で",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "す。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ここでは架空の問い合わせ記録を、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "部署ごとに数える例を使います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一行が問い合わせ一件を表す表に、受付ID、部署、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "受付日、処理時間が入っています。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "読み込んだら、総行数、受付IDの重複、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "部署と処理時間の欠損、日付として読めない値を確認",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "日付が文字列のままだと、日付順の並べ替えや期間の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "抽出を誤ることがあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "受付IDは数字に見えても、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "足し算する数量ではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "次に、対象期間と対象部署を明示して行を選びます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "対象外を落とした件数を控え、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "処理時間が記録された行だけを使うのか、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "全問い合わせ件数を使うのかを分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "加工前の表を書き換えず、入力データの版と変換規則",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "を残します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "部署A二件、部署B一件、部署未記入一件の計四件が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "あるとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "pandasのgroupby('部署')は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "既定のdropna=Trueでは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "部署が欠損した行をグループのキーとして表示しませ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ん。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "その結果、部署別の件数を足して三件となっても、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "原データの四件と一致しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "欠損部署も一群として示したいならgroupby(",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "'部署',dropna=False)を検討します",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ただし、「未記入」を正式な部署へ割り当てたことに",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "はなりません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "未記入の一件がどこに属するかは不明です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用者が知りたいのが問い合わせ総数なら、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "部署別内訳の欠損群を含めて読みます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "実際の集計コードは補助として、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "次のように示せます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "この例は四行の架空データを作り、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "部署が未記入の行も集計に含めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "この例の出力は、入力行数が四、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "集計行数の合計が四、部署未記入が一です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "この行が返すのはグループ別の行数です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "count()は対象列のNULLの扱いによって結",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "果が違うため、目的に合わせて選びます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "問い合わせ一件の表に、対応履歴を結び付けると、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "一つの問い合わせに複数の対応がある場合に行が増え",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "pandasのmergeにはvalidate='",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "one_to_one'やvalidate='",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "one_to_many'などの指定があり、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "キーの一意性について期待を検査できます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "indicator=Trueなら左だけ、右だけ、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "両方にある行を区別できます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "検査を通過しても、対応履歴の内容が現実を正しく表",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "すとは限りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "さらに、pandasのmergeは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "左右の結合キーがともに欠損している行を一致させる",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ことがあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "通常のSQLでNULL同士を等号で結合する場合と",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "は異なるため、欠損キーを事前に数え、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "同一対象を意味すると考えてよいかを検討します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "必要なら欠損キーの行を別に扱い、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "結合しなかった件数も残します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "結果を保存する際は、入力の版、ライブラリの版、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "処理内容、行数の変化、欠損の扱いを一緒に記録しま",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "す。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "複雑な処理を一行で書くより、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "途中結果を再計算できることが品質の基礎です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "pandasは分析を助けますが、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "問いと分母を正しく定義する作業までは代行しません",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "。",
+      "duration_multiplier": 1.15
+    }
+  ]
+}

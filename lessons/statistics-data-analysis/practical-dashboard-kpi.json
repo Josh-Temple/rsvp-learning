@@ -1,0 +1,249 @@
+{
+  "schema_version": 1,
+  "id": "practical-dashboard-kpi",
+  "title": "ダッシュボード・KPI監視",
+  "topic": "データ分析",
+  "summary": "ダッシュボードの目的と更新条件を明確にし、KPIの変化を適切に読みます。",
+  "created_at": "2026-10-31",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "UK Government Analysis Function: Data visualisation — building and managing dashboards",
+      "url": "https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-building-and-managing-dashboards/"
+    },
+    {
+      "title": "UK Government Analysis Function: Data visualisation — charts",
+      "url": "https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-charts/"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "ダッシュボードは、複数の指標を継続して確認し、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "必要な判断へつなげる画面です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ただグラフを増やしただけでは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "利用者が判断しやすくなるとは限りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "誰が、いつ、何を決めるために見るのかを先に明らか",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "にします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "数値や部署名は架空の例です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "窓口の管理者が毎週、滞留している案件の件数と割合",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "を確認し、人員の配置を考えるとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ならば毎週更新される画面には意味があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一方、一度だけ実施したアンケートの結果を説明した",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "いなら、図と文章をまとめた報告書の方が伝わるかも",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "しれません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ダッシュボードは作った後もデータ更新、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "定義の変更、アクセシビリティ、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "保守に手間がかかります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "表示する指標には「対象」「分子と分母」「計測の時",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "点」「集計頻度」「更新日」「所管」を付けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "例えば、年度の開始から週末までに受け付けた案件を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "対象に、未処理率を「週末時点の未完了案件数／同じ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "期間の受付案件数」と定義したとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "取消や取下げを除くなら、分子と分母で扱いをそろえ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "この数字は、受付が急増した週に上がる可能性があり",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "しかし、対応が悪化したと直ちに結論できません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "案件の経過時間や増減を併せて見ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "今週の未処理率が二割から三割へ上がり、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "警告が表示されたとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "差は十パーセントポイントですが、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "必ず業務が悪くなったとは限りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "新たな部署のデータが加わった、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "集計が週末から週初へ変更された、入力が遅延した、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "といった場合もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "警告を受けたら更新失敗、データ欠損、定義変更、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "対象構成を調べ、そのあとに運用の問題を検討します",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "閾値は組織の判断上の基準であり、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "統計学的有意性を意味しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "閾値を超えたときの担当者、確認期限、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "対応方法を決めておかなければ、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "色が変わるだけで改善につながりません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "折れ線で変化を見せるなら、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "時間軸と観測の欠落を明らかにします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "数字が割合なら分母の件数も確認できるようにします",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "小さい集団の値は一件で大きく動くため、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "割合だけを強調しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "図が読めない利用者のため、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "数表や重要な変化を文章でも提供します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "例えば三か月続けて値が低下しても、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "季節性や分類の変更があれば、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "原因を特定したことにはなりません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ダッシュボードは「何が起きているか」の監視に役立",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ちますが、「なぜ起きたか」や「何をすべきか」を自",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "動的に証明しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "その問いには追加の分析や現場確認が必要です。",
+      "duration_multiplier": 1.15
+    }
+  ]
+}
