@@ -351,7 +351,11 @@
       "chapters": [
         "descriptive-aggregation-grouping",
         "descriptive-distribution-outliers",
-        "descriptive-visualization-choices"
+        "descriptive-visualization-choices",
+        "descriptive-rates-normalization",
+        "descriptive-crosstabs-simpson",
+        "descriptive-time-patterns",
+        "descriptive-cohort-segmentation"
       ]
     }
   ]

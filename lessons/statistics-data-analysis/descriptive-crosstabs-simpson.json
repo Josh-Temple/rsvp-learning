@@ -1,0 +1,317 @@
+{
+  "schema_version": 1,
+  "id": "descriptive-crosstabs-simpson",
+  "title": "クロス集計とシンプソンのパラドックス",
+  "topic": "データ分析",
+  "summary": "群別と全体の集計の逆転を確かめ、分母と因果解釈を区別します。",
+  "created_at": "2026-10-31",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "Judea Pearl：Understanding Simpson’s Paradox",
+      "url": "https://ftp.cs.ucla.edu/pub/stat_ser/r414.pdf"
+    },
+    {
+      "title": "NumPy：numpy.average",
+      "url": "https://numpy.org/doc/stable/reference/generated/numpy.average.html"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "サポート窓口AとBの解決割合を比べると、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "全体ではBが高く、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "簡単な相談と難しい相談に分けると両方ともAが",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "高い、という結果があり得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "計算ミスとは限りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "以下では、すべて架空の件数を使って、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "その仕組みを追います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "クロス集計は、二つ以上のカテゴリを組み合わせ、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "各組合せの件数などをまとめる方法です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "窓口と解決の有無を組み合わせれば、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "どの窓口で何件が解決したかを調べられます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "相談の難しさでも分けると、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "比較条件の違いが見えてきます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Aは簡単な相談十件中九件、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "難しい相談百件中四十件を解決しました。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "それぞれ九十パーセントと四十パーセントです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Bは簡単な相談百件中八十件、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "難しい相談十件中三件を解決し、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "八十パーセントと三十パーセントです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "分類ごとにはAが十パーセントポイント高くなって",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "全体では、Aは百十件中四十九件なので",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "約四十四点五パーセントです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Bは百十件中八十三件で約七十五点五パーセントで",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "す。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "両窓口の件数は同じなのに、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "全体ではBの方が高くなりました。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "理由は、率の計算に使う重みが違うことです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Aの大半は解決が難しい相談、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "Bの大半は簡単な相談です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "それぞれの窓口で実際に扱った構成を使うと、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "Aの全体の値は難しい相談の四十パーセントへ、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "Bの値は簡単な相談の八十パーセントへ近づきます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "このように、群別の関連と、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "全体へまとめた関連の向きが逆になる現象を、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "シンプソンのパラドックスと呼びます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "同じ件数を正しく集計しても、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "まとめ方によって違う問いに答えるために",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "起こります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "クロス集計では、「Aの相談のうち解決し",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "た割合」と「解決した相談のうちAが",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "扱った割合」は別です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "前者の分母はAの全相談、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "後者の分母は全窓口の解決済み相談です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "行や列のどちらで百パーセントへそろえたかを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "省略すると、同じ表でも意味を取り違えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "この例でも、解決済み件数だけを並べれば、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "相談の難しさや総件数は分かりません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "解決した件数と対象件数を一緒に示し、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "群を合算した値が元の件数と一致するかを確認し",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "「実際に処理した相談全体で何件解決したか」には",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "全体集計が答えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "「同じ難しさの相談では、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "どんな違いが観察されたか」には群別集計が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "役立ちます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "目的を決めず、一方だけを正しい数字とし",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "て選ぶことはできません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "さらに「Aへ担当を変えれば解決し",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "やすくなるか」は因果の問いです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "この算例だけでは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "担当者の選び方や記録されない相談内容などを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "確認できません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "難しさを分けただけで効果が確定したとは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "言えません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "分類する変数が処理後に決まる結果であるなど、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "条件付けによって新たな偏りを作る場合もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "何でも細分化すればよいという規則にはせず、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "変数がいつ、何によって決まるかを確かめます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "その詳しい条件は因果推論で学びます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "全体と群別の結論が違ったら、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "どちらかを捨てる前に、各群の率と構成を調べます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "逆転を説明することと、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "どの施策を採るかを決めることは別の段階です。",
+      "duration_multiplier": 1.15
+    }
+  ]
+}

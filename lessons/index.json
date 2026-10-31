@@ -1422,6 +1422,38 @@
       "path": "./lessons/statistics-data-analysis/descriptive-visualization-choices.json",
       "status": "COMPLETE v0.1",
       "learn_path": "./learn/descriptive-visualization-choices.html"
+    },
+    {
+      "id": "descriptive-rates-normalization",
+      "title": "割合・率・標準化と構成差",
+      "topic": "データ分析",
+      "path": "./lessons/statistics-data-analysis/descriptive-rates-normalization.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/descriptive-rates-normalization.html"
+    },
+    {
+      "id": "descriptive-crosstabs-simpson",
+      "title": "クロス集計とシンプソンのパラドックス",
+      "topic": "データ分析",
+      "path": "./lessons/statistics-data-analysis/descriptive-crosstabs-simpson.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/descriptive-crosstabs-simpson.html"
+    },
+    {
+      "id": "descriptive-time-patterns",
+      "title": "時系列の記述・季節性・比較期間",
+      "topic": "データ分析",
+      "path": "./lessons/statistics-data-analysis/descriptive-time-patterns.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/descriptive-time-patterns.html"
+    },
+    {
+      "id": "descriptive-cohort-segmentation",
+      "title": "コホート・セグメントの比較",
+      "topic": "データ分析",
+      "path": "./lessons/statistics-data-analysis/descriptive-cohort-segmentation.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/descriptive-cohort-segmentation.html"
     }
   ]
 }

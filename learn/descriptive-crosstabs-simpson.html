@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="群別と全体の集計の逆転を確かめ、分母と因果解釈を区別します。" /><meta name="theme-color" content="#f2efe8" />
+<title>クロス集計とシンプソンのパラドックス — Learn</title><link rel="stylesheet" href="./learn.css" /><script src="./learn.js" defer></script></head>
+<body><div class="shell"><header class="top"><a href="../index.html">RSVPに戻る</a><span class="mode">LEARN · データ分析</span></header>
+<main><section class="reader" id="speech-reader" aria-label="読み上げプレイヤー"><div class="reader-row">
+<button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+<button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+<button id="speech-stop" type="button" aria-label="停止" disabled>■</button>
+<select id="speech-voice" aria-label="読み上げ音声"></select>
+<label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+</div><div id="speech-status" class="reader-status" role="status">読み上げ準備中</div></section>
+<article id="learn-article">
+<h1>クロス集計とシンプソンのパラドックス</h1>
+<p class="lead">群別と全体の集計の逆転を確かめ、分母と因果解釈を区別します。</p>
+<p>サポート窓口AとBの解決割合を比べると、全体ではBが高く、簡単な相談と難しい相談に分けると両方ともAが高い、という結果があり得ます。計算ミスとは限りません。以下では、すべて架空の件数を使って、その仕組みを追います。</p>
+<p>クロス集計は、二つ以上のカテゴリを組み合わせ、各組合せの件数などをまとめる方法です。窓口と解決の有無を組み合わせれば、どの窓口で何件が解決したかを調べられます。相談の難しさでも分けると、比較条件の違いが見えてきます。</p>
+<h2>分類ごとの件数から、全体へ戻る</h2>
+<p>Aは簡単な相談十件中九件、難しい相談百件中四十件を解決しました。それぞれ九十パーセントと四十パーセントです。Bは簡単な相談百件中八十件、難しい相談十件中三件を解決し、八十パーセントと三十パーセントです。分類ごとにはAが十パーセントポイント高くなっています。</p>
+<p>全体では、Aは百十件中四十九件なので約四十四点五パーセントです。Bは百十件中八十三件で約七十五点五パーセントです。両窓口の件数は同じなのに、全体ではBの方が高くなりました。</p>
+<p>理由は、率の計算に使う重みが違うことです。Aの大半は解決が難しい相談、Bの大半は簡単な相談です。それぞれの窓口で実際に扱った構成を使うと、Aの全体の値は難しい相談の四十パーセントへ、Bの値は簡単な相談の八十パーセントへ近づきます。</p>
+<p>このように、群別の関連と、全体へまとめた関連の向きが逆になる現象を、シンプソンのパラドックスと呼びます。同じ件数を正しく集計しても、まとめ方によって違う問いに答えるために起こります。</p>
+<h2>表の百分率を、どちら向きに読んでいるか</h2>
+<p>クロス集計では、「Aの相談のうち解決した割合」と「解決した相談のうちAが扱った割合」は別です。前者の分母はAの全相談、後者の分母は全窓口の解決済み相談です。行や列のどちらで百パーセントへそろえたかを省略すると、同じ表でも意味を取り違えます。</p>
+<p>この例でも、解決済み件数だけを並べれば、相談の難しさや総件数は分かりません。解決した件数と対象件数を一緒に示し、群を合算した値が元の件数と一致するかを確認します。</p>
+<h2>群別にすれば、必ず正解になるわけではない</h2>
+<p>「実際に処理した相談全体で何件解決したか」には全体集計が答えます。「同じ難しさの相談では、どんな違いが観察されたか」には群別集計が役立ちます。目的を決めず、一方だけを正しい数字として選ぶことはできません。</p>
+<p>さらに「Aへ担当を変えれば解決しやすくなるか」は因果の問いです。この算例だけでは、担当者の選び方や記録されない相談内容などを確認できません。難しさを分けただけで効果が確定したとは言えません。</p>
+<p>分類する変数が処理後に決まる結果であるなど、条件付けによって新たな偏りを作る場合もあります。何でも細分化すればよいという規則にはせず、変数がいつ、何によって決まるかを確かめます。その詳しい条件は因果推論で学びます。</p>
+<p>全体と群別の結論が違ったら、どちらかを捨てる前に、各群の率と構成を調べます。逆転を説明することと、どの施策を採るかを決めることは別の段階です。</p>
+</article>
+<section class="sources" aria-labelledby="sources-title"><h2 id="sources-title">出典</h2>
+<p><a href="https://ftp.cs.ucla.edu/pub/stat_ser/r414.pdf">Judea Pearl：Understanding Simpson’s Paradox</a></p>
+<p><a href="https://numpy.org/doc/stable/reference/generated/numpy.average.html">NumPy：numpy.average</a></p>
+</section></main></div></body></html>

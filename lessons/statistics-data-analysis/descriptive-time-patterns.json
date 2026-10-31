@@ -1,0 +1,309 @@
+{
+  "schema_version": 1,
+  "id": "descriptive-time-patterns",
+  "title": "時系列の記述・季節性・比較期間",
+  "topic": "データ分析",
+  "summary": "時系列の変化、季節性、比較期間と移動平均の限界を学びます。",
+  "created_at": "2026-10-31",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "NIST：Seasonality",
+      "url": "https://www.itl.nist.gov/div898/handbook/pmc/section4/pmc443.htm"
+    },
+    {
+      "title": "NIST：Single Moving Average",
+      "url": "https://www.itl.nist.gov/div898/handbook/pmc/section4/pmc421.htm"
+    },
+    {
+      "title": "GOV.UK：How to set performance metrics for your service",
+      "url": "https://www.gov.uk/service-manual/measuring-success/how-to-set-performance-metrics-for-your-service"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "架空の店で、月曜日より土曜日の売上が高かったと",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "その間に広告を出していても、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "差のすべてを広告の効果とは言えません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "曜日によって客数が違う可能性があるからです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "時系列は、時点の順に並んだ記録です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "順番そのものに情報があるため、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "日付を落とした平均だけでは変化を捉えに",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "くくなります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ある時期の値の高さを水準、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "長い期間にわたる上向きや下向きを傾向、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "決まった間隔で繰り返す変動を季節性として区別し",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "季節性は一年の季節だけでなく、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "曜日ごとの違いなどにも使う言葉です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一度だけ起きた急増を、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "繰り返すパターンと決めつけないようにします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一か月の売上合計が増えていても、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "営業日数が多かったかもしれません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "総売上を知りたいのか、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "一営業日当たりの売れ方を知りたいのかで、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "見る値は変わります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "月の途中までの値と、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "前月の全期間をそのまま並べる比較も避けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "前月比には隣り合う月の違い、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "前年同月比には一年前の同じ月との差が表れます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "前年同月なら季節をある程度そろえられても、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "休日の並び、特別な行事、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "前年の異常な値などは残ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "前年同月比だけで、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "季節の影響がすべて除けたとは考えません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "データの更新遅れも確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "直近の日ほど未報告の売上が多い仕組みなら、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "最後の数日が落ち込んで見える場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "現象が減ったのか、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "記録がまだ届いていないのかを分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "定義や店舗数が変わった時点も、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "同じ系列として読めるか点検します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "日ごとの変動をならす方法の一つが移動平均です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "例えば、三日分の値が六十、九十、百五十なら、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "三日平均は百です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "次の日が百二十なら、最初の六十を外し、九十、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "百五十、百二十の平均百二十を求めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "以下も学習用の架空値です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "この三日移動平均は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "当日とその前二日の値を合計し、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "三で割ったものです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一日だけの値より変化が滑らかになりますが、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "急な変化を遅れて示すこともあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "長い窓ほど常によいのではなく、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "見たい変化の速さに合わせて選びます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "移動平均の窓は重なるので、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "隣り合う平均を別々の独立した観測のようには",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "扱えません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "また、前後の日を使う中央移動平均は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "過去を振り返る記述には使えても、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "まだ未来の日が分からない当日の監視へ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "そのまま使えません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "曜日別に並べたり、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "同じ月を年ごとに比べたりすると、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "周期の候補を確かめられます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ただし、パターンを一度見つけたことは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "来年も同じように続く保証ではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "予測するには、過去の情報だけで将来を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "どれだけ見積もれるかを別に検証します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "広告を出した前後で上向いたという記述も、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "因果効果の推定とは分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "まず何が、いつ、どの定義で変わったかを説明し、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "曜日や更新状況などの代替説明を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "過去の変化を正しく記述できることが、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "その後の予測や効果評価を支えます。",
+      "duration_multiplier": 1.15
+    }
+  ]
+}
