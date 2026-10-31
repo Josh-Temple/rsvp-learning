@@ -158,11 +158,11 @@
       "duration_multiplier": 1
     },
     {
-      "text": "対象構成を調べ、そのあとに運用の問題を検討します",
+      "text": "対象構成を調べ、",
       "duration_multiplier": 1
     },
     {
-      "text": "。",
+      "text": "そのあとに運用の問題を検討します。",
       "duration_multiplier": 1.15
     },
     {
@@ -194,11 +194,11 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "数字が割合なら分母の件数も確認できるようにします",
+      "text": "数字が割合なら",
       "duration_multiplier": 1
     },
     {
-      "text": "。",
+      "text": "分母の件数も確認できるようにします。",
       "duration_multiplier": 1.15
     },
     {
