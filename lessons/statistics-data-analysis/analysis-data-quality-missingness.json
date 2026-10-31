@@ -1,0 +1,341 @@
+{
+  "schema_version": 1,
+  "id": "analysis-data-quality-missingness",
+  "title": "データ品質・欠損・非回答",
+  "topic": "データ分析",
+  "summary": "欠損と非回答を見分け、集計結果への影響を考えます。",
+  "created_at": "2026-10-31",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "GOV.UK：The Government Data Quality Framework",
+      "url": "https://www.gov.uk/government/publications/the-government-data-quality-framework/the-government-data-quality-framework"
+    },
+    {
+      "title": "Statistical Society of Canada：Handling Missing Data Case Study",
+      "url": "https://ssc.ca/en/handling-missing-data-case-study"
+    },
+    {
+      "title": "Stef van Buuren：Flexible Imputation of Missing Data",
+      "url": "https://stefvanbuuren.name/fimd/sec-MCAR.html"
+    },
+    {
+      "title": "同書：Concepts in incomplete data",
+      "url": "https://stefvanbuuren.name/fimd/sec-idconcepts.html"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "架空の研修で、対象者百人のうち八十人が回答し、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "六十人が「役立った」と答えたとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "回答者の中では七十五パーセントです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "しかし、百人全体の七十五パーセントが役立ったと",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "答えたわけではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "残る二十人の答えは分からないからです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "以下の数字は学習用の架空値です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "データ品質は、今回の用途に",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "使えるかという目的との関係で評価します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "すべての値がある完全性、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "同じ対象の不要な重複がないこと、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "形式が定義に合うこと、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "現実と一致する正確性などは別の観点です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "日付の形式が正しくても、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "別人の日付なら正確ではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "値が記録されていない状態を欠損と呼びます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "調査への回答自体がない単位非回答と、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "回答はあるが一部の設問が空いている項目非回答を",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "名簿に最初から載っていない人は",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "対象漏れの問題であり、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "表の空欄を探すだけでは見つかりません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "また、設問に該当しないための空欄、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "答えたくないための空欄、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "記録の送信失敗を区別します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "「研修へ参加していないので教材の評価は",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "該当しない」と「参加したが無回答」は同じ意味では",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "ありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "原因を確認できなければ、不明のまま残します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "満足度が一から五の設問で、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "空欄を零へ置き換えると、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "実際には選べない低評価を加えることになります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "逆に、空欄の行をすべて削除しても、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "残った人だけの結果になります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "入力がそろったことは、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "対象を適切に代表する証拠ではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "欠損の仕組みには標準的な区分があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "欠ける確率が観測済み・未観測の値に",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "依存しないものをMCAR、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "完全に無作為な欠損と呼びます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "観測済みの情報で条件付けると、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "欠けた値自体には依存しないものがMAR、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "無作為な欠損です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "MCARと違い、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "観測済みの情報によって欠けやすさが異なっていても",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "成り立ちます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "「無作為」という語でも、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "何も考えず無視してよいという意味ではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "その条件をそろえても、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "未観測の値に欠けやすさが依存するものがMNAR、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "無作為でない欠損です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "研修への不満が強い人ほど回答しないなら、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "その可能性があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ただし、回答がない人の満足度は見えないため、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "観測データだけでMARかMNARかを",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "確定できるとは限りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "これらは分析で置く仮定としても点検します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "冒頭の例で、無回答の二十人が",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "全員「役立たなかった」なら、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "全対象者の肯定割合は六十パーセントです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "全員「役立った」なら八十パーセントです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "他の誤りがないという条件でも、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "回答者の七十五パーセントだけから全体の値を",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "決められません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "この幅は算術上の範囲であり、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "信頼区間ではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "実務では、回答の有無を、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "分かっている所属や参加方法などと比べます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "無回答の理由の聞き取りや追加回収も候補です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "重み付けや欠損値の補完を行う方法もありますが、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "補った値は新しく観測した事実ではなく、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "仮定を使った推定です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "欠損を完全に直せないときも、回答数と無回答数、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "除外した対象、処理方法と仮定、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "結論が変わり得る範囲を示せます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "欠損が少ないかどうかだけで、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "偏りが小さいと決めないことが判断の基礎に",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "なります。",
+      "duration_multiplier": 1.15
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="業務上の判断を分析の問いに変え、必要な比較と記録を考えます。" />
+  <meta name="theme-color" content="#f2efe8" />
+  <title>分析課題の定義と意思決定 — Learn</title>
+  <link rel="stylesheet" href="./learn.css" />
+  <script src="./learn.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="top">
+      <a href="../index.html">RSVPに戻る</a>
+      <span class="mode">LEARN · データ分析</span>
+    </header>
+    <main>
+      <section class="reader" id="speech-reader" aria-label="読み上げプレイヤー">
+        <div class="reader-row">
+          <button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+          <button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+          <button id="speech-stop" type="button" aria-label="停止" disabled>■</button>
+          <select id="speech-voice" aria-label="読み上げ音声"></select>
+          <label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+        </div>
+        <div id="speech-status" class="reader-status" role="status">読み上げ準備中</div>
+      </section>
+      <article id="learn-article"><h1>分析課題の定義と意思決定</h1>
+<p class="lead">業務上の判断を分析の問いに変え、必要な比較と記録を考えます。</p>
+<p>「申請の受付画面を新しくしたので、改善したか調べてほしい」。この依頼だけで分析を始めると、処理件数、入力時間、利用者の満足度など、違う結果をそれぞれが想定するかもしれません。以下では、架空の自治体が、新画面を他の手続にも広げるか判断する場面を考えます。実在の自治体の実績ではありません。</p>
+<p>分析課題を定義するとは、何を決めるために、誰や何について、どのような答えを必要とするかを明確にすることです。「集計表を作る」は作業で、「展開を続けるか」は意思決定です。作業を終えたことと、判断に必要な証拠が得られたことを分けます。</p>
+<h2>判断に必要な問いを選ぶ</h2>
+<p>担当者が知りたいのは、住民の入力の手間なのか、受付後の審査待ちなのかを確認します。入力画面の改善なら、入力を始めてから提出するまでが直接の対象になります。審査待ちには受付後の体制も関わるため、新画面だけを見ても答えはそろいません。</p>
+<p>ここでは「新画面を使った申請で、提出までに止まる場面が減ったか」を調べるとします。対象の手続と利用期間を定め、入力を始めた申請を追い、途中でやめた申請も含めて調べます。提出できた人だけに尋ねると、途中で困った人を最初から除いてしまうからです。集計の式と分母の定義は次章で扱います。</p>
+<p>比較も問いの一部です。「変更前より良いか」と「別の画面より良いか」では相手が違います。前後比較なら、繁忙期、利用者層、対象手続、支援の有無などが変わっていないかを確認します。条件がそろわないときは、違いを記録し、比較できる範囲に結論を限定します。</p>
+<h2>手元のデータで答えられる範囲を決める</h2>
+<p>旧画面では提出日時だけ、新画面では入力開始日時も記録しているとします。このままでは、提出までの所要時間を同じ定義で前後比較できません。欠けている記録を想像で補わず、過去の別記録を探すか、今後同じ方法で記録するか、問いを狭めるかを判断します。</p>
+<p>入力画面の所要時間とは別の指標として、受付後の処理日数を考えます。架空の例で、平均処理日数が十日から七日になったとします。ここから言えるのは、同じ条件で集計できたなら、その対象の平均が三日短くなった、ということまでです。同時期の人員増や案件構成の変化を除けていない以上、新画面が三日短縮したとは断定できません。</p>
+<p>さらに、完了案件だけの平均なら、長くかかっている未完了案件は含まれません。集計時点で完了時刻が未観測の案件を除くと、長い案件を少なく数える偏りが生じることがあります。完了分の結果と、未完了件数や受付からの経過時間を分けて示します。未完了の最終所要時間が分かったことにはしません。</p>
+<h2>答えによって行動が変わるかを確かめる</h2>
+<p>問いを具体化したら、答えが違う場合に何をするか考えます。途中離脱が特定の入力項目へ集中していれば、その項目を直す候補になります。全体の数字だけでは理由が分からなければ、利用者の操作観察や問い合わせ内容を追加します。数字だけですべてを決めようとせず、不足する証拠を特定します。</p>
+<p>反対に、「今週の問い合わせを分類し、案内文の修正箇所を選ぶ」だけなら、大規模な因果効果の推定が常に必要なわけではありません。記述で足りる判断もあります。ただし、選んだ修正が問題を解消したかは、その後に別の問いとして確かめます。</p>
+<p>分析の前に短く残す記録は、判断する人と選択肢、調べる対象、比較相手、必要な記録、答えられないことです。結論を先に決める記録ではありません。途中で問いを変える必要が生じたら、その理由を残し、最初から同じ問いだったように扱わないための記録です。</p>
+</article>
+<section class="sources" aria-labelledby="sources-title"><h2 id="sources-title">出典</h2>
+<p><a href="https://www.gov.uk/service-manual/measuring-success/measuring-the-success-of-your-service">GOV.UK：Measuring the success of your service</a></p>
+<p><a href="https://www.gov.uk/service-manual/measuring-success/measuring-completion-rate">GOV.UK：Measuring completion rate</a></p>
+<p><a href="https://www.itl.nist.gov/div898/handbook/pri/section1/pri11.htm">NIST：What is experimental design?</a></p>
+<p><a href="https://www.itl.nist.gov/div898/handbook/apr/section1/apr131.htm">NIST：Censoring</a></p>
+</section></main></div></body></html>

@@ -1,0 +1,381 @@
+{
+  "schema_version": 1,
+  "id": "analysis-problem-framing",
+  "title": "分析課題の定義と意思決定",
+  "topic": "データ分析",
+  "summary": "業務上の判断を分析の問いに変え、必要な比較と記録を考えます。",
+  "created_at": "2026-10-31",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "GOV.UK：Measuring the success of your service",
+      "url": "https://www.gov.uk/service-manual/measuring-success/measuring-the-success-of-your-service"
+    },
+    {
+      "title": "GOV.UK：Measuring completion rate",
+      "url": "https://www.gov.uk/service-manual/measuring-success/measuring-completion-rate"
+    },
+    {
+      "title": "NIST：What is experimental design?",
+      "url": "https://www.itl.nist.gov/div898/handbook/pri/section1/pri11.htm"
+    },
+    {
+      "title": "NIST：Censoring",
+      "url": "https://www.itl.nist.gov/div898/handbook/apr/section1/apr131.htm"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "「申請の受付画面を新しくしたので、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "改善したか調べてほしい」。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "この依頼だけで分析を始めると、処理件数、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "入力時間、利用者の満足度など、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "違う結果をそれぞれが想定するかもしれません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "以下では、架空の自治体が、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "新画面を他の手続にも広げるか判断する場面を",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "実在の自治体の実績ではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "分析課題を定義するとは、何を決めるために、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "誰や何について、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "どのような答えを必要とするかを明確に",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "することです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "「集計表を作る」は作業で、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "「展開を続けるか」は意思決定です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "作業を終えたことと、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "判断に必要な証拠が得られたことを分けます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "担当者が知りたいのは、住民の入力の手間なのか、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "受付後の審査待ちなのかを確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "入力画面の改善なら、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "入力を始めてから提出するまでが直接の対象に",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "なります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "審査待ちには受付後の体制も関わるため、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "新画面だけを見ても答えはそろいません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ここでは「新画面を使った申請で、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "提出までに止まる場面が減ったか」を調べると",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "対象の手続と利用期間を定め、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "入力を始めた申請を追い、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "途中でやめた申請も含めて調べます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "提出できた人だけに尋ねると、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "途中で困った人を最初から除いてしまうからです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "集計の式と分母の定義は次章で扱います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "比較も問いの一部です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "「変更前より良いか」と「別の画面より良いか」では",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "相手が違います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "前後比較なら、繁忙期、利用者層、対象手続、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "支援の有無などが変わっていないかを確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "条件がそろわないときは、違いを記録し、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "比較できる範囲に結論を限定します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "旧画面では提出日時だけ、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "新画面では入力開始日時も記録しているとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "このままでは、提出までの所要時間を同じ定義で",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "前後比較できません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "欠けている記録を想像で補わず、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "過去の別記録を探すか、今後同じ方法で記録するか、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "問いを狭めるかを判断します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "入力画面の所要時間とは別の指標として、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "受付後の処理日数を考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "架空の例で、平均処理日数が十日から七日になったと",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ここから言えるのは、同じ条件で集計できたなら、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "その対象の平均が",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "三日短くなった、ということまでです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "同時期の人員増や案件構成の変化を",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "除けていない以上、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "新画面が三日短縮したとは断定できません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "さらに、完了案件だけの平均なら、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "長くかかっている未完了案件は含まれません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "集計時点で完了時刻が未観測の案件を除くと、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "長い案件を少なく数える偏りが生じることが",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "あります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "完了分の結果と、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "未完了件数や受付からの経過時間を分けて示します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "未完了の最終所要時間が分かったことにはしません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "問いを具体化したら、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "答えが違う場合に何をするか考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "途中離脱が特定の入力項目へ集中していれば、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "その項目を直す候補になります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "全体の数字だけでは理由が分からなければ、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "利用者の操作観察や問い合わせ内容を追加します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "数字だけですべてを決めようとせず、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "不足する証拠を特定します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "反対に、「今週の問い合わせを分類し、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "案内文の修正箇所を選ぶ」だけなら、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "大規模な因果効果の推定が常に必要なわけでは",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "ありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "記述で足りる判断もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ただし、選んだ修正が問題を解消したかは、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "その後に別の問いとして確かめます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "分析の前に短く残す記録は、判断する人と選択肢、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "調べる対象、比較相手、必要な記録、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "答えられないことです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "結論を先に決める記録ではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "途中で問いを変える必要が生じたら、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "その理由を残し、",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "最初から同じ問いだったように",
+      "duration_multiplier": 1.0
+    },
+    {
+      "text": "扱わないための記録です。",
+      "duration_multiplier": 1.15
+    }
+  ]
+}

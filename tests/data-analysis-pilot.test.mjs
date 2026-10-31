@@ -70,9 +70,39 @@ test("the practical lectures retain their key examples and limits", async () => 
   }
 });
 
+test("the foundations and experiment lectures retain their conditions and limitations", async () => {
+  const gates = {
+    "analysis-problem-framing": [
+      ["旧画面", "新画面", "入力開始日時"], ["未完了", "平均"], ["因果", "断定できません"],
+    ],
+    "analysis-data-quality-missingness": [
+      ["七十五パーセント", "六十パーセント", "八十パーセント"],
+      ["信頼区間ではありません"], ["MCAR（エムシーエーアール）", "MAR（エムエーアール）", "MNAR（エムエヌエーアール）"],
+    ],
+    "inference-randomized-experiments": [
+      ["無作為割当", "無作為抽出"], ["欠損", "偏り"], ["干渉", "割当"],
+    ],
+    "inference-ab-testing": [
+      ["A/Bテスト、エービーテスト", "逐次"], ["停止", "誤り率"],
+      ["六十パーセント", "六十五パーセント", "五パーセントポイント"],
+    ],
+    "modeling-validation-leakage": [
+      ["予測する時点", "使えない情報"], ["分割してから", "学習側", "テスト側"],
+      ["未知の利用者", "利用者単位"], ["因果効果", "確認できたわけではありません"],
+    ],
+  };
+  for (const [id, requirements] of Object.entries(gates)) {
+    const meta = catalog.lessons.find((lesson) => lesson.id === id);
+    const html = await read(meta.learn_path.replace(/^\.\//, ""));
+    const article = html.match(/<article\b[^>]*>([\s\S]*?)<\/article>/i)?.[1] ?? "";
+    for (const terms of requirements) assert.ok(terms.every((term) => article.includes(term)), `${id}: ${terms.join(" / ")}`);
+  }
+});
+
 test("the new lesson paths stay under the GitHub Pages base path", async () => {
   const ids = ["analysis-kpi-denominators", "practical-pipelines-validation", "practical-privacy-ethics",
-    "practical-report-decisions", "practical-public-service-case"];
+    "practical-report-decisions", "practical-public-service-case", "analysis-problem-framing",
+    "analysis-data-quality-missingness", "inference-randomized-experiments", "inference-ab-testing", "modeling-validation-leakage"];
   for (const id of ids) {
     const meta = catalog.lessons.find((lesson) => lesson.id === id);
     for (const path of [meta.path, meta.learn_path]) {

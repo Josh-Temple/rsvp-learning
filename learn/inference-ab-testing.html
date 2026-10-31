@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="実験の指標と停止規則を決め、結果を判断へつなげます。" />
+  <meta name="theme-color" content="#f2efe8" />
+  <title>A/Bテストの運用と意思決定 — Learn</title>
+  <link rel="stylesheet" href="./learn.css" />
+  <script src="./learn.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="top">
+      <a href="../index.html">RSVPに戻る</a>
+      <span class="mode">LEARN · データ分析</span>
+    </header>
+    <main>
+      <section class="reader" id="speech-reader" aria-label="読み上げプレイヤー">
+        <div class="reader-row">
+          <button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+          <button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+          <button id="speech-stop" type="button" aria-label="停止" disabled>■</button>
+          <select id="speech-voice" aria-label="読み上げ音声"></select>
+          <label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+        </div>
+        <div id="speech-status" class="reader-status" role="status">読み上げ準備中</div>
+      </section>
+      <article id="learn-article"><h1>A/Bテストの運用と意思決定</h1>
+<p class="lead">実験の指標と停止規則を決め、結果を判断へつなげます。</p>
+<p>A/Bテスト、エービーテストは、二つの案を対象者へ割り当て、結果を比べる実験の運用形態です。無作為割当の原理を、実際の画面やサービスで保つ必要があります。ここでは架空の予約画面で、従来案Aと新案Bを比較します。</p>
+<p>まず「利用者が予約を完了できるか」を主要指標にします。クリック数だけでは、迷って何度も押した場合も増えるからです。障害や問い合わせの増加など、改善と引き換えに悪化させたくない結果も監視指標として定めます。</p>
+<h2>始める前に、比較の仕様を固定する</h2>
+<p>対象者の条件、利用者単位の割当、同じ人には同じ案を出す規則、完了を数える期限を決めます。標本サイズは検出したい差とばらつきから計画し、曜日の偏りや結果が確定するまでの時間も踏まえて期間を設定します。数字だけを満たせば、いつ終了してもよいとは限りません。</p>
+<p>運用中は、予定どおり割り当てられているか、両案のログが同じ定義で記録されるかを点検します。割当人数の不自然な偏りや一方だけの記録漏れがあれば、差の解釈を保留して原因を確認します。正常な割当でも、人数が常に完全に同じになるとは限りません。</p>
+<h2>毎日p値、ピー値を見て、初めて有意になった日に止めない</h2>
+<p>通常の固定標本の検定で、毎日結果を見て、都合のよいp値が出た時点を終了日に選ぶと、予定した誤り率が保てないことがあります。見ること自体より、その結果で検定や停止を選び直すことが問題です。</p>
+<p>途中で判断したい場合は、逐次観測に対応した方法と停止規則を事前に設計します。逐次解析とは、情報が増える途中の判断も含めて誤りを管理する手続きです。単に「途中で見てもよい」と呼ぶだけでは保証されません。</p>
+<p>障害や利用者への不利益を監視して中止することは、実験運用で必要です。その理由と時点を記録し、事前に予定した完了時点の確証結果とは区別して報告します。安全上の停止を、成功を選び取る手段に変えないことが大切です。</p>
+<h2>観測した改善を、採用判断へつなぐ</h2>
+<p>各案二百人のうち、Aで百二十人、Bで百三十人が期限内に完了したとします。完了率は六十パーセントと六十五パーセントで、差は五パーセントポイントです。これは計算を説明する架空例で、二百人が十分な標本数だと推奨するものではありません。</p>
+<p>差の区間、不利益側の指標、実装費用を確認して採用を判断します。多数の指標や利用者層から、良かったものだけを選べば、偶然の差を成果と取り違えます。事前の主要指標と、後から見つけた傾向を分けて報告します。</p>
+<p>不確実性が大きい場合は、「差がない」と決めず、現状を維持する、設計を改善して再実験するなどの選択肢を比較します。期限前の未確定結果を失敗として埋めず、同じ観測期間を確保して、判断できる範囲を明示します。</p>
+</article>
+<section class="sources" aria-labelledby="sources-title"><h2 id="sources-title">出典</h2>
+<p><a href="https://arxiv.org/pdf/1512.04922">Johari・Pekelis・Walsh：Always Valid Inference: Continuous Monitoring of A/B Tests</a></p>
+<p><a href="https://www.gov.uk/service-manual/measuring-success/how-to-set-performance-metrics-for-your-service">GOV.UK：How to set performance metrics for your service</a></p>
+<p><a href="https://www.amstat.org/asa/files/pdfs/p-valuestatement.pdf">ASA：p値に関する声明の公式発表</a></p>
+</section></main></div></body></html>

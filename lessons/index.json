@@ -1286,6 +1286,46 @@
       "path": "./lessons/statistics-data-analysis/practical-public-service-case.json",
       "status": "COMPLETE v0.1",
       "learn_path": "./learn/practical-public-service-case.html"
+    },
+    {
+      "id": "analysis-problem-framing",
+      "title": "分析課題の定義と意思決定",
+      "topic": "データ分析",
+      "path": "./lessons/statistics-data-analysis/analysis-problem-framing.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/analysis-problem-framing.html"
+    },
+    {
+      "id": "analysis-data-quality-missingness",
+      "title": "データ品質・欠損・非回答",
+      "topic": "データ分析",
+      "path": "./lessons/statistics-data-analysis/analysis-data-quality-missingness.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/analysis-data-quality-missingness.html"
+    },
+    {
+      "id": "inference-randomized-experiments",
+      "title": "無作為化実験・比較群・交絡",
+      "topic": "データ分析",
+      "path": "./lessons/statistics-data-analysis/inference-randomized-experiments.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/inference-randomized-experiments.html"
+    },
+    {
+      "id": "inference-ab-testing",
+      "title": "A/Bテストの運用と意思決定",
+      "topic": "データ分析",
+      "path": "./lessons/statistics-data-analysis/inference-ab-testing.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/inference-ab-testing.html"
+    },
+    {
+      "id": "modeling-validation-leakage",
+      "title": "過学習・検証・データ漏えい",
+      "topic": "データ分析",
+      "path": "./lessons/statistics-data-analysis/modeling-validation-leakage.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/modeling-validation-leakage.html"
     }
   ]
 }

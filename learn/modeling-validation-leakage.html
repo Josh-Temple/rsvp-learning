@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="予測時点と対象に合わせてデータを分け、漏えいを防ぎます。" />
+  <meta name="theme-color" content="#f2efe8" />
+  <title>過学習・検証・データ漏えい — Learn</title>
+  <link rel="stylesheet" href="./learn.css" />
+  <script src="./learn.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="top">
+      <a href="../index.html">RSVPに戻る</a>
+      <span class="mode">LEARN · データ分析</span>
+    </header>
+    <main>
+      <section class="reader" id="speech-reader" aria-label="読み上げプレイヤー">
+        <div class="reader-row">
+          <button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+          <button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+          <button id="speech-stop" type="button" aria-label="停止" disabled>■</button>
+          <select id="speech-voice" aria-label="読み上げ音声"></select>
+          <label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+        </div>
+        <div id="speech-status" class="reader-status" role="status">読み上げ準備中</div>
+      </section>
+      <article id="learn-article"><h1>過学習・検証・データ漏えい</h1>
+<p class="lead">予測時点と対象に合わせてデータを分け、漏えいを防ぎます。</p>
+<p>今月の利用状況から、来月もサービスを使う人を予測するとします。過去のデータに細かく合わせれば、そのデータでの正解は増やせます。しかし、個別の偶然まで覚えて新しい対象で外れることがあります。これが過学習です。新しい対象でも役立つ性質を汎化と呼び、その確認が必要です。以下は架空の利用予測です。</p>
+<h2>データを分けるのは、役割を分けるため</h2>
+<p>学習データは、モデルの係数や規則を決めるために使います。検証データは、候補の方法や複雑さ、判定の境界を選ぶために使います。最後のテストデータは、選び終わった方法の成績を評価するために確保します。</p>
+<p>テストの成績を見て何度もモデルを変えれば、その情報も選択に使ったことになります。そこでの成績を、選択から独立した評価としては扱えません。データが限られる場合は、一部を順に検証側へ回す交差検証などを使いますが、最終評価と選択の役割は保ちます。</p>
+<h2>漏えいは、正解の列を入れる場合だけではない</h2>
+<p>データ漏えいは、予測する時点で使えない情報や、評価側の情報がモデル作成に入り、成績が実力よりよく見えることです。今月末に予測するのに、来月の利用記録や、利用終了後に確定する理由を入力すれば、実際の運用では使えません。</p>
+<p>また、欠損を埋める平均や、尺度をそろえる基準を全データから求めると、テスト側の情報も混ざります。分割してから学習側だけで基準を求め、検証・テスト側にはその基準を適用します。交差検証でも、各回の学習側で前処理を学び直す必要があります。</p>
+<h2>何に対して新しいデータなのかを決める</h2>
+<p>同じ人の月別記録を行ごとに無作為分割すると、その人の別の月が学習側と評価側に入ります。未知の利用者への予測を知りたいなら、利用者単位で分ける必要があります。一方、既存利用者の将来を予測したいなら、時間を前後に分け、予測時点までの履歴だけを使う設計が基本になります。</p>
+<p>どの分割も万能ではありません。別拠点への展開を知りたいなら拠点の違い、将来の利用を知りたいなら時間の変化を評価へ反映します。評価期間の結果が確定していない人を、利用しなかった人として数えないことも必要です。</p>
+<h2>一つの平均成績では、利用条件を保証できない</h2>
+<p>全体の成績に加え、目的に必要で適切に扱える範囲で、地域や利用環境別の誤りを確認します。件数の少ない層の数値は不安定なため、分母も示します。成績が同じであることだけを、公平な扱いの十分条件にしません。</p>
+<p>報告では、予測時点、入力の入手可能時点、分割単位、調整に使ったデータを記録します。予測性能を評価する仕組みが整っても、そのモデルで介入した場合の因果効果まで確認できたわけではありません。</p>
+</article>
+<section class="sources" aria-labelledby="sources-title"><h2 id="sources-title">出典</h2>
+<p><a href="https://scikit-learn.org/stable/common_pitfalls.html">scikit-learn：Common pitfalls</a></p>
+<p><a href="https://scikit-learn.org/stable/modules/cross_validation.html">scikit-learn：Cross-validation</a></p>
+<p><a href="https://scikit-learn.org/stable/modules/classification_threshold.html">scikit-learn：Tuning the decision threshold</a></p>
+</section></main></div></body></html>

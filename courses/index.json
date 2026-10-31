@@ -306,7 +306,9 @@
       "id": "data-analysis-foundations",
       "title": "データ分析 I：問い・データの準備",
       "chapters": [
-        "analysis-kpi-denominators"
+        "analysis-problem-framing",
+        "analysis-kpi-denominators",
+        "analysis-data-quality-missingness"
       ]
     },
     {
@@ -317,6 +319,21 @@
         "practical-privacy-ethics",
         "practical-report-decisions",
         "practical-public-service-case"
+      ]
+    },
+    {
+      "id": "data-analysis-inference",
+      "title": "データ分析 III：推測統計・実験",
+      "chapters": [
+        "inference-randomized-experiments",
+        "inference-ab-testing"
+      ]
+    },
+    {
+      "id": "data-analysis-modeling",
+      "title": "データ分析 IV：回帰・予測・因果推論",
+      "chapters": [
+        "modeling-validation-leakage"
       ]
     }
   ]
