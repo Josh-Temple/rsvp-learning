@@ -308,7 +308,10 @@
       "chapters": [
         "analysis-problem-framing",
         "analysis-kpi-denominators",
-        "analysis-data-quality-missingness"
+        "analysis-data-types-grain",
+        "analysis-data-collection-provenance",
+        "analysis-data-quality-missingness",
+        "analysis-cleaning-reproducibility"
       ]
     },
     {

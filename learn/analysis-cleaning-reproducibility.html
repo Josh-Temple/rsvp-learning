@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="前処理の判断と変更履歴を残し、再現性と妥当性を区別します。" />
+  <meta name="theme-color" content="#f2efe8" />
+  <title>前処理・加工履歴・再現性 — Learn</title>
+  <link rel="stylesheet" href="./learn.css" />
+  <script src="./learn.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="top"><a href="../index.html">RSVPに戻る</a><span class="mode">LEARN · データ分析</span></header>
+    <main>
+      <section class="reader" id="speech-reader" aria-label="読み上げプレイヤー">
+        <div class="reader-row">
+          <button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+          <button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+          <button id="speech-stop" type="button" aria-label="停止" disabled>■</button>
+          <select id="speech-voice" aria-label="読み上げ音声"></select>
+          <label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+        </div>
+        <div id="speech-status" class="reader-status" role="status">読み上げ準備中</div>
+      </section>
+      <article id="learn-article">
+<h1>前処理・加工履歴・再現性</h1>
+<p class="lead">前処理の判断と変更履歴を残し、再現性と妥当性を区別します。</p>
+<p>架空の販売記録に、金額が負の行と、注文番号が同じ行がありました。負だから零へ直し、重複だから片方を消せばよいでしょうか。負の金額は返品かもしれません。同じ注文番号の行は別の商品明細かもしれません。前処理は、見た目を整える作業ではなく、分析で使う意味を保つための処理です。</p>
+<p>クレンジングは、誤りや不整合を確認し、決めた規則に従って扱う作業です。単位の統一、型の変換、コードの対応付けなども前処理に含まれます。ただし、値が珍しいという理由だけでは、誤りとは判断できません。</p>
+<h2>変更前の記録と、変更の理由を残す</h2>
+<p>利用と保管が許されている範囲で、受け取ったデータを直接上書きせず、加工用の版を分けます。元の値と訂正後の値をたどれるようにし、訂正の根拠も残します。元データの保存も、アクセス権や保存期限に従う必要があり、無期限に複製してよいという意味ではありません。</p>
+<p>例えば、重量の列に「二キログラム」と「二千グラム」が混在していれば、単位を確認して同じ量へ変換できます。しかし、単位が不明な「二」という値を、都合よく推測して直すことはできません。確認できない行は、未確認として扱う規則を決めます。</p>
+<p>除外も変更です。「値が大きいから除外」では、分析者ごとに結果が変わります。対象期間外、テスト用の注文、訂正前の重複配信など、判断できる条件と根拠を記します。異常な値を除く場合も、残した結果と比べて結論への影響を確かめます。</p>
+<h2>手順を、同じ入力へ適用し直せる形にする</h2>
+<p>再現性とは、用いた入力と処理条件をそろえ、結果を作り直せることです。表計算の手作業でも、どの列に何をしたか記録できますが、毎回のコピーや選択を再現するには注意が要ります。繰り返す加工は、保存した手順やスクリプトへまとめる方法があります。</p>
+<p>必要なのは処理の説明だけではありません。入力データの版、抽出した日時と対象、処理の版、使ったソフトウェアや設定、出力を対応付けます。乱数を使う処理では乱数の条件も記します。データが毎日更新されるのに、同じファイル名を指定しただけでは、同じ入力を使ったことになりません。</p>
+<p>処理の順番も結果を変えます。返品を含む売上を集計してから欠損を確認する場合と、欠損のある行を落としてから集計する場合では、合計の対象が違い得ます。順番と各段階の行数、除外件数、未確認件数を残すと、結果が変わった場所を探せます。</p>
+<h2>再現できても、正しいとは限らない</h2>
+<p>注文の合計金額を明細ごとに足す誤りをコードにすれば、毎回同じ誤った合計が出ます。自動化や再実行の成功は、計算の意味の検証を代わりに行うものではありません。小さな記録を人が追って計算した結果と照合し、元データの件数や合計との関係も確かめます。</p>
+<p>逆に、結果の数字だけを保存しても、後で入力の訂正が見つかったときに、どこへ影響したかを調べにくくなります。変更を追える記録があれば、必要な範囲をやり直し、以前との差を説明できます。</p>
+<p>結果を渡す前に、別の担当者が、使った入力、適用した規則、除いた記録、再実行の方法を特定できるか確かめます。前処理の良し悪しは、きれいな表になったかだけでなく、その表を作った判断を追えるかで評価します。</p>
+      </article>
+      <section class="sources" aria-labelledby="sources-title"><h2 id="sources-title">出典</h2>
+<p><a href="https://analysisfunction.civilservice.gov.uk/support/reproducible-analytical-pipelines/">Government Analysis Function：Reproducible Analytical Pipelines</a></p>
+<p><a href="https://analysisfunction.civilservice.gov.uk/support/reproducible-analytical-pipelines/why-take-a-more-sophisticated-approach-to-building-your-pipeline/">Government Analysis Function：Why take a more sophisticated approach to building your pipeline</a></p>
+<p><a href="https://www.gov.uk/government/publications/the-government-data-quality-framework/the-government-data-quality-framework-guidance">GOV.UK：The Government Data Quality Framework: guidance</a></p>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

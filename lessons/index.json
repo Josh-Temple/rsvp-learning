@@ -1374,6 +1374,30 @@
       "path": "./lessons/statistics-data-analysis/modeling-quasi-experiments.json",
       "status": "COMPLETE v0.1",
       "learn_path": "./learn/modeling-quasi-experiments.html"
+    },
+    {
+      "id": "analysis-data-types-grain",
+      "title": "データ型・観測単位・粒度",
+      "topic": "データ分析",
+      "path": "./lessons/statistics-data-analysis/analysis-data-types-grain.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/analysis-data-types-grain.html"
+    },
+    {
+      "id": "analysis-data-collection-provenance",
+      "title": "データ収集・出所・測定誤差",
+      "topic": "データ分析",
+      "path": "./lessons/statistics-data-analysis/analysis-data-collection-provenance.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/analysis-data-collection-provenance.html"
+    },
+    {
+      "id": "analysis-cleaning-reproducibility",
+      "title": "前処理・加工履歴・再現性",
+      "topic": "データ分析",
+      "path": "./lessons/statistics-data-analysis/analysis-cleaning-reproducibility.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/analysis-cleaning-reproducibility.html"
     }
   ]
 }

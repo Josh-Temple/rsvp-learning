@@ -1,0 +1,337 @@
+{
+  "schema_version": 1,
+  "id": "analysis-data-types-grain",
+  "title": "データ型・観測単位・粒度",
+  "topic": "データ分析",
+  "summary": "観測単位、データ型、識別子と時点を区別して集計の誤りを防ぎます。",
+  "created_at": "2026-10-31",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "Statistics Canada：Types of variables",
+      "url": "https://www150.statcan.gc.ca/n1/edu/power-pouvoir/ch8/5214817-eng.htm"
+    },
+    {
+      "title": "W3C：Model for Tabular Data and Metadata on the Web",
+      "url": "https://www.w3.org/TR/tabular-data-model/"
+    },
+    {
+      "title": "RFC 3339：Date and Time on the Internet",
+      "url": "https://www.rfc-editor.org/rfc/rfc3339"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "販売記録に百行あっても、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "注文が百件あるとは限りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一つの注文で複数の商品を買えば、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "商品ごとの行ができます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "逆に、一人の利用者の一か月分を一行にまと",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "めた表もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ここでは架空の通販サービスを例に、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "数字を計算する前に表の意味を確かめます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "観測単位は、何を一つの対象として記録するかを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "示します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用者一人、注文一件、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "商品明細一件は違う単位です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "データの粒度は、どこまで細かく区別しているかと",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "いう詳しさです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "「利用者ごと」だけでなく、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "「利用者一人について一日ごと」まで決めると、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "一行の意味が明確になります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "変数は、対象ごとに値が変わる特徴です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "配送方法のようなカテゴリと、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "購入金額のような数量を区別します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "カテゴリのうち、通常便・冷蔵便のように",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "自然な順序がないものは名義尺度です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "優先度の低・中・高のように順序があるものは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "順序尺度ですが、低から中と、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "中から高の差が等しいとは限りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "配送方法を一、二、三で記録しても、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "その平均が配送方法の「中間」を表すわけでは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "番号は分類のための符号だからです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "満足度の段階も、数字を付けただけで等間隔の量に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "なるとは限りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "集計法を選ぶときには、数字の見た目より、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "測った内容と置いた仮定を確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "数量には、商品の個数のように数える離散値と、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "重量や所要時間のように連続的な量があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "実際の重量を一グラム単位で記録していても、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "記録の丸め方と、もとの量の性質は別です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "また、金額には通貨、重量には単位が必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "千円単位の欄を円として合計すれば、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "計算操作が正しくても結果は誤ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "識別子は、対象を区別するための値です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用者番号や注文番号は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "通常は足し算する測定値ではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "先頭の零を含むコードを数量として読み込むと、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "もとの表記を失うことがあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "注文ごとに一行の表なら、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "注文番号で各行を区別できるはずです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "商品明細ごとなら、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "同じ注文番号が複数行に現れるのは自然です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "その場合は注文番号と明細番号の組などで行を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "区別します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "「番号が重なっているから削除する」と決める前に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "、想定した粒度で本当に重複しているかを調べます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "注文ごとに同じ合計金額を全明細へ付けた表では、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "その金額を行ごとに足すと二重計上になります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "もとの注文表で集計するか、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "注文を一度ずつ数える形へそろえます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "具体的な結合と検査は実務編へ譲り、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ここでは「何の一件か」を言葉で確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "利用者の住所や注文の状態は変わります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "現在の住所を使うのか、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "注文時点の住所を使うのかで、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "地域別の結果は違う場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "日付だけの記録と、時刻まである記録も、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "同じ精度ではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "複数の地域の時刻を扱うなら、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "どの時間帯の時刻かも必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "同じ瞬間でも日付が異なることがあるため、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "日別にまとめる基準をそろえます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "通信で使う時刻表現にはUTCとの差を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "付ける方法がありますが、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "本章で特定形式への一律変換を義務付けるものでは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "表を受け取ったら、一行の対象と期間、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "列の意味と単位、行を区別する条件を説明で",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "きるか確かめます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "説明できない表では、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "行数が何を数えているかもまだ確定していません。",
+      "duration_multiplier": 1.15
+    }
+  ]
+}

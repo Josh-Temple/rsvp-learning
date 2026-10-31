@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="観測単位、データ型、識別子と時点を区別して集計の誤りを防ぎます。" />
+  <meta name="theme-color" content="#f2efe8" />
+  <title>データ型・観測単位・粒度 — Learn</title>
+  <link rel="stylesheet" href="./learn.css" />
+  <script src="./learn.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="top"><a href="../index.html">RSVPに戻る</a><span class="mode">LEARN · データ分析</span></header>
+    <main>
+      <section class="reader" id="speech-reader" aria-label="読み上げプレイヤー">
+        <div class="reader-row">
+          <button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+          <button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+          <button id="speech-stop" type="button" aria-label="停止" disabled>■</button>
+          <select id="speech-voice" aria-label="読み上げ音声"></select>
+          <label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+        </div>
+        <div id="speech-status" class="reader-status" role="status">読み上げ準備中</div>
+      </section>
+      <article id="learn-article">
+<h1>データ型・観測単位・粒度</h1>
+<p class="lead">観測単位、データ型、識別子と時点を区別して集計の誤りを防ぎます。</p>
+<p>販売記録に百行あっても、注文が百件あるとは限りません。一つの注文で複数の商品を買えば、商品ごとの行ができます。逆に、一人の利用者の一か月分を一行にまとめた表もあります。ここでは架空の通販サービスを例に、数字を計算する前に表の意味を確かめます。</p>
+<p>観測単位は、何を一つの対象として記録するかを示します。利用者一人、注文一件、商品明細一件は違う単位です。データの粒度は、どこまで細かく区別しているかという詳しさです。「利用者ごと」だけでなく、「利用者一人について一日ごと」まで決めると、一行の意味が明確になります。</p>
+<h2>数字で書かれていても、数量とは限らない</h2>
+<p>変数は、対象ごとに値が変わる特徴です。配送方法のようなカテゴリと、購入金額のような数量を区別します。カテゴリのうち、通常便・冷蔵便のように自然な順序がないものは名義尺度です。優先度の低・中・高のように順序があるものは順序尺度ですが、低から中と、中から高の差が等しいとは限りません。</p>
+<p>配送方法を一、二、三で記録しても、その平均が配送方法の「中間」を表すわけではありません。番号は分類のための符号だからです。満足度の段階も、数字を付けただけで等間隔の量になるとは限りません。集計法を選ぶときには、数字の見た目より、測った内容と置いた仮定を確認します。</p>
+<p>数量には、商品の個数のように数える離散値と、重量や所要時間のように連続的な量があります。実際の重量を一グラム単位で記録していても、記録の丸め方と、もとの量の性質は別です。また、金額には通貨、重量には単位が必要です。千円単位の欄を円として合計すれば、計算操作が正しくても結果は誤ります。</p>
+<h2>識別子は、一行の意味と組み合わせる</h2>
+<p>識別子は、対象を区別するための値です。利用者番号や注文番号は、通常は足し算する測定値ではありません。先頭の零を含むコードを数量として読み込むと、もとの表記を失うことがあります。</p>
+<p>注文ごとに一行の表なら、注文番号で各行を区別できるはずです。商品明細ごとなら、同じ注文番号が複数行に現れるのは自然です。その場合は注文番号と明細番号の組などで行を区別します。「番号が重なっているから削除する」と決める前に、想定した粒度で本当に重複しているかを調べます。</p>
+<p>注文ごとに同じ合計金額を全明細へ付けた表では、その金額を行ごとに足すと二重計上になります。もとの注文表で集計するか、注文を一度ずつ数える形へそろえます。具体的な結合と検査は実務編へ譲り、ここでは「何の一件か」を言葉で確認します。</p>
+<h2>時点を落とすと、違う記録が同じに見える</h2>
+<p>利用者の住所や注文の状態は変わります。現在の住所を使うのか、注文時点の住所を使うのかで、地域別の結果は違う場合があります。日付だけの記録と、時刻まである記録も、同じ精度ではありません。</p>
+<p>複数の地域の時刻を扱うなら、どの時間帯の時刻かも必要です。同じ瞬間でも日付が異なることがあるため、日別にまとめる基準をそろえます。通信で使う時刻表現にはUTCとの差を付ける方法がありますが、本章で特定形式への一律変換を義務付けるものではありません。</p>
+<p>表を受け取ったら、一行の対象と期間、列の意味と単位、行を区別する条件を説明できるか確かめます。説明できない表では、行数が何を数えているかもまだ確定していません。</p>
+      </article>
+      <section class="sources" aria-labelledby="sources-title"><h2 id="sources-title">出典</h2>
+<p><a href="https://www150.statcan.gc.ca/n1/edu/power-pouvoir/ch8/5214817-eng.htm">Statistics Canada：Types of variables</a></p>
+<p><a href="https://www.w3.org/TR/tabular-data-model/">W3C：Model for Tabular Data and Metadata on the Web</a></p>
+<p><a href="https://www.rfc-editor.org/rfc/rfc3339">RFC 3339：Date and Time on the Internet</a></p>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
