@@ -141,4 +141,11 @@ python -m http.server 8000
 
 ## 公開について
 
-教材には調査資料由来の情報が入るため、private repositoryでの個人利用を前提とします。
+公開先は GitHub Pages の [RSVP Learning](https://josh-temple.github.io/rsvp-learning/) です。
+
+- 公開元は `main` ブランチの `/(root)` です。
+- 静的HTML・CSS・JavaScript・教材JSONをそのまま配信します。サーバー実行環境は不要です。
+- リンク・PWAの起動URL・Service Workerキャッシュは公開先のサブパスに対応します。
+- 更新前に `npm run check` でテストし、公開後は RSVP / Learn / Listen / PWA を実機確認します。
+- 学習履歴と再生位置はブラウザの `localStorage` に保存しています。**VercelからGitHub Pagesへのドメイン変更では自動移行されず、移行先では初期状態になります。** 元のVercelサイトの履歴は、そのサイトのブラウザ保存領域に残ります（ブラウザデータを削除しない限り）。
+- Web Speech APIによる音声読み上げはAndroid Chromeの前面利用を前提とし、バックグラウンドでの継続再生は保証しません。
