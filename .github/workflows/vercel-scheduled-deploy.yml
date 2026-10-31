@@ -1,10 +1,7 @@
 name: Scheduled Vercel production deploy
 
 on:
-  schedule:
-    # Daily at 09:17 Japan time (00:17 UTC); manual workflow_dispatch remains available.
-    - cron: "17 0 * * *"
-  # Production deploys are explicit/scheduled; do not trigger them on workflow-file edits.
+  # GitHub Pages is primary. Retain manual Vercel deployment only for emergency rollback.
   workflow_dispatch:
 
 permissions:
