@@ -23,7 +23,7 @@ test("legacy hypothesis lesson adds a worked Z example without shifting existing
   const catalog = JSON.parse(await read("lessons/index.json")).lessons;
   const courses = JSON.parse(await read("courses/index.json")).courses;
   const lines = md.split("## 本文")[1]?.split("## 注意")[0] ?? "";
-  const matches = [...lines.matchAll(/^(\\d+)\\. (.+)$/gm)];
+  const matches = [...lines.matchAll(/^(\d+)\. (.+)$/gm)];
   const numbered = matches.map((x) => x[2]);
   assert.equal(numbered.length, 70, "34 original chunks + 36 extension chunks");
   assert.deepEqual(matches.map((x) => Number(x[1])), Array.from({ length: 70 }, (_, i) => i + 1));
@@ -33,7 +33,7 @@ test("legacy hypothesis lesson adds a worked Z example without shifting existing
   assert.equal(json.chunks[34].text, "数式の意味を、架空の一標本で確かめます。");
   assert.equal(numbered.join(""), json.chunks.map((x) => x.text).join(""));
   assert.ok(json.chunks.every((x) => x.text.trim() && [...x.text].length <= 24));
-  assert.match(md, /^Status: COMPLETE v0\\.1$/m);
+  assert.match(md, /^Status: COMPLETE v0\.1$/m);
   assert.equal(catalog.find((x) => x.id === id)?.learn_path, "./learn/" + id + ".html");
   assert.deepEqual(courses.find((x) => x.id === "statistics-data-analysis")?.chapters, [
     "statistics-data-analysis-overview","statistics-descriptive-distributions",
