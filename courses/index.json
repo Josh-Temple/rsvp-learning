@@ -344,6 +344,15 @@
         "modeling-causal-confounding",
         "modeling-quasi-experiments"
       ]
+    },
+    {
+      "id": "data-analysis-descriptive",
+      "title": "データ分析 II：記述統計・可視化",
+      "chapters": [
+        "descriptive-aggregation-grouping",
+        "descriptive-distribution-outliers",
+        "descriptive-visualization-choices"
+      ]
     }
   ]
 }

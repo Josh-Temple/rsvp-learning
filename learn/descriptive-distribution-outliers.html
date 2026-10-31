@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ja">
+<head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="分布の形と外れ値を調べ、探索的な発見を検証済みの結論と区別します。" /><meta name="theme-color" content="#f2efe8" />
+<title>探索的分析・分布の形・外れ値 — Learn</title><link rel="stylesheet" href="./learn.css" /><script src="./learn.js" defer></script></head>
+<body><div class="shell">
+<header class="top"><a href="../index.html">RSVPに戻る</a><span class="mode">LEARN · データ分析</span></header>
+<main><section class="reader" id="speech-reader" aria-label="読み上げプレイヤー"><div class="reader-row">
+<button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+<button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+<button id="speech-stop" type="button" aria-label="停止" disabled>■</button>
+<select id="speech-voice" aria-label="読み上げ音声"></select>
+<label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+</div><div id="speech-status" class="reader-status" role="status">読み上げ準備中</div></section>
+<article id="learn-article">
+<h1>探索的分析・分布の形・外れ値</h1>
+<p class="lead">分布の形と外れ値を調べ、探索的な発見を検証済みの結論と区別します。</p>
+<p>工場の製品重量を調べたところ、大半は百グラム付近なのに、一つだけ千グラムという記録がありました。入力ミスでしょうか、それとも別の製品が混じったのでしょうか。以下は架空の場面です。平均だけを計算する前に、値の並び方や記録の条件を調べます。</p>
+<p>探索的データ分析、英字ではEDAは、データの特徴や想定していなかった構造を調べる進め方です。特定の検定を一度実行することと同じではありません。値を図や要約で確かめ、異常や前提の違いを見つけ、次に検討する問いを作ります。</p>
+<h2>山と裾を、実際の記録へ結び付ける</h2>
+<p>ヒストグラムでは、値をいくつかの区間へ分け、各区間に入る件数などを表します。重量なら、重さの近い製品がどこへ集まるかを見られます。区間の幅や区切り方によって見え方が変わるため、一つの設定だけで山の数を断定しません。</p>
+<p>片側へ長く伸びる部分を裾と呼びます。重い側へ少数の値が離れていれば、右の裾が長い分布になります。平均と中央値の違いを解釈する手掛かりになりますが、指標の大小だけで形を決めることは避けます。</p>
+<p>山が二つ見えた場合は、二種類の製品や機械の記録が混ざっているかもしれません。製品番号などで分けて確かめます。ただし、山が二つだから機械が二種類ある、と原因を確定することはできません。探索で見える形は、確認すべき候補です。</p>
+<h2>外れ値は、調べる対象であって自動削除の印ではない</h2>
+<p>外れ値は、ほかの観測から大きく離れて見える値です。入力の桁違い、単位の混在、別集団の混入のほか、実際の珍しい現象でも生じます。千グラムの記録なら、元の測定票、単位、製品の種類、機器の状態などへ戻って確認します。</p>
+<p>元の票が百グラムで、転記の桁を誤ったと確認できれば、根拠を残して訂正できます。千グラムが本当の測定値なら、目的の対象外か、対象内の重大な異常かを考えます。異常を発見する分析なのに、その値を消すと、知りたかった問題まで消してしまいます。</p>
+<p>正規分布を前提とした外れ値の判定法を、もともと強く歪んだデータへそのまま使うと、正常な裾の値を異常と見なす場合があります。機械的な基準で候補を探すことと、観測を誤りと認定することを分けます。</p>
+<h2>探索で見つけた問いを、確証と区別する</h2>
+<p>重量を曜日、時間帯、機械、担当者などで繰り返し分ければ、目立つ差が見つかるかもしれません。その差を見てから仮説を作ったなら、「探索から得た仮説」として残します。初めからその差を確かめる計画だったように書き換えません。</p>
+<p>別の期間の記録で確かめる、事前に比較方法を決めた検証を行うなど、確かめる工程を続けます。検定を何度も試す問題は推測統計で扱いますが、ここでは、どの探索を行い、何を見て問いを選んだかを説明できることが基礎になります。</p>
+<p>探索の成果は、きれいな図ができたことだけではありません。混ざっていた条件、確認が必要な記録、次に確かめる仮説が分かれば、平均だけでは見えなかった分析上の問題を具体化できます。</p>
+</article>
+<section class="sources" aria-labelledby="sources-title"><h2 id="sources-title">出典</h2>
+<p><a href="https://www.itl.nist.gov/div898/handbook/eda/section1/eda11.htm">NIST：What is EDA?</a></p>
+<p><a href="https://www.itl.nist.gov/div898/handbook/eda/section3/eda33e.htm">NIST：Histogram</a></p>
+<p><a href="https://www.itl.nist.gov/div898/handbook/eda/section3/eda35h.htm">NIST：Detection of Outliers</a></p>
+<p><a href="https://www.amstat.org/asa/files/pdfs/p-valuestatement.pdf">ASA：Statement on Statistical Significance and P-Values 発表資料</a></p>
+</section></main></div></body></html>

@@ -1,0 +1,305 @@
+{
+  "schema_version": 1,
+  "id": "descriptive-aggregation-grouping",
+  "title": "集計・層別比較・重み付き平均",
+  "topic": "データ分析",
+  "summary": "集計の単位と重みを見極め、平均や割合の比較を誤らない方法を学びます。",
+  "created_at": "2026-10-31",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "NumPy：numpy.average",
+      "url": "https://numpy.org/doc/stable/reference/generated/numpy.average.html"
+    },
+    {
+      "title": "NIST：Measures of Location",
+      "url": "https://www.itl.nist.gov/div898/handbook/eda/section3/eda351.htm"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "架空の二店舗で、来店者の待ち時間を調べました。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "店舗Aは十人で平均二分、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "店舗Bは九十人で平均十分です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "二分と十分を足して二で割ると六分ですが、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "百人全体の平均待ち時間は六分にはなりません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "以下はすべて架空の計算例です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "集計は、目的に合わせてデータをまとめる操作です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "店舗ごと、日ごと、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "商品ごとなどの区分を集計の軸と呼びます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "同じ記録でも、軸と数える単位が変われば、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "結果の意味は変わります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Aの待ち時間の合計は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "二分に十人を掛けた二十分です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Bは十分に九十人を掛けた九百分です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "合計九百二十分を百人で割ると、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "全来店者の平均は九点二分になります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "大半の来店者がBを利用しているので、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "全体平均もBの値に近づきます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "これが人数で重み付けした平均です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "式では「各群の平均×各群の人数」を合計し、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "全人数で割ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一般の重み付き平均も、値に重みを掛けて足し、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "重みの合計で割ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "何を重みとしたかが、平均の意味を決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "六分という単純平均も、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "計算自体が誤りなのではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "「各店舗を同じ重さで見た、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "店舗別平均の平均」への答えです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "来店者一人を同じ重さで扱う九点二分とは別です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "店舗運営を比べたいのか、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "利用者全体の待ちを知りたいのかを先に決めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "同じ百人のうち、Aで八人、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "Bで四十五人が待ち時間に満足したとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "Aは八十パーセント、Bは五十パーセントです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "全体は肯定した五十三人を百人で割り、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "五十三パーセントです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "八十と五十の平均の六十五パーセントを、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "全来店者の割合として使うと誤ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "集計済みの割合しかなく、分母が分からなければ、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "全体の割合を正しく再構成できない場合があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "群ごとの平均だけを保管して件数を失った場合も",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "同様です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "集計結果には、使った件数や合計も添えると、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "まとめ直すときに確認できます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "層別比較は、条件で分けた群ごとに結果を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "比べることです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "店舗ごとの待ち時間に差があれば、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "曜日や受付内容などで分けると、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "差がどこにあるかを調べられます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ただし、分け方を細かくしすぎると、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "各群の件数が少なくなり、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "一件の違いで大きく動きます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "たとえば、一店舗に難しい手続が集中していれば、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "店舗平均の差は担当者の能力だけを表していません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "層別は比較条件の違いに気付く手段ですが、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "群を分けただけで因果関係が確定するわけでは",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "構成の違いで全体の比較が逆転する例は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "別の章で扱います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "また、すでに人数で重み付けされた集計に、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "もう一度人数を掛けるなど、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "重みの二重適用にも注意します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "単なる件数の重みと、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "調査で対象集団へ広げるための抽出の重みは目的が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "違うため、同じものとして扱いません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "結果をまとめるときは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "「誰または何を等しく数えるか」を一文で説明し",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "全体の平均と群別の結果を併記すれば、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "全体の経験と、どこを改善するかと",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "いう二つの判断を分けて考えられます。",
+      "duration_multiplier": 1.15
+    }
+  ]
+}

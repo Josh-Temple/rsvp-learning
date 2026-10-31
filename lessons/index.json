@@ -1398,6 +1398,30 @@
       "path": "./lessons/statistics-data-analysis/analysis-cleaning-reproducibility.json",
       "status": "COMPLETE v0.1",
       "learn_path": "./learn/analysis-cleaning-reproducibility.html"
+    },
+    {
+      "id": "descriptive-aggregation-grouping",
+      "title": "集計・層別比較・重み付き平均",
+      "topic": "データ分析",
+      "path": "./lessons/statistics-data-analysis/descriptive-aggregation-grouping.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/descriptive-aggregation-grouping.html"
+    },
+    {
+      "id": "descriptive-distribution-outliers",
+      "title": "探索的分析・分布の形・外れ値",
+      "topic": "データ分析",
+      "path": "./lessons/statistics-data-analysis/descriptive-distribution-outliers.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/descriptive-distribution-outliers.html"
+    },
+    {
+      "id": "descriptive-visualization-choices",
+      "title": "グラフの選択と誤解を招く表示",
+      "topic": "データ分析",
+      "path": "./lessons/statistics-data-analysis/descriptive-visualization-choices.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/descriptive-visualization-choices.html"
     }
   ]
 }
