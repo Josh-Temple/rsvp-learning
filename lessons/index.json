@@ -1350,6 +1350,30 @@
       "path": "./lessons/statistics-data-analysis/practical-dashboard-kpi.json",
       "status": "COMPLETE v0.1",
       "learn_path": "./learn/practical-dashboard-kpi.html"
+    },
+    {
+      "id": "modeling-classification-metrics",
+      "title": "分類モデルと評価指標",
+      "topic": "データ分析",
+      "path": "./lessons/statistics-data-analysis/modeling-classification-metrics.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/modeling-classification-metrics.html"
+    },
+    {
+      "id": "modeling-causal-confounding",
+      "title": "交絡・因果図・調整の落とし穴",
+      "topic": "データ分析",
+      "path": "./lessons/statistics-data-analysis/modeling-causal-confounding.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/modeling-causal-confounding.html"
+    },
+    {
+      "id": "modeling-quasi-experiments",
+      "title": "準実験・差の差・回帰不連続",
+      "topic": "データ分析",
+      "path": "./lessons/statistics-data-analysis/modeling-quasi-experiments.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/modeling-quasi-experiments.html"
     }
   ]
 }

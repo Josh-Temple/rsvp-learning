@@ -336,7 +336,10 @@
       "id": "data-analysis-modeling",
       "title": "データ分析 IV：回帰・予測・因果推論",
       "chapters": [
-        "modeling-validation-leakage"
+        "modeling-classification-metrics",
+        "modeling-validation-leakage",
+        "modeling-causal-confounding",
+        "modeling-quasi-experiments"
       ]
     }
   ]

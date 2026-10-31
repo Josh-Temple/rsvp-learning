@@ -1,0 +1,237 @@
+{
+  "schema_version": 1,
+  "id": "modeling-classification-metrics",
+  "title": "分類モデルと評価指標",
+  "topic": "データ分析",
+  "summary": "混同行列から正解率、適合率、再現率の違いを読み、誤判定の負担を考えます。",
+  "created_at": "2026-10-31",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "scikit-learn：Metrics and scoring",
+      "url": "https://scikit-learn.org/stable/modules/model_evaluation.html"
+    },
+    {
+      "title": "scikit-learn：Tuning the decision threshold",
+      "url": "https://scikit-learn.org/stable/modules/classification_threshold.html"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "分類は、製品を「不良の疑いあり」「疑いなし」のよ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "うな区分へ予測することです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ここでは不良を陽性と呼びます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "陽性という名称は良い結果を意味せず、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "検出したい側の区分を指します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "以下は架空の検査モデルの評価です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "正解を別の検査で確認した千個のうち、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "不良は二十個、良品は九百八十個でした。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "モデルは三十個を陽性と判定し、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "そのうち十五個が実際に不良でした。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "残る十五個は良品の誤検出で、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "不良五個は見逃しました。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "この対応を表にしたものが混同行列です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "行が実際の区分、列がモデルの判定です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "音声では、不良二十個を「発見十五、見逃し五」、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "良品九百八十個を「誤検出十五、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "正しく除外九百六十五」と読み取れます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "正解率は、正しかった判定を全件で割ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "十五と九百六十五を足して千で割るので、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "九十八パーセントです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "適合率は、陽性と判定した中に本当の不良がどれだけ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "あるかで、十五を三十で割った五十パーセントです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "再現率は、実際の不良をどれだけ発見したかで、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "十五を二十で割った七十五パーセントです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "補助の式は 適合率＝真陽性÷予測陽性数、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "再現率＝真陽性÷実際の陽性数 です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "真陽性は、陽性と判定して実際にも陽性だった件数で",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "す。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "該当する分母が零なら、そのまま通常の割合は計算で",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "きません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "すべてを良品と判定するだけでも、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "この集団では九十八パーセントの正解率です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "しかし、不良は一つも見つけられません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "二つの区分の件数が大きく違うクラス不均衡では、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "多数派を当てるだけで正解率が高くなるためです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "今回のモデルは同じ正解率でも、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "不良十五個を発見する代わりに、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "良品十五個に再検査を発生させています。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "見逃しによる損失と再検査の負担を比べなければ、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "どちらの運用がよいかは決められません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "モデルが疑いの強さを点数で出す場合、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "どこから陽性にするかという境界を閾値と呼びます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "同じ点数に対して閾値を下げれば、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "陽性に含める対象が広がり、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "見逃しは減るか同じになりますが、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "誤検出は増えるか同じになります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "適合率がどう変わるかは追加された対象の内訳にも依",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "存します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "境界を選ぶ際は、検査能力や損失、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "対象集団での不良の割合を考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "同じモデルでも、対象の構成が変わると指標は変わり",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "調整に使ったデータだけで性能を報告せず、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "別の評価データで確認する手順は次章で扱います。",
+      "duration_multiplier": 1.15
+    }
+  ]
+}
