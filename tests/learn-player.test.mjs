@@ -42,7 +42,19 @@ async function setupPlayer() {
     return selectors.get(selector);
   };
   const article = get("#learn-article");
-  article.querySelectorAll = () => articleItems;
+  // Mirror the selectors used by the actual Learn player rather than
+  // returning the entire article for heading-only navigation.
+  articleItems[0].tagName = "H1";
+  articleItems[1].tagName = "H2";
+  articleItems[2].tagName = "P";
+  article.querySelectorAll = (selector) =>
+    selector === "h2, h3" ? [articleItems[1]] : articleItems;
+  const reader = get("#speech-reader");
+  reader.querySelector = (selector) =>
+    selector === ".reader-row" ? get(".reader-row") : null;
+  reader.after = (element) => { reader.headingNavigation = element; };
+  get("#speech-rate").closest = (selector) =>
+    selector === ".reader-speed" ? get(".reader-speed") : null;
   const voices = [
     { voiceURI: "ja-default", name: "Japanese", lang: "ja-JP" },
     { voiceURI: "ja-alternate", name: "Japanese 2", lang: "ja-JP" },
@@ -97,6 +109,7 @@ async function setupPlayer() {
 
 test("voice list refresh preserves a selected Japanese voice", async () => {
   const { elements, synthEvents, utterances } = await setupPlayer();
+  assert.equal(elements.get("#speech-reader").headingNavigation?.className, "learn-heading-nav");
   const voice = elements.get("#speech-voice");
   voice.value = "ja-alternate";
   synthEvents.get("voiceschanged")();
