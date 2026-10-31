@@ -30,11 +30,11 @@
   ],
   "chunks": [
     {
-      "text": "配送会社で「配達の遅れを減らしたい」と相談された",
+      "text": "配送会社で「配達の遅れを減らしたい」",
       "duration_multiplier": 1
     },
     {
-      "text": "とします。",
+      "text": "と相談されたとします。",
       "duration_multiplier": 1.15
     },
     {
@@ -42,15 +42,19 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "先週の状態を把握するのか、来週の人員を決めるのか",
+      "text": "先週の状態を把握するのか、",
       "duration_multiplier": 1
     },
     {
-      "text": "、新しい配送方法の効果を確かめるのかで、必要な",
+      "text": "来週の人員を決めるのか、",
       "duration_multiplier": 1
     },
     {
-      "text": "分析は変わります。",
+      "text": "新しい配送方法の効果を確かめるのかで、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "必要な分析は変わります。",
       "duration_multiplier": 1.15
     },
     {
@@ -82,19 +86,19 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "「先週、どの地域で遅れが多か",
+      "text": "「先週、どの地域で遅れが多かったか」",
       "duration_multiplier": 1
     },
     {
-      "text": "ったか」は記述の問いです。",
+      "text": "は記述の問いです。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "記述統計では、実際に得たデータの特徴を件数や代表",
+      "text": "記述統計では、実際に得たデータの特徴を",
       "duration_multiplier": 1
     },
     {
-      "text": "値、分布などで要約します。",
+      "text": "件数や代表値、分布などで要約します。",
       "duration_multiplier": 1.15
     },
     {
@@ -114,39 +118,43 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "「一部の荷物を調べて、対象となる配達全体の遅延",
+      "text": "「一部の荷物を調べて、",
       "duration_multiplier": 1
     },
     {
-      "text": "割合を知りたい」は推測の問いです。",
+      "text": "対象となる配達全体の遅延割合を知りたい」",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "は推測の問いです。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "知りたい対象全体を母集団、実際に調べた一部を標本",
+      "text": "知りたい対象全体を母集団、",
       "duration_multiplier": 1
     },
     {
-      "text": "と呼びます。",
+      "text": "実際に調べた一部を標本と呼びます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "標本から母集団の特徴を推定するときは、標本の",
+      "text": "標本から母集団の特徴を推定するときは、",
       "duration_multiplier": 1
     },
     {
-      "text": "選び方と、別の標本なら結果",
+      "text": "標本の選び方と、別の標本なら",
       "duration_multiplier": 1
     },
     {
-      "text": "が変わる不確実性を考えます。",
+      "text": "結果が変わる不確実性を考えます。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "調べやすい営業所だけを大量に集めても、全社の代表",
+      "text": "調べやすい営業所だけを大量に集めても、",
       "duration_multiplier": 1
     },
     {
-      "text": "になるとは限りません。",
+      "text": "全社の代表になるとは限りません。",
       "duration_multiplier": 1.15
     },
     {
@@ -178,11 +186,11 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "「配送方法を変えると遅延は",
+      "text": "「配送方法を変えると遅延は減るか」",
       "duration_multiplier": 1
     },
     {
-      "text": "減るか」は因果の問いです。",
+      "text": "は因果の問いです。",
       "duration_multiplier": 1.15
     },
     {
@@ -194,23 +202,27 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "変えた場合と変えなかった場合を比べるため、比較群",
+      "text": "変えた場合と変えなかった場合を比べるため、",
       "duration_multiplier": 1
     },
     {
-      "text": "や実験などを使い、比較が",
+      "text": "比較群や実験などを使い、",
       "duration_multiplier": 1
     },
     {
-      "text": "成り立つ条件を検討します。",
+      "text": "比較が成り立つ条件を検討します。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "変更後の遅延が減っていても、天候や荷物量が違えば",
+      "text": "変更後の遅延が減っていても、",
       "duration_multiplier": 1
     },
     {
-      "text": "、前後差のすべてを変更の効果とは言えません。",
+      "text": "天候や荷物量が違えば、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "前後差のすべてを変更の効果とは言えません。",
       "duration_multiplier": 1.15
     },
     {
@@ -230,23 +242,31 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "ただし、予測が当たることは、その予測に使った要因",
+      "text": "ただし、予測が当たることは、",
       "duration_multiplier": 1
     },
     {
-      "text": "を操作すれば改善できる証拠にはなりません。",
+      "text": "その予測に使った要因を操作すれば",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "改善できる証拠にはなりません。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "分析は、判断したいことを決め、使えるデータの出所",
+      "text": "分析は、判断したいことを決め、",
       "duration_multiplier": 1
     },
     {
-      "text": "と定義を確かめ、必要な加工を行い、結果を調べて",
+      "text": "使えるデータの出所と定義を確かめ、",
       "duration_multiplier": 1
     },
     {
-      "text": "説明する、という工程で進めます。",
+      "text": "必要な加工を行い、結果を調べて説明する、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "という工程で進めます。",
       "duration_multiplier": 1.15
     },
     {
@@ -254,15 +274,15 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "地域別の差が見つかったところで、地域ごとに遅延の",
+      "text": "地域別の差が見つかったところで、",
       "duration_multiplier": 1
     },
     {
-      "text": "定義が違うと分かれば、集計",
+      "text": "地域ごとに遅延の定義が違うと分かれば、",
       "duration_multiplier": 1
     },
     {
-      "text": "へ進む前に戻って確認します。",
+      "text": "集計へ進む前に戻って確認します。",
       "duration_multiplier": 1.15
     },
     {
@@ -282,23 +302,27 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "すべての欄が埋まっていることと、目的に合った正確",
+      "text": "すべての欄が埋まっていることと、",
       "duration_multiplier": 1
     },
     {
-      "text": "な情報であることは別です。",
+      "text": "目的に合った正確な情報であることは別です。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "例えば、今月に完了した荷物だけの所要時間が短くて",
+      "text": "例えば、今月に完了した荷物だけの",
       "duration_multiplier": 1
     },
     {
-      "text": "も、時間のかかる荷物が未完了のまま残っているか",
+      "text": "所要時間が短くても、",
       "duration_multiplier": 1
     },
     {
-      "text": "もしれません。",
+      "text": "時間のかかる荷物が未完了のまま",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "残っているかもしれません。",
       "duration_multiplier": 1.15
     },
     {
@@ -306,19 +330,27 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "対象を確かめず、「すべての利用者の待ち時間が改善",
+      "text": "対象を確かめず、",
       "duration_multiplier": 1
     },
     {
-      "text": "した」と広げると誤ります。",
+      "text": "「すべての利用者の待ち時間が改善した」",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "と広げると誤ります。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "未完了の扱いは、後の測定設計とデータ品質の章で詳",
+      "text": "未完了の扱いは、",
       "duration_multiplier": 1
     },
     {
-      "text": "しく学びます。",
+      "text": "後の測定設計とデータ品質の章で",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "詳しく学びます。",
       "duration_multiplier": 1.15
     },
     {
@@ -342,11 +374,15 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "次に分析結果を見るときは、まず「これは過去の記述",
+      "text": "次に分析結果を見るときは、まず",
       "duration_multiplier": 1
     },
     {
-      "text": "か、全体の推定か、未観測の予測か、介入の効果か」",
+      "text": "「これは過去の記述か、全体の推定か、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "未観測の予測か、介入の効果か」",
       "duration_multiplier": 1
     },
     {
@@ -354,11 +390,11 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "そのうえで、その答えを支えるデータと比較条件がそ",
+      "text": "そのうえで、その答えを支える",
       "duration_multiplier": 1
     },
     {
-      "text": "ろっているかを調べます。",
+      "text": "データと比較条件がそろっているかを調べます。",
       "duration_multiplier": 1.15
     },
     {
