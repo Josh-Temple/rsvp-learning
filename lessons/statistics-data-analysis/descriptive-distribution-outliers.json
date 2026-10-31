@@ -166,11 +166,11 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "外れ値は、ほかの観測から大きく離れて見える値で",
+      "text": "外れ値は、ほかの観測から",
       "duration_multiplier": 1
     },
     {
-      "text": "す。",
+      "text": "大きく離れて見える値です。",
       "duration_multiplier": 1.15
     },
     {

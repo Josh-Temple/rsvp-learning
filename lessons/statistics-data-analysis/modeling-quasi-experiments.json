@@ -54,11 +54,11 @@
       "duration_multiplier": 1
     },
     {
-      "text": "同じ規則で測る平均作業時間が十日から七日へ減りま",
+      "text": "同じ規則で測る平均作業時間が",
       "duration_multiplier": 1
     },
     {
-      "text": "した。",
+      "text": "十日から七日へ減りました。",
       "duration_multiplier": 1.15
     },
     {
@@ -78,19 +78,19 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "差の差は、この二つの変化を引き算したマイナス二日",
+      "text": "差の差は、この二つの変化を引き算した",
       "duration_multiplier": 1
     },
     {
-      "text": "です。",
+      "text": "マイナス二日です。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "補助式は 差の差＝導入群の前後差−比較群の前後差",
+      "text": "補助式は 差の差＝",
       "duration_multiplier": 1
     },
     {
-      "text": "です。",
+      "text": "導入群の前後差−比較群の前後差です。",
       "duration_multiplier": 1.15
     },
     {
@@ -154,19 +154,19 @@
       "duration_multiplier": 1
     },
     {
-      "text": "単純な二群・二時点の計算をそのまま一般化できませ",
+      "text": "単純な二群・二時点の計算を",
       "duration_multiplier": 1
     },
     {
-      "text": "ん。",
+      "text": "そのまま一般化できません。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "誰のどの時期の効果を比べるかに合わせた方法が必要",
+      "text": "誰のどの時期の効果を比べるかに",
       "duration_multiplier": 1
     },
     {
-      "text": "です。",
+      "text": "合わせた方法が必要です。",
       "duration_multiplier": 1.15
     },
     {
