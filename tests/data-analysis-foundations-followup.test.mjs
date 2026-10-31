@@ -8,7 +8,7 @@ test("reviewed foundations source, RSVP and Learn stay synchronized",async()=>{
  const catalog=JSON.parse(await read("lessons/index.json"));
  const courses=JSON.parse(await read("courses/index.json"));
  const foundations=courses.courses.find(c=>c.id==="data-analysis-foundations");
- assert.deepEqual(foundations.chapters,["analysis-problem-framing","analysis-kpi-denominators","analysis-data-types-grain","analysis-data-collection-provenance","analysis-data-quality-missingness","analysis-cleaning-reproducibility"]);
+ assert.deepEqual(foundations.chapters,["analysis-overview-complete","analysis-problem-framing","analysis-kpi-denominators","analysis-data-types-grain","analysis-data-collection-provenance","analysis-data-quality-missingness","analysis-cleaning-reproducibility"]);
  const old=courses.courses.find(c=>c.id==="statistics-data-analysis");
  assert.deepEqual(old.chapters,["statistics-data-analysis-overview","statistics-descriptive-distributions","statistics-population-sample-bias","statistics-estimation-confidence-intervals","statistics-hypothesis-testing-effect-size","statistics-correlation-regression-causality"]);
  for(const id of ids){

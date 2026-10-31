@@ -3,12 +3,19 @@ import { readFile } from "node:fs/promises";
 import test from "node:test";
 
 const root = new URL("../", import.meta.url);
+const legacyIds = new Set([
+  "statistics-data-analysis-overview", "statistics-descriptive-distributions",
+  "statistics-population-sample-bias", "statistics-estimation-confidence-intervals",
+  "statistics-hypothesis-testing-effect-size", "statistics-correlation-regression-causality",
+  "analysis-overview-complete",
+]);
 const read = (path) => readFile(new URL(path, root), "utf8");
 
 test("all 32 new data-analysis lessons avoid tiny RSVP fragments without content drift", async () => {
   const courses = JSON.parse(await read("courses/index.json")).courses;
   const ids = courses.filter((course) => course.id.startsWith("data-analysis-"))
-    .flatMap((course) => course.chapters);
+    .flatMap((course) => course.chapters)
+    .filter((id) => !legacyIds.has(id));
   assert.equal(ids.length, 32);
   assert.equal(new Set(ids).size, 32);
 

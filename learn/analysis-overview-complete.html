@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ja">
+<head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="記述・推測・予測・因果の問いを区別し、分析の結論の範囲を学びます。" /><meta name="theme-color" content="#f2efe8" />
+<title>データ分析と統計の入口：問いと結論 — Learn</title><link rel="stylesheet" href="./learn.css" /><script src="./learn.js" defer></script></head>
+<body><div class="shell"><header class="top"><a href="../index.html">RSVPに戻る</a><span class="mode">LEARN · データ分析</span></header>
+<main><section class="reader" id="speech-reader" aria-label="読み上げプレイヤー"><div class="reader-row">
+<button id="speech-play" type="button" aria-label="読み上げを開始">▶</button>
+<button id="speech-pause" type="button" aria-label="一時停止" disabled>Ⅱ</button>
+<button id="speech-stop" type="button" aria-label="停止" disabled>■</button>
+<select id="speech-voice" aria-label="読み上げ音声"></select>
+<label class="reader-speed"><span id="speech-rate-label">1.0×</span><input id="speech-rate" type="range" min="0.7" max="4.0" value="1" step="0.1" aria-label="読み上げ速度" /></label>
+</div><div id="speech-status" class="reader-status" role="status">読み上げ準備中</div></section>
+<article id="learn-article"><h1>データ分析と統計の入口：問いと結論</h1><p class="lead">分析の問いを明確にし、結論を広げられる条件を考えます。</p>
+<p>配送会社で「配達の遅れを減らしたい」と相談されたとします。遅れた荷物を数えるだけで十分でしょうか。先週の状態を把握するのか、来週の人員を決めるのか、新しい配送方法の効果を確かめるのかで、必要な分析は変わります。以下の会社と場面は学習用の架空例です。</p>
+<p>データ分析は、記録を整理し、問いに答えるために調べる活動です。統計学は、その際の要約や推測、不確実性の評価を支える方法を扱います。表を作る操作だけでなく、何を記録し、どこまで結論を広げられるかを考えることも分析に含まれます。</p>
+<h2>同じ配達記録から、違う問いを立てる</h2>
+<p>「先週、どの地域で遅れが多かったか」は記述の問いです。記述統計では、実際に得たデータの特徴を件数や代表値、分布などで要約します。全地域の記録がそろっていれば、その範囲の状態は記述できます。しかし、記録されなかった配達や翌月についてまで、同じ結果を保証するものではありません。</p>
+<p>「一部の荷物を調べて、対象となる配達全体の遅延割合を知りたい」は推測の問いです。知りたい対象全体を母集団、実際に調べた一部を標本と呼びます。標本から母集団の特徴を推定するときは、標本の選び方と、別の標本なら結果が変わる不確実性を考えます。調べやすい営業所だけを大量に集めても、全社の代表になるとは限りません。</p>
+<p>「明日はどの荷物が遅れそうか」は予測の問いです。過去の荷物量や距離などの情報から、まだ分からない結果を見積もります。実際に予測する時点で使える情報だけで作り、使っていないデータで当たり具合を確かめます。配達完了後にしか分からない情報を使えば、運用では再現できない高い成績が出るおそれがあります。</p>
+<p>「配送方法を変えると遅延は減るか」は因果の問いです。因果効果とは、その変更によって結果がどれだけ変わるかという効果です。変えた場合と変えなかった場合を比べるため、比較群や実験などを使い、比較が成り立つ条件を検討します。変更後の遅延が減っていても、天候や荷物量が違えば、前後差のすべてを変更の効果とは言えません。</p>
+<p>これらは組み合わせて使えます。記述から問題を見つけ、追加調査で全体を推定し、予測で配置を考え、施策の効果を別に評価する、といった流れです。ただし、予測が当たることは、その予測に使った要因を操作すれば改善できる証拠にはなりません。</p>
+<h2>計算の前後にも、確認がある</h2>
+<p>分析は、判断したいことを決め、使えるデータの出所と定義を確かめ、必要な加工を行い、結果を調べて説明する、という工程で進めます。一直線に終わるとは限りません。地域別の差が見つかったところで、地域ごとに遅延の定義が違うと分かれば、集計へ進む前に戻って確認します。</p>
+<p>データの品質も、目的との関係で判断します。日ごとの人員配置には更新の速さが必要ですが、長期の改善評価では期間を通した定義の一貫性が欠かせません。すべての欄が埋まっていることと、目的に合った正確な情報であることは別です。</p>
+<p>例えば、今月に完了した荷物だけの所要時間が短くても、時間のかかる荷物が未完了のまま残っているかもしれません。その集計で言えるのは「今月の完了分」の特徴です。対象を確かめず、「すべての利用者の待ち時間が改善した」と広げると誤ります。未完了の扱いは、後の測定設計とデータ品質の章で詳しく学びます。</p>
+<h2>結果は、問いに戻して読む</h2>
+<p>報告するときは、何を、どの対象と期間で調べ、何が分かり、何が残ったかをつなげて説明します。差が小さくても重大な利用者負担なら対応が必要なことがあり、大きな差でも比較条件が違えば、そのまま施策判断には使えません。</p>
+<p>次に分析結果を見るときは、まず「これは過去の記述か、全体の推定か、未観測の予測か、介入の効果か」を確かめてください。そのうえで、その答えを支えるデータと比較条件がそろっているかを調べます。手法の名前より先に、問いと結論の範囲をそろえることが出発点になります。</p>
+</article>
+<section class="sources" aria-labelledby="sources-title"><h2 id="sources-title">出典</h2>
+<p><a href="https://www150.statcan.gc.ca/n1/edu/power-pouvoir/ch13/sample-echantillon/5214900-eng.htm">Statistics Canada：Selection of a sample</a></p>
+<p><a href="https://www.itl.nist.gov/div898/handbook/eda/section1/eda11.htm">NIST：What is EDA?</a></p>
+<p><a href="https://www.itl.nist.gov/div898/handbook/pri/section1/pri11.htm">NIST：What is experimental design?</a></p>
+<p><a href="https://scikit-learn.org/stable/common_pitfalls.html#data-leakage">scikit-learn：Common pitfalls, Data leakage</a></p>
+<p><a href="https://www150.statcan.gc.ca/n1/pub/12-539-x/2019001/ensuring-assurer-eng.htm">Statistics Canada：Guidelines for ensuring data quality</a></p>
+</section></main></div></body></html>

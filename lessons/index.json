@@ -1502,6 +1502,14 @@
       "path": "./lessons/statistics-data-analysis/modeling-time-series-forecasting.json",
       "status": "COMPLETE v0.1",
       "learn_path": "./learn/modeling-time-series-forecasting.html"
+    },
+    {
+      "id": "analysis-overview-complete",
+      "title": "データ分析と統計の入口：問いと結論",
+      "topic": "データ分析",
+      "path": "./lessons/statistics-data-analysis/analysis-overview-complete.json",
+      "status": "COMPLETE v0.1",
+      "learn_path": "./learn/analysis-overview-complete.html"
     }
   ]
 }

@@ -5,12 +5,15 @@ import test from "node:test";
 const root = new URL("../", import.meta.url);
 const read = (path) => readFile(new URL(path, root), "utf8");
 const expectedCourses = {
-  "data-analysis-foundations": 6,
-  "data-analysis-descriptive": 7,
-  "data-analysis-inference": 5,
-  "data-analysis-modeling": 7,
+  "data-analysis-foundations": 7,
+  "data-analysis-descriptive": 8,
+  "data-analysis-inference": 8,
+  "data-analysis-modeling": 8,
   "data-analysis-practice": 7,
 };
+const nonNewIds = new Set(["analysis-overview-complete", "statistics-descriptive-distributions",
+  "statistics-population-sample-bias", "statistics-estimation-confidence-intervals",
+  "statistics-hypothesis-testing-effect-size", "statistics-correlation-regression-causality"]);
 const legacy = [
   "statistics-data-analysis-overview",
   "statistics-descriptive-distributions",
@@ -29,7 +32,7 @@ test("all 32 new statistics lessons preserve source, chunks, Learn and Pages rou
   for (const [courseId, count] of Object.entries(expectedCourses)) {
     const course = courses.find((entry) => entry.id === courseId);
     assert.equal(course?.chapters.length, count, courseId);
-    newChapters.push(...course.chapters);
+    newChapters.push(...course.chapters.filter((id) => !nonNewIds.has(id)));
   }
   assert.equal(newChapters.length, 32);
   assert.equal(new Set(newChapters).size, 32);

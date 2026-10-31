@@ -8,7 +8,7 @@ test("descriptive chapters remain synchronized and addressable under GitHub Page
  const catalog=JSON.parse(await read("lessons/index.json"));
  const courses=JSON.parse(await read("courses/index.json"));
  const newCourse=courses.courses.find(c=>c.id==="data-analysis-descriptive");
- assert.deepEqual(newCourse.chapters,[...ids,...["descriptive-rates-normalization","descriptive-crosstabs-simpson","descriptive-time-patterns","descriptive-cohort-segmentation"]]);
+ assert.deepEqual(newCourse.chapters,["statistics-descriptive-distributions",...ids,...["descriptive-rates-normalization","descriptive-crosstabs-simpson","descriptive-time-patterns","descriptive-cohort-segmentation"]]);
  const legacy=courses.courses.find(c=>c.id==="statistics-data-analysis");
  assert.deepEqual(legacy.chapters,["statistics-data-analysis-overview","statistics-descriptive-distributions","statistics-population-sample-bias","statistics-estimation-confidence-intervals","statistics-hypothesis-testing-effect-size","statistics-correlation-regression-causality"]);
  for(const id of ids){

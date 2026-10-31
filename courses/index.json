@@ -306,6 +306,7 @@
       "id": "data-analysis-foundations",
       "title": "データ分析 I：問い・データの準備",
       "chapters": [
+        "analysis-overview-complete",
         "analysis-problem-framing",
         "analysis-kpi-denominators",
         "analysis-data-types-grain",
@@ -331,8 +332,11 @@
       "id": "data-analysis-inference",
       "title": "データ分析 III：推測統計・実験",
       "chapters": [
+        "statistics-population-sample-bias",
         "inference-probability-random-variables",
         "inference-sampling-error",
+        "statistics-estimation-confidence-intervals",
+        "statistics-hypothesis-testing-effect-size",
         "inference-power-multiple-testing",
         "inference-randomized-experiments",
         "inference-ab-testing"
@@ -342,6 +346,7 @@
       "id": "data-analysis-modeling",
       "title": "データ分析 IV：回帰・予測・因果推論",
       "chapters": [
+        "statistics-correlation-regression-causality",
         "modeling-linear-multiple-regression",
         "modeling-regression-assumptions",
         "modeling-classification-metrics",
@@ -355,6 +360,7 @@
       "id": "data-analysis-descriptive",
       "title": "データ分析 II：記述統計・可視化",
       "chapters": [
+        "statistics-descriptive-distributions",
         "descriptive-aggregation-grouping",
         "descriptive-distribution-outliers",
         "descriptive-visualization-choices",

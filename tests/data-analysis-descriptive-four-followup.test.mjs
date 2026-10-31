@@ -6,7 +6,7 @@ const ids=["descriptive-rates-normalization","descriptive-crosstabs-simpson","de
 test("revised descriptive course chapters retain content and catalogue invariants",async()=>{
  const cat=JSON.parse(await read("lessons/index.json")).lessons;
  const course=JSON.parse(await read("courses/index.json")).courses.find(x=>x.id==="data-analysis-descriptive");
- assert.deepEqual(course.chapters,["descriptive-aggregation-grouping","descriptive-distribution-outliers","descriptive-visualization-choices","descriptive-rates-normalization","descriptive-crosstabs-simpson","descriptive-time-patterns","descriptive-cohort-segmentation"]);
+ assert.deepEqual(course.chapters,["statistics-descriptive-distributions","descriptive-aggregation-grouping","descriptive-distribution-outliers","descriptive-visualization-choices","descriptive-rates-normalization","descriptive-crosstabs-simpson","descriptive-time-patterns","descriptive-cohort-segmentation"]);
  for(const id of ids){
   const meta=cat.find(x=>x.id===id);assert.equal(meta?.status,"COMPLETE v0.1");
   const j=JSON.parse(await read(meta.path.slice(2)));

@@ -1,0 +1,373 @@
+{
+  "schema_version": 1,
+  "id": "analysis-overview-complete",
+  "title": "データ分析と統計の入口：問いと結論",
+  "topic": "データ分析",
+  "summary": "記述・推測・予測・因果の問いを分け、データの適用範囲と判断の限界を整理します。",
+  "created_at": "2026-11-01",
+  "base_duration_ms": 680,
+  "sources": [
+    {
+      "title": "Statistics Canada：Selection of a sample",
+      "url": "https://www150.statcan.gc.ca/n1/edu/power-pouvoir/ch13/sample-echantillon/5214900-eng.htm"
+    },
+    {
+      "title": "NIST：What is EDA?",
+      "url": "https://www.itl.nist.gov/div898/handbook/eda/section1/eda11.htm"
+    },
+    {
+      "title": "NIST：What is experimental design?",
+      "url": "https://www.itl.nist.gov/div898/handbook/pri/section1/pri11.htm"
+    },
+    {
+      "title": "scikit-learn：Common pitfalls, Data leakage",
+      "url": "https://scikit-learn.org/stable/common_pitfalls.html#data-leakage"
+    },
+    {
+      "title": "Statistics Canada：Guidelines for ensuring data quality",
+      "url": "https://www150.statcan.gc.ca/n1/pub/12-539-x/2019001/ensuring-assurer-eng.htm"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "配送会社で「配達の遅れを減らしたい」と相談された",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "とします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "遅れた荷物を数えるだけで十分でしょうか。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "先週の状態を把握するのか、来週の人員を決めるのか",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "、新しい配送方法の効果を確かめるのかで、必要な",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "分析は変わります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "以下の会社と場面は学習用の架空例です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "データ分析は、記録を整理し、問いに答えるために",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "調べる活動です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "統計学は、その際の要約や推測、不確実性の評価を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "支える方法を扱います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "表を作る操作だけでなく、何を記録し、どこまで結論",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "を広げられるかを考えることも分析に含まれます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "「先週、どの地域で遅れが多か",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ったか」は記述の問いです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "記述統計では、実際に得たデータの特徴を件数や代表",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "値、分布などで要約します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "全地域の記録がそろっていれば、その範囲の状態は",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "記述できます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "しかし、記録されなかった配達や翌月についてまで、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "同じ結果を保証するものではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "「一部の荷物を調べて、対象となる配達全体の遅延",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "割合を知りたい」は推測の問いです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "知りたい対象全体を母集団、実際に調べた一部を標本",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "と呼びます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "標本から母集団の特徴を推定するときは、標本の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "選び方と、別の標本なら結果",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "が変わる不確実性を考えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "調べやすい営業所だけを大量に集めても、全社の代表",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "になるとは限りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "「明日はどの荷物が遅れそうか」は予測の問いです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "過去の荷物量や距離などの情報から、まだ分からない",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "結果を見積もります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "実際に予測する時点で使える情報だけで作り、使って",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "いないデータで当たり具合を確かめます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "配達完了後にしか分からない情報を使えば、運用では",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "再現できない高い成績が出るおそれがあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "「配送方法を変えると遅延は",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "減るか」は因果の問いです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "因果効果とは、その変更によって結果がどれだけ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "変わるかという効果です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "変えた場合と変えなかった場合を比べるため、比較群",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "や実験などを使い、比較が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "成り立つ条件を検討します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "変更後の遅延が減っていても、天候や荷物量が違えば",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "、前後差のすべてを変更の効果とは言えません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "これらは組み合わせて使えます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "記述から問題を見つけ、追加調査で全体を推定し、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "予測で配置を考え、施策の効果を別に評価する、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "といった流れです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ただし、予測が当たることは、その予測に使った要因",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "を操作すれば改善できる証拠にはなりません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "分析は、判断したいことを決め、使えるデータの出所",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "と定義を確かめ、必要な加工を行い、結果を調べて",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "説明する、という工程で進めます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一直線に終わるとは限りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "地域別の差が見つかったところで、地域ごとに遅延の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "定義が違うと分かれば、集計",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "へ進む前に戻って確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "データの品質も、目的との関係で判断します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "日ごとの人員配置には更新の速さが必要ですが、長期",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "の改善評価では期間を通した",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "定義の一貫性が欠かせません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "すべての欄が埋まっていることと、目的に合った正確",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "な情報であることは別です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "例えば、今月に完了した荷物だけの所要時間が短くて",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "も、時間のかかる荷物が未完了のまま残っているか",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "もしれません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "その集計で言えるのは「今月の完了分」の特徴です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "対象を確かめず、「すべての利用者の待ち時間が改善",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "した」と広げると誤ります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "未完了の扱いは、後の測定設計とデータ品質の章で詳",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "しく学びます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "報告するときは、何を、どの対象と期間で調べ、何が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "分かり、何が残ったかをつなげて説明します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "差が小さくても重大な利用者負担なら対応が必要な",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ことがあり、大きな差でも比較条件が違えば、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "そのまま施策判断には使えません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "次に分析結果を見るときは、まず「これは過去の記述",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "か、全体の推定か、未観測の予測か、介入の効果か」",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "を確かめてください。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "そのうえで、その答えを支えるデータと比較条件がそ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ろっているかを調べます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "手法の名前より先に、問いと結論の範囲をそろえる",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ことが出発点になります。",
+      "duration_multiplier": 1.15
+    }
+  ]
+}
