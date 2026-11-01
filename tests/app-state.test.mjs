@@ -270,7 +270,7 @@ test("opening the library invalidates an in-flight autoplay chapter load", async
 });
 
 
-test("Learn link stays available and follows the selected lesson when possible", async () => {
+test("Learn navigation always opens the Learn catalog, independent of the current chapter", async () => {
   const { api, elements } = await loadApp(async () => okResponse({}));
   api.state.lessonMap = new Map([
     ["complete", { id: "complete", learn_path: "./learn/complete.html" }],
@@ -281,7 +281,7 @@ test("Learn link stays available and follows the selected lesson when possible",
   api.state.lesson = lesson("complete");
   api.render();
   assert.equal(elements.get("#learn-link").hidden, false);
-  assert.equal(elements.get("#learn-link").href, "./learn/complete.html");
+  assert.equal(elements.get("#learn-link").href, "./index.html?library=learn");
 
   api.state.lessonId = "seed";
   api.state.lesson = lesson("seed");
