@@ -18,26 +18,15 @@
 <body>
   <main class="shell">
     <header class="topbar">
-      <nav class="mode-nav" aria-label="モード切替">
-        <a class="icon-link" href="../index.html" aria-label="RSVPへ移動" title="RSVP">
-          <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
-        </a>
-        <a class="icon-link mode-icon" href="../index.html?library=learn" aria-label="Learnへ移動" title="Learn">
-          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M4 5.5c2.6-.8 5.3-.4 8 1.2v12c-2.7-1.6-5.4-2-8-1.2v-12Z" />
-            <path d="M20 5.5c-2.6-.8-5.3-.4-8 1.2v12c2.7-1.6 5.4-2 8-1.2v-12Z" />
-          </svg>
-        </a>
-        <a class="icon-link mode-icon is-active" href="../index.html?library=listen" aria-label="Listen一覧へ移動" aria-current="page" title="Listen">
-          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M4 13v-1a8 8 0 0 1 16 0v1" />
-            <path d="M4 13h3v7H5a1 1 0 0 1-1-1v-6Zm16 0h-3v7h2a1 1 0 0 0 1-1v-6Z" />
-          </svg>
-        </a>
+      <nav class="mode-nav" aria-label="学習モード">
+        <a class="icon-link mode-text-link" href="../index.html" aria-label="RSVPへ移動">RSVP</a>
+        <a class="icon-link mode-text-link" href="../index.html?library=learn" aria-label="Learn教材一覧へ移動">Learn</a>
+        <a class="icon-link mode-text-link is-active" href="./" aria-label="Listen一覧" aria-current="page">Listen</a>
       </nav>
       <button id="theme-toggle" class="icon-button" type="button" aria-label="テーマ切替">☾</button>
     </header>
 
+    <h1 class="listen-page-title">Listen一覧</h1>
     <section id="listen-list" class="listen-list" aria-live="polite"></section>
   </main>
 
