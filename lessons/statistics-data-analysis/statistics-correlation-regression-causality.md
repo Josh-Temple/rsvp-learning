@@ -43,6 +43,39 @@ Created: 2026-09-27
 31. モデル前提を確認します。
 32. 予測精度と因果解釈を分けます。
 33. 因果には追加の設計が必要です。
+34. 架空の三週間を使って、数値も確かめます。
+35. 広告費が一、二、三万円の週に、
+36. それぞれ二十、三十、四十件の
+37. 注文があったとします。
+38. 観測した単位は一週間です。
+39. 三つの点は完全な右上がりの直線に並びます。
+40. この三点のピアソン相関係数はプラス一。
+41. 直線的な関連が完全であることを表します。
+42. この三点に直線回帰を当てはめると、
+43. 予測注文件数は十に広告費の
+44. 万円単位の値を十倍して足した値です。
+45. 広告費一万円では二十件、
+46. 二万円では三十件となり、
+47. この三点には誤差なく一致します。
+48. 広告費の係数十は、
+49. このデータとモデルでは一万円の違いに
+50. 十件の予測差が対応するという意味です。
+51. 広告費を一万円増やせば、
+52. 注文が必ず十件増える証拠ではありません。
+53. 例えば三週間で季節的な需要が増え、
+54. 広告費も計画どおり増えたのかもしれません。
+55. 需要の増加が先に見込まれたから
+56. 広告予算を増やした可能性もあります。
+57. 三点だけでは、こうした説明を分けにくく、
+58. 他の期間でも関係が続くかも分かりません。
+59. 観測していない四万円に対して
+60. 五十件を予測するのは外挿です。
+61. 直線が範囲外でも成り立つとは限りません。
+62. 施策の効果を知りたいなら、
+63. 同じ時期に比較できる集団を設計するなど、
+64. 別の因果推論の根拠を調べます。
+65. 相関係数、回帰による予測、
+66. 介入による効果を別々に説明します。
 
 ## 注意
 
@@ -54,3 +87,4 @@ Created: 2026-09-27
 - [NIST/SEMATECH e-Handbook: Linear Correlation Plot](https://www.itl.nist.gov/div898/handbook/eda/section3/eda33g.htm)
 - [NIST/SEMATECH e-Handbook: Linear Least Squares Regression](https://www.itl.nist.gov/div898/handbook/pmd/section1/pmd141.htm)
 - [NIST/SEMATECH e-Handbook: Experiments and Experimental Design](https://www.itl.nist.gov/div898/handbook/ppc/section1/ppc136.htm)
+- [NIST/SEMATECH: CORRELATION (LET)](https://www.itl.nist.gov/div898/software/dataplot/refman2/auxillar/correlat.htm)
