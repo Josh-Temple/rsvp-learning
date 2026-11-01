@@ -18,6 +18,10 @@
     {
       "title": "NIST/SEMATECH e-Handbook: Histogram",
       "url": "https://www.itl.nist.gov/div898/handbook/eda/section3/eda33e.htm"
+    },
+    {
+      "title": "Penn State STAT 500: Measures of Central Tendency and Dispersion",
+      "url": "https://online.stat.psu.edu/stat500/Lesson01"
     }
   ],
   "chunks": [
@@ -291,6 +295,138 @@
     },
     {
       "text": "代表値だけで結論を出しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "さきほどの五件で、分散も計算してみます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "処理時間は二、三、三、四、十八分。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "平均は六分でした。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "それぞれの時間から六を引くと、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "マイナス四、マイナス三、マイナス三、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "マイナス二、プラス十二分です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "これを二乗した値は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "十六、九、九、四、百四十四。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "合計は百八十二です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "この五件が調べたい対象の全件なら、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "母分散は百八十二を五で割った",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "三十六点四、単位は分の二乗です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "母標準偏差はその平方根で、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "約六点〇三分となります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一方、この五件を大きな対象集団から",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "取り出した標本として扱うなら、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "母分散の推定に使う標本分散は通常、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "百八十二を五引く一の四で割るため、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "四十五点五、単位は分の二乗です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "標本標準偏差はその平方根で、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "約六点七五分となります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "同じ五件でも、目的によって",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "分母が五か四か変わるのです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "五件では極端な一件の影響が大きいので、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "一般化や推定精度を過信しません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "例えば十分を超える案件は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "五件中一件で、割合は二十パーセント。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "中央値の三分だけを見れば、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "その一件の長い待ち時間は伝わりません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "長い待ちが重大なら、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "中央値と併せて遅延件数も報告します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "どの指標も、何を全件としたか、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "記録漏れがないかによって意味が変わります。",
       "duration_multiplier": 1.15
     }
   ]

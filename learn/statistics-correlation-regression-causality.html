@@ -46,6 +46,11 @@
         <p>相関が強くても、一方が他方の原因とは限りません。第三の要因、時間の順序、対象の選ばれ方を確認します。回帰で複数要因を調整しても、観測されていない要因まで自動で解決するわけではありません。</p>
         <p>高い予測精度を持つモデルでも、変数を操作すれば結果が変わるという因果効果を示したことにはなりません。因果を知りたい場合は、比較群や介入の設計など追加の根拠が必要です。</p>
 
+        <h2>相関係数が一でも、原因が分かるとは限らない</h2>
+        <p>ここでは架空の三週間の注文記録を考えます。広告費が一万円、二万円、三万円だった週に、注文数はそれぞれ二十件、三十件、四十件でした。観測の単位は一週間で、三点は完全な右上がりの直線上にあります。ピアソンの相関係数はプラス一です。これは観測した三点の直線的な関連の強さを表します。</p>
+        <p>三点に直線回帰を当てはめると、予測注文件数は「十件に、広告費の万円単位の数を十倍した件数を足す」という式になります。係数の十は、広告費一万円の違いが、このモデルでは注文数十件の予測差に対応するという意味です。三つの観測点には誤差なく一致します。</p>
+        <p>しかし、広告費を一万円増やせば注文が必ず十件増える、とは言えません。季節的な需要の増加と広告予算の増加が同時に起きただけかもしれません。注文増加を見込んで予算を増やしたという逆方向の説明も考えられます。わずか三週間の記録では、偶然や別の期間での違いも十分に評価できません。</p>
+        <p>四万円の広告費なら五十件と予測することも式の上ではできますが、観測した範囲の外側であるため外挿です。実際に当たる保証はありません。さらに、広告費を変えた効果を知りたい場合は、同じ時期に比較できる集団や介入の設計など、別の因果推論の根拠が必要です。相関係数、予測、介入による効果は同じ結論ではありません。</p>
         <h3>この教材の扱う範囲</h3>
         <p class="endnote">この章は基礎理解用です。観察結果から因果を述べるには、別途、研究設計と仮定を検討します。</p>
       </article>
@@ -56,6 +61,7 @@
         <p><a href="https://www.itl.nist.gov/div898/handbook/eda/section3/eda33g.htm">NIST/SEMATECH e-Handbook: Linear Correlation Plot</a></p>
         <p><a href="https://www.itl.nist.gov/div898/handbook/pmd/section1/pmd141.htm">NIST/SEMATECH e-Handbook: Linear Least Squares Regression</a></p>
         <p><a href="https://www.itl.nist.gov/div898/handbook/ppc/section1/ppc136.htm">NIST/SEMATECH e-Handbook: Experiments and Experimental Design</a></p>
+        <p><a href="https://www.itl.nist.gov/div898/software/dataplot/refman2/auxillar/correlat.htm">NIST/SEMATECH: CORRELATION (LET)</a></p>
       </section>
     </main>
   </div>

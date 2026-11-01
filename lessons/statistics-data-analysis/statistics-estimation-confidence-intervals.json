@@ -280,6 +280,150 @@
     {
       "text": "推定条件を結果と一緒に示します。",
       "duration_multiplier": 1.15
+    },
+    {
+      "text": "別の架空例で区間の幅を計算します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "無作為に選んだ百件の平均処理時間は十分。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "母標準偏差が既知の四分と仮定します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "各件が独立で、標本平均の分布は",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "正規分布で扱えると仮定します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "平均の標準誤差は四を百の平方根、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "つまり十で割った〇点四分です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "九五パーセント信頼区間の近似に使う",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "標準正規分布の係数は一・九六。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "〇点四に一・九六を掛けると、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "区間の片側の幅は〇点七八四分です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "平均十分からこの幅を引き足しすると、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "約九点二二分から十点七八分。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "これが設定した条件での信頼区間です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "同じ平均十分、母標準偏差四分で、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "今度は四百件を調べたと仮定します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "標準誤差は四を二十で割った",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "〇点二分へ小さくなります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一・九六を掛けた片側の幅は",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "〇点三九二分です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "区間は約九点六一分から",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "十点三九分へ狭くなります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ここでは比較のために平均を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "同じ十分と仮定しています。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "標本を増やせば実際の標本平均が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "変わらないという意味ではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "母標準偏差が未知の場合は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "通常、標本標準偏差で推定し、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "条件に合った別の区間を使います。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "また、採りやすい案件に偏った標本では、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "区間が狭くても全体の平均から",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "系統的にずれているかもしれません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "標本の選択や、追跡できない案件も確認します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "狭い区間が即座に良い判断を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "保証するわけではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "判断に必要な精度と前提を示します。",
+      "duration_multiplier": 1.15
     }
   ]
 }

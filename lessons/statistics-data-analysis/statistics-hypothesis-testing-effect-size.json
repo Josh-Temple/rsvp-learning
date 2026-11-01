@@ -10,6 +10,10 @@
     {
       "title": "American Statistical Association: Statement on Statistical Significance and P-Values",
       "url": "https://www.amstat.org/asa/files/pdfs/p-valuestatement.pdf"
+    },
+    {
+      "title": "NIST/SEMATECH e-Handbook: One-sample test of the mean (7.2.2)",
+      "url": "https://www.itl.nist.gov/div898/handbook/prc/section2/prc22.htm"
     }
   ],
   "chunks": [
@@ -148,6 +152,150 @@
     {
       "text": "再現するか別データでも確かめます。",
       "duration_multiplier": 1.15
+    },
+    {
+      "text": "数式の意味を、架空の一標本で確かめます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "知りたいのは、この方法の平均処理時間が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "基準の十分と違うかどうかです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "帰無仮説を「母平均は十分」と置き、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "対立仮説は「十分ではない」とします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "以下では、互いに独立な六十四件を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "同じ母集団から無作為に抽出したと仮定します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "母標準偏差は既知の四分とし、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "標本平均が九分だったとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ここでの母標準偏差は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "実務で普通に分かるという意味ではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "母標準偏差を標本から推定する場合は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "一般に別の検定法を検討します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "平均の標準誤差は四を六十四の平方根、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "つまり八で割って〇点五分です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "観測平均と基準の差はマイナス一分。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "差を標準誤差で割ると、Z値はマイナス二。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "この条件で両側検定をすると、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "p値は約〇点〇四五五です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "これは帰無仮説とモデルを正しいと置いたとき、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "今回以上に基準から離れた結果の確率です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "「平均が十分である確率が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "四点五五パーセント」という解釈ではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "同じ仮定の下で作る九五パーセント信頼区間は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "九分から〇点九八分を引き足しして、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "約八点〇二分から九点九八分です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "ここでの〇点九八は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "標準誤差〇点五に一・九六を掛けた値です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "区間も、抽出と検定の仮定が成り立つ",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "ことを前提としています。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "五パーセントの基準で帰無仮説を棄却できても、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "一分の差が業務上重要とは限りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "さらにこの一標本からは、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "新しい受付方法の因果効果を証明できません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "施策の比較には、誰をどう割り当てたかを",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "別途確かめます。",
+      "duration_multiplier": 1.25
     }
   ]
 }
