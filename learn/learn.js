@@ -1,6 +1,6 @@
 (() => {
       const top = document.querySelector(".top");
-      const backLink = top?.querySelector("a");
+      const backLink = top?.querySelector?.("a");
       if (backLink) {
         backLink.href = "../index.html?library=learn";
         backLink.textContent = "← Learn一覧へ";
