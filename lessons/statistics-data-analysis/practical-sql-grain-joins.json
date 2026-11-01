@@ -62,11 +62,11 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "注文IDで内結合すると、注文情報が各明細へ繰り返",
+      "text": "注文IDで内結合すると、注文情報が",
       "duration_multiplier": 1
     },
     {
-      "text": "され、結果は六行になります。",
+      "text": "各明細へ繰り返され、結果は六行になります。",
       "duration_multiplier": 1.15
     },
     {
@@ -206,15 +206,15 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "PostgreSQLのCOUNT(*)は行数を数",
+      "text": "PostgreSQLのCOUNT(*)は",
       "duration_multiplier": 1
     },
     {
-      "text": "え、COUNT(対象列)はその列がNULLでない",
+      "text": "行数を数え、COUNT(対象列)は",
       "duration_multiplier": 1
     },
     {
-      "text": "行を数えます。",
+      "text": "その列がNULLでない行を数えます。",
       "duration_multiplier": 1.15
     },
     {

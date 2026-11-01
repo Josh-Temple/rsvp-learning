@@ -22,23 +22,23 @@
   ],
   "chunks": [
     {
-      "text": "同じ工場で、百個の製品を調べて平均重量を計算し",
+      "text": "同じ工場で、百個の製品を調べて平均重量を計算",
       "duration_multiplier": 1
     },
     {
-      "text": "ても、別の百個を選べば平均は少し変わります。",
+      "text": "しても、別の百個を選べば平均は少し変わります。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "標本分布は、このように同じ手順で標本を取り直し",
+      "text": "標本分布は、このように同じ手順で標本を",
       "duration_multiplier": 1
     },
     {
-      "text": "たときに、平均などの統計量がどのように",
+      "text": "取り直したときに、平均などの統計量が",
       "duration_multiplier": 1
     },
     {
-      "text": "変わるかを表す分布です。",
+      "text": "どのように変わるかを表す分布です。",
       "duration_multiplier": 1.15
     },
     {
@@ -74,11 +74,11 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "標準誤差は、標本を取り直したと",
+      "text": "標準誤差は、標本を取り直したときの",
       "duration_multiplier": 1
     },
     {
-      "text": "きの平均などの統計量のばらつきで、",
+      "text": "平均などの統計量のばらつきで、",
       "duration_multiplier": 1
     },
     {
@@ -110,11 +110,11 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "式では 標本平均の標準誤差＝母標準偏差÷√標",
+      "text": "式では 標本平均の標準誤差＝",
       "duration_multiplier": 1
     },
     {
-      "text": "本数 です。",
+      "text": "母標準偏差÷√標本数 です。",
       "duration_multiplier": 1.15
     },
     {
@@ -210,11 +210,11 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "「三十件あれば必ず大丈夫」という一律の規則には",
+      "text": "「三十件あれば必ず大丈夫」という一律の規則",
       "duration_multiplier": 1
     },
     {
-      "text": "しません。",
+      "text": "にはしません。",
       "duration_multiplier": 1.15
     },
     {
@@ -230,11 +230,11 @@
       "duration_multiplier": 1
     },
     {
-      "text": "その平均を取り直したときの分布が近似し",
+      "text": "その平均を取り直したときの分布が",
       "duration_multiplier": 1
     },
     {
-      "text": "やすくなる、という違いを押さえます。",
+      "text": "近似しやすくなる、という違いを押さえます。",
       "duration_multiplier": 1.15
     },
     {
@@ -246,11 +246,11 @@
       "duration_multiplier": 1
     },
     {
-      "text": "偏った対象の平均を細かく測れるだけかもし",
+      "text": "偏った対象の平均を細かく測れるだけ",
       "duration_multiplier": 1
     },
     {
-      "text": "れません。",
+      "text": "かもしれません。",
       "duration_multiplier": 1.15
     },
     {
