@@ -772,7 +772,11 @@ function setLibraryView(view) {
   renderLibrary();
 }
 
-function openLibrary() {
+function openLibrary({ fromHistory = false } = {}) {
+  if (els.libraryOverlay.hidden && !fromHistory && window.history?.pushState
+      && window.history.state?.rsvpLayer !== "library") {
+    window.history.pushState({ ...(window.history.state || {}), rsvpLayer: "library" }, "");
+  }
   state.loadRequestId += 1;
   stopPlayback();
   renderLibrary();
@@ -781,10 +785,32 @@ function openLibrary() {
   els.libraryClose.focus();
 }
 
-function closeLibrary() {
+function hideLibrary() {
   els.libraryOverlay.hidden = true;
   document.body.classList.remove("is-library-open");
+  els.currentLesson.focus();
 }
+
+function closeLibrary() {
+  if (!els.libraryOverlay.hidden && window.history?.state?.rsvpLayer === "library") {
+    window.history.back();
+  }
+  hideLibrary();
+}
+
+// Native browser/Android Back closes the library before leaving this page.
+window.addEventListener("popstate", () => {
+  const layer = window.history?.state?.rsvpLayer;
+  if (layer === "course") return; // Learn player owns this history layer.
+  const learnPlayer = document.querySelector("#learn-course-player");
+  if (layer === "library") {
+    if (els.libraryOverlay.hidden && learnPlayer?.hidden !== false) {
+      openLibrary({ fromHistory: true });
+    }
+  } else if (!els.libraryOverlay.hidden) {
+    hideLibrary();
+  }
+});
 
 async function loadCatalogs() {
   const [lessonResponse, courseResponse, listenResponse] = await Promise.all([
@@ -907,9 +933,10 @@ els.speed.addEventListener("input", (event) => {
 });
 
 document.addEventListener("keydown", (event) => {
-  if (!els.libraryOverlay.hidden && event.key === "Escape") {
-    closeLibrary();
-    return;
+  if (document.querySelector("#learn-course-player")?.hidden === false) return;
+  if (!els.libraryOverlay.hidden) {
+    if (event.key === "Escape") closeLibrary();
+    return; // Do not control the underlying RSVP player from the library.
   }
 
   if (event.target.matches("input, button")) return;
