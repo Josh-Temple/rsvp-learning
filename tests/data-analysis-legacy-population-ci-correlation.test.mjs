@@ -61,6 +61,17 @@ for (const config of cases) {
   });
 }
 
+test("district response rates are not inferred from population and respondent counts", async () => {
+  const md = await read("lessons/statistics-data-analysis/statistics-population-sample-bias.md");
+  const json = JSON.parse(await read("lessons/statistics-data-analysis/statistics-population-sample-bias.json"));
+  const html = await read("learn/statistics-population-sample-bias.html");
+  assert.match(md, /地区別回答率は計算できません/);
+  assert.equal(json.chunks[87].text, "地区別の案内人数が不明なら、");
+  assert.equal(json.chunks[88].text, "地区別回答率は計算できません。");
+  assert.match(html, /回答者の数だけでは地区別回答率を計算できません/);
+  assert.ok(!html.includes("A地区は対象者に対する回答者が少なく"));
+});
+
 test("survey example separates unweighted response share from population composition adjustment", () => {
   const aPopulation = 8000, bPopulation = 2000;
   const aRespondents = 200, bRespondents = 800;

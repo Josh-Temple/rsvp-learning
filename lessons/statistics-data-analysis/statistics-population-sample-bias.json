@@ -370,11 +370,11 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "地区Aの回答率が低いこと自体も、",
+      "text": "地区別の案内人数が不明なら、",
       "duration_multiplier": 1
     },
     {
-      "text": "無回答の偏りを疑う理由です。",
+      "text": "地区別回答率は計算できません。",
       "duration_multiplier": 1.15
     },
     {
