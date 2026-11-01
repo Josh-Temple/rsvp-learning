@@ -1182,3 +1182,80 @@ body.is-learn-course-open {
   .learn-course-reader .learn-reader-options-panel .learn-course-speed { width: 100%; }
   .learn-course-reader .learn-reader-options-panel .learn-course-speed input { flex: 1; width: auto; }
 }
+
+/* Navigation: persistent named modes and an explicit lesson chooser. */
+.app-shell { grid-template-rows: auto auto 1fr; }
+.topbar { gap: 10px; }
+.primary-navigation { display: flex; align-items: center; gap: 4px; min-width: 0; }
+.primary-nav-item {
+  min-height: 44px;
+  width: auto;
+  padding: 0 12px;
+  border: 1px solid transparent;
+  opacity: 1;
+  font-size: .82rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+.primary-navigation .brand { gap: 8px; }
+.primary-nav-item.is-active {
+  border-color: var(--ink);
+  color: var(--ink);
+  background: var(--soft);
+}
+.primary-nav-item:not(.is-active) { color: var(--muted); }
+.primary-navigation .mode-link:hover { border-color: var(--ink); }
+.lesson-selector { min-width: 0; padding: 6px 0 8px; border-bottom: 1px solid var(--soft); }
+.lesson-selector .current-lesson {
+  display: block;
+  width: 100%;
+  max-width: none;
+  min-height: 44px;
+  height: auto;
+  padding: 8px 4px;
+  color: var(--ink);
+  text-align: left;
+  white-space: nowrap;
+}
+.library-header { gap: 8px; }
+.library-switch { min-width: 0; gap: 4px; }
+.library-header .library-switch-button {
+  width: auto;
+  min-width: 58px;
+  min-height: 44px;
+  padding: 0 9px;
+  opacity: 1;
+  font-size: .8rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  border: 1px solid transparent;
+}
+.library-header .library-switch-button.is-active {
+  border-color: var(--ink);
+  background: var(--soft);
+}
+.library-header #library-close {
+  width: auto;
+  min-width: 76px;
+  min-height: 44px;
+  padding: 0 6px;
+  font-size: .78rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.learn-course-player-header { grid-template-columns: 86px minmax(0, 1fr) auto; gap: 8px; }
+.learn-course-player-header > #learn-course-back {
+  width: auto;
+  min-height: 44px;
+  font-size: .78rem;
+  font-weight: 700;
+  text-align: left;
+}
+@media (max-width: 380px) {
+  .app-shell { padding-left: 12px; padding-right: 12px; }
+  .primary-nav-item { padding-inline: 9px; font-size: .78rem; }
+  .library-shell { padding-left: 12px; padding-right: 12px; }
+  .library-header .library-switch-button { min-width: 54px; padding-inline: 6px; font-size: .76rem; }
+  .library-header #library-close { min-width: 68px; }
+}
