@@ -22,6 +22,7 @@ for (const prefix of ["/", "/rsvp-learning/"]) {
     const origin = "https://example.github.io";
     const lessonUrl = origin + prefix + "learn/statistics-descriptive-distributions.html";
     const oldUrl = origin + prefix + "lessons/statistics-data-analysis/statistics-descriptive-distributions.json";
+    const listenArticleUrl = origin + prefix + "listen/research/example.html";
     const otherOrigin = "https://unrelated.example/" + prefix + "learn/x.html";
     const oldRequest = { url: lessonUrl, method: "GET" };
     const oldJsonRequest = { url: oldUrl, method: "GET" };
@@ -31,6 +32,7 @@ for (const prefix of ["/", "/rsvp-learning/"]) {
     const oldStore = new Map([
       [lessonUrl, oldResponse("v9-learn")],
       [oldUrl, oldResponse("v9-json")],
+      [listenArticleUrl, oldResponse("v10-listen")],
       [otherOrigin, oldResponse("outside-scope")],
       [oldCatalogRequest.url, oldResponse("stale-catalog")],
     ]);
@@ -51,14 +53,15 @@ for (const prefix of ["/", "/rsvp-learning/"]) {
     const named = new Map([
       ["rsvp-learning-pwa-v8", oldCache(earlierStore)],
       ["rsvp-learning-pwa-v9", oldCache(oldStore)],
-      ["rsvp-learning-pwa-v10", current],
+      ["rsvp-learning-pwa-v10", oldCache(oldStore)],
+      ["rsvp-learning-pwa-v11", current],
     ]);
     const caches = {
       open: async (name) => {
         assert.ok(named.has(name), "Unexpected cache " + name);
         return named.get(name);
       },
-      keys: async () => ["unrelated-pwa", "rsvp-learning-pwa-v8", "rsvp-learning-pwa-v9", "rsvp-learning-pwa-v10"],
+      keys: async () => ["unrelated-pwa", "rsvp-learning-pwa-v8", "rsvp-learning-pwa-v9", "rsvp-learning-pwa-v10", "rsvp-learning-pwa-v11"],
       delete: async (name) => { deleted.push(name); return true; },
       match: async () => undefined,
     };
@@ -76,14 +79,17 @@ for (const prefix of ["/", "/rsvp-learning/"]) {
     assert.ok(added.length > 10);
     for (const url of added) assert.ok(url.startsWith(origin + prefix), url);
     assert.ok(added.includes(origin + prefix + "courses/index.json"));
+    assert.ok(added.includes(origin + prefix + "listen/article-nav.js"));
+    assert.ok(added.includes(origin + prefix + "listen/article-nav.css"));
     assert.equal(newStore.get(oldCatalogRequest.url)?.name, "fresh-core", "must never restore a stale catalog");
     assert.equal(newStore.get(lessonUrl)?.name, "v9-learn", "newest offline Learn page must survive update");
     assert.equal(newStore.get(oldUrl)?.name, "v9-json", "existing offline lesson JSON must survive update");
+    assert.equal(newStore.get(listenArticleUrl)?.name, "v10-listen", "existing offline Listen article must survive update");
     assert.equal(newStore.has(otherOrigin), false, "never migrate unrelated origins");
 
     events.get("activate")({ waitUntil: (promise) => { task = promise; } });
     await task;
-    assert.deepEqual(deleted, ["rsvp-learning-pwa-v8", "rsvp-learning-pwa-v9"]);
+    assert.deepEqual(deleted, ["rsvp-learning-pwa-v8", "rsvp-learning-pwa-v9", "rsvp-learning-pwa-v10"]);
   });
 }
 
