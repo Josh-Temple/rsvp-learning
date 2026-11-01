@@ -43,7 +43,7 @@
 
 ## HTML
 
-完成した単一HTMLファイルとして保存してください。
+本文と読み上げプレイヤーは独立したHTMLに収めます。画面遷移は既存の共通部品を読み込みます。`listen/research/`、`listen/reports/` の各記事では `../article-nav.css` と `../article-nav.js` を `head` から読み込み、`.topbar .mode-nav` のモードリンクをRSVP・Learn・Listenの順で置いてください。共通部品により文字ラベルと「← Listen一覧へ」が表示されます。
 
 必須:
 

@@ -230,3 +230,16 @@
       outline: 2px solid var(--accent);
       outline-offset: 2px;
     }
+
+/* Clear destination for the Learn article's back action. */
+.top { gap: 10px; margin-bottom: 38px; }
+.top > a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+  font-size: .84rem;
+}
+.top .mode { min-width: 0; text-align: right; font-size: .69rem; letter-spacing: .04em; }
+.top > a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+@media (max-width: 370px) { .top .mode { font-size: .62rem; } }

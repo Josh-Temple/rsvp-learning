@@ -1,0 +1,59 @@
+/* Shared controls for existing standalone Listen articles. */
+.topbar {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 4px 8px;
+  align-items: center;
+  padding-bottom: 6px;
+}
+.topbar > .article-back {
+  grid-column: 1;
+  grid-row: 1;
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  min-height: 44px;
+  color: var(--ink);
+  font-size: .85rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+.topbar > .icon {
+  grid-column: 2;
+  grid-row: 1;
+  min-height: 44px;
+}
+.topbar > .mode-nav {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+.topbar .mode-nav .mode-tab {
+  width: auto;
+  min-width: 60px;
+  min-height: 44px;
+  padding: 0 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  color: var(--muted);
+  border: 1px solid transparent;
+  font-size: .82rem;
+  font-weight: 700;
+}
+.topbar .mode-nav .mode-tab.is-active {
+  border-color: var(--ink);
+  background: color-mix(in srgb, var(--ink) 8%, transparent);
+  color: var(--ink);
+}
+.topbar .article-back:focus-visible,
+.topbar .mode-nav .mode-tab:focus-visible {
+  outline: 2px solid var(--blue, currentColor);
+  outline-offset: 2px;
+}
+@media (max-width: 370px) {
+  .topbar .mode-nav .mode-tab { min-width: 54px; padding-inline: 8px; }
+}

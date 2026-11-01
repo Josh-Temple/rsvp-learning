@@ -214,15 +214,10 @@ function render() {
   const chunk = currentChunk();
   const current = Math.min(state.index + 1, total);
 
-  els.currentLesson.textContent = state.lesson.title;
-  const lessonMeta = state.lessonMap.get(state.lessonId);
-  const learnPath = lessonMeta?.learn_path;
-  els.learnLink.hidden = false;
-  els.learnLink.href = learnPath ?? "./index.html?library=learn";
-  els.learnLink.setAttribute(
-    "aria-label",
-    learnPath ? `${state.lesson.title}をLearn版で開く` : "Learn教材一覧を開く",
-  );
+  els.currentLesson.textContent = `教材を選ぶ · ${state.lesson.title}`;
+  els.currentLesson.setAttribute("aria-label", `${state.lesson.title}を変更する`);
+  els.learnLink.href = "./index.html?library=learn";
+  els.learnLink.setAttribute("aria-label", "Learn教材一覧を開く");
   els.chunkText.textContent = chunk?.text ?? "完了";
   els.progressText.textContent = total ? `${current}·${total}` : "0·0";
   els.progressBar.style.width = total ? `${(current / total) * 100}%` : "0%";
@@ -777,7 +772,11 @@ function setLibraryView(view) {
   renderLibrary();
 }
 
-function openLibrary() {
+function openLibrary({ fromHistory = false } = {}) {
+  if (els.libraryOverlay.hidden && !fromHistory && window.history?.pushState
+      && window.history.state?.rsvpLayer !== "library") {
+    window.history.pushState({ ...(window.history.state || {}), rsvpLayer: "library" }, "");
+  }
   state.loadRequestId += 1;
   stopPlayback();
   renderLibrary();
@@ -786,10 +785,32 @@ function openLibrary() {
   els.libraryClose.focus();
 }
 
-function closeLibrary() {
+function hideLibrary() {
   els.libraryOverlay.hidden = true;
   document.body.classList.remove("is-library-open");
+  els.currentLesson.focus();
 }
+
+function closeLibrary() {
+  if (!els.libraryOverlay.hidden && window.history?.state?.rsvpLayer === "library") {
+    window.history.back();
+  }
+  hideLibrary();
+}
+
+// Native browser/Android Back closes the library before leaving this page.
+window.addEventListener("popstate", () => {
+  const layer = window.history?.state?.rsvpLayer;
+  if (layer === "course") return; // Learn player owns this history layer.
+  const learnPlayer = document.querySelector("#learn-course-player");
+  if (layer === "library") {
+    if (els.libraryOverlay.hidden && learnPlayer?.hidden !== false) {
+      openLibrary({ fromHistory: true });
+    }
+  } else if (!els.libraryOverlay.hidden) {
+    hideLibrary();
+  }
+});
 
 async function loadCatalogs() {
   const [lessonResponse, courseResponse, listenResponse] = await Promise.all([
@@ -847,7 +868,20 @@ function handleError(error) {
   els.chunkText.textContent = "読み込みエラー";
 }
 
-els.libraryOpen.addEventListener("click", openLibrary);
+els.libraryOpen.addEventListener("click", () => {
+  setLibraryView("rsvp");
+  openLibrary();
+});
+els.learnLink.addEventListener("click", (event) => {
+  event.preventDefault();
+  setLibraryView("learn");
+  openLibrary();
+});
+document.querySelector("#listen-link").addEventListener("click", (event) => {
+  event.preventDefault();
+  setLibraryView("listen");
+  openLibrary();
+});
 els.currentLesson.addEventListener("click", openLibrary);
 els.libraryClose.addEventListener("click", closeLibrary);
 els.libraryRsvpMode.addEventListener("click", () => setLibraryView("rsvp"));
@@ -899,9 +933,10 @@ els.speed.addEventListener("input", (event) => {
 });
 
 document.addEventListener("keydown", (event) => {
-  if (!els.libraryOverlay.hidden && event.key === "Escape") {
-    closeLibrary();
-    return;
+  if (document.querySelector("#learn-course-player")?.hidden === false) return;
+  if (!els.libraryOverlay.hidden) {
+    if (event.key === "Escape") closeLibrary();
+    return; // Do not control the underlying RSVP player from the library.
   }
 
   if (event.target.matches("input, button")) return;

@@ -56,7 +56,7 @@ Listenは時間依存の情報を多く含むため、作成日または情報�
 
 ## HTML
 
-原則として単一HTMLファイルで完結させます。
+本文・音声プレイヤーは原則として単一HTMLファイルで完結させます。ナビゲーションだけは同リポジトリ内の共通CSS・JavaScriptを使います。
 
 - UTF-8
 - `<html lang="ja">`
@@ -90,7 +90,7 @@ Wake Lockはbest-effortです。未対応またはOS側で拒否された場合�
 
 再生中に前後移動した場合は、現在の発話をキャンセルし、移動先から読み上げを継続します。一時停止中の移動は読み上げ位置だけを変更し、再生操作で移動先から再開できる状態を保ちます。
 
-Listenページ上部にはRSVP、Learn、Listenのモード導線を置きます。Listenは現在モードとして示し、RSVPはメイン画面、Learnは共通LibraryのLearn一覧へ移動できるようにします。
+Listenページ上部には、まず「← Listen一覧へ」の戻る導線を置き、別行に文字ラベル付きのRSVP・Learn・Listenの切替を置きます。現在モードのListenを明示し、RSVPはメイン画面、Learnは共通LibraryのLearn一覧へ移動できるようにします。`listen/research/` または `listen/reports/` の記事では `<link rel="stylesheet" href="../article-nav.css">` と `<script src="../article-nav.js" defer></script>` を `head` に置き、既存の `.topbar .mode-nav` 内に3つのモードリンクを用意します。共通部品は `listen/article-nav.css`、`listen/article-nav.js` を正本とします。
 
 ## Listen一覧への登録
 

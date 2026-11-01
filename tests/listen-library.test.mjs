@@ -20,5 +20,5 @@ test("shared library exposes RSVP, Learn, and Listen modes", async () => {
   assert.match(app, /setLibraryView\("listen"\)/);
   assert.match(app, /library === "listen" \|\| library === "learn"/);
   assert.match(listenHtml, /\.\.\/index\.html\?library=learn/);
-  assert.match(listenHtml, /\.\.\/index\.html\?library=listen/);
+  assert.match(listenHtml, /href="\.\/" aria-label="Listen一覧"/);
 });
