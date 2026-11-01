@@ -26,11 +26,11 @@
       "duration_multiplier": 1
     },
     {
-      "text": "簡単な相談と難しい相談に分けると両方ともAが",
+      "text": "簡単な相談と難しい相談に分けると",
       "duration_multiplier": 1
     },
     {
-      "text": "高い、という結果があり得ます。",
+      "text": "両方ともAが高い、という結果があり得ます。",
       "duration_multiplier": 1.15
     },
     {
@@ -94,11 +94,11 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "分類ごとにはAが十パーセントポイント高くなって",
+      "text": "分類ごとにはAが十パーセントポイント",
       "duration_multiplier": 1
     },
     {
-      "text": "います。",
+      "text": "高くなっています。",
       "duration_multiplier": 1.15
     },
     {
@@ -174,15 +174,15 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "クロス集計では、「Aの相談のうち解決し",
+      "text": "クロス集計では、「Aの相談のうち",
       "duration_multiplier": 1
     },
     {
-      "text": "た割合」と「解決した相談のうちAが",
+      "text": "解決した割合」と「解決した相談のうち",
       "duration_multiplier": 1
     },
     {
-      "text": "扱った割合」は別です。",
+      "text": "Aが扱った割合」は別です。",
       "duration_multiplier": 1.15
     },
     {
@@ -242,19 +242,19 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "目的を決めず、一方だけを正しい数字とし",
+      "text": "目的を決めず、一方だけを正しい数字",
       "duration_multiplier": 1
     },
     {
-      "text": "て選ぶことはできません。",
+      "text": "として選ぶことはできません。",
       "duration_multiplier": 1.15
     },
     {
-      "text": "さらに「Aへ担当を変えれば解決し",
+      "text": "さらに「Aへ担当を変えれば",
       "duration_multiplier": 1
     },
     {
-      "text": "やすくなるか」は因果の問いです。",
+      "text": "解決しやすくなるか」は因果の問いです。",
       "duration_multiplier": 1.15
     },
     {
