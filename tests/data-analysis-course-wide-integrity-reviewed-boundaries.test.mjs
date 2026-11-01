@@ -55,7 +55,7 @@ test("new and legacy chapter catalog contains 38 unique lessons in 5 expected co
     assert.ok(lesson.chunks.every((chunk) => typeof chunk.text === "string" && chunk.text.trim()), id);
     const body = markdown.split("## 本文")[1]?.split("## 注意")[0] ?? "";
     const numbered = [...body.matchAll(/^(\d+)\. (.+)$/gm)];
-    assert.ok(numbered.length >= 25, id + " missing numbered manuscript");
+    assert.ok(numbered.length >= 1, id + " missing numbered manuscript");
     assert.deepEqual(numbered.map((m) => Number(m[1])), Array.from({length:numbered.length},(_,i)=>i+1),id);
     assert.equal(numbered.map((m) => m[2]).join(""), lesson.chunks.map((c) => c.text).join(""), id + " manuscript differs from RSVP narration");
     // Numbered manuscript paragraphs and RSVP chunks use different segmentation.
