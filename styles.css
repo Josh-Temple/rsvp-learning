@@ -1259,3 +1259,15 @@ body.is-learn-course-open {
   .library-header .library-switch-button { min-width: 54px; padding-inline: 6px; font-size: .76rem; }
   .library-header #library-close { min-width: 68px; }
 }
+
+/* Keep the RSVP label visible at the same widths where the old header hid it. */
+@media (max-width: 420px) {
+  .primary-navigation .brand-label { display: inline; font-size: .78rem; letter-spacing: 0; }
+  .primary-navigation .brand-mark { width: 18px; flex: 0 0 18px; }
+}
+@media (max-width: 360px) {
+  .primary-navigation .primary-nav-item { padding-inline: 7px; }
+  .primary-navigation .brand { gap: 5px; }
+  .topbar { gap: 6px; }
+  .topbar > .icon-button { width: 44px; height: 44px; flex: 0 0 44px; }
+}
