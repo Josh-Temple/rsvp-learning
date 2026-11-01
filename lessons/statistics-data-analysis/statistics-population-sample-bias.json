@@ -14,6 +14,10 @@
     {
       "title": "Statistics Canada: Questions to ask about surveys",
       "url": "https://www.statcan.gc.ca/en/customized-products-services/custom-surveys/questions-to-ask"
+    },
+    {
+      "title": "Statistics Canada: Poststratification tests and nonresponse bias",
+      "url": "https://www150.statcan.gc.ca/n1/pub/12-001-x/2016002/article/14677/02-eng.htm"
     }
   ],
   "chunks": [
@@ -267,6 +271,146 @@
     },
     {
       "text": "一般化できる範囲を明示します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "構成の偏りを、架空の件数で比べます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一万人の市民が、A地区八千人と",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "B地区二千人に分かれているとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "調査にはA地区から二百人、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "B地区から八百人が回答しました。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "回答者千人のうち、A地区では",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "百六十人が満足と答え、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "B地区では四百人が満足と答えました。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "A地区の回答者の満足割合は八十パーセント、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "B地区では五十パーセントです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "回答者を一人ずつ等しく数えると、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "満足者は合計五百六十人。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "回答者全体では五十六パーセントです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "一方、市民の地区別構成を使えば、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "A地区に八割、B地区に二割の重みを置きます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "八十に〇点八を掛けて六十四。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "五十に〇点二を掛けて十。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "合計は七十四パーセントです。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "この値は、地区構成だけをそろえた",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "補助的な推定値です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "市民全体の満足割合が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "七十四パーセントと確定したわけではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "同じ地区でも回答者と非回答者に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "満足度の違いがあれば、偏りは残り得ます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "地区Aの回答率が低いこと自体も、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "無回答の偏りを疑う理由です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "調査の対象名簿、回答方法、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "未回答者の特徴を確認する必要があります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "この計算では、地区の人口構成が",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "正しいと仮定しています。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "重み付けした数値と回答者の生の割合を",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "混同せず、両方の計算方法を示します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "必要なら地区内の抽出・非回答に",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "対応する追加の調整や調査を検討します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "標本数だけでなく、代表性を確かめます。",
       "duration_multiplier": 1.15
     }
   ]
