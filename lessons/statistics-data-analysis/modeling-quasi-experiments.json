@@ -22,27 +22,27 @@
   ],
   "chunks": [
     {
-      "text": "無作為割当が難しくても、制度の導入時期や対象を決",
+      "text": "無作為割当が難しくても、",
       "duration_multiplier": 1
     },
     {
-      "text": "める境界から、比較の根拠を探せる場合があります。",
+      "text": "制度の導入時期や対象を決める境界から、",
       "duration_multiplier": 1.15
     },
     {
-      "text": "準実験は、そうした仕組みを利用して因果効果を考え",
+      "text": "比較の根拠を探せる場合があります。",
       "duration_multiplier": 1
     },
     {
-      "text": "る設計です。",
+      "text": "準実験は、そうした仕組みを利用して因果効果を",
       "duration_multiplier": 1.15
     },
     {
-      "text": "観察データへ特定の式を当てはめるだけで成立するも",
+      "text": "考える設計です。観察データへ特定の式を",
       "duration_multiplier": 1
     },
     {
-      "text": "のではありません。",
+      "text": "当てはめるだけで成立するものではありません。",
       "duration_multiplier": 1.15
     },
     {
@@ -102,15 +102,15 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "因果効果として読むには、導入がなければ二群の結果",
+      "text": "因果効果として読むには、",
       "duration_multiplier": 1
     },
     {
-      "text": "は平均的に同じ幅で変化した、",
+      "text": "導入がなければ二群の結果は平均的に同じ幅で",
       "duration_multiplier": 1
     },
     {
-      "text": "という平行トレンドの仮定が必要です。",
+      "text": "変化した、という平行トレンドの仮定が必要です。",
       "duration_multiplier": 1.15
     },
     {
@@ -198,11 +198,11 @@
       "duration_multiplier": 1
     },
     {
-      "text": "結果が、研修以外の理由で境界において飛ばないと仮",
+      "text": "結果が、研修以外の理由で境界において",
       "duration_multiplier": 1
     },
     {
-      "text": "定します。",
+      "text": "飛ばないと仮定します。",
       "duration_multiplier": 1.15
     },
     {
@@ -214,11 +214,11 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "本人が点数を精密に操作して境界を越えられる場合も",
+      "text": "本人が点数を精密に操作して境界を越えられる",
       "duration_multiplier": 1
     },
     {
-      "text": "、比較の根拠が崩れ得ます。",
+      "text": "場合も、比較の根拠が崩れ得ます。",
       "duration_multiplier": 1.15
     },
     {
@@ -246,15 +246,15 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "どちらの準実験も、比較の仕組みと識別の仮定を示し",
+      "text": "どちらの準実験も、比較の仕組みと",
       "duration_multiplier": 1
     },
     {
-      "text": "たうえで、推定の不確実性と一般化できる範囲を報告",
+      "text": "識別の仮定を示したうえで、推定の不確実性と",
       "duration_multiplier": 1
     },
     {
-      "text": "します。",
+      "text": "一般化できる範囲を報告します。",
       "duration_multiplier": 1.15
     }
   ]
