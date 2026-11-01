@@ -13,7 +13,7 @@ test("RSVP player uses labeled destinations and opens the same catalog view", ()
     assert.match(html, new RegExp(">" + label + "<"));
   }
   assert.match(html, /id="library-open"[^>]*aria-label="RSVP教材一覧を開く"/);
-  assert.match(html, /id="library-close"[^>]*aria-label="学習画面へ戻る"/);
+  assert.match(html, /id="library-close"[^>]*aria-label="RSVPプレイヤーへ戻る"/);
   assert.match(html, /id="learn-course-back"[^>]*>← 一覧へ<\/button>/);
   assert.match(app, /els\.learnLink\.href = "\.\/index\.html\?library=learn"/);
   assert.match(app, /setLibraryView\("learn"\);\s*openLibrary\(\);/);
