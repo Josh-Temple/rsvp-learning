@@ -214,15 +214,10 @@ function render() {
   const chunk = currentChunk();
   const current = Math.min(state.index + 1, total);
 
-  els.currentLesson.textContent = state.lesson.title;
-  const lessonMeta = state.lessonMap.get(state.lessonId);
-  const learnPath = lessonMeta?.learn_path;
-  els.learnLink.hidden = false;
-  els.learnLink.href = learnPath ?? "./index.html?library=learn";
-  els.learnLink.setAttribute(
-    "aria-label",
-    learnPath ? `${state.lesson.title}をLearn版で開く` : "Learn教材一覧を開く",
-  );
+  els.currentLesson.textContent = `教材を選ぶ · ${state.lesson.title}`;
+  els.currentLesson.setAttribute("aria-label", `${state.lesson.title}を変更する`);
+  els.learnLink.href = "./index.html?library=learn";
+  els.learnLink.setAttribute("aria-label", "Learn教材一覧を開く");
   els.chunkText.textContent = chunk?.text ?? "完了";
   els.progressText.textContent = total ? `${current}·${total}` : "0·0";
   els.progressBar.style.width = total ? `${(current / total) * 100}%` : "0%";
@@ -847,7 +842,20 @@ function handleError(error) {
   els.chunkText.textContent = "読み込みエラー";
 }
 
-els.libraryOpen.addEventListener("click", openLibrary);
+els.libraryOpen.addEventListener("click", () => {
+  setLibraryView("rsvp");
+  openLibrary();
+});
+els.learnLink.addEventListener("click", (event) => {
+  event.preventDefault();
+  setLibraryView("learn");
+  openLibrary();
+});
+document.querySelector("#listen-link").addEventListener("click", (event) => {
+  event.preventDefault();
+  setLibraryView("listen");
+  openLibrary();
+});
 els.currentLesson.addEventListener("click", openLibrary);
 els.libraryClose.addEventListener("click", closeLibrary);
 els.libraryRsvpMode.addEventListener("click", () => setLibraryView("rsvp"));
