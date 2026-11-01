@@ -18,6 +18,10 @@
     {
       "title": "NIST/SEMATECH e-Handbook: Experiments and Experimental Design",
       "url": "https://www.itl.nist.gov/div898/handbook/ppc/section1/ppc136.htm"
+    },
+    {
+      "title": "NIST/SEMATECH: CORRELATION (LET)",
+      "url": "https://www.itl.nist.gov/div898/software/dataplot/refman2/auxillar/correlat.htm"
     }
   ],
   "chunks": [
@@ -279,6 +283,138 @@
     },
     {
       "text": "因果には追加の設計が必要です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "架空の三週間を使って、数値も確かめます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "広告費が一、二、三万円の週に、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "それぞれ二十、三十、四十件の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "注文があったとします。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "観測した単位は一週間です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "三つの点は完全な右上がりの直線に並びます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "この三点のピアソン相関係数はプラス一。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "直線的な関連が完全であることを表します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "この三点に直線回帰を当てはめると、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "予測注文件数は十に広告費の",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "万円単位の値を十倍して足した値です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "広告費一万円では二十件、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "二万円では三十件となり、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "この三点には誤差なく一致します。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "広告費の係数十は、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "このデータとモデルでは一万円の違いに",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "十件の予測差が対応するという意味です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "広告費を一万円増やせば、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "注文が必ず十件増える証拠ではありません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "例えば三週間で季節的な需要が増え、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "広告費も計画どおり増えたのかもしれません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "需要の増加が先に見込まれたから",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "広告予算を増やした可能性もあります。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "三点だけでは、こうした説明を分けにくく、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "他の期間でも関係が続くかも分かりません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "観測していない四万円に対して",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "五十件を予測するのは外挿です。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "直線が範囲外でも成り立つとは限りません。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "施策の効果を知りたいなら、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "同じ時期に比較できる集団を設計するなど、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "別の因果推論の根拠を調べます。",
+      "duration_multiplier": 1.15
+    },
+    {
+      "text": "相関係数、回帰による予測、",
+      "duration_multiplier": 1
+    },
+    {
+      "text": "介入による効果を別々に説明します。",
       "duration_multiplier": 1.15
     }
   ]
