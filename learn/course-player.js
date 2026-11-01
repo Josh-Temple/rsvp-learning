@@ -195,7 +195,11 @@
     reader.dataset.state = state;
   }
 
-  function showPlayer() {
+  function showPlayer({ fromHistory = false } = {}) {
+    if (overlay.hidden && !fromHistory && window.history?.pushState
+        && window.history.state?.rsvpLayer !== "course") {
+      window.history.pushState({ ...(window.history.state || {}), rsvpLayer: "course" }, "");
+    }
     if (libraryOverlay) libraryOverlay.hidden = true;
     document.body.classList.remove("is-library-open");
     overlay.hidden = false;
@@ -490,8 +494,28 @@
   nextButton.addEventListener("click", () => { void moveChapter(1); });
 
   backButton.addEventListener("click", () => {
+    if (window.history?.state?.rsvpLayer === "course") {
+      window.history.back(); // Same transition as Android's system Back.
+    } else {
+      resetCurrentChapter();
+      showLibrary();
+    }
+  });
+
+  window.addEventListener("popstate", () => {
+    const layer = window.history?.state?.rsvpLayer;
+    if (layer === "course") {
+      showPlayer({ fromHistory: true });
+      return;
+    }
+    if (overlay.hidden) return;
     resetCurrentChapter();
-    showLibrary();
+    if (layer === "library") {
+      showLibrary();
+    } else {
+      overlay.hidden = true;
+      document.body.classList.remove("is-learn-course-open");
+    }
   });
 
   rateInput.addEventListener("input", () => {
