@@ -230,15 +230,15 @@
       "duration_multiplier": 1.15
     },
     {
-      "text": "返品を含む売上を集計してから欠損を",
+      "text": "返品を含む売上を集計してから欠損を確認する",
       "duration_multiplier": 1
     },
     {
-      "text": "確認する場合と、欠損のある行を落とし",
+      "text": "場合と、欠損のある行を落としてから",
       "duration_multiplier": 1
     },
     {
-      "text": "てから集計する場合では、合計の対象が違い得ます。",
+      "text": "集計する場合では、合計の対象が違い得ます。",
       "duration_multiplier": 1.15
     },
     {
