@@ -46,3 +46,16 @@ test("Listen list uses visible mode labels and articles load shared navigation",
   }
   assert.ok(count >= 31, "all currently shipped Listen articles checked");
 });
+
+test("mobile navigation keeps the RSVP label and Android history returns to the previous layer", () => {
+  const css = read("styles.css");
+  const app = read("app.js");
+  const course = read("learn/course-player.js");
+  assert.match(css, /@media \(max-width: 420px\) \{\s*\.primary-navigation \.brand-label \{ display: inline/);
+  assert.match(css, /\.primary-navigation \.brand-mark \{ width: 18px/);
+  assert.match(app, /function openLibrary\(\{ fromHistory = false \} = \{\}\)/);
+  assert.match(app, /window\.history\.pushState/);
+  assert.match(app, /window\.addEventListener\("popstate"/);
+  assert.match(course, /window\.history\.back\(\)/);
+  assert.match(course, /window\.addEventListener\("popstate"/);
+});
