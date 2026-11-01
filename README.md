@@ -20,7 +20,7 @@ ChatGPT等で調査した内容を、RSVP（Rapid Serial Visual Presentation）�
 - 速度・直近教材を端末に保存
 - JSON Schemaによる教材仕様の固定
 
-UIは個人利用を前提に、Playerは本文・進捗・操作だけに絞り、教材選択と再生モードはLibraryへ分離しています。
+UIは個人利用を前提に、Playerは本文・進捗・操作だけに絞り、教材選択と再生モードはLibraryへ分離しています。RSVP・Learn・Listenのモード名は文字で表示し、本文から一覧へ戻る操作とモード切替を分けています。
 
 ### 長い一覧・本文での操作
 
@@ -42,7 +42,7 @@ RSVPと同じ教材群から、耳で連続して学ぶLearn版を試験導入�
 - Learn本文は教材Markdownから音声向けの連続文章へ再構成します。
 - 教材ごとの静的HTMLは `learn/` に置き、共通の読み上げJavaScript/CSSは `learn/learn.js` と `learn/learn.css` を使います。
 - Web Speech APIによる再生 / 一時停止 / 停止 / 速度変更 / 日本語音声選択 / 段落ハイライトに対応します。
-- RSVP画面のLearnリンクはカタログの `learn_path` を使います。
+- RSVP画面の「Learn」タブから共通Learn教材一覧を開き、章の単体ページはカタログの `learn_path` を使います。
 
 Android実機ではページ内読み上げは動作しましたが、Chromeを前面で開いていないと停止します。Chrome標準の「このページを読み上げ」は同端末のWikipediaでは利用できる一方、このLearnページでは表示されなかったため、必須経路にはしていません。
 
@@ -58,7 +58,7 @@ Android実機ではページ内読み上げは動作しましたが、Chromeを�
 
 ニュース、調査結果、レポート、資料要約など、日常的に耳から取り入れる内容はListenとして分離します。
 
-RSVP画面のヘッドホンアイコンから `listen/` の一覧へ移動します。Listen一覧は `listen/index.json` を日付降順で表示し、各項目から単一HTMLの読み上げページを開きます。
+RSVP画面の「Listen」タブからListen一覧へ移動します。Listen一覧は `listen/index.json` を日付降順で表示し、各項目から単一HTMLの読み上げページを開きます。
 
 - 実装仕様: `docs/LISTEN_HTML_FORMAT.md`
 - 生成プロンプト: `prompts/listen-generation.md`
