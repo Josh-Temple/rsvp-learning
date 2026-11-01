@@ -374,7 +374,7 @@
 
   function resetCurrentChapter() {
     runId += 1;
-    synth.cancel();
+    synth?.cancel();
     state = "idle";
     itemIndex = 0;
     voiceChangedWhilePaused = false;
