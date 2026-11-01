@@ -57,6 +57,7 @@ function makeHarness(fetchImpl) {
   };
 
   getElement("#library-overlay").hidden = true;
+  getElement("#learn-course-player").hidden = true;
   getElement("#mastery-control").querySelectorAll = () => masteryButtons;
 
   const storage = new Map();
@@ -79,14 +80,39 @@ function makeHarness(fetchImpl) {
     addEventListener() {},
   };
 
+  const windowEvents = new Map();
+  const entries = [null];
+  let historyIndex = 0;
+  const history = {
+    get state() { return entries[historyIndex]; },
+    pushState(value) {
+      entries.splice(historyIndex + 1);
+      entries.push(value);
+      historyIndex += 1;
+    },
+    back() {
+      if (historyIndex > 0) {
+        historyIndex -= 1;
+        windowEvents.get("popstate")?.();
+      }
+    },
+    forward() {
+      if (historyIndex < entries.length - 1) {
+        historyIndex += 1;
+        windowEvents.get("popstate")?.();
+      }
+    },
+  };
+
   const context = vm.createContext({
     console,
     document,
     localStorage,
     navigator: {},
     window: {
+      history,
       matchMedia() { return colorScheme; },
-      addEventListener() {},
+      addEventListener(name, callback) { windowEvents.set(name, callback); },
     },
     fetch: fetchImpl,
     setTimeout,
@@ -97,13 +123,16 @@ function makeHarness(fetchImpl) {
     Promise,
   });
 
-  return { context, elements };
+  return { context, elements, history };
 }
 
 async function loadApp(fetchImpl) {
   let source = await fs.readFile(new URL("../app.js", import.meta.url), "utf8");
-  source = source.replace("loadCatalogs().catch(handleError);", "");
-  source += "\nglobalThis.__RSVP_TEST__ = { state, loadChapterAt, startCourse, startPlayback, openLibrary, render };\n";
+  const boot = source.lastIndexOf("\nloadCatalogs()\n  .then(");
+  const worker = source.indexOf("\n\nif (\"serviceWorker\" in navigator)", boot);
+  assert.ok(boot > 0 && worker > boot, "test harness isolates startup data loading");
+  source = source.slice(0, boot) + source.slice(worker);
+  source += "\nglobalThis.__RSVP_TEST__ = { state, loadChapterAt, startCourse, startPlayback, openLibrary, closeLibrary, render };\n";
 
   const harness = makeHarness(fetchImpl);
   new vm.Script(source, { filename: "app.js" }).runInContext(harness.context);
@@ -288,4 +317,23 @@ test("Learn navigation always opens the Learn catalog, independent of the curren
   api.render();
   assert.equal(elements.get("#learn-link").hidden, false);
   assert.equal(elements.get("#learn-link").href, "./index.html?library=learn");
+});
+
+test("Android Back dismisses the library without leaving RSVP and Forward reopens it", async () => {
+  const { api, elements, history } = await loadApp(async () => okResponse(lesson("a")));
+
+  api.openLibrary();
+  assert.equal(history.state.rsvpLayer, "library");
+  assert.equal(elements.get("#library-overlay").hidden, false);
+
+  history.back();
+  assert.equal(elements.get("#library-overlay").hidden, true);
+
+  history.forward();
+  assert.equal(elements.get("#library-overlay").hidden, false);
+  assert.equal(history.state.rsvpLayer, "library");
+
+  api.closeLibrary();
+  assert.equal(elements.get("#library-overlay").hidden, true);
+  assert.equal(history.state, null);
 });
